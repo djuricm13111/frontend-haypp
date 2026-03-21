@@ -1,0 +1,456 @@
+{
+  "HEADER": {
+    "TOP_SELLER": "Top Seller",
+    "NICOTINE_POUCHES": "Nicotine Pouches",
+    "BRANDS": "Brands",
+    "PRODUCTS": "Products",
+    "SIGN_IN": "Sign In",
+    "CREATE_ACCOUNT": "Create An Account",
+    "PROFILE": "Profile",
+    "SIGN_UP": "Sign up",
+    "LINKS": {
+      "NEW_YEAR_NEW_ME": "New Year New Me",
+      "NICOTINE_POUCHES": "Nicotine Pouches",
+      "BEST_SELLERS": "Best Sellers",
+      "NEW_ARRIVALS": "New Arrivals",
+      "BLOG": "The SnusCo Blog",
+      "TOP_BRANDS": "Top Brands"
+    }
+  },
+
+  "HEADER_SLIDER": {
+    "DELIVERY_TO_AUSTRIA": "Delivery",
+    "BIG_SELECTION": "Big Selection",
+    "BEST_CUSTOMER_SERVICE": "Best Customer Service"
+  },
+
+  "FOOTER": {
+    "WARNING": "Warning: Our products contain nicotine, which is a highly addictive substance.",
+    "COPYRIGHT": "© 2024 Snus Austria. All rights reserved.",
+    "FOLLOW_US": "Follow us",
+    "SUPPORT": "Support",
+    "FAQS": "FAQs",
+    "PRIVACY_POLICY": "Privacy Policy",
+    "RETURN_POLICY": "Return & Refund Policy",
+    "TERMS_CONDITIONS": "Terms & Conditions",
+    "CATEGORIES": "Categories",
+    "CONTACT": "Contact us"
+  },
+
+  "MENU": {
+    "PROFILE": "Profile",
+    "ACCOUNT": "Account",
+    "ADDRESSES": "Addresses",
+    "NICOTINE_POUCHES": "Nicotine Pouches",
+    "BEST_SELLERS": "Best Sellers",
+    "BRANDS": "Brands",
+    "SIGN_UP": "Sign Up",
+    "LOGIN": "Login"
+  },
+
+  "CHECKOUT_HEADER": {
+    "TITLE": "Checkout",
+    "SUBTITLE": "Shopping Cart"
+  },
+
+  "HOME": {
+    "ABOUT_TITLE": "About SnusCo",
+    "ABOUT_SNUSCO": "Welcome to SnusCo, your trusted destination for premium, tobacco-free nicotine products. Since our inception, we've been committed to delivering top-quality nicotine pouches to customers who value safety, transparency, and exceptional taste.",
+    "FEATURED_BRANDS": "At SnusCo, we proudly feature a curated selection of the most popular brands, including.",
+    "FEATURED_BRANDS_2": " Each product is rigorously tested to meet the highest standards, ensuring you receive nothing but the best. Whether you're new to nicotine pouches or a seasoned user, we offer insights and recommendations to help you find the perfect fit.",
+    "SHOPPING_EXPERIENCE": "Our website is designed to provide a seamless shopping experience, complete with fast, reliable shipping. We prioritize customer safety through robust age verification processes, fostering a secure and responsible community.",
+    "TOBACCO_FREE_LIFESTYLE": "Discover the freedom of a tobacco-free lifestyle with SnusCo. We're here to support you with expert advice, educational resources, and a commitment to quality that empowers you to make informed choices. Choose SnusCo – where excellence and care come together.",
+    "PROMO_TITLES": {
+      "FEATURED": "Featured Nicotine Pouches",
+      "HOT_DEALS": "Hot Deals",
+      "BRANDS": "Our Brands"
+    },
+    "LINKS": {
+      "SEE_HOT_DEALS": "See hot deals - Sale"
+    }
+  },
+
+  "CHECKOUT": {
+    "TITLE": "Checkout",
+    "DELIVER_TO": "Deliver to:",
+    "DELIVERY_OPTIONS": "Delivery Options",
+    "ESTIMATED_DELIVERY": "Estimated delivery",
+    "PLACE_ORDER_BEFORE": "Place your order before",
+    "SAME_DAY_SHIPPING": "and we ship the order the same day (Monday-Friday)",
+    "CARD_SECURITY_MESSAGE": "Your card details are protected using PCI DSS v3.2 security standards.",
+    "CREDIT_CARDS_HEADER": "Credit Cards",
+    "FREE": "Free"
+  },
+
+  "PAYMENT_METHOD": {
+    "COD": "Cash on Delivery",
+    "CARD": "Credit Card",
+    "PAYPAL": "PayPal",
+    "UNAVAILABLE": "(currently unavailable)",
+    "SELECT": "Select Payment Method"
+  },
+
+  "LOGIN": {
+    "TITLE": "Login",
+    "SUBTITLE": "Access your account",
+    "FORGOT_PASSWORD": "Forgot your password?",
+    "DONT_HAVE_ACCOUNT": "Don't have an account?",
+    "SIGN_UP": "Sign Up",
+    "FORGOT_PASSWORD_TITLE": "Forgot Your Password?",
+    "FORGOT_PASSWORD_SUBTITLE": "Enter your email address to reset your password."
+  },
+
+  "REGISTER": {
+    "TITLE": "Create Account",
+    "SUBTITLE": "Join us and enjoy exclusive benefits",
+    "ALREADY_HAVE_ACCOUNT": "Already have an account?",
+    "SIGN_IN": "Sign In"
+  },
+
+  "PASSWORD_RESET": {
+    "TITLE": "Reset your password",
+    "INSTRUCTIONS": "Please enter your new password below."
+  },
+
+  "VERIFICATION": {
+    "TITLE": "Verification",
+    "SUBTITLE": "Enter Verification Code - {{email}}",
+    "RESEND_INFO": "If you don't receive the code",
+    "RESEND_LINK": "Resend",
+    "TIMER_INFO": "Try again in {{timer}} seconds"
+  },
+
+  "PRODUCT": {
+    "SPECIFICATION": "SPECIFICATION",
+    "BRAND": "Brand",
+    "FLAVOR": "Flavor",
+    "FORMAT": "Format",
+    "POUCHES_PER_CAN": "Pouches per Can",
+    "NET_WEIGHT": "Net Weight",
+    "NICOTINE": "Nicotine",
+    "MANUFACTURER": "Manufacturer",
+    "STOCK": "Stock",
+    "TYPE": "Type",
+    "QUANTITY": "Quantity",
+    "TOTAL_PRICE": "TOTAL PRICE INCL. TAX",
+    "FAST_DELIVERY": "Fast Delivery",
+    "EXPRESS_DELIVERY": "Express Delivery",
+    "DESCRIPTION": "Description",
+    "RATINGS": "Ratings",
+    "NO_INFO": "No information here to display.",
+    "RECOMMENDED_PRODUCTS": "Recommended Products",
+
+    "STRENGTH_LABEL": "Strength",
+    "STRENGTH": {
+      "MILD": "Mild",
+      "REGULAR": "Regular",
+      "STRONG": "Strong"
+    },
+
+    "SECURE_PAYMENTS": "Secure payments",
+    "LOWEST_PRICE": "Lowest price & widest selection online",
+    "SATISFACTION_GUARANTEED": "Satisfaction guaranteed - free return or money back guaranteed",
+
+    "TAXES": "Taxes",
+    "TAXES_TITLE": "Taxes on SnusCo Orders in Austria",
+    "TAXES_DESCRIPTION": "At SnusCo, we are committed to complying with Austrian tax laws. For all online orders, applicable taxes, including nicotine taxes and VAT (sales tax), are calculated and included in the order total during checkout. Shipping charges may also be subject to VAT in Austria, depending on the region and applicable laws.",
+    "TAXES_CALCULATION_TITLE": "How is the Tax on Nicotine Products Calculated?",
+    "TAXES_CALCULATION_DESCRIPTION": "Nicotine Excise Tax (TNET), often referred to as 'nicotine tax,' is applied in accordance with Austrian federal regulations. The method of calculation depends on the type of product (Tobacco or Tobacco-Free) and the category it falls into. Taxes are calculated in one of the following ways:",
+    "TAXES_CALCULATION_METHOD_1": "Based on a percentage of the wholesale price: Calculated as a percentage of the product's cost to SnusCo.",
+    "TAXES_CALCULATION_METHOD_2": "Based on SnusCo’s selling price to the customer: Calculated as a percentage of the retail price.",
+    "TAXES_CALCULATION_METHOD_3": "Based on weight: Calculated per gram or per unit of the product.",
+    "VAT_CALCULATION_TITLE": "How Does SnusCo Calculate VAT on Orders?",
+    "VAT_CALCULATION_DESCRIPTION": "VAT is calculated in accordance with Austrian tax regulations and is applied to both the product price and, in most cases, the shipping cost. The current Austrian VAT rate for nicotine products is 20%. This ensures full compliance with local tax requirements.",
+    "EXAMPLE_TITLE": "Example of Tax and VAT Calculation:",
+    "EXAMPLE_SUBTITLE": "Example:",
+    "EXAMPLE_TNET_RATE": "TNET rate ",
+    "EXAMPLE_VAT_RATE": "VAT rate ",
+    "EXAMPLE_WHOLESALE_COST": "Wholesale cost per can ",
+    "EXAMPLE_SELLING_PRICE": "Selling price to customer ",
+    "EXAMPLE_TNET_PER_CAN": "TNET per can ",
+    "EXAMPLE_VAT_PER_CAN": "VAT per can ",
+    "EXAMPLE_FINAL_PRICE": "Final price to the customer (per can): "
+  },
+
+  "THANK_YOU": {
+    "TITLE": "Thank You for Your Order!",
+    "SUBTITLE": "Your Order has been successfully placed.",
+    "ORDER_DETAILS": "Order Details",
+    "PAYMENT_METHOD": "Payment Method:",
+    "TRANSPORT_METHOD": "Transport Method:",
+    "BUTTON": "Home"
+  },
+
+  "PRODUCT_CARD": {
+    "CHOOSE_QUANTITY": "Choose Quantity:",
+    "PIECE": "piece",
+    "SAVINGS": "Savings",
+    "POUCHES_PER_CAN": "Pouches per can"
+  },
+
+  "CART": {
+    "TITLE": "Cart",
+    "ITEMS": "Items",
+    "SHOPPING_BASKET": "Shopping Basket",
+    "VAT": "VAT",
+    "INCLUDED": "Included",
+    "CHECKOUT": "Checkout",
+    "NOTICE": "For products that are currently out of stock, the expected delivery time is up to 30 days."
+  },
+
+  "SHOP_SORT": {
+    "SORT": "Sort",
+    "DATE": "Date",
+    "STRENGTH": "Strength",
+    "STRENGTH_DESC": "Strength (Descending)",
+    "PRICE_ASC": "Price (Ascending)",
+    "PRICE_DESC": "Price (Descending)",
+    "NAME": "Name",
+    "BEST_SELLERS": "Best Sellers"
+  },
+
+  "FILTER": {
+    "TITLE": "Filter",
+    "SELECTED_FILTERS": "Selected Filters",
+    "CLEAR_FILTER": "Clear Filters",
+    "APPLY_FILTER": "Apply Filters",
+    "BRAND": "Brand",
+    "CATEGORY": "Category",
+    "NICOTINE": "Nicotine",
+    "FLAVOUR": "Flavour",
+    "FORMAT": "Format",
+    "STRENGTH": "Strength",
+    "HIDE_OUT_OF_STOCK": "Hide out-of-stock products",
+    "VIEW_ALL_PRODUCTS": "View all {{filteredProducts}} products"
+  },
+
+  "PROFILE": {
+    "ACCOUNT_SETTINGS": "Account Settings",
+    "ACCOUNT_OVERVIEW": "Account Overview",
+    "PROFILE_INFO": "Profile Information",
+    "MANAGE_ADDRESSES": "Manage Addresses",
+    "ORDERS": "Orders",
+    "PAYMENTS": "Payments",
+    "SAVED_CARDS": "Saved Cards",
+    "REFERRALS": "Referrals",
+    "LOGOUT": "Logout",
+    "CONFIRM_LOGOUT": "Are you sure you want to log out?",
+    "PERSONAL_INFORMATION": "Personal Information",
+    "TITLE": "My Account"
+  },
+
+  "ADDRESS_BOOK": {
+    "TITLE": "Address Book",
+    "ADD_NEW_ADDRESS": "Add New Address",
+    "NO_ADDRESSES": "You have not added any shipping addresses yet.",
+    "SHIPPING_ADDRESS": "Shipping Address",
+    "CONFIRM_DELETE": "Delete Address",
+    "EDIT_ADDRESS": "Edit Address",
+    "USE_MY_CURRENT_LOCATION": "Use My Current Location",
+    "TYPE": "Address Type",
+    "HOME": "Home",
+    "WORK": "Work",
+    "OTHER": "Other"
+  },
+
+  "CHECKOUT_ADDRESSES": {
+    "TITLE": "Sure about this address?",
+    "SUBTITLE": "Select the correct address to ensure timely and accurate delivery. Suggested corrections are highlighted below.",
+    "ORIGINAL_ADDRESS": "Original address",
+    "SUGGESTED_ADDRESS": "Suggested address"
+  },
+
+  "SUBSCRIPTION": {
+    "TITLE_POPUP": "Subscribe to our Newsletter",
+    "DESCRIPTION_POPUP": "Stay updated with the latest news and offers.",
+    "TITLE": "Be the first to know",
+    "DESCRIPTION": "Get exclusive access to our coupon and never miss out on the best offers and new arrivals."
+  },
+
+  "ORDER_HISTORY": {
+    "TITLE": "Order History",
+    "SOON": "Soon..."
+  },
+
+  "STRIPE": {
+    "CARD_NUMBER": "Card Number",
+    "EXPIRES": "Expires",
+    "REMOVE_CARD": "Remove",
+    "CARD_NUMBER_LABEL": "Card Number",
+    "CARD_EXPIRY_LABEL": "Expiry",
+    "CARD_CVC_LABEL": "CVC",
+    "SECURE_PAYMENT_HEADER": "Secure payment",
+    "NEW_CARD_BUTTON": "New Card",
+    "CARDS_BUTTON": "Cards",
+    "NO_CARDS": "No saved cards available.",
+    "PRIMARY_CARD": "Primary"
+  },
+
+  "TRANSPORT": {
+    "TITLE": "Shipping Options"
+  },
+
+  "PAYMENT": {
+    "TITLE": "Payment Options"
+  },
+
+  "INVOICE": {
+    "SUMMARY": "Summary",
+    "SUBTOTAL": "Subtotal",
+    "TAX": "of which tax",
+    "TOTAL_AMOUNT": "Total amount incl. VAT",
+    "AGREE_TERMS": "By checking this box and placing an order, I confirm that I have read, understood, and agreed to the terms of purchase *",
+    "DELIVER": "Deliver",
+    "PAY": "Pay",
+    "SHIPPING": "Shipping",
+    "SHIPPING_TBD": "To be calculated"
+  },
+
+  "PERSONAL_INFO_CARD": {
+    "TITLE": "Account Information",
+    "CONTACT_INFO": "Contact Information"
+  },
+
+  "DESCRIPTION": {
+    "BEST_SELLERS": {
+      "TITLE": "Bestselling Nicotine Pouches",
+      "TEXT": "Discover our best-selling nicotine pouches, carefully selected to offer you the perfect combination of quality, flavor, and satisfaction. Whether you're looking to try something new or stock up on your favorites, you'll find amazing deals and a wide variety of options. Experience the ultimate in convenience and value today!"
+    },
+    "NEW_ARRIVALS": {
+      "TITLE": "New Arrivals: Fresh Nicotine Pouches",
+      "TEXT": "Stay ahead of the curve with our latest collection of nicotine pouches! Explore new flavors, innovative designs, and fresh options crafted to elevate your experience. Whether you're seeking bold sensations or subtle enjoyment, our new arrivals have something for everyone. Don't miss the chance to try these exciting additions today!"
+    },
+    "SHOP": {
+      "TITLE": "Shop Nicotine Pouches",
+      "TEXT": "Here you'll find a wide variety of mixpacks with great prices from popular brands such as ZYN, Skruf, Thunder, and more! Try something new and save money!"
+    }
+  },
+
+  "BANNER": {
+    "VELO": {
+      "SUBTITLE": "Smooth and Flavorful",
+      "TITLE": "Explore Velo",
+      "TEXT": "Experience the perfect balance of flavor and satisfaction with Velo nicotine pouches. Choose your favorite today!"
+    },
+    "ZYN": {
+      "SUBTITLE": "Refined and Reliable",
+      "TITLE": "Discover Zyn",
+      "TEXT": "Zyn offers a clean, fresh nicotine experience. Perfect for every moment – try Zyn now!"
+    },
+    "THUNDER": {
+      "SUBTITLE": "Bold and Intense",
+      "TITLE": "Thunder Pouches",
+      "TEXT": "Feel the power of Thunder – robust flavors and strong nicotine hits for seasoned users."
+    },
+    "VOLT": {
+      "SUBTITLE": "Dynamic and Fresh",
+      "TITLE": "Unleash Volt",
+      "TEXT": "Volt brings you bold innovation and refreshing flavors. Energize your day with Volt!"
+    },
+    "FEATURED": {
+      "SUBTITLE": "Discover the Best",
+      "TITLE": "Featured Nicotine Pouches",
+      "TEXT": "Explore our top-rated nicotine pouches, handpicked for their exceptional quality and flavor. Find your favorite today!"
+    },
+    "HOT_DEALS": {
+      "SUBTITLE": "Don't Miss Out",
+      "TITLE": "Hot Deals",
+      "TEXT": "Get amazing discounts on premium nicotine pouches. Limited time offers on your favorite brands!"
+    }
+  },
+
+  "BUTTONS": {
+    "VIEW_ALL": "View All",
+    "BUY_NOW": "Buy Now",
+    "SHOP_NOW": "Shop Now",
+    "ADD_TO_CART": "Add to Cart",
+    "ADD": "Cart",
+    "SUBMIT": "Submit",
+    "LOAD_MORE": "Load More",
+    "RECOVER_PASSWORD": "Recover Password",
+    "CONTINUE": "Continue",
+    "PROCEED_TO_BUY": "Proceed to Buy",
+    "SAVE_FOR_LATER": "Save For Later",
+    "REMOVE": "Remove",
+    "MOVE_TO_CART": "Move To Cart",
+    "CHANGE": "Change",
+    "EDIT": "Edit",
+    "SAVE_AND_DELIVER_HERE": "Save & Deliver Here",
+    "CANCEL": "Cancel",
+    "UPDATE": "Update",
+    "SAVE": "Save",
+    "DELETE": "Delete",
+    "SEND_INVITATION": "Send Invitation",
+    "LOGOUT": "Logout",
+    "EXPLORE": "Explore",
+    "OUT_OF_STOCK": "Out of Stock",
+    "AVAILABLE_SOON": "Available Soon",
+    "CHANGE_PASSWORD": "Change Password",
+    "PAY_NOW": "Pay Now"
+  },
+  "LABELS": {
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "NAME": "Name",
+    "SURNAME": "Surname",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "PHONE_NUMBER": "Phone Number",
+    "COUNTRY": "Country",
+    "POSTAL_CODE": "Postal Code",
+    "CITY": "City",
+    "STREET": "Street",
+    "STREET_NUMBER": "Street Number",
+    "SECONDARY_STREET": "Secondary Street",
+    "OPTIONAL": " (optional)",
+    "BUILDING_NUMBER": "Building Number",
+    "NEW_PASSWORD": "New Password"
+  },
+  "PLACEHOLDERS": {
+    "EMAIL": "Email",
+    "PASSWORD": "Enter your password",
+    "NAME": "Enter your name",
+    "SURNAME": "Enter your surname",
+    "CONFIRM_PASSWORD": "Re-enter your password",
+    "PHONE_NUMBER": "Enter your phone number",
+    "COUNTRY": "Enter your country",
+    "POSTAL_CODE": "Enter your postal code",
+    "CITY": "Enter your city",
+    "STREET": "Enter your street",
+    "STREET_NUMBER": "Enter your street number",
+    "SECONDARY_STREET": "Enter your secondary street",
+    "BUILDING_NUMBER": "Enter your building number",
+    "NOTE": "Additional note on your delivery...",
+    "SEARCH_PRODUCTS": "Search products, brands...",
+    "NEW_PASSWORD": "Enter new password"
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": "Success",
+    "EMAIL_ALREADY_SUBSCRIBED": "Email already subscribed.",
+    "LOGIN_ERROR_401": "Wrong password or email, try later.",
+    "REGISTRATION_ERROR_401": "There was an error during registration. Please try again later.",
+    "ERROR": "Error, please try later."
+  },
+  "COUNTRIES": {
+    "AT": "Austria",
+    "DE": "Germany",
+    "CH": "Switzerland",
+    "FR": "France",
+    "IT": "Italy",
+    "ES": "Spain",
+    "NL": "Netherlands",
+    "BE": "Belgium",
+    "SE": "Sweden",
+    "NO": "Norway",
+    "DK": "Denmark",
+    "FI": "Finland",
+    "PL": "Poland",
+    "CZ": "Czech Republic",
+    "SK": "Slovakia",
+    "HU": "Hungary",
+    "RO": "Romania",
+    "BG": "Bulgaria",
+    "HR": "Croatia",
+    "SI": "Slovenia",
+    "RS": "Serbia"
+  }
+}

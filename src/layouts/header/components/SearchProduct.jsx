@@ -1,0 +1,398 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+import { useDispatch } from "react-redux";
+
+import { calculatePrice } from "../../../utils/discount";
+import AddToCartAnim from "../../../components/animations/AddToCartAnim";
+import { cartActions } from "../../../store/cart-slice";
+
+const QUANTITY_OPTIONS = [1, 10, 30, 50];
+
+const SearchProduct = ({
+  item,
+  currencyTag,
+  setIsCartOpen,
+  onProductClick,
+}) => {
+  const dispatch = useDispatch();
+
+  const [openDropdownId, setOpenDropdownId] = useState(null);
+  const [selectedQuantity, setSelectedQuantity] = useState(10);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const primaryImage = item?.images?.find((img) => img.is_primary);
+  const isOutOfStock = item.is_in_stock === "out_of_stock";
+
+  const handleToggleDropdown = (e) => {
+    e.stopPropagation();
+    setOpenDropdownId((prev) => (prev ? null : item.id));
+  };
+
+  const handleSelectQuantity = (quantity, e) => {
+    e.stopPropagation();
+    setSelectedQuantity(quantity);
+    setOpenDropdownId(null);
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+
+    dispatch(
+      cartActions.addToCart({
+        product: item,
+        quantity: selectedQuantity,
+      })
+    );
+
+    setIsCartOpen(true);
+    setIsAnimating(true);
+  };
+
+  const handleViewProduct = (e) => {
+    e.stopPropagation();
+    onProductClick(item.category_name, item.name);
+  };
+
+  const handleAnimationComplete = () => {
+    setIsAnimating(false);
+  };
+
+  const totalPrice =
+    calculatePrice(item.price, selectedQuantity) * selectedQuantity;
+
+  return (
+    <ProductResult
+      onClick={() => onProductClick(item.category_name, item.name)}
+    >
+      <FlexDivProduct>
+        <ProductLeft>
+          <ProductImageContainer>
+            <ProductPicture>
+              {primaryImage && (
+                <ProductImage
+                  src={primaryImage.thumbnail}
+                  alt={item.name}
+                  srcSet={`
+                    ${primaryImage.thumbnail} 320w,
+                    ${primaryImage.large} 480w,
+                    ${primaryImage.large} 800w
+                  `}
+                  sizes="(max-width: 320px) 300px, (max-width: 480px) 440px, 800px"
+                  loading="lazy"
+                />
+              )}
+            </ProductPicture>
+          </ProductImageContainer>
+
+          <ProductTitle>{item.name}</ProductTitle>
+        </ProductLeft>
+
+        <ProductRight onClick={(e) => e.stopPropagation()}>
+          {isOutOfStock ? (
+            <OutOfStockButtonWrapper>
+              <Button onClick={handleViewProduct}>View the product</Button>
+            </OutOfStockButtonWrapper>
+          ) : (
+            <ProductPriceWrapper>
+              <ProductPriceButton
+                onClick={handleToggleDropdown}
+                $isOpen={openDropdownId === item.id}
+              >
+                <PriceLeft>{selectedQuantity}-pack</PriceLeft>
+
+                <PriceRight>
+                  {currencyTag}
+                  {totalPrice}
+                </PriceRight>
+
+                <ArrowIcon $isOpen={openDropdownId === item.id}>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </ArrowIcon>
+
+                {openDropdownId === item.id && (
+                  <ProductPriceDropdown>
+                    {QUANTITY_OPTIONS.map((qty, index) => {
+                      const isSelected = selectedQuantity === qty;
+
+                      return (
+                        <DropdownOption
+                          key={qty}
+                          $index={index}
+                          onClick={(e) => handleSelectQuantity(qty, e)}
+                        >
+                          <OptionLabel>{qty}-pack</OptionLabel>
+
+                          <OptionPrice>
+                            {currencyTag}
+                            {calculatePrice(item.price, qty) * qty}
+                          </OptionPrice>
+
+                          <CheckCircle $selected={isSelected}>
+                            {isSelected && (
+                              <svg
+                                fill="var(--text-100)"
+                                width="14px"
+                                height="14px"
+                                viewBox="0 0 1024 1024"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M760 380.4l-61.6-61.6-263.2 263.1-109.6-109.5L264 534l171.2 171.2L760 380.4z" />
+                              </svg>
+                            )}
+                          </CheckCircle>
+                        </DropdownOption>
+                      );
+                    })}
+                  </ProductPriceDropdown>
+                )}
+              </ProductPriceButton>
+
+              <ButtonWrapper>
+                <Button onClick={handleAddToCart}>Add to cart</Button>
+
+                {isAnimating && (
+                  <AddToCartAnim
+                    isAnimating={true}
+                    onComplete={handleAnimationComplete}
+                  />
+                )}
+              </ButtonWrapper>
+            </ProductPriceWrapper>
+          )}
+        </ProductRight>
+      </FlexDivProduct>
+    </ProductResult>
+  );
+};
+
+export default SearchProduct;
+
+const ProductResult = styled.div`
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-100);
+  cursor: pointer;
+  width: 94%;
+  min-height: 24px;
+  justify-content: space-between;
+  margin: 0 auto;
+`;
+
+const FlexDivProduct = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    background-color: var(--bg-100);
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--bg-300);
+    height: 100%;
+    //border-radius: 8px;
+    justify-content: flex-start;
+    gap: 14px;
+  }
+`;
+
+const ProductLeft = styled.div`
+  width: 60%;
+  max-width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  height: 100%;
+`;
+
+const ProductRight = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+`;
+
+const ProductImageContainer = styled.div`
+  margin-bottom: 12px;
+  height: 60px;
+  width: 60px;
+
+  @media (min-width: 768px) {
+    //height: 50px;
+    height: 100%;
+    background-color: yellow;
+  }
+`;
+
+const ProductPicture = styled.picture`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-200);
+  border-radius: 8px;
+`;
+
+const ProductImage = styled.img`
+  height: 40px;
+  background-color: var(--bg-100);
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+  @media (min-width: 768px) {
+    height: 60px;
+    //height: 100%;
+  }
+`;
+
+const ProductTitle = styled.h5`
+  font-size: 15px;
+  font-weight: 400;
+  max-width: 100%;
+  text-align: left;
+  font-family: "Montserrat";
+
+  @media (min-width: 768px) {
+    padding-bottom: 4px;
+  }
+`;
+
+const ProductPriceWrapper = styled.div`
+  width: 100%;
+`;
+
+const OutOfStockButtonWrapper = styled.div`
+  width: 100%;
+`;
+
+const ProductPriceButton = styled.button`
+  position: relative;
+  width: 100%;
+  height: 42px;
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px 0 12px;
+  cursor: pointer;
+  background-color: ${({ $isOpen }) =>
+    $isOpen ? "var(--primary-100)" : "var(--bg-100)"};
+  color: ${({ $isOpen }) => ($isOpen ? "var(--bg-100)" : "var(--text-100)")};
+
+  &:hover {
+    background-color: ${({ $isOpen }) =>
+      $isOpen ? "var(--primary-100)" : "var(--bg-100)"};
+    color: ${({ $isOpen }) => ($isOpen ? "var(--bg-100)" : "var(--text-100)")};
+  }
+`;
+
+const PriceLeft = styled.span`
+  font-family: "Montserrat";
+  text-align: left;
+  font-size: 13px;
+  font-weight: 100;
+`;
+
+const PriceRight = styled.span`
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+`;
+
+const ArrowIcon = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: ${({ $isOpen }) => ($isOpen ? "rotate(180deg)" : "rotate(0deg)")};
+  transition: transform 0.2s ease;
+`;
+
+const ProductPriceDropdown = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #d8d8d8;
+  border-top: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+`;
+
+const DropdownOption = styled.button`
+  width: 100%;
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr auto 24px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  background-color: ${({ $index }) =>
+    $index % 2 === 0 ? "var(--bg-100)" : "var(--bg-200)"};
+
+  &:hover {
+    background-color: var(--bg-300);
+  }
+`;
+
+const OptionLabel = styled.span`
+  font-family: "Montserrat";
+  text-align: left;
+  font-size: 12px;
+  font-weight: 100;
+  color: var(--text-100);
+`;
+
+const OptionPrice = styled.span`
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-100);
+  white-space: nowrap;
+`;
+
+const CheckCircle = styled.span`
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid ${({ $selected }) => ($selected ? "#a8a8a8" : "#cfcfcf")};
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ButtonWrapper = styled.div`
+  width: 100%;
+
+  @media (min-width: 768px) {
+    display: block;
+    position: relative;
+    bottom: 0;
+  }
+`;
+
+const Button = styled.button`
+  width: 100%;
+  font-size: 11px;
+  border-radius: 0;
+`;

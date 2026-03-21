@@ -1,0 +1,458 @@
+{
+  "HEADER": {
+    "TOP_SELLER": "Bestseller",
+    "NICOTINE_POUCHES": "Nikotinbeutel",
+    "BRANDS": "Markenvielfalt",
+    "PRODUCTS": "Produktauswahl",
+    "SIGN_IN": "Einloggen",
+    "CREATE_ACCOUNT": "Konto erstellen",
+    "PROFILE": "Profil",
+    "SIGN_UP": "Registrieren",
+    "LINKS": {
+      "NEW_YEAR_NEW_ME": "Neues Jahr, neues Ich",
+      "NICOTINE_POUCHES": "Nikotinbeutel",
+      "BEST_SELLERS": "Bestseller",
+      "NEW_ARRIVALS": "Neuankömmlinge",
+      "BLOG": "Der SnusCo-Blog",
+      "TOP_BRANDS": "Top-Marken"
+    }
+  },
+
+  "HEADER_SLIDER": {
+    "DELIVERY_TO_AUSTRIA": "Lieferung",
+    "BIG_SELECTION": "Große Auswahl",
+    "BEST_CUSTOMER_SERVICE": "Bester Kundenservice"
+  },
+
+  "FOOTER": {
+    "WARNING": "Warnung: Unsere Produkte enthalten Nikotin, eine stark süchtig machende Substanz.",
+    "COPYRIGHT": "© 2024 SnusCo. Alle Rechte vorbehalten.",
+    "FOLLOW_US": "Folgen Sie uns",
+    "SUPPORT": "Support",
+    "FAQS": "FAQs",
+    "PRIVACY_POLICY": "Datenschutzerklärung",
+    "RETURN_POLICY": "Rückgabe & Erstattungsrichtlinie",
+    "TERMS_CONDITIONS": "Allgemeine Geschäftsbedingungen",
+    "CATEGORIES": "Kategorien",
+    "CONTACT": "Kontaktieren Sie uns"
+  },
+
+  "MENU": {
+    "PROFILE": "Profil",
+    "ACCOUNT": "Konto",
+    "ADDRESSES": "Adressen",
+    "NICOTINE_POUCHES": "Nikotinbeutel",
+    "BEST_SELLERS": "Bestseller",
+    "BRANDS": "Marken",
+    "SIGN_UP": "Anmelden",
+    "LOGIN": "Einloggen"
+  },
+
+  "CHECKOUT_HEADER": {
+    "TITLE": "Kasse",
+    "SUBTITLE": "Warenkorb"
+  },
+
+  "HOME": {
+    "ABOUT_TITLE": "Über SnusCo",
+    "ABOUT_SNUSCO": "Willkommen bei SnusCo, Ihrem vertrauenswürdigen Anbieter für hochwertige, tabakfreie Nikotinprodukte. Seit unserer Gründung haben wir uns der Lieferung von Nikotinbeuteln höchster Qualität verschrieben, die Sicherheit, Transparenz und außergewöhnlichen Geschmack schätzen.",
+    "FEATURED_BRANDS": "Bei SnusCo präsentieren wir stolz eine kuratierte Auswahl der beliebtesten Marken, darunter ",
+    "FEATURED_BRANDS_2": " Jedes Produkt wird rigoros getestet, um die höchsten Standards zu erfüllen und sicherzustellen, dass Sie nur das Beste erhalten. Egal, ob Sie neu bei Nikotinbeuteln sind oder ein erfahrener Benutzer, wir bieten Einblicke und Empfehlungen, um Ihnen zu helfen, die perfekte Wahl zu treffen.",
+    "SHOPPING_EXPERIENCE": "Unsere Website ist so gestaltet, dass sie ein nahtloses Einkaufserlebnis bietet, einschließlich schneller und zuverlässiger Lieferung. Wir legen großen Wert auf Kundensicherheit durch robuste Altersverifizierungsprozesse und fördern eine sichere und verantwortungsvolle Community.",
+    "TOBACCO_FREE_LIFESTYLE": "Entdecken Sie die Freiheit eines tabakfreien Lebensstils mit SnusCo. Wir sind hier, um Sie mit Expertenrat, Bildungsressourcen und einem Qualitätsversprechen zu unterstützen, das Sie in die Lage versetzt, fundierte Entscheidungen zu treffen. Wählen Sie SnusCo – wo Exzellenz und Fürsorge zusammenkommen.",
+    "PROMO_TITLES": {
+      "FEATURED": "Empfohlene Nikotinbeutel",
+      "HOT_DEALS": "Heiße Angebote",
+      "BRANDS": "Unsere Marken"
+    },
+    "LINKS": {
+      "SEE_HOT_DEALS": "Sehen Sie heiße Angebote - Sale"
+    }
+  },
+
+  "CHECKOUT": {
+    "TITLE": "Kasse",
+    "DELIVER_TO": "Lieferung an:",
+    "DELIVERY_OPTIONS": "Lieferoptionen",
+    "ESTIMATED_DELIVERY": "Voraussichtliche Lieferung",
+    "PLACE_ORDER_BEFORE": "Bestellen Sie vor",
+    "SAME_DAY_SHIPPING": "und wir versenden die Bestellung am selben Tag (Montag-Freitag)",
+    "CARD_SECURITY_MESSAGE": "Ihre Kartendaten sind durch PCI DSS v3.2-Sicherheitsstandards geschützt.",
+    "CREDIT_CARDS_HEADER": "Kreditkarten",
+    "FREE": "Kostenlos"
+  },
+
+  "PAYMENT_METHOD": {
+    "COD": "Nachnahme",
+    "CARD": "Kreditkarte",
+    "PAYPAL": "PayPal",
+    "UNAVAILABLE": "(derzeit nicht verfügbar)",
+    "SELECT": "Zahlungsmethode auswählen"
+  },
+
+  "LOGIN": {
+    "TITLE": "Anmelden",
+    "SUBTITLE": "Greifen Sie auf Ihr Konto zu",
+    "FORGOT_PASSWORD": "Passwort vergessen?",
+    "DONT_HAVE_ACCOUNT": "Noch kein Konto?",
+    "SIGN_UP": "Registrieren",
+    "FORGOT_PASSWORD_TITLE": "Passwort vergessen?",
+    "FORGOT_PASSWORD_SUBTITLE": "Geben Sie Ihre E-Mail-Adresse ein, um Ihr Passwort zurückzusetzen."
+  },
+
+  "REGISTER": {
+    "TITLE": "Konto erstellen",
+    "SUBTITLE": "Treten Sie bei und genießen Sie exklusive Vorteile",
+    "ALREADY_HAVE_ACCOUNT": "Haben Sie bereits ein Konto?",
+    "SIGN_IN": "Anmelden"
+  },
+
+  "PASSWORD_RESET": {
+    "TITLE": "Passwort zurücksetzen",
+    "INSTRUCTIONS": "Bitte geben Sie unten Ihr neues Passwort ein."
+  },
+
+  "VERIFICATION": {
+    "TITLE": "Verifizierung",
+    "SUBTITLE": "Verifizierungscode eingeben - {{email}}",
+    "RESEND_INFO": "Wenn Sie den Code nicht erhalten",
+    "RESEND_LINK": "Erneut senden",
+    "TIMER_INFO": "Versuchen Sie es in {{timer}} Sekunden erneut"
+  },
+
+  "PRODUCT": {
+    "SPECIFICATION": "SPEZIFIKATION",
+    "BRAND": "Marke",
+    "FLAVOR": "Geschmack",
+    "FORMAT": "Format",
+    "POUCHES_PER_CAN": "Beutel pro Dose",
+    "NET_WEIGHT": "Nettogewicht",
+    "NICOTINE": "Nikotinstärke",
+    "MANUFACTURER": "Hersteller",
+    "STOCK": "Bestand",
+    "TYPE": "Typ",
+    "QUANTITY": "Anzahl",
+    "TOTAL_PRICE": "GESAMTPREIS INKL. MWST.",
+    "FAST_DELIVERY": "Schnelle Lieferung",
+    "EXPRESS_DELIVERY": "Express Lieferung",
+    "DESCRIPTION": "Beschreibung",
+    "RATINGS": "Bewertungen",
+    "NO_INFO": "Keine Informationen verfügbar.",
+    "RECOMMENDED_PRODUCTS": "Empfohlene Produkte",
+
+    "STRENGTH_LABEL": "Stärke",
+    "STRENGTH": {
+      "MILD": "Sanft",
+      "REGULAR": "Regulär",
+      "STRONG": "Stark"
+    },
+
+    "SECURE_PAYMENTS": "Sichere Zahlungen",
+    "LOWEST_PRICE": "Niedrigster Preis & größte Auswahl online",
+    "SATISFACTION_GUARANTEED": "Zufriedenheitsgarantie - kostenlose Rückgabe oder Geld-zurück-Garantie",
+
+    "TAXES": "Steuern",
+    "TAXES_TITLE": "Steuern auf SnusCo-Bestellungen in Österreich",
+    "TAXES_DESCRIPTION": "Bei SnusCo halten wir uns strikt an die österreichischen Steuergesetze. Für alle Online-Bestellungen werden die anfallenden Steuern, einschließlich Nikotinsteuern und Mehrwertsteuer (Umsatzsteuer), berechnet und beim Checkout in den Bestellbetrag einbezogen. Versandkosten können je nach Region und geltenden Gesetzen ebenfalls der Mehrwertsteuer unterliegen.",
+    "TAXES_CALCULATION_TITLE": "Wie wird die Steuer auf Nikotinprodukte berechnet?",
+    "TAXES_CALCULATION_DESCRIPTION": "Die Nikotinverbrauchsteuer (TNET), oft als 'Nikotinsteuer' bezeichnet, wird gemäß den österreichischen Bundesvorschriften erhoben. Die Berechnungsmethode hängt von der Art des Produkts (Tabak oder tabakfrei) und der jeweiligen Kategorie ab. Die Steuern werden auf folgende Weise berechnet:",
+    "TAXES_CALCULATION_METHOD_1": "Basierend auf einem Prozentsatz des Großhandelspreises: Berechnet als Prozentsatz der Kosten des Produkts für SnusCo.",
+    "TAXES_CALCULATION_METHOD_2": "Basierend auf dem Verkaufspreis von SnusCo an den Kunden: Berechnet als Prozentsatz des Einzelhandelspreises.",
+    "TAXES_CALCULATION_METHOD_3": "Basierend auf Gewicht: Berechnet pro Gramm oder pro Einheit des Produkts.",
+    "VAT_CALCULATION_TITLE": "Wie berechnet SnusCo die Mehrwertsteuer auf Bestellungen?",
+    "VAT_CALCULATION_DESCRIPTION": "Die Mehrwertsteuer wird gemäß den österreichischen Steuervorschriften berechnet und sowohl auf den Produktpreis als auch in den meisten Fällen auf die Versandkosten angewendet. Der aktuelle österreichische Mehrwertsteuersatz für Nikotinprodukte beträgt 20%. Dies gewährleistet die vollständige Einhaltung der lokalen Steueranforderungen.",
+    "EXAMPLE_TITLE": "Beispiel für Steuer- und Mehrwertsteuerberechnung:",
+    "EXAMPLE_SUBTITLE": "Beispiel:",
+    "EXAMPLE_TNET_RATE": "TNET-Satz ",
+    "EXAMPLE_VAT_RATE": "Mehrwertsteuersatz ",
+    "EXAMPLE_WHOLESALE_COST": "Großhandelskosten pro Dose ",
+    "EXAMPLE_SELLING_PRICE": "Verkaufspreis an Kunden ",
+    "EXAMPLE_TNET_PER_CAN": "TNET pro Dose ",
+    "EXAMPLE_VAT_PER_CAN": "Mehrwertsteuer pro Dose ",
+    "EXAMPLE_FINAL_PRICE": "Endpreis für den Kunden (pro Dose): "
+  },
+
+  "THANK_YOU": {
+    "TITLE": "Vielen Dank für Ihre Bestellung!",
+    "SUBTITLE": "Ihre Bestellung wurde erfolgreich aufgegeben.",
+    "ORDER_DETAILS": "Bestelldetails",
+    "PAYMENT_METHOD": "Zahlungsmethode:",
+    "TRANSPORT_METHOD": "Versandart:",
+    "BUTTON": "Startseite"
+  },
+
+  "PRODUCT_CARD": {
+    "CHOOSE_QUANTITY": "Wähle die Anzahl:",
+    "PIECE": "stück",
+    "SAVINGS": "Ersparnis",
+    "POUCHES_PER_CAN": "Beutel pro Dose"
+  },
+
+  "CART": {
+    "TITLE": "Warenkorb",
+    "ITEMS": "Artikel",
+    "SHOPPING_BASKET": "Warenkorb",
+    "VAT": "MwSt",
+    "INCLUDED": "Inklusive",
+    "CHECKOUT": "Zur Kasse",
+    "NOTICE": "Für Produkte, die derzeit nicht vorrätig sind, beträgt die voraussichtliche Lieferzeit bis zu 30 Tage."
+  },
+
+  "SHOP_SORT": {
+    "SORT": "Sortieren",
+    "DATE": "Datum",
+    "STRENGTH": "Stärke",
+    "STRENGTH_DESC": "Stärke (Absteigend)",
+    "PRICE_ASC": "Preis (Niedrig bis Hoch)",
+    "PRICE_DESC": "Preis (Hoch bis Niedrig)",
+    "NAME": "Name",
+    "BEST_SELLERS": "Bestseller"
+  },
+
+  "FILTER": {
+    "TITLE": "Filter",
+    "SELECTED_FILTERS": "Ausgewählte Filter",
+    "CLEAR_FILTER": "Filter löschen",
+    "APPLY_FILTER": "Filter anwenden",
+    "BRAND": "Marke",
+    "CATEGORY": "Kategorie",
+    "NICOTINE": "Nikotinstärke",
+    "FLAVOUR": "Geschmack",
+    "FORMAT": "Format",
+    "STRENGTH": "Stärke",
+    "HIDE_OUT_OF_STOCK": "Nicht vorrätige Produkte ausblenden",
+    "VIEW_ALL_PRODUCTS": "Alle {{filteredProducts}} Produkte anzeigen"
+  },
+
+  "PROFILE": {
+    "ACCOUNT_SETTINGS": "Kontoeinstellungen",
+    "ACCOUNT_OVERVIEW": "Kontoübersicht",
+    "PROFILE_INFO": "Profilinformationen",
+    "MANAGE_ADDRESSES": "Adressverwaltung",
+    "ORDERS": "Bestellungen",
+    "PAYMENTS": "Zahlungen",
+    "SAVED_CARDS": "Gespeicherte Karten",
+    "REFERRALS": "Empfehlungen",
+    "LOGOUT": "Abmelden",
+    "CONFIRM_LOGOUT": "Möchten Sie sich wirklich abmelden?",
+    "PERSONAL_INFORMATION": "Persönliche Informationen",
+    "TITLE": "Mein Konto"
+  },
+
+  "ADDRESS_BOOK": {
+    "TITLE": "Adressbuch",
+    "ADD_NEW_ADDRESS": "Neue Adresse hinzufügen",
+    "NO_ADDRESSES": "Sie haben noch keine Lieferadressen hinzugefügt.",
+    "SHIPPING_ADDRESS": "Lieferadresse",
+    "EDIT": "Bearbeiten",
+    "DELETE": "Löschen",
+    "CONFIRM_DELETE": "Adresse löschen",
+    "EDIT_ADDRESS": "Adresse bearbeiten",
+    "USE_MY_CURRENT_LOCATION": "Meinen aktuellen Standort verwenden",
+    "TYPE": "Adresstyp",
+    "HOME": "Zuhause",
+    "WORK": "Arbeit",
+    "OTHER": "Sonstige"
+  },
+
+  "CHECKOUT_ADDRESSES": {
+    "TITLE": "Sind Sie sich bei dieser Adresse sicher?",
+    "SUBTITLE": "Wählen Sie die richtige Adresse aus, um eine pünktliche und genaue Lieferung sicherzustellen. Vorgeschlagene Korrekturen sind unten hervorgehoben.",
+    "ORIGINAL_ADDRESS": "Originaladresse",
+    "SUGGESTED_ADDRESS": "Vorgeschlagene Adresse"
+  },
+
+  "SUBSCRIPTION": {
+    "TITLE_POPUP": "Abonnieren Sie unseren Newsletter",
+    "DESCRIPTION_POPUP": "Bleiben Sie mit den neuesten Nachrichten und Angeboten auf dem Laufenden.",
+    "TITLE": "Seien Sie der Erste, der es weiß",
+    "DESCRIPTION": "Erhalten Sie exklusiven Zugang zu unseren Gutscheinen und verpassen Sie nie die besten Angebote und Neuheiten."
+  },
+
+  "ORDER_HISTORY": {
+    "TITLE": "Bestellverlauf",
+    "SOON": "Bald..."
+  },
+
+  "STRIPE": {
+    "CARD_NUMBER": "Kartennummer",
+    "EXPIRES": "Gültig bis",
+    "REMOVE_CARD": "Entfernen",
+    "CARD_NUMBER_LABEL": "Kartennummer",
+    "CARD_EXPIRY_LABEL": "Gültig bis",
+    "CARD_CVC_LABEL": "CVC",
+    "SECURE_PAYMENT_HEADER": "Sichere Zahlung",
+    "NEW_CARD_BUTTON": "Neue Karte",
+    "CARDS_BUTTON": "Karten",
+    "NO_CARDS": "Keine gespeicherten Karten verfügbar.",
+    "PRIMARY_CARD": "Primär"
+  },
+
+  "TRANSPORT": {
+    "TITLE": "Versandoptionen"
+  },
+
+  "PAYMENT": {
+    "TITLE": "Zahlungsoptionen"
+  },
+
+  "INVOICE": {
+    "SUMMARY": "Zusammenfassung",
+    "SUBTOTAL": "Zwischensumme",
+    "TAX": "davon Steuern",
+    "TOTAL_AMOUNT": "Gesamtbetrag inkl. MwSt",
+    "AGREE_TERMS": "Durch das Ankreuzen und Bestellen bestätige ich, dass ich die Kaufbedingungen gelesen, verstanden und akzeptiert habe *",
+    "DELIVER": "Liefern",
+    "PAY": "Bezahlen",
+    "SHIPPING": "Versand",
+    "SHIPPING_TBD": "Wird berechnet"
+  },
+
+  "PERSONAL_INFO_CARD": {
+    "TITLE": "Kontoinformationen",
+    "CONTACT_INFO": "Kontaktinformationen"
+  },
+
+  "DESCRIPTION": {
+    "BEST_SELLERS": {
+      "TITLE": "Bestseller: Nikotinbeutel",
+      "TEXT": "Entdecken Sie unsere meistverkauften Nikotinbeutel, sorgfältig ausgewählt, um Ihnen die perfekte Kombination aus Qualität, Geschmack und Zufriedenheit zu bieten. Egal, ob Sie etwas Neues ausprobieren oder Ihre Favoriten aufstocken möchten, hier finden Sie tolle Angebote und eine große Auswahl. Erleben Sie noch heute höchste Bequemlichkeit und Wertigkeit!"
+    },
+    "NEW_ARRIVALS": {
+      "TITLE": "Neuheiten: Frische Nikotinbeutel",
+      "TEXT": "Bleiben Sie auf dem Laufenden mit unserer neuesten Kollektion an Nikotinbeuteln! Entdecken Sie neue Geschmacksrichtungen, innovative Designs und frische Optionen, die Ihr Erlebnis auf ein neues Niveau heben. Ob Sie mutige Sensationen oder subtile Genüsse suchen, unsere Neuheiten bieten für jeden etwas. Verpassen Sie nicht die Gelegenheit, diese aufregenden Neuheiten noch heute auszuprobieren!"
+    },
+    "SHOP": {
+      "TITLE": "Nikotinbeutel Shop",
+      "TEXT": "Hier finden Sie eine große Auswahl an Mixpacks zu tollen Preisen von beliebten Marken wie ZYN, Skruf, Thunder und mehr! Probieren Sie etwas Neues und sparen Sie Geld!"
+    }
+  },
+
+  "BANNER": {
+    "VELO": {
+      "SUBTITLE": "Sanft und Geschmackvoll",
+      "TITLE": "Entdecken Sie Velo",
+      "TEXT": "Erleben Sie die perfekte Balance aus Geschmack und Zufriedenheit mit Velo Nikotinbeuteln. Wählen Sie noch heute Ihren Favoriten!"
+    },
+    "ZYN": {
+      "SUBTITLE": "Raffiniert und Zuverlässig",
+      "TITLE": "Entdecken Sie Zyn",
+      "TEXT": "Zyn bietet ein sauberes, frisches Nikotinerlebnis. Perfekt für jeden Moment – probieren Sie Zyn jetzt aus!"
+    },
+    "THUNDER": {
+      "SUBTITLE": "Kraftvoll und Intensiv",
+      "TITLE": "Thunder Beutel",
+      "TEXT": "Spüren Sie die Kraft von Thunder – robuste Aromen und starke Nikotinhits für erfahrene Nutzer."
+    },
+    "VOLT": {
+      "SUBTITLE": "Dynamisch und Frisch",
+      "TITLE": "Entdecken Sie Volt",
+      "TEXT": "Volt bringt Ihnen mutige Innovation und erfrischende Geschmacksrichtungen. Starten Sie Ihren Tag mit Volt!"
+    },
+    "FEATURED": {
+      "SUBTITLE": "Entdecken Sie das Beste",
+      "TITLE": "Empfohlene Nikotinbeutel",
+      "TEXT": "Entdecken Sie unsere am besten bewerteten Nikotinbeutel, handverlesen für ihre außergewöhnliche Qualität und ihren Geschmack. Finden Sie noch heute Ihren Favoriten!"
+    },
+    "HOT_DEALS": {
+      "SUBTITLE": "Nicht verpassen",
+      "TITLE": "Heiße Angebote",
+      "TEXT": "Holen Sie sich unglaubliche Rabatte auf Premium-Nikotinbeutel. Angebote nur für kurze Zeit!"
+    }
+  },
+
+  "BUTTONS": {
+    "VIEW_ALL": "Alle ansehen",
+    "BUY_NOW": "Jetzt kaufen",
+    "SHOP_NOW": "Jetzt shoppen",
+    "ADD_TO_CART": "In den Warenkorb",
+    "ADD": "Warenkorb",
+    "SUBMIT": "Absenden",
+    "LOAD_MORE": "Mehr laden",
+    "RECOVER_PASSWORD": "Passwort wiederherstellen",
+    "CONTINUE": "Weiter",
+    "PROCEED_TO_BUY": "Zum Kauf fortfahren",
+    "SAVE_FOR_LATER": "Für später speichern",
+    "REMOVE": "Entfernen",
+    "MOVE_TO_CART": "In den Warenkorb verschieben",
+    "CHANGE": "Ändern",
+    "EDIT": "Bearbeiten",
+    "SAVE_AND_DELIVER_HERE": "Speichern & hier liefern",
+    "CANCEL": "Abbrechen",
+    "UPDATE": "Aktualisieren",
+    "SAVE": "Speichern",
+    "DELETE": "Löschen",
+    "SEND_INVITATION": "Einladung senden",
+    "LOGOUT": "Abmelden",
+    "EXPLORE": "Entdecken",
+    "OUT_OF_STOCK": "Ausverkauft",
+    "AVAILABLE_SOON": "Bald wieder erhältlich!",
+    "CHANGE_PASSWORD": "Passwort ändern",
+    "PAY_NOW": "Jetzt bezahlen"
+  },
+  "LABELS": {
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Passwort",
+    "NAME": "Vorname",
+    "SURNAME": "Nachname",
+    "CONFIRM_PASSWORD": "Passwort bestätigen",
+    "PHONE_NUMBER": "Telefonnummer",
+    "COUNTRY": "Land",
+    "POSTAL_CODE": "Postleitzahl",
+    "CITY": "Stadt",
+    "STREET": "Straße",
+    "STREET_NUMBER": "Hausnummer",
+    "SECONDARY_STREET": "Zusätzliche Straße",
+    "OPTIONAL": " (optional)",
+    "BUILDING_NUMBER": "Gebäudenummer",
+    "NEW_PASSWORD": "Neues Passwort"
+  },
+  "PLACEHOLDERS": {
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Passwort eingeben",
+    "NAME": "Vorname eingeben",
+    "SURNAME": "Nachname eingeben",
+    "CONFIRM_PASSWORD": "Passwort erneut eingeben",
+    "PHONE_NUMBER": "Telefonnummer eingeben",
+    "COUNTRY": "Land eingeben",
+    "POSTAL_CODE": "Postleitzahl eingeben",
+    "CITY": "Stadt eingeben",
+    "STREET": "Straße eingeben",
+    "STREET_NUMBER": "Hausnummer eingeben",
+    "SECONDARY_STREET": "Zusätzliche Straße eingeben",
+    "BUILDING_NUMBER": "Gebäudenummer eingeben",
+    "NOTE": "Zusätzliche Notiz zur Lieferung...",
+    "SEARCH_PRODUCTS": "Produkte durchsuchen...",
+    "NEW_PASSWORD": "Neues Passwort eingeben"
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": "Erfolg",
+    "EMAIL_ALREADY_SUBSCRIBED": "E-Mail bereits abonniert.",
+    "LOGIN_ERROR_401": "Falsches Passwort oder falsche E-Mail, bitte später erneut versuchen.",
+    "REGISTRATION_ERROR_401": "Bei der Registrierung ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "ERROR": "Fehler, bitte versuchen Sie es später erneut."
+  },
+  "COUNTRIES": {
+    "AT": "Österreich",
+    "DE": "Deutschland",
+    "CH": "Schweiz",
+    "FR": "Frankreich",
+    "IT": "Italien",
+    "ES": "Spanien",
+    "NL": "Niederlande",
+    "BE": "Belgien",
+    "SE": "Schweden",
+    "NO": "Norwegen",
+    "DK": "Dänemark",
+    "FI": "Finnland",
+    "PL": "Polen",
+    "CZ": "Tschechien",
+    "SK": "Slowakei",
+    "HU": "Ungarn",
+    "RO": "Rumänien",
+    "BG": "Bulgarien",
+    "HR": "Kroatien",
+    "SI": "Slowenien",
+    "RS": "Serbien"
+  }
+}

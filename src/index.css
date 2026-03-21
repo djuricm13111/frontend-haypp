@@ -1,0 +1,232 @@
+:root {
+  /* https://m2.material.io/design/color/dark-theme.html#properties */
+  --secondary-color: #357a50; /* Svijetlo tirkizna */
+  --error-color: #cf6679; /* Svijetlo crvena */
+  --success-color: #03dac6; /* Svijetlo zelena */
+  --warning-color: #ffc107; /* Žuta */
+  --info-color: #2196f3; /* Plava */
+
+  --primary-100: #002069;
+  --primary-200: #265488;
+  --primary-300: #dedeff;
+  --accent-100: #2196f3;
+  --accent-200: #003f8f;
+  --text-100: #222222;
+  --text-200: #5c5c5c;
+  --bg-100: #ffffff;
+  --bg-200: #f7fbff;
+  --bg-300: #f3f3f3;
+
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Razmaci */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Dimenzije layout-a */
+  /* --max-width-container: 1140px; */
+  --max-width-container: 1400px;
+  --sidebar-width: 700px;
+  --navbar-height: 60px;
+  --navbar-height-desktop: 80px;
+  --navbar-mini: 40px;
+  --footer-height: 400px;
+
+  /* Veličine fontova */
+  --font-size-small: 0.8rem; /* 12px ako je bazni font 16px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-large: 1.25rem; /* 20px */
+  --font-size-xlarge: 1.5rem; /* 24px */
+  --font-size-xxlarge: 2rem; /* 32px */
+
+  /* Veličine granica */
+  --border-width-base: 1px;
+  --border-width-thick: 2px;
+  --border-radius-small: 4px;
+  --border-radius-base: 8px;
+  --border-radius-large: 16px;
+
+  /* Veličine senki */
+  --shadow-small: 0 1px 2px rgba(0, 0, 0, 0.07);
+  --shadow-medium: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0 4px 6px rgba(0, 0, 0, 0.15);
+
+  /* Animacije i Tranzicije */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+
+  /* Z-Index vrednosti */
+  --zindex-background: -1; /* Za elemente u pozadini */
+  --zindex-default: 1; /* Podrazumevana vrednost za većinu elemenata */
+  --zindex-dropdown: 1000; /* Za dropdown menije i autocomplete komponente */
+  --zindex-sticky: 1020; /* Za sticky elemente, poput sticky navigacije */
+  --zindex-fixed: 1030; /* Za elemente sa fixed pozicioniranjem */
+  --zindex-modal-background: 1040; /* Pozadina za modale */
+  --zindex-modal: 1050; /* Modalni prozori */
+  --zindex-popover: 1060; /* Za popover elemente, poput tooltip-ova */
+  --zindex-tooltip: 1070; /* Specifično za tooltip-ove */
+  --zindex-toast: 1080; /* Za toast notifikacije */
+  --zindex-overlay: 1090; /* Za overlay slojeve, poput loadera ili dim efekta */
+  --zindex-top: 9999; /* Za elemente koji treba uvek da budu na vrhu */
+}
+@font-face {
+  font-family: "Oswald-Medium";
+  src: url("./assets/fonts/Montserrat/static/Montserrat-Bold.ttf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat/static/Montserrat-Regular.ttf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gudea-Regural";
+  src: url("./assets/fonts/Gudea/Gudea-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  background-color: var(--bg-100);
+  color: var(--text-200);
+  font-family: "Oswald-Medium";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-100);
+  padding: 0;
+  margin: 0;
+  font-family: "Oswald-Medium";
+}
+div {
+  font-family: "Oswald-Medium";
+}
+p {
+  font-family: "Gudea-Regural";
+  color: var(--text-100);
+  padding: 2px 0;
+  margin: 0;
+}
+a {
+  font-family: "Gudea-Regural";
+  font-size: var(--font-size-base);
+  color: var(--accent-200);
+  cursor: pointer;
+}
+button {
+  background-color: var(--primary-100);
+  color: var(--bg-100);
+  border: 1px solid var(--primary-100);
+  padding: var(--spacing-xs) var(--spacing-lg);
+  /* border-radius: var(--border-radius-base); */
+  font-size: var(--font-size-base);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  font-family: "Oswald-Medium";
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button:hover {
+  background-color: var(--primary-200);
+}
+
+input {
+  background-color: var(--bg-100);
+}
+
+article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+section {
+  width: calc(100% - 24px);
+}
+@media (min-width: 1025px) {
+  section {
+    width: var(--max-width-container);
+  }
+}
+
+.header-top-margin {
+  margin-top: calc(var(--navbar-height) + var(--navbar-mini));
+}
+@media (min-width: 1025px) {
+  .header-top-margin {
+    margin-top: calc(
+      var(--navbar-height-desktop) + var(--navbar-mini) + var(--navbar-mini)
+    );
+  }
+}
+
+.header-top-padding {
+  padding-top: calc(var(--navbar-height) + var(--navbar-mini) + 10px);
+}
+@media (min-width: 1025px) {
+  .header-top-padding {
+    padding-top: calc(
+      var(--navbar-height-desktop) + var(--navbar-mini) + var(--navbar-mini) +
+        10px
+    );
+  }
+}
+
+#logosvg-loading {
+  animation: fill 3s ease forwards infinite;
+}
+
+#logosvg-loading path:nth-child(1) {
+  stroke-dasharray: 3592.77099609375;
+  stroke-dashoffset: 744.7329711914062;
+  animation: line-anim 3s ease forwards infinite;
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--accent-100);
+  }
+}
+
+.Toastify__progress-bar--animated.custom-progress-bar,
+.Toastify__progress-bar.custom-progress-bar {
+  background-color: var(
+    --primary-200
+  ) !important; /* Jednobojna boja za progress bar */
+}
+.custom-toast {
+  background-color: var(
+    --bg-200
+  ) !important; /* Postavite željenu boju pozadine */
+}
