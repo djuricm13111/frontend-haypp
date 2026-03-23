@@ -196,7 +196,7 @@ const Spacer = styled.div`
   height: 8px;
 `;
 
-const navItems = [
+export const navItems = [
   "Nicotine Pouches",
   "Nicotine Free Pouches",
   "Caffeine Pouches",
@@ -207,7 +207,7 @@ const navItems = [
   "All Brands",
 ];
 
-const dropdownData = {
+export const dropdownData = {
   first: [
     {
       title: "Popular Brands",
@@ -260,6 +260,10 @@ const dropdownData = {
       title: "Can of the Month",
       href: "/can-of-the-month",
     },
+  ],
+  second: [
+    { title: "Free Sample", href: "/free-sample" },
+    { title: "Mixpacks & Bundles", href: "/mixpacks-bundles" },
   ],
 };
 
@@ -445,8 +449,11 @@ const HeaderList = ({ isScrolled }) => {
                 Here you will find all our Offers & Deals
               </SubHeaderTitleText>
               <SubHeaderGrid>
-                <MenuTitleLink>Free Sample</MenuTitleLink>
-                <MenuTitleLink>Mixpacks & Bundles </MenuTitleLink>
+                {dropdownData.second.map((row) => (
+                  <MenuTitleLink key={row.href} href={row.href}>
+                    {row.title}
+                  </MenuTitleLink>
+                ))}
               </SubHeaderGrid>
             </SubHeaderItem>
           </SubHeader>

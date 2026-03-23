@@ -113,6 +113,16 @@ const Wrapper = styled.div`
             animation: ${slideOut} 0.1s ease-in forwards; // Kraće trajanje za slide-out
           `};
   }
+
+  @media (max-width: 767px) {
+    width: 90%;
+    max-width: min(90vw, 100%);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100dvh;
+    box-sizing: border-box;
+  }
 `;
 
 const CartContainer = styled.div`
@@ -131,6 +141,14 @@ const CartContainer = styled.div`
 
   background-color: var(--bg-100);
   padding: 0 14px;
+
+  @media (max-width: 767px) {
+    height: 44px;
+    min-width: 44px;
+    padding: 0 4px;
+    gap: 0;
+    box-sizing: border-box;
+  }
 
   ${({ $bounce }) =>
     $bounce &&
@@ -198,11 +216,22 @@ const XDiv = styled.div`
   //margin-bottom: var(--spacing-md);
   background-color: var(--primary-100);
   color: var(--bg-100);
+
+  @media (max-width: 767px) {
+    flex-shrink: 0;
+    order: 1;
+  }
 `;
 const MiddleDiv = styled.div`
   max-height: calc(100vh - var(--navbar-height) * 3 - 30px);
   @media (min-width: 768px) {
     //max-height: 400px;
+  }
+  @media (max-width: 767px) {
+    order: 3;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
   }
   overflow: auto; /* omogućava skrolanje unutar div-a */
   -webkit-overflow-scrolling: touch;
@@ -253,6 +282,13 @@ const FreeDelivery = styled.div`
   border-top: 1px solid var(--bg-200);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   background-color: var(--bg-300);
+  @media (max-width: 767px) {
+    position: static;
+    order: 2;
+    flex-shrink: 0;
+    height: auto;
+    min-height: calc(var(--navbar-height) * 2);
+  }
   @media (min-width: 768px) {
     position: static;
   }
@@ -282,6 +318,13 @@ const Bottom = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   background-color: var(--bg-200);
   margin-bottom: 14px;
+  @media (max-width: 767px) {
+    position: static;
+    order: 4;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    padding-bottom: max(14px, env(safe-area-inset-bottom, 0px));
+  }
   @media (min-width: 768px) {
     position: static;
   }

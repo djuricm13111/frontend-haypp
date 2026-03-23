@@ -121,11 +121,15 @@ const Search = ({ isScrolled }) => {
       <Container
         onClick={() => setIsOpen(true)}
         $isScrolled={isScrolled && isOpen}
+        $pageScrolled={isScrolled}
         $isOpen={isOpen}
+        $expandMobile={isOpen && !isScrolled}
       >
-        <SearchWrapper $isOpen={isOpen}>
+        <SearchWrapper $isOpen={isOpen} $pageScrolled={isScrolled}>
           <Input
             $isScrolled={!isScrolled || isOpen}
+            $revealInput={isScrolled || isOpen}
+            $pageScrolled={isScrolled}
             $isOpen={isOpen}
             type="text"
             placeholder={t("HEADER.SEARCH_FOR") || "Search for"}
@@ -137,13 +141,10 @@ const Search = ({ isScrolled }) => {
             <SearchButton
               type="button"
               aria-label="Search"
-              $isScrolled={!isScrolled || isOpen}
+              $pageScrolled={isScrolled}
               $isScrolledR={isScrolled}
             >
-              <SearchIcon
-                $isScrolled={!isScrolled || isOpen}
-                viewBox="0 0 24 24"
-              >
+              <SearchIcon $pageScrolled={isScrolled} viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7" />
                 <line x1="16.65" y1="16.65" x2="21" y2="21" />
               </SearchIcon>
@@ -241,14 +242,77 @@ const Search = ({ isScrolled }) => {
 export default Search;
 
 const Container = styled.div`
-  width: 80%;
+  flex: 2;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  overflow: visible;
   z-index: ${(props) => (props.$isOpen ? "1002" : "0")};
 
+  position: ${(props) => (props.$isScrolled ? "absolute" : "relative")};
+
+  @media (max-width: 767px) {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    justify-content: center;
+
+    ${(props) =>
+      props.$isOpen &&
+      css`
+        align-items: stretch;
+      `}
+
+    ${(props) =>
+      props.$pageScrolled &&
+      !props.$isOpen &&
+      css`
+        flex: 1 1 auto;
+        min-width: 0;
+        /* ~4×44px ikone + razmaci + padding reda (~24px) */
+        max-width: calc(100vw - 220px);
+      `}
+
+    /* pun širina + visina reda: nadoknada padding MainHeaderWrapper (12px) */
+    ${(props) =>
+      props.$expandMobile &&
+      css`
+        position: absolute;
+        left: -12px;
+        right: -12px;
+        top: 0;
+        bottom: 0;
+        flex: none;
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        justify-content: stretch;
+      `}
+
+    ${(props) =>
+      props.$isScrolled &&
+      css`
+        left: -12px;
+        right: -12px;
+        top: 0;
+        bottom: 0;
+        width: auto;
+        max-width: none;
+        flex: none;
+        min-width: 0;
+        padding: 0;
+        justify-content: stretch;
+      `}
+  }
+
   @media (min-width: 768px) {
-    position: ${(props) => (props.$isScrolled ? "absolute" : "relative")};
     width: ${(props) =>
       props.$isScrolled ? "calc(var(--max-width-container) * 0.8)" : "80%"};
   }
@@ -266,6 +330,40 @@ const SearchWrapper = styled.div`
   border-bottom: ${(props) =>
     props.$isOpen ? "2px solid var(--bg-300)" : "none"};
   overflow: hidden;
+
+  ${(props) =>
+    props.$isOpen &&
+    css`
+      position: relative;
+      z-index: 3;
+    `}
+
+  @media (max-width: 767px) {
+    height: 44px;
+    width: ${(props) => (props.$isOpen ? "100%" : "auto")};
+    min-width: 0;
+    max-width: 100%;
+
+    ${(props) =>
+      props.$isOpen &&
+      css`
+        align-self: stretch;
+        width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+        height: calc(100% - 4px);
+        min-height: 50px;
+        margin: 2px 10px;
+        box-sizing: border-box;
+        border-radius: 6px;
+      `}
+
+    ${(props) =>
+      props.$pageScrolled &&
+      !props.$isOpen &&
+      css`
+        width: 100%;
+      `}
+  }
 `;
 
 const Input = styled.input`
@@ -288,6 +386,26 @@ const Input = styled.input`
     outline: none;
   }
 
+  @media (max-width: 767px) {
+    display: ${(props) => (props.$revealInput ? "block" : "none")};
+    min-width: 0;
+    flex: 1;
+
+    ${(props) =>
+      props.$isOpen &&
+      css`
+        padding: 0 12px;
+      `}
+
+    ${(props) =>
+      props.$pageScrolled &&
+      props.$revealInput &&
+      !props.$isOpen &&
+      css`
+        padding: 0 8px;
+      `}
+  }
+
   @media (min-width: 768px) {
     display: ${(props) => (props.$isScrolled ? "block" : "none")};
   }
@@ -303,14 +421,34 @@ const SearchButton = styled.button`
   justify-content: center;
   cursor: pointer;
   transition: none;
+  background-color: ${(props) =>
+    props.$pageScrolled ? "var(--primary-100)" : "transparent"};
+
+  &:hover {
+    background-color: ${(props) =>
+      props.$pageScrolled ? "var(--primary-200)" : "transparent"};
+  }
 
   @media (min-width: 768px) {
     background-color: ${(props) =>
-      props.$isScrolled ? "var(--primary-100)" : "transparent"};
+      props.$pageScrolled ? "transparent" : "var(--primary-100)"};
 
     &:hover {
       background-color: ${(props) =>
-        props.$isScrolled ? "var(--primary-200)" : "transparent"};
+        props.$pageScrolled ? "transparent" : "var(--primary-200)"};
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    flex-shrink: 0;
+    padding: 0;
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;
@@ -326,51 +464,67 @@ const CancelButton = styled(SearchButton)`
 const SearchIcon = styled.svg`
   width: 24px;
   height: 24px;
-  stroke: white;
   stroke-width: 2;
   fill: none;
+  stroke: ${(props) =>
+    props.$pageScrolled ? "var(--bg-100)" : "var(--text-100)"};
+
+  @media (max-width: 767px) {
+    stroke: ${(props) =>
+      props.$pageScrolled ? "var(--text-100)" : "var(--primary-100)"};
+  }
 
   @media (min-width: 768px) {
     stroke: ${(props) =>
-      props.$isScrolled ? "var(--bg-100)" : "var(--text-100)"};
+      props.$pageScrolled ? "var(--text-100)" : "var(--bg-100)"};
   }
 `;
 
 const MaskContainer = styled.div`
   position: fixed;
-  right: 0;
-  top: 0;
+  inset: 0;
   z-index: 1001;
-  min-width: 100%;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   background-color: #0000003a;
-  display: none;
-
-  @media (min-width: 768px) {
-    display: ${(props) => (props.$isOpen ? "block" : "none")};
-  }
+  display: ${(props) => (props.$isOpen ? "block" : "none")};
 `;
 
 const ResultContainer = styled.div`
   position: absolute;
   background-color: var(--bg-100);
   width: 100%;
+  left: 0;
+  right: 0;
   top: ${(props) =>
     props.$isDeliveryHidden ? "100%" : "calc(100% - var(--navbar-mini))"};
-  left: 0;
   border-radius: 0 0 8px 8px;
   z-index: 1;
   height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
   max-height: 90vh;
+  box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    top: 100%;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    margin-top: 4px;
+    height: auto;
+    max-height: 75vh;
+    z-index: 2;
+    box-shadow: var(--shadow-large);
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
 
   @media (min-width: 768px) {
-    width: 100%;
-    left: 0;
     top: 100%;
     box-shadow: var(--shadow-large);
     height: auto;
-    //padding: 20px 0 40px 0;
     max-height: 70vh;
   }
 
@@ -387,6 +541,11 @@ const ResultContainer = styled.div`
 const ResultWrapper = styled.div`
   width: 100%;
   margin-bottom: 60px;
+  box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    padding: 0 6px 8px;
+  }
 
   @media (min-width: 768px) {
     display: flex;
@@ -415,6 +574,13 @@ const ResultItem = styled.div`
   color: var(--text-100);
   cursor: pointer;
   width: 94%;
+  box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
 `;
 
 const ProductResult = styled(ResultItem)`
@@ -434,18 +600,14 @@ const ResultTitle = styled.h4`
 
 const BottomButtonWrapper = styled.div`
   width: 100%;
-  bottom: 10px;
   left: 0;
+  flex-shrink: 0;
   background-color: var(--bg-100);
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(6px);
-
-  @media (min-width: 768px) {
-    display: block;
-    position: sticky;
-    bottom: 0;
-    padding: 4px 0;
-  }
+  position: sticky;
+  bottom: 0;
+  padding: 4px 0;
 `;
 
 const ViewAllButton = styled.button`

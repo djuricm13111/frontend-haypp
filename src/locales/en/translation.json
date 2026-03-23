@@ -1,5 +1,15 @@
 {
   "HEADER": {
+    "PRODUCT_CATEGORIES": "Product categories",
+    "LANGUAGE": "Language",
+    "CLOSE_MENU": "Close menu",
+    "NAV_OPEN_MENU": "Open menu",
+    "GO_BACK": "Back",
+    "MOBILE_NAV_SUBPATH": "{{parent}} > {{child}}",
+    "MOBILE_SHOW_ALL_IN": "Show everything in {{name}}",
+    "MOBILE_NAV_OTHER": "Other",
+    "TRUSTPILOT_EXCELLENT": "Excellent",
+    "TRUSTPILOT_BRAND": "Trustpilot",
     "TOP_SELLER": "Top Seller",
     "NICOTINE_POUCHES": "Nicotine Pouches",
     "BRANDS": "Brands",
@@ -45,7 +55,8 @@
     "BEST_SELLERS": "Best Sellers",
     "BRANDS": "Brands",
     "SIGN_UP": "Sign Up",
-    "LOGIN": "Login"
+    "LOGIN": "Login",
+    "MY_ACCOUNT": "My Account"
   },
 
   "CHECKOUT_HEADER": {
@@ -91,6 +102,7 @@
   },
 
   "LOGIN": {
+    "SIGN_IN": "Sign in",
     "TITLE": "Login",
     "SUBTITLE": "Access your account",
     "FORGOT_PASSWORD": "Forgot your password?",

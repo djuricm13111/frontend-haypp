@@ -88,12 +88,14 @@ export const languages = [
   {
     code: "de",
     label: "Deutsch",
-    //flag: require("../assets/icons/austria.svg").default,
+    regionLabel: "Austria",
+    flag: require("../assets/icons/austria.svg").default,
   },
   {
     code: "en",
     label: "English",
-    //flag: require("../assets/icons/united-kingdom.svg").default,
+    regionLabel: "United Kingdom",
+    flag: require("../assets/icons/united-kingdom.svg").default,
   },
 ];
 
