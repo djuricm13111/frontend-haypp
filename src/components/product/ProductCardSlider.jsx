@@ -36,11 +36,12 @@ const Track = styled.div`
 `;
 
 const SlideCell = styled.div`
+  display: flex;
   flex: 0 0 ${({ $count }) => 100 / $count}%;
   width: ${({ $count }) => 100 / $count}%;
   min-width: 0;
   box-sizing: border-box;
-  padding: 0 var(--spacing-xs);
+  padding: 0 var(--spacing-xxs);
 
   @media (min-width: 769px) {
     padding: 0 var(--spacing-sm);
@@ -56,10 +57,6 @@ const ArrowZone = styled.div`
   pointer-events: none;
   padding: 0;
   z-index: var(--zindex-default);
-
-  @media ${MOBILE} {
-    display: none;
-  }
 `;
 
 const ArrowButton = styled.button`
@@ -83,6 +80,14 @@ const ArrowButton = styled.button`
   cursor: pointer;
   transition: background var(--transition-fast), border-color var(--transition-fast),
     box-shadow var(--transition-fast), opacity var(--transition-fast);
+
+  @media ${MOBILE} {
+    width: 28px;
+    flex-basis: 28px;
+    min-height: 52px;
+    max-height: 100px;
+    background: rgba(255, 255, 255, 0.85);
+  }
 
   &:first-of-type {
     border-top-right-radius: var(--border-radius-base);
@@ -114,6 +119,11 @@ const ArrowButton = styled.button`
     width: 32px;
     height: 32px;
     flex-shrink: 0;
+
+    @media ${MOBILE} {
+      width: 22px;
+      height: 22px;
+    }
   }
 `;
 

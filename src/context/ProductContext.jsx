@@ -98,7 +98,7 @@ export const ProductProvider = ({ children }) => {
   const loadNewArrivalsBackend = async () => {
     try {
       const response = await APIService.GetNewArrivals();
-      setNewArrivals(response.slice(0, 23));
+      setNewArrivals(response.slice(0, 12));
     } catch (error) {
       console.error(error);
     }

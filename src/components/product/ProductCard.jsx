@@ -66,6 +66,8 @@ const Card = styled.figure`
   margin: 0;
   width: 100%;
   max-width: 100%;
+  height: 100%;
+  min-height: 0;
   background: var(--bg-100);
   border-radius: var(--border-radius-base);
   box-shadow: var(--shadow-medium);
@@ -201,14 +203,30 @@ const BodyInner = styled.div`
   flex-direction: column;
   gap: var(--spacing-xxs);
   min-height: 0;
+  flex-shrink: 0;
+`;
+
+/** Fiksna visina za 2 reda brenda — kartice u gridu/slideru ostaju iste visine. */
+const BrandRow = styled.div`
+  flex-shrink: 0;
+  min-height: calc(2 * 1.2em);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  display: flex;
+  align-items: flex-start;
 `;
 
 const Brand = styled.p`
   margin: 0;
-  font-size: 0.75rem;
+  font-size: inherit;
   color: var(--text-200);
   font-weight: 400;
   line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
 `;
 
 const ProductTitleCategory = styled.span`
@@ -257,6 +275,7 @@ const QuantityWrap = styled.div`
   position: relative;
   z-index: 1;
   flex-shrink: 0;
+  margin-top: auto;
 `;
 
 /** Panel je pozicioniran od vrha dugmeta (bottom: 100%), širi se preko qty reda, naslova i slike. */
@@ -1130,9 +1149,9 @@ const ProductCard = ({ product }) => {
           </Picture>
         </ImageSection>
         <BodyInner>
-          {product.manufacturer ? (
-            <Brand>{product.manufacturer}</Brand>
-          ) : null}
+          <BrandRow>
+            {product.manufacturer ? <Brand>{product.manufacturer}</Brand> : null}
+          </BrandRow>
           <ProductName onClick={closeDesktopPickerOrNavigate}>
             {product.category_name ? (
               <>

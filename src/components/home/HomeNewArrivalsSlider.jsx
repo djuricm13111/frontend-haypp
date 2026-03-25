@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { ProductContext } from "../../context/ProductContext";
@@ -52,13 +52,20 @@ const HomeNewArrivalsSlider = () => {
   const { t } = useTranslation();
   const { newArrivals, loadNewArrivalsBackend } = useContext(ProductContext);
 
+  const sliderProducts = useMemo(
+    () =>
+      newArrivals
+        .filter((p) => p.is_in_stock === "in_stock")
+        .slice(0, 6),
+    [newArrivals]
+  );
+
   useEffect(() => {
     loadNewArrivalsBackend();
     // loadNewArrivalsBackend nije memoizovan u Provideru — jednokratno učitavanje na mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    
   }, []);
-console.log(newArrivals);
+
   return (
     <Section aria-labelledby="home-new-arrivals-slider-heading">
       <Title id="home-new-arrivals-slider-heading">
@@ -69,7 +76,7 @@ console.log(newArrivals);
         <TopBrands>{t("HOME.NEW_ARRIVALS_SLIDER.TOP_BRANDS")}</TopBrands>
         {t("HOME.NEW_ARRIVALS_SLIDER.DESC_AFTER")}
       </Desc>
-      <ProductCardSlider products={newArrivals} />
+      <ProductCardSlider products={sliderProducts} />
     </Section>
   );
 };
