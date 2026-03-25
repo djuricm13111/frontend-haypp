@@ -199,15 +199,13 @@ const Search = ({ isScrolled }) => {
                   </ResultTitle>
 
                   {searchCategories.slice(0, maxProductsToShow).map((item) => (
-                    <ProductResult
+                    <CategorySearchRow
                       key={item.id}
                       onClick={() => handleCategoryCardClick(item.name)}
                     >
-                      <div style={{ fontFamily: "Montserrat" }}>
-                        {item.name}
-                      </div>
-                      <div>Category</div>
-                    </ProductResult>
+                      <CategoryNameText>{item.name}</CategoryNameText>
+                      <CategoryMetaText>Category</CategoryMetaText>
+                    </CategorySearchRow>
                   ))}
                 </InnerWrapperCategory>
               )}
@@ -621,6 +619,33 @@ const ProductResult = styled(ResultItem)`
   min-height: 24px;
   justify-content: space-between;
   margin: 0 auto;
+`;
+
+const CategorySearchRow = styled(ProductResult)`
+  @media (max-width: 767px) {
+    font-size: calc(var(--header-dropdown-link-size, 0.875rem) + 3px);
+    line-height: 1.4;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+`;
+
+const CategoryNameText = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+
+  @media (max-width: 767px) {
+    font-weight: 600;
+  }
+`;
+
+const CategoryMetaText = styled.span`
+  font-size: 0.75rem;
+  color: var(--text-200);
+
+  @media (max-width: 767px) {
+    font-size: 0.8125rem;
+  }
 `;
 
 const ResultTitle = styled.h4`

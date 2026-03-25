@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { calculatePrice } from "../../../utils/discount";
 import AddToCartAnim from "../../../components/animations/AddToCartAnim";
 import { cartActions } from "../../../store/cart-slice";
+import { ReactComponent as CartBasketAddMobileIcon } from "../../../assets/icons/cart-basket-add-mobile.svg";
 
 const QUANTITY_OPTIONS = [1, 10, 30, 50];
 
@@ -185,21 +186,7 @@ const SearchProduct = ({
             <ButtonWrapper>
               <Button type="button" onClick={handleAddToCart} aria-label="Add to cart">
                 <AddToCartLabel>Add to cart</AddToCartLabel>
-                <CartIconMobile
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden
-                >
-                  <path
-                    d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                 
-                </CartIconMobile>
+                <CartIconMobile aria-hidden focusable="false" />
               </Button>
 
               {isAnimating && (
@@ -245,19 +232,19 @@ const FlexDivProduct = styled.div`
       p.$oos
         ? css`
             display: grid;
-            grid-template-columns: 52px minmax(0, 1fr) 48px;
+            grid-template-columns: 48px minmax(0, 1fr) 52px;
             grid-template-rows: auto;
-            column-gap: 10px;
+            column-gap: 8px;
             align-items: center;
             width: 100%;
             max-width: 100%;
           `
         : css`
             display: grid;
-            grid-template-columns: 52px minmax(0, 1fr) 48px;
+            grid-template-columns: 48px minmax(0, 1fr) 52px;
             grid-template-rows: auto auto;
-            column-gap: 10px;
-            row-gap: 6px;
+            column-gap: 8px;
+            row-gap: 8px;
             align-items: center;
             width: 100%;
             max-width: 100%;
@@ -319,7 +306,7 @@ const OutOfStockStretch = styled.div`
   @media (max-width: 767px) {
     grid-column: 3;
     grid-row: 1;
-    width: 48px;
+    width: 52px;
     justify-self: end;
     align-self: start;
     flex-shrink: 0;
@@ -392,9 +379,11 @@ const ProductTitle = styled.h5`
   margin: 0;
 
   @media (max-width: 767px) {
+    font-size: 0.8125rem;
+    font-weight: 500;
     grid-column: 2;
     grid-row: 1;
-    line-height: 1.25;
+    line-height: 1.3;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -418,7 +407,7 @@ const OutOfStockButtonWrapper = styled.div`
   width: 100%;
 
   @media (max-width: 767px) {
-    width: 48px;
+    width: 52px;
   }
 `;
 
@@ -469,11 +458,11 @@ const ViewProductButton = styled.button`
   }
 
   @media (max-width: 767px) {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
     padding: 0;
-    border-radius: 4px;
+    border-radius: 6px;
   }
 
   @media (min-width: 768px) {
@@ -522,6 +511,11 @@ const ProductPriceButton = styled.button`
     grid-row: 2;
     align-self: start;
     min-width: 0;
+    width: 100%;
+    height: 48px;
+    min-height: 48px;
+    padding: 0 12px;
+    gap: 8px;
     z-index: ${({ $isOpen }) => ($isOpen ? 4 : 0)};
   }
 
@@ -532,12 +526,22 @@ const PriceLeft = styled.span`
   text-align: left;
   font-size: 15px;
   font-weight: 100;
+
+  @media (max-width: 767px) {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 `;
 
 const PriceRight = styled.span`
   font-size: 17px;
   font-weight: 700;
   white-space: nowrap;
+
+  @media (max-width: 767px) {
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
 `;
 
 const ArrowIcon = styled.span`
@@ -546,6 +550,13 @@ const ArrowIcon = styled.span`
   justify-content: center;
   transform: ${({ $isOpen }) => ($isOpen ? "rotate(180deg)" : "rotate(0deg)")};
   transition: transform 0.2s ease;
+
+  @media (max-width: 767px) {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
 
 const ProductPriceDropdown = styled.div`
@@ -584,6 +595,11 @@ const OptionLabel = styled.span`
   font-size: 14px;
   font-weight: 100;
   color: var(--text-100);
+
+  @media (max-width: 767px) {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 `;
 
 const OptionPrice = styled.span`
@@ -591,6 +607,10 @@ const OptionPrice = styled.span`
   font-weight: 700;
   color: var(--text-100);
   white-space: nowrap;
+
+  @media (max-width: 767px) {
+    font-size: 1.0625rem;
+  }
 `;
 
 const CheckCircle = styled.span`
@@ -611,7 +631,7 @@ const ButtonWrapper = styled.div`
   @media (max-width: 767px) {
     grid-column: 3;
     grid-row: 1 / 3;
-    width: 48px;
+    width: 52px;
     justify-self: end;
     align-self: center;
   }
@@ -636,14 +656,17 @@ const AddToCartLabel = styled.span`
   }
 `;
 
-const CartIconMobile = styled.svg`
+const CartIconMobile = styled(CartBasketAddMobileIcon)`
   width: 22px;
   height: 22px;
   display: none;
+  flex-shrink: 0;
   color: var(--bg-100);
 
   @media (max-width: 767px) {
     display: block;
+    width: 24px;
+    height: 24px;
   }
 `;
 
