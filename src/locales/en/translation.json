@@ -97,6 +97,11 @@
       "BUNDLES": "Bundles",
       "PICK_AND_MIX": "Pick & Mix",
       "FREE_SAMPLE": "Free Sample"
+    },
+    "NEW_ARRIVALS_SLIDER": {
+      "DESC_BEFORE": "Be the first to try the latest nicotine pouches. Our new arrivals section is updated regularly with fresh launches from ",
+      "TOP_BRANDS": "top brands",
+      "DESC_AFTER": "."
     }
   },
 

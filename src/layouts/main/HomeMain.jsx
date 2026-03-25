@@ -8,6 +8,7 @@ import HomePromoIntro, {
   PROMO_LINK_TOBACCO_FREE,
 } from "../../components/home/HomePromoIntro";
 import ProductPromoSlider from "../../components/ProductPromoSlider";
+import HomeNewArrivalsSlider from "../../components/home/HomeNewArrivalsSlider";
 import bannerFumi from "../../assets/images/banner/fumi.jpg";
 import bannerNordic from "../../assets/images/banner/nordic_spirit.jpg";
 import bannerSkruf from "../../assets/images/banner/skruf.jpg";
@@ -174,11 +175,6 @@ const demoPromoSlides = [
   },
 ];
 
-const Content = styled.div`
-  height: 2000px;
-  background: #f5f5f5;
-`;
-
 const HomeMain = () => {
   return (
     <>
@@ -201,7 +197,8 @@ const HomeMain = () => {
         wideItems
       />
 
-      <Content />
+
+      <HomeNewArrivalsSlider />
     </>
   );
 };

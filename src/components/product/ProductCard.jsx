@@ -127,13 +127,14 @@ const ImageSection = styled.div`
   }
 `;
 
-const OfferBadge = styled.span`
+/** Kartica na slici: `card_badge` ili legacy `show_offer`. Boje: proizvoljne CSS vrednosti. */
+const ProductCardBadge = styled.span`
   position: absolute;
   top: 10px;
   right: 10px;
   z-index: 2;
-  background: var(--primary-100);
-  color: var(--bg-100);
+  background: ${(p) => p.$background ?? "var(--primary-100)"};
+  color: ${(p) => p.$foreground ?? "var(--bg-100)"};
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -864,12 +865,6 @@ function buildPackOptions(product) {
   });
 }
 
-function lineSavingsPercent(unitPrice, quantity, lineTotal) {
-  const naive = Number(unitPrice) * quantity;
-  if (naive <= 0) return 0;
-  return Math.round(((naive - lineTotal) / naive) * 100);
-}
-
 const ProductCard = ({ product }) => {
   const { t } = useTranslation();
   const isMobileQty = useMatchMobileQty();
@@ -887,11 +882,29 @@ const ProductCard = ({ product }) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   const selected = packOptions.find((o) => o.quantity === selectedQty) ?? packOptions[0];
-  const savingsPct = selected
-    ? lineSavingsPercent(product.price, selected.quantity, selected.total)
-    : 0;
-  const showOfferBadge =
-    product.show_offer !== false && savingsPct > 0;
+
+  const cardBadge = useMemo(() => {
+    const b = product.card_badge;
+    if (b && typeof b === "object") {
+      const label = b.labelKey ? t(b.labelKey) : b.label;
+      if (typeof label === "string" && label.trim()) {
+        return {
+          label: label.trim(),
+          background:
+            b.backgroundColor ?? b.background ?? undefined,
+          color: b.color ?? b.textColor ?? undefined,
+        };
+      }
+    }
+    if (product.show_offer === true) {
+      return {
+        label: t("PRODUCT_CARD.OFFER"),
+        background: undefined,
+        color: undefined,
+      };
+    }
+    return null;
+  }, [product.card_badge, product.show_offer, t]);
 
   useEffect(() => {
     if (!pickerOpen) return;
@@ -1087,8 +1100,13 @@ const ProductCard = ({ product }) => {
               onClick={() => setPickerOpen(false)}
             />
           )}
-          {showOfferBadge && !pickerOpen && (
-            <OfferBadge>{t("PRODUCT_CARD.OFFER")}</OfferBadge>
+          {cardBadge && !pickerOpen && (
+            <ProductCardBadge
+              $background={cardBadge.background}
+              $foreground={cardBadge.color}
+            >
+              {cardBadge.label}
+            </ProductCardBadge>
           )}
           <Picture onClick={closeDesktopPickerOrNavigate} $secondary_image={secondaryImage}>
             {primaryImage && (

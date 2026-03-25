@@ -97,6 +97,11 @@
       "BUNDLES": "Bundles",
       "PICK_AND_MIX": "Mix & Match",
       "FREE_SAMPLE": "Gratisprobe"
+    },
+    "NEW_ARRIVALS_SLIDER": {
+      "DESC_BEFORE": "Seien Sie der Erste, der die neuesten Nikotinbeutel probiert. In unserem Neuheiten-Bereich finden Sie regelmäßig neue Produkte von ",
+      "TOP_BRANDS": "Top-Marken",
+      "DESC_AFTER": "."
     }
   },
 
