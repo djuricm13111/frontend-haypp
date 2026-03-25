@@ -12,7 +12,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   @media (min-width: 768px) {
-    width: 80%;
+    width: 100%;
   }
 `;
 const IconDiv = styled.div`
@@ -58,10 +58,10 @@ const FakeInputDiv = styled.div`
 const FakeInputSpan = styled.span`
   font-family: "Gudea-Regural";
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   font-style: normal;
-  line-height: 24px;
+  line-height: 26px;
   letter-spacing: normal;
 
   color: var(--text-200);
@@ -117,18 +117,17 @@ const InputWrapper = styled.div`
 
 const Input = styled.input`
   flex: 10;
-  font-size: var(--font-size-medium);
   font-weight: 400;
   padding: 0;
   width: 100%;
 
   padding: var(--spacing-xs);
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   &::placeholder {
     color: var(--text-200);
     font-weight: 400;
-    line-height: 24px;
+    line-height: 26px;
     border: none;
   }
 

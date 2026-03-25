@@ -22,7 +22,7 @@ const ItemContainer = styled.div`
 
   font-family: "Oswald-Medium";
   text-transform: uppercase;
-  font-size: var(--font-size-base);
+  font-size: var(--header-link-size);
   font-weight: 500;
   justify-content: space-between;
   flex-direction: column;
@@ -34,7 +34,7 @@ const ItemContainer = styled.div`
     justify-content: center;
     gap: 8px;
     width: auto;
-    min-height: 40px;
+    min-height: 36px;
     box-sizing: border-box;
   }
 `;
@@ -44,7 +44,7 @@ const Span = styled.span`
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-  font-size: var(--font-size-base);
+  font-size: var(--header-link-size);
 
   @media (min-width: 768px) {
     line-height: 1;
@@ -98,7 +98,7 @@ const StyledLabel = styled.label`
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
   margin: 8px auto;
-  font-size: var(--font-size-base);
+  font-size: var(--header-dropdown-link-size);
   gap: 12px;
 
   &:hover {
@@ -142,11 +142,11 @@ const DrawerTrigger = styled.button`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 15px 20px;
+  padding: 12px 16px;
   border: none;
   background-color: #f5f5f5;
   color: #333;
-  font-size: 15px;
+  font-size: var(--header-dropdown-title-size);
   font-weight: 500;
   text-align: left;
   cursor: pointer;
@@ -169,12 +169,12 @@ const HayppDrawerTrigger = styled.button`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 15px 20px;
+  padding: 12px 16px;
   border: none;
   border-bottom: 1px solid #e0e0e0;
   background-color: #fff;
   color: #333;
-  font-size: 15px;
+  font-size: var(--header-dropdown-title-size);
   font-weight: 400;
   text-align: left;
   cursor: pointer;
@@ -214,7 +214,7 @@ const HayppTriggerLead = styled.span`
 
 const HayppRowArrow = styled.span`
   color: #001a57;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1;
   flex-shrink: 0;
   transition: transform 0.2s ease;
@@ -238,7 +238,7 @@ const DrawerLangButton = styled.button`
   background: transparent;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
-  font-size: var(--font-size-base);
+  font-size: var(--header-dropdown-link-size);
   color: var(--text-100);
   text-align: left;
 

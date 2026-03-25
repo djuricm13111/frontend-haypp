@@ -145,8 +145,15 @@ const Search = ({ isScrolled }) => {
               $isScrolledR={isScrolled}
             >
               <SearchIcon $pageScrolled={isScrolled} viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="7" />
-                <line x1="16.65" y1="16.65" x2="21" y2="21" />
+                <circle cx="11" cy="11" r="7" strokeWidth="2" />
+                <line
+                  x1="17"
+                  y1="17"
+                  x2="21"
+                  y2="21"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
               </SearchIcon>
             </SearchButton>
           ) : (
@@ -155,13 +162,12 @@ const Search = ({ isScrolled }) => {
               aria-label="Close search"
               onClick={handleCloseSearch}
             >
-              <SearchIcon viewBox="0 0 24 24">
+              <SearchIcon $closeIcon viewBox="0 0 24 24">
                 <line
                   x1="6"
                   y1="6"
                   x2="18"
                   y2="18"
-                  stroke="var(--text-100)"
                   strokeWidth="2"
                   strokeLinecap="round"
                 />
@@ -170,7 +176,6 @@ const Search = ({ isScrolled }) => {
                   y1="6"
                   x2="6"
                   y2="18"
-                  stroke="var(--text-100)"
                   strokeWidth="2"
                   strokeLinecap="round"
                 />
@@ -274,8 +279,8 @@ const Container = styled.div`
       css`
         flex: 1 1 auto;
         min-width: 0;
-        /* ~4×44px ikone + razmaci + padding reda (~24px) */
-        max-width: calc(100vw - 220px);
+        max-width: none;
+        width: 100%;
       `}
 
     /* pun širina + visina reda: nadoknada padding MainHeaderWrapper (12px) */
@@ -313,14 +318,13 @@ const Container = styled.div`
   }
 
   @media (min-width: 768px) {
-    width: ${(props) =>
-      props.$isScrolled ? "calc(var(--max-width-container) * 0.8)" : "80%"};
+    width: 100%;
   }
 `;
 
 const SearchWrapper = styled.div`
   width: 100%;
-  height: 46px;
+  height: 42px;
   display: flex;
   align-items: stretch;
   /* background-color: ${(props) =>
@@ -339,7 +343,7 @@ const SearchWrapper = styled.div`
     `}
 
   @media (max-width: 767px) {
-    height: 44px;
+    height: 40px;
     width: ${(props) => (props.$isOpen ? "100%" : "auto")};
     min-width: 0;
     max-width: 100%;
@@ -351,7 +355,7 @@ const SearchWrapper = styled.div`
         width: calc(100% - 20px);
         max-width: calc(100% - 20px);
         height: calc(100% - 4px);
-        min-height: 50px;
+        min-height: 44px;
         margin: 2px 10px;
         box-sizing: border-box;
         border-radius: 6px;
@@ -362,6 +366,9 @@ const SearchWrapper = styled.div`
       !props.$isOpen &&
       css`
         width: 100%;
+        background-color: var(--bg-200);
+        border-radius: 4px;
+        overflow: hidden;
       `}
   }
 `;
@@ -371,8 +378,8 @@ const Input = styled.input`
   border: none;
   background-color: ${(props) =>
     props.$isOpen ? "var(--bg-100)" : "var(--bg-200)"};
-  padding: 0 16px;
-  font-size: 14px;
+  padding: 0 14px;
+  font-size: var(--header-dropdown-title-size);
   font-weight: 400;
   color: #222;
   height: 100%;
@@ -403,6 +410,7 @@ const Input = styled.input`
       !props.$isOpen &&
       css`
         padding: 0 8px;
+        background-color: transparent;
       `}
   }
 
@@ -445,6 +453,7 @@ const SearchButton = styled.button`
     max-width: 44px;
     flex-shrink: 0;
     padding: 0;
+    /* bg-200 na SearchWrapper obuhvata i dugme sa ikonom */
     background-color: transparent;
 
     &:hover {
@@ -464,19 +473,42 @@ const CancelButton = styled(SearchButton)`
 const SearchIcon = styled.svg`
   width: 24px;
   height: 24px;
-  stroke-width: 2;
+  display: block;
+  flex-shrink: 0;
+  overflow: visible;
   fill: none;
-  stroke: ${(props) =>
-    props.$pageScrolled ? "var(--bg-100)" : "var(--text-100)"};
+  stroke: currentColor;
+  shape-rendering: geometricPrecision;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  color: ${(props) =>
+    props.$closeIcon
+      ? "var(--text-100)"
+      : props.$pageScrolled
+        ? "var(--bg-100)"
+        : "var(--text-100)"};
+
+  circle {
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+  }
+
+  line {
+    stroke: currentColor;
+  }
 
   @media (max-width: 767px) {
-    stroke: ${(props) =>
-      props.$pageScrolled ? "var(--text-100)" : "var(--primary-100)"};
+    color: var(--primary-100);
   }
 
   @media (min-width: 768px) {
-    stroke: ${(props) =>
-      props.$pageScrolled ? "var(--text-100)" : "var(--bg-100)"};
+    color: ${(props) =>
+      props.$closeIcon
+        ? "var(--text-100)"
+        : props.$pageScrolled
+          ? "var(--text-200)"
+          : "var(--bg-100)"};
   }
 `;
 
@@ -570,7 +602,7 @@ const ResultItem = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: var(--font-size-base);
+  font-size: var(--header-dropdown-link-size);
   color: var(--text-100);
   cursor: pointer;
   width: 94%;
@@ -591,11 +623,11 @@ const ProductResult = styled(ResultItem)`
 `;
 
 const ResultTitle = styled.h4`
-  font-size: var(--font-size-base);
+  font-size: var(--header-dropdown-title-size);
   font-style: normal;
-  line-height: normal;
-  padding: 8px 14px;
-  font-weight: 300;
+  line-height: 1.3;
+  padding: 6px 12px;
+  font-weight: 500;
 `;
 
 const BottomButtonWrapper = styled.div`

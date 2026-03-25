@@ -45,13 +45,13 @@ const DrawerHeader = styled.div`
   flex-shrink: 0;
   background-color: #001a57;
   color: #fff;
-  padding: 15px 16px;
+  padding: 12px 14px;
   gap: 8px;
 `;
 
 const DrawerTitle = styled.h2`
   margin: 0;
-  font-size: 14px;
+  font-size: var(--header-dropdown-heading-size);
   font-weight: 700;
   line-height: 1.2;
   flex: 1;
@@ -118,7 +118,7 @@ const NavRow = styled.button`
   border-bottom: 1px solid #e0e0e0;
   background-color: ${(props) => props.$surface ?? "#f5f5f5"};
   color: var(--text-100);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   text-align: left;
   cursor: pointer;
@@ -134,12 +134,12 @@ const SubNavRow = styled.a`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 15px 20px;
+  padding: 12px 16px;
   border: none;
   border-bottom: 1px solid #e0e0e0;
   background-color: ${(props) => props.$surface ?? "#f5f5f5"};
   color: #333;
-  font-size: 13px;
+  font-size: var(--header-dropdown-link-size);
   font-weight: ${(props) => (props.$isSection ? 600 : 400)};
   text-align: left;
   cursor: pointer;
@@ -159,8 +159,8 @@ const RowArrow = styled.span`
 `;
 
 const OtherSectionTitle = styled.div`
-  padding: 20px 20px 18px;
-  font-size: 15px;
+  padding: 14px 16px 12px;
+  font-size: var(--header-dropdown-heading-size);
   font-weight: 700;
   color: #111;
   border-top: 1px solid #e0e0e0;
@@ -187,12 +187,12 @@ const OtherAccountButton = styled.button`
   gap: 12px;
   width: 100%;
   margin: 0;
-  padding: 15px 20px;
+  padding: 12px 16px;
   border: none;
   border-bottom: 1px solid #e0e0e0;
   background-color: #fff;
   color: var(--text-100);
-  font-size: 13px;
+  font-size: var(--header-dropdown-link-size);
   font-weight: 400;
   text-align: left;
   cursor: pointer;
@@ -217,9 +217,9 @@ const DrawerLogoDock = styled.div`
 `;
 
 const FooterLogo = styled.div`
-  padding: 32px 20px 28px;
+  padding: 24px 16px 20px;
   text-align: center;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   letter-spacing: 0.14em;
   color: #001a57;
@@ -228,10 +228,10 @@ const FooterLogo = styled.div`
 `;
 
 const BreadcrumbBar = styled.div`
-  padding: 12px 20px;
+  padding: 10px 16px;
   background-color: #e8eaf0;
   color: #001a57;
-  font-size: 14px;
+  font-size: var(--header-dropdown-title-size);
   font-weight: 500;
   line-height: 1.35;
   border-bottom: 1px solid #e0e0e0;
@@ -243,12 +243,12 @@ const ShowAllRow = styled.button`
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 14px 20px;
+  padding: 12px 16px;
   border: none;
   border-bottom: 1px solid #e0e0e0;
   background-color: #dfe1ea;
   color: #111;
-  font-size: 13px;
+  font-size: var(--header-dropdown-link-size);
   font-weight: 700;
   text-align: left;
   text-decoration: underline;
@@ -265,12 +265,12 @@ const LeafLinkRow = styled.a`
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 15px 20px;
+  padding: 12px 16px;
   border: none;
   border-bottom: 1px solid #e0e0e0;
   background-color: ${(props) => props.$surface ?? "#fff"};
   color: #333;
-  font-size: 13px;
+  font-size: var(--header-dropdown-link-size);
   font-weight: 400;
   text-align: left;
   cursor: pointer;

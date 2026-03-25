@@ -16,10 +16,10 @@ const PreHeaderStack = styled.div`
 `;
 
 const TopBlock = styled.div`
-  height: 40px;
+  height: 36px;
   background-color: var(--success-color);
   color: var(--bg-100);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -27,10 +27,10 @@ const TopBlock = styled.div`
   text-decoration: underline;
 `;
 const TopHeaderSection = styled.div`
-  min-height: 40px;
+  min-height: 36px;
   background-color: var(--primary-100);
   color: var(--bg-100);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -46,7 +46,7 @@ const TopHeaderSection = styled.div`
 `;
 const TopHeaderWrapper = styled.div`
   width: 100%;
-  max-width: calc(var(--max-width-container) * 0.8);
+  max-width: var(--max-width-container);
   overflow: visible;
   align-items: center;
   gap: 10px;
@@ -113,7 +113,7 @@ const MobileTrustPilotBar = styled.div`
   flex-wrap: wrap;
   gap: 8px 12px;
   box-sizing: border-box;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
 
@@ -150,7 +150,7 @@ const StarCell = styled.span`
   height: 22px;
   background: #00b67a;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1;
 `;
 
@@ -163,7 +163,7 @@ const TrustpilotWordmark = styled.span`
   letter-spacing: 0.02em;
 `;
 const IconText = styled.div`
-  font-size: var(--font-size-small);
+  font-size: var(--header-font-size-small);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -202,10 +202,6 @@ const MainHeaderWrapper = styled.div`
 
   width: 100%;
   max-width: var(--max-width-container);
-  max-width: ${(props) =>
-    props.$isScrolled
-      ? "calc(var(--max-width-container) * 0.8 )"
-      : "var(--max-width-container)"};
 
   box-sizing: border-box;
 
@@ -224,7 +220,7 @@ const MainHeaderWrapper = styled.div`
     flex-direction: ${(props) =>
       props.$isScrolled ? "row-reverse" : "column"};
 
-    min-height: ${(props) => (props.$isScrolled ? "70px" : "100px")};
+    min-height: ${(props) => (props.$isScrolled ? "62px" : "86px")};
   }
 `;
 
@@ -237,10 +233,24 @@ const MobileHeaderTools = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     gap: 0;
-    flex: 0 0 auto;
     min-width: 0;
+
+    ${(props) =>
+      props.$mobileScrolled
+        ? css`
+            flex: 1 1 auto;
+            justify-content: flex-start;
+            gap: 6px;
+
+            & > *:not(:first-child) {
+              flex-shrink: 0;
+            }
+          `
+        : css`
+            flex: 0 0 auto;
+            justify-content: flex-end;
+          `}
   }
 `;
 
@@ -249,10 +259,20 @@ const DesktopNavSection = styled.div`
 
   @media (min-width: 1024px) {
     display: flex;
-    width: ${(props) => (props.$isScrolled ? "calc(80% - 76px)" : "80%")};
-    margin-top: ${(props) => (props.$isScrolled ? "0" : "16px")};
+    margin-top: ${(props) => (props.$isScrolled ? "0" : "10px")};
     justify-content: center;
     align-items: center;
+    min-width: 0;
+    ${(props) =>
+      props.$isScrolled
+        ? css`
+            flex: 1 1 auto;
+            width: auto;
+          `
+        : css`
+            flex: none;
+            width: 100%;
+          `}
   }
 `;
 
@@ -285,7 +305,7 @@ const Logo = styled.div`
     `}
 
   @media (max-width: 767px) {
-    font-size: 26px;
+    font-size: 24px;
     margin: 0;
     padding: 0 4px 0 0;
     max-width: min(52%, 240px);
@@ -293,9 +313,9 @@ const Logo = styled.div`
   }
 
   @media (min-width: 768px) {
-    font-size: 36px;
-    margin-bottom: var(--spacing-lg);
-    padding-top: 34px;
+    font-size: 30px;
+    margin-bottom: var(--spacing-md);
+    padding-top: 22px;
   }
 `;
 
@@ -551,7 +571,10 @@ const Header = () => {
             SNUSCO
           </Logo>
 
-          <MobileHeaderTools ref={mainHeaderToolsRef}>
+          <MobileHeaderTools
+            ref={mainHeaderToolsRef}
+            $mobileScrolled={isMobile && isScrolled}
+          >
             <Search isScrolled={isScrolled} />
             {isMobile && <Login ref={loginRef} />}
             {(isScrolled || isMobile) && (

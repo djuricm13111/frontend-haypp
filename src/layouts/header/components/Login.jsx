@@ -149,7 +149,7 @@ const TriggerWrap = styled.div`
 
 const TriggerLabel = styled.span`
   display: none;
-  font-size: 15px;
+  font-size: var(--header-dropdown-title-size);
   font-weight: 600;
   line-height: 1;
   color: currentColor;
@@ -196,7 +196,7 @@ const IconDiv = styled.div`
 const PanelTitle = styled.div`
   flex: 1.4;
   color: var(--bg-100);
-  font-size: var(--font-size-base);
+  font-size: var(--header-dropdown-heading-size);
   font-weight: 400;
   letter-spacing: -0.438px;
   display: flex;
@@ -258,7 +258,7 @@ const Form = styled.form`
 `;
 
 const Subtitle = styled.div`
-  font-size: var(--font-size-small);
+  font-size: var(--header-font-size-small);
   color: var(--text-100);
   text-align: center;
   margin-bottom: var(--spacing-lg);
@@ -270,19 +270,19 @@ const Input = styled.input`
   padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-xs);
   border: 1px solid #ccc;
   width: calc(100% - 8px);
-  font-size: var(--font-size-small);
+  font-size: var(--header-font-size-small);
   color: var(--text-200);
   background-color: var(--bg-100);
   margin: var(--spacing-xxs) 0 var(--spacing-md) 0;
   box-sizing: border-box;
   ::placeholder {
-    font-size: var(--font-size-small);
+    font-size: var(--header-font-size-small);
     color: var(--text-200);
   }
 `;
 
 const Label = styled.label`
-  font-size: var(--font-size-base);
+  font-size: var(--header-font-size-base);
   text-transform: capitalize;
   color: var(--text-200);
   text-align: left;
@@ -292,7 +292,7 @@ const Label = styled.label`
 
 const SmallTitle = styled.div`
   text-align: center;
-  font-size: var(--font-size-small);
+  font-size: var(--header-font-size-small);
   margin: 12px 0;
   color: var(--text-100);
   font-family: "Montserrat", sans-serif;
@@ -311,6 +311,7 @@ const Button = styled.button`
   height: 40px;
   text-transform: capitalize;
   border-radius: 0;
+  font-size: var(--header-font-size-base);
 `;
 
 const EyeSVG = styled.svg`
@@ -328,7 +329,7 @@ const EyeSpan = styled.span`
 const ButtonLink = styled.button`
   align-self: center;
   color: var(--primary-200);
-  font-size: var(--font-size-small);
+  font-size: var(--header-font-size-small);
   font-weight: 500;
   border: none;
   background-color: transparent;

@@ -18,6 +18,7 @@
     "CREATE_ACCOUNT": "Create An Account",
     "PROFILE": "Profile",
     "SIGN_UP": "Sign up",
+    "SEARCH_FOR": "Search for",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "New Year New Me",
       "NICOTINE_POUCHES": "Nicotine Pouches",
@@ -65,6 +66,8 @@
   },
 
   "HOME": {
+    "HERO_TITLE": "Haypp UK: Nicotine Pouch Store Online",
+    "HERO_SUBTITLE": "Get next-day delivery* on orders over £4.99 — plus a free can with every purchase!*",
     "ABOUT_TITLE": "About SnusCo",
     "ABOUT_SNUSCO": "Welcome to SnusCo, your trusted destination for premium, tobacco-free nicotine products. Since our inception, we've been committed to delivering top-quality nicotine pouches to customers who value safety, transparency, and exceptional taste.",
     "FEATURED_BRANDS": "At SnusCo, we proudly feature a curated selection of the most popular brands, including.",
@@ -78,6 +81,22 @@
     },
     "LINKS": {
       "SEE_HOT_DEALS": "See hot deals - Sale"
+    },
+    "BUY_HERE": "Buy here",
+    "PROMO_CARDS_LABEL": "Promotional offers",
+    "PROMO_INTRO": "Discover the best selection of <nicotine>tobacco-free nicotine pouches</nicotine>, and <free>nicotine free pouches</free> at Haypp UK. Whether you're looking for top-selling products, new arrivals, or the latest brands, we've got you covered.",
+    "SHOP_BY_BRAND": "Shop by Brand",
+    "FEATURED_PRODUCTS_TITLE": "Featured products",
+    "SHOP_BY_CATEGORY": "Shop by Category",
+    "CATEGORY_NAV": {
+      "NICOTINE_POUCHES": "Nicotine Pouches",
+      "NICOTINE_FREE_POUCHES": "Nicotine Free Pouches",
+      "NEW_ARRIVALS": "New Arrivals",
+      "BESTSELLERS": "Best Sellers",
+      "OFFERS": "Offers",
+      "BUNDLES": "Bundles",
+      "PICK_AND_MIX": "Pick & Mix",
+      "FREE_SAMPLE": "Free Sample"
     }
   },
 
@@ -194,10 +213,14 @@
   },
 
   "PRODUCT_CARD": {
-    "CHOOSE_QUANTITY": "Choose Quantity:",
+    "CLOSE_QUANTITY_SHEET": "Close",
+    "CHOOSE_QUANTITY": "Choose quantity",
     "PIECE": "piece",
     "SAVINGS": "Savings",
-    "POUCHES_PER_CAN": "Pouches per can"
+    "POUCHES_PER_CAN": "Pouches per can",
+    "MINIMIZE": "Minimize",
+    "OFFER": "Offer",
+    "PER_UNIT": "/unit"
   },
 
   "CART": {

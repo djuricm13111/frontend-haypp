@@ -384,7 +384,7 @@ const ProductImage = styled.img`
 `;
 
 const ProductTitle = styled.h5`
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 400;
   max-width: 100%;
   text-align: left;
@@ -450,7 +450,7 @@ const ArrowRightIcon = styled.svg`
 
 const ViewProductButton = styled.button`
   width: 100%;
-  font-size: 11px;
+  font-size: 13px;
   border-radius: 0;
   display: flex;
   align-items: center;
@@ -530,12 +530,12 @@ const ProductPriceButton = styled.button`
 const PriceLeft = styled.span`
   font-family: "Montserrat";
   text-align: left;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 100;
 `;
 
 const PriceRight = styled.span`
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   white-space: nowrap;
 `;
@@ -581,13 +581,13 @@ const DropdownOption = styled.button`
 const OptionLabel = styled.span`
   font-family: "Montserrat";
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 100;
   color: var(--text-100);
 `;
 
 const OptionPrice = styled.span`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text-100);
   white-space: nowrap;
@@ -649,7 +649,7 @@ const CartIconMobile = styled.svg`
 
 const Button = styled.button`
   width: 100%;
-  font-size: 11px;
+  font-size: 13px;
   border-radius: 0;
   display: flex;
   align-items: center;

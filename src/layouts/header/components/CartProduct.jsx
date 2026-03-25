@@ -87,14 +87,14 @@ const Button = styled.button`
   }
 `;
 const Input = styled.input`
-  width: calc(var(--font-size-small) * 3 - var(--spacing-sm)); // Širina inputa
+  width: calc(var(--header-font-size-small) * 3 - var(--spacing-sm)); // Širina inputa
   //width: 24px;
   height: 24px; // Visina inputa
   padding: 0;
   margin: 0;
   background-color: var(--bg-300); // Boja pozadine
   text-align: center; // Centriranje teksta
-  font-size: 14px;
+  font-size: 16px;
   //border-radius: var(--border-radius-small);
   border: none;
   font-weight: 400;

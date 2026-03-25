@@ -135,12 +135,12 @@ const CartContainer = styled.div`
   min-width: 30px;
 
   @media (min-width: 768px) {
-    height: 40px;
-    min-width: 40px;
+    height: 36px;
+    min-width: 36px;
   }
 
   background-color: var(--bg-100);
-  padding: 0 14px;
+  padding: 0 12px;
 
   @media (max-width: 767px) {
     height: 44px;
@@ -174,13 +174,34 @@ const CartContainer = styled.div`
     }
   }
 `;
+
+const CartHeaderIcon = styled.svg`
+  flex-shrink: 0;
+
+  path {
+    stroke: var(--text-100);
+  }
+
+  @media (max-width: 767px) {
+    path {
+      stroke: var(--primary-100);
+    }
+  }
+
+  @media (min-width: 768px) {
+    path {
+      stroke: var(--text-200);
+    }
+  }
+`;
+
 const CartText = styled.h4`
   display: none;
   cursor: pointer;
   @media (min-width: 768px) {
     display: inline-block;
   }
-  font-size: 16px;
+  font-size: var(--header-dropdown-heading-size);
   font-weight: 400;
   color: var(--primary-100);
 `;
@@ -199,12 +220,12 @@ const SumQuantity = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 200;
 `;
 const Span = styled.span`
   font-weight: 500;
-  font-size: var(--font-size-small);
+  font-size: var(--header-font-size-small);
 `;
 const XDiv = styled.div`
   padding: 0 var(--spacing-md);
@@ -251,7 +272,7 @@ const Logo = styled.div`
   flex: 1.4;
   color: var(--bg-100);
 
-  font-size: var(--font-size-base);
+  font-size: var(--header-dropdown-heading-size);
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.438px;
@@ -303,7 +324,9 @@ const FreeDeliveryWrapper = styled.div`
 `;
 const FreeDeliveryText = styled.div`
   color: var(--text-100);
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--header-dropdown-link-size);
+  line-height: 1.35;
 `;
 const Bottom = styled.div`
   position: absolute;
@@ -347,7 +370,7 @@ const FlexDiv = styled.div`
 const Button = styled.button`
   //height: 100%;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: var(--header-dropdown-link-size);
   border: 1px solid var(--primary-100);
   background-color: var(--bg-100);
   color: var(--text-100);
@@ -362,6 +385,21 @@ const Notice = styled.p`
   margin: 16px 0;
   font-style: italic;
   text-align: center;
+  font-size: var(--header-dropdown-link-size);
+`;
+
+const CartPanelHeading = styled.h3`
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--header-dropdown-heading-size);
+  font-weight: 600;
+  margin: 0;
+`;
+
+const CartTotalAmount = styled.h2`
+  margin: 0;
+  font-size: calc(1.5rem + 2px);
+  font-weight: 700;
+  line-height: 1.2;
 `;
 
 const MaskContainer = styled.div`
@@ -483,7 +521,7 @@ const CartMenu = ({ isScrolled }) => {
         </CartContainer>
       ) : (
         <CartContainer onClick={toggleMenu} style={{ cursor: "pointer" }}>
-          <svg
+          <CartHeaderIcon
             width="24px"
             height="24px"
             viewBox="0 0 24 24"
@@ -492,12 +530,12 @@ const CartMenu = ({ isScrolled }) => {
           >
             <path
               d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
-              stroke="var(--text-100)"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              fill="none"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
-          </svg>
+          </CartHeaderIcon>
           {totalQuantity !== 0 && <SumQuantity>{totalQuantity}</SumQuantity>}
         </CartContainer>
       )}
@@ -640,7 +678,7 @@ const CartMenu = ({ isScrolled }) => {
           </BottomWrapper>
         </Bottom>
         <MiddleDiv $paddingTop={`${paddingTop}px`}>
-          <h3 style={{ fontFamily: "Montserrat" }}>Your products</h3>
+          <CartPanelHeading>Your products</CartPanelHeading>
           {inStockItems.map((item, index) => (
             <CartProduct item={item} key={index} />
           ))}

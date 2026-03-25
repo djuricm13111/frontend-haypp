@@ -25,7 +25,7 @@ const ArrowButton = styled.button`
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  font-size: 24px;
+  font-size: 26px;
   color: var(--text-100);
 
   &:hover {
@@ -90,6 +90,7 @@ const FlexItem = styled.div`
   align-items: center;
   justify-content: center;
   gap: 8px;
+  margin:14px 0;
 
   &:last-child {
     border-right: none;
@@ -101,6 +102,7 @@ const Text = styled.span`
   display: inline-block;
   cursor: pointer;
   color: var(--text-100);
+  font-size: var(--header-link-size);
 
   &::after {
     content: "";
@@ -123,8 +125,11 @@ const Text = styled.span`
 const DropdownLayer = styled.div`
   position: absolute;
   top: 100%;
-  left: ${(props) => `${props.$left}px`};
   left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   z-index: 1000;
 `;
 
@@ -133,15 +138,13 @@ const SubHeader = styled.div`
   color: var(--text-100);
   border-radius: 0 0 8px 8px;
   box-shadow: var(--shadow-large);
-  padding: 12px;
+  padding: 10px;
+  overflow-x: hidden;
   overflow-y: auto;
   max-height: 70vh;
-  width: calc(var(--max-width-container) * 0.8);
-  max-width: calc(var(--max-width-container) * 0.8);
-  width: ${(props) =>
-    props.$isScrolled
-      ? "calc(var(--max-width-container) * 0.8 )"
-      : "calc(var(--max-width-container) * 0.8 )"};
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 `;
 
 const SubHeaderGrid = styled.div`
@@ -149,29 +152,42 @@ const SubHeaderGrid = styled.div`
   grid-template-rows: repeat(13, auto);
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-flow: column;
-  grid-auto-columns: minmax(180px, max-content);
-  column-gap: 48px;
+  grid-auto-columns: minmax(0, 1fr);
+  column-gap: clamp(16px, 3vw, 32px);
   row-gap: 10px;
   align-items: start;
+  width: 100%;
+  min-width: 0;
 `;
 
 const SubHeaderItem = styled.div`
-  padding: 5px 10px;
+  padding: 4px 8px;
   cursor: pointer;
-  min-width: 120px;
+  min-width: 0;
   font-weight: 100;
-  font-size: var(--font-size-base);
+  font-size: var(--header-dropdown-link-size);
 `;
+
+const SubHeaderHeading = styled.h3`
+  margin: 0 0 4px 0;
+  font-size: var(--header-dropdown-heading-size);
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.25;
+  color: var(--text-100);
+`;
+
 const SubHeaderTitleText = styled.h5`
-  font-size: 15px;
-  font-family: "Montserrat";
-  margin: 4px 0 14px 0;
+  font-size: var(--header-dropdown-title-size);
+  font-family: "Montserrat", sans-serif;
+  margin: 2px 0 10px 0;
   font-weight: 400;
+  line-height: 1.35;
 `;
 const MenuTitleLink = styled.a`
   font-family: "Oswald-Medium";
   font-weight: 700;
-  font-size: 15px;
+  font-size: var(--header-dropdown-title-size);
   text-decoration: none;
   color: var(--text-100);
 
@@ -182,7 +198,7 @@ const MenuTitleLink = styled.a`
 
 const MenuLink = styled.a`
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--header-dropdown-link-size);
   text-decoration: none;
   color: var(--text-100);
   font-family: "Montserrat";
@@ -332,15 +348,8 @@ const HeaderList = ({ isScrolled }) => {
     }
   };
 
-  const openDropdown = (dropdownKey, element) => {
+  const openDropdown = (dropdownKey) => {
     clearCloseTimeout();
-
-    if (wrapperRef.current && element) {
-      const wrapperRect = wrapperRef.current.getBoundingClientRect();
-      const itemRect = element.getBoundingClientRect();
-      setDropdownLeft(itemRect.left - wrapperRect.left);
-    }
-
     setActiveDropdown(dropdownKey);
   };
 
@@ -406,14 +415,13 @@ const HeaderList = ({ isScrolled }) => {
 
     return (
       <DropdownLayer
-        $left={dropdownLeft}
         onMouseEnter={clearCloseTimeout}
         onMouseLeave={closeDropdownWithDelay}
       >
         {activeDropdown === "first" && (
-          <SubHeader $isScrolled={isScrolled}>
+          <SubHeader>
             <SubHeaderItem>
-              <h3>Nicotine Pouches</h3>
+              <SubHeaderHeading>Nicotine Pouches</SubHeaderHeading>
               <SubHeaderTitleText>
                 Here you will find all our Nicotine Pouches
               </SubHeaderTitleText>
@@ -442,9 +450,9 @@ const HeaderList = ({ isScrolled }) => {
         )}
 
         {activeDropdown === "second" && (
-          <SubHeader $isScrolled={isScrolled}>
+          <SubHeader>
             <SubHeaderItem>
-              <h3>Offers & Deals</h3>
+              <SubHeaderHeading>Offers & Deals</SubHeaderHeading>
               <SubHeaderTitleText>
                 Here you will find all our Offers & Deals
               </SubHeaderTitleText>
