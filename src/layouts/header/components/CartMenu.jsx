@@ -94,7 +94,7 @@ const Wrapper = styled.div`
       : css`
           animation: ${slideOut} 0.1s ease-in forwards; // Kraće trajanje za slide-out
         `}
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     position: fixed;
     right: 0%;
     //top: calc(100% + 10px);
@@ -123,6 +123,16 @@ const Wrapper = styled.div`
     max-height: 100dvh;
     box-sizing: border-box;
   }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    width: min(360px, 68vw);
+    max-width: min(360px, 68vw);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100dvh;
+    box-sizing: border-box;
+  }
 `;
 
 const CartContainer = styled.div`
@@ -134,7 +144,7 @@ const CartContainer = styled.div`
   height: 30px;
   min-width: 30px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     height: 36px;
     min-width: 36px;
   }
@@ -146,6 +156,14 @@ const CartContainer = styled.div`
     height: 44px;
     min-width: 44px;
     padding: 0 4px;
+    gap: 0;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    height: 38px;
+    min-width: 38px;
+    padding: 0 2px;
     gap: 0;
     box-sizing: border-box;
   }
@@ -182,13 +200,13 @@ const CartHeaderIcon = styled.svg`
     stroke: var(--text-100);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     path {
       stroke: var(--primary-100);
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     path {
       stroke: var(--text-200);
     }
@@ -198,7 +216,7 @@ const CartHeaderIcon = styled.svg`
 const CartText = styled.h4`
   display: none;
   cursor: pointer;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: inline-block;
   }
   font-size: var(--header-dropdown-heading-size);
@@ -238,17 +256,17 @@ const XDiv = styled.div`
   background-color: var(--primary-100);
   color: var(--bg-100);
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     flex-shrink: 0;
     order: 1;
   }
 `;
 const MiddleDiv = styled.div`
   max-height: calc(100vh - var(--navbar-height) * 3 - 30px);
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     //max-height: 400px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     order: 3;
     flex: 1 1 auto;
     min-height: 0;
@@ -303,14 +321,14 @@ const FreeDelivery = styled.div`
   border-top: 1px solid var(--bg-200);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   background-color: var(--bg-300);
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     position: static;
     order: 2;
     flex-shrink: 0;
     height: auto;
     min-height: calc(var(--navbar-height) * 2);
   }
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     position: static;
   }
 `;
@@ -341,14 +359,14 @@ const Bottom = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   background-color: var(--bg-200);
   margin-bottom: 14px;
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     position: static;
     order: 4;
     flex-shrink: 0;
     margin-bottom: 0;
     padding-bottom: max(14px, env(safe-area-inset-bottom, 0px));
   }
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     position: static;
   }
 `;
@@ -412,7 +430,7 @@ const MaskContainer = styled.div`
   background-color: #0000003a;
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: ${(props) => (props.$isOpen ? "block" : "none")};
   }
 `;

@@ -28,7 +28,7 @@ const ItemContainer = styled.div`
   flex-direction: column;
   padding: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -46,7 +46,7 @@ const Span = styled.span`
   gap: var(--spacing-sm);
   font-size: var(--header-link-size);
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     line-height: 1;
   }
 `;

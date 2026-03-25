@@ -39,7 +39,7 @@ const TopHeaderSection = styled.div`
   position: relative;
   z-index: var(--zindex-dropdown);
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     height: auto;
     background-color: #003057;
   }
@@ -52,14 +52,17 @@ const TopHeaderWrapper = styled.div`
   gap: 10px;
   box-sizing: border-box;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     column-gap: 12px;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -75,11 +78,13 @@ const TopBarDesktopLeft = styled.div`
   flex-wrap: wrap;
   min-width: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     grid-column: 1;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 `;
@@ -92,11 +97,11 @@ const TopBarDesktopRight = styled.div`
   flex-wrap: wrap;
   min-width: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     grid-column: 3;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 `;
@@ -117,14 +122,14 @@ const MobileTrustPilotBar = styled.div`
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     grid-column: 2;
     justify-self: center;
     padding: 0 8px;
     color: var(--bg-100);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     width: 100%;
     padding: 8px 12px;
     color: #fff;
@@ -166,8 +171,13 @@ const IconText = styled.div`
   font-size: var(--header-font-size-small);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
+
+  @media (min-width: 1024px) {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
 `;
 const Container = styled.div`
   width: 100%;
@@ -205,7 +215,7 @@ const MainHeaderWrapper = styled.div`
 
   box-sizing: border-box;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     height: var(--navbar-height);
     justify-content: space-between;
     align-items: center;
@@ -216,7 +226,7 @@ const MainHeaderWrapper = styled.div`
     overflow-x: clip;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     flex-direction: ${(props) =>
       props.$isScrolled ? "row-reverse" : "column"};
 
@@ -225,11 +235,11 @@ const MainHeaderWrapper = styled.div`
 `;
 
 const MobileHeaderTools = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: contents;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -304,7 +314,7 @@ const Logo = styled.div`
       pointer-events: none;
     `}
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     font-size: 24px;
     margin: 0;
     padding: 0 4px 0 0;
@@ -312,7 +322,7 @@ const Logo = styled.div`
     min-width: 0;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     font-size: 30px;
     margin-bottom: var(--spacing-md);
     padding-top: 22px;
@@ -320,11 +330,11 @@ const Logo = styled.div`
 `;
 
 const MobileNavToolSlot = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -372,25 +382,24 @@ const Header = () => {
   const { t } = useTranslation();
   const loginRef = useRef(null);
   const preHeaderRef = useRef(null);
-  /** ≥1024px: vrh DesktopNavSection (HeaderList). 768–1023px: vrh MobileHeaderTools (poslednji red bez nav-a). */
+  /** ≥1024px: vrh DesktopNavSection (HeaderList). ≤1023px: kompakt red (MobileHeaderTools). */
   const desktopNavListRef = useRef(null);
   const mainHeaderToolsRef = useRef(null);
   /** Dok je kompakt header, ne ažurirati prag (layout pomera anchor). */
   const isScrolledRef = useRef(false);
 
   /**
-   * Mobilni (≤767): threshold = h(PreHeaderStack) — vrh belog headera.
-   * Desktop (≥768): threshold = document Y vrha anchor-a:
-   *   min-width 1024 → vrh HeaderList (DesktopNavSection);
-   *   inače → vrh MobileHeaderTools (tablet, nav sakriven).
+   * Kompakt (telefon + tablet, ≤1023px): threshold = h(PreHeaderStack) — vrh belog headera.
+   * Desktop (≥1024): threshold = document Y vrha DesktopNavSection (HeaderList).
    * Usporedba: scrollY >= threshold kada vrh tog elementa dođe do vrha viewporta.
    */
   const scrollThresholdPxRef = useRef(Number.POSITIVE_INFINITY);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  /** Kompakt viewport (telefon + tablet, ≤1023px) — isti header kao na telefonu. */
   const [isMobile, setIsMobile] = useState(() =>
     typeof window !== "undefined"
-      ? window.matchMedia("(max-width: 767px)").matches
+      ? window.matchMedia("(max-width: 1023px)").matches
       : false
   );
 
@@ -405,7 +414,7 @@ const Header = () => {
   const measureScrollThreshold = () => {
     if (typeof window === "undefined") return;
 
-    const mobile = window.matchMedia("(max-width: 767px)").matches;
+    const mobile = window.matchMedia("(max-width: 1023px)").matches;
     if (mobile) {
       const h = preHeaderRef.current?.offsetHeight ?? 0;
       scrollThresholdPxRef.current = h;
@@ -470,7 +479,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
+    const mq = window.matchMedia("(max-width: 1023px)");
     const onViewport = () => setIsMobile(mq.matches);
     onViewport();
     mq.addEventListener("change", onViewport);

@@ -11,7 +11,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: 100%;
   }
 `;
@@ -23,7 +23,7 @@ const IconDiv = styled.div`
   width: 60px;
   height: 50px;
   border-radius: 4px;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     //display: none;
     background-color: ${(props) =>
       props.$isScrolled ? "transparent" : "var(--primary-100)"};
@@ -51,7 +51,7 @@ const FakeInputDiv = styled.div`
   cursor: text;
   border-radius: 4px 0 0 4px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: ${(props) => (props.$isScrolled ? "none" : "flex")};
   }
 `;
@@ -87,7 +87,7 @@ const InputContainer = styled.div`
   top: ${(props) => (props.$isScrolled ? "0" : "15px")};
   width: 100vw;
   height: var(--navbar-height);
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: calc(50vw + 60px);
     max-width: calc(50vw + 60px);
     border-radius: 4px;
@@ -110,7 +110,7 @@ const InputWrapper = styled.div`
   //gap: 10px;
   //background-color: var(--primary-200);
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: 100%;
   }
 `;
@@ -146,7 +146,7 @@ const SVGContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     background-color: var(--primary-100);
   }
   height: 100%;
@@ -160,7 +160,7 @@ const SVGSearch = styled.svg`
   flex-shrink: 0;
 `;
 const CancelText = styled.span`
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
@@ -174,7 +174,7 @@ const MaskContainer = styled.div`
   height: 100vh;
   background-color: #0000003a;
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: ${(props) => (props.$isOpen ? "block" : "none")};
   }
 `;
@@ -256,10 +256,8 @@ const SearchInput = ({ isScrolled }) => {
     const updateProductDisplay = () => {
       if (window.innerWidth >= 1024) {
         setMaxProductsToShow(10); // Desktop
-      } else if (window.innerWidth >= 768) {
-        setMaxProductsToShow(15); // Tablet
       } else {
-        setMaxProductsToShow(20); // Mobilni
+        setMaxProductsToShow(20); // Telefon + tablet (kompakt header)
       }
     };
 
@@ -280,7 +278,7 @@ const SearchInput = ({ isScrolled }) => {
     setShow(false);
   };
 
-  const isDesktop = window.innerWidth >= 768;
+  const isDesktop = window.innerWidth >= 1024;
   const searchStrokeColor = isDesktop
     ? isScrolled
       ? "var(--text-100)"

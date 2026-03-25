@@ -80,7 +80,12 @@ const Panel = styled.div`
     max-width: min(90vw, 100%);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    width: min(360px, 68vw);
+    max-width: min(360px, 68vw);
+  }
+
+  @media (min-width: 1024px) {
     width: 400px;
     max-width: 100vw;
     height: 100vh;
@@ -107,7 +112,7 @@ const BackdropMask = styled.div`
   background-color: #0000003a;
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: ${(props) => (props.$isOpen ? "block" : "none")};
   }
 `;
@@ -127,7 +132,7 @@ const TriggerWrap = styled.div`
   background-color: transparent;
   padding: 0 4px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     width: 44px;
     min-width: 44px;
     max-width: 44px;
@@ -137,7 +142,7 @@ const TriggerWrap = styled.div`
     box-sizing: border-box;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     height: 40px;
     min-width: auto;
     padding: 0 14px;
@@ -155,7 +160,7 @@ const TriggerLabel = styled.span`
   color: currentColor;
   white-space: nowrap;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: inline;
   }
 `;
@@ -164,6 +169,11 @@ const UserTriggerIcon = styled.svg`
   flex-shrink: 0;
   width: 22px;
   height: 22px;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    width: 20px;
+    height: 20px;
+  }
 
   path {
     stroke: currentColor;

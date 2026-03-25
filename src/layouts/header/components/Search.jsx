@@ -76,6 +76,7 @@ const Search = ({ isScrolled }) => {
 
   useEffect(() => {
     const updateProductDisplay = () => {
+      /* Dve kolone (tablet + desktop): manje stavki po koloni kao na desktopu */
       if (window.innerWidth >= 768) {
         setMaxProductsToShow(9);
       } else {
@@ -260,7 +261,7 @@ const Container = styled.div`
 
   position: ${(props) => (props.$isScrolled ? "absolute" : "relative")};
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     flex: 0 0 auto;
     width: auto;
     min-width: 0;
@@ -317,7 +318,7 @@ const Container = styled.div`
       `}
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: 100%;
   }
 `;
@@ -342,7 +343,7 @@ const SearchWrapper = styled.div`
       z-index: 3;
     `}
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     height: 40px;
     width: ${(props) => (props.$isOpen ? "100%" : "auto")};
     min-width: 0;
@@ -393,7 +394,7 @@ const Input = styled.input`
     outline: none;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     display: ${(props) => (props.$revealInput ? "block" : "none")};
     min-width: 0;
     flex: 1;
@@ -414,7 +415,7 @@ const Input = styled.input`
       `}
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: ${(props) => (props.$isScrolled ? "block" : "none")};
   }
 `;
@@ -437,7 +438,7 @@ const SearchButton = styled.button`
       props.$pageScrolled ? "var(--primary-200)" : "transparent"};
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     background-color: ${(props) =>
       props.$pageScrolled ? "transparent" : "var(--primary-100)"};
 
@@ -447,7 +448,7 @@ const SearchButton = styled.button`
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     width: 44px;
     min-width: 44px;
     max-width: 44px;
@@ -498,11 +499,11 @@ const SearchIcon = styled.svg`
     stroke: currentColor;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     color: var(--primary-100);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     color: ${(props) =>
       props.$closeIcon
         ? "var(--text-100)"

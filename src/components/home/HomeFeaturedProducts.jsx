@@ -39,9 +39,10 @@ const Grid = styled.div`
 
   @media (min-width: 768px) {
     gap: var(--spacing-md);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  @media (min-width: 1025px) {
+  @media (min-width: 1024px) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--spacing-lg);
   }
