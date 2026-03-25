@@ -59,7 +59,7 @@ export const homeFeaturedProductsMock = [
     manufacturer: "Velo",
     nicotine: 11,
     price: 5.49,
-    is_in_stock: "in_stock",
+    is_in_stock: "out_of_stock",
     images: imgPair(VELO_FREEZE_ULTRA),
   },
   {

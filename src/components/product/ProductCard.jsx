@@ -280,7 +280,7 @@ const QtyTrigger = styled.button`
   border: none;
   border-top: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
-  background: var(--bg-100);
+  background: ${(p) => (p.$open ? "var(--bg-200)" : "var(--bg-100)")};
   cursor: pointer;
   font-family: inherit;
   color: var(--text-100);
@@ -291,11 +291,11 @@ const QtyTrigger = styled.button`
   transition: background var(--transition-fast);
 
   &:hover {
-    background: var(--bg-200);
+    background: ${(p) => (p.$open ? "var(--bg-300)" : "var(--bg-200)")};
   }
 
   &:focus-visible {
-    outline: 2px solid var(--primary-100);
+    outline: 2px solid rgba(0, 0, 0, 0.2);
     outline-offset: -2px;
   }
 
@@ -400,11 +400,11 @@ const MinimizeBar = styled.button`
   font-family: inherit;
 
   &:hover {
-    background: #e8e8e8;
+    background: var(--bg-200);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--primary-100);
+    outline: 2px solid rgba(0, 0, 0, 0.2);
     outline-offset: -2px;
   }
 `;
@@ -417,7 +417,7 @@ const PickerRow = styled.button`
   padding: 5px var(--spacing-md);
   border: none;
   border-top: 1px solid #ebebeb;
-  background: ${(p) => (p.$selected ? "var(--bg-300)" : "var(--bg-100)")};
+  background: ${(p) => (p.$selected ? "var(--bg-200)" : "var(--bg-100)")};
   cursor: pointer;
   font-family: inherit;
   text-align: left;
@@ -430,11 +430,11 @@ const PickerRow = styled.button`
   }
 
   &:hover {
-    background: ${(p) => (p.$selected ? "var(--bg-300)" : "var(--bg-200)")};
+    background: var(--bg-300);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--primary-100);
+    outline: 2px solid rgba(0, 0, 0, 0.2);
     outline-offset: -2px;
     z-index: 1;
   }
@@ -695,9 +695,14 @@ const MobileQtyClose = styled.button`
   font-size: 1.35rem;
   line-height: 1;
   font-family: inherit;
+  transition: background var(--transition-fast);
+
+  &:hover {
+    background: var(--bg-300);
+  }
 
   &:focus-visible {
-    outline: 2px solid var(--primary-100);
+    outline: 2px solid rgba(0, 0, 0, 0.2);
     outline-offset: 2px;
   }
 `;
@@ -718,7 +723,7 @@ const MobileQtyRow = styled.button`
   padding: 11px var(--spacing-md);
   border: none;
   border-top: 1px solid #f0f0f0;
-  background: ${(p) => (p.$selected ? "var(--bg-300)" : "#f7f7f7")};
+  background: ${(p) => (p.$selected ? "var(--bg-200)" : "var(--bg-300)")};
   cursor: pointer;
   font-family: inherit;
   text-align: left;
@@ -728,8 +733,12 @@ const MobileQtyRow = styled.button`
     border-top: none;
   }
 
+  &:hover {
+    background: ${(p) => (p.$selected ? "var(--bg-300)" : "var(--bg-200)")};
+  }
+
   &:focus-visible {
-    outline: 2px solid var(--primary-100);
+    outline: 2px solid rgba(0, 0, 0, 0.2);
     outline-offset: -2px;
     z-index: 1;
   }
@@ -786,10 +795,17 @@ const MobileQtyAddButton = styled.button`
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  transition: background var(--transition-fast);
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
 
   &:hover:not(:disabled) {
     background: var(--primary-200);
+  }
+
+  @media (max-width: 767px) {
+    &:hover:not(:disabled) {
+      background: var(--primary-100);
+      box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.08);
+    }
   }
 
   &:disabled {
@@ -1116,6 +1132,7 @@ const ProductCard = ({ product }) => {
           <QuantityWrap>
             <QtyTrigger
               type="button"
+              $open={pickerOpen}
               aria-expanded={pickerOpen}
               aria-haspopup="listbox"
               disabled={product.is_in_stock === "out_of_stock"}
