@@ -57,6 +57,8 @@ const slideSheetDown = keyframes`
 `;
 
 const PICKER_CLOSE_MS = 220;
+/** Iza slideSheetDown (0.26s) da se sheet skloni iz DOM-a posle zatvaranja */
+const MOBILE_QTY_SHEET_UNMOUNT_MS = 300;
 const MOBILE_QTY_MAX_PX = 767;
 
 const Card = styled.figure`
@@ -884,14 +886,24 @@ const ProductCard = ({ product }) => {
     return () => window.removeEventListener("keydown", onKey);
   }, [pickerOpen]);
 
+  /* Mora pratiti pickerOpen, ne panelInDOM — panelInDOM ostaje true do kraja exit animacije,
+   * a inače bi body ostao overflow:hidden zauvek posle prvog otvaranja. */
   useEffect(() => {
-    if (!panelInDOM || !isMobileQty) return;
+    if (!pickerOpen || !isMobileQty) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = prev;
     };
-  }, [panelInDOM, isMobileQty]);
+  }, [pickerOpen, isMobileQty]);
+
+  useEffect(() => {
+    if (pickerOpen || !isMobileQty || !panelInDOM) return;
+    const id = window.setTimeout(() => {
+      setPanelInDOM(false);
+    }, MOBILE_QTY_SHEET_UNMOUNT_MS);
+    return () => window.clearTimeout(id);
+  }, [pickerOpen, isMobileQty, panelInDOM]);
 
   const addToCart = () => {
     dispatch(
@@ -973,10 +985,18 @@ const ProductCard = ({ product }) => {
                 />
               ) : null}
               <MobileQtyHeaderText>
-                <MobileQtyBrand>
-                  {product.manufacturer || product.category_name || "\u00a0"}
-                </MobileQtyBrand>
-                <MobileQtyName id={sheetTitleId}>{product.name}</MobileQtyName>
+                {product.manufacturer ? (
+                  <MobileQtyBrand>{product.manufacturer}</MobileQtyBrand>
+                ) : null}
+                <MobileQtyName id={sheetTitleId}>
+                  {product.category_name ? (
+                    <>
+                      <ProductTitleCategory>{product.category_name}</ProductTitleCategory>
+                      <ProductTitleSep> · </ProductTitleSep>
+                    </>
+                  ) : null}
+                  <ProductNameText>{product.name}</ProductNameText>
+                </MobileQtyName>
               </MobileQtyHeaderText>
             </MobileQtyHeaderMain>
             <MobileQtyClose

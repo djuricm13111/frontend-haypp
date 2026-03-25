@@ -42,8 +42,11 @@ export function useNavigation() {
     return `/search/${encodeURIComponent(searchValue || "")}`;
   }
 
+  /** PDP: /{slug-kategorije}/{slug-kategorije}-{slug-proizvoda} npr. /velo/velo-ruby-berry */
   function goToProduct(categoryName, productName) {
-    return `/${slugPart(categoryName)}/${slugPart(productName)}`;
+    const cat = slugPart(categoryName) || "proizvod";
+    const prod = slugPart(productName);
+    return `/${cat}/${cat}-${prod}`;
   }
 
   function goToCategory(name) {
