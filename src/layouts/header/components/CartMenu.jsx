@@ -76,13 +76,18 @@ const Wrapper = styled.div`
   z-index: calc(var(--zindex-default) + 1);
   z-index: 11;
   background-color: var(--bg-100);
+  box-sizing: border-box;
 
   width: 100%;
   height: 100%;
-  min-height: 100%;
+  min-height: 0;
+  max-height: 100dvh;
   position: fixed;
   right: 0;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   visibility: ${(props) => (props.$shouldBeVisible ? "visible" : "hidden")};
@@ -97,12 +102,10 @@ const Wrapper = styled.div`
   @media (min-width: 1024px) {
     position: fixed;
     right: 0%;
-    //top: calc(100% + 10px);
     top: 0;
     width: 400px;
     height: 100vh;
     max-height: 100vh;
-    //min-height: 200px;
     box-shadow: var(--shadow-large);
     ${({ $isOpen }) =>
       $isOpen
@@ -117,21 +120,15 @@ const Wrapper = styled.div`
   @media (max-width: 767px) {
     width: 90%;
     max-width: min(90vw, 100%);
-    display: flex;
-    flex-direction: column;
     height: 100vh;
     max-height: 100dvh;
-    box-sizing: border-box;
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
     width: min(360px, 68vw);
     max-width: min(360px, 68vw);
-    display: flex;
-    flex-direction: column;
     height: 100vh;
     max-height: 100dvh;
-    box-sizing: border-box;
   }
 `;
 
@@ -255,25 +252,15 @@ const XDiv = styled.div`
   //margin-bottom: var(--spacing-md);
   background-color: var(--primary-100);
   color: var(--bg-100);
-
-  @media (max-width: 1023px) {
-    flex-shrink: 0;
-    order: 1;
-  }
+  flex-shrink: 0;
 `;
 const MiddleDiv = styled.div`
-  max-height: calc(100vh - var(--navbar-height) * 3 - 30px);
-  @media (min-width: 1024px) {
-    //max-height: 400px;
-  }
-  @media (max-width: 1023px) {
-    order: 3;
-    flex: 1 1 auto;
-    min-height: 0;
-    max-height: none;
-  }
-  overflow: auto; /* omogućava skrolanje unutar div-a */
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   touch-action: pan-y;
   &::-webkit-scrollbar {
     width: 10px;
@@ -321,10 +308,9 @@ const FreeDelivery = styled.div`
   border-top: 1px solid var(--bg-200);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   background-color: var(--bg-300);
+  flex-shrink: 0;
   @media (max-width: 1023px) {
     position: static;
-    order: 2;
-    flex-shrink: 0;
     height: auto;
     min-height: calc(var(--navbar-height) * 2);
   }
@@ -354,15 +340,14 @@ const Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(var(--navbar-height) * 2);
+  min-height: calc(var(--navbar-height) * 2);
   border-top: 1px solid var(--bg-300);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   background-color: var(--bg-200);
   margin-bottom: 14px;
+  flex-shrink: 0;
   @media (max-width: 1023px) {
     position: static;
-    order: 4;
-    flex-shrink: 0;
     margin-bottom: 0;
     padding-bottom: max(14px, env(safe-area-inset-bottom, 0px));
   }
@@ -439,7 +424,6 @@ const CartMenu = ({ isScrolled }) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [shouldBeVisible, setShouldBeVisible] = useState(false);
-  const [paddingTop, setPaddingTop] = useState(20);
   const { currencyTag } = useContext(ProductContext);
   const navigate = useNavigate();
   const { goToCheckout } = useNavigation();
@@ -695,7 +679,7 @@ const CartMenu = ({ isScrolled }) => {
             </Button>
           </BottomWrapper>
         </Bottom>
-        <MiddleDiv $paddingTop={`${paddingTop}px`}>
+        <MiddleDiv>
           <CartPanelHeading>Your products</CartPanelHeading>
           {inStockItems.map((item, index) => (
             <CartProduct item={item} key={index} />
