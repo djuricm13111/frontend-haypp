@@ -1,7 +1,18 @@
-import bannerFumi from "../../assets/images/banner/fumi.jpg";
-import bannerNordic from "../../assets/images/banner/nordic_spirit.jpg";
-import sliderVelo from "../../assets/images/slider/velo.jpg";
-import sliderZyn from "../../assets/images/slider/zyn.png";
+const VELO_RUBY_BERRY_FRONT =
+  "https://snus-s3.s3.eu-north-1.amazonaws.com/products/velo/WEBP/velo_BAT2011_SE_VELO_RUBY_BERRY_front.webp";
+const VELO_RUBY_BERRY_LEFT =
+  "https://snus-s3.s3.eu-north-1.amazonaws.com/products/velo/WEBP/velo_BAT2011_SE_VELO_RUBY_BERRY_LEFT.webp";
+const VELO_RUBY_BERRY_RIGHT =
+  "https://snus-s3.s3.eu-north-1.amazonaws.com/products/velo/WEBP/velo_BAT2011_SE_VELO_RUBY_BERRY_RIGHT.webp";
+
+const VELO_FREEZE_ULTRA =
+  "https://snus-s3.s3.eu-north-1.amazonaws.com/products/velo/WEBP/velo_freeze-ULTRA-strong-snus.webp";
+
+const ZYN_APPLE_MINT_MINI_DRY_LEFT =
+  "https://snus-s3.s3.eu-north-1.amazonaws.com/products/zyn/WEBP/zyn_apple_mint_mini_dry_left.webp";
+
+const XQS_EPIC_FREEZE_FRONT =
+  "https://snus-s3.s3.eu-north-1.amazonaws.com/products/xqs/WEBP/xqs_epic_freeze_front.webp";
 
 /**
  * Demo proizvodi za početnu — ista polja koja očekuje ProductCard i cart (id, manufacturer, nicotine, images…).
@@ -16,43 +27,59 @@ function imgPair(src) {
 
 export const homeFeaturedProductsMock = [
   {
-    id: "home-featured-velo-ice-cool",
-    name: "Ice Cool Strong Slim",
+    id: "home-featured-velo-ruby-berry",
+    name: "Ruby Berry",
     category_name: "Velo",
     manufacturer: "Velo",
     nicotine: 10,
     price: 5.49,
     is_in_stock: "in_stock",
-    images: imgPair(sliderVelo),
+    images: [
+      {
+        is_primary: true,
+        thumbnail: VELO_RUBY_BERRY_FRONT,
+        large: VELO_RUBY_BERRY_FRONT,
+      },
+      {
+        is_primary: false,
+        thumbnail: VELO_RUBY_BERRY_LEFT,
+        large: VELO_RUBY_BERRY_LEFT,
+      },
+      {
+        is_primary: false,
+        thumbnail: VELO_RUBY_BERRY_RIGHT,
+        large: VELO_RUBY_BERRY_RIGHT,
+      },
+    ],
   },
   {
-    id: "home-featured-zyn-blueberry",
-    name: "Blueberry Mint Slim",
+    id: "home-featured-velo-freeze-ultra",
+    name: "Freeze Ultra Strong",
+    category_name: "Velo",
+    manufacturer: "Velo",
+    nicotine: 11,
+    price: 5.49,
+    is_in_stock: "in_stock",
+    images: imgPair(VELO_FREEZE_ULTRA),
+  },
+  {
+    id: "home-featured-zyn-apple-mint-mini-dry",
+    name: "Apple Mint Mini Dry",
     category_name: "ZYN",
     manufacturer: "ZYN",
-    nicotine: 6,
+    nicotine: 3,
     price: 4.99,
     is_in_stock: "in_stock",
-    images: imgPair(sliderZyn),
+    images: imgPair(ZYN_APPLE_MINT_MINI_DRY_LEFT),
   },
   {
-    id: "home-featured-nordic-spirit",
-    name: "Bergamot Wildberry Slim",
-    category_name: "Nordic Spirit",
-    manufacturer: "Nordic Spirit",
+    id: "home-featured-xqs-epic-freeze",
+    name: "Epic Freeze",
+    category_name: "XQS",
+    manufacturer: "XQS",
     nicotine: 8,
-    price: 5.29,
-    is_in_stock: "in_stock",
-    images: imgPair(bannerNordic),
-  },
-  {
-    id: "home-featured-fumi",
-    name: "Melon Rush Slim",
-    category_name: "Fumi",
-    manufacturer: "Fumi",
-    nicotine: 4,
     price: 4.69,
     is_in_stock: "in_stock",
-    images: imgPair(bannerFumi),
+    images: imgPair(XQS_EPIC_FREEZE_FRONT),
   },
 ];
