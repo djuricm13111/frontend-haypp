@@ -61,7 +61,8 @@ const Container = styled.div`
   position: fixed;
   right: 0;
   top: 0;
-  z-index: var(--zindex-default);
+  /* Iznad TopHeaderSection / Trustpilot (1000), ispod modala (1040+) */
+  z-index: var(--zindex-fixed);
 
   min-width: 100%;
   height: 100vh;
@@ -73,8 +74,7 @@ const Container = styled.div`
   visibility: ${(props) => (props.$shouldBeVisible ? "visible" : "hidden")};
 `;
 const Wrapper = styled.div`
-  z-index: calc(var(--zindex-default) + 1);
-  z-index: 11;
+  z-index: calc(var(--zindex-fixed) + 1);
   background-color: var(--bg-100);
   box-sizing: border-box;
 
@@ -409,7 +409,7 @@ const MaskContainer = styled.div`
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 10;
+  z-index: calc(var(--zindex-fixed) - 1);
   min-width: 100%;
   height: 100vh;
   background-color: #0000003a;

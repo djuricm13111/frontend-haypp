@@ -13,6 +13,12 @@ const PreHeaderStack = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  /**
+   * Dok je mobilni drawer otvoren, ceo pre-header (uklj. Trustpilot) mora ispod
+   * modalnog sloja (1040+). Inače TopHeaderSection (1000) vizuelno „probija“
+   * providan backdrop dok entered ne postane true.
+   */
+  z-index: ${(props) => (props.$mobileNavOpen ? 10 : "auto")};
 `;
 
 const TopBlock = styled.div`
@@ -488,7 +494,7 @@ const Header = () => {
 
   return (
     <>
-      <PreHeaderStack ref={preHeaderRef}>
+      <PreHeaderStack ref={preHeaderRef} $mobileNavOpen={mobileNavOpen}>
         <TopBlock>VELO from £2.49 + 17% off with code: LUCKY17 ☘️</TopBlock>
         <TopHeaderSection>
         <TopHeaderWrapper>

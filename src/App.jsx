@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import { ThemeProvider } from "styled-components";
 import darkTheme from "./utils/theme";
 import { AuthUserProvider } from "./context/AuthUserContext";
+import Product from "./pages/Product";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <AuthUserProvider>
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/:lang/:slug" element={<Product />} />
           </Routes>
         </AuthUserProvider>
       </BrowserRouter>

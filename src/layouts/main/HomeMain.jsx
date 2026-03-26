@@ -31,7 +31,7 @@ import sliderVelo from "../../assets/images/slider/velo.jpg";
 import sliderZone from "../../assets/images/slider/zone.jpg";
 import sliderZyn from "../../assets/images/slider/zyn.png";
 import Header from "../../layouts/header/Header";
-import HomeHero from "./HomeHero";
+import HomeIntroText from "../../components/home/HomeIntroText";
 
 const SliderSection = styled.section`
   box-sizing: border-box;
@@ -179,7 +179,7 @@ const HomeMain = () => {
   return (
     <>
       <Header />
-      <HomeHero />
+      <HomeIntroText />
 
 
       <SliderSection aria-label="Featured offers">

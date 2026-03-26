@@ -56,17 +56,17 @@ const Subtitle = styled.p`
   }
 `;
 
-const HomeHero = () => {
+const HomeIntroText = () => {
   const { t } = useTranslation();
 
   return (
-    <Section aria-labelledby="home-hero-title">
+    <Section aria-labelledby="home-intro-title">
       <Inner>
-        <Title id="home-hero-title">{t("HOME.HERO_TITLE")}</Title>
+        <Title id="home-intro-title">{t("HOME.HERO_TITLE")}</Title>
         <Subtitle>{t("HOME.HERO_SUBTITLE")}</Subtitle>
       </Inner>
     </Section>
   );
 };
 
-export default HomeHero;
+export default HomeIntroText;

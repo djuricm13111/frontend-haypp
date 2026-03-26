@@ -178,6 +178,10 @@
     "FAST_DELIVERY": "Schnelle Lieferung",
     "EXPRESS_DELIVERY": "Express Lieferung",
     "DESCRIPTION": "Beschreibung",
+    "MORE_INFORMATION_TITLE": "Weitere Informationen zu {{name}}",
+    "MORE_INFORMATION_SUBTITLE": "Mehr über das Produkt lesen",
+    "PRODUCT_INFORMATION_TITLE": "Produktinformationen",
+    "ARTICLE_NUMBER": "Artikelnummer",
     "RATINGS": "Bewertungen",
     "NO_INFO": "Keine Informationen verfügbar.",
     "RECOMMENDED_PRODUCTS": "Empfohlene Produkte",
@@ -192,6 +196,17 @@
     "SECURE_PAYMENTS": "Sichere Zahlungen",
     "LOWEST_PRICE": "Niedrigster Preis & größte Auswahl online",
     "SATISFACTION_GUARANTEED": "Zufriedenheitsgarantie - kostenlose Rückgabe oder Geld-zurück-Garantie",
+
+    "TRUST_LOW_PRICE_LABEL": "TIEFPREIS",
+    "TRUST_LOW_PRICE_VALUE": "Tiefpreisgarantie",
+    "TRUST_SHIPPING_LABEL": "VERSAND",
+    "TRUST_SHIPPING_VALUE": "Kostenlos ab £4,99",
+    "TRUST_KLARNA_LABEL": "KLARNA",
+    "TRUST_KLARNA_VALUE": "Mit Klarna zahlen",
+
+    "AGE_WARNING_TITLE": "Alterswarnung",
+    "AGE_WARNING_VERIFY": "VERIFY",
+    "AGE_WARNING_BODY": "Dieses Produkt ist nicht risikofrei. Es enthält Nikotin, einen süchtig machenden Stoff.",
 
     "TAXES": "Steuern",
     "TAXES_TITLE": "Steuern auf SnusCo-Bestellungen in Österreich",

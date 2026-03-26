@@ -120,6 +120,12 @@
   border: 0;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   margin: 0;
   font-family: Roboto, Helvetica Neue, sans-serif;
@@ -202,9 +208,7 @@ section {
 }
 @media (min-width: 1025px) {
   .header-top-margin {
-    margin-top: calc(
-      var(--navbar-height-desktop) + var(--navbar-mini) + var(--navbar-mini)
-    );
+    margin-top: calc(var(--navbar-height-desktop) + var(--navbar-mini));
   }
 }
 
@@ -213,10 +217,7 @@ section {
 }
 @media (min-width: 1025px) {
   .header-top-padding {
-    padding-top: calc(
-      var(--navbar-height-desktop) + var(--navbar-mini) + var(--navbar-mini) +
-        10px
-    );
+    padding-top: calc(var(--navbar-height-desktop) + var(--navbar-mini) + 10px);
   }
 }
 

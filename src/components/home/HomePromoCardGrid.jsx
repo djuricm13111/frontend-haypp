@@ -22,6 +22,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--spacing-md);
+  align-items: start;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -36,13 +37,14 @@ const Grid = styled.div`
 const Card = styled.article`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   background: var(--bg-100);
   border-radius: ${RADIUS};
   overflow: hidden;
   border: 1px solid #e8e8e8;
   box-shadow: var(--shadow-small);
   min-width: 0;
+  padding-bottom: var(--spacing-xs);
 `;
 
 const ImageWrap = styled.div`
@@ -59,6 +61,13 @@ const ImageWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 767px) {
+    /* Manje „gutanja“ slike — veći prikaz */
+    padding: 1px 2px;
+    /* Viši blok slike nego ranije → grafika deluje veća */
+    aspect-ratio: 3 / 4.45;
+  }
 `;
 
 const CardImage = styled.img`
@@ -71,15 +80,22 @@ const CardImage = styled.img`
   object-fit: contain;
   object-position: center;
   border-radius: ${IMG_RADIUS};
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+    width: 100%;
+    max-height: none;
+    min-height: 0;
+  }
 `;
 
 const TextBlock = styled.div`
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xxs);
   gap: var(--spacing-xxs);
   min-height: 0;
 `;
@@ -106,10 +122,12 @@ const BuyLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  align-self: center;
+  width: 88%;
+  max-width: 100%;
   margin: 0;
-  margin-top: auto;
-  padding: var(--spacing-xs) var(--spacing-md);
+  margin-top: var(--spacing-xxs);
+  padding: 6px var(--spacing-md);
   box-sizing: border-box;
   background: var(--primary-100);
   color: var(--bg-100) !important;
@@ -117,9 +135,8 @@ const BuyLink = styled.a`
   font-size: 0.75rem;
   font-weight: 600;
   text-decoration: none;
-  border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 0 0 ${RADIUS} ${RADIUS};
+  border: 0;
+  border-radius: 4px;
   transition: background var(--transition-fast);
 
   &:hover {

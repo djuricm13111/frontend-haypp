@@ -178,9 +178,14 @@
     "FAST_DELIVERY": "Fast Delivery",
     "EXPRESS_DELIVERY": "Express Delivery",
     "DESCRIPTION": "Description",
+    "MORE_INFORMATION_TITLE": "More Information about {{name}}",
+    "MORE_INFORMATION_SUBTITLE": "Read more about the product",
+    "PRODUCT_INFORMATION_TITLE": "Product Information",
+    "ARTICLE_NUMBER": "Article Number",
     "RATINGS": "Ratings",
     "NO_INFO": "No information here to display.",
     "RECOMMENDED_PRODUCTS": "Recommended Products",
+    "READ_MORE": "Read more about {{name}}",
 
     "STRENGTH_LABEL": "Strength",
     "STRENGTH": {
@@ -192,6 +197,17 @@
     "SECURE_PAYMENTS": "Secure payments",
     "LOWEST_PRICE": "Lowest price & widest selection online",
     "SATISFACTION_GUARANTEED": "Satisfaction guaranteed - free return or money back guaranteed",
+
+    "TRUST_LOW_PRICE_LABEL": "LOW PRICE",
+    "TRUST_LOW_PRICE_VALUE": "Low Price Guarantee",
+    "TRUST_SHIPPING_LABEL": "FREE SHIPPING",
+    "TRUST_SHIPPING_VALUE": "On orders over £4.99",
+    "TRUST_KLARNA_LABEL": "KLARNA",
+    "TRUST_KLARNA_VALUE": "Pay with Klarna",
+
+    "AGE_WARNING_TITLE": "Age warning",
+    "AGE_WARNING_VERIFY": "VERIFY",
+    "AGE_WARNING_BODY": "This product is not risk-free. It contains nicotine, an addictive substance.",
 
     "TAXES": "Taxes",
     "TAXES_TITLE": "Taxes on SnusCo Orders in Austria",
@@ -432,7 +448,8 @@
     "OUT_OF_STOCK": "Out of Stock",
     "AVAILABLE_SOON": "Available Soon",
     "CHANGE_PASSWORD": "Change Password",
-    "PAY_NOW": "Pay Now"
+    "PAY_NOW": "Pay Now",
+    "SUBSCRIBE": "Subscribe"
   },
   "LABELS": {
     "EMAIL": "Email",

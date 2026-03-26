@@ -53,6 +53,11 @@ export function useNavigation() {
     return `/category/${slugPart(name)}`;
   }
 
+  /** Lista „Nicotine pouches” (isti obrazac kao u HomePromoIntro / HomeMain). */
+  function goToShop() {
+    return "/category/nicotine-pouches";
+  }
+
   return {
     goToHome,
     goToLogin,
@@ -63,5 +68,6 @@ export function useNavigation() {
     goToSearch,
     goToProduct,
     goToCategory,
+    goToShop,
   };
 }

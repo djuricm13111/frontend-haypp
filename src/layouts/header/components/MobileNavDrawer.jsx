@@ -10,6 +10,7 @@ import { navItems, dropdownData } from "./HeaderList";
 const PANEL_TRANSITION = "transform 0.28s ease";
 const BACKDROP_TRANSITION = "opacity 0.28s ease";
 
+/* $visible = isOpen || entered: dim odmah pri otvaranju, ne čekati entered (2× rAF). */
 const Backdrop = styled.div`
   position: fixed;
   inset: 0;
@@ -585,7 +586,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   return createPortal(
     <>
       <Backdrop
-        $visible={entered}
+        $visible={isOpen || entered}
         onClick={navState ? goBackNav : onClose}
         aria-hidden="true"
       />
