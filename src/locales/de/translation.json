@@ -128,12 +128,18 @@
   "LOGIN": {
     "SIGN_IN": "Anmelden",
     "TITLE": "Anmelden",
+    "HINT_SECTION_TITLE": "Anmelden",
+    "ACCOUNT_HINT": "Greifen Sie auf Ihr Konto zu, um Bestellungen zu sehen",
+    "LOGO_MARK": "SNUSCO",
     "SUBTITLE": "Greifen Sie auf Ihr Konto zu",
     "FORGOT_PASSWORD": "Passwort vergessen?",
     "DONT_HAVE_ACCOUNT": "Noch kein Konto?",
     "SIGN_UP": "Registrieren",
     "FORGOT_PASSWORD_TITLE": "Passwort vergessen?",
-    "FORGOT_PASSWORD_SUBTITLE": "Geben Sie Ihre E-Mail-Adresse ein, um Ihr Passwort zurückzusetzen."
+    "FORGOT_PASSWORD_SUBTITLE": "Geben Sie Ihre E-Mail-Adresse ein, um Ihr Passwort zurückzusetzen.",
+    "REORDER_NUDGE_TITLE": "Noch einmal bestellen – einfacher als je zuvor!",
+    "REORDER_NUDGE_BODY": "Hallo! Wussten Sie, dass Sie unter „Meine Seiten“ ganz einfach eine frühere Bestellung erneut aufgeben können? Klicken Sie einfach auf „Erneut bestellen“, um Ihre Favoriten erneut liefern zu lassen.",
+    "REORDER_NUDGE_CLOSE": "Schließen"
   },
 
   "REGISTER": {

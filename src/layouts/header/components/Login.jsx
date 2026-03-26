@@ -5,7 +5,10 @@ import {
   useCallback,
   forwardRef,
   useImperativeHandle,
+  useLayoutEffect,
+  useRef,
 } from "react";
+import { createPortal } from "react-dom";
 import styled, { css, keyframes } from "styled-components";
 import ButtonLoading from "../../../components/animations/ButtonLoading";
 
@@ -222,7 +225,8 @@ const ScrollBody = styled.div`
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
-  padding: 16px 12px 32px;
+  padding: 0 0 32px;
+  background-color: var(--bg-100);
 
   &::-webkit-scrollbar {
     width: 10px;
@@ -233,46 +237,89 @@ const ScrollBody = styled.div`
   }
 `;
 
-const FormSurface = styled.div`
+/** Blago tamnija traka, ivica dole — puna širina panela (kompenzuje padding ScrollBody). */
+const AccountHintBar = styled.div`
+  width: 100%;
+  margin: 0 0 var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
+  box-sizing: border-box;
+  background-color: var(--bg-300);
+  border-bottom: 1px solid #e4e4e4;
+`;
+
+const AccountHintTitle = styled.h2`
+  margin: 0 0 var(--spacing-xs);
+  padding: 0;
+  font-size: var(--header-font-size-base);
+  font-weight: 600;
+  color: var(--text-100);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.25;
+  font-family: "Oswald-Medium";
+  font-size:14px;
+`;
+
+const AccountHintText = styled.p`
+  margin: 0;
+  font-size: var(--header-font-size-small);
+  color: var(--text-200);
+  line-height: 1.45;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+`;
+
+const LoginLogoMark = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #001a57;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: clamp(1.5rem, 5vw, 1.75rem);
+  margin: 0 0 var(--spacing-lg);
+`;
+
+const FormSurface = styled.div`
+  display: flex;
+  align-items: stretch;
   justify-content: flex-start;
   flex-direction: column;
   width: 100%;
-  background-color: var(--bg-200);
+  background-color: var(--bg-100);
   position: relative;
-  padding: 8px 0 24px;
+  padding: 0 12px 24px;
   box-sizing: border-box;
 `;
 
 const FormWrapper = styled.div`
-  min-width: 90%;
-  max-width: 90%;
-  align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
 `;
 
 const FormContainer = styled.div`
   width: 100%;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
 `;
 
 const Form = styled.form`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: flex-start;
   flex-direction: column;
-  margin: 10px 0;
+  margin: 10px 0 0;
   width: 100%;
-`;
-
-const Subtitle = styled.div`
-  font-size: var(--header-font-size-small);
-  color: var(--text-100);
-  text-align: center;
-  margin-bottom: var(--spacing-lg);
-  font-family: "Montserrat", sans-serif;
+  gap: 0;
 `;
 
 const Input = styled.input`
@@ -291,6 +338,16 @@ const Input = styled.input`
   }
 `;
 
+/** Prostor za ikonu oka desno; širina 100% u grid ćeliji. */
+const PasswordInput = styled(Input)`
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 44px;
+  box-sizing: border-box;
+`;
+
 const Label = styled.label`
   font-size: var(--header-font-size-base);
   text-transform: capitalize;
@@ -300,20 +357,12 @@ const Label = styled.label`
   font-family: "Montserrat", sans-serif;
 `;
 
-const SmallTitle = styled.div`
-  text-align: center;
-  font-size: var(--header-font-size-small);
-  margin: 12px 0;
-  color: var(--text-100);
-  font-family: "Montserrat", sans-serif;
-`;
-
 const ButtonWrapper = styled.div`
   position: relative;
-  display: inline-block;
-  width: 90%;
+  display: block;
+  width: 100%;
   text-align: center;
-  margin: var(--spacing-md) 0;
+  margin: var(--spacing-md) 0 0;
 `;
 
 const Button = styled.button`
@@ -325,31 +374,66 @@ const Button = styled.button`
 `;
 
 const EyeSVG = styled.svg`
-  position: absolute;
-  right: 40px;
-  top: 0;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
   width: var(--font-size-xlarge);
   height: var(--font-size-xlarge);
+  margin-right: 14px;
+  cursor: pointer;
+  z-index: 2;
+  pointer-events: auto;
+  flex-shrink: 0;
 `;
 
 const EyeSpan = styled.span`
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 100%;
+  align-items: center;
 `;
 
-const ButtonLink = styled.button`
-  align-self: center;
+const AuthFooter = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  margin-top: var(--spacing-md);
+  gap: var(--spacing-md);
+`;
+
+const ForgotPasswordRow = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+const ForgotPasswordButton = styled.button`
   color: var(--primary-200);
   font-size: var(--header-font-size-small);
-  font-weight: 500;
+  font-weight: 600;
   border: none;
-  background-color: transparent;
-  padding: 0;
-  margin: 8px 0;
+  background: transparent;
+  padding: var(--spacing-xxs) var(--spacing-sm);
+  margin: 0;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
+  line-height: 1.35;
+  width: 100%;
+  max-width: 100%;
+
   &:hover {
-    background-color: transparent;
     color: var(--primary-100);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-100);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 `;
 
@@ -358,13 +442,236 @@ const GoogleWrap = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 16px;
-  gap: 10px;
   width: 100%;
+  min-height: 0;
+
+  #signInDivLogin {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #signInDivLogin > div {
+    width: 100% !important;
+  }
+`;
+
+const RegisterRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.35em;
+  row-gap: var(--spacing-xxs);
+  width: 100%;
+  text-align: center;
+  font-size: var(--header-font-size-small);
+  color: var(--text-100);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+`;
+
+const RegisterPrompt = styled.span`
+  color: var(--text-100);
+`;
+
+const SignUpButton = styled.button`
+  display: inline;
+  color: var(--primary-200);
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:hover {
+    color: var(--primary-100);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-100);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 `;
 
 const GOOGLE_CLIENT_ID =
   "1073769483725-9r694i6s793d9ccmtfc2nh4tq4379s5a.apps.googleusercontent.com";
+
+/** Jednom po tab sesiji — ne prikazuj ponovo obaveštenje posle zatvaranja / Sign in. */
+const SESSION_NUDGE_KEY = "snusco_login_reorder_nudge_dismissed";
+
+const NudgeBadge = styled.div`
+  position: absolute;
+  right: 0;
+  top: -4px;
+  background-color: var(--error-color);
+  color: var(--bg-100);
+  border-radius: var(--border-radius-large);
+  padding: 4px 2px;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+`;
+
+const NudgePopoverBackdrop = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: var(--zindex-popover);
+  background: rgba(0, 0, 0, 0.04);
+`;
+
+/** Svetla plava zona naslova — drugačija od belog donjeg dela */
+const nudgeTopBg = "#e8eef9";
+const NUDGE_POPOVER_MAX_WIDTH = 212;
+
+const NudgePopoverSurface = styled.div`
+  position: fixed;
+  z-index: calc(var(--zindex-popover) + 1);
+  background: var(--bg-100);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 48, 130, 0.18);
+  box-shadow:
+    0 2px 4px rgba(0, 20, 50, 0.04),
+    0 10px 22px rgba(0, 20, 50, 0.07);
+  padding: 0;
+  overflow: visible;
+  box-sizing: border-box;
+  max-width: min(${NUDGE_POPOVER_MAX_WIDTH}px, calc(100vw - 40px));
+
+  /* Spoljašnji trougao — ista boja kao ivica prozora */
+  &::after {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: var(--nudge-arrow-x, 50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid rgba(0, 48, 130, 0.18);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Unutrašnji trougao — nastavlja plavu zonu (overflow:hidden bi ga sekao) */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: var(--nudge-arrow-x, 50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid ${nudgeTopBg};
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 -0.5px 0 rgba(0, 48, 130, 0.06));
+  }
+`;
+
+const NudgeTopSection = styled.div`
+  position: relative;
+  z-index: 2;
+  background: ${nudgeTopBg};
+  border-radius: 3px 3px 0 0;
+  padding: var(--spacing-sm) var(--spacing-sm) 6px;
+  box-sizing: border-box;
+`;
+
+const NudgeBottomSection = styled.div`
+  position: relative;
+  z-index: 2;
+  background: var(--bg-100);
+  border-radius: 0 0 3px 3px;
+  padding: 6px var(--spacing-sm) var(--spacing-sm);
+  box-sizing: border-box;
+`;
+
+const NudgeTitle = styled.h3`
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--primary-100);
+  text-align: center;
+  line-height: 1.35;
+`;
+
+const NudgeBody = styled.p`
+  margin: 0 0 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-100);
+  text-align: center;
+  line-height: 1.5;
+`;
+
+const NudgePrimaryBtn = styled.button`
+  width: 100%;
+  padding: 8px var(--spacing-sm);
+  border: none;
+  outline: none;
+  border-radius: 0;
+  background: var(--primary-100);
+  color: var(--bg-100);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 6px;
+  transition: background var(--transition-fast);
+  box-shadow: none;
+
+  &:hover {
+    background: var(--primary-200);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg-100), 0 0 0 4px var(--primary-200);
+  }
+`;
+
+const NudgeCloseLink = styled.button`
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 4px var(--spacing-xs);
+  border: none;
+  outline: none;
+  border-radius: 0;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-200);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: none;
+
+  &:hover {
+    color: var(--text-100);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-100);
+  }
+`;
 
 const Login = forwardRef(function Login(_, ref) {
   const { t } = useTranslation();
@@ -372,22 +679,102 @@ const Login = forwardRef(function Login(_, ref) {
   const { goToRegister, goToForgotPassword } = useNavigation();
 
   const [isOpen, setIsOpen] = useState(false);
-
-  useImperativeHandle(
-    ref,
-    () => ({
-      open: () => setIsOpen(true),
-    }),
-    []
-  );
   const [shouldBeVisible, setShouldBeVisible] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser, handleGoogleLogin } = useContext(AuthUserContext);
+  const { loginUser, handleGoogleLogin, authTokens } = useContext(AuthUserContext);
+
+  const triggerRef = useRef(null);
+  const nudgeIconRef = useRef(null);
+  const [nudgePopoverOpen, setNudgePopoverOpen] = useState(false);
+  const [nudgePos, setNudgePos] = useState({
+    top: 0,
+    left: 0,
+    width: NUDGE_POPOVER_MAX_WIDTH,
+    arrowX: NUDGE_POPOVER_MAX_WIDTH / 2,
+  });
+  const [nudgeDismissed, setNudgeDismissed] = useState(() => {
+    try {
+      return sessionStorage.getItem(SESSION_NUDGE_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
 
   const [isAnimating, setIsAnimating] = useState(false);
+
+  const dismissNudge = useCallback(() => {
+    try {
+      sessionStorage.setItem(SESSION_NUDGE_KEY, "1");
+    } catch {
+      /* private mode */
+    }
+    setNudgeDismissed(true);
+    setNudgePopoverOpen(false);
+  }, []);
+
+  const showNudgeBadge = !authTokens && !nudgeDismissed;
+
+  useLayoutEffect(() => {
+    if (!nudgePopoverOpen || !triggerRef.current) return;
+
+    const place = () => {
+      if (!triggerRef.current) return;
+      const r = triggerRef.current.getBoundingClientRect();
+      const w = Math.min(NUDGE_POPOVER_MAX_WIDTH, window.innerWidth - 40);
+      const left = Math.max(
+        20,
+        Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - 20)
+      );
+      const iconEl = nudgeIconRef.current;
+      const ir = iconEl ? iconEl.getBoundingClientRect() : r;
+      const iconCenterX = ir.left + ir.width / 2;
+      let arrowX = iconCenterX - left;
+      const pad = 12;
+      arrowX = Math.min(Math.max(arrowX, pad), w - pad);
+      setNudgePos({ top: r.bottom + 8, left, width: w, arrowX });
+    };
+
+    place();
+    window.addEventListener("resize", place);
+    window.addEventListener("scroll", place, true);
+    return () => {
+      window.removeEventListener("resize", place);
+      window.removeEventListener("scroll", place, true);
+    };
+  }, [nudgePopoverOpen]);
+
+  useEffect(() => {
+    if (authTokens) setNudgePopoverOpen(false);
+  }, [authTokens]);
+
+  useEffect(() => {
+    if (!nudgePopoverOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") dismissNudge();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [nudgePopoverOpen, dismissNudge]);
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      open: () => {
+        setNudgePopoverOpen(false);
+        try {
+          sessionStorage.setItem(SESSION_NUDGE_KEY, "1");
+        } catch {
+          /* ignore */
+        }
+        setNudgeDismissed(true);
+        setIsOpen(true);
+      },
+    }),
+    []
+  );
 
   const handleAnimationComplete = () => {
     setIsAnimating(false);
@@ -406,6 +793,14 @@ const Login = forwardRef(function Login(_, ref) {
 
   const togglePanel = () => {
     setIsOpen((o) => !o);
+  };
+
+  const handleTriggerClick = () => {
+    if (!authTokens && !nudgeDismissed) {
+      setNudgePopoverOpen(true);
+      return;
+    }
+    togglePanel();
   };
 
   const handleSubmit = async (e) => {
@@ -482,28 +877,82 @@ const Login = forwardRef(function Login(_, ref) {
   return (
     <Shell>
       <TriggerWrap
-        onClick={togglePanel}
+        ref={triggerRef}
+        onClick={handleTriggerClick}
         role="button"
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            togglePanel();
+            handleTriggerClick();
           }
         }}
         aria-label={t("LOGIN.SIGN_IN")}
         aria-expanded={isOpen}
+        aria-haspopup={showNudgeBadge ? "dialog" : undefined}
       >
+        {showNudgeBadge && <NudgeBadge aria-hidden>1</NudgeBadge>}
         <TriggerLabel>{t("LOGIN.SIGN_IN")}</TriggerLabel>
-        <UserTriggerIcon
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
+        <span
+          ref={nudgeIconRef}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
-          <path d="M4 21v-1a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7v1" />
-        </UserTriggerIcon>
+          <UserTriggerIcon
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+            <path d="M4 21v-1a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7v1" />
+          </UserTriggerIcon>
+        </span>
       </TriggerWrap>
+
+      {nudgePopoverOpen &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <>
+            <NudgePopoverBackdrop onClick={dismissNudge} />
+            <NudgePopoverSurface
+              style={{
+                top: nudgePos.top,
+                left: nudgePos.left,
+                width: nudgePos.width,
+                ["--nudge-arrow-x"]: `${nudgePos.arrowX}px`,
+              }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="login-reorder-nudge-title"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <NudgeTopSection>
+                <NudgeTitle id="login-reorder-nudge-title">
+                  {t("LOGIN.REORDER_NUDGE_TITLE")}
+                </NudgeTitle>
+              </NudgeTopSection>
+              <NudgeBottomSection>
+                <NudgeBody>{t("LOGIN.REORDER_NUDGE_BODY")}</NudgeBody>
+                <NudgePrimaryBtn
+                  type="button"
+                  onClick={() => {
+                    dismissNudge();
+                    setIsOpen(true);
+                  }}
+                >
+                  {t("LOGIN.SIGN_IN")}
+                </NudgePrimaryBtn>
+                <NudgeCloseLink type="button" onClick={dismissNudge}>
+                  {t("LOGIN.REORDER_NUDGE_CLOSE")}
+                </NudgeCloseLink>
+              </NudgeBottomSection>
+            </NudgePopoverSurface>
+          </>,
+          document.body
+        )}
 
       <FullscreenOverlay
         onClick={togglePanel}
@@ -554,9 +1003,13 @@ const Login = forwardRef(function Login(_, ref) {
         </PanelHeader>
 
         <ScrollBody>
+          <AccountHintBar>
+            <AccountHintTitle>{t("LOGIN.HINT_SECTION_TITLE")}</AccountHintTitle>
+            <AccountHintText>{t("LOGIN.ACCOUNT_HINT")}</AccountHintText>
+          </AccountHintBar>
           <FormSurface>
             <FormContainer>
-              <Subtitle>{t("LOGIN.SUBTITLE")}</Subtitle>
+              <LoginLogoMark>{t("LOGIN.LOGO_MARK")}</LoginLogoMark>
               <Form onSubmit={handleSubmit}>
                 <FormWrapper>
                   <Label htmlFor="login-email">{t("LABELS.EMAIL")}</Label>
@@ -576,7 +1029,7 @@ const Login = forwardRef(function Login(_, ref) {
                 <FormWrapper>
                   <Label htmlFor="login-password">{t("LABELS.PASSWORD")}</Label>
                   <EyeSpan>
-                    <Input
+                    <PasswordInput
                       type={showPassword ? "text" : "password"}
                       id="login-password"
                       autoComplete="current-password"
@@ -629,32 +1082,36 @@ const Login = forwardRef(function Login(_, ref) {
                 </ButtonWrapper>
               </Form>
 
-              <ButtonLink
-                type="button"
-                onClick={() => {
-                  navigate(goToForgotPassword());
-                  setIsOpen(false);
-                }}
-              >
-                <strong>{t("LOGIN.FORGOT_PASSWORD")}</strong>
-              </ButtonLink>
+              <AuthFooter>
+                <ForgotPasswordRow>
+                  <ForgotPasswordButton
+                    type="button"
+                    onClick={() => {
+                      navigate(goToForgotPassword());
+                      setIsOpen(false);
+                    }}
+                  >
+                    {t("LOGIN.FORGOT_PASSWORD")}
+                  </ForgotPasswordButton>
+                </ForgotPasswordRow>
 
-              <GoogleWrap>
-                <div id="signInDivLogin" style={{ width: "100%" }} />
-              </GoogleWrap>
+                <GoogleWrap>
+                  <div id="signInDivLogin" style={{ width: "100%" }} />
+                </GoogleWrap>
 
-              <SmallTitle>
-                {t("LOGIN.DONT_HAVE_ACCOUNT")}{" "}
-                <ButtonLink
-                  type="button"
-                  onClick={() => {
-                    navigate(goToRegister());
-                    setIsOpen(false);
-                  }}
-                >
-                  {t("LOGIN.SIGN_UP")}
-                </ButtonLink>
-              </SmallTitle>
+                <RegisterRow>
+                  <RegisterPrompt>{t("LOGIN.DONT_HAVE_ACCOUNT")}</RegisterPrompt>
+                  <SignUpButton
+                    type="button"
+                    onClick={() => {
+                      navigate(goToRegister());
+                      setIsOpen(false);
+                    }}
+                  >
+                    {t("LOGIN.SIGN_UP")}
+                  </SignUpButton>
+                </RegisterRow>
+              </AuthFooter>
             </FormContainer>
           </FormSurface>
         </ScrollBody>

@@ -127,13 +127,19 @@
 
   "LOGIN": {
     "SIGN_IN": "Sign in",
-    "TITLE": "Login",
+    "TITLE": "Sign In",
+    "HINT_SECTION_TITLE": "Sign In",
+    "ACCOUNT_HINT": "Access your account to see orders",
+    "LOGO_MARK": "SNUSCO",
     "SUBTITLE": "Access your account",
     "FORGOT_PASSWORD": "Forgot your password?",
     "DONT_HAVE_ACCOUNT": "Don't have an account?",
     "SIGN_UP": "Sign Up",
     "FORGOT_PASSWORD_TITLE": "Forgot Your Password?",
-    "FORGOT_PASSWORD_SUBTITLE": "Enter your email address to reset your password."
+    "FORGOT_PASSWORD_SUBTITLE": "Enter your email address to reset your password.",
+    "REORDER_NUDGE_TITLE": "Order again - smoother than ever!",
+    "REORDER_NUDGE_BODY": "Hi! Did you know that you can easily reorder a previous order on My Pages? Just click \"reorder\" to get all your favourites delivered again.",
+    "REORDER_NUDGE_CLOSE": "Close"
   },
 
   "REGISTER": {
