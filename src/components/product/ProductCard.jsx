@@ -975,7 +975,9 @@ const ProductCard = ({ product }) => {
   const blurCardImage = pickerOpen && !isMobileQty;
 
   const goProduct = () =>
-    navigate(goToProduct(product.category_name, product.name));
+    navigate(
+      goToProduct(product.category_name, product.name, product.slug)
+    );
 
   const closeDesktopPickerOrNavigate = () => {
     if (pickerOpen && !isMobileQty) {

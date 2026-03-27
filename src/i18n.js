@@ -20,6 +20,7 @@ i18n
       interpolation: { escapeValue: false },
       detection: {
         order: ["path", "navigator"],
+        lookupFromPathIndex: 0,
         caches: [],
       },
       initImmediate: false, // Osigurava da `onInitialized` radi pravilno

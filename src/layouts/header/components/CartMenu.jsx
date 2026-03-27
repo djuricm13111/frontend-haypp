@@ -220,23 +220,72 @@ const CartText = styled.h4`
   font-weight: 400;
   color: var(--primary-100);
 `;
-const SumQuantity = styled.div`
-  cursor: pointer;
-  position: absolute;
-  right: 0px;
-  top: -4px;
 
-  background-color: var(--error-color);
-  color: var(--bg-100);
-  border-radius: var(--border-radius-large);
-  padding: 4px 2px;
-  margin: 0;
-  min-width: 20px;
-  display: flex;
+/** Omotač oko ikone — badge u gornjem desnom uglu, preklapanje sa ručkom korpe. */
+const CartIconWrap = styled.span`
+  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  font-weight: 200;
+  flex-shrink: 0;
+  line-height: 0;
+  margin: 0 1px 0 0;
+`;
+
+/** Referenca: pun crven krug, beli broj, meka senka nadole-desno; „99+“ kao uža pilula. */
+const SumQuantity = styled.span`
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transform: translate(44%, -44%);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0;
+
+  background: #e53935;
+  color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22), 0 1px 2px rgba(0, 0, 0, 0.12);
+
+  /* Broj odvojen od Montserrat u headeru — sistemski / Helvetica stack */
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.02em;
+
+  ${(p) =>
+    p.$twoChar &&
+    !p.$wide &&
+    css`
+      font-size: 10px;
+    `}
+
+  ${(p) =>
+    p.$wide &&
+    css`
+      width: auto;
+      min-width: 26px;
+      height: 18px;
+      min-height: 18px;
+      padding: 0 5px;
+      border-radius: 999px;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    `}
 `;
 const Span = styled.span`
   font-weight: 500;
@@ -475,6 +524,9 @@ const CartMenu = ({ isScrolled }) => {
   const grandTotal = subtotalRounded + shippingCost;
   const grandTotalRounded = parseFloat(grandTotal.toFixed(2));
 
+  const cartBadgeLabel =
+    totalQuantity > 99 ? "99+" : String(totalQuantity);
+
   const inStockItems = cartItems.filter(
     (item) => item.product.is_in_stock === "in_stock"
   );
@@ -504,41 +556,61 @@ const CartMenu = ({ isScrolled }) => {
             {currencyTag}
             {grandTotalRounded}
           </CartText>
-          <svg
-            width="20px"
-            height="20px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
-              stroke="var(--primary-100)"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          {totalQuantity !== 0 && <SumQuantity>{totalQuantity}</SumQuantity>}
+          <CartIconWrap>
+            <svg
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                stroke="var(--primary-100)"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            {totalQuantity !== 0 && (
+              <SumQuantity
+                aria-hidden
+                $wide={cartBadgeLabel.length > 2}
+                $twoChar={cartBadgeLabel.length === 2}
+              >
+                {cartBadgeLabel}
+              </SumQuantity>
+            )}
+          </CartIconWrap>
         </CartContainer>
       ) : (
         <CartContainer onClick={toggleMenu} style={{ cursor: "pointer" }}>
-          <CartHeaderIcon
-            width="24px"
-            height="24px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+          <CartIconWrap>
+            <CartHeaderIcon
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
               fill="none"
-              strokeWidth="1"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </CartHeaderIcon>
-          {totalQuantity !== 0 && <SumQuantity>{totalQuantity}</SumQuantity>}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                fill="none"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </CartHeaderIcon>
+            {totalQuantity !== 0 && (
+              <SumQuantity
+                aria-hidden
+                $wide={cartBadgeLabel.length > 2}
+                $twoChar={cartBadgeLabel.length === 2}
+              >
+                {cartBadgeLabel}
+              </SumQuantity>
+            )}
+          </CartIconWrap>
         </CartContainer>
       )}
 

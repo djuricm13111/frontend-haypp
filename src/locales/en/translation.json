@@ -19,6 +19,7 @@
     "PROFILE": "Profile",
     "SIGN_UP": "Sign up",
     "SEARCH_FOR": "Search for",
+    "LOGO_HOME": "SnusCo — home",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "New Year New Me",
       "NICOTINE_POUCHES": "Nicotine Pouches",
@@ -117,6 +118,15 @@
     "SHOP_BY_BRAND": "Shop by Brand",
     "FEATURED_PRODUCTS_TITLE": "Featured products",
     "SHOP_BY_CATEGORY": "Shop by Category",
+    "SHOP_BY_FLAVOR": "Shop by flavor",
+    "FLAVOR_NAV": {
+      "MINT": "Mint",
+      "BERRY": "Berry",
+      "CITRUS": "Citrus",
+      "FRUIT": "Fruit",
+      "COFFEE": "Coffee",
+      "LIQUORICE": "Liquorice"
+    },
     "CATEGORY_NAV": {
       "NICOTINE_POUCHES": "Nicotine Pouches",
       "NICOTINE_FREE_POUCHES": "Nicotine Free Pouches",
@@ -131,6 +141,12 @@
       "DESC_BEFORE": "Be the first to try the latest nicotine pouches. Our new arrivals section is updated regularly with fresh launches from ",
       "TOP_BRANDS": "top brands",
       "DESC_AFTER": "."
+    },
+    "HOME_PICK_GRID": {
+      "SECTION_HEADING": "Best sellers and new arrivals",
+      "TABLIST_LABEL": "Choose product list",
+      "LOADING": "Loading products…",
+      "EMPTY": "No products to show right now."
     }
   },
 

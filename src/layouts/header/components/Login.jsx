@@ -506,23 +506,47 @@ const GOOGLE_CLIENT_ID =
 /** Jednom po tab sesiji — ne prikazuj ponovo obaveštenje posle zatvaranja / Sign in. */
 const SESSION_NUDGE_KEY = "snusco_login_reorder_nudge_dismissed";
 
-const NudgeBadge = styled.div`
-  position: absolute;
-  right: 0;
-  top: -4px;
-  background-color: var(--error-color);
-  color: var(--bg-100);
-  border-radius: var(--border-radius-large);
-  padding: 4px 2px;
-  min-width: 20px;
-  display: flex;
+/** Omotač oko user ikone — badge kao na korpi (CartMenu SumQuantity). */
+const UserIconBadgeWrap = styled.span`
+  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
+  flex-shrink: 0;
+  line-height: 0;
+`;
+
+const NudgeBadge = styled.span`
   pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transform: translate(44%, -44%);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0;
+
+  background: #e53935;
+  color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22), 0 1px 2px rgba(0, 0, 0, 0.12);
+
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.02em;
 `;
 
 const NudgePopoverBackdrop = styled.div`
@@ -891,16 +915,8 @@ const Login = forwardRef(function Login(_, ref) {
         aria-expanded={isOpen}
         aria-haspopup={showNudgeBadge ? "dialog" : undefined}
       >
-        {showNudgeBadge && <NudgeBadge aria-hidden>1</NudgeBadge>}
         <TriggerLabel>{t("LOGIN.SIGN_IN")}</TriggerLabel>
-        <span
-          ref={nudgeIconRef}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <UserIconBadgeWrap ref={nudgeIconRef}>
           <UserTriggerIcon
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -909,7 +925,8 @@ const Login = forwardRef(function Login(_, ref) {
             <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
             <path d="M4 21v-1a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7v1" />
           </UserTriggerIcon>
-        </span>
+          {showNudgeBadge && <NudgeBadge aria-hidden>1</NudgeBadge>}
+        </UserIconBadgeWrap>
       </TriggerWrap>
 
       {nudgePopoverOpen &&

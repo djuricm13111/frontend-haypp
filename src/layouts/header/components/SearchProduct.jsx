@@ -51,7 +51,7 @@ const SearchProduct = ({
 
   const handleViewProduct = (e) => {
     e.stopPropagation();
-    onProductClick(item.category_name, item.name);
+    onProductClick(item.category_name, item.name, item.slug);
   };
 
   const handleAnimationComplete = () => {
@@ -63,7 +63,9 @@ const SearchProduct = ({
 
   return (
     <ProductResult
-      onClick={() => onProductClick(item.category_name, item.name)}
+      onClick={() =>
+        onProductClick(item.category_name, item.name, item.slug)
+      }
     >
       <FlexDivProduct $oos={isOutOfStock}>
         <ProductLeftGroup $oos={isOutOfStock}>

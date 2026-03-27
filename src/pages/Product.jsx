@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
@@ -21,7 +21,17 @@ const Container = styled.div`
 const Product = () => {
   const { t, i18n } = useTranslation();
   const { product } = useContext(ProductContext);
-  const { slug } = useParams();
+  const { lang: langParam, category, slug } = useParams();
+
+  useEffect(() => {
+    if (
+      langParam &&
+      (langParam === "de" || langParam === "en") &&
+      i18n.language?.split("-")[0] !== langParam
+    ) {
+      i18n.changeLanguage(langParam);
+    }
+  }, [langParam, i18n]);
 
   const [currencyCode, setCurrencyCode] = useState(
     localStorage.getItem("currency") || DEFAULT_CURRENCY
@@ -29,7 +39,7 @@ const Product = () => {
 
   // Generiši canonical URL na b2b.snusco.at
   const productUrl = product
-    ? `https://www.snusco.at/${i18n.language}/${slug}`
+    ? `https://www.snusco.at/${langParam || i18n.language}/${category}/${slug}`
     : "https://www.snusco.at";
 
   // Odredi jezik za i18n

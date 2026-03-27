@@ -96,8 +96,8 @@ const Search = ({ isScrolled }) => {
     handleCloseSearch();
   };
 
-  const handleProductCardClick = (categoryName, productName) => {
-    navigate(goToProduct(categoryName, productName));
+  const handleProductCardClick = (categoryName, productName, productSlug) => {
+    navigate(goToProduct(categoryName, productName, productSlug));
     setIsOpen(false);
   };
 

@@ -268,8 +268,8 @@ const SearchInput = ({ isScrolled }) => {
     return () => window.removeEventListener("resize", updateProductDisplay);
   }, []);
 
-  const handleProductCardClick = (category_name, name) => {
-    navigate(goToProduct(category_name, name));
+  const handleProductCardClick = (category_name, name, productSlug) => {
+    navigate(goToProduct(category_name, name, productSlug));
     setIsOpen(false);
   };
   const handleCategoryCardClick = (name) => {

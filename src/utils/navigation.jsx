@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function slugPart(value) {
   return String(value || "")
@@ -7,11 +7,16 @@ function slugPart(value) {
     .replace(/\s+/g, "-");
 }
 
+function normalizeLang(lng) {
+  const l = String(lng || "en").split("-")[0].toLowerCase();
+  return l === "de" ? "de" : "en";
+}
+
 /**
  * Putanje za navigate(...). Koristi: navigate(goToHome()) itd.
  */
 export function useNavigation() {
-  const navigate = useNavigate();
+  const { i18n } = useTranslation();
 
   function goToHome() {
     return "/";
@@ -42,11 +47,15 @@ export function useNavigation() {
     return `/search/${encodeURIComponent(searchValue || "")}`;
   }
 
-  /** PDP: /{slug-kategorije}/{slug-kategorije}-{slug-proizvoda} npr. /velo/velo-ruby-berry */
-  function goToProduct(categoryName, productName) {
-    const cat = slugPart(categoryName) || "proizvod";
-    const prod = slugPart(productName);
-    return `/${cat}/${cat}-${prod}`;
+  /** PDP: /{lang}/{category_slug}/{product_slug} npr. /de/velo/velo-crispy-peppermint */
+  function goToProduct(categoryName, productName, productSlug) {
+    const lang = normalizeLang(i18n.language);
+    const cat = slugPart(categoryName) || "product";
+    const slug =
+      productSlug && String(productSlug).trim()
+        ? slugPart(productSlug)
+        : slugPart(productName);
+    return `/${lang}/${cat}/${slug}`;
   }
 
   function goToCategory(name) {

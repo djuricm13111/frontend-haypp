@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { useEffect, useLayoutEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import SearchInput from "./components/SearchInput";
 import HeaderList from "./components/HeaderList";
@@ -292,8 +293,8 @@ const DesktopNavSection = styled.div`
   }
 `;
 
-/** Isti wordmark kao FooterLogo u MobileNavDrawer (bez SVG-a) */
-const Logo = styled.div`
+/** Isti wordmark kao FooterLogo u MobileNavDrawer (bez SVG-a). Polimorfni: Link na početnu ili div kad je sakriven pri skrolu. */
+const Logo = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,6 +306,8 @@ const Logo = styled.div`
   color: #001a57;
   text-transform: uppercase;
   line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
   transition: opacity 0.2s ease, max-width 0.25s ease, margin 0.25s ease,
     padding 0.25s ease;
 
@@ -582,7 +585,12 @@ const Header = () => {
 
       <Container $isScrolled={isScrolled}>
         <MainHeaderWrapper $isScrolled={isScrolled}>
-          <Logo $isScrolled={isScrolled} aria-hidden={isScrolled}>
+          <Logo
+            $isScrolled={isScrolled}
+            {...(isScrolled ? { as: "div" } : { to: "/" })}
+            aria-hidden={isScrolled}
+            {...(!isScrolled && { "aria-label": t("HEADER.LOGO_HOME") })}
+          >
             SNUSCO
           </Logo>
 

@@ -78,7 +78,7 @@ const InfoCard = styled.div`
   box-shadow: var(--shadow-medium);
   background: var(--bg-100);
   overflow: hidden;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
 `;
 
 const DescriptionCard = styled(InfoCard)`
@@ -96,8 +96,8 @@ const DescriptionHeaderButton = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-md);
-  padding: var(--spacing-lg) var(--spacing-md);
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
   margin: 0;
   border: none;
   background: var(--bg-100);
@@ -118,26 +118,26 @@ const DescriptionHeaderButton = styled.button`
 const DescriptionHeaderText = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   min-width: 0;
   flex: 1;
 `;
 
 const DescriptionMainTitle = styled.h2`
   margin: 0;
-  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   font-weight: 600;
   color: var(--text-100);
-  line-height: 1.3;
+  line-height: 1.28;
   font-family: "Oswald-Medium", var(--font-family, sans-serif);
 `;
 
 const DescriptionSubTitle = styled.p`
   margin: 0;
-  font-size: var(--font-size-small);
+  font-size: 0.8125rem;
   font-weight: 400;
   color: var(--text-200);
-  line-height: 1.45;
+  line-height: 1.4;
   font-family: "Montserrat", var(--font-family, sans-serif);
 `;
 
@@ -148,15 +148,15 @@ const DescriptionChevronWrap = styled.span`
   justify-content: center;
   color: var(--text-200);
   svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 `;
 
 const DescriptionBody = styled.div`
   border-top: none;
   background: var(--bg-100);
-  padding: var(--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-md);
 `;
 
 const DescriptionTextBlock = styled.div`
@@ -165,14 +165,14 @@ const DescriptionTextBlock = styled.div`
 `;
 
 const SpecTableWrap = styled.div`
-  padding: var(--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-md);
   background: var(--bg-100);
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
 
   @media (max-width: 767px) {
-    padding: var(--spacing-md) var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-sm);
   }
 `;
 
@@ -342,8 +342,8 @@ const SectionContainer = styled.div`
   }
 `;
 const Title = styled.h3`
-  margin: var(--spacing-lg) 0 var(--spacing-sm);
-  font-size: var(--font-size-large);
+  margin: var(--spacing-md) 0 var(--spacing-xs);
+  font-size: var(--font-size-base);
   font-weight: 600;
   color: var(--text-100);
   line-height: 1.35;
@@ -353,7 +353,7 @@ const Title = styled.h3`
 `;
 
 const Paragraph = styled.p`
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 `;
 
 const ProductDetails = ({ product }) => {

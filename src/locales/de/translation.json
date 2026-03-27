@@ -19,6 +19,7 @@
     "PROFILE": "Profil",
     "SIGN_UP": "Registrieren",
     "SEARCH_FOR": "Suchen nach",
+    "LOGO_HOME": "SnusCo — Startseite",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "Neues Jahr, neues Ich",
       "NICOTINE_POUCHES": "Nikotinbeutel",
@@ -117,6 +118,15 @@
     "SHOP_BY_BRAND": "Nach Marke einkaufen",
     "FEATURED_PRODUCTS_TITLE": "Empfohlene Produkte",
     "SHOP_BY_CATEGORY": "Nach Kategorie einkaufen",
+    "SHOP_BY_FLAVOR": "Nach Geschmack einkaufen",
+    "FLAVOR_NAV": {
+      "MINT": "Minze",
+      "BERRY": "Beere",
+      "CITRUS": "Zitrus",
+      "FRUIT": "Frucht",
+      "COFFEE": "Kaffee",
+      "LIQUORICE": "Lakritz"
+    },
     "CATEGORY_NAV": {
       "NICOTINE_POUCHES": "Nikotinbeutel",
       "NICOTINE_FREE_POUCHES": "Nikotinfreie Beutel",
@@ -131,6 +141,12 @@
       "DESC_BEFORE": "Seien Sie der Erste, der die neuesten Nikotinbeutel probiert. In unserem Neuheiten-Bereich finden Sie regelmäßig neue Produkte von ",
       "TOP_BRANDS": "Top-Marken",
       "DESC_AFTER": "."
+    },
+    "HOME_PICK_GRID": {
+      "SECTION_HEADING": "Bestseller und Neuheiten",
+      "TABLIST_LABEL": "Produktliste wählen",
+      "LOADING": "Produkte werden geladen…",
+      "EMPTY": "Derzeit keine Produkte verfügbar."
     }
   },
 

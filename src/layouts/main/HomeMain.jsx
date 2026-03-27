@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HomeBrandLogoStrip from "../../components/home/HomeBrandLogoStrip";
 import HomeFeaturedProducts from "../../components/home/HomeFeaturedProducts";
+import HomeBestsellersNewArrivalsGrid from "../../components/home/HomeBestsellersNewArrivalsGrid";
 import HomePromoCardGrid from "../../components/home/HomePromoCardGrid";
 import HomePromoIntro, {
   PROMO_LINK_NICOTINE_FREE,
@@ -30,6 +31,12 @@ import bannerXqs from "../../assets/images/banner/xqs.jpg";
 import sliderVelo from "../../assets/images/slider/velo.jpg";
 import sliderZone from "../../assets/images/slider/zone.jpg";
 import sliderZyn from "../../assets/images/slider/zyn.png";
+import flavorBerry from "../../assets/images/flavors/berry.svg";
+import flavorCitrus from "../../assets/images/flavors/citrus.svg";
+import flavorCoffe from "../../assets/images/flavors/coffe.svg";
+import flavorFruit from "../../assets/images/flavors/fruit.svg";
+import flavorLiquorice from "../../assets/images/flavors/liqurice.svg";
+import flavorMint from "../../assets/images/flavors/mint.svg";
 import Header from "../../layouts/header/Header";
 import HomeIntroText from "../../components/home/HomeIntroText";
 
@@ -144,6 +151,46 @@ const homeShopByCategoryItems = [
   },
 ];
 
+/** Ukusi — ikone iz `src/assets/images/flavors/`. */
+const homeShopByFlavorItems = [
+  {
+    key: "mint",
+    iconSrc: flavorMint,
+    labelKey: "HOME.FLAVOR_NAV.MINT",
+    href: "/flavour/mint",
+  },
+  {
+    key: "berry",
+    iconSrc: flavorBerry,
+    labelKey: "HOME.FLAVOR_NAV.BERRY",
+    href: "/flavour/berry",
+  },
+  {
+    key: "citrus",
+    iconSrc: flavorCitrus,
+    labelKey: "HOME.FLAVOR_NAV.CITRUS",
+    href: "/flavour/citrus",
+  },
+  {
+    key: "fruit",
+    iconSrc: flavorFruit,
+    labelKey: "HOME.FLAVOR_NAV.FRUIT",
+    href: "/flavour/fruit",
+  },
+  {
+    key: "coffee",
+    iconSrc: flavorCoffe,
+    labelKey: "HOME.FLAVOR_NAV.COFFEE",
+    href: "/flavour/coffee",
+  },
+  {
+    key: "liquorice",
+    iconSrc: flavorLiquorice,
+    labelKey: "HOME.FLAVOR_NAV.LIQUORICE",
+    href: "/flavour/liquorice",
+  },
+];
+
 /** Slajder — slike iz `src/assets/images/slider/`. */
 const demoPromoSlides = [
   {
@@ -196,7 +243,13 @@ const HomeMain = () => {
         headingId="home-shop-by-category-heading"
         wideItems
       />
-
+      <HomeBestsellersNewArrivalsGrid />
+      <HomeBrandLogoStrip
+        items={homeShopByFlavorItems}
+        titleI18nKey="HOME.SHOP_BY_FLAVOR"
+        headingId="home-shop-by-flavor-heading"
+        wideItems
+      />
 
       <HomeNewArrivalsSlider />
     </>

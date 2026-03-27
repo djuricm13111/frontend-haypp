@@ -967,7 +967,7 @@ function strengthLabel(nicotine, t) {
 
 const ProductMain = () => {
   const { t, i18n } = useTranslation();
-  const { slug } = useParams();
+  const { lang: langParam, category, slug } = useParams();
 
   const [selectedQuantity, setSelectedQuantity] = useState(10);
   const dispatch = useDispatch();
@@ -1029,14 +1029,17 @@ const ProductMain = () => {
       setSavingsPercentage(newSavingsPercentage);
       setBreadcrumbItems([
         { name: "SnusCo", url: "/" },
-        { name: "Nicotine Pouches", url: `/${i18n.language}/snus-verkauf` },
+        {
+          name: "Nicotine Pouches",
+          url: `/${langParam || i18n.language}/snus-verkauf`,
+        },
         {
           name: `${product.name}`,
-          url: "/",
+          url: `/${langParam || i18n.language}/${category}/${slug}`,
         },
       ]);
     }
-  }, [product, selectedQuantity]);
+  }, [product, selectedQuantity, langParam, category, slug, i18n.language]);
 
   const addToCart = (selectedQuantity) => {
     dispatch(

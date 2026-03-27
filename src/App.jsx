@@ -30,7 +30,7 @@ function App() {
             <Main>
               <Routes>
                 <Route path="/" element={<Home />}></Route>
-                <Route path="/:lang/:slug" element={<Product />} />
+                <Route path="/:lang/:category/:slug" element={<Product />} />
               </Routes>
             </Main>
             <SiteFooter />
