@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
@@ -17,23 +17,10 @@ const Container = styled.div`
   background-color: var(--background-color);
   color: var(--text-color);
 `;
-const RecommendedContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
-const RecommendedWrapper = styled.div`
-  margin-bottom: 20px;
-  width: 94%;
-  @media (min-width: 1025px) {
-    width: var(--max-width-container);
-  }
-`;
 
 const Product = () => {
   const { t, i18n } = useTranslation();
-  const { product, recommendedProducts } = useContext(ProductContext);
+  const { product } = useContext(ProductContext);
   const { slug } = useParams();
 
   const [currencyCode, setCurrencyCode] = useState(
@@ -72,7 +59,6 @@ const Product = () => {
   const ogImage =
     product?.images.find((img) => img.is_primary) || product?.images[0] || null;
 
-  //console.log("tu sam", product);
   return (
     <Container>
       <Helmet>
@@ -145,18 +131,6 @@ const Product = () => {
 
       <Header />
       <ProductMain />
-
-      <section
-        style={{
-          textAlign: "center",
-          margin: "40px auto",
-        }}
-      >
-        <h2 style={{ textTransform: "uppercase" }}>
-          {t("PRODUCT.RECOMMENDED_PRODUCTS")}
-        </h2>
-      </section>
-
     </Container>
   );
 };

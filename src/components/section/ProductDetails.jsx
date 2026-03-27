@@ -23,6 +23,9 @@ const fadeOutBottom = keyframes`
   }
 `;
 const DropDown = styled.div`
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   /* Samo za telefone, primenjuje se display na osnovu $isOpen */
   ${({ $isOpen }) =>
     $isOpen
@@ -31,20 +34,25 @@ const DropDown = styled.div`
         `
       : css`
           display: flex; /* Prikaži ako nije otvoreno */
-          align-items: center;
+          align-items: stretch;
           justify-content: center;
+          flex-direction: column;
           background-color: var(--bg-100);
         `}
 `;
 const GridContainer = styled.div`
   width: 100%;
-  min-width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow-x: hidden;
   position: relative;
   background-color: transparent;
+  box-sizing: border-box;
 `;
 const Box = styled.div`
   width: 100%;
+  min-width: 0;
+  align-self: stretch;
   ${({ $isOpen }) =>
     $isOpen
       ? css`
@@ -57,9 +65,10 @@ const Box = styled.div`
 
 const FlexDiv = styled.div`
   width: 100%;
+  min-width: 0;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   gap: 8px;
 `;
 
@@ -158,6 +167,13 @@ const DescriptionTextBlock = styled.div`
 const SpecTableWrap = styled.div`
   padding: var(--spacing-lg) var(--spacing-md);
   background: var(--bg-100);
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
 `;
 
 const SpecArticleLine = styled.div`
@@ -169,6 +185,14 @@ const SpecArticleLine = styled.div`
   margin: 0 var(--spacing-sm) var(--spacing-md);
   padding: 0 2px;
   font-family: "Montserrat", var(--font-family, sans-serif);
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 0 0 var(--spacing-md);
+    padding: 0;
+  }
 `;
 
 const SpecArticleLabel = styled.span`
@@ -193,15 +217,37 @@ const SpecTableInner = styled.div`
   border-radius: 0;
   background: #f4f4f4;
   overflow: hidden;
+  min-width: 0;
+  box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    margin: 0;
+    border-left: none;
+    border-right: none;
+  }
 `;
 
 const SpecTable = styled.table`
   width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   font-family: "Montserrat", var(--font-family, sans-serif);
   font-size: var(--font-size-base);
   background: transparent;
   border: none;
+
+  @media (max-width: 767px) {
+    display: block;
+    width: 100%;
+  }
+`;
+
+const SpecTableBody = styled.tbody`
+  @media (max-width: 767px) {
+    display: block;
+    width: 100%;
+  }
 `;
 
 const SpecTableRow = styled.tr`
@@ -209,6 +255,19 @@ const SpecTableRow = styled.tr`
   border-bottom: 1px solid #e0e0e0;
   &:last-child {
     border-bottom: none;
+  }
+
+  @media (max-width: 767px) {
+    display: block;
+    width: 100%;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #e0e0e0;
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
 `;
 
@@ -221,6 +280,17 @@ const SpecLabelCell = styled.td`
   color: var(--text-200);
   border: none;
   width: 48%;
+
+  @media (max-width: 767px) {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 12px 6px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+  }
 `;
 
 const SpecValueCell = styled.td`
@@ -231,6 +301,16 @@ const SpecValueCell = styled.td`
   font-weight: 400;
   line-height: 1.5;
   border: none;
+  word-break: break-word;
+
+  @media (max-width: 767px) {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 12px 0;
+    text-align: left;
+    font-size: 0.9375rem;
+  }
 `;
 
 const CustomLink = styled(Link)`
@@ -500,6 +580,7 @@ const ProductDetails = ({ product }) => {
           </DescriptionHeaderButton>
           <DropDown $isOpen={isOpenContainer[1]}>
             <Box $isOpen={isOpenBox[1]}>
+              <FlexDiv>
               <SpecTableWrap id="product-specification-panel">
                 <SpecArticleLine>
                   <SpecArticleLabel>
@@ -511,7 +592,7 @@ const ProductDetails = ({ product }) => {
                 </SpecArticleLine>
                 <SpecTableInner>
                   <SpecTable>
-                  <tbody>
+                  <SpecTableBody>
                     <SpecTableRow>
                       <SpecLabelCell>{t("PRODUCT.BRAND")}</SpecLabelCell>
                       <SpecValueCell>
@@ -560,10 +641,11 @@ const ProductDetails = ({ product }) => {
                         </SpecValueLink>
                       </SpecValueCell>
                     </SpecTableRow>
-                  </tbody>
+                  </SpecTableBody>
                   </SpecTable>
                 </SpecTableInner>
               </SpecTableWrap>
+              </FlexDiv>
             </Box>
           </DropDown>
         </SpecificationCard>

@@ -36,15 +36,25 @@ const Track = styled.div`
 `;
 
 const SlideCell = styled.div`
+  --slider-between: var(--spacing-xxs);
+  @media (min-width: 769px) {
+    --slider-between: var(--spacing-sm);
+  }
+
   display: flex;
   flex: 0 0 ${({ $count }) => 100 / $count}%;
   width: ${({ $count }) => 100 / $count}%;
   min-width: 0;
   box-sizing: border-box;
-  padding: 0 var(--spacing-xxs);
+  /* Samo razmak između kartica; bez „praznine“ na početku i kraju trake */
+  padding-left: calc(var(--slider-between) / 2);
+  padding-right: calc(var(--slider-between) / 2);
 
-  @media (min-width: 769px) {
-    padding: 0 var(--spacing-sm);
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
   }
 `;
 

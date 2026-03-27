@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
@@ -10,6 +10,7 @@ import AddToCartAnim from "../../components/animations/AddToCartAnim";
 import { useTranslation } from "react-i18next";
 import Breadcrumbs from "../../components/section/BreadCrumbs";
 import ProductDetails from "../../components/section/ProductDetails";
+import ProductCardSlider from "../../components/product/ProductCardSlider";
 import descriptions from "../../descriptions.json";
 
 /** Haypp PDP referenca — plava i selekcije */
@@ -27,6 +28,12 @@ const Container = styled.main`
   /* Header je već u dokumentnom toku iznad <main> — bez duplog padding-top */
   padding-top: 0;
   min-height: 90vh;
+  @media (max-width: 767px) {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
 `;
 
 /** Odvojena traka ispod headera: fiksna visina kao jedan bar, breadcrumb vertikalno centriran */
@@ -61,6 +68,10 @@ const productRowMinHeightDesktop = `calc(
   (100vh - var(--navbar-height-desktop) - var(--navbar-mini) - 84px) * 0.96
 )`;
 
+/**
+ * Mobilni redosled dece u DOM-u: naslov → slika → CTA → ukus → pack.
+ * Desktop (grid): levo [naslov, ukus+pack, spacer, CTA], desno slika kroz sve redove.
+ */
 const ProductLayout = styled.div`
   padding-bottom: var(--spacing-xxl);
   width: 94%;
@@ -68,41 +79,69 @@ const ProductLayout = styled.div`
   flex-direction: column;
   gap: var(--spacing-lg);
 
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-sizing: border-box;
+  }
+
   @media (min-width: 768px) {
     width: 100%;
     max-width: var(--max-width-container);
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: var(--spacing-xl);
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.12fr);
+    grid-template-rows: auto auto auto;
+    column-gap: var(--spacing-xl);
+    row-gap: var(--spacing-lg);
+    align-items: start;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    min-height: auto;
+  }
+
+  @media (min-width: 1025px) {
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
     min-height: ${productRowMinHeightDesktop};
+    align-items: stretch;
   }
 `;
 
-const PurchaseColumn = styled.div`
+const PurchaseTopBlock = styled.div`
   width: 100%;
   min-width: 0;
-  display: flex;
-  flex-direction: column;
   @media (min-width: 768px) {
-    flex: 1.05 1 0;
-    max-width: 580px;
-    align-self: stretch;
-    min-height: 0;
-  }
-  @media (max-width: 767px) {
-    order: 2;
+    grid-column: 1;
+    grid-row: 1;
   }
 `;
 
-/** Rasteže se između sadržaja i CTA da dugmad budu uz donji rub kolone (poravnato sa desnom karticom). */
+const PurchaseMidBlock = styled.div`
+  width: 100%;
+  min-width: 0;
+  @media (max-width: 767px) {
+    scroll-margin-top: 12px;
+    scroll-margin-bottom: 100px;
+  }
+  @media (min-width: 768px) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+`;
+
+/** Rasteže levi stub pre CTA — samo ≥1025px (grid red 3). */
 const PurchaseColumnSpacer = styled.div`
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 1025px) {
     display: block;
-    flex: 1 1 0;
+    grid-column: 1;
+    grid-row: 3;
     min-height: 0;
     width: 100%;
+    flex: 1 1 0;
   }
 `;
 
@@ -111,14 +150,15 @@ const MediaColumn = styled.div`
   min-width: 0;
   display: flex;
   flex-direction: column;
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
   @media (min-width: 768px) {
-    flex: 1.12 1 0;
-    max-width: 560px;
+    grid-column: 2;
+    grid-row: 1 / -1;
     align-self: stretch;
     min-height: 0;
-  }
-  @media (max-width: 767px) {
-    order: 1;
+    max-width: 560px;
   }
 `;
 
@@ -133,7 +173,19 @@ const ProductImageCard = styled.div`
   flex-direction: column;
   flex: 1;
   min-height: 0;
+  min-width: 0;
   height: 100%;
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    flex: 0 1 auto;
+    height: auto;
+    width: 100%;
+  }
 `;
 
 const SliderGrow = styled.div`
@@ -142,6 +194,12 @@ const SliderGrow = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 0;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    flex: 0 1 auto;
+    min-height: 200px;
+    max-height: min(48vh, 420px);
+  }
 `;
 
 const OfferBadge = styled.span`
@@ -192,6 +250,10 @@ const StockLabel = styled.span`
 
 const IntroBlock = styled.div`
   margin-bottom: 40px;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-bottom: var(--spacing-lg);
+  }
 `;
 
 const ReadMoreLink = styled.a`
@@ -207,6 +269,10 @@ const ReadMoreLink = styled.a`
 `;
 const FlavourBlock = styled.div`
   margin-bottom: 48px;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-bottom: var(--spacing-lg);
+  }
 `;
 
 /** Ceo okvir je jedan klik (kasnije: side menu za izbor ukusa) */
@@ -338,7 +404,7 @@ const PackColUnit = styled.div`
 
 const PackLabelText = styled.span`
   font-weight: ${({ $active }) => ($active ? 700 : 500)};
-  color: var(--text-100);
+    color: var(--text-100);
   font-size: var(--font-size-small);
 `;
 
@@ -379,9 +445,18 @@ const CtaRow = styled.div`
   gap: 15px;
   margin-bottom: var(--spacing-xl);
   flex-shrink: 0;
+  @media (max-width: 767px) {
+    margin-bottom: var(--spacing-md);
+  gap: 10px;
+  }
   @media (min-width: 768px) {
+    grid-column: 1;
+    grid-row: 3;
     margin-top: 0;
     margin-bottom: 0;
+  }
+  @media (min-width: 1025px) {
+    grid-row: 4;
   }
 `;
 
@@ -403,6 +478,16 @@ const BtnSubscribe = styled.button`
   transition: background-color 0.2s ease, opacity 0.2s ease;
   &:hover {
     background: rgba(0, 26, 87, 0.06);
+  }
+  @media (max-width: 767px) {
+    gap: 6px;
+    padding: 10px 10px;
+    font-size: 0.8125rem;
+    border-width: 1.5px;
+    svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 `;
 
@@ -432,6 +517,23 @@ const BtnAddCart = styled.button`
   }
 `;
 
+/** Add to cart samo u fiksnoj donjoj traci na telefonu */
+const BtnAddCartSticky = styled(BtnAddCart)`
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  padding: 11px 8px;
+  font-size: 0.8125rem;
+  gap: 6px;
+  border-width: 1.5px;
+  border-radius: 0;
+  box-shadow: 0 4px 14px rgba(0, 26, 87, 0.28), 0 2px 6px rgba(0, 0, 0, 0.08);
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+`;
+
 const SpecsRow = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -441,6 +543,81 @@ const SpecsRow = styled.div`
   border-top: 1px solid var(--bg-300);
   background: var(--bg-100);
   flex-shrink: 0;
+
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: hidden;
+    padding: var(--spacing-sm) 4px var(--spacing-md);
+    column-gap: 0;
+    align-items: stretch;
+  }
+`;
+
+const MobileStickyBar = styled.div`
+  display: none;
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    padding: 0 14px calc(14px + env(safe-area-inset-bottom, 0px));
+    background: transparent;
+    border-top: none;
+    box-sizing: border-box;
+    pointer-events: none;
+    & > * {
+      pointer-events: auto;
+    }
+  }
+`;
+
+const StickyPriceButton = styled.button`
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 10px 10px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: var(--bg-100);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14), 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  &:active {
+    opacity: 0.9;
+  }
+`;
+
+const StickyPriceLine = styled.span`
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--text-100);
+  font-family: ${pdpBodyFont};
+  line-height: 1.15;
+`;
+
+const StickyQtyLine = styled.span`
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: var(--text-200);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-family: ${pdpBodyFont};
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
 `;
 
 /** Ikonica levo; desno dva reda: 1/2 naslov, 2/2 vrednost */
@@ -486,6 +663,11 @@ const SpecTextCol = styled.div`
   min-width: 0;
   min-height: 48px;
   text-align: left;
+  @media (max-width: 767px) {
+    min-height: 0;
+    justify-content: center;
+    gap: 1px;
+  }
 `;
 
 const SpecLabel = styled.span`
@@ -507,6 +689,50 @@ const SpecValue = styled.span`
   flex: 1 1 0;
   display: flex;
   align-items: flex-start;
+`;
+
+/** Ispod slike na telefonu: ikona iznad teksta (centrirano) */
+const PdpSpecItem = styled(SpecItem)`
+  @media (max-width: 767px) {
+  flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px 4px;
+  gap: 8px;
+    ${SpecIconWrap} {
+      align-self: center;
+      width: 36px;
+      height: 36px;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    ${SpecTextCol} {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      min-height: 0;
+      justify-content: flex-start;
+      gap: 4px;
+    }
+    ${SpecLabel} {
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.625rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+    ${SpecValue} {
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8125rem;
+      text-align: center;
+      word-break: break-word;
+    }
+  }
 `;
 
 const TrustSpecTextCol = styled(SpecTextCol)`
@@ -640,8 +866,31 @@ const AgeWarningBody = styled.p`
   font-family: ${pdpBodyFont};
 `;
 
+const RecommendedPdpSection = styled.section`
+  width: 100%;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+`;
+
+const RecommendedPdpTitle = styled.h2`
+  margin: 0 0 var(--spacing-md);
+  font-family: "Oswald-Medium", var(--font-family);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 600;
+  color: var(--text-100);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 767px) {
+    font-size: clamp(1rem, 4vw, 1.1rem);
+  }
+`;
+
 const DetailsSection = styled.section`
   width: 94%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   @media (min-width: 1025px) {
     width: var(--max-width-container);
   }
@@ -651,6 +900,16 @@ const DetailsSection = styled.section`
 const ButtonWrapper = styled.div`
   position: relative;
   flex: 1;
+  min-width: 0;
+  display: flex;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const StickyCartButtonWrap = styled.div`
+  position: relative;
+  flex: 1 1 0;
   min-width: 0;
   display: flex;
 `;
@@ -719,11 +978,22 @@ const ProductMain = () => {
     setProduct,
     currencyTag,
     loadRecommededProductsBySlug,
+    recommendedProducts,
   } = useContext(ProductContext);
   const [discountedPrice, setDiscountedPrice] = useState(0);
   const [savingsPercentage, setSavingsPercentage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [breadcrumbItems, setBreadcrumbItems] = useState([]);
+  /** Slika u kartici puni visinu samo na širokom desktopu — na tabletu prirodna visina */
+  const [fillImageSliderHeight, setFillImageSliderHeight] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1025px)");
+    const sync = () => setFillImageSliderHeight(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     if (!slug) {
@@ -810,18 +1080,56 @@ const ProductMain = () => {
     // Učitaj kratki opis
     setShortDesc(item[shortKey] || "");
   }, [slug, descriptions, i18n.language, t]);
+
+  const recommendedSliderProducts = useMemo(() => {
+    const raw = Array.isArray(recommendedProducts)
+      ? recommendedProducts
+      : recommendedProducts?.data ??
+        recommendedProducts?.products ??
+        recommendedProducts?.results ??
+        [];
+    if (!Array.isArray(raw) || raw.length === 0) return [];
+    return raw
+      .filter((p) => p && p.is_in_stock !== "out_of_stock")
+      .slice(0, 12);
+  }, [recommendedProducts]);
+
+  const scrollToPackSelection = () => {
+    const el = document.getElementById("product-pack-selection");
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const top = rect.top + window.scrollY;
+    const targetY = top - window.innerHeight * 0.28;
+    window.scrollTo({
+      top: Math.max(0, targetY),
+      behavior: "smooth",
+    });
+  };
+
+  const stickyLineTotal = product
+    ? (calculatePrice(product.price, selectedQuantity) * selectedQuantity).toFixed(2)
+    : "0";
+  const stickyPackLabel = product
+    ? selectedQuantity === 1
+      ? t("PRODUCT.DOSE", { defaultValue: "1-pack" })
+      : t("PRODUCT.PACK", {
+          quantity: selectedQuantity,
+          defaultValue: `${selectedQuantity}-pack`,
+        })
+    : "";
+
   return (
     <Container>
       {product && (
         <>
           <BreadcrumbStrip>
             <BreadcrumbStripInner>
-              <Breadcrumbs breadcrumbs={breadcrumbItems} />
+            <Breadcrumbs breadcrumbs={breadcrumbItems} />
             </BreadcrumbStripInner>
           </BreadcrumbStrip>
 
           <ProductLayout>
-            <PurchaseColumn>
+            <PurchaseTopBlock>
               <ProductTitle>{product.name}</ProductTitle>
               <StockRow>
                 <StatusDot status={product.is_in_stock} />
@@ -837,7 +1145,127 @@ const ProductMain = () => {
                   })}
                 </ReadMoreLink>
               </IntroBlock>
+            </PurchaseTopBlock>
 
+            <MediaColumn>
+              <ProductImageCard>
+                {savingsPercentage > 0 && (
+                  <OfferBadge>{t("PRODUCT_CARD.OFFER")}</OfferBadge>
+                )}
+                <SliderGrow>
+                  <ImageSlider
+                    images={product.images}
+                    layout="card"
+                    fillHeight={fillImageSliderHeight}
+                  />
+                </SliderGrow>
+                <SpecsRow>
+                  <PdpSpecItem>
+                    <SpecIconWrap aria-hidden>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                        <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
+                      </svg>
+                    </SpecIconWrap>
+                    <SpecTextCol>
+                      <SpecLabel>{t("PRODUCT.FORMAT")}</SpecLabel>
+                      <SpecValue>{product.format}</SpecValue>
+                    </SpecTextCol>
+                  </PdpSpecItem>
+                  <PdpSpecItem>
+                    <SpecIconWrap aria-hidden>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M4 18V6M8 18v-6M12 18v-9M16 18v-4M20 18v-8" />
+                      </svg>
+                    </SpecIconWrap>
+                    <SpecTextCol>
+                      <SpecLabel>{t("PRODUCT.STRENGTH_LABEL")}</SpecLabel>
+                      <SpecValue>{strengthLabel(product.nicotine, t)}</SpecValue>
+                    </SpecTextCol>
+                  </PdpSpecItem>
+                  <PdpSpecItem>
+                    <SpecIconWrap aria-hidden>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M12 22a7 7 0 007-7c0-5-7-13-7-13S5 10 5 15a7 7 0 007 7z" />
+                      </svg>
+                    </SpecIconWrap>
+                    <SpecTextCol>
+                      <SpecLabel>{t("PRODUCT.FLAVOR")}</SpecLabel>
+                      <SpecValue>{product.flavor}</SpecValue>
+                    </SpecTextCol>
+                  </PdpSpecItem>
+                </SpecsRow>
+              </ProductImageCard>
+            </MediaColumn>
+
+            <CtaRow>
+              <BtnSubscribe type="button">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+                {t("BUTTONS.SUBSCRIBE", { defaultValue: "Subscribe" })}
+              </BtnSubscribe>
+                <ButtonWrapper>
+                <BtnAddCart
+                  type="button"
+                    onClick={() => addToCart(selectedQuantity)}
+                    disabled={product.is_in_stock === "out_of_stock"}
+                  >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
+                  </svg>
+                    {product.is_in_stock === "out_of_stock"
+                      ? t("BUTTONS.AVAILABLE_SOON")
+                      : t("BUTTONS.ADD_TO_CART")}
+                </BtnAddCart>
+                  {isAnimating && (
+                    <AddToCartAnim
+                      isAnimating={isAnimating}
+                      onComplete={handleAnimationComplete}
+                    />
+                  )}
+                </ButtonWrapper>
+            </CtaRow>
+
+            <PurchaseMidBlock id="product-pack-selection">
               <FlavourBlock>
                 <FlavourCardButton
                   type="button"
@@ -852,8 +1280,8 @@ const ProductMain = () => {
                     <FlavourValue>{product.flavor}</FlavourValue>
                     <FlavourChevronCircle aria-hidden>
                       <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
+                    viewBox="0 0 24 24"
+                    fill="none"
                         stroke="currentColor"
                         strokeWidth="2.2"
                         strokeLinecap="round"
@@ -908,7 +1336,7 @@ const ProductMain = () => {
                       <PackIndicator $active={isActive}>
                         {isActive && (
                           <svg viewBox="0 0 24 24" aria-hidden>
-                            <path
+                    <path
                               fill="currentColor"
                               d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
                             />
@@ -919,128 +1347,56 @@ const ProductMain = () => {
                   );
                 })}
               </PackList>
+            </PurchaseMidBlock>
 
-              <PurchaseColumnSpacer aria-hidden />
+            <PurchaseColumnSpacer aria-hidden />
+          </ProductLayout>
 
-              <CtaRow>
-                <BtnSubscribe type="button">
-                  <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                  </svg>
-                  {t("BUTTONS.SUBSCRIBE", { defaultValue: "Subscribe" })}
-                </BtnSubscribe>
-                <ButtonWrapper>
-                  <BtnAddCart
-                    type="button"
-                    onClick={() => addToCart(selectedQuantity)}
-                    disabled={product.is_in_stock === "out_of_stock"}
-                  >
-                    <svg
+          <MobileStickyBar>
+            <StickyPriceButton
+              type="button"
+              onClick={scrollToPackSelection}
+              aria-label={t("PRODUCT.STICKY_PRICE_TAP", {
+                defaultValue: "View pack size and price",
+              })}
+            >
+              <StickyPriceLine>
+                {currencyTag}
+                {stickyLineTotal}
+              </StickyPriceLine>
+              <StickyQtyLine>{stickyPackLabel}</StickyQtyLine>
+            </StickyPriceButton>
+            <StickyCartButtonWrap>
+              <BtnAddCartSticky
+                type="button"
+                onClick={() => addToCart(selectedQuantity)}
+                disabled={product.is_in_stock === "out_of_stock"}
+              >
+                <svg
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <circle cx="9" cy="21" r="1" />
-                      <circle cx="20" cy="21" r="1" />
-                      <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
-                    </svg>
-                    {product.is_in_stock === "out_of_stock"
-                      ? t("BUTTONS.AVAILABLE_SOON")
-                      : t("BUTTONS.ADD_TO_CART")}
-                  </BtnAddCart>
-                  {isAnimating && (
-                    <AddToCartAnim
-                      isAnimating={isAnimating}
-                      onComplete={handleAnimationComplete}
-                    />
-                  )}
-                </ButtonWrapper>
-              </CtaRow>
-            </PurchaseColumn>
-
-            <MediaColumn>
-              <ProductImageCard>
-                {savingsPercentage > 0 && (
-                  <OfferBadge>{t("PRODUCT_CARD.OFFER")}</OfferBadge>
-                )}
-                <SliderGrow>
-                  <ImageSlider
-                    images={product.images}
-                    layout="card"
-                    fillHeight
-                  />
-                </SliderGrow>
-                <SpecsRow>
-                  <SpecItem>
-                    <SpecIconWrap aria-hidden>
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
-                        <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
-                      </svg>
-                    </SpecIconWrap>
-                    <SpecTextCol>
-                      <SpecLabel>{t("PRODUCT.FORMAT")}</SpecLabel>
-                      <SpecValue>{product.format}</SpecValue>
-                    </SpecTextCol>
-                  </SpecItem>
-                  <SpecItem>
-                    <SpecIconWrap aria-hidden>
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M4 18V6M8 18v-6M12 18v-9M16 18v-4M20 18v-8" />
-                      </svg>
-                    </SpecIconWrap>
-                    <SpecTextCol>
-                      <SpecLabel>{t("PRODUCT.STRENGTH_LABEL")}</SpecLabel>
-                      <SpecValue>{strengthLabel(product.nicotine, t)}</SpecValue>
-                    </SpecTextCol>
-                  </SpecItem>
-                  <SpecItem>
-                    <SpecIconWrap aria-hidden>
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M12 22a7 7 0 007-7c0-5-7-13-7-13S5 10 5 15a7 7 0 007 7z" />
-                      </svg>
-                    </SpecIconWrap>
-                    <SpecTextCol>
-                      <SpecLabel>{t("PRODUCT.FLAVOR")}</SpecLabel>
-                      <SpecValue>{product.flavor}</SpecValue>
-                    </SpecTextCol>
-                  </SpecItem>
-                </SpecsRow>
-              </ProductImageCard>
-            </MediaColumn>
-          </ProductLayout>
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden
+                >
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
+                </svg>
+                {product.is_in_stock === "out_of_stock"
+                  ? t("BUTTONS.AVAILABLE_SOON")
+                  : t("BUTTONS.ADD_TO_CART")}
+              </BtnAddCartSticky>
+              {isAnimating && (
+                <AddToCartAnim
+                  isAnimating={isAnimating}
+                  onComplete={handleAnimationComplete}
+                />
+              )}
+            </StickyCartButtonWrap>
+          </MobileStickyBar>
 
           <DetailsSection id="product-specifications">
             <ProductDetails product={product} />
@@ -1154,6 +1510,15 @@ const ProductMain = () => {
                 </AgeWarningCopy>
               </AgeWarningInner>
             </AgeWarningWrap>
+
+            {recommendedSliderProducts.length > 0 && (
+              <RecommendedPdpSection aria-labelledby="pdp-recommended-slider-heading">
+                <RecommendedPdpTitle id="pdp-recommended-slider-heading">
+                  {t("PRODUCT.RECOMMENDED_SLIDER_TITLE")}
+                </RecommendedPdpTitle>
+                <ProductCardSlider products={recommendedSliderProducts} />
+              </RecommendedPdpSection>
+            )}
           </DetailsSection>
         </>
       )}

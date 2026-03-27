@@ -1,19 +1,40 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import styled, { ThemeProvider } from "styled-components";
 import Home from "./pages/Home";
-import { ThemeProvider } from "styled-components";
 import darkTheme from "./utils/theme";
 import { AuthUserProvider } from "./context/AuthUserContext";
 import Product from "./pages/Product";
+import SiteFooter from "./layouts/footer/SiteFooter";
+
+const AppShell = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxl);
+`;
+
+const Main = styled.main`
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+`;
 
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <BrowserRouter>
         <AuthUserProvider>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/:lang/:slug" element={<Product />} />
-          </Routes>
+          <AppShell>
+            <Main>
+              <Routes>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/:lang/:slug" element={<Product />} />
+              </Routes>
+            </Main>
+            <SiteFooter />
+          </AppShell>
         </AuthUserProvider>
       </BrowserRouter>
     </ThemeProvider>

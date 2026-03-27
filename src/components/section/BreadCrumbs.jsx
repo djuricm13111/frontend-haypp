@@ -29,7 +29,10 @@ const BreadcrumbList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-small);
+  font-family: "Montserrat", var(--font-family);
+  font-weight: 500;
+  letter-spacing: 0.01em;
   align-items: center;
 `;
 
@@ -37,18 +40,27 @@ const BreadcrumbItem = styled.li`
   display: flex;
   align-items: center;
   color: ${(props) => (props.isLast ? "var(--text-100)" : "var(--text-200)")};
-  font-weight: bold;
+  font-weight: ${(props) => (props.isLast ? "inherit" : 500)};
 
   a {
     text-decoration: none;
     color: var(--text-color-secondary);
-    font-family: "Oswald-Medium";
-    opacity: 0.6;
+    font-family: inherit;
+    font-weight: 500;
+    opacity: 0.75;
     &:hover {
       text-decoration: underline;
       color: var(--text-color-primary);
+      opacity: 1;
     }
   }
+`;
+
+/** Trenutna stranica — samo ovde Oswald */
+const BreadcrumbCurrent = styled.span`
+  font-family: "Oswald-Medium", var(--font-family);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 `;
 
 const BreadcrumbSeparator = styled.span`
@@ -56,7 +68,7 @@ const BreadcrumbSeparator = styled.span`
   color: var(--text-200);
 `;
 
-const BackArrow = styled.span`
+const BackArrow = styled.button`
   display: flex;
   align-items: center;
   margin-right: 8px;
@@ -64,6 +76,8 @@ const BackArrow = styled.span`
   background-color: var(--bg-200);
   padding: 12px;
   border-radius: 50%;
+  border: none;
+  flex-shrink: 0;
 
   svg {
     fill: var(--text-color-secondary);
@@ -73,28 +87,36 @@ const BackArrow = styled.span`
   }
 `;
 
-const Breadcrumbs = ({ breadcrumbs }) => {
-  const navigate = useNavigate(); // For navigating back
+/**
+ * @param {object} props
+ * @param {{ name: string, url: string }[]} props.breadcrumbs
+ * @param {boolean} [props.showBackArrow] — strelica „nazad“; podrazumevano false (samo breadcrumb lista)
+ */
+const Breadcrumbs = ({ breadcrumbs, showBackArrow = false }) => {
+  const navigate = useNavigate();
 
   return (
     <Container>
-      <BackArrow onClick={() => navigate(-1)}>
-        <svg
-          width="24px"
-          height="24px"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M6 12H18M6 12L11 7M6 12L11 17"
-            stroke="#000000"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </BackArrow>
+      {showBackArrow && (
+        <BackArrow type="button" onClick={() => navigate(-1)} aria-label="Back">
+          <svg
+            width="24px"
+            height="24px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden
+          >
+            <path
+              d="M6 12H18M6 12L11 7M6 12L11 17"
+              stroke="#000000"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </BackArrow>
+      )}
       <Nav>
         <BreadcrumbList>
           {breadcrumbs.map((breadcrumb, index) => {
@@ -107,7 +129,7 @@ const Breadcrumbs = ({ breadcrumbs }) => {
                     <BreadcrumbSeparator>&gt;</BreadcrumbSeparator>
                   </>
                 ) : (
-                  <span>{breadcrumb.name}</span>
+                  <BreadcrumbCurrent>{breadcrumb.name}</BreadcrumbCurrent>
                 )}
               </BreadcrumbItem>
             );
