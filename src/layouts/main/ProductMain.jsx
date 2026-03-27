@@ -565,7 +565,8 @@ const MobileStickyBar = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 50;
+    /* Ispod Header (9) i ProductCard izbora količine (7–8 u index.css) — korpa/login/drawer iznad */
+    z-index: 6;
     padding: 0 14px calc(14px + env(safe-area-inset-bottom, 0px));
     background: transparent;
     border-top: none;
