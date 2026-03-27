@@ -10,6 +10,12 @@ import { ProductContext } from "../../context/ProductContext";
 import styled from "styled-components";
 import ToggleSwitch from "../animations/ToggleSwitch";
 import { useTranslation } from "react-i18next";
+import {
+  getPresentFlavorGroupIds,
+  productMatchesFlavorGroups,
+  getFlavorGroupLabelKey,
+  getFlavorGroupId,
+} from "../../utils/flavorGroups";
 
 const Container = styled.div`
   position: fixed;
@@ -379,6 +385,7 @@ const FilterSection = ({
   const [selectedNicotineRanges, setSelectedNicotineRanges] = useState(
     new Set()
   );
+  const [selectedFlavors, setSelectedFlavors] = useState(new Set());
   const [filterOutOfStock, setFilterOutOfStock] = useState(false);
 
   // Grupisanje proizvoda po kategoriji i formatu
@@ -390,20 +397,26 @@ const FilterSection = ({
   const groupedFormats = Array.from(
     new Set(products.map((product) => product.format).filter(Boolean))
   );
+  /** Koje grupe ukusa postoje u listi (mint, voćno, citrus, …). */
+  const groupedFlavorGroupIds = getPresentFlavorGroupIds(products);
 
   const applyFilters = useCallback(
-    (categories, formats, nicotineRange, hideOutOfStockOverride) => {
+    (categories, formats, nicotineRange, flavors, hideOutOfStockOverride) => {
       const stockFilter =
         hideOutOfStockOverride !== undefined
           ? hideOutOfStockOverride
           : filterOutOfStock;
       const nicotineRangesArray = Array.from(nicotineRange);
+      const flavorSet = flavors instanceof Set ? flavors : new Set(flavors);
 
       const filtered = products.filter((product) => {
         const nic = Number(product.nicotine);
         const isInCategory =
           categories.size === 0 || categories.has(product.category_name);
         const isInFormat = formats.size === 0 || formats.has(product.format);
+        const isInFlavor =
+          flavorSet.size === 0 ||
+          productMatchesFlavorGroups(product, flavorSet);
         const isInNicotineRange =
           nicotineRange.size === 0 ||
           nicotineRangesArray.some((label) => {
@@ -414,7 +427,13 @@ const FilterSection = ({
         const isInStock =
           !stockFilter || product.is_in_stock === "in_stock";
 
-        return isInCategory && isInFormat && isInNicotineRange && isInStock;
+        return (
+          isInCategory &&
+          isInFormat &&
+          isInNicotineRange &&
+          isInFlavor &&
+          isInStock
+        );
       });
 
       setFilteredProducts(filtered);
@@ -432,7 +451,12 @@ const FilterSection = ({
     }
 
     setSelectedCategories(updatedCategories);
-    applyFilters(updatedCategories, selectedFormats, selectedNicotineRanges);
+    applyFilters(
+      updatedCategories,
+      selectedFormats,
+      selectedNicotineRanges,
+      selectedFlavors
+    );
   };
 
   // Funkcija za promenu selektovanih formata
@@ -445,7 +469,28 @@ const FilterSection = ({
     }
 
     setSelectedFormats(updatedFormats);
-    applyFilters(selectedCategories, updatedFormats, selectedNicotineRanges);
+    applyFilters(
+      selectedCategories,
+      updatedFormats,
+      selectedNicotineRanges,
+      selectedFlavors
+    );
+  };
+
+  const handleFlavorChange = (flavor) => {
+    const updated = new Set(selectedFlavors);
+    if (updated.has(flavor)) {
+      updated.delete(flavor);
+    } else {
+      updated.add(flavor);
+    }
+    setSelectedFlavors(updated);
+    applyFilters(
+      selectedCategories,
+      selectedFormats,
+      selectedNicotineRanges,
+      updated
+    );
   };
 
   const handleNicotineRangeChange = (range) => {
@@ -459,7 +504,12 @@ const FilterSection = ({
     }
 
     setSelectedNicotineRanges(updatedRanges);
-    applyFilters(selectedCategories, selectedFormats, updatedRanges);
+    applyFilters(
+      selectedCategories,
+      selectedFormats,
+      updatedRanges,
+      selectedFlavors
+    );
   };
 
   const handleFilterOutOfStock = (newState) => {
@@ -468,7 +518,12 @@ const FilterSection = ({
 
   // Samo stock toggle / nova lista proizvoda — selekcije menjaju handleri
   useEffect(() => {
-    applyFilters(selectedCategories, selectedFormats, selectedNicotineRanges);
+    applyFilters(
+      selectedCategories,
+      selectedFormats,
+      selectedNicotineRanges,
+      selectedFlavors
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps -- namerno: ne duplirati apply pri svakoj promeni Set-ova
   }, [filterOutOfStock, applyFilters]);
 
@@ -477,7 +532,8 @@ const FilterSection = ({
     setSelectedCategories(new Set());
     setSelectedFormats(new Set());
     setSelectedNicotineRanges(new Set());
-    applyFilters(new Set(), new Set(), new Set(), false);
+    setSelectedFlavors(new Set());
+    applyFilters(new Set(), new Set(), new Set(), new Set(), false);
   };
 
   // Funkcija za brojanje proizvoda u određenoj kategoriji
@@ -500,6 +556,9 @@ const FilterSection = ({
       return nic >= min && nic <= max;
     }).length;
   };
+
+  const countProductsInFlavorGroup = (groupId) =>
+    products.filter((p) => getFlavorGroupId(p.flavor) === groupId).length;
 
   const panelRef = useRef(null);
   const [dropdownPos, setDropdownPos] = useState(null);
@@ -613,6 +672,38 @@ const FilterSection = ({
         </div>
       )}
 
+      {showFilters === "flavor" && (
+        <div>
+          {groupedFlavorGroupIds.map((groupId) => (
+            <CheckboxContainer
+              key={groupId}
+              onClick={() => handleFlavorChange(groupId)}
+            >
+              <CheckboxWrapper>
+                <Checkbox>
+                  {selectedFlavors.has(groupId) && (
+                    <svg
+                      fill="var(--bg-100)"
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ backgroundColor: "var(--success-color)" }}
+                    >
+                      <path d="M760 380.4l-61.6-61.6-263.2 263.1-109.6-109.5L264 534l171.2 171.2L760 380.4z" />
+                    </svg>
+                  )}
+                </Checkbox>
+                <Label htmlFor={groupId}>
+                  {t(getFlavorGroupLabelKey(groupId))}
+                </Label>
+              </CheckboxWrapper>
+              <div>{countProductsInFlavorGroup(groupId)}</div>
+            </CheckboxContainer>
+          ))}
+        </div>
+      )}
+
       {showFilters === "nicotine" && (
         <div>
           {NICOTINE_RANGES.map((range) => (
@@ -648,7 +739,8 @@ const FilterSection = ({
   const showClearOnDesktop =
     selectedCategories.size > 0 ||
     selectedFormats.size > 0 ||
-    selectedNicotineRanges.size > 0;
+    selectedNicotineRanges.size > 0 ||
+    selectedFlavors.size > 0;
 
   const removeNicotineLabel = (label) => {
     const range = NICOTINE_RANGES.find((r) => r.label === label);
@@ -660,6 +752,7 @@ const FilterSection = ({
       ? Array.from(selectedCategories)
       : [];
     const formatChips = Array.from(selectedFormats);
+    const flavorChips = Array.from(selectedFlavors);
     const nicotineChips = Array.from(selectedNicotineRanges);
 
     return (
@@ -678,6 +771,12 @@ const FilterSection = ({
               <DesktopPanelTitle>
                 {showFilters === "nicotine"
                   ? t("FILTER.STRENGTH")
+                  : showFilters === "flavor"
+                  ? t("FILTER.FLAVOUR")
+                  : showFilters === "brand"
+                  ? t("FILTER.BRAND")
+                  : showFilters === "format"
+                  ? t("FILTER.FORMAT")
                   : t(`FILTER.${String(showFilters).toUpperCase()}`)}
               </DesktopPanelTitle>
               <DesktopMidScroll>{filterOptions}</DesktopMidScroll>
@@ -710,6 +809,22 @@ const FilterSection = ({
                 <DesktopChipMeta>
                   <DesktopChipKind>{t("FILTER.FORMAT")}</DesktopChipKind>
                   <DesktopChipValue>{name}</DesktopChipValue>
+                </DesktopChipMeta>
+                <DesktopChipRemove aria-hidden>×</DesktopChipRemove>
+              </DesktopChip>
+            ))}
+            {flavorChips.map((groupId) => (
+              <DesktopChip
+                key={`flavor-${groupId}`}
+                type="button"
+                onClick={() => handleFlavorChange(groupId)}
+                aria-label={`${t("FILTER.REMOVE")}: ${t("FILTER.FLAVOUR")} ${t(getFlavorGroupLabelKey(groupId))}`}
+              >
+                <DesktopChipMeta>
+                  <DesktopChipKind>{t("FILTER.FLAVOUR")}</DesktopChipKind>
+                  <DesktopChipValue>
+                    {t(getFlavorGroupLabelKey(groupId))}
+                  </DesktopChipValue>
                 </DesktopChipMeta>
                 <DesktopChipRemove aria-hidden>×</DesktopChipRemove>
               </DesktopChip>

@@ -360,7 +360,7 @@
 
   "FILTER": {
     "TITLE": "Filter",
-    "TRIGGER_SUBTITLE": "Brand, format & more",
+    "TRIGGER_SUBTITLE": "Brand, format, flavour & more",
     "SELECTED_FILTERS": "Selected Filters",
     "CLEAR_FILTER": "Clear Filters",
     "APPLY_FILTER": "Apply Filters",
@@ -368,6 +368,12 @@
     "CATEGORY": "Category",
     "NICOTINE": "Nicotine",
     "FLAVOUR": "Flavour",
+    "FLAVOR_GROUP_MINT": "Mint & fresh",
+    "FLAVOR_GROUP_FRUIT_BERRY": "Fruit & berry",
+    "FLAVOR_GROUP_CITRUS": "Citrus",
+    "FLAVOR_GROUP_COFFEE_SWEET": "Coffee, chocolate & sweet",
+    "FLAVOR_GROUP_LIQUORICE": "Liquorice & anise",
+    "FLAVOR_GROUP_OTHER": "Other",
     "FORMAT": "Format",
     "STRENGTH": "Strength",
     "HIDE_OUT_OF_STOCK": "Hide out-of-stock products",

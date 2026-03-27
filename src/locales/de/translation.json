@@ -359,7 +359,7 @@
 
   "FILTER": {
     "TITLE": "Filter",
-    "TRIGGER_SUBTITLE": "Marke, Format & mehr",
+    "TRIGGER_SUBTITLE": "Marke, Format, Geschmack & mehr",
     "SELECTED_FILTERS": "Ausgewählte Filter",
     "CLEAR_FILTER": "Filter löschen",
     "APPLY_FILTER": "Filter anwenden",
@@ -367,6 +367,12 @@
     "CATEGORY": "Kategorie",
     "NICOTINE": "Nikotinstärke",
     "FLAVOUR": "Geschmack",
+    "FLAVOR_GROUP_MINT": "Minze & frisch",
+    "FLAVOR_GROUP_FRUIT_BERRY": "Frucht & Beere",
+    "FLAVOR_GROUP_CITRUS": "Zitrus",
+    "FLAVOR_GROUP_COFFEE_SWEET": "Kaffee, Schokolade & süß",
+    "FLAVOR_GROUP_LIQUORICE": "Lakritz & Anis",
+    "FLAVOR_GROUP_OTHER": "Sonstiges",
     "FORMAT": "Format",
     "STRENGTH": "Stärke",
     "HIDE_OUT_OF_STOCK": "Nicht vorrätige Produkte ausblenden",

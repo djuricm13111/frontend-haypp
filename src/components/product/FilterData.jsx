@@ -1,8 +1,9 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useMemo, useRef, useState } from "react";
 import FilterSection from "./FilterSection";
 import styled from "styled-components";
 import { ProductContext } from "../../context/ProductContext";
 import { useTranslation } from "react-i18next";
+import { getPresentFlavorGroupIds } from "../../utils/flavorGroups";
 
 const FilterContainer = styled.div`
   padding: 20px 0;
@@ -114,10 +115,16 @@ const Chevron = styled.svg`
 const FilterData = ({ toggleMenu, variant = "mobile" }) => {
   const { t } = useTranslation();
   const [showFilters, setShowFilters] = useState(false);
-  const { category } = useContext(ProductContext);
+  const { category, products } = useContext(ProductContext);
+
+  const hasFlavorOptions = useMemo(
+    () => getPresentFlavorGroupIds(products).length > 0,
+    [products]
+  );
 
   const brandRef = useRef(null);
   const formatRef = useRef(null);
+  const flavorRef = useRef(null);
   const nicotineRef = useRef(null);
 
   const activeAnchorRef =
@@ -125,6 +132,8 @@ const FilterData = ({ toggleMenu, variant = "mobile" }) => {
       ? brandRef
       : showFilters === "format"
       ? formatRef
+      : showFilters === "flavor"
+      ? flavorRef
       : showFilters === "nicotine"
       ? nicotineRef
       : null;
@@ -175,6 +184,28 @@ const FilterData = ({ toggleMenu, variant = "mobile" }) => {
               </Chevron>
             </DesktopTrigger>
           </DropdownSlot>
+          {hasFlavorOptions && (
+            <DropdownSlot ref={flavorRef}>
+              <DesktopTrigger
+                type="button"
+                $active={showFilters === "flavor"}
+                onClick={() =>
+                  setShowFilters((s) => (s === "flavor" ? false : "flavor"))
+                }
+              >
+                {t("FILTER.FLAVOUR")}
+                <Chevron $open={showFilters === "flavor"} viewBox="0 0 24 24">
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                </Chevron>
+              </DesktopTrigger>
+            </DropdownSlot>
+          )}
           <DropdownSlot ref={nicotineRef}>
             <DesktopTrigger
               type="button"
@@ -245,6 +276,24 @@ const FilterData = ({ toggleMenu, variant = "mobile" }) => {
             />
           </svg>
         </Button>
+        {hasFlavorOptions && (
+          <Button type="button" onClick={() => setShowFilters("flavor")}>
+            {t("FILTER.FLAVOUR")}
+            <svg
+              width="20px"
+              height="20px"
+              viewBox="0 0 1024 1024"
+              className="icon"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
+                fill="var(--text-100)"
+              />
+            </svg>
+          </Button>
+        )}
         <Button type="button" onClick={() => setShowFilters("nicotine")}>
           {t("FILTER.STRENGTH")}
           <svg
