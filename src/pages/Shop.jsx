@@ -2,10 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
 import ShopMain from "../layouts/main/ShopMain";
-import PRODUCT_CHUNK, { DEFAULT_LANGUAGE } from "../utils/global_const";
+import { DEFAULT_LANGUAGE } from "../utils/global_const";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 import Header from "../layouts/header/Header";
+import {
+  getBrandEntryShortDescription,
+  getCategoryShortDescription,
+} from "../utils/shopCategoryCopy";
 
 import brandDescriptions from "../brand_descriptions.json";
 
@@ -37,34 +41,68 @@ const Shop = () => {
   const { loadProducts, loadProductsByCategorySlug, setCategory, category } =
     useContext(ProductContext);
 
+  /** Učitavanje proizvoda + osnovni SEO; za kategoriju sa API-ja detalji u sledećem useEffect-u. */
   useEffect(() => {
-    // Odredi jezik
     const lang = i18n.language === "de" ? "de" : "en";
     const defaultSEO = SEOConfig[lang] || SEOConfig[DEFAULT_LANGUAGE];
+    const entry = slug ? brandDescriptions.find((item) => item.slug === slug) : null;
 
-    // Pokušaj da nadješ brend po slug-u
-    const entry = brandDescriptions.find((item) => item.slug === slug);
-
-    if (entry) {
-      const descKey = lang === "de" ? "short_desc_de" : "short_desc_en";
-      const seoDescription = entry[descKey] || defaultSEO.description;
-      const seoTitle = `${entry.brand_name} | SnusCo Österreich`;
-      const categoryUrl = `https://www.snusco.at/${lang}/snus-verkauf/${slug}`;
-
-      setSeo({
-        title: seoTitle,
-        description: seoDescription,
-        keywords: `${entry.brand_name}, ${defaultSEO.keywords}`,
-        url: categoryUrl,
-        images: defaultSEO.images,
-      });
-
-      loadProductsByCategorySlug(slug);
-    } else {
+    if (!slug) {
       loadProducts();
       setCategory(null);
+      setSeo({
+        title: defaultSEO.title,
+        description: defaultSEO.description,
+        keywords: defaultSEO.keywords,
+        url: defaultSEO.url,
+        images: defaultSEO.images,
+      });
+      return;
     }
+
+    if (entry) {
+      const seoDescription =
+        getBrandEntryShortDescription(entry, lang) || defaultSEO.description;
+      setSeo({
+        title: `${entry.brand_name} | SnusCo Österreich`,
+        description: seoDescription,
+        keywords: `${entry.brand_name}, ${defaultSEO.keywords}`,
+        url: `https://www.snusco.at/${lang}/snus-verkauf/${slug}`,
+        images: defaultSEO.images,
+      });
+      loadProductsByCategorySlug(slug);
+      return;
+    }
+
+    setSeo({
+      title: defaultSEO.title,
+      description: defaultSEO.description,
+      keywords: defaultSEO.keywords,
+      url: `https://www.snusco.at/${lang}/snus-verkauf/${slug}`,
+      images: defaultSEO.images,
+    });
+    loadProductsByCategorySlug(slug);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- context loaders stabilni po ponašanju
   }, [slug, i18n.language]);
+
+  /** Kada backend vrati kategoriju (slug nije u brand JSON), SEO koristi short_description / seo_data. */
+  useEffect(() => {
+    const lang = i18n.language === "de" ? "de" : "en";
+    const defaultSEO = SEOConfig[lang] || SEOConfig[DEFAULT_LANGUAGE];
+    const entry = slug ? brandDescriptions.find((item) => item.slug === slug) : null;
+
+    if (!slug || entry || !category) return;
+
+    const desc =
+      getCategoryShortDescription(category, lang) || defaultSEO.description;
+    setSeo({
+      title: `${category.name} | SnusCo Österreich`,
+      description: desc,
+      keywords: `${category.name}, ${defaultSEO.keywords}`,
+      url: `https://www.snusco.at/${lang}/snus-verkauf/${slug}`,
+      images: defaultSEO.images,
+    });
+  }, [category, slug, i18n.language]);
 
   return (
     <div>

@@ -9,12 +9,29 @@ import ShopSort from "../../components/product/ShopSort";
 import Breadcrumbs from "../../components/section/BreadCrumbs";
 import { useParams } from "react-router-dom";
 import brandDescriptions from "../../brand_descriptions.json";
+import {
+  getBrandEntryShortDescription,
+  getCategoryShortDescription,
+} from "../../utils/shopCategoryCopy";
 
 const Container = styled.article`
   color: ${(props) => props.theme.textColor};
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
+
+  /* Globalni index.css: article { display:flex; align-items:center } pravi suvišan
+     layout/overflow na desktopu — ovde poravnanje i overflow resetujemo. */
+  @media (min-width: 1025px) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: visible;
+    overflow-y: visible;
+    min-height: 0;
+  }
 `;
 const Section = styled.section`
   width: 100%;
@@ -23,6 +40,12 @@ const Section = styled.section`
   box-sizing: border-box;
   @media (min-width: 1025px) {
     width: var(--max-width-container);
+    max-width: min(100%, var(--max-width-container));
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: visible;
+    overflow-y: visible;
+    min-width: 0;
   }
 `;
 const ProductGrid = styled.div`
@@ -41,7 +64,8 @@ const ProductGrid = styled.div`
 
   @media (min-width: 1025px) {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 12px;
+    column-gap: 12px;
+    row-gap: 12px;
   }
 `;
 const FlexDiv = styled.div`
@@ -75,9 +99,7 @@ const FlexDiv = styled.div`
     height: auto;
     overflow-x: visible;
     overflow-y: visible;
-  }
-  @media (min-width: 1025px) {
-    width: var(--max-width-container);
+    z-index: auto;
   }
 `;
 const MarginDiv = styled.div`
@@ -179,52 +201,41 @@ const NavButton = styled.button`
   }
 `;
 
+const IntroBlock = styled.div`
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 auto 16px;
+`;
+
 const Title = styled.h2`
   font-size: 2rem;
   font-weight: bold;
-  margin: 14px 0;
+  margin: 14px 0 10px;
+  width: 100%;
+  max-width: 100%;
 `;
 
-// Stil za opis sa glass efekatom i delimičnim sakrivanjem
-const Description = styled.p`
-  max-height: ${(props) =>
-    props.showAll ? "none" : "70px"}; // Skriva deo teksta
-  overflow: hidden;
-  position: relative;
-  transition: max-height 0.3s ease-in-out;
-  max-height: ${(props) =>
-    props.$showMore ? "100vh" : "calc(4 * var(--font-size-base))"};
-
-  &::after {
-    content: "";
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    top: 0;
-    box-shadow: 0px 15px 24px 30px rgba(251, 251, 251, 0.75);
-    -webkit-box-shadow: 0px 15px 24px 30px rgba(251, 251, 251, 0.75);
-    -moz-box-shadow: 0px 15px 24px 30px rgba(251, 251, 251, 0.75);
-    display: ${(props) => (props.$showMore ? "none" : "block")};
-    height: 60%;
-  }
-  @media (min-width: 768px) {
-    max-width: 50%;
-  }
-`;
-const Button = styled.div`
-  border: none;
-  background-color: transparent;
+/** Pun širine, centriran tekst — bez skraćivanja / „show more“. */
+const ShopDescription = styled.div`
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  line-height: 1.6;
   color: var(--text-100);
-  border-color: var(--text-100);
-  &:hover {
-    background-color: transparent;
-    color: var(--text-100);
-    border-color: var(--text-100);
+  font-size: var(--font-size-base);
+  font-family: "Gudea-Regural", var(--font-family), sans-serif;
+  box-sizing: border-box;
+
+  p {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
   }
-  margin: 8px 0 20px 0;
-  display: flex;
-  align-items: center;
 `;
 
 const ShopMain = () => {
@@ -234,10 +245,6 @@ const ShopMain = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(filteredProducts.length / PRODUCT_CHUNK);
-  const [showMore, setShowMore] = useState(false);
-  const handleShowMore = () => {
-    setShowMore((prevState) => !prevState);
-  };
 
   // Funkcija za dobijanje proizvoda za trenutnu stranicu
   const currentProducts = filteredProducts.slice(
@@ -314,22 +321,16 @@ const ShopMain = () => {
     ? brandDescriptions.find((item) => item.slug === slug)
     : null;
 
-  const descKey = i18n.language === "de" ? "short_desc_de" : "short_desc_en";
-
-  // Sastavi title i description
   const titleText = entry
-    ? slug
-        .split("-")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ")
+    ? entry.brand_name
     : category
     ? category.name
     : t("SHOP.TITLE");
 
   const descriptionText = entry
-    ? entry[descKey]
+    ? getBrandEntryShortDescription(entry, i18n.language)
     : category
-    ? category.seo_data?.description
+    ? getCategoryShortDescription(category, i18n.language)
     : null;
 
   return (
@@ -338,46 +339,17 @@ const ShopMain = () => {
         <MarginDiv>
           <Breadcrumbs breadcrumbs={breadcrumbItems} />
 
-          <Title>{titleText}</Title>
+          <IntroBlock>
+            <Title>{titleText}</Title>
 
-          {descriptionText ? (
-            <Description $showMore={showMore}>{descriptionText}</Description>
-          ) : (
-            <Description
-              $showMore={showMore}
-              dangerouslySetInnerHTML={{ __html: t("SHOP.DESCRIPTION") }}
-            />
-          )}
-          <Button onClick={handleShowMore}>
-            {showMore ? (
-              <>
-                {t("SHOP.SEE_LESS")}
-                <svg
-                  fill="var(--text-100)"
-                  width="24px"
-                  height="24px"
-                  viewBox="0 0 1024 1024"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M759.2 419.8L697.4 358 512 543.4 326.6 358l-61.8 61.8L512 667z" />
-                </svg>
-              </>
+            {descriptionText ? (
+              <ShopDescription>{descriptionText}</ShopDescription>
             ) : (
-              <>
-                {t("SHOP.SEE_MORE")}
-                <svg
-                  fill="var(--text-100)"
-                  width="24px"
-                  height="24px"
-                  viewBox="0 0 1024 1024"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ transform: "rotate(180deg)" }} // Ispravljeno
-                >
-                  <path d="M759.2 419.8L697.4 358 512 543.4 326.6 358l-61.8 61.8L512 667z" />
-                </svg>
-              </>
+              <ShopDescription
+                dangerouslySetInnerHTML={{ __html: t("SHOP.DESCRIPTION") }}
+              />
             )}
-          </Button>
+          </IntroBlock>
         </MarginDiv>
         <FlexDiv>
           <TopWrapper>

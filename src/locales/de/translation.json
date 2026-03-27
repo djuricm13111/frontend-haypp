@@ -350,6 +350,13 @@
     "BEST_SELLERS": "Bestseller"
   },
 
+  "SHOP": {
+    "TITLE": "Nikotinbeutel Shop",
+    "DESCRIPTION": "<p>Entdecken Sie unser gesamtes Sortiment an Nikotinbeuteln beliebter Marken. Filtern Sie nach Marke, Format und Stärke oder sortieren Sie nach Preis, Datum oder Name. Versand aus Österreich mit schneller Lieferung in ganz Europa.</p>",
+    "SEE_MORE": "Mehr anzeigen",
+    "SEE_LESS": "Weniger anzeigen"
+  },
+
   "FILTER": {
     "TITLE": "Filter",
     "TRIGGER_SUBTITLE": "Marke, Format & mehr",
@@ -363,7 +370,9 @@
     "FORMAT": "Format",
     "STRENGTH": "Stärke",
     "HIDE_OUT_OF_STOCK": "Nicht vorrätige Produkte ausblenden",
-    "VIEW_ALL_PRODUCTS": "Alle {{filteredProducts}} Produkte anzeigen"
+    "VIEW_ALL_PRODUCTS": "Alle {{filteredProducts}} Produkte anzeigen",
+    "PRODUCTS_COUNT": "{{count}} Produkte",
+    "REMOVE": "Entfernen"
   },
 
   "PROFILE": {

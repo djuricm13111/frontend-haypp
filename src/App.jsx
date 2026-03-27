@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import darkTheme from "./utils/theme";
 import { AuthUserProvider } from "./context/AuthUserContext";
 import Product from "./pages/Product";
+import Shop from "./pages/Shop";
 import SiteFooter from "./layouts/footer/SiteFooter";
 
 const AppShell = styled.div`
@@ -29,7 +30,9 @@ function App() {
           <AppShell>
             <Main>
               <Routes>
-                <Route path="/" element={<Home />}></Route>
+                <Route path="/" element={<Home />} />
+                <Route path="/:lang/snus-verkauf" element={<Shop />} />
+                <Route path="/:lang/snus-verkauf/:slug" element={<Shop />} />
                 <Route path="/:lang/:category/:slug" element={<Product />} />
               </Routes>
             </Main>

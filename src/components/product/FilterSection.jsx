@@ -126,22 +126,7 @@ const MidContainer = styled.div`
   padding: 20px 0;
   width: 94%;
   margin: 0 auto;
-
-  max-height: calc(100vh - var(--navbar-height) * 3 - 30px);
-  @media (min-width: 768px) {
-    max-height: 80vh;
-  }
-  overflow: auto; /* omogućava skrolanje unutar div-a */
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-y;
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--text-200);
-    border-radius: 5px;
-  }
+  overflow: visible;
 `;
 
 const CustomFilter = styled.div`
@@ -186,23 +171,24 @@ const DesktopPanel = styled.div`
   position: fixed;
   z-index: 10050;
   background: var(--bg-100);
-  border: 1px solid var(--bg-300);
-  border-radius: 12px;
+  border: 1px solid #cfcfcf;
+  border-radius: 0;
   box-shadow: var(--shadow-large);
   max-width: min(320px, calc(100vw - 16px));
-  max-height: min(72vh, 440px);
+  max-height: min(85vh, 520px);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 `;
 
 const DesktopMidScroll = styled.div`
-  overflow-y: auto;
+  overflow: visible;
   padding: 4px 4px 12px;
   flex: 1;
   min-height: 0;
-  -webkit-overflow-scrolling: touch;
 `;
 
 const DesktopPanelTitle = styled.div`
@@ -231,40 +217,118 @@ const DesktopBottomInline = styled.div`
   gap: 10px;
   align-items: center;
   width: 100%;
+  justify-content: ${(props) =>
+    props.$hasClear ? "space-between" : "flex-end"};
+`;
+
+const DesktopProductCount = styled.span`
+  font-size: var(--font-size-base);
+  color: var(--text-200);
+  font-weight: 500;
+  white-space: nowrap;
 `;
 
 const DesktopClearBtn = styled.button`
   padding: 10px 16px;
-  border-radius: 8px;
+  border-radius: 0;
   font-family: inherit;
   font-size: var(--font-size-base);
   cursor: pointer;
-  border: 1px solid var(--bg-300);
-  background: var(--bg-100);
+  border: 1px solid #cfcfcf;
+  background: var(--bg-300);
   color: var(--text-100);
+  transition: border-color 0.18s ease, background 0.18s ease;
+
+  &:hover {
+    border-color: #b0b0b0;
+    background: #e4e4e4;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-100);
+    outline-offset: 2px;
+  }
+`;
+
+const DesktopChipsRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  margin-top: 2px;
+`;
+
+const DesktopChip = styled.button`
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 6px 6px 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--bg-300);
+  background: var(--bg-200);
+  color: var(--text-100);
+  font-size: var(--font-size-small, 0.875rem);
+  font-family: inherit;
+  cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease;
 
   &:hover {
     border-color: var(--text-200);
-    background: var(--bg-200);
+    background: var(--bg-300);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-100);
+    outline-offset: 2px;
   }
 `;
 
-const DesktopResultsBtn = styled.button`
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  cursor: pointer;
-  border: 1px solid var(--primary-100);
-  background: var(--primary-100);
-  color: var(--bg-100);
-  transition: background 0.2s ease, border-color 0.2s ease;
+const DesktopChipMeta = styled.span`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  min-width: 0;
+`;
 
-  &:hover {
-    background: var(--primary-200);
-    border-color: var(--primary-200);
+const DesktopChipKind = styled.span`
+  font-weight: 700;
+  color: var(--text-200);
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+`;
+
+const DesktopChipValue = styled.span`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: min(220px, 42vw);
+  font-weight: 500;
+  line-height: 1.2;
+`;
+
+const DesktopChipRemove = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  color: var(--text-200);
+  transition: background 0.2s ease, color 0.2s ease;
+  font-size: 1.1rem;
+  line-height: 1;
+
+  ${DesktopChip}:hover & {
+    background: var(--bg-100);
+    color: var(--text-100);
   }
 `;
 
@@ -306,7 +370,7 @@ const FilterSection = ({
   anchorRef,
 }) => {
   const { t } = useTranslation();
-  const { products, setFilteredProducts, filteredProducts } =
+  const { products, setFilteredProducts, filteredProducts, category } =
     useContext(ProductContext);
 
   // Stanje za selektovane kategorije i formate
@@ -315,7 +379,7 @@ const FilterSection = ({
   const [selectedNicotineRanges, setSelectedNicotineRanges] = useState(
     new Set()
   );
-  const [filterOutOfStock, setFilterOutOfStock] = useState(true);
+  const [filterOutOfStock, setFilterOutOfStock] = useState(false);
 
   // Grupisanje proizvoda po kategoriji i formatu
   const groupedCategories = Array.from(
@@ -409,11 +473,11 @@ const FilterSection = ({
   }, [filterOutOfStock, applyFilters]);
 
   const clearFilters = () => {
-    setFilterOutOfStock(true);
+    setFilterOutOfStock(false);
     setSelectedCategories(new Set());
     setSelectedFormats(new Set());
     setSelectedNicotineRanges(new Set());
-    applyFilters(new Set(), new Set(), new Set(), true);
+    applyFilters(new Set(), new Set(), new Set(), false);
   };
 
   // Funkcija za brojanje proizvoda u određenoj kategoriji
@@ -581,7 +645,23 @@ const FilterSection = ({
     </>
   );
 
+  const showClearOnDesktop =
+    selectedCategories.size > 0 ||
+    selectedFormats.size > 0 ||
+    selectedNicotineRanges.size > 0;
+
+  const removeNicotineLabel = (label) => {
+    const range = NICOTINE_RANGES.find((r) => r.label === label);
+    if (range) handleNicotineRangeChange(range);
+  };
+
   if (variant === "desktop") {
+    const brandChips = !category
+      ? Array.from(selectedCategories)
+      : [];
+    const formatChips = Array.from(selectedFormats);
+    const nicotineChips = Array.from(selectedNicotineRanges);
+
     return (
       <>
         {showFilters && dropdownPos && (
@@ -604,6 +684,52 @@ const FilterSection = ({
             </DesktopPanel>
           </>
         )}
+        {showClearOnDesktop && (
+          <DesktopChipsRow>
+            {brandChips.map((name) => (
+              <DesktopChip
+                key={`brand-${name}`}
+                type="button"
+                onClick={() => handleCategoryChange(name)}
+                aria-label={`${t("FILTER.REMOVE")}: ${t("FILTER.BRAND")} ${name}`}
+              >
+                <DesktopChipMeta>
+                  <DesktopChipKind>{t("FILTER.BRAND")}</DesktopChipKind>
+                  <DesktopChipValue>{name}</DesktopChipValue>
+                </DesktopChipMeta>
+                <DesktopChipRemove aria-hidden>×</DesktopChipRemove>
+              </DesktopChip>
+            ))}
+            {formatChips.map((name) => (
+              <DesktopChip
+                key={`format-${name}`}
+                type="button"
+                onClick={() => handleFormatChange(name)}
+                aria-label={`${t("FILTER.REMOVE")}: ${t("FILTER.FORMAT")} ${name}`}
+              >
+                <DesktopChipMeta>
+                  <DesktopChipKind>{t("FILTER.FORMAT")}</DesktopChipKind>
+                  <DesktopChipValue>{name}</DesktopChipValue>
+                </DesktopChipMeta>
+                <DesktopChipRemove aria-hidden>×</DesktopChipRemove>
+              </DesktopChip>
+            ))}
+            {nicotineChips.map((label) => (
+              <DesktopChip
+                key={`nic-${label}`}
+                type="button"
+                onClick={() => removeNicotineLabel(label)}
+                aria-label={`${t("FILTER.REMOVE")}: ${t("FILTER.STRENGTH")} ${label}`}
+              >
+                <DesktopChipMeta>
+                  <DesktopChipKind>{t("FILTER.STRENGTH")}</DesktopChipKind>
+                  <DesktopChipValue>{label}</DesktopChipValue>
+                </DesktopChipMeta>
+                <DesktopChipRemove aria-hidden>×</DesktopChipRemove>
+              </DesktopChip>
+            ))}
+          </DesktopChipsRow>
+        )}
         <DesktopStockRow>
           <FilterContainer style={{ width: "100%", padding: 0, margin: 0 }}>
             <CustomWrapper style={{ padding: "4px 0" }}>
@@ -614,21 +740,17 @@ const FilterSection = ({
               />
             </CustomWrapper>
           </FilterContainer>
-          <DesktopBottomInline>
-            <DesktopClearBtn type="button" onClick={clearFilters}>
-              {t("FILTER.CLEAR_FILTER")}
-            </DesktopClearBtn>
-            <DesktopResultsBtn
-              type="button"
-              onClick={() => {
-                setShowFilters(false);
-                toggleMenu?.();
-              }}
-            >
-              {t("FILTER.VIEW_ALL_PRODUCTS", {
-                filteredProducts: filteredProducts.length,
+          <DesktopBottomInline $hasClear={showClearOnDesktop}>
+            {showClearOnDesktop && (
+              <DesktopClearBtn type="button" onClick={clearFilters}>
+                {t("FILTER.CLEAR_FILTER")}
+              </DesktopClearBtn>
+            )}
+            <DesktopProductCount>
+              {t("FILTER.PRODUCTS_COUNT", {
+                count: filteredProducts.length,
               })}
-            </DesktopResultsBtn>
+            </DesktopProductCount>
           </DesktopBottomInline>
         </DesktopStockRow>
       </>

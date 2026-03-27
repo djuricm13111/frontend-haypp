@@ -86,18 +86,19 @@ const FilterTrigger = styled.button`
   font-family: inherit;
   font-size: var(--font-size-base);
   color: var(--text-100);
-  background-color: var(--bg-100);
-  border: 1px solid var(--bg-300);
-  border-radius: 10px;
+  background-color: var(--bg-300);
+  border: 1px solid #cfcfcf;
+  border-radius: 0;
   position: relative;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease,
-    background-color 0.2s ease;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease;
 
   ${(props) =>
     props.$isOpen &&
     css`
       border-color: var(--primary-100);
       box-shadow: 0 0 0 1px var(--primary-100);
+      background-color: var(--bg-200);
     `}
 
   ${(props) =>
@@ -105,11 +106,16 @@ const FilterTrigger = styled.button`
     css`
       border-color: var(--primary-100);
       box-shadow: 0 0 0 1px var(--primary-100);
+      background-color: var(--bg-200);
     `}
 
   &:hover {
-    border-color: var(--text-200);
-    background-color: var(--bg-200);
+    border-color: ${(props) =>
+      props.$isOpen || props.$hasActiveFilters
+        ? "var(--primary-100)"
+        : "#b0b0b0"};
+    background-color: ${(props) =>
+      props.$isOpen || props.$hasActiveFilters ? "var(--bg-200)" : "#e4e4e4"};
   }
 
   &:focus-visible {
@@ -155,11 +161,11 @@ const FilterChevronWrap = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  background-color: var(--bg-200);
-  transition: background-color 0.2s ease;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.06);
+  transition: background-color 0.18s ease;
   ${FilterTrigger}:hover & {
-    background-color: var(--bg-300);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `;
 

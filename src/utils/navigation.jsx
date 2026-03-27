@@ -62,9 +62,10 @@ export function useNavigation() {
     return `/category/${slugPart(name)}`;
   }
 
-  /** Lista „Nicotine pouches” (isti obrazac kao u HomePromoIntro / HomeMain). */
+  /** Shop lista (isti URL kao SEO: /{lang}/snus-verkauf). */
   function goToShop() {
-    return "/category/nicotine-pouches";
+    const lang = normalizeLang(i18n.language);
+    return `/${lang}/snus-verkauf`;
   }
 
   return {

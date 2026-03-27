@@ -351,6 +351,13 @@
     "BEST_SELLERS": "Best Sellers"
   },
 
+  "SHOP": {
+    "TITLE": "Shop Nicotine Pouches",
+    "DESCRIPTION": "<p>Browse our full selection of nicotine pouches from popular brands. Use filters for brand, format, and strength, or sort by price, date, or name. Shipped from Austria with fast delivery across Europe.</p>",
+    "SEE_MORE": "Show more",
+    "SEE_LESS": "Show less"
+  },
+
   "FILTER": {
     "TITLE": "Filter",
     "TRIGGER_SUBTITLE": "Brand, format & more",
@@ -364,7 +371,9 @@
     "FORMAT": "Format",
     "STRENGTH": "Strength",
     "HIDE_OUT_OF_STOCK": "Hide out-of-stock products",
-    "VIEW_ALL_PRODUCTS": "View all {{filteredProducts}} products"
+    "VIEW_ALL_PRODUCTS": "View all {{filteredProducts}} products",
+    "PRODUCTS_COUNT": "{{count}} products",
+    "REMOVE": "Remove"
   },
 
   "PROFILE": {

@@ -58,6 +58,11 @@ const DropdownSlot = styled.div`
   position: relative;
 `;
 
+const shopControlBg = "var(--bg-300)";
+const shopControlBorder = "#cfcfcf";
+const shopControlBorderHover = "#b0b0b0";
+const shopControlBgHover = "#e4e4e4";
+
 const DesktopTrigger = styled.button`
   all: unset;
   box-sizing: border-box;
@@ -69,22 +74,26 @@ const DesktopTrigger = styled.button`
   font-family: inherit;
   font-size: var(--font-size-base);
   color: var(--text-100);
-  background-color: var(--bg-100);
+  background-color: ${shopControlBg};
   border: 1px solid
-    ${(props) =>
-      props.$active ? "var(--primary-100)" : "var(--bg-300)"};
-  border-radius: 10px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    ${(props) => (props.$active ? "var(--primary-100)" : shopControlBorder)};
+  border-radius: 0;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease;
   white-space: nowrap;
 
   ${(props) =>
     props.$active &&
     `
     box-shadow: 0 0 0 1px var(--primary-100);
+    background-color: var(--bg-200);
   `}
 
   &:hover {
-    border-color: var(--text-200);
+    border-color: ${(props) =>
+      props.$active ? "var(--primary-100)" : shopControlBorderHover};
+    background-color: ${(props) =>
+      props.$active ? "var(--bg-200)" : shopControlBgHover};
   }
 
   &:focus-visible {
