@@ -340,7 +340,9 @@
 
   "SHOP_SORT": {
     "SORT": "Sort",
-    "DATE": "Date",
+    "SORT_BY": "Sort by",
+    "CHOOSE_SORT": "Choose sorting",
+    "DATE": "Date (newest first)",
     "STRENGTH": "Strength",
     "STRENGTH_DESC": "Strength (Descending)",
     "PRICE_ASC": "Price (Ascending)",
@@ -351,6 +353,7 @@
 
   "FILTER": {
     "TITLE": "Filter",
+    "TRIGGER_SUBTITLE": "Brand, format & more",
     "SELECTED_FILTERS": "Selected Filters",
     "CLEAR_FILTER": "Clear Filters",
     "APPLY_FILTER": "Apply Filters",

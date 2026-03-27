@@ -8,6 +8,69 @@ import {
 
 export const ProductContext = createContext();
 
+/** Stable tie-break for equal sort keys (price, name, …). */
+export function productSortKey(p) {
+  return p?.id ?? p?.slug ?? "";
+}
+
+/** Pure sort for product lists (shop grid, context). */
+export function sortProductList(items, criterion, isAscending = true) {
+  if (!items?.length) return [];
+  const sortedItems = [...items];
+
+  switch (criterion) {
+    case "date":
+      sortedItems.sort(
+        (a, b) => new Date(a.created_at) - new Date(b.created_at)
+      );
+      sortedItems.reverse();
+      break;
+    case "strength":
+      sortedItems.sort((a, b) => {
+        const na = Number(a.nicotine);
+        const nb = Number(b.nicotine);
+        const d =
+          (Number.isFinite(na) ? na : 0) - (Number.isFinite(nb) ? nb : 0);
+        if (d !== 0) return d;
+        return String(productSortKey(a)).localeCompare(
+          String(productSortKey(b))
+        );
+      });
+      break;
+    case "price":
+      sortedItems.sort((a, b) => {
+        const pa = Number(a.price);
+        const pb = Number(b.price);
+        const d =
+          (Number.isFinite(pa) ? pa : 0) - (Number.isFinite(pb) ? pb : 0);
+        if (d !== 0) return d;
+        return String(productSortKey(a)).localeCompare(
+          String(productSortKey(b))
+        );
+      });
+      break;
+    case "name": {
+      sortedItems.sort((a, b) => {
+        const c = (a.name || "").localeCompare(b.name || "");
+        if (c !== 0) return c;
+        return String(productSortKey(a)).localeCompare(
+          String(productSortKey(b))
+        );
+      });
+      break;
+    }
+    case "best_sellers":
+      sortedItems.sort((a, b) => b.sales_count - a.sales_count);
+      break;
+    default:
+      break;
+  }
+  if (!isAscending) {
+    sortedItems.reverse();
+  }
+  return sortedItems;
+}
+
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -64,6 +127,7 @@ export const ProductProvider = ({ children }) => {
     try {
       const response = await APIService.GetProducts();
       setProducts(response);
+      setFilteredProducts(response);
     } catch (error) {
       console.error(error);
     }
@@ -133,6 +197,7 @@ export const ProductProvider = ({ children }) => {
     try {
       const response = await APIService.GetProductsByCategory(slug);
       setProducts(response.products);
+      setFilteredProducts(response.products);
       setCategory(response.category);
     } catch (error) {
       console.error(error);
@@ -170,38 +235,7 @@ export const ProductProvider = ({ children }) => {
   };
 
   function sortProducts(items, criterion, isAscending = true) {
-    const sortedItems = [...items]; // Create a copy to avoid mutating the original array
-
-    switch (criterion) {
-      //case 'date':
-      //  sortedItems.sort((a, b) => new Date(a.expirationDate) - new Date(b.expirationDate));
-      //  break;
-      case "date":
-        sortedItems.sort(
-          (a, b) => new Date(a.created_at) - new Date(b.created_at)
-        );
-        sortedItems.reverse();
-        break;
-      case "strength":
-        sortedItems.sort((a, b) => a.nicotine - b.nicotine);
-        break;
-      case "price":
-        sortedItems.sort((a, b) => a.price - b.price);
-        break;
-      case "name":
-        sortedItems.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case "best_sellers":
-        sortedItems.sort((a, b) => b.sales_count - a.sales_count); // Assuming 'sales_count' indicates how many times the product was sold
-        break;
-      default:
-        console.warn("Invalid sorting criterion provided:", criterion);
-        break;
-    }
-    if (!isAscending) {
-      sortedItems.reverse();
-    }
-
+    const sortedItems = sortProductList(items, criterion, isAscending);
     setProducts(sortedItems);
   }
 

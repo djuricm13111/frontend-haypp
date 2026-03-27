@@ -339,7 +339,9 @@
 
   "SHOP_SORT": {
     "SORT": "Sortieren",
-    "DATE": "Datum",
+    "SORT_BY": "Sortieren nach",
+    "CHOOSE_SORT": "Sortierung wählen",
+    "DATE": "Datum (neueste zuerst)",
     "STRENGTH": "Stärke",
     "STRENGTH_DESC": "Stärke (Absteigend)",
     "PRICE_ASC": "Preis (Niedrig bis Hoch)",
@@ -350,6 +352,7 @@
 
   "FILTER": {
     "TITLE": "Filter",
+    "TRIGGER_SUBTITLE": "Marke, Format & mehr",
     "SELECTED_FILTERS": "Ausgewählte Filter",
     "CLEAR_FILTER": "Filter löschen",
     "APPLY_FILTER": "Filter anwenden",
