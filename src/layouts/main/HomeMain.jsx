@@ -39,6 +39,7 @@ import flavorLiquorice from "../../assets/images/flavors/liqurice.svg";
 import flavorMint from "../../assets/images/flavors/mint.svg";
 import Header from "../../layouts/header/Header";
 import HomeIntroText from "../../components/home/HomeIntroText";
+import HomeAboutTrust from "../../components/home/HomeAboutTrust";
 
 const SliderSection = styled.section`
   box-sizing: border-box;
@@ -252,6 +253,7 @@ const HomeMain = () => {
       />
 
       <HomeNewArrivalsSlider />
+      <HomeAboutTrust />
     </>
   );
 };

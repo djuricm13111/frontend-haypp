@@ -33,23 +33,7 @@ const Section = styled.section`
 const TabBarWrap = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: var(--spacing-md);
-`;
-
-const SectionTitle = styled.h2`
-  margin: 0 0 var(--spacing-md);
-  padding: 0 var(--spacing-xs);
-  font-family: "Montserrat", var(--font-family);
-  font-size: clamp(1.125rem, 2.2vw, 1.35rem);
-  font-weight: 700;
-  color: var(--text-100);
-  line-height: 1.25;
-  text-align: center;
-
-  @media (max-width: 767px) {
-    font-size: clamp(1rem, 4.2vw, 1.125rem);
-    margin-bottom: var(--spacing-sm);
-  }
+  margin-bottom: var(--spacing-lg);
 `;
 
 const TabBar = styled.div`
@@ -190,13 +174,8 @@ const HomeBestsellersNewArrivalsGrid = () => {
 
   const activeList = tab === "bestsellers" ? bestList : newList;
 
-  const activeTitle =
-    tab === "bestsellers"
-      ? t("HOME.CATEGORY_NAV.BESTSELLERS")
-      : t("HOME.CATEGORY_NAV.NEW_ARRIVALS");
-
   return (
-    <Section aria-labelledby="home-pick-active-title">
+    <Section aria-label={t("HOME.HOME_PICK_GRID.SECTION_HEADING")}>
       <TabBarWrap>
         <TabBar role="tablist" aria-label={t("HOME.HOME_PICK_GRID.TABLIST_LABEL")}>
           <Tab
@@ -224,12 +203,14 @@ const HomeBestsellersNewArrivalsGrid = () => {
         </TabBar>
       </TabBarWrap>
 
-      <SectionTitle id="home-pick-active-title">{activeTitle}</SectionTitle>
-
       <div
         role="tabpanel"
         id="home-pick-grid-panel"
-        aria-labelledby="home-pick-active-title"
+        aria-labelledby={
+          tab === "bestsellers"
+            ? "home-pick-tab-bestsellers"
+            : "home-pick-tab-new"
+        }
       >
         {loading ? (
           <StatusMessage>{t("HOME.HOME_PICK_GRID.LOADING")}</StatusMessage>

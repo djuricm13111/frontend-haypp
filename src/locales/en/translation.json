@@ -142,6 +142,37 @@
       "TOP_BRANDS": "top brands",
       "DESC_AFTER": "."
     },
+    "TRUST": {
+      "ABOUT_H2": "About SnusCo",
+      "ABOUT_P1": "SnusCo is built for adults who want <strong>tobacco-free nicotine pouches</strong> without the noise: real brands, clear strengths, and descriptions you can use to choose with confidence.",
+      "ABOUT_P2": "We take <strong>age verification and responsible retail</strong> seriously — every order is checked so nicotine stays in the right hands.",
+      "ABOUT_P3": "Our team is here when you need help picking a format, flavour, or strength — whether you are trying pouches for the first time or refreshing your rotation.",
+      "WHY_H2": "Why shop with SnusCo?",
+      "WHY_INTRO": "From bestsellers to new arrivals, SnusCo brings <strong>nicotine pouches from brands you know</strong> together in one place — packed and shipped with care for customers in Austria.",
+      "WHY_POINTS": [
+        {
+          "title": "Brands in one place:",
+          "text": "Browse familiar names and discover newcomers — mint, berry, citrus, and more — without jumping between shops."
+        },
+        {
+          "title": "Straightforward information:",
+          "text": "Nicotine strength, format, and flavour are laid out clearly so you spend less time guessing and more time enjoying."
+        },
+        {
+          "title": "Delivery you can rely on:",
+          "text": "We focus on predictable fulfilment and careful packing so your order arrives ready to open."
+        },
+        {
+          "title": "Responsible by design:",
+          "text": "Age checks and clear communication are part of how we keep the category respectful and compliant."
+        },
+        {
+          "title": "Support when it matters:",
+          "text": "Questions about an order or a product line? Reach out — we are on your side before and after checkout."
+        }
+      ],
+      "FOOTNOTE": "Promotions, samples, and special offers may vary by product and period. While stocks last."
+    },
     "HOME_PICK_GRID": {
       "SECTION_HEADING": "Best sellers and new arrivals",
       "TABLIST_LABEL": "Choose product list",

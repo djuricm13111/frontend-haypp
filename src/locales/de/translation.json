@@ -142,6 +142,37 @@
       "TOP_BRANDS": "Top-Marken",
       "DESC_AFTER": "."
     },
+    "TRUST": {
+      "ABOUT_H2": "Über SnusCo",
+      "ABOUT_P1": "SnusCo richtet sich an Erwachsene, die <strong>tabakfreie Nikotinbeutel</strong> ohne Umwege möchten: echte Marken, klare Stärken und Beschreibungen, die beim Auswählen helfen.",
+      "ABOUT_P2": "Wir nehmen <strong>Altersprüfung und verantwortungsvollen Einzelhandel</strong> ernst — jede Bestellung wird geprüft, damit Nikotin bei den richtigen Menschen bleibt.",
+      "ABOUT_P3": "Unser Team hilft bei Format, Geschmack oder Stärke — ob erster Kauf oder gewohnte Lieblingslinie.",
+      "WHY_H2": "Warum bei SnusCo kaufen?",
+      "WHY_INTRO": "Von Bestsellern bis Neuheiten bündelt SnusCo <strong>Nikotinbeutel vertrauter Marken</strong> an einem Ort — sorgfältig verpackt und mit Blick auf Kundinnen und Kunden in Österreich.",
+      "WHY_POINTS": [
+        {
+          "title": "Marken an einem Ort:",
+          "text": "Bekannte Namen und neue Sorten — Minze, Beere, Zitrus und mehr — ohne von Shop zu Shop zu springen."
+        },
+        {
+          "title": "Klare Informationen:",
+          "text": "Nikotinstärke, Format und Geschmack sind übersichtlich — weniger Rätselraten, mehr sichere Wahl."
+        },
+        {
+          "title": "Zuverlässige Lieferung:",
+          "text": "Wir legen Wert auf planbare Abwicklung und sorgfältige Verpackung — damit Ihre Bestellung gut ankommt."
+        },
+        {
+          "title": "Verantwortung zuerst:",
+          "text": "Alterschecks und transparente Kommunikation gehören dazu, die Kategorie respektvoll und regelkonform zu halten."
+        },
+        {
+          "title": "Hilfe, wenn Sie sie brauchen:",
+          "text": "Fragen zur Bestellung oder Produktlinie? Melden Sie sich — wir sind für Sie da vor und nach dem Kauf."
+        }
+      ],
+      "FOOTNOTE": "Aktionen, Gratisproben und Sonderangebote können je nach Produkt und Zeitraum variieren. Solange der Vorrat reicht."
+    },
     "HOME_PICK_GRID": {
       "SECTION_HEADING": "Bestseller und Neuheiten",
       "TABLIST_LABEL": "Produktliste wählen",
