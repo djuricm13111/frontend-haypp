@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 /** Ispod: mobilni raspored; strelice sakrivene (ostaju crtice + swipe). */
 const MOBILE = "(max-width: 768px)";
@@ -65,6 +66,14 @@ const ImageHolder = styled.div`
   @media ${MOBILE} {
     height: clamp(140px, 36vw, 220px);
   }
+`;
+
+/** Klik na sliku — isti link kao CTA (SPA). */
+const SlideImageLink = styled(Link)`
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 0;
 `;
 
 const PromoImage = styled.img`
@@ -493,11 +502,28 @@ const ProductPromoSlider = ({ slides, className }) => {
             {slides.map((slide, i) => (
               <ImageSlide key={slide.key ?? i} $count={count}>
                 <ImageHolder>
-                  <PromoImage
-                    src={slide.imageSrc}
-                    alt={slide.imageAlt ?? ""}
-                    loading={i === 0 ? "eager" : "lazy"}
-                  />
+                  {slide.ctaHref ? (
+                    <SlideImageLink
+                      to={slide.ctaHref}
+                      aria-label={
+                        slide.imageAlt ||
+                        slide.title ||
+                        `${slide.ctaLabel ?? "Shop"} — slide ${i + 1}`
+                      }
+                    >
+                      <PromoImage
+                        src={slide.imageSrc}
+                        alt=""
+                        loading={i === 0 ? "eager" : "lazy"}
+                      />
+                    </SlideImageLink>
+                  ) : (
+                    <PromoImage
+                      src={slide.imageSrc}
+                      alt={slide.imageAlt ?? ""}
+                      loading={i === 0 ? "eager" : "lazy"}
+                    />
+                  )}
                 </ImageHolder>
               </ImageSlide>
             ))}
@@ -540,7 +566,9 @@ const ProductPromoSlider = ({ slides, className }) => {
                     <TitleLine>{slide.title}</TitleLine>
                   </TextBlock>
                   {slide.ctaLabel && slide.ctaHref ? (
-                    <CtaButton href={slide.ctaHref}>{slide.ctaLabel}</CtaButton>
+                    <CtaButton as={Link} to={slide.ctaHref}>
+                      {slide.ctaLabel}
+                    </CtaButton>
                   ) : null}
                 </FooterInner>
               </FooterSlide>

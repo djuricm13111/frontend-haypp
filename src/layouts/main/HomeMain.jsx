@@ -5,10 +5,7 @@ import HomeBrandLogoStrip from "../../components/home/HomeBrandLogoStrip";
 import HomeFeaturedProducts from "../../components/home/HomeFeaturedProducts";
 import HomeBestsellersNewArrivalsGrid from "../../components/home/HomeBestsellersNewArrivalsGrid";
 import HomePromoCardGrid from "../../components/home/HomePromoCardGrid";
-import HomePromoIntro, {
-  PROMO_LINK_NICOTINE_FREE,
-  PROMO_LINK_TOBACCO_FREE,
-} from "../../components/home/HomePromoIntro";
+import HomePromoIntro from "../../components/home/HomePromoIntro";
 import ProductPromoSlider from "../../components/ProductPromoSlider";
 import HomeNewArrivalsSlider from "../../components/home/HomeNewArrivalsSlider";
 import bannerFumi from "../../assets/images/banner/fumi.jpg";
@@ -41,10 +38,12 @@ import Header from "../../layouts/header/Header";
 import HomeIntroText from "../../components/home/HomeIntroText";
 import HomeAboutTrust from "../../components/home/HomeAboutTrust";
 import {
+  shopBasePath,
   shopBrandPath,
   shopFlavourPath,
   shopBestsellersPath,
   shopNewInStorePath,
+  shopAllBrandsPath,
 } from "../../utils/shopRoutes";
 
 const SliderSection = styled.section`
@@ -55,92 +54,99 @@ const SliderSection = styled.section`
   padding: var(--spacing-md) var(--spacing-md) var(--spacing-lg);
 `;
 
-/** Promotivne kartice — slike iz `src/assets/images/banner/`. */
-const homePromoCards = [
-  {
-    key: "xqs",
-    imageSrc: bannerXqs,
-    imageAlt: "XQS",
-    brand: "XQS",
-    priceLabel: "From $2.49 / unit",
-    href: "#",
-  },
-  {
-    key: "nordic",
-    imageSrc: bannerNordic,
-    imageAlt: "Nordic Spirit",
-    brand: "Nordic Spirit",
-    priceLabel: "From £2.29 / unit",
-    href: "#",
-  },
-  {
-    key: "fumi",
-    imageSrc: bannerFumi,
-    imageAlt: "Fumi",
-    brand: "Fumi",
-    priceLabel: "From $2.69 / unit",
-    href: "#",
-  },
-  {
-    key: "skruf",
-    imageSrc: bannerSkruf,
-    imageAlt: "Skruf",
-    brand: "Skruf Aloe Fresh",
-    priceLabel: "From $3.22 / unit",
-    href: "#",
-  },
-];
-
-/** Slajder — slike iz `src/assets/images/slider/`. */
-const demoPromoSlides = [
-  {
-    key: "velo",
-    imageSrc: sliderVelo,
-    imageAlt: "Velo",
-    priceLabel: "From £2.49 / unit",
-    title: "Velo Tasteful Trio",
-    ctaLabel: "Buy here",
-    ctaHref: "#",
-  },
-  {
-    key: "zone",
-    imageSrc: sliderZone,
-    imageAlt: "Zone",
-    priceLabel: "From £3.10 / pack",
-    title: "Zone",
-    ctaLabel: "Buy here",
-    ctaHref: "#",
-  },
-  {
-    key: "zyn",
-    imageSrc: sliderZyn,
-    imageAlt: "ZYN",
-    priceLabel: "From £0.99 / unit",
-    title: "ZYN Blueberry Mint",
-    ctaLabel: "Buy here",
-    ctaHref: "#",
-  },
-];
-
 const HomeMain = () => {
   const { i18n } = useTranslation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
 
-  /** Kategorije na početnoj — bestsellers / new-in-store vode na `shopRoutes.js` listing stranice. */
+  /** Slajder — slike iz `src/assets/images/slider/`; linkovi u prodavnicu (`shopRoutes`). */
+  const promoSlides = useMemo(
+    () => [
+      {
+        key: "velo",
+        imageSrc: sliderVelo,
+        imageAlt: "Velo",
+        priceLabel: "From £2.49 / unit",
+        title: "Velo Tasteful Trio",
+        ctaLabel: "Buy here",
+        ctaHref: shopBrandPath(lang, "velo"),
+      },
+      {
+        key: "zone",
+        imageSrc: sliderZone,
+        imageAlt: "Zone",
+        priceLabel: "From £3.10 / pack",
+        title: "Zone",
+        ctaLabel: "Buy here",
+        /** Nema odgovarajućeg brend slug-a u `brand_descriptions` — vodi na punu prodavnicu. */
+        ctaHref: shopBasePath(lang),
+      },
+      {
+        key: "zyn",
+        imageSrc: sliderZyn,
+        imageAlt: "ZYN",
+        priceLabel: "From £0.99 / unit",
+        title: "ZYN Blueberry Mint",
+        ctaLabel: "Buy here",
+        ctaHref: shopBrandPath(lang, "zyn"),
+      },
+    ],
+    [lang]
+  );
+
+  /** Promotivne kartice — brend stranice u prodavnici (`/:lang/snus-verkauf/:slug`). */
+  const homePromoCards = useMemo(
+    () => [
+      {
+        key: "xqs",
+        imageSrc: bannerXqs,
+        imageAlt: "XQS",
+        brand: "XQS",
+        priceLabel: "From $2.49 / unit",
+        href: shopBrandPath(lang, "xqs"),
+      },
+      {
+        key: "nordic",
+        imageSrc: bannerNordic,
+        imageAlt: "Nordic Spirit",
+        brand: "Nordic Spirit",
+        priceLabel: "From £2.29 / unit",
+        href: shopBrandPath(lang, "nordic-spirit"),
+      },
+      {
+        key: "fumi",
+        imageSrc: bannerFumi,
+        imageAlt: "Fumi",
+        brand: "Fumi",
+        priceLabel: "From $2.69 / unit",
+        href: shopBrandPath(lang, "fumi"),
+      },
+      {
+        key: "skruf",
+        imageSrc: bannerSkruf,
+        imageAlt: "Skruf",
+        brand: "Skruf Aloe Fresh",
+        priceLabel: "From $3.22 / unit",
+        href: shopBrandPath(lang, "skruf"),
+      },
+    ],
+    [lang]
+  );
+
+  /** Kategorije — rute iz `shopRoutes.js` (prodavnica / listingi), ne `/category/...`. */
   const homeShopByCategoryItems = useMemo(
     () => [
       {
         key: "nicotine-pouches",
         iconSrc: listNicotinePouches,
         labelKey: "HOME.CATEGORY_NAV.NICOTINE_POUCHES",
-        href: PROMO_LINK_TOBACCO_FREE,
+        href: shopBasePath(lang),
       },
       {
         key: "nicotine-free-pouches",
         iconSrc: listNicotineFree,
         labelKey: "HOME.CATEGORY_NAV.NICOTINE_FREE_POUCHES",
-        href: PROMO_LINK_NICOTINE_FREE,
+        href: shopBasePath(lang),
       },
       {
         key: "new-arrivals",
@@ -158,25 +164,25 @@ const HomeMain = () => {
         key: "offers",
         iconSrc: listOffers,
         labelKey: "HOME.CATEGORY_NAV.OFFERS",
-        href: "/category/offers",
+        href: shopBestsellersPath(lang),
       },
       {
         key: "bundles",
         iconSrc: listBundles,
         labelKey: "HOME.CATEGORY_NAV.BUNDLES",
-        href: "/category/bundles",
+        href: shopBasePath(lang),
       },
       {
         key: "pick-and-mix",
         iconSrc: listPickAndMix,
         labelKey: "HOME.CATEGORY_NAV.PICK_AND_MIX",
-        href: "/category/pick-and-mix",
+        href: shopAllBrandsPath(lang),
       },
       {
         key: "free-sample",
         iconSrc: listFreeSample,
         labelKey: "HOME.CATEGORY_NAV.FREE_SAMPLE",
-        href: "/category/free-sample",
+        href: shopNewInStorePath(lang),
       },
     ],
     [lang]
@@ -244,7 +250,7 @@ const HomeMain = () => {
 
 
       <SliderSection aria-label="Featured offers">
-        <ProductPromoSlider slides={demoPromoSlides} />
+        <ProductPromoSlider slides={promoSlides} />
       </SliderSection>
       <HomePromoCardGrid items={homePromoCards}>
         <HomePromoIntro />

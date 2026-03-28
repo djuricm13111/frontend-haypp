@@ -59,13 +59,15 @@ const ItemRoot = styled.li`
   @media ${DESKTOP} {
     flex: 0 1 auto;
     width: auto;
-    min-width: ${({ $wide }) => ($wide ? "5rem" : "4.5rem")};
-    max-width: ${({ $wide }) => ($wide ? "9.5rem" : "6.5rem")};
+    min-width: ${({ $wide }) => ($wide ? "5.75rem" : "5.25rem")};
+    max-width: ${({ $wide }) => ($wide ? "11rem" : "7.5rem")};
   }
 `;
 
 const IconBox = styled.div`
-  width: 90%;
+  width: 100%;
+  max-width: 6.25rem;
+  margin: 0 auto;
   aspect-ratio: 1;
   height: auto;
   display: flex;
@@ -74,14 +76,16 @@ const IconBox = styled.div`
   flex-shrink: 0;
 
   @media ${DESKTOP} {
-    width: 3.75rem;
-    height: 3.75rem;
+    width: 4.875rem;
+    height: 4.875rem;
+    max-width: none;
+    margin: 0;
     aspect-ratio: unset;
   }
 
   @media (min-width: 1025px) {
-    width: 4.25rem;
-    height: 4.25rem;
+    width: 5.625rem;
+    height: 5.625rem;
   }
 
   img {

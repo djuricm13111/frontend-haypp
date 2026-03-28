@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const RADIUS = "8px";
 /** Vertikalni razmak oko slike */
@@ -118,7 +119,7 @@ const PriceLine = styled.p`
   line-height: 1.35;
 `;
 
-const BuyLink = styled.a`
+const buyLinkStyles = `
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,6 +151,31 @@ const BuyLink = styled.a`
   }
 `;
 
+const BuyLink = styled.a`
+  ${buyLinkStyles}
+`;
+
+const BuyRouterLink = styled(Link)`
+  ${buyLinkStyles}
+`;
+
+const CardImageLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  text-decoration: none;
+  color: inherit;
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-100);
+    outline-offset: -2px;
+    border-radius: ${IMG_RADIUS};
+  }
+`;
+
 /**
  * @typedef {{ key?: string, imageSrc: string, imageAlt: string, brand: string, priceLabel: string, href: string }} PromoCardItem
  */
@@ -158,6 +184,10 @@ const BuyLink = styled.a`
  * Mreža promotivnih kartica (ne proizvodnih listinga).
  * @param {{ items: PromoCardItem[], className?: string, children?: React.ReactNode }} props
  */
+function isInternalShopPath(href) {
+  return typeof href === "string" && href.startsWith("/") && href !== "#";
+}
+
 const HomePromoCardGrid = ({ items, className, children }) => {
   const { t } = useTranslation();
   const buyLabel = t("HOME.BUY_HERE");
@@ -171,22 +201,42 @@ const HomePromoCardGrid = ({ items, className, children }) => {
     >
       {children}
       <Grid>
-        {items.map((item, i) => (
-          <Card key={item.key ?? i}>
-            <ImageWrap>
-              <CardImage
-                src={item.imageSrc}
-                alt={item.imageAlt}
-                loading={i < 2 ? "eager" : "lazy"}
-              />
-            </ImageWrap>
-            <TextBlock>
-              <Brand>{item.brand}</Brand>
-              <PriceLine>{item.priceLabel}</PriceLine>
-            </TextBlock>
-            <BuyLink href={item.href}>{buyLabel}</BuyLink>
-          </Card>
-        ))}
+        {items.map((item, i) => {
+          const internal = isInternalShopPath(item.href);
+          return (
+            <Card key={item.key ?? i}>
+              <ImageWrap>
+                {internal ? (
+                  <CardImageLink
+                    to={item.href}
+                    aria-label={`${item.brand} — ${buyLabel}`}
+                  >
+                    <CardImage
+                      src={item.imageSrc}
+                      alt=""
+                      loading={i < 2 ? "eager" : "lazy"}
+                    />
+                  </CardImageLink>
+                ) : (
+                  <CardImage
+                    src={item.imageSrc}
+                    alt={item.imageAlt}
+                    loading={i < 2 ? "eager" : "lazy"}
+                  />
+                )}
+              </ImageWrap>
+              <TextBlock>
+                <Brand>{item.brand}</Brand>
+                <PriceLine>{item.priceLabel}</PriceLine>
+              </TextBlock>
+              {internal ? (
+                <BuyRouterLink to={item.href}>{buyLabel}</BuyRouterLink>
+              ) : (
+                <BuyLink href={item.href}>{buyLabel}</BuyLink>
+              )}
+            </Card>
+          );
+        })}
       </Grid>
     </Section>
   );

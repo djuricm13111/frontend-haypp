@@ -1,12 +1,8 @@
-import React from "react";
-import { Trans } from "react-i18next";
+import React, { useMemo } from "react";
+import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
-/** Prilagodi putanje kad imaš stvarne kategorije u ruti. */
-export const PROMO_LINK_TOBACCO_FREE =
-  "/category/tobacco-free-nicotine-pouches";
-export const PROMO_LINK_NICOTINE_FREE = "/category/nicotine-free-pouches";
+import { shopBasePath } from "../../utils/shopRoutes";
 
 const Intro = styled.p`
   margin: 0 0 var(--spacing-lg);
@@ -38,15 +34,20 @@ const InlineLink = styled(Link)`
 `;
 
 const HomePromoIntro = () => {
+  const { i18n } = useTranslation();
+  const shopMain = useMemo(() => {
+    const lang =
+      i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+    return shopBasePath(lang);
+  }, [i18n.language]);
+
   return (
     <Intro>
       <Trans
         i18nKey="HOME.PROMO_INTRO"
         components={{
-          nicotine: (
-            <InlineLink to={PROMO_LINK_TOBACCO_FREE} />
-          ),
-          free: <InlineLink to={PROMO_LINK_NICOTINE_FREE} />,
+          nicotine: <InlineLink to={shopMain} />,
+          free: <InlineLink to={shopMain} />,
         }}
       />
     </Intro>
