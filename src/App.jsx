@@ -6,6 +6,7 @@ import { AuthUserProvider } from "./context/AuthUserContext";
 import Product from "./pages/Product";
 import Shop from "./pages/Shop";
 import ShopListing from "./pages/ShopListing";
+import AllBrands from "./pages/AllBrands";
 import SiteFooter from "./layouts/footer/SiteFooter";
 
 const AppShell = styled.div`
@@ -40,6 +41,7 @@ function App() {
                   path="/:lang/new-in-store"
                   element={<ShopListing listing="newInStore" />}
                 />
+                <Route path="/:lang/all-brands" element={<AllBrands />} />
                 <Route
                   path="/:lang/snus-verkauf/flavours/:flavorSlug"
                   element={<Shop />}

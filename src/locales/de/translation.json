@@ -421,6 +421,15 @@
     }
   },
 
+  "ALL_BRANDS": {
+    "PAGE_TITLE": "Marken",
+    "META_DESCRIPTION": "Alle Nikotinbeutel-Marken bei SnusCo — alphabetisch sortiert mit Links zu jeder Marke im Shop.",
+    "INTRO": "Alle Marken, die wir aktuell führen — alphabetisch geordnet.",
+    "LOAD_ERROR": "Marken konnten nicht geladen werden. Bitte versuchen Sie es später erneut.",
+    "LETTER_OTHER": "0–9 & Sonderzeichen",
+    "EMPTY": "Derzeit sind keine Marken verfügbar."
+  },
+
   "FILTER": {
     "TITLE": "Filter",
     "TRIGGER_SUBTITLE": "Marke, Format, Geschmack & mehr",

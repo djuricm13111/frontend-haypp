@@ -251,7 +251,7 @@ const HOVER_CLOSE_DELAY = 250;
 
 const HeaderList = ({ isScrolled }) => {
   const { i18n } = useTranslation();
-  const { goToNewInStore, goToBestsellers } = useNavigation();
+  const { goToNewInStore, goToBestsellers, goToAllBrands } = useNavigation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
   const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
@@ -349,7 +349,13 @@ const HeaderList = ({ isScrolled }) => {
     const hasFirstDropdown = index === 0;
     const hasSecondDropdown = index === 6;
     const navListLinkTo =
-      index === 4 ? goToNewInStore() : index === 5 ? goToBestsellers() : null;
+      index === 4
+        ? goToNewInStore()
+        : index === 5
+          ? goToBestsellers()
+          : index === 7
+            ? goToAllBrands()
+            : null;
 
     return (
       <FlexItem

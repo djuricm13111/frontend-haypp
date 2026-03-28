@@ -422,6 +422,15 @@
     }
   },
 
+  "ALL_BRANDS": {
+    "PAGE_TITLE": "Brands",
+    "META_DESCRIPTION": "Browse every nicotine pouch brand available at SnusCo — sorted A–Z with links to each brand in the shop.",
+    "INTRO": "Every brand we currently stock, listed alphabetically.",
+    "LOAD_ERROR": "We couldn’t load brands. Please try again later.",
+    "LETTER_OTHER": "0–9 & symbols",
+    "EMPTY": "No brands to show right now."
+  },
+
   "FILTER": {
     "TITLE": "Filter",
     "TRIGGER_SUBTITLE": "Brand, format, flavour & more",

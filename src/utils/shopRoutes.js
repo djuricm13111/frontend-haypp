@@ -45,6 +45,11 @@ export function shopNewInStorePath(lang) {
   return `/${normalizeShopLang(lang)}/new-in-store`;
 }
 
+/** Pregled svih brendova — podaci: `APIService.GetCategories()`. */
+export function shopAllBrandsPath(lang) {
+  return `/${normalizeShopLang(lang)}/all-brands`;
+}
+
 /**
  * Dropdown „Nicotine Pouches“ (desktop header + mobilni side menu) — isti sadržaj.
  * @param {string} lang — npr. i18n.language

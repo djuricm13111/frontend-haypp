@@ -13,6 +13,19 @@ export const API_PRODUCT_LISTINGS = {
   NEW_ARRIVALS: "api/products/new-arrivals/",
 };
 
+/** Kategorije / brendovi u ponudi — `GET api/categories/` */
+export const API_CATEGORIES = "api/categories/";
+
+/** Niz kategorija iz odgovora (paginacija / omotač). */
+export function normalizeCategoriesListResponse(payload) {
+  if (payload == null) return [];
+  if (Array.isArray(payload)) return payload;
+  if (Array.isArray(payload.results)) return payload.results;
+  if (Array.isArray(payload.data)) return payload.data;
+  if (Array.isArray(payload.categories)) return payload.categories;
+  return [];
+}
+
 /** Backend ponekad vraća niz, ponekad `{ results: [...] }` (paginacija). */
 export function normalizeProductListResponse(payload) {
   if (payload == null) return [];
@@ -65,16 +78,20 @@ export default class APIService {
     return response.data;
   }
 
-  static async GetCategories() {
-    const language = i18next.language.toLowerCase();
-    const response = await axios.get(APIService.URL + `api/categories/`, {
+  /**
+   * Kategorije (brendovi) u ponudi — ista ruta kao na backendu.
+   * @param {string} [locale] — npr. `"de"` | `"en"` za Accept-Language
+   */
+  static async GetCategories(locale) {
+    const language = String(locale ?? i18next.language ?? "en").toLowerCase();
+    const response = await axios.get(APIService.URL + API_CATEGORIES, {
       headers: {
         "Accept-Language": language,
         "Content-Type": "application/json",
         "x-domain": DOMAIN,
       },
     });
-    return response.data;
+    return normalizeCategoriesListResponse(response.data);
   }
   /**
    * @param {string} [locale] — npr. `"de"` | `"en"`; ako nije prosleđen, koristi i18next (Accept-Language za backend).
