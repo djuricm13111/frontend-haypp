@@ -38,6 +38,10 @@ const Section = styled.section`
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
+  /* Prostor iznad fiksnog filter bara na dnu (telefon) */
+  @media (max-width: 767px) {
+    padding-bottom: max(88px, calc(72px + env(safe-area-inset-bottom, 0px)));
+  }
   @media (min-width: 1025px) {
     width: var(--max-width-container);
     max-width: min(100%, var(--max-width-container));
@@ -81,8 +85,13 @@ const FlexDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-large);
   overflow-x: hidden;
+
+  @media (max-width: 767px) {
+    box-shadow: none;
+    min-height: 0;
+    align-items: stretch;
+  }
 
   @media (min-width: 768px) {
     box-shadow: none;
@@ -117,6 +126,12 @@ const TopWrapper = styled.div`
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 12px;
   box-sizing: border-box;
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
@@ -140,6 +155,17 @@ const FilterContainer = styled.div`
   width: 100%;
   min-width: 0;
   max-width: 100%;
+  @media (max-width: 767px) {
+    order: 2;
+    flex: 0 0 0;
+    min-height: 0;
+    height: 0;
+    overflow: visible;
+    pointer-events: none;
+    & > * {
+      pointer-events: auto;
+    }
+  }
   @media (min-width: 768px) {
     flex: 1 1 auto;
     min-width: 0;
@@ -150,6 +176,11 @@ const SortContainer = styled.div`
   width: 100%;
   min-width: 0;
   max-width: 100%;
+  @media (max-width: 767px) {
+    order: 1;
+    flex: 1 1 auto;
+    align-self: stretch;
+  }
   @media (min-width: 768px) {
     flex: 0 0 min(280px, 100%);
     max-width: 280px;

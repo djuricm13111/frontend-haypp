@@ -17,75 +17,83 @@ import {
   getFlavorGroupId,
 } from "../../utils/flavorGroups";
 
+/* Isti oblik kao glavni filter panel (90% širine, senka) — iznad njega */
 const Container = styled.div`
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
   height: 100vh;
-  max-height: 100vh;
-  max-height: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
   overflow: hidden;
-  z-index: 99999;
-  right: 0px;
-  bottom: 0px;
-  width: ${(props) => (props.$showFilters ? "100%" : "0%")};
+  z-index: calc(var(--zindex-fixed) + 2);
+  width: ${(props) => (props.$showFilters ? "90%" : "0%")};
+  max-width: min(90vw, 100%);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: var(--bg-100);
+  box-shadow: ${(props) =>
+    props.$showFilters ? "-4px 0 24px rgba(0, 0, 0, 0.12)" : "none"};
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
 
   @media (min-width: 768px) {
     position: absolute;
     box-shadow: var(--shadow-large);
+    max-width: none;
   }
-
-  background-color: var(--bg-100); /* Promenite boju po želji */
-  transition: width 0.3s ease;
 `;
 const Wrapper = styled.div`
-  width: 94%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  box-sizing: border-box;
 `;
-const IconTitle = styled.span`
-  border: none;
-
-  font-size: var(--font-size-base);
-  font-weight: 100;
-  text-transform: capitalize;
-  color: var(--text-100);
+/** Kao PanelHeader / PanelTitle u Filter.jsx */
+const MobileDrillHeader = styled.div`
   display: flex;
-  gap: 14px;
-  cursor: pointer;
-
-  background-color: var(--bg-200);
-  border: 1px solid var(--bg-300);
-  padding: var(--spacing-xs) var(--spacing-md);
-  border: ${({ $totalfilters }) =>
-    $totalfilters > 0
-      ? "1px solid var(--primary-100)"
-      : "1px solid var(--bg-300)"};
-  position: relative;
-  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  min-height: var(--navbar-height);
+  padding: 0 8px 0 4px;
+  background-color: var(--primary-100);
+  color: var(--bg-100);
+  flex-shrink: 0;
+`;
+const MobileDrillBack = styled.button`
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-`;
-const MenuTitle = styled(IconTitle)`
-  border: none;
-  background-color: transparent;
-  text-transform: uppercase;
-`;
-const XDiv = styled.div`
-  padding: 0 0 0 var(--spacing-md);
+  gap: 6px;
   cursor: pointer;
-  height: var(--navbar-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--bg-200);
-
-  /* Prvi element centriran */
-  & > :first-child {
-    margin-right: auto;
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  color: var(--bg-100);
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+  &:focus-visible {
+    outline: 2px solid var(--bg-100);
+    outline-offset: -4px;
   }
-
-  /* Drugi element na kraju */
-  & > :last-child {
-    margin-right: auto;
-  }
+`;
+const MobileDrillTitle = styled.div`
+  flex: 1;
+  text-align: center;
+  padding-right: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--header-dropdown-heading-size);
+  font-weight: 400;
+  color: var(--bg-100);
+  letter-spacing: -0.02em;
 `;
 const Checkbox = styled.div`
   border-radius: 4px;
@@ -121,18 +129,25 @@ const Label = styled.label`
   cursor: pointer;
 `;
 
-const FlexDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-base);
-`;
-
 const MidContainer = styled.div`
-  padding: 20px 0;
-  width: 94%;
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: 16px 14px 24px;
+  width: 100%;
   margin: 0 auto;
-  overflow: visible;
+  box-sizing: border-box;
+  background-color: var(--bg-100);
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--text-200);
+    border-radius: 4px;
+  }
 `;
 
 const CustomFilter = styled.div`
@@ -155,6 +170,11 @@ const FilterContainer = styled.div`
   padding: 20px 0;
   width: 94%;
   margin: 0 auto;
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 12px 14px;
+    box-sizing: border-box;
+  }
 `;
 
 const NICOTINE_RANGES = [
@@ -339,17 +359,15 @@ const DesktopChipRemove = styled.span`
 `;
 
 const BottomDiv = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  flex-shrink: 0;
   width: 100%;
-  height: calc(var(--navbar-mini) * 2);
+  min-height: calc(var(--navbar-mini) * 2);
   background-color: var(--bg-100);
   display: flex;
   align-items: center;
   justify-content: center;
   border-top: 1px solid var(--bg-300);
-  z-index: 99999;
+  margin-top: auto;
 `;
 const BottomWrapper = styled.div`
   width: 90%;
@@ -374,6 +392,7 @@ const FilterSection = ({
   toggleMenu,
   variant = "mobile",
   anchorRef,
+  onActiveFilterCountChange,
 }) => {
   const { t } = useTranslation();
   const { products, setFilteredProducts, filteredProducts, category } =
@@ -440,6 +459,26 @@ const FilterSection = ({
     },
     [products, filterOutOfStock, setFilteredProducts]
   );
+
+  useEffect(() => {
+    if (!onActiveFilterCountChange || variant !== "mobile") return;
+    let n =
+      selectedFormats.size +
+      selectedNicotineRanges.size +
+      selectedFlavors.size;
+    if (!category) n += selectedCategories.size;
+    if (filterOutOfStock) n += 1;
+    onActiveFilterCountChange(n);
+  }, [
+    onActiveFilterCountChange,
+    variant,
+    category,
+    selectedCategories,
+    selectedFormats,
+    selectedNicotineRanges,
+    selectedFlavors,
+    filterOutOfStock,
+  ]);
 
   // Funkcija za promenu selektovanih kategorija
   const handleCategoryChange = (category) => {
@@ -876,25 +915,38 @@ const FilterSection = ({
     <>
       <Container $showFilters={showFilters}>
         <Wrapper>
-          <XDiv>
-            <FlexDiv onClick={() => setShowFilters(false)}>
+          <MobileDrillHeader>
+            <MobileDrillBack
+              type="button"
+              onClick={() => setShowFilters(false)}
+            >
               <svg
-                width="30px"
-                height="30px"
+                width="22px"
+                height="22px"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{ cursor: "pointer" }}
+                aria-hidden
               >
                 <path
                   d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129C14.6799 6.73077 14.6799 6.0976 14.2893 5.70708Z"
-                  fill="var(--text-100)"
+                  fill="var(--bg-100)"
                 />
               </svg>
-              Back
-            </FlexDiv>
-            <MenuTitle>{showFilters}</MenuTitle>
-          </XDiv>
+              {t("HEADER.GO_BACK")}
+            </MobileDrillBack>
+            <MobileDrillTitle>
+              {showFilters === "nicotine"
+                ? t("FILTER.STRENGTH")
+                : showFilters === "flavor"
+                ? t("FILTER.FLAVOUR")
+                : showFilters === "brand"
+                ? t("FILTER.BRAND")
+                : showFilters === "format"
+                ? t("FILTER.FORMAT")
+                : showFilters}
+            </MobileDrillTitle>
+          </MobileDrillHeader>
           <MidContainer>{filterOptions}</MidContainer>
         </Wrapper>
       </Container>

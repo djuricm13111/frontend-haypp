@@ -72,10 +72,10 @@
   --zindex-default: 1; /* Podrazumevana vrednost za većinu elemenata */
   /**
    * ProductCard izbor količine (desktop maska + podignuta kartica, mobilni sheet).
-   * Iznad PDP MobileStickyBar (ProductMain.jsx, 6), ispod Header Container (9).
+   * Iznad shop filter docka (~1019) i filter panela (1030+), ispod modala (1050).
    */
-  --zindex-product-card-qty-backdrop: 7;
-  --zindex-product-card-qty: 8;
+  --zindex-product-card-qty-backdrop: calc(var(--zindex-fixed) + 12);
+  --zindex-product-card-qty: calc(var(--zindex-fixed) + 13);
   --zindex-dropdown: 1000; /* Za dropdown menije i autocomplete komponente */
   --zindex-sticky: 1020; /* Za sticky elemente, poput sticky navigacije */
   --zindex-fixed: 1030; /* Za elemente sa fixed pozicioniranjem */

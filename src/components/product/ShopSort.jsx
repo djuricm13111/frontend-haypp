@@ -61,6 +61,41 @@ const SortTrigger = styled.button`
     outline: 2px solid var(--primary-100);
     outline-offset: 2px;
   }
+
+  @media (max-width: 767px) {
+    min-height: 52px;
+    padding: 14px 16px;
+    gap: 12px;
+    border-radius: 14px;
+    background-color: var(--bg-100);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 22px rgba(0, 0, 0, 0.09);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease,
+      background-color 0.18s ease, transform 0.2s ease;
+
+    ${(props) =>
+      props.$isOpen &&
+      css`
+        border-color: var(--primary-100);
+        background-color: var(--bg-100);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06), 0 14px 32px rgba(0, 0, 0, 0.14),
+          0 0 0 1px var(--primary-100);
+      `}
+
+    &:hover {
+      border-color: ${(props) =>
+        props.$isOpen ? "var(--primary-100)" : "rgba(0, 0, 0, 0.12)"};
+      background-color: var(--bg-100);
+      box-shadow: ${(props) =>
+        props.$isOpen
+          ? "0 4px 6px rgba(0, 0, 0, 0.06), 0 14px 32px rgba(0, 0, 0, 0.14), 0 0 0 1px var(--primary-100)"
+          : "0 4px 8px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.11)"};
+    }
+
+    &:active {
+      transform: scale(0.995);
+    }
+  }
 `;
 
 const SortTriggerMain = styled.span`
@@ -105,6 +140,16 @@ const ChevronWrap = styled.span`
   transition: background-color 0.18s ease;
   ${SortTrigger}:hover & {
     background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 767px) {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    ${SortTrigger}:hover & {
+      background-color: rgba(0, 0, 0, 0.09);
+    }
   }
 `;
 

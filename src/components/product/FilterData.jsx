@@ -9,6 +9,12 @@ const FilterContainer = styled.div`
   padding: 20px 0;
   width: 94%;
   margin: 0 auto;
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 8px 14px 12px;
+    margin: 0;
+    box-sizing: border-box;
+  }
 `;
 
 const Button = styled.button`
@@ -34,6 +40,13 @@ const Button = styled.button`
   svg {
     transition: transform 0.2s ease;
   }
+`;
+
+const MobileRoot = styled.div`
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 `;
 
 const DesktopRoot = styled.div`
@@ -112,7 +125,11 @@ const Chevron = styled.svg`
   transform: rotate(${(props) => (props.$open ? "180deg" : "0deg")});
 `;
 
-const FilterData = ({ toggleMenu, variant = "mobile" }) => {
+const FilterData = ({
+  toggleMenu,
+  variant = "mobile",
+  onActiveFilterCountChange,
+}) => {
   const { t } = useTranslation();
   const [showFilters, setShowFilters] = useState(false);
   const { category, products } = useContext(ProductContext);
@@ -240,7 +257,7 @@ const FilterData = ({ toggleMenu, variant = "mobile" }) => {
   }
 
   return (
-    <div>
+    <MobileRoot>
       <FilterContainer>
         {!category && (
           <Button type="button" onClick={() => setShowFilters("brand")}>
@@ -317,8 +334,9 @@ const FilterData = ({ toggleMenu, variant = "mobile" }) => {
         setShowFilters={setShowFilters}
         toggleMenu={toggleMenu}
         variant="mobile"
+        onActiveFilterCountChange={onActiveFilterCountChange}
       />
-    </div>
+    </MobileRoot>
   );
 };
 
