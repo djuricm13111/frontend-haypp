@@ -4,6 +4,25 @@ import { DEFAULT_CURRENCY, DOMAIN } from "../utils/global_const";
 
 const defaultCurrency = DEFAULT_CURRENCY;
 
+/**
+ * REST rute na backendu za listinge (isti endpointi koje koristi početna / ShopListing).
+ * Mora ostati usklađeno sa Django/API rutama.
+ */
+export const API_PRODUCT_LISTINGS = {
+  BEST_SELLERS: "api/products/best-sellers/",
+  NEW_ARRIVALS: "api/products/new-arrivals/",
+};
+
+/** Backend ponekad vraća niz, ponekad `{ results: [...] }` (paginacija). */
+export function normalizeProductListResponse(payload) {
+  if (payload == null) return [];
+  if (Array.isArray(payload)) return payload;
+  if (Array.isArray(payload.results)) return payload.results;
+  if (Array.isArray(payload.data)) return payload.data;
+  if (Array.isArray(payload.products)) return payload.products;
+  return [];
+}
+
 const DEFAULT_ENDPOINT =
   window.location.protocol === "https:"
     ? "https://api.snusco.com/"
@@ -57,11 +76,14 @@ export default class APIService {
     });
     return response.data;
   }
-  static async GetBestSellers() {
-    const language = i18next.language.toLowerCase(); // Pretpostavljamo da i18next upravlja trenutnim jezikom
+  /**
+   * @param {string} [locale] — npr. `"de"` | `"en"`; ako nije prosleđen, koristi i18next (Accept-Language za backend).
+   */
+  static async GetBestSellers(locale) {
+    const language = String(locale ?? i18next.language ?? "en").toLowerCase();
     const currency = localStorage.getItem("currency") || defaultCurrency;
     const response = await axios.get(
-      APIService.URL + `api/products/best-sellers/`,
+      APIService.URL + API_PRODUCT_LISTINGS.BEST_SELLERS,
       {
         headers: {
           "Accept-Language": language,
@@ -71,13 +93,17 @@ export default class APIService {
         },
       }
     );
-    return response.data;
+    return normalizeProductListResponse(response.data);
   }
-  static async GetNewArrivals() {
-    const language = i18next.language.toLowerCase(); // Pretpostavljamo da i18next upravlja trenutnim jezikom
+
+  /**
+   * @param {string} [locale] — npr. `"de"` | `"en"`; ako nije prosleđen, koristi i18next.
+   */
+  static async GetNewArrivals(locale) {
+    const language = String(locale ?? i18next.language ?? "en").toLowerCase();
     const currency = localStorage.getItem("currency") || defaultCurrency;
     const response = await axios.get(
-      APIService.URL + `api/products/new-arrivals/`,
+      APIService.URL + API_PRODUCT_LISTINGS.NEW_ARRIVALS,
       {
         headers: {
           "Accept-Language": language,
@@ -87,7 +113,7 @@ export default class APIService {
         },
       }
     );
-    return response.data;
+    return normalizeProductListResponse(response.data);
   }
   static async GetProductsByCategory(slug) {
     const language = i18next.language.toLowerCase(); // Pretpostavljamo da i18next upravlja trenutnim jezikom

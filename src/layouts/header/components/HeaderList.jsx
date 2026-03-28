@@ -7,7 +7,9 @@ import React, {
   useMemo,
 } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { buildShopNavDropdown } from "../../../utils/shopRoutes";
+import { useNavigation } from "../../../utils/navigation";
 
 const StaticFlexDiv = styled.div`
   display: flex;
@@ -105,12 +107,26 @@ const FlexItem = styled.div`
   }
 `;
 
+/** Zajednički izgled za span i za Link (bez razlike u fontu/boji kao kod običnog <a>). */
 const Text = styled.span`
   position: relative;
   display: inline-block;
   cursor: pointer;
   color: var(--text-100);
   font-size: var(--header-link-size);
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+
+  &:visited {
+    color: var(--text-100);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-100);
+    outline-offset: 2px;
+  }
 
   &::after {
     content: "";
@@ -235,6 +251,7 @@ const HOVER_CLOSE_DELAY = 250;
 
 const HeaderList = ({ isScrolled }) => {
   const { i18n } = useTranslation();
+  const { goToNewInStore, goToBestsellers } = useNavigation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
   const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
@@ -331,6 +348,8 @@ const HeaderList = ({ isScrolled }) => {
   const renderNavItem = (item, index) => {
     const hasFirstDropdown = index === 0;
     const hasSecondDropdown = index === 6;
+    const navListLinkTo =
+      index === 4 ? goToNewInStore() : index === 5 ? goToBestsellers() : null;
 
     return (
       <FlexItem
@@ -345,7 +364,13 @@ const HeaderList = ({ isScrolled }) => {
           }
         }}
       >
-        <Text>{item}</Text>
+        {navListLinkTo ? (
+          <Text as={Link} to={navListLinkTo}>
+            {item}
+          </Text>
+        ) : (
+          <Text>{item}</Text>
+        )}
 
         {(hasFirstDropdown || hasSecondDropdown) && (
           <svg

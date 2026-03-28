@@ -406,6 +406,22 @@
     }
   },
 
+  "SHOP_LISTING": {
+    "LOAD_ERROR": "We couldn’t load products. Please try again later.",
+    "BESTSELLERS": {
+      "PAGE_TITLE": "Bestsellers",
+      "TITLE": "Bestsellers",
+      "DESCRIPTION": "Our most popular nicotine pouches — top sellers from the shop, updated from sales data.",
+      "META_DESCRIPTION": "Shop bestseller nicotine pouches at SnusCo. Popular brands and flavours, shipped from Austria across Europe."
+    },
+    "NEW_IN_STORE": {
+      "PAGE_TITLE": "New in store",
+      "TITLE": "New in store",
+      "DESCRIPTION": "The latest arrivals — new products and fresh lines as soon as they land in our warehouse.",
+      "META_DESCRIPTION": "Discover new nicotine pouch arrivals at SnusCo. Fresh products and limited drops, fast delivery in Europe."
+    }
+  },
+
   "FILTER": {
     "TITLE": "Filter",
     "TRIGGER_SUBTITLE": "Brand, format, flavour & more",

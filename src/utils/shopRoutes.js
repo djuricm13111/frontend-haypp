@@ -35,6 +35,16 @@ export function shopStrengthPath(lang, strengthSlug) {
   return `${shopBasePath(lang)}/strength/${s}`;
 }
 
+/** Frontend stranica bestsellera — podaci: `APIService.API_PRODUCT_LISTINGS.BEST_SELLERS`. */
+export function shopBestsellersPath(lang) {
+  return `/${normalizeShopLang(lang)}/bestsellers`;
+}
+
+/** Frontend „new in store“ — podaci: `APIService.API_PRODUCT_LISTINGS.NEW_ARRIVALS`. */
+export function shopNewInStorePath(lang) {
+  return `/${normalizeShopLang(lang)}/new-in-store`;
+}
+
 /**
  * Dropdown „Nicotine Pouches“ (desktop header + mobilni side menu) — isti sadržaj.
  * @param {string} lang — npr. i18n.language

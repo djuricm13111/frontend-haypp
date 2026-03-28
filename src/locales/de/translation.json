@@ -405,6 +405,22 @@
     }
   },
 
+  "SHOP_LISTING": {
+    "LOAD_ERROR": "Produkte konnten nicht geladen werden. Bitte versuchen Sie es später erneut.",
+    "BESTSELLERS": {
+      "PAGE_TITLE": "Bestseller",
+      "TITLE": "Bestseller",
+      "DESCRIPTION": "Unsere beliebtesten Nikotinbeutel — Top-Seller aus dem Shop, basierend auf Verkaufsdaten.",
+      "META_DESCRIPTION": "Bestseller-Nikotinbeutel bei SnusCo kaufen. Beliebte Marken und Geschmacksrichtungen, Versand aus Österreich in ganz Europa."
+    },
+    "NEW_IN_STORE": {
+      "PAGE_TITLE": "Neu im Sortiment",
+      "TITLE": "Neu im Sortiment",
+      "DESCRIPTION": "Die neuesten Artikel — neue Produkte und frische Serien, sobald sie bei uns eintreffen.",
+      "META_DESCRIPTION": "Neue Nikotinbeutel bei SnusCo entdecken. Frische Produkte und neue Sorten, schnelle Lieferung in Europa."
+    }
+  },
+
   "FILTER": {
     "TITLE": "Filter",
     "TRIGGER_SUBTITLE": "Marke, Format, Geschmack & mehr",

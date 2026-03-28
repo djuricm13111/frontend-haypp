@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { shopBasePath } from "./shopRoutes";
+import { shopBasePath, shopBestsellersPath, shopNewInStorePath } from "./shopRoutes";
 
 function slugPart(value) {
   return String(value || "")
@@ -68,6 +68,14 @@ export function useNavigation() {
     return shopBasePath(i18n.language);
   }
 
+  function goToBestsellers() {
+    return shopBestsellersPath(i18n.language);
+  }
+
+  function goToNewInStore() {
+    return shopNewInStorePath(i18n.language);
+  }
+
   return {
     goToHome,
     goToLogin,
@@ -79,5 +87,7 @@ export function useNavigation() {
     goToProduct,
     goToCategory,
     goToShop,
+    goToBestsellers,
+    goToNewInStore,
   };
 }

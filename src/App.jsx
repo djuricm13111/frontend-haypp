@@ -5,6 +5,7 @@ import darkTheme from "./utils/theme";
 import { AuthUserProvider } from "./context/AuthUserContext";
 import Product from "./pages/Product";
 import Shop from "./pages/Shop";
+import ShopListing from "./pages/ShopListing";
 import SiteFooter from "./layouts/footer/SiteFooter";
 
 const AppShell = styled.div`
@@ -31,6 +32,14 @@ function App() {
             <Main>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route
+                  path="/:lang/bestsellers"
+                  element={<ShopListing listing="bestsellers" />}
+                />
+                <Route
+                  path="/:lang/new-in-store"
+                  element={<ShopListing listing="newInStore" />}
+                />
                 <Route
                   path="/:lang/snus-verkauf/flavours/:flavorSlug"
                   element={<Shop />}

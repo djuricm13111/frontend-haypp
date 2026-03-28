@@ -40,7 +40,12 @@ import flavorMint from "../../assets/images/flavors/mint.svg";
 import Header from "../../layouts/header/Header";
 import HomeIntroText from "../../components/home/HomeIntroText";
 import HomeAboutTrust from "../../components/home/HomeAboutTrust";
-import { shopBrandPath, shopFlavourPath } from "../../utils/shopRoutes";
+import {
+  shopBrandPath,
+  shopFlavourPath,
+  shopBestsellersPath,
+  shopNewInStorePath,
+} from "../../utils/shopRoutes";
 
 const SliderSection = styled.section`
   box-sizing: border-box;
@@ -86,58 +91,6 @@ const homePromoCards = [
   },
 ];
 
-/** Kategorije — ikone iz `src/assets/images/list/`. */
-const homeShopByCategoryItems = [
-  {
-    key: "nicotine-pouches",
-    iconSrc: listNicotinePouches,
-    labelKey: "HOME.CATEGORY_NAV.NICOTINE_POUCHES",
-    href: PROMO_LINK_TOBACCO_FREE,
-  },
-  {
-    key: "nicotine-free-pouches",
-    iconSrc: listNicotineFree,
-    labelKey: "HOME.CATEGORY_NAV.NICOTINE_FREE_POUCHES",
-    href: PROMO_LINK_NICOTINE_FREE,
-  },
-  {
-    key: "new-arrivals",
-    iconSrc: listNewArrivals,
-    labelKey: "HOME.CATEGORY_NAV.NEW_ARRIVALS",
-    href: "/category/new-arrivals",
-  },
-  {
-    key: "bestsellers",
-    iconSrc: listBestsellers,
-    labelKey: "HOME.CATEGORY_NAV.BESTSELLERS",
-    href: "/category/best-sellers",
-  },
-  {
-    key: "offers",
-    iconSrc: listOffers,
-    labelKey: "HOME.CATEGORY_NAV.OFFERS",
-    href: "/category/offers",
-  },
-  {
-    key: "bundles",
-    iconSrc: listBundles,
-    labelKey: "HOME.CATEGORY_NAV.BUNDLES",
-    href: "/category/bundles",
-  },
-  {
-    key: "pick-and-mix",
-    iconSrc: listPickAndMix,
-    labelKey: "HOME.CATEGORY_NAV.PICK_AND_MIX",
-    href: "/category/pick-and-mix",
-  },
-  {
-    key: "free-sample",
-    iconSrc: listFreeSample,
-    labelKey: "HOME.CATEGORY_NAV.FREE_SAMPLE",
-    href: "/category/free-sample",
-  },
-];
-
 /** Slajder — slike iz `src/assets/images/slider/`. */
 const demoPromoSlides = [
   {
@@ -173,6 +126,61 @@ const HomeMain = () => {
   const { i18n } = useTranslation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+
+  /** Kategorije na početnoj — bestsellers / new-in-store vode na `shopRoutes.js` listing stranice. */
+  const homeShopByCategoryItems = useMemo(
+    () => [
+      {
+        key: "nicotine-pouches",
+        iconSrc: listNicotinePouches,
+        labelKey: "HOME.CATEGORY_NAV.NICOTINE_POUCHES",
+        href: PROMO_LINK_TOBACCO_FREE,
+      },
+      {
+        key: "nicotine-free-pouches",
+        iconSrc: listNicotineFree,
+        labelKey: "HOME.CATEGORY_NAV.NICOTINE_FREE_POUCHES",
+        href: PROMO_LINK_NICOTINE_FREE,
+      },
+      {
+        key: "new-arrivals",
+        iconSrc: listNewArrivals,
+        labelKey: "HOME.CATEGORY_NAV.NEW_ARRIVALS",
+        href: shopNewInStorePath(lang),
+      },
+      {
+        key: "bestsellers",
+        iconSrc: listBestsellers,
+        labelKey: "HOME.CATEGORY_NAV.BESTSELLERS",
+        href: shopBestsellersPath(lang),
+      },
+      {
+        key: "offers",
+        iconSrc: listOffers,
+        labelKey: "HOME.CATEGORY_NAV.OFFERS",
+        href: "/category/offers",
+      },
+      {
+        key: "bundles",
+        iconSrc: listBundles,
+        labelKey: "HOME.CATEGORY_NAV.BUNDLES",
+        href: "/category/bundles",
+      },
+      {
+        key: "pick-and-mix",
+        iconSrc: listPickAndMix,
+        labelKey: "HOME.CATEGORY_NAV.PICK_AND_MIX",
+        href: "/category/pick-and-mix",
+      },
+      {
+        key: "free-sample",
+        iconSrc: listFreeSample,
+        labelKey: "HOME.CATEGORY_NAV.FREE_SAMPLE",
+        href: "/category/free-sample",
+      },
+    ],
+    [lang]
+  );
 
   /** Brendovi — `shopRoutes.js` (isti slug kao u header dropdown-u). */
   const homeBrandLogoItems = useMemo(

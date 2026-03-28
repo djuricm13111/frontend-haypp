@@ -277,7 +277,11 @@ const ShopDescription = styled.div`
   }
 `;
 
-const ShopMain = () => {
+/**
+ * @param {{ listingPage?: 'bestsellers' | 'newInStore' | null }} props
+ * listingPage — stranice /:lang/bestsellers i /:lang/new-in-store (podaci iz API listinga).
+ */
+const ShopMain = ({ listingPage = null }) => {
   const { t, i18n } = useTranslation();
   const { slug, flavorSlug, strengthSlug } = useParams();
   const { filteredProducts, category, lockedFlavorGroupId } =
@@ -302,6 +306,27 @@ const ShopMain = () => {
       url: shopListUrl,
     };
     const pouchSuffix = t("HEADER.NICOTINE_POUCHES");
+
+    if (listingPage === "bestsellers") {
+      return [
+        home,
+        shopCrumb,
+        {
+          name: t("SHOP_LISTING.BESTSELLERS.TITLE"),
+          url: shopListUrl,
+        },
+      ];
+    }
+    if (listingPage === "newInStore") {
+      return [
+        home,
+        shopCrumb,
+        {
+          name: t("SHOP_LISTING.NEW_IN_STORE.TITLE"),
+          url: shopListUrl,
+        },
+      ];
+    }
 
     // Samo /snus-verkauf — poslednji nivo je „prodavnica“
     if (!slug && !flavorSlug && !strengthSlug) {
@@ -356,6 +381,7 @@ const ShopMain = () => {
     entry,
     category,
     shopListUrl,
+    listingPage,
     t,
     i18n.language,
   ]);
@@ -426,25 +452,35 @@ const ShopMain = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const titleText = lockedFlavorGroupId
-    ? t(`SHOP.FLAVOR_PAGE.${lockedFlavorGroupId}.TITLE`)
-    : strengthPageKey
-    ? t(`SHOP.STRENGTH_PAGE.${strengthPageKey}.TITLE`)
-    : entry
-    ? entry.brand_name
-    : category
-    ? category.name
-    : t("SHOP.TITLE");
+  const titleText =
+    listingPage === "bestsellers"
+      ? t("SHOP_LISTING.BESTSELLERS.TITLE")
+      : listingPage === "newInStore"
+      ? t("SHOP_LISTING.NEW_IN_STORE.TITLE")
+      : lockedFlavorGroupId
+      ? t(`SHOP.FLAVOR_PAGE.${lockedFlavorGroupId}.TITLE`)
+      : strengthPageKey
+      ? t(`SHOP.STRENGTH_PAGE.${strengthPageKey}.TITLE`)
+      : entry
+      ? entry.brand_name
+      : category
+      ? category.name
+      : t("SHOP.TITLE");
 
-  const descriptionText = lockedFlavorGroupId
-    ? t(`SHOP.FLAVOR_PAGE.${lockedFlavorGroupId}.DESCRIPTION`)
-    : strengthPageKey
-    ? t(`SHOP.STRENGTH_PAGE.${strengthPageKey}.DESCRIPTION`)
-    : entry
-    ? getBrandEntryShortDescription(entry, i18n.language)
-    : category
-    ? getCategoryShortDescription(category, i18n.language)
-    : null;
+  const descriptionText =
+    listingPage === "bestsellers"
+      ? t("SHOP_LISTING.BESTSELLERS.DESCRIPTION")
+      : listingPage === "newInStore"
+      ? t("SHOP_LISTING.NEW_IN_STORE.DESCRIPTION")
+      : lockedFlavorGroupId
+      ? t(`SHOP.FLAVOR_PAGE.${lockedFlavorGroupId}.DESCRIPTION`)
+      : strengthPageKey
+      ? t(`SHOP.STRENGTH_PAGE.${strengthPageKey}.DESCRIPTION`)
+      : entry
+      ? getBrandEntryShortDescription(entry, i18n.language)
+      : category
+      ? getCategoryShortDescription(category, i18n.language)
+      : null;
 
   return (
     <Container>

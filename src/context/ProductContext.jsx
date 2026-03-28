@@ -159,7 +159,8 @@ export const ProductProvider = ({ children }) => {
   const loadBestSellersBackend = async () => {
     try {
       const response = await APIService.GetBestSellers();
-      setBestSellers(response.slice(0, 23));
+      const list = Array.isArray(response) ? response : [];
+      setBestSellers(list.slice(0, 23));
     } catch (error) {
       console.error(error);
     }
@@ -167,7 +168,8 @@ export const ProductProvider = ({ children }) => {
   const loadNewArrivalsBackend = async () => {
     try {
       const response = await APIService.GetNewArrivals();
-      setNewArrivals(response.slice(0, 12));
+      const list = Array.isArray(response) ? response : [];
+      setNewArrivals(list.slice(0, 12));
     } catch (error) {
       console.error(error);
     }

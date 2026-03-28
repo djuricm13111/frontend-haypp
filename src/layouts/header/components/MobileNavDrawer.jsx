@@ -325,7 +325,8 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
 
   const navigate = useNavigate();
-  const { goToCategory, goToShop } = useNavigation();
+  const { goToCategory, goToShop, goToBestsellers, goToNewInStore } =
+    useNavigation();
 
   const [mounted, setMounted] = useState(false);
   const [entered, setEntered] = useState(false);
@@ -389,6 +390,16 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   }, [mounted, navState, onClose, goBackNav]);
 
   const handleNav = (label) => {
+    if (label === "Bestsellers") {
+      navigate(goToBestsellers());
+      onClose();
+      return;
+    }
+    if (label === "New") {
+      navigate(goToNewInStore());
+      onClose();
+      return;
+    }
     navigate(goToCategory(label));
     onClose();
   };
