@@ -355,7 +355,55 @@
     "TITLE": "Shop Nicotine Pouches",
     "DESCRIPTION": "<p>Browse our full selection of nicotine pouches from popular brands. Use filters for brand, format, and strength, or sort by price, date, or name. Shipped from Austria with fast delivery across Europe.</p>",
     "SEE_MORE": "Show more",
-    "SEE_LESS": "Show less"
+    "SEE_LESS": "Show less",
+    "FLAVOR_PAGE": {
+      "mint": {
+        "TITLE": "Mint & fresh nicotine pouches",
+        "DESCRIPTION": "Cooling mint, spearmint and menthol — crisp, discreet pouches for a fresh feel anytime."
+      },
+      "fruit_berry": {
+        "TITLE": "Fruit & berry nicotine pouches",
+        "DESCRIPTION": "Strawberry, berry and juicy fruit blends — sweet profiles from brands you already love."
+      },
+      "citrus": {
+        "TITLE": "Citrus nicotine pouches",
+        "DESCRIPTION": "Lemon, lime, orange and grapefruit notes — bright, zesty flavours with a clean finish."
+      },
+      "coffee_sweet": {
+        "TITLE": "Coffee, chocolate & sweet pouches",
+        "DESCRIPTION": "Coffee, cocoa, caramel and dessert-style notes — rich and smooth when you want something sweeter."
+      },
+      "liquorice": {
+        "TITLE": "Liquorice & anise nicotine pouches",
+        "DESCRIPTION": "Classic salty-sweet liquorice and mild anise — bold Nordic-style profiles."
+      },
+      "other": {
+        "TITLE": "More flavours",
+        "DESCRIPTION": "Explore pouches that don’t fit one box — unique blends and limited profiles in one place."
+      }
+    },
+    "STRENGTH_PAGE": {
+      "low": {
+        "TITLE": "Low strength nicotine pouches (0–5 mg)",
+        "DESCRIPTION": "Mild nicotine levels for a lighter feel — ideal when you want less intensity and easy all-day use."
+      },
+      "normal": {
+        "TITLE": "Normal strength nicotine pouches (5–9 mg)",
+        "DESCRIPTION": "Balanced everyday pouches in the medium range — familiar strength from leading brands."
+      },
+      "strong": {
+        "TITLE": "Strong nicotine pouches (9–15 mg)",
+        "DESCRIPTION": "Higher delivery for experienced users — covers medium-strong to strong pouch profiles."
+      },
+      "extra_strong": {
+        "TITLE": "Extra strong nicotine pouches (15–17 mg)",
+        "DESCRIPTION": "Very strong pouches for those who prefer a pronounced nicotine kick."
+      },
+      "ultra_strong": {
+        "TITLE": "Ultra strong nicotine pouches (17+ mg)",
+        "DESCRIPTION": "Maximum strength range — for users who want the strongest pouch options available."
+      }
+    }
   },
 
   "FILTER": {

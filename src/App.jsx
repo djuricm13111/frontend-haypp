@@ -31,6 +31,14 @@ function App() {
             <Main>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route
+                  path="/:lang/snus-verkauf/flavours/:flavorSlug"
+                  element={<Shop />}
+                />
+                <Route
+                  path="/:lang/snus-verkauf/strength/:strengthSlug"
+                  element={<Shop />}
+                />
                 <Route path="/:lang/snus-verkauf" element={<Shop />} />
                 <Route path="/:lang/snus-verkauf/:slug" element={<Shop />} />
                 <Route path="/:lang/:category/:slug" element={<Product />} />

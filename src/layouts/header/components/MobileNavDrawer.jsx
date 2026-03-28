@@ -1,11 +1,11 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useNavigation } from "../../../utils/navigation";
 import Language from "./Language";
-import { navItems, dropdownData } from "./HeaderList";
+import { navItems, buildDropdownData } from "./HeaderList";
 
 const PANEL_TRANSITION = "transform 0.28s ease";
 const BACKDROP_TRANSITION = "opacity 0.28s ease";
@@ -318,7 +318,12 @@ function UserOutlineIcon() {
  * @param {React.RefObject<{ open: () => void } | null>} props.loginRef
  */
 const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang =
+    i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+  const shopBase = `/${lang}/snus-verkauf`;
+  const dropdownData = useMemo(() => buildDropdownData(shopBase), [shopBase]);
+
   const navigate = useNavigate();
   const { goToCategory } = useNavigation();
 

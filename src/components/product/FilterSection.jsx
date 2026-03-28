@@ -38,6 +38,13 @@ const Container = styled.div`
     props.$showFilters ? "-4px 0 24px rgba(0, 0, 0, 0.12)" : "none"};
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
 
+  @media (max-width: 767px) {
+    top: env(safe-area-inset-top, 0px);
+    bottom: env(safe-area-inset-bottom, 0px);
+    height: auto;
+    max-height: none;
+  }
+
   @media (min-width: 768px) {
     position: absolute;
     box-shadow: var(--shadow-large);
@@ -395,8 +402,14 @@ const FilterSection = ({
   onActiveFilterCountChange,
 }) => {
   const { t } = useTranslation();
-  const { products, setFilteredProducts, filteredProducts, category } =
-    useContext(ProductContext);
+  const {
+    products,
+    setFilteredProducts,
+    filteredProducts,
+    category,
+    lockedFlavorGroupId,
+    lockedNicotineRangeLabels,
+  } = useContext(ProductContext);
 
   // Stanje za selektovane kategorije i formate
   const [selectedCategories, setSelectedCategories] = useState(new Set());
@@ -406,6 +419,10 @@ const FilterSection = ({
   );
   const [selectedFlavors, setSelectedFlavors] = useState(new Set());
   const [filterOutOfStock, setFilterOutOfStock] = useState(false);
+  const prevLockedFlavorRef = useRef(null);
+  const pendingApplyAfterUnlockRef = useRef(false);
+  const prevLockedNicotineRef = useRef(null);
+  const pendingApplyAfterUnlockNicotineRef = useRef(false);
 
   // Grupisanje proizvoda po kategoriji i formatu
   const groupedCategories = Array.from(
@@ -425,7 +442,13 @@ const FilterSection = ({
         hideOutOfStockOverride !== undefined
           ? hideOutOfStockOverride
           : filterOutOfStock;
-      const nicotineRangesArray = Array.from(nicotineRange);
+      const nicotineResolved =
+        lockedNicotineRangeLabels?.length > 0
+          ? new Set(lockedNicotineRangeLabels)
+          : nicotineRange instanceof Set
+          ? nicotineRange
+          : new Set(nicotineRange);
+      const nicotineRangesArray = Array.from(nicotineResolved);
       const flavorSet = flavors instanceof Set ? flavors : new Set(flavors);
 
       const filtered = products.filter((product) => {
@@ -457,15 +480,89 @@ const FilterSection = ({
 
       setFilteredProducts(filtered);
     },
-    [products, filterOutOfStock, setFilteredProducts]
+    [
+      products,
+      filterOutOfStock,
+      setFilteredProducts,
+      lockedNicotineRangeLabels,
+    ]
   );
 
   useEffect(() => {
+    if (lockedFlavorGroupId) {
+      setSelectedFlavors(new Set([lockedFlavorGroupId]));
+    } else if (prevLockedFlavorRef.current) {
+      setSelectedFlavors(new Set());
+      pendingApplyAfterUnlockRef.current = true;
+    }
+    prevLockedFlavorRef.current = lockedFlavorGroupId;
+  }, [lockedFlavorGroupId]);
+
+  useEffect(() => {
+    if (lockedNicotineRangeLabels?.length) {
+      setSelectedNicotineRanges(new Set(lockedNicotineRangeLabels));
+    } else if (prevLockedNicotineRef.current?.length) {
+      setSelectedNicotineRanges(new Set());
+      pendingApplyAfterUnlockNicotineRef.current = true;
+    }
+    prevLockedNicotineRef.current = lockedNicotineRangeLabels;
+  }, [lockedNicotineRangeLabels]);
+
+  useEffect(() => {
+    if (!pendingApplyAfterUnlockRef.current || lockedFlavorGroupId) return;
+    pendingApplyAfterUnlockRef.current = false;
+    if (!products?.length) return;
+    applyFilters(
+      selectedCategories,
+      selectedFormats,
+      selectedNicotineRanges,
+      selectedFlavors
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- jednokratno posle odlaska sa /flavours/ URL-a
+  }, [selectedFlavors, lockedFlavorGroupId]);
+
+  useEffect(() => {
+    if (!pendingApplyAfterUnlockNicotineRef.current || lockedNicotineRangeLabels?.length)
+      return;
+    pendingApplyAfterUnlockNicotineRef.current = false;
+    if (!products?.length) return;
+    applyFilters(
+      selectedCategories,
+      selectedFormats,
+      selectedNicotineRanges,
+      selectedFlavors
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- jednokratno posle odlaska sa /strength/ URL-a
+  }, [selectedNicotineRanges, lockedNicotineRangeLabels]);
+
+  useEffect(() => {
+    if (!products?.length) return;
+    const flavors = lockedFlavorGroupId
+      ? new Set([lockedFlavorGroupId])
+      : selectedFlavors;
+    applyFilters(
+      selectedCategories,
+      selectedFormats,
+      selectedNicotineRanges,
+      flavors
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- primena kad stignu proizvodi ili URL ukus/strength
+  }, [products, lockedFlavorGroupId, lockedNicotineRangeLabels]);
+
+  useEffect(() => {
     if (!onActiveFilterCountChange || variant !== "mobile") return;
-    let n =
-      selectedFormats.size +
-      selectedNicotineRanges.size +
-      selectedFlavors.size;
+    let flavorCount = selectedFlavors.size;
+    if (
+      lockedFlavorGroupId &&
+      selectedFlavors.has(lockedFlavorGroupId)
+    ) {
+      flavorCount -= 1;
+    }
+    let nicotineCount = selectedNicotineRanges.size;
+    if (lockedNicotineRangeLabels?.length) {
+      nicotineCount -= lockedNicotineRangeLabels.length;
+    }
+    let n = selectedFormats.size + nicotineCount + flavorCount;
     if (!category) n += selectedCategories.size;
     if (filterOutOfStock) n += 1;
     onActiveFilterCountChange(n);
@@ -478,6 +575,8 @@ const FilterSection = ({
     selectedNicotineRanges,
     selectedFlavors,
     filterOutOfStock,
+    lockedFlavorGroupId,
+    lockedNicotineRangeLabels,
   ]);
 
   // Funkcija za promenu selektovanih kategorija
@@ -517,6 +616,7 @@ const FilterSection = ({
   };
 
   const handleFlavorChange = (flavor) => {
+    if (lockedFlavorGroupId) return;
     const updated = new Set(selectedFlavors);
     if (updated.has(flavor)) {
       updated.delete(flavor);
@@ -533,6 +633,7 @@ const FilterSection = ({
   };
 
   const handleNicotineRangeChange = (range) => {
+    if (lockedNicotineRangeLabels?.length) return;
     const updatedRanges = new Set(selectedNicotineRanges);
 
     // Dodajemo samo labelu opsega, a ne ceo objekat
@@ -570,9 +671,15 @@ const FilterSection = ({
     setFilterOutOfStock(false);
     setSelectedCategories(new Set());
     setSelectedFormats(new Set());
-    setSelectedNicotineRanges(new Set());
-    setSelectedFlavors(new Set());
-    applyFilters(new Set(), new Set(), new Set(), new Set(), false);
+    const nicotineReset = lockedNicotineRangeLabels?.length
+      ? new Set(lockedNicotineRangeLabels)
+      : new Set();
+    setSelectedNicotineRanges(nicotineReset);
+    const flavors = lockedFlavorGroupId
+      ? new Set([lockedFlavorGroupId])
+      : new Set();
+    setSelectedFlavors(flavors);
+    applyFilters(new Set(), new Set(), nicotineReset, flavors, false);
   };
 
   // Funkcija za brojanje proizvoda u određenoj kategoriji
@@ -637,6 +744,13 @@ const FilterSection = ({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [variant, showFilters, setShowFilters]);
+
+  /** Kad se otvori podsekcija, vrati skrol liste filtera na vrh — inače „Nazad“ ostane iznad vidnog polja. */
+  useLayoutEffect(() => {
+    if (variant !== "mobile" || !showFilters) return;
+    const el = document.querySelector("[data-filter-scroll-body]");
+    if (el) el.scrollTop = 0;
+  }, [showFilters, variant]);
 
   useEffect(() => {
     if (variant !== "desktop" || !showFilters) return;
@@ -775,13 +889,25 @@ const FilterSection = ({
     </>
   );
 
+  const flavorRemovableForClear =
+    lockedFlavorGroupId &&
+    selectedFlavors.has(lockedFlavorGroupId)
+      ? selectedFlavors.size - 1
+      : selectedFlavors.size;
+  const lockedNicotineSet = lockedNicotineRangeLabels?.length
+    ? new Set(lockedNicotineRangeLabels)
+    : null;
+  const nicotineRemovableForClear = lockedNicotineSet
+    ? Math.max(0, selectedNicotineRanges.size - lockedNicotineSet.size)
+    : selectedNicotineRanges.size;
   const showClearOnDesktop =
     selectedCategories.size > 0 ||
     selectedFormats.size > 0 ||
-    selectedNicotineRanges.size > 0 ||
-    selectedFlavors.size > 0;
+    nicotineRemovableForClear > 0 ||
+    flavorRemovableForClear > 0;
 
   const removeNicotineLabel = (label) => {
+    if (lockedNicotineSet?.has(label)) return;
     const range = NICOTINE_RANGES.find((r) => r.label === label);
     if (range) handleNicotineRangeChange(range);
   };
@@ -791,8 +917,12 @@ const FilterSection = ({
       ? Array.from(selectedCategories)
       : [];
     const formatChips = Array.from(selectedFormats);
-    const flavorChips = Array.from(selectedFlavors);
-    const nicotineChips = Array.from(selectedNicotineRanges);
+    const flavorChips = Array.from(selectedFlavors).filter(
+      (id) => id !== lockedFlavorGroupId
+    );
+    const nicotineChips = Array.from(selectedNicotineRanges).filter(
+      (label) => !lockedNicotineSet?.has(label)
+    );
 
     return (
       <>

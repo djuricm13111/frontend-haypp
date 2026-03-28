@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import HomeBrandLogoStrip from "../../components/home/HomeBrandLogoStrip";
 import HomeFeaturedProducts from "../../components/home/HomeFeaturedProducts";
 import HomeBestsellersNewArrivalsGrid from "../../components/home/HomeBestsellersNewArrivalsGrid";
@@ -31,7 +32,6 @@ import bannerXqs from "../../assets/images/banner/xqs.jpg";
 import sliderVelo from "../../assets/images/slider/velo.jpg";
 import sliderZone from "../../assets/images/slider/zone.jpg";
 import sliderZyn from "../../assets/images/slider/zyn.png";
-import flavorBerry from "../../assets/images/flavors/berry.svg";
 import flavorCitrus from "../../assets/images/flavors/citrus.svg";
 import flavorCoffe from "../../assets/images/flavors/coffe.svg";
 import flavorFruit from "../../assets/images/flavors/fruit.svg";
@@ -83,21 +83,6 @@ const homePromoCards = [
     priceLabel: "From $3.22 / unit",
     href: "#",
   },
-];
-
-/** Brend logotipi — ikona iznad naziva, u redu sa wrap-om. */
-const homeBrandLogoItems = [
-  { key: "xqs", iconSrc: logoXqs, label: "XQS", href: "/category/xqs" },
-  { key: "velo", iconSrc: logoVelo, label: "Velo", href: "/category/velo" },
-  { key: "pablo", iconSrc: logoPablo, label: "Pablo", href: "/category/pablo" },
-  {
-    key: "nordic-spirit",
-    iconSrc: logoNordicSpirit,
-    label: "Nordic Spirit",
-    href: "/category/nordic-spirit",
-  },
-  { key: "zyn", iconSrc: logoZyn, label: "ZYN", href: "/category/zyn" },
-  { key: "killa", iconSrc: logoKilla, label: "Killa", href: "/category/killa" },
 ];
 
 /** Kategorije — ikone iz `src/assets/images/list/`. */
@@ -152,46 +137,6 @@ const homeShopByCategoryItems = [
   },
 ];
 
-/** Ukusi — ikone iz `src/assets/images/flavors/`. */
-const homeShopByFlavorItems = [
-  {
-    key: "mint",
-    iconSrc: flavorMint,
-    labelKey: "HOME.FLAVOR_NAV.MINT",
-    href: "/flavour/mint",
-  },
-  {
-    key: "berry",
-    iconSrc: flavorBerry,
-    labelKey: "HOME.FLAVOR_NAV.BERRY",
-    href: "/flavour/berry",
-  },
-  {
-    key: "citrus",
-    iconSrc: flavorCitrus,
-    labelKey: "HOME.FLAVOR_NAV.CITRUS",
-    href: "/flavour/citrus",
-  },
-  {
-    key: "fruit",
-    iconSrc: flavorFruit,
-    labelKey: "HOME.FLAVOR_NAV.FRUIT",
-    href: "/flavour/fruit",
-  },
-  {
-    key: "coffee",
-    iconSrc: flavorCoffe,
-    labelKey: "HOME.FLAVOR_NAV.COFFEE",
-    href: "/flavour/coffee",
-  },
-  {
-    key: "liquorice",
-    iconSrc: flavorLiquorice,
-    labelKey: "HOME.FLAVOR_NAV.LIQUORICE",
-    href: "/flavour/liquorice",
-  },
-];
-
 /** Slajder — slike iz `src/assets/images/slider/`. */
 const demoPromoSlides = [
   {
@@ -224,6 +169,65 @@ const demoPromoSlides = [
 ];
 
 const HomeMain = () => {
+  const { i18n } = useTranslation();
+  const lang =
+    i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+
+  /** Isti URL kao shop / kategorija: `/{lang}/snus-verkauf/{slug}` (vidi App.jsx). */
+  const homeBrandLogoItems = useMemo(
+    () => [
+      { key: "xqs", iconSrc: logoXqs, label: "XQS", href: `/${lang}/snus-verkauf/xqs` },
+      { key: "velo", iconSrc: logoVelo, label: "Velo", href: `/${lang}/snus-verkauf/velo` },
+      { key: "pablo", iconSrc: logoPablo, label: "Pablo", href: `/${lang}/snus-verkauf/pablo` },
+      {
+        key: "nordic-spirit",
+        iconSrc: logoNordicSpirit,
+        label: "Nordic Spirit",
+        href: `/${lang}/snus-verkauf/nordic-spirit`,
+      },
+      { key: "zyn", iconSrc: logoZyn, label: "ZYN", href: `/${lang}/snus-verkauf/zyn` },
+      { key: "killa", iconSrc: logoKilla, label: "Killa", href: `/${lang}/snus-verkauf/killa` },
+    ],
+    [lang]
+  );
+
+  /** `/{lang}/snus-verkauf/flavours/{slug}` — vidi App.jsx i flavorGroups.js. */
+  const homeShopByFlavorItems = useMemo(
+    () => [
+      {
+        key: "mint",
+        iconSrc: flavorMint,
+        labelKey: "HOME.FLAVOR_NAV.MINT",
+        href: `/${lang}/snus-verkauf/flavours/mint`,
+      },
+      {
+        key: "citrus",
+        iconSrc: flavorCitrus,
+        labelKey: "HOME.FLAVOR_NAV.CITRUS",
+        href: `/${lang}/snus-verkauf/flavours/citrus`,
+      },
+      {
+        key: "fruit",
+        iconSrc: flavorFruit,
+        labelKey: "HOME.FLAVOR_NAV.FRUIT",
+        href: `/${lang}/snus-verkauf/flavours/fruit`,
+      },
+      {
+        key: "coffee",
+        iconSrc: flavorCoffe,
+        labelKey: "HOME.FLAVOR_NAV.COFFEE",
+        href: `/${lang}/snus-verkauf/flavours/coffee`,
+      },
+      {
+        key: "liquorice",
+        iconSrc: flavorLiquorice,
+        labelKey: "HOME.FLAVOR_NAV.LIQUORICE",
+        href: `/${lang}/snus-verkauf/flavours/liquorice`,
+      },
+    ],
+    [lang]
+  );
+
   return (
     <>
       <Header />

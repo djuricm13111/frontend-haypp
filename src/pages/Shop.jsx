@@ -10,6 +10,11 @@ import {
   getBrandEntryShortDescription,
   getCategoryShortDescription,
 } from "../utils/shopCategoryCopy";
+import { flavorUrlSlugToGroupId } from "../utils/flavorGroups";
+import {
+  strengthUrlSlugToRangeLabels,
+  strengthUrlSlugToI18nKey,
+} from "../utils/nicotineStrengthRoutes";
 
 import brandDescriptions from "../brand_descriptions.json";
 
@@ -35,17 +40,91 @@ const SEOConfig = {
 };
 
 const Shop = () => {
-  const { i18n } = useTranslation();
-  const { slug } = useParams();
+  const { i18n, t } = useTranslation();
+  const { slug, flavorSlug, strengthSlug } = useParams();
   const [seo, setSeo] = useState(SEOConfig[DEFAULT_LANGUAGE]);
-  const { loadProducts, loadProductsByCategorySlug, setCategory, category } =
-    useContext(ProductContext);
+  const {
+    loadProducts,
+    loadProductsByCategorySlug,
+    setCategory,
+    category,
+    setLockedFlavorGroupId,
+    setLockedNicotineRangeLabels,
+  } = useContext(ProductContext);
 
   /** Učitavanje proizvoda + osnovni SEO; za kategoriju sa API-ja detalji u sledećem useEffect-u. */
   useEffect(() => {
     const lang = i18n.language === "de" ? "de" : "en";
     const defaultSEO = SEOConfig[lang] || SEOConfig[DEFAULT_LANGUAGE];
     const entry = slug ? brandDescriptions.find((item) => item.slug === slug) : null;
+    const flavorGroupId = flavorSlug ? flavorUrlSlugToGroupId(flavorSlug) : null;
+    const strengthLabels = strengthSlug
+      ? strengthUrlSlugToRangeLabels(strengthSlug)
+      : null;
+    const strengthI18nKey = strengthSlug
+      ? strengthUrlSlugToI18nKey(strengthSlug)
+      : null;
+
+    if (flavorSlug) {
+      setLockedFlavorGroupId(flavorGroupId || null);
+      setLockedNicotineRangeLabels(null);
+      loadProducts();
+      setCategory(null);
+      if (flavorGroupId) {
+        const title = t(`SHOP.FLAVOR_PAGE.${flavorGroupId}.TITLE`);
+        const description = t(`SHOP.FLAVOR_PAGE.${flavorGroupId}.DESCRIPTION`);
+        setSeo({
+          title: `${title} | SnusCo`,
+          description,
+          keywords: `${title}, ${defaultSEO.keywords}`,
+          url: `https://www.snusco.at/${lang}/snus-verkauf/flavours/${flavorSlug}`,
+          images: defaultSEO.images,
+        });
+      } else {
+        setSeo({
+          title: defaultSEO.title,
+          description: defaultSEO.description,
+          keywords: defaultSEO.keywords,
+          url: defaultSEO.url,
+          images: defaultSEO.images,
+        });
+      }
+      return;
+    }
+
+    if (strengthSlug) {
+      setLockedFlavorGroupId(null);
+      setLockedNicotineRangeLabels(
+        strengthLabels?.length ? [...strengthLabels] : null
+      );
+      loadProducts();
+      setCategory(null);
+      if (strengthLabels?.length && strengthI18nKey) {
+        const title = t(`SHOP.STRENGTH_PAGE.${strengthI18nKey}.TITLE`);
+        const description = t(
+          `SHOP.STRENGTH_PAGE.${strengthI18nKey}.DESCRIPTION`
+        );
+        setSeo({
+          title: `${title} | SnusCo`,
+          description,
+          keywords: `${title}, ${defaultSEO.keywords}`,
+          url: `https://www.snusco.at/${lang}/snus-verkauf/strength/${strengthSlug}`,
+          images: defaultSEO.images,
+        });
+      } else {
+        setSeo({
+          title: defaultSEO.title,
+          description: defaultSEO.description,
+          keywords: defaultSEO.keywords,
+          url: defaultSEO.url,
+          images: defaultSEO.images,
+        });
+      }
+      return;
+    }
+
+    setLockedFlavorGroupId(null);
+    setLockedNicotineRangeLabels(null);
 
     if (!slug) {
       loadProducts();
@@ -83,7 +162,7 @@ const Shop = () => {
     });
     loadProductsByCategorySlug(slug);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- context loaders stabilni po ponašanju
-  }, [slug, i18n.language]);
+  }, [slug, flavorSlug, strengthSlug, i18n.language, t]);
 
   /** Kada backend vrati kategoriju (slug nije u brand JSON), SEO koristi short_description / seo_data. */
   useEffect(() => {
@@ -91,7 +170,7 @@ const Shop = () => {
     const defaultSEO = SEOConfig[lang] || SEOConfig[DEFAULT_LANGUAGE];
     const entry = slug ? brandDescriptions.find((item) => item.slug === slug) : null;
 
-    if (!slug || entry || !category) return;
+    if (flavorSlug || strengthSlug || !slug || entry || !category) return;
 
     const desc =
       getCategoryShortDescription(category, lang) || defaultSEO.description;
@@ -102,7 +181,7 @@ const Shop = () => {
       url: `https://www.snusco.at/${lang}/snus-verkauf/${slug}`,
       images: defaultSEO.images,
     });
-  }, [category, slug, i18n.language]);
+  }, [category, slug, flavorSlug, strengthSlug, i18n.language]);
 
   return (
     <div>

@@ -354,7 +354,55 @@
     "TITLE": "Nikotinbeutel Shop",
     "DESCRIPTION": "<p>Entdecken Sie unser gesamtes Sortiment an Nikotinbeuteln beliebter Marken. Filtern Sie nach Marke, Format und Stärke oder sortieren Sie nach Preis, Datum oder Name. Versand aus Österreich mit schneller Lieferung in ganz Europa.</p>",
     "SEE_MORE": "Mehr anzeigen",
-    "SEE_LESS": "Weniger anzeigen"
+    "SEE_LESS": "Weniger anzeigen",
+    "FLAVOR_PAGE": {
+      "mint": {
+        "TITLE": "Minze & frische Nikotinbeutel",
+        "DESCRIPTION": "Kühlende Minze, Spearmint und Menthol — frisch, diskret und jederzeit genießbar."
+      },
+      "fruit_berry": {
+        "TITLE": "Frucht & Beere Nikotinbeutel",
+        "DESCRIPTION": "Erdbeere, Beeren und saftige Fruchtmischungen — süße Profile beliebter Marken."
+      },
+      "citrus": {
+        "TITLE": "Zitrus Nikotinbeutel",
+        "DESCRIPTION": "Zitrone, Limette, Orange und Grapefruit — lebendig, frisch und klar im Abgang."
+      },
+      "coffee_sweet": {
+        "TITLE": "Kaffee, Schokolade & süße Beutel",
+        "DESCRIPTION": "Kaffee, Kakao, Karamell und Dessert-Noten — rund und mild, wenn Sie etwas Süßeres mögen."
+      },
+      "liquorice": {
+        "TITLE": "Lakritz & Anis Nikotinbeutel",
+        "DESCRIPTION": "Klassisch salzig-süßes Lakritz und milder Anis — kräftige nordische Profile."
+      },
+      "other": {
+        "TITLE": "Weitere Geschmacksrichtungen",
+        "DESCRIPTION": "Entdecken Sie Beutel außerhalb einer einzelnen Kategorie — besondere Mischungen und Raritäten."
+      }
+    },
+    "STRENGTH_PAGE": {
+      "low": {
+        "TITLE": "Nikotinbeutel mit niedriger Stärke (0–5 mg)",
+        "DESCRIPTION": "Sanfter Nikotingehalt — ideal für weniger Intensität und den ganzen Tag."
+      },
+      "normal": {
+        "TITLE": "Nikotinbeutel mit normaler Stärke (5–9 mg)",
+        "DESCRIPTION": "Ausgewogen für den Alltag — vertraute Stärke beliebter Marken."
+      },
+      "strong": {
+        "TITLE": "Starke Nikotinbeutel (9–15 mg)",
+        "DESCRIPTION": "Höhere Lieferung für erfahrene Nutzer — von mittel-stark bis stark."
+      },
+      "extra_strong": {
+        "TITLE": "Extra starke Nikotinbeutel (15–17 mg)",
+        "DESCRIPTION": "Sehr starke Beutel für ein ausgeprägtes Nikotinkick-Erlebnis."
+      },
+      "ultra_strong": {
+        "TITLE": "Ultra starke Nikotinbeutel (17+ mg)",
+        "DESCRIPTION": "Maximale Stärke — für alle, die die stärksten verfügbaren Optionen suchen."
+      }
+    }
   },
 
   "FILTER": {

@@ -1,26 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import FilterData from "./FilterData";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
-
-const slideIn = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
-
-const slideOut = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-  }
-`;
 
 /** Samo padding — bez pozadine; senka je na samom dugmetu. */
 const MobileFilterDock = styled.div`
@@ -29,15 +11,12 @@ const MobileFilterDock = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
+    /* Ispod filter overlay-a (1030) kad je meni otvoren; kad je zatvoren, overlay ima pointer-events: none pa klik stiže ovde. */
     z-index: calc(var(--zindex-sticky) - 1);
     padding: 12px 14px;
     padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
     background: transparent;
     box-sizing: border-box;
-    pointer-events: none;
-    & > * {
-      pointer-events: auto;
-    }
   }
   @media (min-width: 768px) {
     display: contents;
@@ -57,6 +36,8 @@ const Container = styled.div`
   opacity: ${(props) => (props.$isOpen ? 1 : 0)};
   transition: opacity 400ms ease-in-out;
   visibility: ${(props) => (props.$shouldBeVisible ? "visible" : "hidden")};
+  /* Puni ekran je iznad dock-a (1030 > 1019); dok je meni zatvorjen ne sme da hvata klik — inače „prolazi“ na karticu ispod. */
+  pointer-events: ${(props) => (props.$isOpen ? "auto" : "none")};
 `;
 
 const Backdrop = styled.div`
@@ -71,25 +52,22 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   width: 90%;
   max-width: min(90vw, 100%);
-  height: 100%;
-  max-height: 100dvh;
   position: fixed;
-  right: 0;
-  top: 0;
+  top: env(safe-area-inset-top, 0px);
+  bottom: 0;
+  /* Animacija sa right umesto transform — inače fixed drill (podsekcija) dobija pogrešan containing block i gornji deo se seče. */
+  right: ${(props) => (props.$isOpen ? "0" : "-100%")};
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transform: translateX(100%);
   visibility: ${(props) => (props.$shouldBeVisible ? "visible" : "hidden")};
   box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
   ${({ $isOpen }) =>
-    $isOpen
-      ? css`
-          animation: ${slideIn} 0.4s ease-out forwards;
-        `
-      : css`
-          animation: ${slideOut} 0.12s ease-in forwards;
-        `}
+    !$isOpen &&
+    css`
+      transition: right 0.12s ease-in;
+    `}
 
   @media (min-width: 768px) {
     width: 100%;
@@ -399,7 +377,7 @@ const Filter = () => {
             </CloseBtn>
             <PanelTitle>{t("FILTER.TITLE")}</PanelTitle>
           </PanelHeader>
-          <ScrollBody>
+          <ScrollBody data-filter-scroll-body>
             <FilterData
               variant="mobile"
               toggleMenu={toggleMenu}

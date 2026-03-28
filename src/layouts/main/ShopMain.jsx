@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { ProductContext } from "../../context/ProductContext";
 import { PRODUCT_CHUNK } from "../../utils/global_const";
@@ -13,6 +13,7 @@ import {
   getBrandEntryShortDescription,
   getCategoryShortDescription,
 } from "../../utils/shopCategoryCopy";
+import { strengthUrlSlugToI18nKey } from "../../utils/nicotineStrengthRoutes";
 
 const Container = styled.article`
   color: ${(props) => props.theme.textColor};
@@ -246,6 +247,12 @@ const Title = styled.h2`
   margin: 14px 0 10px;
   width: 100%;
   max-width: 100%;
+
+  @media (max-width: 767px) {
+    font-size: 1.4rem;
+    line-height: 1.25;
+    margin: 10px 0 8px;
+  }
 `;
 
 /** Pun širine, centriran tekst — bez skraćivanja / „show more“. */
@@ -271,8 +278,86 @@ const ShopDescription = styled.div`
 
 const ShopMain = () => {
   const { t, i18n } = useTranslation();
-  const { slug } = useParams();
-  const { filteredProducts, category } = useContext(ProductContext);
+  const { slug, flavorSlug, strengthSlug } = useParams();
+  const { filteredProducts, category, lockedFlavorGroupId } =
+    useContext(ProductContext);
+  const strengthPageKey = strengthSlug
+    ? strengthUrlSlugToI18nKey(strengthSlug)
+    : null;
+
+  const entry = slug
+    ? brandDescriptions.find((item) => item.slug === slug)
+    : null;
+
+  const lang =
+    i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+  const shopListUrl = `/${lang}/snus-verkauf`;
+
+  const breadcrumbItems = useMemo(() => {
+    const home = { name: "SnusCo", url: "/" };
+    /** Uvek vodi na punu prodavnicu — klik iz kategorije ili ukus-stranice. */
+    const shopCrumb = {
+      name: t("HEADER.NICOTINE_POUCHES"),
+      url: shopListUrl,
+    };
+    const pouchSuffix = t("HEADER.NICOTINE_POUCHES");
+
+    // Samo /snus-verkauf — poslednji nivo je „prodavnica“
+    if (!slug && !flavorSlug && !strengthSlug) {
+      return [home, shopCrumb];
+    }
+
+    // /snus-verkauf/flavours/… — SnusCo > prodavnica (link) > ukus (trenutno)
+    if (flavorSlug && lockedFlavorGroupId) {
+      return [
+        home,
+        shopCrumb,
+        {
+          name: t(`SHOP.FLAVOR_PAGE.${lockedFlavorGroupId}.TITLE`),
+          url: shopListUrl,
+        },
+      ];
+    }
+
+    if (flavorSlug && !lockedFlavorGroupId) {
+      return [home, shopCrumb];
+    }
+
+    if (strengthSlug && strengthPageKey) {
+      return [
+        home,
+        shopCrumb,
+        {
+          name: t(`SHOP.STRENGTH_PAGE.${strengthPageKey}.TITLE`),
+          url: shopListUrl,
+        },
+      ];
+    }
+
+    if (strengthSlug && !strengthPageKey) {
+      return [home, shopCrumb];
+    }
+
+    // /snus-verkauf/:slug — brend ili kategorija
+    const leafName = entry
+      ? `${entry.brand_name} ${pouchSuffix}`.replace(/\s+/g, " ").trim()
+      : category
+      ? `${category.name} ${pouchSuffix}`.replace(/\s+/g, " ").trim()
+      : slug;
+
+    return [home, shopCrumb, { name: leafName, url: shopListUrl }];
+  }, [
+    slug,
+    flavorSlug,
+    strengthSlug,
+    strengthPageKey,
+    lockedFlavorGroupId,
+    entry,
+    category,
+    shopListUrl,
+    t,
+    i18n.language,
+  ]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(filteredProducts.length / PRODUCT_CHUNK);
@@ -282,14 +367,6 @@ const ShopMain = () => {
     (currentPage - 1) * PRODUCT_CHUNK,
     currentPage * PRODUCT_CHUNK
   );
-
-  const breadcrumbItems = [
-    { name: "SnusCo", url: "/" },
-    {
-      name: category ? category.name + " Nicotine Pouches" : "Nicotine Pouches",
-      url: "/snus-verkauf",
-    },
-  ];
 
   // Resetovanje na prvu stranicu kada se promeni filtrirana lista proizvoda
   useEffect(() => {
@@ -348,17 +425,21 @@ const ShopMain = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const entry = slug
-    ? brandDescriptions.find((item) => item.slug === slug)
-    : null;
-
-  const titleText = entry
+  const titleText = lockedFlavorGroupId
+    ? t(`SHOP.FLAVOR_PAGE.${lockedFlavorGroupId}.TITLE`)
+    : strengthPageKey
+    ? t(`SHOP.STRENGTH_PAGE.${strengthPageKey}.TITLE`)
+    : entry
     ? entry.brand_name
     : category
     ? category.name
     : t("SHOP.TITLE");
 
-  const descriptionText = entry
+  const descriptionText = lockedFlavorGroupId
+    ? t(`SHOP.FLAVOR_PAGE.${lockedFlavorGroupId}.DESCRIPTION`)
+    : strengthPageKey
+    ? t(`SHOP.STRENGTH_PAGE.${strengthPageKey}.DESCRIPTION`)
+    : entry
     ? getBrandEntryShortDescription(entry, i18n.language)
     : category
     ? getCategoryShortDescription(category, i18n.language)

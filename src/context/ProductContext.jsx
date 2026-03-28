@@ -77,6 +77,11 @@ export const ProductProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [product, setProduct] = useState(null);
   const [category, setCategory] = useState(null);
+  /** Shop stranica `/snus-verkauf/flavours/...` — ukus je fiksno iz URL-a; filter „Flavour“ se ne prikazuje. */
+  const [lockedFlavorGroupId, setLockedFlavorGroupId] = useState(null);
+  /** Shop `/snus-verkauf/strength/...` — fiksni mg opsezi; filter „Strength“ se ne prikazuje. */
+  const [lockedNicotineRangeLabels, setLockedNicotineRangeLabels] =
+    useState(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [recommendedProducts, setRecommendedProducts] = useState([]);
 
@@ -299,6 +304,10 @@ export const ProductProvider = ({ children }) => {
     fetchFeaturedProducts,
     category,
     setCategory,
+    lockedFlavorGroupId,
+    setLockedFlavorGroupId,
+    lockedNicotineRangeLabels,
+    setLockedNicotineRangeLabels,
     product,
     setProduct,
     recommendedProducts,

@@ -132,7 +132,10 @@ const FilterData = ({
 }) => {
   const { t } = useTranslation();
   const [showFilters, setShowFilters] = useState(false);
-  const { category, products } = useContext(ProductContext);
+  const { category, products, lockedFlavorGroupId, lockedNicotineRangeLabels } =
+    useContext(ProductContext);
+  const hideFlavorFilter = Boolean(lockedFlavorGroupId);
+  const hideNicotineFilter = Boolean(lockedNicotineRangeLabels?.length);
 
   const hasFlavorOptions = useMemo(
     () => getPresentFlavorGroupIds(products).length > 0,
@@ -201,7 +204,7 @@ const FilterData = ({
               </Chevron>
             </DesktopTrigger>
           </DropdownSlot>
-          {hasFlavorOptions && (
+          {hasFlavorOptions && !hideFlavorFilter && (
             <DropdownSlot ref={flavorRef}>
               <DesktopTrigger
                 type="button"
@@ -223,26 +226,28 @@ const FilterData = ({
               </DesktopTrigger>
             </DropdownSlot>
           )}
-          <DropdownSlot ref={nicotineRef}>
-            <DesktopTrigger
-              type="button"
-              $active={showFilters === "nicotine"}
-              onClick={() =>
-                setShowFilters((s) => (s === "nicotine" ? false : "nicotine"))
-              }
-            >
-              {t("FILTER.STRENGTH")}
-              <Chevron $open={showFilters === "nicotine"} viewBox="0 0 24 24">
-                <path
-                  d="M6 9l6 6 6-6"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </Chevron>
-            </DesktopTrigger>
-          </DropdownSlot>
+          {!hideNicotineFilter && (
+            <DropdownSlot ref={nicotineRef}>
+              <DesktopTrigger
+                type="button"
+                $active={showFilters === "nicotine"}
+                onClick={() =>
+                  setShowFilters((s) => (s === "nicotine" ? false : "nicotine"))
+                }
+              >
+                {t("FILTER.STRENGTH")}
+                <Chevron $open={showFilters === "nicotine"} viewBox="0 0 24 24">
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                </Chevron>
+              </DesktopTrigger>
+            </DropdownSlot>
+          )}
         </DesktopTriggerRow>
 
         <FilterSection
@@ -293,7 +298,7 @@ const FilterData = ({
             />
           </svg>
         </Button>
-        {hasFlavorOptions && (
+        {hasFlavorOptions && !hideFlavorFilter && (
           <Button type="button" onClick={() => setShowFilters("flavor")}>
             {t("FILTER.FLAVOUR")}
             <svg
@@ -311,22 +316,24 @@ const FilterData = ({
             </svg>
           </Button>
         )}
-        <Button type="button" onClick={() => setShowFilters("nicotine")}>
-          {t("FILTER.STRENGTH")}
-          <svg
-            width="20px"
-            height="20px"
-            viewBox="0 0 1024 1024"
-            className="icon"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
-              fill="var(--text-100)"
-            />
-          </svg>
-        </Button>
+        {!hideNicotineFilter && (
+          <Button type="button" onClick={() => setShowFilters("nicotine")}>
+            {t("FILTER.STRENGTH")}
+            <svg
+              width="20px"
+              height="20px"
+              viewBox="0 0 1024 1024"
+              className="icon"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
+                fill="var(--text-100)"
+              />
+            </svg>
+          </Button>
+        )}
       </FilterContainer>
 
       <FilterSection
