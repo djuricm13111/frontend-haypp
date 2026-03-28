@@ -43,7 +43,15 @@ function App() {
                 />
                 <Route path="/:lang/all-brands" element={<AllBrands />} />
                 <Route
+                  path="/:lang/snus-verkauf/flavours"
+                  element={<Shop />}
+                />
+                <Route
                   path="/:lang/snus-verkauf/flavours/:flavorSlug"
+                  element={<Shop />}
+                />
+                <Route
+                  path="/:lang/snus-verkauf/strength"
                   element={<Shop />}
                 />
                 <Route

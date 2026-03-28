@@ -14,7 +14,11 @@ import {
   getCategoryShortDescription,
 } from "../../utils/shopCategoryCopy";
 import { strengthUrlSlugToI18nKey } from "../../utils/nicotineStrengthRoutes";
-import { shopBasePath } from "../../utils/shopRoutes";
+import {
+  shopBasePath,
+  shopFlavoursHubPath,
+  shopStrengthHubPath,
+} from "../../utils/shopRoutes";
 
 const Container = styled.article`
   color: ${(props) => props.theme.textColor};
@@ -284,7 +288,7 @@ const ShopDescription = styled.div`
 const ShopMain = ({ listingPage = null }) => {
   const { t, i18n } = useTranslation();
   const { slug, flavorSlug, strengthSlug } = useParams();
-  const { filteredProducts, category, lockedFlavorGroupId } =
+  const { filteredProducts, category, lockedFlavorGroupId, shopFilterOnlyMode } =
     useContext(ProductContext);
   const strengthPageKey = strengthSlug
     ? strengthUrlSlugToI18nKey(strengthSlug)
@@ -324,6 +328,28 @@ const ShopMain = ({ listingPage = null }) => {
         {
           name: t("SHOP_LISTING.NEW_IN_STORE.TITLE"),
           url: shopListUrl,
+        },
+      ];
+    }
+
+    if (shopFilterOnlyMode === "flavor" && !flavorSlug) {
+      return [
+        home,
+        shopCrumb,
+        {
+          name: t("SHOP.FLAVOUR_HUB.TITLE"),
+          url: shopFlavoursHubPath(lang),
+        },
+      ];
+    }
+
+    if (shopFilterOnlyMode === "strength" && !strengthSlug) {
+      return [
+        home,
+        shopCrumb,
+        {
+          name: t("SHOP.STRENGTH_HUB.TITLE"),
+          url: shopStrengthHubPath(lang),
         },
       ];
     }
@@ -382,6 +408,7 @@ const ShopMain = ({ listingPage = null }) => {
     category,
     shopListUrl,
     listingPage,
+    shopFilterOnlyMode,
     t,
     i18n.language,
   ]);
@@ -457,6 +484,10 @@ const ShopMain = ({ listingPage = null }) => {
       ? t("SHOP_LISTING.BESTSELLERS.TITLE")
       : listingPage === "newInStore"
       ? t("SHOP_LISTING.NEW_IN_STORE.TITLE")
+      : shopFilterOnlyMode === "flavor"
+      ? t("SHOP.FLAVOUR_HUB.TITLE")
+      : shopFilterOnlyMode === "strength"
+      ? t("SHOP.STRENGTH_HUB.TITLE")
       : lockedFlavorGroupId
       ? t(`SHOP.FLAVOR_PAGE.${lockedFlavorGroupId}.TITLE`)
       : strengthPageKey
@@ -472,6 +503,10 @@ const ShopMain = ({ listingPage = null }) => {
       ? t("SHOP_LISTING.BESTSELLERS.DESCRIPTION")
       : listingPage === "newInStore"
       ? t("SHOP_LISTING.NEW_IN_STORE.DESCRIPTION")
+      : shopFilterOnlyMode === "flavor"
+      ? t("SHOP.FLAVOUR_HUB.DESCRIPTION")
+      : shopFilterOnlyMode === "strength"
+      ? t("SHOP.STRENGTH_HUB.DESCRIPTION")
       : lockedFlavorGroupId
       ? t(`SHOP.FLAVOR_PAGE.${lockedFlavorGroupId}.DESCRIPTION`)
       : strengthPageKey

@@ -1,4 +1,4 @@
-import { useContext, useMemo, useRef, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import FilterSection from "./FilterSection";
 import styled from "styled-components";
 import { ProductContext } from "../../context/ProductContext";
@@ -132,10 +132,25 @@ const FilterData = ({
 }) => {
   const { t } = useTranslation();
   const [showFilters, setShowFilters] = useState(false);
-  const { category, products, lockedFlavorGroupId, lockedNicotineRangeLabels } =
-    useContext(ProductContext);
-  const hideFlavorFilter = Boolean(lockedFlavorGroupId);
-  const hideNicotineFilter = Boolean(lockedNicotineRangeLabels?.length);
+  const {
+    category,
+    products,
+    lockedFlavorGroupId,
+    lockedNicotineRangeLabels,
+    shopFilterOnlyMode,
+  } = useContext(ProductContext);
+  const flavorOnlyHub = shopFilterOnlyMode === "flavor";
+  const strengthOnlyHub = shopFilterOnlyMode === "strength";
+  const hideBrandRow = Boolean(category) || flavorOnlyHub || strengthOnlyHub;
+  const hideFormatRow = flavorOnlyHub || strengthOnlyHub;
+  const hideFlavorFilter =
+    Boolean(lockedFlavorGroupId) || strengthOnlyHub;
+  const hideNicotineFilter =
+    Boolean(lockedNicotineRangeLabels?.length) || flavorOnlyHub;
+
+  useEffect(() => {
+    setShowFilters(false);
+  }, [shopFilterOnlyMode]);
 
   const hasFlavorOptions = useMemo(
     () => getPresentFlavorGroupIds(products).length > 0,
@@ -162,7 +177,7 @@ const FilterData = ({
     return (
       <DesktopRoot>
         <DesktopTriggerRow>
-          {!category && (
+          {!hideBrandRow && (
             <DropdownSlot ref={brandRef}>
               <DesktopTrigger
                 type="button"
@@ -184,26 +199,28 @@ const FilterData = ({
               </DesktopTrigger>
             </DropdownSlot>
           )}
-          <DropdownSlot ref={formatRef}>
-            <DesktopTrigger
-              type="button"
-              $active={showFilters === "format"}
-              onClick={() =>
-                setShowFilters((s) => (s === "format" ? false : "format"))
-              }
-            >
-              {t("FILTER.FORMAT")}
-              <Chevron $open={showFilters === "format"} viewBox="0 0 24 24">
-                <path
-                  d="M6 9l6 6 6-6"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </Chevron>
-            </DesktopTrigger>
-          </DropdownSlot>
+          {!hideFormatRow && (
+            <DropdownSlot ref={formatRef}>
+              <DesktopTrigger
+                type="button"
+                $active={showFilters === "format"}
+                onClick={() =>
+                  setShowFilters((s) => (s === "format" ? false : "format"))
+                }
+              >
+                {t("FILTER.FORMAT")}
+                <Chevron $open={showFilters === "format"} viewBox="0 0 24 24">
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                </Chevron>
+              </DesktopTrigger>
+            </DropdownSlot>
+          )}
           {hasFlavorOptions && !hideFlavorFilter && (
             <DropdownSlot ref={flavorRef}>
               <DesktopTrigger
@@ -264,7 +281,7 @@ const FilterData = ({
   return (
     <MobileRoot>
       <FilterContainer>
-        {!category && (
+        {!hideBrandRow && (
           <Button type="button" onClick={() => setShowFilters("brand")}>
             {t("FILTER.BRAND")}
             <svg
@@ -282,22 +299,24 @@ const FilterData = ({
             </svg>
           </Button>
         )}
-        <Button type="button" onClick={() => setShowFilters("format")}>
-          {t("FILTER.FORMAT")}
-          <svg
-            width="20px"
-            height="20px"
-            viewBox="0 0 1024 1024"
-            className="icon"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
-              fill="var(--text-100)"
-            />
-          </svg>
-        </Button>
+        {!hideFormatRow && (
+          <Button type="button" onClick={() => setShowFilters("format")}>
+            {t("FILTER.FORMAT")}
+            <svg
+              width="20px"
+              height="20px"
+              viewBox="0 0 1024 1024"
+              className="icon"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
+                fill="var(--text-100)"
+              />
+            </svg>
+          </Button>
+        )}
         {hasFlavorOptions && !hideFlavorFilter && (
           <Button type="button" onClick={() => setShowFilters("flavor")}>
             {t("FILTER.FLAVOUR")}

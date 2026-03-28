@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
 import ShopMain from "../layouts/main/ShopMain";
 import { DEFAULT_LANGUAGE } from "../utils/global_const";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 import Header from "../layouts/header/Header";
 import {
@@ -42,6 +42,7 @@ const SEOConfig = {
 const Shop = () => {
   const { i18n, t } = useTranslation();
   const { slug, flavorSlug, strengthSlug } = useParams();
+  const { pathname } = useLocation();
   const [seo, setSeo] = useState(SEOConfig[DEFAULT_LANGUAGE]);
   const {
     loadProducts,
@@ -50,7 +51,16 @@ const Shop = () => {
     category,
     setLockedFlavorGroupId,
     setLockedNicotineRangeLabels,
+    setShopFilterOnlyMode,
   } = useContext(ProductContext);
+
+  const isFlavoursHub = /\/snus-verkauf\/flavours\/?$/.test(pathname);
+  const isStrengthHub = /\/snus-verkauf\/strength\/?$/.test(pathname);
+
+  /** Pri napuštanju Shop stranice — ne ostavljaj režim samo-jedan-filter u kontekstu. */
+  useEffect(() => {
+    return () => setShopFilterOnlyMode(null);
+  }, [setShopFilterOnlyMode]);
 
   /** Učitavanje proizvoda + osnovni SEO; za kategoriju sa API-ja detalji u sledećem useEffect-u. */
   useEffect(() => {
@@ -66,6 +76,7 @@ const Shop = () => {
       : null;
 
     if (flavorSlug) {
+      setShopFilterOnlyMode(null);
       setLockedFlavorGroupId(flavorGroupId || null);
       setLockedNicotineRangeLabels(null);
       loadProducts();
@@ -93,6 +104,7 @@ const Shop = () => {
     }
 
     if (strengthSlug) {
+      setShopFilterOnlyMode(null);
       setLockedFlavorGroupId(null);
       setLockedNicotineRangeLabels(
         strengthLabels?.length ? [...strengthLabels] : null
@@ -123,6 +135,43 @@ const Shop = () => {
       return;
     }
 
+    if (isFlavoursHub) {
+      setShopFilterOnlyMode("flavor");
+      setLockedFlavorGroupId(null);
+      setLockedNicotineRangeLabels(null);
+      loadProducts();
+      setCategory(null);
+      const title = t("SHOP.FLAVOUR_HUB.TITLE");
+      const description = t("SHOP.FLAVOUR_HUB.DESCRIPTION");
+      setSeo({
+        title: `${title} | SnusCo`,
+        description,
+        keywords: `${title}, ${defaultSEO.keywords}`,
+        url: `https://www.snusco.at/${lang}/snus-verkauf/flavours`,
+        images: defaultSEO.images,
+      });
+      return;
+    }
+
+    if (isStrengthHub) {
+      setShopFilterOnlyMode("strength");
+      setLockedFlavorGroupId(null);
+      setLockedNicotineRangeLabels(null);
+      loadProducts();
+      setCategory(null);
+      const title = t("SHOP.STRENGTH_HUB.TITLE");
+      const description = t("SHOP.STRENGTH_HUB.DESCRIPTION");
+      setSeo({
+        title: `${title} | SnusCo`,
+        description,
+        keywords: `${title}, ${defaultSEO.keywords}`,
+        url: `https://www.snusco.at/${lang}/snus-verkauf/strength`,
+        images: defaultSEO.images,
+      });
+      return;
+    }
+
+    setShopFilterOnlyMode(null);
     setLockedFlavorGroupId(null);
     setLockedNicotineRangeLabels(null);
 
@@ -162,7 +211,16 @@ const Shop = () => {
     });
     loadProductsByCategorySlug(slug);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- context loaders stabilni po ponašanju
-  }, [slug, flavorSlug, strengthSlug, i18n.language, t]);
+  }, [
+    slug,
+    flavorSlug,
+    strengthSlug,
+    i18n.language,
+    t,
+    pathname,
+    isFlavoursHub,
+    isStrengthHub,
+  ]);
 
   /** Kada backend vrati kategoriju (slug nije u brand JSON), SEO koristi short_description / seo_data. */
   useEffect(() => {

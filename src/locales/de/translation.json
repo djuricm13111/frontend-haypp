@@ -355,6 +355,14 @@
     "DESCRIPTION": "<p>Entdecken Sie unser gesamtes Sortiment an Nikotinbeuteln beliebter Marken. Filtern Sie nach Marke, Format und Stärke oder sortieren Sie nach Preis, Datum oder Name. Versand aus Österreich mit schneller Lieferung in ganz Europa.</p>",
     "SEE_MORE": "Mehr anzeigen",
     "SEE_LESS": "Weniger anzeigen",
+    "FLAVOUR_HUB": {
+      "TITLE": "Nach Geschmack einkaufen",
+      "DESCRIPTION": "Durchstöbern Sie das gesamte Sortiment und grenzen Sie mit dem Geschmacksfilter ein — Minze, Frucht, Zitrus und mehr."
+    },
+    "STRENGTH_HUB": {
+      "TITLE": "Nach Stärke einkaufen",
+      "DESCRIPTION": "Durchstöbern Sie das gesamte Sortiment und grenzen Sie mit dem Stärkefilter ein — von mild bis ultra stark."
+    },
     "FLAVOR_PAGE": {
       "mint": {
         "TITLE": "Minze & frische Nikotinbeutel",

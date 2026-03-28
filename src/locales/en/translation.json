@@ -356,6 +356,14 @@
     "DESCRIPTION": "<p>Browse our full selection of nicotine pouches from popular brands. Use filters for brand, format, and strength, or sort by price, date, or name. Shipped from Austria with fast delivery across Europe.</p>",
     "SEE_MORE": "Show more",
     "SEE_LESS": "Show less",
+    "FLAVOUR_HUB": {
+      "TITLE": "Shop by flavour",
+      "DESCRIPTION": "Browse the full range and narrow results using the flavour filter — mint, fruit, citrus and more."
+    },
+    "STRENGTH_HUB": {
+      "TITLE": "Shop by strength",
+      "DESCRIPTION": "Browse the full range and narrow results using the strength filter — from low to ultra strong."
+    },
     "FLAVOR_PAGE": {
       "mint": {
         "TITLE": "Mint & fresh nicotine pouches",

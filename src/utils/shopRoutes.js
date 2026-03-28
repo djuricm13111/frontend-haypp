@@ -23,10 +23,20 @@ export function shopBrandPath(lang, categorySlug) {
   return s ? `${shopBasePath(lang)}/${s}` : shopBasePath(lang);
 }
 
+/** Samo filter po ukusu — bez fiksnog slug-a. */
+export function shopFlavoursHubPath(lang) {
+  return `${shopBasePath(lang)}/flavours`;
+}
+
 /** Ukus: /en/snus-verkauf/flavours/mint — slug kao u flavorGroups (mint, fruit, …). */
 export function shopFlavourPath(lang, flavourUrlSlug) {
   const s = String(flavourUrlSlug ?? "").trim();
   return `${shopBasePath(lang)}/flavours/${s}`;
+}
+
+/** Samo filter po jačini — bez fiksnog slug-a. */
+export function shopStrengthHubPath(lang) {
+  return `${shopBasePath(lang)}/strength`;
 }
 
 /** Jačina: /en/snus-verkauf/strength/low */
@@ -73,7 +83,7 @@ export function buildShopNavDropdown(lang) {
       },
       {
         title: "Shop by Flavour",
-        href: shopFlavourPath(lang, "mint"),
+        href: shopFlavoursHubPath(lang),
         items: [
           { label: "Mint Pouches", href: shopFlavourPath(lang, "mint") },
           { label: "Fruit Pouches", href: shopFlavourPath(lang, "fruit") },
@@ -82,7 +92,7 @@ export function buildShopNavDropdown(lang) {
       },
       {
         title: "Shop by Strength",
-        href: shopStrengthPath(lang, "low"),
+        href: shopStrengthHubPath(lang),
         items: [
           { label: "Low", href: shopStrengthPath(lang, "low") },
           { label: "Normal", href: shopStrengthPath(lang, "normal") },
