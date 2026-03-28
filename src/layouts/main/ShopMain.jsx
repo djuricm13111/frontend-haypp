@@ -14,6 +14,7 @@ import {
   getCategoryShortDescription,
 } from "../../utils/shopCategoryCopy";
 import { strengthUrlSlugToI18nKey } from "../../utils/nicotineStrengthRoutes";
+import { shopBasePath } from "../../utils/shopRoutes";
 
 const Container = styled.article`
   color: ${(props) => props.theme.textColor};
@@ -291,7 +292,7 @@ const ShopMain = () => {
 
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
-  const shopListUrl = `/${lang}/snus-verkauf`;
+  const shopListUrl = shopBasePath(lang);
 
   const breadcrumbItems = useMemo(() => {
     const home = { name: "SnusCo", url: "/" };

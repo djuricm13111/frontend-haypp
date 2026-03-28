@@ -7,6 +7,7 @@ import React, {
   useMemo,
 } from "react";
 import { useTranslation } from "react-i18next";
+import { buildShopNavDropdown } from "../../../utils/shopRoutes";
 
 const StaticFlexDiv = styled.div`
   display: flex;
@@ -230,75 +231,13 @@ export const navItems = [
   "All Brands",
 ];
 
-/** Dinamički linkovi ka `/{lang}/snus-verkauf/...` za brend, ukus i jačinu. */
-export function buildDropdownData(shopBase) {
-  return {
-    first: [
-      {
-        title: "Popular Brands",
-        href: shopBase,
-        items: [
-          { label: "ZYN", href: `${shopBase}/zyn` },
-          { label: "Nordic Spirit", href: `${shopBase}/nordic-spirit` },
-          { label: "VELO", href: `${shopBase}/velo` },
-          { label: "FUMi", href: `${shopBase}/fumi` },
-          { label: "XQS", href: `${shopBase}/xqs` },
-          { label: "KILLA", href: `${shopBase}/killa` },
-          { label: "PABLO", href: `${shopBase}/pablo` },
-        ],
-      },
-      {
-        title: "Shop by Flavour",
-        href: `${shopBase}/flavours/mint`,
-        items: [
-          { label: "Mint Pouches", href: `${shopBase}/flavours/mint` },
-          { label: "Fruit Pouches", href: `${shopBase}/flavours/fruit` },
-          { label: "Coffee Pouches", href: `${shopBase}/flavours/coffee` },
-        ],
-      },
-      {
-        title: "Shop by Strength",
-        href: `${shopBase}/strength/low`,
-        items: [
-          { label: "Low", href: `${shopBase}/strength/low` },
-          { label: "Normal", href: `${shopBase}/strength/normal` },
-          { label: "Strong", href: `${shopBase}/strength/strong` },
-          { label: "Extra Strong", href: `${shopBase}/strength/extra-strong` },
-          { label: "Ultra Strong", href: `${shopBase}/strength/ultra-strong` },
-        ],
-      },
-      {
-        title: "Snus Pouches",
-        href: "/snus",
-      },
-      {
-        title: "Subscriptions",
-        href: "/subscriptions",
-      },
-      {
-        title: "Free Sample",
-        href: "/free-sample",
-      },
-      {
-        title: "Can of the Month",
-        href: "/can-of-the-month",
-      },
-    ],
-    second: [
-      { title: "Free Sample", href: "/free-sample" },
-      { title: "Mixpacks & Bundles", href: "/mixpacks-bundles" },
-    ],
-  };
-}
-
 const HOVER_CLOSE_DELAY = 250;
 
 const HeaderList = ({ isScrolled }) => {
   const { i18n } = useTranslation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
-  const shopBase = `/${lang}/snus-verkauf`;
-  const dropdownData = useMemo(() => buildDropdownData(shopBase), [shopBase]);
+  const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
 
   const [sliderOffset, setSliderOffset] = useState(0);
   const [maxOffset, setMaxOffset] = useState(0);

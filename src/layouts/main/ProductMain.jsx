@@ -12,6 +12,7 @@ import Breadcrumbs from "../../components/section/BreadCrumbs";
 import ProductDetails from "../../components/section/ProductDetails";
 import ProductCardSlider from "../../components/product/ProductCardSlider";
 import descriptions from "../../descriptions.json";
+import { shopBasePath } from "../../utils/shopRoutes";
 
 /** Haypp PDP referenca — plava i selekcije */
 const PDP_BLUE = "#001a57";
@@ -1031,7 +1032,7 @@ const ProductMain = () => {
         { name: "SnusCo", url: "/" },
         {
           name: "Nicotine Pouches",
-          url: `/${langParam || i18n.language}/snus-verkauf`,
+          url: shopBasePath(langParam || i18n.language),
         },
         {
           name: `${product.name}`,

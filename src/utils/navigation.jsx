@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { shopBasePath } from "./shopRoutes";
 
 function slugPart(value) {
   return String(value || "")
@@ -62,10 +63,9 @@ export function useNavigation() {
     return `/category/${slugPart(name)}`;
   }
 
-  /** Shop lista (isti URL kao SEO: /{lang}/snus-verkauf). */
+  /** Shop lista — vidi `shopRoutes.js`. */
   function goToShop() {
-    const lang = normalizeLang(i18n.language);
-    return `/${lang}/snus-verkauf`;
+    return shopBasePath(i18n.language);
   }
 
   return {

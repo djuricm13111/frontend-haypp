@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useNavigation } from "../../../utils/navigation";
 import Language from "./Language";
-import { navItems, buildDropdownData } from "./HeaderList";
+import { navItems } from "./HeaderList";
+import { buildShopNavDropdown } from "../../../utils/shopRoutes";
 
 const PANEL_TRANSITION = "transform 0.28s ease";
 const BACKDROP_TRANSITION = "opacity 0.28s ease";
@@ -321,11 +322,10 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   const { t, i18n } = useTranslation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
-  const shopBase = `/${lang}/snus-verkauf`;
-  const dropdownData = useMemo(() => buildDropdownData(shopBase), [shopBase]);
+  const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
 
   const navigate = useNavigate();
-  const { goToCategory } = useNavigation();
+  const { goToCategory, goToShop } = useNavigation();
 
   const [mounted, setMounted] = useState(false);
   const [entered, setEntered] = useState(false);
@@ -477,7 +477,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
 
   const renderFirstRoot = () => {
     const rootTitle = t("HEADER.NICOTINE_POUCHES");
-    const rootCategoryHref = goToCategory(navItems[0]);
+    const rootCategoryHref = goToShop();
     return (
       <>
         <BreadcrumbBar>{rootTitle}</BreadcrumbBar>

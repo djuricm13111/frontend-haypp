@@ -40,6 +40,7 @@ import flavorMint from "../../assets/images/flavors/mint.svg";
 import Header from "../../layouts/header/Header";
 import HomeIntroText from "../../components/home/HomeIntroText";
 import HomeAboutTrust from "../../components/home/HomeAboutTrust";
+import { shopBrandPath, shopFlavourPath } from "../../utils/shopRoutes";
 
 const SliderSection = styled.section`
   box-sizing: border-box;
@@ -173,56 +174,56 @@ const HomeMain = () => {
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
 
-  /** Isti URL kao shop / kategorija: `/{lang}/snus-verkauf/{slug}` (vidi App.jsx). */
+  /** Brendovi — `shopRoutes.js` (isti slug kao u header dropdown-u). */
   const homeBrandLogoItems = useMemo(
     () => [
-      { key: "xqs", iconSrc: logoXqs, label: "XQS", href: `/${lang}/snus-verkauf/xqs` },
-      { key: "velo", iconSrc: logoVelo, label: "Velo", href: `/${lang}/snus-verkauf/velo` },
-      { key: "pablo", iconSrc: logoPablo, label: "Pablo", href: `/${lang}/snus-verkauf/pablo` },
+      { key: "xqs", iconSrc: logoXqs, label: "XQS", href: shopBrandPath(lang, "xqs") },
+      { key: "velo", iconSrc: logoVelo, label: "Velo", href: shopBrandPath(lang, "velo") },
+      { key: "pablo", iconSrc: logoPablo, label: "Pablo", href: shopBrandPath(lang, "pablo") },
       {
         key: "nordic-spirit",
         iconSrc: logoNordicSpirit,
         label: "Nordic Spirit",
-        href: `/${lang}/snus-verkauf/nordic-spirit`,
+        href: shopBrandPath(lang, "nordic-spirit"),
       },
-      { key: "zyn", iconSrc: logoZyn, label: "ZYN", href: `/${lang}/snus-verkauf/zyn` },
-      { key: "killa", iconSrc: logoKilla, label: "Killa", href: `/${lang}/snus-verkauf/killa` },
+      { key: "zyn", iconSrc: logoZyn, label: "ZYN", href: shopBrandPath(lang, "zyn") },
+      { key: "killa", iconSrc: logoKilla, label: "Killa", href: shopBrandPath(lang, "killa") },
     ],
     [lang]
   );
 
-  /** `/{lang}/snus-verkauf/flavours/{slug}` — vidi App.jsx i flavorGroups.js. */
+  /** Ukusi — slugovi kao u `flavorGroups.js` / headeru. */
   const homeShopByFlavorItems = useMemo(
     () => [
       {
         key: "mint",
         iconSrc: flavorMint,
         labelKey: "HOME.FLAVOR_NAV.MINT",
-        href: `/${lang}/snus-verkauf/flavours/mint`,
+        href: shopFlavourPath(lang, "mint"),
       },
       {
         key: "citrus",
         iconSrc: flavorCitrus,
         labelKey: "HOME.FLAVOR_NAV.CITRUS",
-        href: `/${lang}/snus-verkauf/flavours/citrus`,
+        href: shopFlavourPath(lang, "citrus"),
       },
       {
         key: "fruit",
         iconSrc: flavorFruit,
         labelKey: "HOME.FLAVOR_NAV.FRUIT",
-        href: `/${lang}/snus-verkauf/flavours/fruit`,
+        href: shopFlavourPath(lang, "fruit"),
       },
       {
         key: "coffee",
         iconSrc: flavorCoffe,
         labelKey: "HOME.FLAVOR_NAV.COFFEE",
-        href: `/${lang}/snus-verkauf/flavours/coffee`,
+        href: shopFlavourPath(lang, "coffee"),
       },
       {
         key: "liquorice",
         iconSrc: flavorLiquorice,
         labelKey: "HOME.FLAVOR_NAV.LIQUORICE",
-        href: `/${lang}/snus-verkauf/flavours/liquorice`,
+        href: shopFlavourPath(lang, "liquorice"),
       },
     ],
     [lang]
