@@ -266,6 +266,14 @@
     "STICKY_PRICE_TAP": "Choose pack size and price",
     "READ_MORE": "Read more about {{name}}",
 
+    "FLAVOUR_DRAWER_TITLE": "Choose flavour",
+    "PRODUCT_SERIES": "Product series",
+    "SERIES_COUNT": "Product series ({{count}})",
+    "FLAVOUR_DRAWER_LOADING": "Loading…",
+    "FLAVOUR_DRAWER_EMPTY": "No products found in this series.",
+    "FLAVOUR_DRAWER_ERROR": "Could not load products. Please try again.",
+    "FLAVOUR_DRAWER_OUT_OF_STOCK": "Out of stock — cannot open",
+
     "STRENGTH_LABEL": "Strength",
     "STRENGTH": {
       "MILD": "Mild",

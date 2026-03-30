@@ -265,6 +265,14 @@
     "RECOMMENDED_SLIDER_TITLE": "Das könnte dir auch gefallen",
     "STICKY_PRICE_TAP": "Packungsgröße und Preis wählen",
 
+    "FLAVOUR_DRAWER_TITLE": "Geschmack wählen",
+    "PRODUCT_SERIES": "Produktserie",
+    "SERIES_COUNT": "Produktserie ({{count}})",
+    "FLAVOUR_DRAWER_LOADING": "Wird geladen…",
+    "FLAVOUR_DRAWER_EMPTY": "Keine weiteren Produkte in dieser Serie.",
+    "FLAVOUR_DRAWER_ERROR": "Produkte konnten nicht geladen werden. Bitte erneut versuchen.",
+    "FLAVOUR_DRAWER_OUT_OF_STOCK": "Nicht vorrätig",
+
     "STRENGTH_LABEL": "Stärke",
     "STRENGTH": {
       "MILD": "Sanft",

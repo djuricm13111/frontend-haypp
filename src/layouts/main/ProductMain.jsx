@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 import Breadcrumbs from "../../components/section/BreadCrumbs";
 import ProductDetails from "../../components/section/ProductDetails";
 import ProductCardSlider from "../../components/product/ProductCardSlider";
+import ProductFlavourDrawer from "../../components/product/ProductFlavourDrawer";
 import descriptions from "../../descriptions.json";
 import { shopBasePath } from "../../utils/shopRoutes";
 
@@ -988,6 +989,11 @@ const ProductMain = () => {
   const [breadcrumbItems, setBreadcrumbItems] = useState([]);
   /** Slika u kartici puni visinu samo na širokom desktopu — na tabletu prirodna visina */
   const [fillImageSliderHeight, setFillImageSliderHeight] = useState(false);
+  const [flavourDrawerOpen, setFlavourDrawerOpen] = useState(false);
+
+  useEffect(() => {
+    setFlavourDrawerOpen(false);
+  }, [slug]);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1025px)");
@@ -1275,10 +1281,9 @@ const ProductMain = () => {
                 <FlavourCardButton
                   type="button"
                   aria-haspopup="dialog"
+                  aria-expanded={flavourDrawerOpen}
                   aria-label={t("PRODUCT.FLAVOR")}
-                  onClick={() => {
-                    /* TODO: otvoriti side drawer za izbor ukusa */
-                  }}
+                  onClick={() => setFlavourDrawerOpen(true)}
                 >
                   <FlavourLabelSmall>{t("PRODUCT.FLAVOR")}</FlavourLabelSmall>
                   <FlavourCardRow>
@@ -1525,6 +1530,15 @@ const ProductMain = () => {
               </RecommendedPdpSection>
             )}
           </DetailsSection>
+
+          {category && (
+            <ProductFlavourDrawer
+              open={flavourDrawerOpen}
+              onClose={() => setFlavourDrawerOpen(false)}
+              categorySlug={category}
+              currentProduct={product}
+            />
+          )}
         </>
       )}
     </Container>
