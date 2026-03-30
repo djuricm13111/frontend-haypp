@@ -81,7 +81,7 @@ const Card = styled.figure`
   ${(p) =>
     p.$pickerLift &&
     css`
-      z-index: var(--zindex-product-card-qty);
+      z-index: var(--zindex-product-card-qty-desktop);
     `}
 `;
 
@@ -589,20 +589,9 @@ const AddButton = styled.button`
   }
 `;
 
-const DesktopPickerBackdrop = styled.button`
-  position: fixed;
-  inset: 0;
-  z-index: var(--zindex-product-card-qty-backdrop);
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.09);
-`;
-
 /**
  * Isti princip kao MaskContainer u CartMenu.jsx (#0000003a, full viewport).
- * Renderuje se samo dok je picker otvoren na mobilnom (pickerOpen && isMobileQty).
+ * Samo mobilni sheet; desktop nema full-screen masku (zatvaranje: Escape, Minimize, ponovni klik).
  */
 const MobileQtyMaskContainer = styled.button`
   position: fixed;
@@ -610,7 +599,7 @@ const MobileQtyMaskContainer = styled.button`
   top: 0;
   left: 0;
   bottom: 0;
-  z-index: var(--zindex-product-card-qty-backdrop);
+  z-index: var(--zindex-product-card-qty-mobile-backdrop);
   min-width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
@@ -630,7 +619,7 @@ const MobileQtySheet = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: var(--zindex-product-card-qty);
+  z-index: var(--zindex-product-card-qty-mobile);
   display: flex;
   flex-direction: column;
   max-height: min(88vh, 560px);
@@ -953,6 +942,15 @@ const ProductCard = ({ product }) => {
     return () => window.clearTimeout(id);
   }, [pickerOpen, isMobileQty, panelInDOM]);
 
+  /** Posle fadeOut panela na desktopu — inače ostaje backdrop stanje / panel u DOM-u. */
+  useEffect(() => {
+    if (pickerOpen || isMobileQty || !panelInDOM) return;
+    const id = window.setTimeout(() => {
+      setPanelInDOM(false);
+    }, PICKER_CLOSE_MS);
+    return () => window.clearTimeout(id);
+  }, [pickerOpen, isMobileQty, panelInDOM]);
+
   const addToCart = () => {
     dispatch(
       cartActions.addToCart({
@@ -986,19 +984,6 @@ const ProductCard = ({ product }) => {
     }
     goProduct();
   };
-
-  const desktopPickerBackdropPortal =
-    panelInDOM &&
-    !isMobileQty &&
-    typeof document !== "undefined" &&
-    createPortal(
-      <DesktopPickerBackdrop
-        type="button"
-        aria-label={t("PRODUCT_CARD.CLOSE_QUANTITY_SHEET")}
-        onClick={() => setPickerOpen(false)}
-      />,
-      document.body
-    );
 
   const mobileQtyMaskPortal =
     pickerOpen &&
@@ -1109,7 +1094,6 @@ const ProductCard = ({ product }) => {
 
   return (
     <Card $pickerLift={panelInDOM && !isMobileQty}>
-      {desktopPickerBackdropPortal}
       {mobileQtyMaskPortal}
       {mobileQtyPortal}
       <TopBlock>

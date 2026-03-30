@@ -71,11 +71,12 @@
   --zindex-background: -1; /* Za elemente u pozadini */
   --zindex-default: 1; /* Podrazumevana vrednost za većinu elemenata */
   /**
-   * ProductCard izbor količine (desktop maska + podignuta kartica, mobilni sheet).
-   * Iznad shop filter docka (~1019) i filter panela (1030+), ispod modala (1050).
+   * ProductCard: podignuta kartica na desktopu — ispod glavnog belog headera (Container 9).
+   * Mobilni sheet + maska: fixed, iznad shop filter docka; ispod modala (1050).
    */
-  --zindex-product-card-qty-backdrop: calc(var(--zindex-fixed) + 12);
-  --zindex-product-card-qty: calc(var(--zindex-fixed) + 13);
+  --zindex-product-card-qty-desktop: 8;
+  --zindex-product-card-qty-mobile-backdrop: calc(var(--zindex-fixed) + 12);
+  --zindex-product-card-qty-mobile: calc(var(--zindex-fixed) + 13);
   --zindex-dropdown: 1000; /* Za dropdown menije i autocomplete komponente */
   --zindex-sticky: 1020; /* Za sticky elemente, poput sticky navigacije */
   --zindex-fixed: 1030; /* Za elemente sa fixed pozicioniranjem */
