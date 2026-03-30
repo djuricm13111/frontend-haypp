@@ -4,6 +4,7 @@ import {
   shopBestsellersPath,
   shopNewInStorePath,
   shopAllBrandsPath,
+  shopSearchPath,
 } from "./shopRoutes";
 
 function slugPart(value) {
@@ -50,7 +51,8 @@ export function useNavigation() {
   }
 
   function goToSearch(searchValue) {
-    return `/search/${encodeURIComponent(searchValue || "")}`;
+    const lang = normalizeLang(i18n.language);
+    return shopSearchPath(lang, searchValue);
   }
 
   /** PDP: /{lang}/{category_slug}/{product_slug} npr. /de/velo/velo-crispy-peppermint */

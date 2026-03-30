@@ -188,8 +188,10 @@ export default class APIService {
     }
   }
 
-  static async SearchProducts(query) {
-    const language = i18next.language.toLowerCase(); // Pretpostavljamo da i18next upravlja trenutnim jezikom
+  static async SearchProducts(query, opts = {}) {
+    const language = String(opts.language ?? i18next.language ?? "en")
+      .toLowerCase()
+      .split("-")[0];
     const currency = localStorage.getItem("currency") || defaultCurrency;
     try {
       const response = await axios.get(`${this.URL}api/search/`, {

@@ -281,15 +281,26 @@ const ShopDescription = styled.div`
   }
 `;
 
+const EmptySearchNote = styled.p`
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 28px 16px;
+  margin: 0;
+  color: var(--text-200);
+  font-size: var(--font-size-base);
+`;
+
 /**
- * @param {{ listingPage?: 'bestsellers' | 'newInStore' | null }} props
+ * @param {{ listingPage?: 'bestsellers' | 'newInStore' | null, searchQuery?: string | null }} props
  * listingPage — stranice /:lang/bestsellers i /:lang/new-in-store (podaci iz API listinga).
+ * searchQuery — kada je prosleđen (stranica pretrage), naslov i breadcrumb koriste upit.
  */
-const ShopMain = ({ listingPage = null }) => {
+const ShopMain = ({ listingPage = null, searchQuery = null }) => {
   const { t, i18n } = useTranslation();
   const { slug, flavorSlug, strengthSlug } = useParams();
   const { filteredProducts, category, lockedFlavorGroupId, shopFilterOnlyMode } =
     useContext(ProductContext);
+  const isSearchPage = searchQuery != null;
   const strengthPageKey = strengthSlug
     ? strengthUrlSlugToI18nKey(strengthSlug)
     : null;
@@ -310,6 +321,12 @@ const ShopMain = ({ listingPage = null }) => {
       url: shopListUrl,
     };
     const pouchSuffix = t("HEADER.NICOTINE_POUCHES");
+
+    if (isSearchPage) {
+      const q = String(searchQuery).trim();
+      const label = q || t("SEARCH.NO_QUERY_TITLE");
+      return [home, shopCrumb, { name: label, url: shopListUrl }];
+    }
 
     if (listingPage === "bestsellers") {
       return [
@@ -409,6 +426,8 @@ const ShopMain = ({ listingPage = null }) => {
     shopListUrl,
     listingPage,
     shopFilterOnlyMode,
+    isSearchPage,
+    searchQuery,
     t,
     i18n.language,
   ]);
@@ -479,8 +498,9 @@ const ShopMain = ({ listingPage = null }) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const titleText =
-    listingPage === "bestsellers"
+  const titleText = isSearchPage
+    ? String(searchQuery).trim() || t("SEARCH.NO_QUERY_TITLE")
+    : listingPage === "bestsellers"
       ? t("SHOP_LISTING.BESTSELLERS.TITLE")
       : listingPage === "newInStore"
       ? t("SHOP_LISTING.NEW_IN_STORE.TITLE")
@@ -498,8 +518,9 @@ const ShopMain = ({ listingPage = null }) => {
       ? category.name
       : t("SHOP.TITLE");
 
-  const descriptionText =
-    listingPage === "bestsellers"
+  const descriptionText = isSearchPage
+    ? t("SEARCH.SUBTITLE", { count: filteredProducts.length })
+    : listingPage === "bestsellers"
       ? t("SHOP_LISTING.BESTSELLERS.DESCRIPTION")
       : listingPage === "newInStore"
       ? t("SHOP_LISTING.NEW_IN_STORE.DESCRIPTION")
@@ -546,14 +567,18 @@ const ShopMain = ({ listingPage = null }) => {
           </TopWrapper>
         </FlexDiv>
         <ProductGrid>
-          {currentProducts.map((product, index) => (
-            <ProductCard
-              key={product.id ?? product.slug}
-              product={product}
-              isOpen={openIndex === index}
-              setIsOpen={() => handleSetOpenIndex(index)}
-            />
-          ))}
+          {isSearchPage && filteredProducts.length === 0 ? (
+            <EmptySearchNote role="status">{t("SEARCH.EMPTY")}</EmptySearchNote>
+          ) : (
+            currentProducts.map((product, index) => (
+              <ProductCard
+                key={product.id ?? product.slug}
+                product={product}
+                isOpen={openIndex === index}
+                setIsOpen={() => handleSetOpenIndex(index)}
+              />
+            ))
+          )}
         </ProductGrid>
         {totalPages !== 1 && (
           <PaginationContainer>

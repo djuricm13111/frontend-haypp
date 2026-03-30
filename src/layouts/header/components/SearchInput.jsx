@@ -181,9 +181,9 @@ const MaskContainer = styled.div`
 
 const SearchInput = ({ isScrolled }) => {
   const { t } = useTranslation();
-  const { setSearchedProducts, currencyTag } = useContext(ProductContext);
+  const { currencyTag } = useContext(ProductContext);
   const navigate = useNavigate();
-  const { goToSearch, goToProduct, goToCategory } = useNavigation();
+  const { goToProduct, goToCategory } = useNavigation();
   const [searchValue, setSearchValue] = useState("");
   const [searchProducts, setSearchProducts] = useState([]);
   const [searchCategories, setSearchCategories] = useState([]);
@@ -244,12 +244,6 @@ const SearchInput = ({ isScrolled }) => {
       setSearchCategories([]);
     }
   }, [searchValue, debouncedSearch]);
-
-  const handleShowAll = (searchValue) => {
-    setSearchedProducts(searchProducts);
-    navigate(goToSearch(searchValue));
-    setSearchProducts([]);
-  };
 
   const [maxProductsToShow, setMaxProductsToShow] = useState(12);
   useEffect(() => {

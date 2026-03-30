@@ -61,6 +61,16 @@ export function shopAllBrandsPath(lang) {
 }
 
 /**
+ * Rezultati pretrage — uobičajeni oblik `/:lang/search?q=...` (deljivi link, bez path segmenta za ceo upit).
+ */
+export function shopSearchPath(lang, query) {
+  const base = `/${normalizeShopLang(lang)}/search`;
+  const q = String(query ?? "").trim();
+  if (!q) return base;
+  return `${base}?${new URLSearchParams({ q }).toString()}`;
+}
+
+/**
  * Dropdown „Nicotine Pouches“ (desktop header + mobilni side menu) — isti sadržaj.
  * @param {string} lang — npr. i18n.language
  */

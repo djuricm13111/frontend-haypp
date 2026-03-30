@@ -19,6 +19,7 @@
     "PROFILE": "Profil",
     "SIGN_UP": "Registrieren",
     "SEARCH_FOR": "Suchen nach",
+    "VIEW_ALL_RESULTS": "Alle Suchergebnisse anzeigen ({{count}})",
     "LOGO_HOME": "SnusCo — Startseite",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "Neues Jahr, neues Ich",
@@ -335,6 +336,16 @@
     "INCLUDED": "Inklusive",
     "CHECKOUT": "Zur Kasse",
     "NOTICE": "Für Produkte, die derzeit nicht vorrätig sind, beträgt die voraussichtliche Lieferzeit bis zu 30 Tage."
+  },
+
+  "SEARCH": {
+    "PAGE_TITLE": "Suche: {{query}}",
+    "META_DESCRIPTION": "Suchergebnisse für „{{query}}“ — Nikotinbeutel bei SnusCo.",
+    "META_EMPTY": "Durchsuchen Sie unseren Shop nach Nikotinbeuteln und Marken.",
+    "NO_QUERY_TITLE": "Suche",
+    "SUBTITLE": "{{count}} Produkte",
+    "EMPTY": "Keine Produkte entsprechen Ihrer Suche oder den gewählten Filtern.",
+    "LOAD_ERROR": "Die Suche konnte nicht geladen werden. Bitte versuchen Sie es erneut."
   },
 
   "SHOP_SORT": {

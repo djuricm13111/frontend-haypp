@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import Home from "./pages/Home";
 import darkTheme from "./utils/theme";
@@ -7,7 +7,20 @@ import Product from "./pages/Product";
 import Shop from "./pages/Shop";
 import ShopListing from "./pages/ShopListing";
 import AllBrands from "./pages/AllBrands";
+import SearchResults from "./pages/SearchResults";
 import SiteFooter from "./layouts/footer/SiteFooter";
+import { shopSearchPath, normalizeShopLang } from "./utils/shopRoutes";
+
+/** Stari URL /:lang/search/:query → /:lang/search?q=... */
+function SearchLegacyRedirect() {
+  const { lang, legacyQuery } = useParams();
+  return (
+    <Navigate
+      to={shopSearchPath(normalizeShopLang(lang), legacyQuery)}
+      replace
+    />
+  );
+}
 
 const AppShell = styled.div`
   min-height: 100vh;
@@ -42,6 +55,11 @@ function App() {
                   element={<ShopListing listing="newInStore" />}
                 />
                 <Route path="/:lang/all-brands" element={<AllBrands />} />
+                <Route
+                  path="/:lang/search/:legacyQuery"
+                  element={<SearchLegacyRedirect />}
+                />
+                <Route path="/:lang/search" element={<SearchResults />} />
                 <Route
                   path="/:lang/snus-verkauf/flavours"
                   element={<Shop />}

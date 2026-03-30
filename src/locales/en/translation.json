@@ -19,6 +19,7 @@
     "PROFILE": "Profile",
     "SIGN_UP": "Sign up",
     "SEARCH_FOR": "Search for",
+    "VIEW_ALL_RESULTS": "View all search results ({{count}})",
     "LOGO_HOME": "SnusCo — home",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "New Year New Me",
@@ -336,6 +337,16 @@
     "INCLUDED": "Included",
     "CHECKOUT": "Checkout",
     "NOTICE": "For products that are currently out of stock, the expected delivery time is up to 30 days."
+  },
+
+  "SEARCH": {
+    "PAGE_TITLE": "Search: {{query}}",
+    "META_DESCRIPTION": "Search results for \"{{query}}\" — nicotine pouches at SnusCo.",
+    "META_EMPTY": "Search our shop for nicotine pouches and brands.",
+    "NO_QUERY_TITLE": "Search",
+    "SUBTITLE": "{{count}} products",
+    "EMPTY": "No products match your search or the selected filters.",
+    "LOAD_ERROR": "Search could not be loaded. Please try again."
   },
 
   "SHOP_SORT": {

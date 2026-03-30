@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import debounce from "lodash.debounce";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { ProductContext } from "../../../context/ProductContext";
@@ -31,8 +31,7 @@ const Search = ({ isScrolled }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { goToSearch, goToProduct, goToCategory } = useNavigation();
-  const { setSearchedProducts, currencyTag, setIsCartOpen } =
-    useContext(ProductContext);
+  const { currencyTag, setIsCartOpen } = useContext(ProductContext);
 
   const [searchValue, setSearchValue] = useState("");
   const [searchProducts, setSearchProducts] = useState([]);
@@ -41,6 +40,7 @@ const Search = ({ isScrolled }) => {
   const [maxProductsToShow, setMaxProductsToShow] = useState(12);
 
   const containerRef = useRef(null);
+  const searchInputRef = useRef(null);
 
   const isDeliveryHidden = sessionStorage.getItem("headerDeliveryHidden");
 
@@ -90,12 +90,6 @@ const Search = ({ isScrolled }) => {
     return () => window.removeEventListener("resize", updateProductDisplay);
   }, []);
 
-  const handleShowAll = () => {
-    setSearchedProducts(searchProducts);
-    navigate(goToSearch(searchValue));
-    handleCloseSearch();
-  };
-
   const handleProductCardClick = (categoryName, productName, productSlug) => {
     navigate(goToProduct(categoryName, productName, productSlug));
     setIsOpen(false);
@@ -108,6 +102,10 @@ const Search = ({ isScrolled }) => {
 
   const handleCloseSearch = (e) => {
     if (e) e.stopPropagation();
+
+    searchInputRef.current?.blur();
+    const sel = typeof window !== "undefined" ? window.getSelection?.() : null;
+    if (sel?.rangeCount) sel.removeAllRanges();
 
     setIsOpen(false);
     setSearchValue("");
@@ -128,6 +126,7 @@ const Search = ({ isScrolled }) => {
       >
         <SearchWrapper $isOpen={isOpen} $pageScrolled={isScrolled}>
           <Input
+            ref={searchInputRef}
             $isScrolled={!isScrolled || isOpen}
             $revealInput={isScrolled || isOpen}
             $pageScrolled={isScrolled}
@@ -230,8 +229,14 @@ const Search = ({ isScrolled }) => {
             </ResultWrapper>
 
             <BottomButtonWrapper>
-              <ViewAllButton onClick={handleShowAll}>
-                {t("HEADER.VIEW_ALL_RESULTS")} ({searchProducts.length})
+              <ViewAllButton
+                to={goToSearch(searchValue.trim())}
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={(e) => handleCloseSearch(e)}
+              >
+                {t("HEADER.VIEW_ALL_RESULTS", {
+                  count: searchProducts.length,
+                })}
               </ViewAllButton>
             </BottomButtonWrapper>
           </ResultContainer>
@@ -665,9 +670,36 @@ const BottomButtonWrapper = styled.div`
   backdrop-filter: blur(6px);
   position: sticky;
   bottom: 0;
-  padding: 4px 0;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 `;
 
-const ViewAllButton = styled.button`
-  margin: 0 auto;
+const ViewAllButton = styled(Link)`
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  padding: 10px 18px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 600;
+  color: var(--primary-100);
+  background: var(--bg-200);
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background: var(--bg-300);
+    color: var(--primary-200);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-100);
+    outline-offset: -2px;
+  }
 `;
