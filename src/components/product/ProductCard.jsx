@@ -590,8 +590,7 @@ const AddButton = styled.button`
 `;
 
 /**
- * Isti princip kao MaskContainer u CartMenu.jsx (#0000003a, full viewport).
- * Samo mobilni sheet; desktop nema full-screen masku (zatvaranje: Escape, Minimize, ponovni klik).
+ * Full-screen maska za mobilni sheet: providna + blur pozadine (bez primary / plavog tap prstena).
  */
 const MobileQtyMaskContainer = styled.button`
   position: fixed;
@@ -607,7 +606,18 @@ const MobileQtyMaskContainer = styled.button`
   padding: 0;
   margin: 0;
   cursor: pointer;
-  background-color: #0000003a;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  color: inherit;
+
+  background: rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(14px) saturate(1.05);
+  -webkit-backdrop-filter: blur(14px) saturate(1.05);
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.55);
+    outline-offset: -2px;
+  }
 
   @media (min-width: 768px) {
     display: none !important;
