@@ -271,7 +271,7 @@
     "FLAVOUR_DRAWER_LOADING": "Wird geladen…",
     "FLAVOUR_DRAWER_EMPTY": "Keine weiteren Produkte in dieser Serie.",
     "FLAVOUR_DRAWER_ERROR": "Produkte konnten nicht geladen werden. Bitte erneut versuchen.",
-    "FLAVOUR_DRAWER_OUT_OF_STOCK": "Nicht vorrätig",
+    "FLAVOUR_DRAWER_STOCK_OOS": "Nicht vorrätig",
 
     "STRENGTH_LABEL": "Stärke",
     "STRENGTH": {

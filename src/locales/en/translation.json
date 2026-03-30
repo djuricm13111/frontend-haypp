@@ -272,7 +272,7 @@
     "FLAVOUR_DRAWER_LOADING": "Loading…",
     "FLAVOUR_DRAWER_EMPTY": "No products found in this series.",
     "FLAVOUR_DRAWER_ERROR": "Could not load products. Please try again.",
-    "FLAVOUR_DRAWER_OUT_OF_STOCK": "Out of stock — cannot open",
+    "FLAVOUR_DRAWER_STOCK_OOS": "Out of stock",
 
     "STRENGTH_LABEL": "Strength",
     "STRENGTH": {
