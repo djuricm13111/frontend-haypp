@@ -8,6 +8,8 @@ import Shop from "./pages/Shop";
 import ShopListing from "./pages/ShopListing";
 import AllBrands from "./pages/AllBrands";
 import SearchResults from "./pages/SearchResults";
+import Checkout from "./pages/Checkout";
+import Register from "./pages/Register";
 import SiteFooter from "./layouts/footer/SiteFooter";
 import { shopSearchPath, normalizeShopLang } from "./utils/shopRoutes";
 
@@ -46,6 +48,8 @@ function App() {
             <Main>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/register" element={<Register />} />
                 <Route
                   path="/:lang/bestsellers"
                   element={<ShopListing listing="bestsellers" />}

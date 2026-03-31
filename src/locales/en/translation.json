@@ -91,11 +91,6 @@
     "MY_ACCOUNT": "My Account"
   },
 
-  "CHECKOUT_HEADER": {
-    "TITLE": "Checkout",
-    "SUBTITLE": "Shopping Cart"
-  },
-
   "HOME": {
     "HERO_TITLE": "Haypp UK: Nicotine Pouch Store Online",
     "HERO_SUBTITLE": "Get next-day delivery* on orders over £4.99 — plus a free can with every purchase!*",
@@ -220,10 +215,24 @@
   },
 
   "REGISTER": {
-    "TITLE": "Create Account",
-    "SUBTITLE": "Join us and enjoy exclusive benefits",
+    "PAGE_TITLE": "Create account — SnusCo",
+    "TITLE": "Create account",
+    "HINT_SECTION_TITLE": "Create account",
+    "ACCOUNT_HINT": "Create an account to track orders and check out faster next time.",
+    "LOGO_MARK": "SNUSCO",
+    "ADDRESS_SECTION_TITLE": "Delivery address",
+    "ADDRESS_HINT": "You can add this now to speed up your first order, or skip and add it later at checkout.",
+    "ADDRESS_OPTIONAL": "Optional — saves time at checkout",
+    "REFERRAL": "Referral code",
+    "REFERRAL_PLACEHOLDER": "If you have one",
+    "CONFIRM_PASSWORD": "Confirm password",
+    "SUBMIT": "Create account",
+    "SUBMITTING": "Creating account…",
+    "SUCCESS_REDIRECT": "Welcome! Taking you to the shop…",
     "ALREADY_HAVE_ACCOUNT": "Already have an account?",
-    "SIGN_IN": "Sign In"
+    "SIGN_IN": "Sign in",
+    "ERROR_GENERIC": "Something went wrong. Please try again.",
+    "PASSWORD_MISMATCH": "Passwords do not match."
   },
 
   "PASSWORD_RESET": {
@@ -345,6 +354,65 @@
     "INCLUDED": "Included",
     "CHECKOUT": "Checkout",
     "NOTICE": "For products that are currently out of stock, the expected delivery time is up to 30 days."
+  },
+
+  "CHECKOUT": {
+    "PAGE_TITLE": "Checkout | SnusCo",
+    "TITLE": "Checkout",
+    "SIGNED_IN_NOTICE": "You're signed in — your account email and saved delivery addresses are used below.",
+    "BACK": "Back",
+    "BACK_SHOP": "Continue shopping",
+    "EMPTY_CART": "Your cart is empty.",
+    "CONTACT_GUEST": "Contact & delivery",
+    "CONTACT_SIGNED_IN": "Your account details",
+    "ACCOUNT_EMAIL": "Account email",
+    "ACCOUNT_EMAIL_HINT": "Your account email is updated in our system after the order is confirmed. Use an address you can access for order updates.",
+    "EMAIL": "Email",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "SAVED_ADDRESSES": "Saved addresses",
+    "DELIVERY_SAVED_TITLE": "Delivery address",
+    "DELIVERY_SAVED_INTRO": "Choose a saved address or add a new one. The full address for your selection is shown below.",
+    "PRIMARY_BADGE": "Primary",
+    "NEW_ADDRESS": "Use a different address (add or edit below)",
+    "SHIPPING_TITLE": "Shipping address",
+    "SHIPPING_EDIT_INTRO": "Fields are filled from your selected address — change anything you need, or enter a new address. A new address will be saved to your account.",
+    "COUNTRY": "Country",
+    "CITY": "City",
+    "POSTAL": "Postal code",
+    "PHONE": "Phone",
+    "STREET": "Street",
+    "STREET_NUMBER": "Street no.",
+    "BUILDING": "Building / apt.",
+    "SECONDARY": "Address line 2 (optional)",
+    "DELIVERY_PAYMENT": "Delivery & payment",
+    "TRANSPORT": "Shipping method",
+    "TRANSPORT_POST": "Post AT",
+    "TRANSPORT_DHL": "DHL Standard",
+    "TRANSPORT_DHL_EXP": "DHL Express Saver",
+    "PAYMENT": "Payment method",
+    "PAY_COD": "Cash on delivery",
+    "PAY_CARD": "Card",
+    "PAY_PAYPAL": "PayPal",
+    "NOTE": "Order note (optional)",
+    "NOTE_PLACEHOLDER": "Delivery instructions, etc.",
+    "SUMMARY": "Order summary",
+    "SUBTOTAL": "Subtotal",
+    "TOTAL_EST": "Subtotal (est.)",
+    "PLACE_ORDER": "Place order",
+    "SUBMITTING": "Placing order…",
+    "SUCCESS": "Thank you! Your order is confirmed. Order reference: {{id}}.",
+    "ERROR_GENERIC": "Something went wrong. Please try again.",
+    "SELECT_ADDRESS": "Please select a delivery address."
+  },
+
+  "CHECKOUT_HEADER": {
+    "TITLE": "Checkout",
+    "SUBTITLE": "Shopping Cart",
+    "BACK_LINK": "Back to shopping",
+    "BACK_ARIA": "Back to shopping",
+    "AGE_ARIA": "18 plus — adults only. Nicotine products.",
+    "AGE_TOOLTIP": "Adults only (18+). Nicotine is addictive."
   },
 
   "SEARCH": {

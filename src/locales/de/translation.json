@@ -91,11 +91,6 @@
     "MY_ACCOUNT": "Mein Konto"
   },
 
-  "CHECKOUT_HEADER": {
-    "TITLE": "Kasse",
-    "SUBTITLE": "Warenkorb"
-  },
-
   "HOME": {
     "HERO_TITLE": "Haypp UK: Nikotinbeutel Online-Shop",
     "HERO_SUBTITLE": "Lieferung am nächsten Tag* bei Bestellungen über £4,99 — plus eine gratis Dose bei jedem Einkauf!*",
@@ -220,10 +215,24 @@
   },
 
   "REGISTER": {
+    "PAGE_TITLE": "Konto erstellen — SnusCo",
     "TITLE": "Konto erstellen",
-    "SUBTITLE": "Treten Sie bei und genießen Sie exklusive Vorteile",
+    "HINT_SECTION_TITLE": "Konto erstellen",
+    "ACCOUNT_HINT": "Legen Sie ein Konto an, um Bestellungen zu verfolgen und den nächsten Einkauf schneller abzuschließen.",
+    "LOGO_MARK": "SNUSCO",
+    "ADDRESS_SECTION_TITLE": "Lieferadresse",
+    "ADDRESS_HINT": "Sie können sie jetzt schon hinzufügen, um die erste Bestellung zu beschleunigen — oder später an der Kasse eingeben.",
+    "ADDRESS_OPTIONAL": "Optional — spart Zeit an der Kasse",
+    "REFERRAL": "Empfehlungscode",
+    "REFERRAL_PLACEHOLDER": "Falls vorhanden",
+    "CONFIRM_PASSWORD": "Passwort bestätigen",
+    "SUBMIT": "Konto erstellen",
+    "SUBMITTING": "Konto wird erstellt…",
+    "SUCCESS_REDIRECT": "Willkommen! Sie werden zum Shop weitergeleitet…",
     "ALREADY_HAVE_ACCOUNT": "Haben Sie bereits ein Konto?",
-    "SIGN_IN": "Anmelden"
+    "SIGN_IN": "Anmelden",
+    "ERROR_GENERIC": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+    "PASSWORD_MISMATCH": "Die Passwörter stimmen nicht überein."
   },
 
   "PASSWORD_RESET": {
@@ -344,6 +353,65 @@
     "INCLUDED": "Inklusive",
     "CHECKOUT": "Zur Kasse",
     "NOTICE": "Für Produkte, die derzeit nicht vorrätig sind, beträgt die voraussichtliche Lieferzeit bis zu 30 Tage."
+  },
+
+  "CHECKOUT": {
+    "PAGE_TITLE": "Kasse | SnusCo",
+    "TITLE": "Kasse",
+    "SIGNED_IN_NOTICE": "Sie sind angemeldet — E-Mail und gespeicherte Lieferadressen werden unten verwendet.",
+    "BACK": "Zurück",
+    "BACK_SHOP": "Weiter einkaufen",
+    "EMPTY_CART": "Ihr Warenkorb ist leer.",
+    "CONTACT_GUEST": "Kontakt & Lieferung",
+    "CONTACT_SIGNED_IN": "Ihre Kontodaten",
+    "ACCOUNT_EMAIL": "Konto-E-Mail",
+    "ACCOUNT_EMAIL_HINT": "Ihre Konto-E-Mail wird nach Bestellbestätigung in unserem System aktualisiert. Bitte eine erreichbare Adresse verwenden.",
+    "EMAIL": "E-Mail",
+    "FIRST_NAME": "Vorname",
+    "LAST_NAME": "Nachname",
+    "SAVED_ADDRESSES": "Gespeicherte Adressen",
+    "DELIVERY_SAVED_TITLE": "Lieferadresse",
+    "DELIVERY_SAVED_INTRO": "Wählen Sie eine gespeicherte Adresse oder fügen Sie eine neue hinzu. Die vollständige Adresse sehen Sie unten.",
+    "PRIMARY_BADGE": "Standard",
+    "NEW_ADDRESS": "Andere Adresse (neu eingeben oder bearbeiten)",
+    "SHIPPING_TITLE": "Lieferadresse",
+    "SHIPPING_EDIT_INTRO": "Die Felder entsprechen Ihrer Auswahl — ändern Sie nach Bedarf oder geben Sie eine neue Adresse ein. Neue Adressen werden im Konto gespeichert.",
+    "COUNTRY": "Land",
+    "CITY": "Stadt",
+    "POSTAL": "PLZ",
+    "PHONE": "Telefon",
+    "STREET": "Straße",
+    "STREET_NUMBER": "Hausnr.",
+    "BUILDING": "Stiege / Tür (optional)",
+    "SECONDARY": "Adresszeile 2 (optional)",
+    "DELIVERY_PAYMENT": "Lieferung & Zahlung",
+    "TRANSPORT": "Versandart",
+    "TRANSPORT_POST": "Post AT",
+    "TRANSPORT_DHL": "DHL Standard",
+    "TRANSPORT_DHL_EXP": "DHL Express Saver",
+    "PAYMENT": "Zahlungsart",
+    "PAY_COD": "Nachnahme",
+    "PAY_CARD": "Karte",
+    "PAY_PAYPAL": "PayPal",
+    "NOTE": "Bestellhinweis (optional)",
+    "NOTE_PLACEHOLDER": "Lieferhinweise usw.",
+    "SUMMARY": "Bestellübersicht",
+    "SUBTOTAL": "Zwischensumme",
+    "TOTAL_EST": "Zwischensumme (ca.)",
+    "PLACE_ORDER": "Bestellung aufgeben",
+    "SUBMITTING": "Bestellung wird gesendet…",
+    "SUCCESS": "Vielen Dank! Ihre Bestellung ist eingegangen. Referenz: {{id}}.",
+    "ERROR_GENERIC": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+    "SELECT_ADDRESS": "Bitte wählen Sie eine Lieferadresse."
+  },
+
+  "CHECKOUT_HEADER": {
+    "TITLE": "Kasse",
+    "SUBTITLE": "Warenkorb",
+    "BACK_LINK": "Zurück zum Einkaufen",
+    "BACK_ARIA": "Zurück zum Einkaufen",
+    "AGE_ARIA": "18 plus — nur für Erwachsene. Nikotinprodukte.",
+    "AGE_TOOLTIP": "Nur für Erwachsene (18+). Nikotin macht süchtig."
   },
 
   "SEARCH": {

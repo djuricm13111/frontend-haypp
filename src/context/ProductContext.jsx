@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext, useEffect, useRef } from "react";
 import APIService from "../services/APIService";
 import {
   DEFAULT_CURRENCY,
@@ -105,6 +105,14 @@ export const ProductProvider = ({ children }) => {
   const maxAttributes = { nicotine: 50.0 };
   const [activateConffete, setActivateConffete] = useState(false);
 
+  /** Sprečava da stari async odgovor (npr. kategorija ZYN) prepiše noviju listu (npr. nicotine-free). */
+  const shopListFetchGenRef = useRef(0);
+  const beginShopListFetch = () => {
+    shopListFetchGenRef.current += 1;
+    return shopListFetchGenRef.current;
+  };
+  const isStaleShopListFetch = (gen) => gen !== shopListFetchGenRef.current;
+
   // const [products, setProducts] = useState([]);
   // const [currentPage, setCurrentPage] = useState(1);
   // const [hasMore, setHasMore] = useState(true); // Da znamo da li imamo još stranica
@@ -205,8 +213,10 @@ export const ProductProvider = ({ children }) => {
     }*/
   };
   const loadProductsByCategorySlug = async (slug) => {
+    const gen = beginShopListFetch();
     try {
       const response = await APIService.GetProductsByCategory(slug);
+      if (isStaleShopListFetch(gen)) return;
       setProducts(response.products);
       setFilteredProducts(response.products);
       setCategory(response.category);
@@ -262,7 +272,7 @@ export const ProductProvider = ({ children }) => {
     updateCurrencyTag();
   }, []);
 
-  const createOrder = async (orderData, accessToken) => {
+  const createOrder = async (orderData, accessToken = null) => {
     try {
       const createdOrder = await APIService.createOrder(orderData, accessToken);
 

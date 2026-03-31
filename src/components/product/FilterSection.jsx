@@ -3,6 +3,7 @@ import React, {
   useContext,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -424,17 +425,47 @@ const FilterSection = ({
   const prevLockedNicotineRef = useRef(null);
   const pendingApplyAfterUnlockNicotineRef = useRef(false);
 
+  /**
+   * Za URL zaključan ukus / jačinu — opcije i brojači u filter panelu računaju se samo nad tim
+   * podskupom, da ne izgleda kao da „postoje“ svi brendovi sa punim brojem komada.
+   */
+  const productsScopedForFilters = useMemo(() => {
+    let list = products;
+    if (lockedFlavorGroupId) {
+      list = list.filter(
+        (p) => getFlavorGroupId(p.flavor) === lockedFlavorGroupId
+      );
+    }
+    if (lockedNicotineRangeLabels?.length) {
+      const labelSet = new Set(lockedNicotineRangeLabels);
+      list = list.filter((product) => {
+        const nic = Number(product.nicotine);
+        return Array.from(labelSet).some((label) => {
+          const item = NICOTINE_RANGES.find((nr) => nr.label === label);
+          const [min, max] = item ? item.range : [0, 100];
+          return nic >= min && nic <= max;
+        });
+      });
+    }
+    return list;
+  }, [products, lockedFlavorGroupId, lockedNicotineRangeLabels]);
+
+  const groupingSource =
+    lockedFlavorGroupId || lockedNicotineRangeLabels?.length
+      ? productsScopedForFilters
+      : products;
+
   // Grupisanje proizvoda po kategoriji i formatu
   const groupedCategories = Array.from(
     new Set(
-      products.map((product) => product.category_name).filter(Boolean)
+      groupingSource.map((product) => product.category_name).filter(Boolean)
     )
   );
   const groupedFormats = Array.from(
-    new Set(products.map((product) => product.format).filter(Boolean))
+    new Set(groupingSource.map((product) => product.format).filter(Boolean))
   );
   /** Koje grupe ukusa postoje u listi (mint, voćno, citrus, …). */
-  const groupedFlavorGroupIds = getPresentFlavorGroupIds(products);
+  const groupedFlavorGroupIds = getPresentFlavorGroupIds(groupingSource);
 
   const applyFilters = useCallback(
     (categories, formats, nicotineRange, flavors, hideOutOfStockOverride) => {
@@ -449,7 +480,10 @@ const FilterSection = ({
           ? nicotineRange
           : new Set(nicotineRange);
       const nicotineRangesArray = Array.from(nicotineResolved);
-      const flavorSet = flavors instanceof Set ? flavors : new Set(flavors);
+      let flavorSet = flavors instanceof Set ? new Set(flavors) : new Set(flavors);
+      if (lockedFlavorGroupId) {
+        flavorSet = new Set([lockedFlavorGroupId]);
+      }
 
       const filtered = products.filter((product) => {
         const nic = Number(product.nicotine);
@@ -460,7 +494,7 @@ const FilterSection = ({
           flavorSet.size === 0 ||
           productMatchesFlavorGroups(product, flavorSet);
         const isInNicotineRange =
-          nicotineRange.size === 0 ||
+          nicotineResolved.size === 0 ||
           nicotineRangesArray.some((label) => {
             const item = NICOTINE_RANGES.find((nr) => nr.label === label);
             const [min, max] = item ? item.range : [0, 100];
@@ -485,6 +519,7 @@ const FilterSection = ({
       filterOutOfStock,
       setFilteredProducts,
       lockedNicotineRangeLabels,
+      lockedFlavorGroupId,
     ]
   );
 
@@ -684,19 +719,19 @@ const FilterSection = ({
 
   // Funkcija za brojanje proizvoda u određenoj kategoriji
   const countProductsInCategory = (category) => {
-    return products.filter((product) => product.category_name === category)
+    return groupingSource.filter((product) => product.category_name === category)
       .length;
   };
 
   // Funkcija za brojanje proizvoda u određenom formatu
   const countProductsInFormat = (format) => {
-    return products.filter((product) => product.format === format).length;
+    return groupingSource.filter((product) => product.format === format).length;
   };
 
   const countProductsInNicotineRange = (label) => {
     const range = NICOTINE_RANGES.find((range) => range.label === label);
     if (!range) return 0;
-    return products.filter((product) => {
+    return groupingSource.filter((product) => {
       const nic = Number(product.nicotine);
       const [min, max] = range.range;
       return nic >= min && nic <= max;
@@ -704,7 +739,7 @@ const FilterSection = ({
   };
 
   const countProductsInFlavorGroup = (groupId) =>
-    products.filter((p) => getFlavorGroupId(p.flavor) === groupId).length;
+    groupingSource.filter((p) => getFlavorGroupId(p.flavor) === groupId).length;
 
   const panelRef = useRef(null);
   const [dropdownPos, setDropdownPos] = useState(null);

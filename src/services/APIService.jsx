@@ -210,22 +210,23 @@ export default class APIService {
       throw error;
     }
   }
-  static async createOrder(orderData, accessToken) {
+  static async createOrder(orderData, accessToken = null) {
     const language = i18next.language.toLowerCase(); // Pretpostavljamo da i18next upravlja trenutnim jezikom
     const currency = localStorage.getItem("currency") || defaultCurrency;
     try {
+      const headers = {
+        "Content-Type": "application/json",
+        "Accept-Language": language,
+        Currency: currency,
+        "x-domain": DOMAIN,
+      };
+      if (accessToken) {
+        headers.Authorization = `Bearer ${accessToken}`;
+      }
       const response = await axios.post(
         `${this.URL}api/orders/create/`,
         orderData,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`, // Koristite access token za autorizaciju
-            "Content-Type": "application/json",
-            "Accept-Language": language,
-            Currency: currency,
-            "x-domain": DOMAIN,
-          },
-        }
+        { headers }
       );
       return response.data; // Očekuje se da backend vraća ažuriranu adresu
     } catch (error) {

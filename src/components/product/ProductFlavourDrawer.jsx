@@ -45,9 +45,14 @@ const Panel = styled.aside`
   right: 0;
   bottom: 0;
   z-index: var(--zindex-modal);
-  width: min(360px, 76vw);
+  /* Telefon: širi drawer radi čitljivosti liste ukusa */
+  width: min(100%, 92vw);
   max-width: 100%;
   background: var(--bg-200);
+
+  @media (min-width: 768px) {
+    width: min(360px, 76vw);
+  }
   box-shadow: -8px 0 32px rgba(0, 0, 0, 0.18);
   display: flex;
   flex-direction: column;

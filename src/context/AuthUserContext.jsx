@@ -125,31 +125,26 @@ export const AuthUserProvider = ({ children }) => {
     navigate(goToHome());
   };
   const registerUser = async (email, name, surname, password, referralCode) => {
-    try {
-      // Poziv API-ja za registraciju
-      const registerResponse = await APIService.Register(
-        email,
-        name,
-        surname,
-        password,
-        referralCode
-      );
+    const registerResponse = await APIService.Register(
+      email,
+      name,
+      surname,
+      password,
+      referralCode
+    );
 
-      setAuthTokens({
+    setAuthTokens({
+      access: registerResponse.access,
+      refresh: registerResponse.refresh,
+    });
+    localStorage.setItem(
+      "authTokens",
+      JSON.stringify({
         access: registerResponse.access,
         refresh: registerResponse.refresh,
-      });
-      localStorage.setItem(
-        "authTokens",
-        JSON.stringify({
-          access: registerResponse.access,
-          refresh: registerResponse.refresh,
-        })
-      );
-    } catch (error) {
-      // Obrada grešaka
-      throw error;
-    }
+      })
+    );
+    return registerResponse;
   };
 
   let checkLoginAndVerification = async () => {
@@ -168,9 +163,11 @@ export const AuthUserProvider = ({ children }) => {
     }
   };
 
-  async function fetchUserData() {
+  async function fetchUserData(accessTokenOverride = null) {
     try {
-      const profileData = await APIService.getUserProfile(authTokens.access);
+      const token = accessTokenOverride || authTokens?.access;
+      if (!token) return;
+      const profileData = await APIService.getUserProfile(token);
       //console.log("User Data:", profileData);
       setUserProfile(profileData);
       // Postavite dobijene podatke u stanje komponente ili ih koristite na drugi način
@@ -184,19 +181,27 @@ export const AuthUserProvider = ({ children }) => {
       }
     }
   }
-  const updateUserInfo = async (userInfo) => {
+  const updateUserInfo = async (userInfo, accessTokenOverride = null) => {
     try {
-      const response = await APIService.updateUserInfo(
-        userInfo,
-        authTokens.access
-      );
+      const token = accessTokenOverride || authTokens?.access;
+      if (!token) throw new Error("No access token");
+      const response = await APIService.updateUserInfo(userInfo, token);
 
-      // Ažuriranje lokalnog korisničkog profila
-      const updatedUserProfile = { ...userProfile };
-      if (userInfo.first_name)
+      let base = userProfile;
+      if (!base) {
+        try {
+          const raw = localStorage.getItem("userProfileData");
+          base = raw ? JSON.parse(raw) : {};
+        } catch {
+          base = {};
+        }
+      }
+      const updatedUserProfile = { ...base };
+      if (userInfo.first_name !== undefined)
         updatedUserProfile.first_name = userInfo.first_name;
-      if (userInfo.last_name) updatedUserProfile.last_name = userInfo.last_name;
-      if (userInfo.phone_number)
+      if (userInfo.last_name !== undefined)
+        updatedUserProfile.last_name = userInfo.last_name;
+      if (userInfo.phone_number !== undefined)
         updatedUserProfile.phone_number = userInfo.phone_number;
 
       setUserProfile(updatedUserProfile);
@@ -247,20 +252,37 @@ export const AuthUserProvider = ({ children }) => {
   };
 
   // Funkcija za ažuriranje adrese
-  const updateAddressBook = async (addressId, addressData) => {
+  const updateAddressBook = async (
+    addressId,
+    addressData,
+    accessTokenOverride = null
+  ) => {
     try {
-      const accessToken = authTokens.access;
+      const accessToken = accessTokenOverride || authTokens?.access;
+      if (!accessToken) throw new Error("No access token");
       const updatedAddress = await APIService.updateAddressBook(
         addressId,
         addressData,
         accessToken
       );
 
-      const updatedUserProfile = { ...userProfile };
+      let base = userProfile;
+      if (!base) {
+        try {
+          const raw = localStorage.getItem("userProfileData");
+          base = raw ? JSON.parse(raw) : { addresses: [] };
+        } catch {
+          base = { addresses: [] };
+        }
+      }
+      const updatedUserProfile = { ...base };
+      if (!Array.isArray(updatedUserProfile.addresses)) {
+        updatedUserProfile.addresses = [];
+      }
       if (addressData.is_primary) {
         updatedUserProfile.addresses.forEach((address) => {
           if (address.is_primary) {
-            address.is_primary = false; // Postavljanje prethodno primarne adrese na neprimarnu
+            address.is_primary = false;
           }
         });
       }
@@ -269,10 +291,8 @@ export const AuthUserProvider = ({ children }) => {
       );
 
       if (addressIndex > -1) {
-        // Ažurirajte postojeći element u nizu adresa sa novim podacima adrese
         updatedUserProfile.addresses[addressIndex] = updatedAddress;
       } else {
-        console.warn("Address not found, adding as new."); // Ovo bi trebalo da se desi samo ako postoji greška
         updatedUserProfile.addresses.push(updatedAddress);
       }
 
@@ -334,24 +354,32 @@ export const AuthUserProvider = ({ children }) => {
         accessToken
       );
 
-      // Kopirajte trenutni userProfile kako biste napravili izmene
-      const updatedUserProfile = { ...userProfile };
+      let base = userProfile;
+      if (!base) {
+        try {
+          const raw = localStorage.getItem("userProfileData");
+          base = raw ? JSON.parse(raw) : {};
+        } catch {
+          base = {};
+        }
+      }
+      const updatedUserProfile = { ...base };
+      if (!Array.isArray(updatedUserProfile.addresses)) {
+        updatedUserProfile.addresses = [];
+      }
 
-      // Proverite i ažurirajte phone_number ako je prazan u userProfile
       if (!updatedUserProfile.phone_number && addressData.phone_number) {
         updatedUserProfile.phone_number = addressData.phone_number;
       }
 
-      // Ako nova adresa treba da bude primarna, postavite sve ostale adrese na neprimarne
       if (addressData.is_primary) {
         updatedUserProfile.addresses.forEach((address) => {
           if (address.is_primary) {
-            address.is_primary = false; // Postavljanje prethodno primarne adrese na neprimarnu
+            address.is_primary = false;
           }
         });
       }
 
-      // Dodajte novu adresu u listu adresa
       updatedUserProfile.addresses.push(createdAddress);
 
       // Ažurirajte userProfile u kontekstu/state-u aplikacije
