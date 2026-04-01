@@ -7,9 +7,7 @@ const Container = styled.div`
 `;
 const Home = () => {
   return (
-    <>
       <HomeMain />
-    </>
   );
 };
 
