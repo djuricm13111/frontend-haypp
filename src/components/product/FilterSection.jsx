@@ -197,13 +197,13 @@ const NICOTINE_RANGES = [
 const DesktopBackdrop = styled.div`
   position: fixed;
   inset: 0;
-  z-index: 10040;
+  z-index: var(--zindex-modal-background);
   background: rgba(0, 0, 0, 0.12);
 `;
 
 const DesktopPanel = styled.div`
   position: fixed;
-  z-index: 10050;
+  z-index: calc(var(--zindex-modal) - 1);
   background: var(--bg-100);
   border: 1px solid #cfcfcf;
   border-radius: 0;

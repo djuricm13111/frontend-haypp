@@ -168,7 +168,8 @@ const OptionsContainer = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10000;
+  /* Ispod korpe (modal 1050); iznad sadržaja prodavnice */
+  z-index: calc(var(--zindex-fixed) + 2);
   max-height: min(70vh, 420px);
   padding: 0;
   background-color: var(--bg-100);
@@ -284,7 +285,7 @@ const MaskContainer = styled.div`
   position: fixed;
   display: ${(props) => (props.$isOpen ? "block" : "none")};
   inset: 0;
-  z-index: 9999;
+  z-index: calc(var(--zindex-fixed) + 1);
   @media (min-width: 768px) {
     display: none;
   }

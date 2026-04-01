@@ -61,8 +61,8 @@ const Container = styled.div`
   position: fixed;
   right: 0;
   top: 0;
-  /* Iznad TopHeaderSection / Trustpilot (1000), ispod modala (1040+) */
-  z-index: var(--zindex-fixed);
+  /* Iznad shop filtera / sorta na mobilnom; ista porodica kao modal */
+  z-index: var(--zindex-modal-background);
 
   min-width: 100%;
   height: 100vh;
@@ -74,7 +74,7 @@ const Container = styled.div`
   visibility: ${(props) => (props.$shouldBeVisible ? "visible" : "hidden")};
 `;
 const Wrapper = styled.div`
-  z-index: calc(var(--zindex-fixed) + 1);
+  z-index: var(--zindex-modal);
   background-color: var(--bg-100);
   box-sizing: border-box;
 
@@ -459,7 +459,7 @@ const MaskContainer = styled.div`
   position: fixed;
   right: 0;
   top: 0;
-  z-index: calc(var(--zindex-fixed) - 1);
+  z-index: calc(var(--zindex-modal-background) - 1);
   min-width: 100%;
   height: 100vh;
   background-color: #0000003a;
