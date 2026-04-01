@@ -140,17 +140,22 @@ const CartContainer = styled.div`
   gap: 4px;
   height: 30px;
   min-width: 30px;
+  box-sizing: border-box;
 
   @media (min-width: 1024px) {
-    height: 36px;
+    /* Usklađeno sa Login TriggerWrap (40px) */
+    height: 40px;
+    min-height: 40px;
     min-width: 36px;
   }
 
   background-color: var(--bg-100);
   padding: 0 12px;
 
-  @media (max-width: 767px) {
-    height: 44px;
+  /* Kompakt beli header: ista visina kao red (MainHeaderWrapper) */
+  @media (max-width: 1023px) {
+    height: var(--navbar-height);
+    min-height: var(--navbar-height);
     min-width: 44px;
     padding: 0 4px;
     gap: 0;
@@ -158,11 +163,7 @@ const CartContainer = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    height: 38px;
-    min-width: 38px;
     padding: 0 2px;
-    gap: 0;
-    box-sizing: border-box;
   }
 
   ${({ $bounce }) =>
@@ -514,15 +515,21 @@ const CartMenu = ({ isScrolled }) => {
   const [shippingCost, setShippingCost] = useState(0.0);
   const currency = localStorage.getItem("currency") || DEFAULT_CURRENCY;
   useEffect(() => {
+    if (totalQuantity === 0) {
+      setShippingCost(0);
+      return;
+    }
     if (freeShippingThreshold > subtotalRounded) {
-      setShippingCost(getShippingCostPrice(null, currency, DEFAULT_CURRENCY)); //umesto null eventualno shipping selektovana metoda
+      setShippingCost(getShippingCostPrice(DEFAULT_CURRENCY, currency));
     } else {
       setShippingCost(0);
     }
-  }, [subtotalRounded]);
+  }, [subtotalRounded, totalQuantity, currency]);
 
   const grandTotal = subtotalRounded + shippingCost;
   const grandTotalRounded = parseFloat(grandTotal.toFixed(2));
+  const totalDisplay =
+    totalQuantity === 0 ? "0.00" : grandTotalRounded.toFixed(2);
 
   const cartBadgeLabel =
     totalQuantity > 99 ? "99+" : String(totalQuantity);
@@ -554,7 +561,7 @@ const CartMenu = ({ isScrolled }) => {
         <CartContainer $bounce={bounce} onClick={toggleMenu}>
           <CartText>
             {currencyTag}
-            {grandTotalRounded}
+            {totalDisplay}
           </CartText>
           <CartIconWrap>
             <svg
@@ -736,7 +743,7 @@ const CartMenu = ({ isScrolled }) => {
               <h3 style={{ fontFamily: "Montserrat" }}>In Total:</h3>
               <h2>
                 {currencyTag}
-                {grandTotalRounded}
+                {totalDisplay}
               </h2>
             </FlexDiv>
             {/* <FlexDiv>

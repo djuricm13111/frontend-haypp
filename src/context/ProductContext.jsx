@@ -213,10 +213,8 @@ export const ProductProvider = ({ children }) => {
     }*/
   };
   const loadProductsByCategorySlug = async (slug) => {
-    const gen = beginShopListFetch();
     try {
       const response = await APIService.GetProductsByCategory(slug);
-      if (isStaleShopListFetch(gen)) return;
       setProducts(response.products);
       setFilteredProducts(response.products);
       setCategory(response.category);

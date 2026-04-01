@@ -1100,9 +1100,8 @@ const ProductMain = () => {
         recommendedProducts?.results ??
         [];
     if (!Array.isArray(raw) || raw.length === 0) return [];
-    return raw
-      .filter((p) => p && p.is_in_stock !== "out_of_stock")
-      .slice(0, 12);
+    /* Backend već preferira in_stock + dopunu; prikaži sve što stigne (slider radi od 2+ kartica). */
+    return raw.filter(Boolean).slice(0, 12);
   }, [recommendedProducts]);
 
   const scrollToPackSelection = () => {

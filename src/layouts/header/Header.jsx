@@ -46,6 +46,11 @@ const TopHeaderSection = styled.div`
   position: relative;
   z-index: var(--zindex-dropdown);
 
+  @media (min-width: 1024px) {
+    /* Login / korpa trigger 40px — ista visina reda */
+    min-height: 40px;
+  }
+
   @media (max-width: 1023px) {
     height: auto;
     background-color: #003057;

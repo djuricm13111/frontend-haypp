@@ -95,9 +95,9 @@ export function buildShopNavDropdown(lang) {
         title: "Shop by Flavour",
         href: shopFlavoursHubPath(lang),
         items: [
-          { label: "Mint Pouches", href: shopFlavourPath(lang, "mint") },
           { label: "Fruit Pouches", href: shopFlavourPath(lang, "fruit") },
           { label: "Coffee Pouches", href: shopFlavourPath(lang, "coffee") },
+          { label: "Mint Pouches", href: shopFlavourPath(lang, "mint") },
         ],
       },
       {

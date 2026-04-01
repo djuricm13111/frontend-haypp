@@ -331,6 +331,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
     goToBestsellers,
     goToNewInStore,
     goToAllBrands,
+    goToFlavour,
   } = useNavigation();
 
   const [mounted, setMounted] = useState(false);
@@ -395,6 +396,11 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   }, [mounted, navState, onClose, goBackNav]);
 
   const handleNav = (label) => {
+    if (label === "Mint Pouches") {
+      navigate(goToFlavour("mint"));
+      onClose();
+      return;
+    }
     if (label === "Bestsellers") {
       navigate(goToBestsellers());
       onClose();

@@ -5,6 +5,7 @@ import {
   shopNewInStorePath,
   shopAllBrandsPath,
   shopSearchPath,
+  shopFlavourPath,
 } from "./shopRoutes";
 
 function slugPart(value) {
@@ -87,6 +88,11 @@ export function useNavigation() {
     return shopAllBrandsPath(i18n.language);
   }
 
+  /** Ukus u prodavnici: /{lang}/snus-verkauf/flavours/{slug} npr. mint, fruit, coffee */
+  function goToFlavour(flavourUrlSlug) {
+    return shopFlavourPath(i18n.language, flavourUrlSlug);
+  }
+
   return {
     goToHome,
     goToLogin,
@@ -101,5 +107,6 @@ export function useNavigation() {
     goToBestsellers,
     goToNewInStore,
     goToAllBrands,
+    goToFlavour,
   };
 }

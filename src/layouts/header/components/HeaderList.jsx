@@ -208,7 +208,7 @@ const SubHeaderTitleText = styled.h5`
   font-weight: 400;
   line-height: 1.35;
 `;
-const MenuTitleLink = styled.a`
+const MenuTitleLink = styled(Link)`
   font-family: "Oswald-Medium";
   font-weight: 700;
   font-size: var(--header-dropdown-title-size);
@@ -220,7 +220,7 @@ const MenuTitleLink = styled.a`
   }
 `;
 
-const MenuLink = styled.a`
+const MenuLink = styled(Link)`
   font-weight: 400;
   font-size: var(--header-dropdown-link-size);
   text-decoration: none;
@@ -239,7 +239,7 @@ const Spacer = styled.div`
 export const navItems = [
   "Nicotine Pouches",
   "Nicotine Free Pouches",
-  "Caffeine Pouches",
+  "Mint Pouches",
   "99p Pouches",
   "New",
   "Bestsellers",
@@ -251,7 +251,12 @@ const HOVER_CLOSE_DELAY = 250;
 
 const HeaderList = ({ isScrolled }) => {
   const { i18n } = useTranslation();
-  const { goToNewInStore, goToBestsellers, goToAllBrands } = useNavigation();
+  const {
+    goToNewInStore,
+    goToBestsellers,
+    goToAllBrands,
+    goToFlavour,
+  } = useNavigation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
   const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
@@ -349,13 +354,15 @@ const HeaderList = ({ isScrolled }) => {
     const hasFirstDropdown = index === 0;
     const hasSecondDropdown = index === 6;
     const navListLinkTo =
-      index === 4
-        ? goToNewInStore()
-        : index === 5
-          ? goToBestsellers()
-          : index === 7
-            ? goToAllBrands()
-            : null;
+      index === 2
+        ? goToFlavour("mint")
+        : index === 4
+          ? goToNewInStore()
+          : index === 5
+            ? goToBestsellers()
+            : index === 7
+              ? goToAllBrands()
+              : null;
 
     return (
       <FlexItem
@@ -416,13 +423,13 @@ const HeaderList = ({ isScrolled }) => {
                     {i !== 0 && <Spacer />}
 
                     {/* TITLE kao link */}
-                    <MenuTitleLink href={section.href}>
+                    <MenuTitleLink to={section.href}>
                       {section.title}
                     </MenuTitleLink>
 
                     {/* ako ima items */}
                     {section.items?.map((item, j) => (
-                      <MenuLink key={j} href={item.href}>
+                      <MenuLink key={j} to={item.href}>
                         {item.label}
                       </MenuLink>
                     ))}
@@ -442,7 +449,7 @@ const HeaderList = ({ isScrolled }) => {
               </SubHeaderTitleText>
               <SubHeaderGrid>
                 {dropdownData.second.map((row) => (
-                  <MenuTitleLink key={row.href} href={row.href}>
+                  <MenuTitleLink key={row.href} to={row.href}>
                     {row.title}
                   </MenuTitleLink>
                 ))}
