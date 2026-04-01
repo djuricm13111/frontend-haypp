@@ -10,6 +10,7 @@ import {
   shopAllBrandsPath,
   normalizeShopLang,
 } from "../utils/shopRoutes";
+
 import { groupBrandsByLetter } from "../utils/groupBrandsByLetter";
 
 const Shell = styled.div`
