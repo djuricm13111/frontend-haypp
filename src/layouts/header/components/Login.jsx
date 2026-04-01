@@ -700,7 +700,7 @@ const NudgeCloseLink = styled.button`
 const Login = forwardRef(function Login(_, ref) {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { goToRegister, goToForgotPassword } = useNavigation();
+  const { goToRegister, goToForgotPassword, goToAccount } = useNavigation();
 
   const [isOpen, setIsOpen] = useState(false);
   const [shouldBeVisible, setShouldBeVisible] = useState(false);
@@ -820,7 +820,11 @@ const Login = forwardRef(function Login(_, ref) {
   };
 
   const handleTriggerClick = () => {
-    if (!authTokens && !nudgeDismissed) {
+    if (authTokens) {
+      navigate(goToAccount());
+      return;
+    }
+    if (!nudgeDismissed) {
       setNudgePopoverOpen(true);
       return;
     }
@@ -911,11 +915,13 @@ const Login = forwardRef(function Login(_, ref) {
             handleTriggerClick();
           }
         }}
-        aria-label={t("LOGIN.SIGN_IN")}
+        aria-label={authTokens ? t("MENU.MY_ACCOUNT") : t("LOGIN.SIGN_IN")}
         aria-expanded={isOpen}
         aria-haspopup={showNudgeBadge ? "dialog" : undefined}
       >
-        <TriggerLabel>{t("LOGIN.SIGN_IN")}</TriggerLabel>
+        <TriggerLabel>
+          {authTokens ? t("MENU.MY_ACCOUNT") : t("LOGIN.SIGN_IN")}
+        </TriggerLabel>
         <UserIconBadgeWrap ref={nudgeIconRef}>
           <UserTriggerIcon
             viewBox="0 0 24 24"

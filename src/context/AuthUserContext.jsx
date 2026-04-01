@@ -312,16 +312,28 @@ export const AuthUserProvider = ({ children }) => {
 
   const deleteAddressBook = async (addressId) => {
     try {
-      const accessToken = authTokens.access;
+      const accessToken = authTokens?.access;
+      if (!accessToken) throw new Error("No access token");
       await APIService.deleteAddressBook(addressId, accessToken);
 
-      const updatedUserProfile = { ...userProfile };
+      let base = userProfile;
+      if (!base) {
+        try {
+          const raw = localStorage.getItem("userProfileData");
+          base = raw ? JSON.parse(raw) : { addresses: [] };
+        } catch {
+          base = { addresses: [] };
+        }
+      }
+      const updatedUserProfile = { ...base };
+      if (!Array.isArray(updatedUserProfile.addresses)) {
+        updatedUserProfile.addresses = [];
+      }
       const addressIndex = updatedUserProfile.addresses.findIndex(
         (addr) => addr.id.toString() === addressId.toString()
       );
 
       if (addressIndex > -1) {
-        // Uklonite adresu iz niza adresa
         updatedUserProfile.addresses.splice(addressIndex, 1);
       }
 
@@ -335,7 +347,7 @@ export const AuthUserProvider = ({ children }) => {
       return true;
     } catch (error) {
       console.error("Error deleting address:", error);
-      throw error; // Ili obradite grešku na način koji vam odgovara
+      throw error;
     }
   };
 

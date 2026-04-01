@@ -11,6 +11,7 @@ import SearchResults from "./pages/SearchResults";
 import Checkout from "./pages/Checkout";
 import Register from "./pages/Register";
 import FreeSample from "./pages/FreeSample";
+import UserProfile from "./pages/UserProfile";
 import SiteFooter from "./layouts/footer/SiteFooter";
 import { shopSearchPath, normalizeShopLang } from "./utils/shopRoutes";
 
@@ -52,6 +53,7 @@ function App() {
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/free-sample" element={<FreeSample />} />
+                <Route path="/account" element={<UserProfile />} />
                 <Route
                   path="/:lang/bestsellers"
                   element={<ShopListing listing="bestsellers" />}

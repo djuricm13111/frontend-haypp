@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, useContext } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
@@ -7,6 +7,7 @@ import { useNavigation } from "../../../utils/navigation";
 import Language from "./Language";
 import { navItems } from "./HeaderList";
 import { buildShopNavDropdown } from "../../../utils/shopRoutes";
+import { AuthUserContext } from "../../../context/AuthUserContext";
 
 const PANEL_TRANSITION = "transform 0.28s ease";
 const BACKDROP_TRANSITION = "opacity 0.28s ease";
@@ -324,6 +325,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
   const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
 
+  const { authTokens } = useContext(AuthUserContext);
   const navigate = useNavigate();
   const {
     goToCategory,
@@ -332,6 +334,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
     goToNewInStore,
     goToAllBrands,
     goToFlavour,
+    goToAccount,
   } = useNavigation();
 
   const [mounted, setMounted] = useState(false);
@@ -423,6 +426,10 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   const handleLoginClick = () => {
     onClose();
     window.setTimeout(() => {
+      if (authTokens) {
+        navigate(goToAccount());
+        return;
+      }
       loginRef?.current?.open?.();
     }, 0);
   };

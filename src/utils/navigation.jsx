@@ -43,6 +43,11 @@ export function useNavigation() {
     return "/register";
   }
 
+  /** Nalog (ulogovan korisnik) — profil, porudžbine. */
+  function goToAccount() {
+    return "/account";
+  }
+
   function goToForgotPassword() {
     return "/forgot-password";
   }
@@ -98,6 +103,7 @@ export function useNavigation() {
     goToLogin,
     goToVerification,
     goToRegister,
+    goToAccount,
     goToForgotPassword,
     goToCheckout,
     goToSearch,
