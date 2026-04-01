@@ -422,7 +422,8 @@ const Header = () => {
   const syncScrolledFromScrollY = () => {
     const y = window.scrollY;
     const t = scrollThresholdPxRef.current;
-    setIsScrolled(Number.isFinite(t) && y >= t);
+    const next = Number.isFinite(t) && y >= t;
+    setIsScrolled((prev) => (prev === next ? prev : next));
   };
 
   const measureScrollThreshold = () => {
@@ -453,9 +454,8 @@ const Header = () => {
     syncScrolledFromScrollY();
   };
 
-  useLayoutEffect(() => {
-    measureScrollThreshold();
-  }, [isScrolled]);
+  /* Nemoj useLayoutEffect([isScrolled]) — measureScrollThreshold zove setIsScrolled i pravi
+   * beskonačnu petlju (React #185). Prag se osvežava preko ResizeObserver + resize ispod. */
 
   useLayoutEffect(() => {
     const pre = preHeaderRef.current;
