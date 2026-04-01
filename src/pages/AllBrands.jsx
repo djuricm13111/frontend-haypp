@@ -21,6 +21,7 @@ const Shell = styled.div`
   box-sizing: border-box;
 `;
 
+
 /** Naslov + uvod centrirani; linija ispod opisa. */
 const PageHeader = styled.div`
   text-align: center;
