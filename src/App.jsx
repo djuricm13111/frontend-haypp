@@ -10,6 +10,7 @@ import AllBrands from "./pages/AllBrands";
 import SearchResults from "./pages/SearchResults";
 import Checkout from "./pages/Checkout";
 import Register from "./pages/Register";
+import FreeSample from "./pages/FreeSample";
 import SiteFooter from "./layouts/footer/SiteFooter";
 import { shopSearchPath, normalizeShopLang } from "./utils/shopRoutes";
 
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/free-sample" element={<FreeSample />} />
                 <Route
                   path="/:lang/bestsellers"
                   element={<ShopListing listing="bestsellers" />}
