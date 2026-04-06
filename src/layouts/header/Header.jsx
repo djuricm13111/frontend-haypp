@@ -289,6 +289,7 @@ const DesktopNavSection = styled.div`
       props.$isScrolled
         ? css`
             /* Isti flex-grow kao Search (flex: 2) — podela prostora ~50:50, ne 1:2 u korist searcha */
+           
             flex: 20 1 0;
             min-width: 0;
             width: auto;
