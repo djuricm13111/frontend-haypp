@@ -82,6 +82,11 @@ const CardImage = styled.img`
   display: block;
   flex-shrink: 0;
   background: rgba(0, 0, 0, 0.04);
+
+  @media (max-width: 767px) {
+    aspect-ratio: 4 / 3;
+    min-height: 160px;
+  }
 `;
 
 const CardBody = styled.div`

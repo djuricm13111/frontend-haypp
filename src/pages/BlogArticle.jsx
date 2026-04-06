@@ -160,6 +160,12 @@ const RelatedCardMedia = styled.div`
   justify-content: center;
   padding: 14px;
   box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    aspect-ratio: 4 / 3;
+    padding: 12px 16px;
+    min-height: 140px;
+  }
 `;
 
 const RelatedCardImg = styled.img`
@@ -274,6 +280,14 @@ const ArticleInfographicImg = styled.img`
   height: auto;
   display: block;
   vertical-align: middle;
+
+  @media (max-width: 767px) {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    border-radius: 0;
+  }
 `;
 
 const BodyH2 = styled.h2`
@@ -348,8 +362,16 @@ const BodySubhead = styled.p`
   color: var(--text-100);
 `;
 
+const MOBILE_MAX = "(max-width: 767px)";
+
 const Crumbs = styled.nav`
   margin-bottom: var(--spacing-md);
+
+  @media ${MOBILE_MAX} {
+    margin-left: calc(-1 * var(--spacing-xs));
+    margin-right: calc(-1 * var(--spacing-xs));
+    margin-bottom: var(--spacing-sm);
+  }
 `;
 
 const CrumbsList = styled.ol`
@@ -372,6 +394,23 @@ const CrumbsList = styled.ol`
   font-size: 0.8125rem;
   line-height: 1.35;
   box-sizing: border-box;
+
+  @media ${MOBILE_MAX} {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.3rem 0.45rem;
+    padding: 0.5rem 0.65rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    background: rgba(0, 48, 87, 0.045);
+    border-color: rgba(0, 48, 87, 0.08);
+    box-shadow: none;
+  }
 `;
 
 const CrumbsItem = styled.li`
@@ -379,6 +418,11 @@ const CrumbsItem = styled.li`
   align-items: center;
   min-width: 0;
   max-width: 100%;
+
+  @media ${MOBILE_MAX} {
+    flex-shrink: 0;
+    max-width: none;
+  }
 `;
 
 const CrumbSep = styled.span`
@@ -389,6 +433,11 @@ const CrumbSep = styled.span`
   font-size: 0.75rem;
   user-select: none;
   flex-shrink: 0;
+
+  @media ${MOBILE_MAX} {
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.22);
+  }
 `;
 
 const CrumbLink = styled(Link)`
@@ -420,6 +469,14 @@ const CrumbCurrent = styled.span`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+
+  @media ${MOBILE_MAX} {
+    display: inline;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    text-overflow: unset;
+    white-space: nowrap;
+  }
 `;
 
 const CategoryRow = styled.div`
@@ -454,6 +511,10 @@ const HeroRow = styled.div`
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-sm);
 
+  @media (max-width: 767px) {
+    gap: var(--spacing-lg);
+  }
+
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: flex-start;
@@ -473,9 +534,17 @@ const HeroFigure = styled.div`
   max-width: min(320px, 100%);
   margin: 0 auto;
 
+  @media (max-width: 767px) {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
   @media (min-width: 768px) {
     max-width: 340px;
     margin: 0;
+    width: 100%;
   }
 `;
 
@@ -486,6 +555,13 @@ const HeroImg = styled.img`
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   background: #f0f0f0;
+
+  @media (max-width: 767px) {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    max-height: none;
+  }
 `;
 
 const H1 = styled.h1`
