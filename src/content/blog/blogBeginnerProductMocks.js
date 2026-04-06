@@ -27,6 +27,7 @@ export const blogBeginnerZynAppleMintMini = {
   is_in_stock: "in_stock",
   show_offer: true,
   images: imgPair(ZYN_APPLE_MINT_MINI),
+  
 };
 
 export const blogBeginnerZynSpearmintMini = {
