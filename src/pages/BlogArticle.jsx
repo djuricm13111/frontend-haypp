@@ -250,7 +250,7 @@ const BlogProductRowCard = styled.div`
   min-width: 0;
   justify-self: center;
   width: 100%;
-  max-width: 50%;
+  max-width: 65%;
 
   @media (min-width: 900px) {
     justify-self: stretch;
@@ -798,6 +798,10 @@ function BlogArticle() {
       i18n.changeLanguage(langParam);
     }
   }, [langParam, i18n]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [slug]);
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const l = lang === "de" ? "de" : "en";

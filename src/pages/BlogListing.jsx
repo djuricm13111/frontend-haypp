@@ -134,6 +134,10 @@ function BlogListing() {
     }
   }, [langParam, i18n]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [langParam]);
+
   const lang = normalizeShopLang(langParam || i18n.language);
   const posts = listPostsSummaries(lang);
 
