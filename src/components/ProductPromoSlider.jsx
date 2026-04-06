@@ -374,7 +374,7 @@ function ChevronRight() {
  * @typedef {Object} PromoSlide
  * @property {string} imageSrc
  * @property {string} [imageAlt]
- * @property {string} [priceLabel] — mala siva linija (npr. "From £2.49 / unit")
+ * @property {string} [priceLabel] — mala siva linija (npr. "From €2.49 / unit")
  * @property {string} title — naslov proizvoda / ponude
  * @property {string} [ctaLabel] — tekst dugmeta (npr. "Buy here")
  * @property {string} [ctaHref] — link za CTA

@@ -420,12 +420,22 @@ const SECTIONS = [
 const PHONE_ICON_PATH =
   "M2 3a1 1 0 0 1 1-1h2.153a1 1 0 0 1 .986.836l.74 4.435a1 1 0 0 1-.54 1.06l-1.548.773a11.037 11.037 0 0 0 6.105 6.105l.774-1.548a1 1 0 0 1 1.059-.54l4.435.74a1 1 0 0 1 .836.986V17a1 1 0 0 1-1 1h-2C7.82 18 2 12.18 2 5V3z";
 
-function FooterSectionContent({ section, t }) {
+function normalizeFooterLang(lng) {
+  const l = String(lng || "en").split("-")[0].toLowerCase();
+  return l === "de" ? "de" : "en";
+}
+
+function footerLinkTo(linkKey, lang) {
+  if (linkKey === "LINK_BLOG") return `/${lang}/blog`;
+  return "/";
+}
+
+function FooterSectionContent({ section, t, lang }) {
   return (
     <PanelLinks>
       <PanelHint>{t(`FOOTER.${section.descKey}`)}</PanelHint>
       {section.linkKeys.map((lk) => (
-        <PanelLink key={lk} to="/">
+        <PanelLink key={lk} to={footerLinkTo(lk, lang)}>
           {t(`FOOTER.${lk}`)}
         </PanelLink>
       ))}
@@ -434,7 +444,8 @@ function FooterSectionContent({ section, t }) {
 }
 
 function SiteFooter() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const footerLang = normalizeFooterLang(i18n.language);
   const [openId, setOpenId] = useState(null);
 
   const toggle = (id) => {
@@ -455,7 +466,7 @@ function SiteFooter() {
           {SECTIONS.map((section) => (
             <DesktopCol key={`desk-${section.id}`}>
               <DesktopColTitle>{t(`FOOTER.${section.menuKey}`)}</DesktopColTitle>
-              <FooterSectionContent section={section} t={t} />
+              <FooterSectionContent section={section} t={t} lang={footerLang} />
             </DesktopCol>
           ))}
         </DesktopNavGrid>
@@ -485,7 +496,7 @@ function SiteFooter() {
                   aria-labelledby={`footer-acc-btn-${section.id}`}
                   $open={open}
                 >
-                  <FooterSectionContent section={section} t={t} />
+                  <FooterSectionContent section={section} t={t} lang={footerLang} />
                 </AccordionPanel>
               </div>
             );

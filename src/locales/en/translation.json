@@ -91,9 +91,21 @@
     "MY_ACCOUNT": "My Account"
   },
 
+  "BLOG": {
+    "PAGE_TITLE": "Blog | SnusCo",
+    "PAGE_DESCRIPTION": "Guides and articles on nicotine pouches, formats, and brands.",
+    "LIST_HEADING": "SnusCo blog",
+    "LIST_LEAD": "In-depth articles on nicotine pouches — formats, strengths, and how to choose what suits you.",
+    "BY_AUTHOR": "By {{name}}",
+    "CRUMB_HOME": "Home",
+    "CRUMB_BLOG": "Blog",
+    "RELATED_HEADING": "Related articles",
+    "PUBLISHED": "Published {{date}}"
+  },
+
   "HOME": {
     "HERO_TITLE": "Haypp UK: Nicotine Pouch Store Online",
-    "HERO_SUBTITLE": "Get next-day delivery* on orders over £4.99 — plus a free can with every purchase!*",
+    "HERO_SUBTITLE": "Get next-day delivery* on orders over €4.99 — plus a free can with every purchase!*",
     "ABOUT_TITLE": "About SnusCo",
     "ABOUT_SNUSCO": "Welcome to SnusCo, your trusted destination for premium, tobacco-free nicotine products. Since our inception, we've been committed to delivering top-quality nicotine pouches to customers who value safety, transparency, and exceptional taste.",
     "FEATURED_BRANDS": "At SnusCo, we proudly feature a curated selection of the most popular brands, including.",
@@ -137,6 +149,14 @@
       "DESC_BEFORE": "Be the first to try the latest nicotine pouches. Our new arrivals section is updated regularly with fresh launches from ",
       "TOP_BRANDS": "top brands",
       "DESC_AFTER": "."
+    },
+    "BLOG_SLIDER": {
+      "TITLE": "From the blog",
+      "VIEW_ALL": "View all articles",
+      "ARIA_REGION": "Blog articles",
+      "ARIA_PREV": "Previous articles",
+      "ARIA_NEXT": "Next articles",
+      "ARIA_SLIDE": "Slide {{current}} of {{total}}"
     },
     "TRUST": {
       "ABOUT_H2": "About SnusCo",
@@ -355,7 +375,7 @@
     "TRUST_LOW_PRICE_LABEL": "LOW PRICE",
     "TRUST_LOW_PRICE_VALUE": "Low Price Guarantee",
     "TRUST_SHIPPING_LABEL": "FREE SHIPPING",
-    "TRUST_SHIPPING_VALUE": "On orders over £4.99",
+    "TRUST_SHIPPING_VALUE": "On orders over €4.99",
     "TRUST_KLARNA_LABEL": "KLARNA",
     "TRUST_KLARNA_VALUE": "Pay with Klarna",
 
@@ -868,7 +888,7 @@
     "DELIVERY_OPT_3": "DPD Next Day",
     "DELIVERY_OPT_4": "DPD Saturday",
     "DELIVERY_OPT_5": "Hived Next Day/Same Day Delivery (Central London only)",
-    "DELIVERY_NOTE": "Enjoy free shipping on orders over £4.99 and same-day shipping on orders placed before 16:00 on weekdays.",
+    "DELIVERY_NOTE": "Enjoy free shipping on orders over €4.99 and same-day shipping on orders placed before 16:00 on weekdays.",
     "FAQ_TITLE": "Free Nicotine Pouches Sample FAQs",
     "FAQ_Q1": "Do I need to add the free nicotine pouches sample to my basket?",
     "FAQ_A1": "No, the free nicotine pouches sample will automatically be included with your order when the promotion is active.",

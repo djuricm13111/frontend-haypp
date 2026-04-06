@@ -503,7 +503,7 @@ const Header = () => {
   return (
     <>
       <PreHeaderStack ref={preHeaderRef} $mobileNavOpen={mobileNavOpen}>
-        <TopBlock>VELO from £2.49 + 17% off with code: LUCKY17 ☘️</TopBlock>
+        <TopBlock>VELO from €2.49 + 17% off with code: LUCKY17 ☘️</TopBlock>
         <TopHeaderSection>
         <TopHeaderWrapper>
           <TopBarDesktopLeft>
@@ -523,7 +523,7 @@ const Header = () => {
                   fill="var(--bg-100)"
                 />
               </svg>
-              Free Delivery over £4.99
+              Free Delivery over €4.99
             </IconText>
             <IconText>
               <svg

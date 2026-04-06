@@ -26,7 +26,6 @@ const ShopListing = ({ listing }) => {
     setProducts,
     setFilteredProducts,
     setCategory,
-    loadProducts,
     setLockedFlavorGroupId,
     setLockedNicotineRangeLabels,
   } = useContext(ProductContext);
@@ -91,9 +90,7 @@ const ShopListing = ({ listing }) => {
 
     return () => {
       cancelled = true;
-      loadProducts();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- loadProducts stabilan; refetch pri promeni jezika/URL
   }, [listing, isBestsellers, langParam, i18n.language]);
 
   const defaultSeo = {

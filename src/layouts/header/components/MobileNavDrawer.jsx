@@ -334,6 +334,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
     goToNewInStore,
     goToAllBrands,
     goToFlavour,
+    goToBlog,
     goToAccount,
   } = useNavigation();
 
@@ -416,6 +417,11 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
     }
     if (label === "All Brands") {
       navigate(goToAllBrands());
+      onClose();
+      return;
+    }
+    if (label === "Blog") {
+      navigate(goToBlog());
       onClose();
       return;
     }

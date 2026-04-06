@@ -7,6 +7,7 @@ import {
   shopSearchPath,
   shopFlavourPath,
 } from "./shopRoutes";
+import { blogListingPath, blogArticlePath } from "./blogRoutes";
 
 function slugPart(value) {
   return String(value || "")
@@ -98,6 +99,14 @@ export function useNavigation() {
     return shopFlavourPath(i18n.language, flavourUrlSlug);
   }
 
+  function goToBlog() {
+    return blogListingPath(i18n.language);
+  }
+
+  function goToBlogArticle(slug) {
+    return blogArticlePath(i18n.language, slug);
+  }
+
   return {
     goToHome,
     goToLogin,
@@ -114,5 +123,7 @@ export function useNavigation() {
     goToNewInStore,
     goToAllBrands,
     goToFlavour,
+    goToBlog,
+    goToBlogArticle,
   };
 }

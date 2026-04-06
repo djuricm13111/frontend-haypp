@@ -91,9 +91,21 @@
     "MY_ACCOUNT": "Mein Konto"
   },
 
+  "BLOG": {
+    "PAGE_TITLE": "Blog | SnusCo",
+    "PAGE_DESCRIPTION": "Ratgeber und Artikel zu Nikotinbeuteln, Formaten und Marken.",
+    "LIST_HEADING": "SnusCo-Blog",
+    "LIST_LEAD": "Ausführliche Artikel zu Nikotinbeuteln — Formate, Stärken und die passende Wahl.",
+    "BY_AUTHOR": "Von {{name}}",
+    "CRUMB_HOME": "Startseite",
+    "CRUMB_BLOG": "Blog",
+    "RELATED_HEADING": "Verwandte Artikel",
+    "PUBLISHED": "Veröffentlicht {{date}}"
+  },
+
   "HOME": {
     "HERO_TITLE": "Haypp UK: Nikotinbeutel Online-Shop",
-    "HERO_SUBTITLE": "Lieferung am nächsten Tag* bei Bestellungen über £4,99 — plus eine gratis Dose bei jedem Einkauf!*",
+    "HERO_SUBTITLE": "Lieferung am nächsten Tag* bei Bestellungen über 4,99 € — plus eine gratis Dose bei jedem Einkauf!*",
     "ABOUT_TITLE": "Über SnusCo",
     "ABOUT_SNUSCO": "Willkommen bei SnusCo, Ihrem vertrauenswürdigen Anbieter für hochwertige, tabakfreie Nikotinprodukte. Seit unserer Gründung haben wir uns der Lieferung von Nikotinbeuteln höchster Qualität verschrieben, die Sicherheit, Transparenz und außergewöhnlichen Geschmack schätzen.",
     "FEATURED_BRANDS": "Bei SnusCo präsentieren wir stolz eine kuratierte Auswahl der beliebtesten Marken, darunter ",
@@ -137,6 +149,14 @@
       "DESC_BEFORE": "Seien Sie der Erste, der die neuesten Nikotinbeutel probiert. In unserem Neuheiten-Bereich finden Sie regelmäßig neue Produkte von ",
       "TOP_BRANDS": "Top-Marken",
       "DESC_AFTER": "."
+    },
+    "BLOG_SLIDER": {
+      "TITLE": "Aus dem Blog",
+      "VIEW_ALL": "Alle Artikel",
+      "ARIA_REGION": "Blog-Artikel",
+      "ARIA_PREV": "Vorherige Artikel",
+      "ARIA_NEXT": "Nächste Artikel",
+      "ARIA_SLIDE": "Folie {{current}} von {{total}}"
     },
     "TRUST": {
       "ABOUT_H2": "Über SnusCo",
@@ -354,7 +374,7 @@
     "TRUST_LOW_PRICE_LABEL": "TIEFPREIS",
     "TRUST_LOW_PRICE_VALUE": "Tiefpreisgarantie",
     "TRUST_SHIPPING_LABEL": "VERSAND",
-    "TRUST_SHIPPING_VALUE": "Kostenlos ab £4,99",
+    "TRUST_SHIPPING_VALUE": "Kostenlos ab 4,99 €",
     "TRUST_KLARNA_LABEL": "KLARNA",
     "TRUST_KLARNA_VALUE": "Mit Klarna zahlen",
 
@@ -868,7 +888,7 @@
     "DELIVERY_OPT_3": "DPD Next Day",
     "DELIVERY_OPT_4": "DPD Saturday",
     "DELIVERY_OPT_5": "Hived Next Day/Same Day (nur Central London)",
-    "DELIVERY_NOTE": "Gratisversand ab £4.99 Bestellwert; Bestellungen werktags vor 16:00 Uhr am selben Tag versandfertig (je nach Option).",
+    "DELIVERY_NOTE": "Gratisversand ab 4,99 € Bestellwert; Bestellungen werktags vor 16:00 Uhr am selben Tag versandfertig (je nach Option).",
     "FAQ_TITLE": "FAQ – Kostenlose Nikotinbeutel-Probe",
     "FAQ_Q1": "Muss ich die Gratisprobe in den Warenkorb legen?",
     "FAQ_A1": "Nein, die kostenlose Nikotinbeutel-Probe wird bei aktiver Aktion automatisch Ihrer Bestellung hinzugefügt.",

@@ -245,6 +245,7 @@ export const navItems = [
   "Bestsellers",
   "Offers & Deals",
   "All Brands",
+  "Blog",
 ];
 
 const HOVER_CLOSE_DELAY = 250;
@@ -256,6 +257,7 @@ const HeaderList = ({ isScrolled }) => {
     goToBestsellers,
     goToAllBrands,
     goToFlavour,
+    goToBlog,
   } = useNavigation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
@@ -362,7 +364,9 @@ const HeaderList = ({ isScrolled }) => {
             ? goToBestsellers()
             : index === 7
               ? goToAllBrands()
-              : null;
+              : index === 8
+                ? goToBlog()
+                : null;
 
     return (
       <FlexItem

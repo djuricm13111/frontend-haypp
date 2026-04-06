@@ -12,6 +12,8 @@ import Checkout from "./pages/Checkout";
 import Register from "./pages/Register";
 import FreeSample from "./pages/FreeSample";
 import UserProfile from "./pages/UserProfile";
+import BlogListing from "./pages/BlogListing";
+import BlogArticle from "./pages/BlogArticle";
 import SiteFooter from "./layouts/footer/SiteFooter";
 import { shopSearchPath, normalizeShopLang } from "./utils/shopRoutes";
 
@@ -68,6 +70,8 @@ function App() {
                   element={<SearchLegacyRedirect />}
                 />
                 <Route path="/:lang/search" element={<SearchResults />} />
+                <Route path="/:lang/blog" element={<BlogListing />} />
+                <Route path="/:lang/blog/:slug" element={<BlogArticle />} />
                 <Route
                   path="/:lang/snus-verkauf/flavours"
                   element={<Shop />}

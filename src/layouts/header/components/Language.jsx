@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { useTranslation } from "react-i18next";
 import { languages } from "../../../utils/global_const";
@@ -264,6 +265,7 @@ const DrawerLangButton = styled.button`
  */
 const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
   const { i18n, t } = useTranslation();
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
   const triggerRef = useRef(null);
@@ -315,21 +317,30 @@ const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
     setCurrentLang(lang);
     setShowMenu(false);
 
-    const currentUrl = window.location.pathname;
-    const urlSegments = currentUrl.split("/").filter((segment) => segment);
-
-    const newUrlSegments = urlSegments.filter(
-      (segment) =>
-        !languages.some(
-          (language) => language.code.toLowerCase() === segment.toLowerCase()
-        )
+    const pathname = window.location.pathname;
+    const search = window.location.search;
+    const hash = window.location.hash;
+    const segments = pathname.split("/").filter(Boolean);
+    const first = segments[0]?.toLowerCase();
+    const hasLangPrefix = languages.some(
+      (l) => l.code.toLowerCase() === first
     );
 
-    newUrlSegments.unshift(lang.code.toLowerCase());
+    /**
+     * Samo rute sa `/:lang/...` menjaju putanju. `pushState` ne obaveštava React Router,
+     * pa useParams (npr. lang u blogu/shopu) ostaje star — UI prevod i sadržaj nisu usklađeni.
+     * Stranice bez jezičkog prefiksa (/, /checkout, …): samo i18n.
+     */
+    if (!hasLangPrefix) {
+      return;
+    }
 
-    const newUrl = `/${newUrlSegments.join("/")}`;
+    const rest = segments.slice(1);
+    const newPath =
+      `/${lang.code.toLowerCase()}` +
+      (rest.length ? `/${rest.join("/")}` : "");
 
-    window.history.pushState({}, "", newUrl);
+    navigate(`${newPath}${search}${hash}`, { replace: true });
   };
 
   const portal =

@@ -37,6 +37,7 @@ import flavorMint from "../../assets/images/flavors/mint.svg";
 import Header from "../../layouts/header/Header";
 import HomeIntroText from "../../components/home/HomeIntroText";
 import HomeAboutTrust from "../../components/home/HomeAboutTrust";
+import HomeBlogSlider from "../../components/home/HomeBlogSlider";
 import {
   shopBasePath,
   shopBrandPath,
@@ -66,7 +67,7 @@ const HomeMain = () => {
         key: "velo",
         imageSrc: sliderVelo,
         imageAlt: "Velo",
-        priceLabel: "From £2.49 / unit",
+        priceLabel: "From €2.49 / unit",
         title: "Velo Tasteful Trio",
         ctaLabel: "Buy here",
         ctaHref: shopBrandPath(lang, "velo"),
@@ -75,7 +76,7 @@ const HomeMain = () => {
         key: "zone",
         imageSrc: sliderZone,
         imageAlt: "Zone",
-        priceLabel: "From £3.10 / pack",
+        priceLabel: "From €3.10 / pack",
         title: "Zone",
         ctaLabel: "Buy here",
         /** Nema odgovarajućeg brend slug-a u `brand_descriptions` — vodi na punu prodavnicu. */
@@ -85,7 +86,7 @@ const HomeMain = () => {
         key: "zyn",
         imageSrc: sliderZyn,
         imageAlt: "ZYN",
-        priceLabel: "From £0.99 / unit",
+        priceLabel: "From €0.99 / unit",
         title: "ZYN Blueberry Mint",
         ctaLabel: "Buy here",
         ctaHref: shopBrandPath(lang, "zyn"),
@@ -110,7 +111,7 @@ const HomeMain = () => {
         imageSrc: bannerNordic,
         imageAlt: "Nordic Spirit",
         brand: "Nordic Spirit",
-        priceLabel: "From £2.29 / unit",
+        priceLabel: "From €2.29 / unit",
         href: shopBrandPath(lang, "nordic-spirit"),
       },
       {
@@ -272,6 +273,7 @@ const HomeMain = () => {
       />
 
       <HomeNewArrivalsSlider />
+      <HomeBlogSlider />
       <HomeAboutTrust />
     </>
   );
