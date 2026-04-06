@@ -6,7 +6,7 @@ import {
   blogBeginnerAprèsBlueberryMini,
   blogBeginnerZynAppleMintMini,
   blogBeginnerZynSpearmintMini,
-} from "./blogBeginnerProductMocks";
+} from "../../data/manualProductMocks";
 
 /**
  * Beginner’s guide to nicotine pouches (en / de).
@@ -128,13 +128,13 @@ export const beginnersGuideNicotinePouches = {
   openingParagraphs: {
     en: [
       "This beginner’s guide to nicotine pouches gives a clear overview of how to start using pouches responsibly.",
-      'You will learn how to choose strength, pouch size, and flavour, plus what to expect in the first seven days. Our <a href="/{{LANG}}/snus-verkauf">shop assortment</a> includes many formats—filter by strength and brand to narrow options.',
+      'You will learn how to choose strength, pouch size, and flavour, plus what to expect in the first seven days. <a href="/{{LANG}}/snus-verkauf">Buy nicotine pouches online</a> at SnusCo—our assortment spans many formats; filter by strength and brand to narrow options.',
       "Note: nicotine pouches are sometimes called ‘snus’ in everyday language, but unlike traditional snus they are tobacco-leaf-free.",
       "<strong>This guide is for existing nicotine users only.</strong> SnusCo does not encourage non-users to start using nicotine—nicotine is addictive.",
     ],
     de: [
       "Dieser Einsteiger-Guide erklärt den verantwortungsvollen Einstieg mit Nikotinbeuteln.",
-      'Sie lernen, Stärke, Format und Geschmack zu wählen und was die ersten sieben Tage typischerweise bringt. In unserem <a href="/{{LANG}}/snus-verkauf">Shop</a> filtern Sie nach Stärke und Marke.',
+      'Sie lernen, Stärke, Format und Geschmack zu wählen und was die ersten sieben Tage typischerweise bringt. <a href="/{{LANG}}/snus-verkauf">Nikotinbeutel online kaufen</a> bei SnusCo—vielfältige Formate; nach Stärke und Marke filtern.',
       "Im Alltag werden Nikotinbeutel manchmal „Snus“ genannt—im Gegensatz zu klassischem Snus sind sie ohne Tabakblatt.",
       "<strong>Nur für bestehende Nikotinnutzer.</strong> SnusCo ermutigt Nicht-Nutzer nicht zum Einstieg—Nikotin macht süchtig.",
     ],
@@ -148,14 +148,14 @@ export const beginnersGuideNicotinePouches = {
       },
       paragraphs: {
         en: [
-          "Nicotine pouch strength is the most important factor for beginners (sometimes called oral nicotine products).",
-          "<strong>Start low:</strong> aim for about 1.5–6 mg per pouch where available. Higher strengths can feel more intense if you are new to pouches.",
-          "<strong>Start short:</strong> keep the pouch in for about 10–30 minutes at first, then lengthen gradually if it feels comfortable.",
+          '<a href="/{{LANG}}/snus-verkauf/strength">Nicotine pouch strength</a> is the most important factor for beginners (sometimes called oral nicotine products).',
+          '<strong>Start low:</strong> aim for about 1.5–6 mg per pouch where available. Explore <a href="/{{LANG}}/snus-verkauf/strength/low">low-strength nicotine pouches</a> in the shop. Higher strengths can feel more intense if you are new to pouches.',
+          '<strong>Start short:</strong> keep the pouch in for about 10–30 minutes at first, then lengthen gradually if it feels comfortable. When you are ready to step up, <a href="/{{LANG}}/snus-verkauf/strength/normal">normal strength nicotine pouches</a> are a common next tier.',
         ],
         de: [
-          "Die Stärke ist für Einsteiger der wichtigste Faktor.",
-          "<strong>Niedrig starten:</strong> etwa 1,5–6 mg pro Beutel, soweit erhältlich. Höhere Stärken wirken intensiver.",
-          "<strong>Kurz starten:</strong> zunächst etwa 10–30 Minuten, dann schrittweise verlängern.",
+          'Die <a href="/{{LANG}}/snus-verkauf/strength">Nikotinstärke bei Nikotinbeuteln</a> ist für Einsteiger der wichtigste Faktor.',
+          '<strong>Niedrig starten:</strong> etwa 1,5–6 mg pro Beutel, soweit erhältlich. Im Shop: <a href="/{{LANG}}/snus-verkauf/strength/low">schwach dosierte Nikotinbeutel</a>. Höhere Stärken wirken intensiver.',
+          '<strong>Kurz starten:</strong> zunächst etwa 10–30 Minuten, dann schrittweise verlängern. Später eignen sich oft <a href="/{{LANG}}/snus-verkauf/strength/normal">Nikotinbeutel mit normaler Stärke</a>.',
         ],
       },
     },
@@ -188,13 +188,13 @@ export const beginnersGuideNicotinePouches = {
       },
       paragraphs: {
         en: [
-          "Flavour does not change the printed nicotine mg value, but it can change how intense the sensation feels.",
-          "<strong>Beginner-friendly flavours:</strong> fruit blends, vanilla, light mint (peppermint or mild menthol).",
+          'Flavour does not change the printed nicotine mg value, but it can change how intense the sensation feels. Browse <a href="/{{LANG}}/snus-verkauf/flavours">snus flavours</a> by profile to compare options.',
+          '<strong>Beginner-friendly flavours:</strong> fruit blends, vanilla, light mint—<a href="/{{LANG}}/snus-verkauf/flavours/mint">mint nicotine pouches</a> are a popular starting point (peppermint or mild menthol).',
           "<strong>Consider saving for later:</strong> very strong mint or intense citrus—some people find them sharp at first.",
         ],
         de: [
-          "Der Geschmack ändert nicht die mg-Angabe, kann aber die empfundene Schärfe beeinflussen.",
-          "<strong>Milder Einstieg:</strong> Fruchtmischungen, Vanille, leichte Minze.",
+          'Der Geschmack ändert nicht die mg-Angabe, kann aber die empfundene Schärfe beeinflussen. Übersicht: <a href="/{{LANG}}/snus-verkauf/flavours">Snus-Geschmacksrichtungen</a> nach Profil.',
+          '<strong>Milder Einstieg:</strong> Fruchtmischungen, Vanille, leichte Minze—<a href="/{{LANG}}/snus-verkauf/flavours/mint">Minze-Nikotinbeutel</a> sind oft ein guter Einstieg.',
           "<strong>Später probieren:</strong> sehr starke Minze oder intensive Zitrusnoten.",
         ],
       },
@@ -328,11 +328,11 @@ export const beginnersGuideNicotinePouches = {
       paragraphs: {
         en: [
           "Starting slow, choosing low strengths, and experimenting with milder flavours are practical ways to begin with nicotine pouches.",
-          'Use the first week to notice how you respond and adjust slowly. Browse <a href="/{{LANG}}/snus-verkauf">nicotine pouches online at SnusCo</a> for beginner-friendly options from brands such as Nordic Spirit, ZYN, and VELO—subject to stock.',
+          'Use the first week to notice how you respond and adjust slowly. <a href="/{{LANG}}/snus-verkauf">Buy nicotine pouches online</a> at SnusCo for beginner-friendly options from brands such as Nordic Spirit, ZYN, and VELO—subject to stock.',
         ],
         de: [
           "Langsam starten, niedrige Stärken und mildere Geschmäcker zu wählen, ist ein guter Anfang.",
-          'In der ersten Woche beobachten Sie Ihre Reaktion und passen Sie sich an. Im <a href="/{{LANG}}/snus-verkauf">SnusCo-Shop</a> finden Sie u. a. Nordic Spirit, ZYN und VELO—je nach Verfügbarkeit.',
+          'In der ersten Woche beobachten Sie Ihre Reaktion und passen Sie sich an. <a href="/{{LANG}}/snus-verkauf">Nikotinbeutel online kaufen</a> bei SnusCo—u. a. Nordic Spirit, ZYN und VELO, je nach Verfügbarkeit.',
         ],
       },
     },

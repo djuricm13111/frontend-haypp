@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import ProductCard from "../product/ProductCard";
-import { homeFeaturedProductsMock } from "./homeFeaturedProductsMock";
+import { homeFeaturedProductsMock } from "../../data/manualProductMocks";
 
 const Section = styled.section`
   box-sizing: border-box;

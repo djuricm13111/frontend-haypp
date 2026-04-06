@@ -23,7 +23,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--spacing-md);
-  align-items: start;
+  align-items: stretch;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -38,14 +38,14 @@ const Grid = styled.div`
 const Card = styled.article`
   display: flex;
   flex-direction: column;
-  height: auto;
+  height: 100%;
+  min-height: 0;
   background: var(--bg-100);
   border-radius: ${RADIUS};
   overflow: hidden;
   border: 1px solid #e8e8e8;
   box-shadow: var(--shadow-small);
   min-width: 0;
-  padding-bottom: var(--spacing-xs);
 `;
 
 const ImageWrap = styled.div`
@@ -90,6 +90,18 @@ const CardImage = styled.img`
   }
 `;
 
+/** Donji deo kartice — raste da bi dugme moglo uz donju ivicu (tablet/desktop). */
+const CardLower = styled.div`
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 0;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+`;
+
 const TextBlock = styled.div`
   flex: 0 0 auto;
   display: flex;
@@ -119,6 +131,8 @@ const PriceLine = styled.p`
   line-height: 1.35;
 `;
 
+const TABLET_UP = "(min-width: 768px)";
+
 const buyLinkStyles = `
   display: flex;
   align-items: center;
@@ -127,7 +141,7 @@ const buyLinkStyles = `
   width: 88%;
   max-width: 100%;
   margin: 0;
-  margin-top: var(--spacing-xxs);
+  margin-top: auto;
   padding: 6px var(--spacing-md);
   box-sizing: border-box;
   background: var(--primary-100);
@@ -139,6 +153,16 @@ const buyLinkStyles = `
   border: 0;
   border-radius: 4px;
   transition: background var(--transition-fast);
+
+  @media ${TABLET_UP} {
+    align-self: stretch;
+    width: 100%;
+    max-width: none;
+    padding: 11px var(--spacing-md);
+    min-height: 44px;
+    font-size: 0.8125rem;
+    border-radius: 0 0 ${RADIUS} ${RADIUS};
+  }
 
   &:hover {
     background: var(--primary-200);
@@ -225,15 +249,17 @@ const HomePromoCardGrid = ({ items, className, children }) => {
                   />
                 )}
               </ImageWrap>
-              <TextBlock>
-                <Brand>{item.brand}</Brand>
-                <PriceLine>{item.priceLabel}</PriceLine>
-              </TextBlock>
-              {internal ? (
-                <BuyRouterLink to={item.href}>{buyLabel}</BuyRouterLink>
-              ) : (
-                <BuyLink href={item.href}>{buyLabel}</BuyLink>
-              )}
+              <CardLower>
+                <TextBlock>
+                  <Brand>{item.brand}</Brand>
+                  <PriceLine>{item.priceLabel}</PriceLine>
+                </TextBlock>
+                {internal ? (
+                  <BuyRouterLink to={item.href}>{buyLabel}</BuyRouterLink>
+                ) : (
+                  <BuyLink href={item.href}>{buyLabel}</BuyLink>
+                )}
+              </CardLower>
             </Card>
           );
         })}

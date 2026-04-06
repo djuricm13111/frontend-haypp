@@ -1,3 +1,10 @@
+/**
+ * Ručno dodati proizvodi za ProductCard (početna, blog) — jedan izvor istine.
+ * Polja kao u shop/API: id, slug, manufacturer, images, …
+ */
+
+// --- Zajedničke slike (S3) -------------------------------------------------
+
 const VELO_RUBY_BERRY_FRONT =
   "https://snus-s3.s3.eu-north-1.amazonaws.com/products/velo/WEBP/velo_BAT2011_SE_VELO_RUBY_BERRY_front.webp";
 const VELO_RUBY_BERRY_LEFT =
@@ -14,16 +21,6 @@ const ZYN_APPLE_MINT_MINI_DRY_LEFT =
 const XQS_EPIC_FREEZE_FRONT =
   "https://snus-s3.s3.eu-north-1.amazonaws.com/products/xqs/WEBP/xqs_epic_freeze_front.webp";
 
-/**
- * Demo proizvodi za početnu — ista polja koja očekuje ProductCard i cart (id, manufacturer, nicotine, images…).
- *
- * Opcioni bedž na slici:
- * - `card_badge: { label, backgroundColor?, color? }` ili `labelKey` (i18n) umesto `label`
- * - aliasi: `background`, `textColor` umesto `backgroundColor` / `color`
- * - legacy: `show_offer: true` → isti tekst kao PRODUCT_CARD.OFFER, podrazumevane boje
- *
- * Zameni API podacima kada bude spremno.
- */
 function imgPair(src) {
   return [
     { is_primary: true, thumbnail: src, large: src },
@@ -31,6 +28,15 @@ function imgPair(src) {
   ];
 }
 
+// --- Početna: istaknuti proizvodi ------------------------------------------
+
+/**
+ * Demo proizvodi za početnu — ista polja koja očekuje ProductCard i cart.
+ *
+ * Opcioni bedž na slici:
+ * - `card_badge: { label, backgroundColor?, color? }` ili `labelKey` (i18n)
+ * - legacy: `show_offer: true` → PRODUCT_CARD.OFFER
+ */
 export const homeFeaturedProductsMock = [
   {
     id: "home-featured-velo-ruby-berry",
@@ -104,4 +110,53 @@ export const homeFeaturedProductsMock = [
     },
     images: imgPair(XQS_EPIC_FREEZE_FRONT),
   },
+];
+
+// --- Blog: beginner guide (ProductCard u članku) --------------------------
+
+/** Slugovi odgovaraju `descriptions.json` / PDP putanjama gde postoje. */
+export const blogBeginnerZynAppleMintMini = {
+  id: "blog-bg-zyn-apple-mint-mini-s2",
+  name: "Apple Mint Mini",
+  slug: "zyn-apple-mint-mini-s2",
+  category_name: "ZYN",
+  manufacturer: "ZYN",
+  nicotine: 3,
+  price: 2.49,
+  is_in_stock: "in_stock",
+  show_offer: true,
+  images: imgPair(ZYN_APPLE_MINT_MINI_DRY_LEFT),
+};
+
+export const blogBeginnerZynSpearmintMini = {
+  id: "blog-bg-zyn-spearmint-mini-s1",
+  name: "Spearmint Mini",
+  slug: "zyn-spearmint-mini-s1",
+  category_name: "ZYN",
+  manufacturer: "ZYN",
+  nicotine: 1.5,
+  price: 2.49,
+  is_in_stock: "in_stock",
+  show_offer: true,
+  images: imgPair(ZYN_APPLE_MINT_MINI_DRY_LEFT),
+};
+
+/** PDP: `apres-blueberry-mini` — tekst u članku može da pominje On! Berry dok je u katalogu drugačiji SKU. */
+export const blogBeginnerAprèsBlueberryMini = {
+  id: "blog-bg-apres-blueberry-mini",
+  name: "Blueberry Mini",
+  slug: "apres-blueberry-mini",
+  category_name: "apres",
+  manufacturer: "Après",
+  nicotine: 3.2,
+  price: 2.89,
+  is_in_stock: "in_stock",
+  show_offer: true,
+  images: imgPair(VELO_RUBY_BERRY_FRONT),
+};
+
+export const blogBeginnerGuideProductMocks = [
+  blogBeginnerZynAppleMintMini,
+  blogBeginnerZynSpearmintMini,
+  blogBeginnerAprèsBlueberryMini,
 ];

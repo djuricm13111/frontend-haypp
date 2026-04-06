@@ -349,18 +349,77 @@ const BodySubhead = styled.p`
 `;
 
 const Crumbs = styled.nav`
-  font-size: var(--font-size-small);
-  font-family: "Montserrat", sans-serif;
-  color: var(--text-200);
   margin-bottom: var(--spacing-md);
+`;
 
-  a {
-    color: var(--primary-100);
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
+const CrumbsList = styled.ol`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.65rem 1rem 0.7rem;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 48, 87, 0.05) 0%,
+    rgba(0, 48, 87, 0.07) 100%
+  );
+  border: 1px solid rgba(0, 48, 87, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  box-sizing: border-box;
+`;
+
+const CrumbsItem = styled.li`
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+`;
+
+const CrumbSep = styled.span`
+  display: inline-flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.28);
+  font-weight: 600;
+  font-size: 0.75rem;
+  user-select: none;
+  flex-shrink: 0;
+`;
+
+const CrumbLink = styled(Link)`
+  color: var(--primary-100);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+
+  &:hover {
+    color: var(--primary-200);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-100);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+`;
+
+const CrumbCurrent = styled.span`
+  color: var(--text-100);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 const CategoryRow = styled.div`
@@ -773,7 +832,7 @@ function BlogArticle() {
         <LayoutWrap>
         <BlogArticleRoot>
           <IntroFullWidth>
-            <CrumbsNav lang={lang} />
+            <CrumbsNav lang={lang} currentTitle={title} />
             <CategoryRow>
               {categoryLabel && (
                 <CategoryTag>{categoryLabel}</CategoryTag>
@@ -1050,13 +1109,36 @@ function BlogArticle() {
   );
 }
 
-function CrumbsNav({ lang }) {
+function CrumbsNav({ lang, currentTitle }) {
   const { t } = useTranslation();
+  const safeTitle =
+    typeof currentTitle === "string" && currentTitle.trim()
+      ? currentTitle.trim()
+      : "";
+
   return (
     <Crumbs aria-label="Breadcrumb">
-      <Link to="/">{t("BLOG.CRUMB_HOME")}</Link>
-      {" · "}
-      <Link to={blogListingPath(lang)}>{t("BLOG.CRUMB_BLOG")}</Link>
+      <CrumbsList>
+        <CrumbsItem>
+          <CrumbLink to="/">{t("BLOG.CRUMB_HOME")}</CrumbLink>
+        </CrumbsItem>
+        <CrumbsItem aria-hidden>
+          <CrumbSep>›</CrumbSep>
+        </CrumbsItem>
+        <CrumbsItem>
+          <CrumbLink to={blogListingPath(lang)}>{t("BLOG.CRUMB_BLOG")}</CrumbLink>
+        </CrumbsItem>
+        {safeTitle ? (
+          <>
+            <CrumbsItem aria-hidden>
+              <CrumbSep>›</CrumbSep>
+            </CrumbsItem>
+            <CrumbsItem>
+              <CrumbCurrent aria-current="page">{safeTitle}</CrumbCurrent>
+            </CrumbsItem>
+          </>
+        ) : null}
+      </CrumbsList>
     </Crumbs>
   );
 }
