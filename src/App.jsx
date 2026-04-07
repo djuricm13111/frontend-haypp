@@ -17,6 +17,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import BlogListing from "./pages/BlogListing";
 import BlogArticle from "./pages/BlogArticle";
+import AdminOrdersInbox from "./pages/AdminOrdersInbox";
 import SiteFooter from "./layouts/footer/SiteFooter";
 import { shopSearchPath, normalizeShopLang } from "./utils/shopRoutes";
 
@@ -59,6 +60,8 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/free-sample" element={<FreeSample />} />
                 <Route path="/account" element={<UserProfile />} />
+                <Route path="/admin/porudzbine" element={<AdminOrdersInbox />} />
+                <Route path="/admin/porudzbine/inbox" element={<Navigate to="/admin/porudzbine" replace />} />
                 <Route path="/verify" element={<VerifyEmail />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route

@@ -780,4 +780,92 @@ export default class APIService {
       throw error;
     }
   }
+
+  /** Admin: lista porudžbina (`is_staff`). Parametri: `q`, `queue` (all|to_send|sent), `status`. */
+  static async adminListOrders(accessToken, { q, queue, status } = {}) {
+    const params = new URLSearchParams();
+    if (q) params.set("q", String(q).trim());
+    if (queue) params.set("queue", queue);
+    if (status) params.set("status", status);
+    const qs = params.toString();
+    const url = `${this.URL}api/admin/orders/${qs ? `?${qs}` : ""}`;
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "x-domain": DOMAIN,
+      },
+    });
+    return response.data;
+  }
+
+  static async adminGetOrder(accessToken, orderId) {
+    const response = await axios.get(`${this.URL}api/admin/orders/${orderId}/`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "x-domain": DOMAIN,
+      },
+    });
+    return response.data;
+  }
+
+  /** Masovna promena statusa: `{ order_ids: number[], order_status: string }` */
+  static async adminBulkOrderStatus(accessToken, order_ids, order_status) {
+    const response = await axios.post(
+      `${this.URL}api/admin/orders/bulk-status/`,
+      { order_ids, order_status },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+          "x-domain": DOMAIN,
+        },
+      }
+    );
+    return response.data;
+  }
+
+  static async adminPatchOrderStatus(accessToken, orderId, order_status) {
+    const response = await axios.patch(
+      `${this.URL}api/admin/orders/${orderId}/`,
+      { order_status },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+          "x-domain": DOMAIN,
+        },
+      }
+    );
+    return response.data;
+  }
+
+  static async adminPatchOrderItemShipped(accessToken, orderId, itemId, is_shipped) {
+    const response = await axios.patch(
+      `${this.URL}api/admin/orders/${orderId}/items/${itemId}/`,
+      { is_shipped },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+          "x-domain": DOMAIN,
+        },
+      }
+    );
+    return response.data;
+  }
+
+  static async adminMarkAllShipped(accessToken, orderId) {
+    const response = await axios.post(
+      `${this.URL}api/admin/orders/${orderId}/mark-all-shipped/`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+          "x-domain": DOMAIN,
+        },
+      }
+    );
+    return response.data;
+  }
 }
