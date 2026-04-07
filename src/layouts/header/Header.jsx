@@ -588,7 +588,7 @@ const Header = () => {
               <Language />
             </TopBarLanguageSlot>
             <Login />
-            <CartMenu isScrolled={isScrolled} />
+            {!isMobile && !isScrolled && <CartMenu isScrolled={false} />}
           </TopBarDesktopRight>
         </TopHeaderWrapper>
       </TopHeaderSection>

@@ -1,4 +1,5 @@
 import { useContext, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
@@ -260,17 +261,44 @@ const ReorderBtn = styled.button`
   }
 `;
 
-const ReorderNotice = styled.p`
-  margin: 0;
-  font-size: 13px;
+/** Iznad korpe (modal ~1050) da korisnik uvek vidi upozorenje. */
+const ReorderToastWrap = styled.div`
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1070;
+  width: min(440px, calc(100vw - 24px));
+  padding: 14px 42px 14px 16px;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-large);
+  background: var(--bg-100);
+  border: 1px solid rgba(0, 32, 105, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.14);
+  font-size: 14px;
   line-height: 1.45;
-  color: var(--text-200);
-  width: 100%;
+  color: var(--text-100);
+`;
 
-  @media (min-width: 720px) {
-    max-width: 360px;
-    text-align: right;
-    align-self: flex-end;
+const ReorderToastClose = styled.button`
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--border-radius-base);
+  background: transparent;
+  color: var(--text-200);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  &:hover {
+    color: var(--text-100);
+    background: var(--bg-200);
   }
 `;
 
@@ -601,6 +629,12 @@ function OrderHistorySection({ orders, isEmailVerified }) {
     setVisibleCount(PAGE_SIZE);
   }, [sorted.length]);
 
+  useEffect(() => {
+    if (!reorderNotice) return;
+    const timer = window.setTimeout(() => setReorderNotice(null), 14000);
+    return () => window.clearTimeout(timer);
+  }, [reorderNotice]);
+
   const buildPdfLabels = (order) => ({
     title: t("ACCOUNT.INVOICE_PDF_TITLE"),
     orderRef: t("ACCOUNT.INVOICE_ORDER_REF"),
@@ -642,19 +676,20 @@ function OrderHistorySection({ orders, isEmailVerified }) {
     dispatch(cartActions.resetCart());
 
     let added = 0;
-    let failed = 0;
+    let skippedOutOfStock = 0;
+    let skippedOther = 0;
 
     for (const item of items) {
       const slug = item.product_details?.slug;
       const qty = Number(item.quantity) || 0;
       if (!slug || qty <= 0) {
-        failed += 1;
+        skippedOther += 1;
         continue;
       }
       try {
         const product = await APIService.GetProductBySlug(slug);
         if (!productIsAvailableForCart(product)) {
-          failed += 1;
+          skippedOutOfStock += 1;
           continue;
         }
         dispatch(
@@ -666,25 +701,46 @@ function OrderHistorySection({ orders, isEmailVerified }) {
         added += 1;
       } catch (e) {
         console.error(e);
-        failed += 1;
+        skippedOther += 1;
       }
     }
 
     setReorderBusyId(null);
 
-    setIsCartOpen(true);
-
-    if (failed > 0 && added === 0) {
+    const failed = skippedOutOfStock + skippedOther;
+    if (failed > 0) {
+      let message;
+      if (skippedOutOfStock > 0 && skippedOther === 0) {
+        message =
+          added > 0
+            ? t("ACCOUNT.REORDER_NOTICE_PARTIAL_OOS", {
+                count: skippedOutOfStock,
+              })
+            : t("ACCOUNT.REORDER_NOTICE_ALL_OOS");
+      } else if (skippedOutOfStock > 0 && skippedOther > 0) {
+        message =
+          added > 0
+            ? t("ACCOUNT.REORDER_NOTICE_MIXED_PARTIAL", {
+                stockCount: skippedOutOfStock,
+                otherCount: skippedOther,
+              })
+            : t("ACCOUNT.REORDER_NOTICE_MIXED_ALL_FAILED", {
+                stockCount: skippedOutOfStock,
+                otherCount: skippedOther,
+              });
+      } else {
+        message =
+          added > 0
+            ? t("ACCOUNT.REORDER_PARTIAL", { count: skippedOther })
+            : t("ACCOUNT.REORDER_ALL_FAILED");
+      }
       setReorderNotice({
         orderId: oid,
-        message: t("ACCOUNT.REORDER_ALL_FAILED"),
-      });
-    } else if (failed > 0) {
-      setReorderNotice({
-        orderId: oid,
-        message: t("ACCOUNT.REORDER_PARTIAL", { count: failed }),
+        message,
       });
     }
+
+    setIsCartOpen(true);
   };
 
   if (!isEmailVerified) {
@@ -702,8 +758,26 @@ function OrderHistorySection({ orders, isEmailVerified }) {
     return <Muted>{t("ACCOUNT.NO_ORDERS")}</Muted>;
   }
 
+  const reorderToast =
+    typeof document !== "undefined" && reorderNotice
+      ? createPortal(
+          <ReorderToastWrap role="alert">
+            {reorderNotice.message}
+            <ReorderToastClose
+              type="button"
+              aria-label={t("ACCOUNT.REORDER_TOAST_DISMISS")}
+              onClick={() => setReorderNotice(null)}
+            >
+              ×
+            </ReorderToastClose>
+          </ReorderToastWrap>,
+          document.body
+        )
+      : null;
+
   return (
     <>
+      {reorderToast}
       <OrdersLayout>
         {visible.map((order) => {
           const id = order.id;
@@ -773,11 +847,6 @@ function OrderHistorySection({ orders, isEmailVerified }) {
                           : t("ACCOUNT.ORDER_SHOW_DETAILS")}
                       </ToggleBtn>
                     </HeaderButtonRow>
-                    {reorderNotice?.orderId === id ? (
-                      <ReorderNotice role="status">
-                        {reorderNotice.message}
-                      </ReorderNotice>
-                    ) : null}
                   </HeaderAside>
                 </OrderHeaderTop>
               </OrderHeaderBar>
