@@ -300,6 +300,7 @@ export const ProductProvider = ({ children }) => {
     filteredProducts,
     setFilteredProducts,
 
+    isCartOpen,
     setIsCartOpen,
     maxAttributes,
     activateConffete,

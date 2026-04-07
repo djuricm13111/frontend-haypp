@@ -9,6 +9,8 @@ import { AuthUserContext } from "../context/AuthUserContext";
 import { useNavigation } from "../utils/navigation";
 import { shopBasePath, normalizeShopLang } from "../utils/shopRoutes";
 import UserAddressBookSection from "../components/account/UserAddressBookSection";
+import OrderHistorySection from "../components/account/OrderHistorySection";
+import { isAccountEmailVerified } from "../utils/emailVerification";
 
 const PageRoot = styled.div`
   width: 100%;
@@ -152,6 +154,37 @@ const Muted = styled.p`
   line-height: 1.5;
 `;
 
+const VerifyBanner = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-md);
+  border-radius: var(--border-radius-large);
+  border: 1px solid rgba(0, 32, 105, 0.14);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 32, 105, 0.07) 0%,
+    var(--bg-100) 55%
+  );
+  box-shadow: var(--shadow-small);
+
+  strong {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--text-100);
+    margin-bottom: var(--spacing-xs);
+    font-family: "Montserrat", sans-serif;
+  }
+
+  p {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-200);
+  }
+`;
+
 const SuccessText = styled.p`
   margin: 0 0 var(--spacing-sm);
   font-size: 14px;
@@ -166,37 +199,55 @@ const PointsRow = styled.div`
   color: var(--text-100);
 `;
 
-const OrderTable = styled.div`
+const TabBar = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 0;
-  width: 100%;
-  overflow-x: auto;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 var(--spacing-lg);
+  padding: 4px;
+  border-radius: var(--border-radius-large);
+  background: var(--bg-300);
+  box-sizing: border-box;
+
+  @media (min-width: 1024px) {
+    width: fit-content;
+    max-width: 100%;
+    padding: 5px;
+    gap: 5px;
+  }
 `;
 
-const OrderHead = styled.div`
-  display: grid;
-  grid-template-columns: minmax(60px, 0.8fr) minmax(100px, 1fr) minmax(80px, 1fr) minmax(70px, 1fr);
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: var(--text-200);
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--bg-300);
-`;
-
-const OrderRow = styled.div`
-  display: grid;
-  grid-template-columns: minmax(60px, 0.8fr) minmax(100px, 1fr) minmax(80px, 1fr) minmax(70px, 1fr);
-  gap: 8px;
+const TabButton = styled.button`
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--border-radius-base);
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--bg-300);
-  color: var(--text-100);
-  &:last-child {
-    border-bottom: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-200);
+  background: transparent;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+
+  &[aria-selected="true"] {
+    background: var(--bg-100);
+    color: var(--text-100);
+    box-shadow: var(--shadow-small);
+  }
+
+  &:hover {
+    color: var(--text-100);
+  }
+
+  @media (min-width: 1024px) {
+    flex: 0 1 auto;
+    min-width: 0;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.35;
   }
 `;
 
@@ -213,32 +264,6 @@ function readStoredUserProfile() {
   } catch {
     return null;
   }
-}
-
-function formatOrderDate(iso) {
-  if (!iso) return "—";
-  try {
-    return new Date(iso).toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  } catch {
-    return String(iso);
-  }
-}
-
-function formatOrderTotal(order) {
-  const tp = order?.total_price;
-  if (tp == null) return "—";
-  if (typeof tp === "string") return tp;
-  if (typeof tp === "object") {
-    if (tp.amount != null) {
-      const cur = tp.currency || "";
-      return `${tp.amount} ${cur}`.trim();
-    }
-  }
-  return String(tp);
 }
 
 /**
@@ -284,6 +309,7 @@ const UserProfile = () => {
   const [saving, setSaving] = useState(false);
   const [saveOk, setSaveOk] = useState(false);
   const [saveErr, setSaveErr] = useState(null);
+  const [accountTab, setAccountTab] = useState("orders");
 
   useEffect(() => {
     if (!accessToken) {
@@ -327,6 +353,11 @@ const UserProfile = () => {
   const userPoints = effectiveProfile?.user_points;
   const orders = effectiveProfile?.order_history || [];
 
+  const isEmailVerified = useMemo(
+    () => isAccountEmailVerified(accessToken, effectiveProfile),
+    [accessToken, effectiveProfile]
+  );
+
   const handleSave = async (e) => {
     e.preventDefault();
     setSaveOk(false);
@@ -364,7 +395,58 @@ const UserProfile = () => {
           <LoadingText>{t("ACCOUNT.LOADING")}</LoadingText>
         )}
 
+        {!loading && !isEmailVerified && (
+          <VerifyBanner role="status">
+            <strong>{t("ACCOUNT.VERIFY_BANNER_TITLE")}</strong>
+            <p>{t("ACCOUNT.VERIFY_BANNER_BODY")}</p>
+            <RouterLinkButton to="/verify">{t("ACCOUNT.VERIFY_EMAIL_CTA")}</RouterLinkButton>
+          </VerifyBanner>
+        )}
+
         <>
+          <TabBar role="tablist" aria-label={t("ACCOUNT.TABLIST_LABEL")}>
+            <TabButton
+              type="button"
+              role="tab"
+              id="account-tab-orders"
+              aria-selected={accountTab === "orders"}
+              aria-controls="account-panel-orders"
+              onClick={() => setAccountTab("orders")}
+            >
+              {t("ACCOUNT.TAB_ORDERS")}
+            </TabButton>
+            <TabButton
+              type="button"
+              role="tab"
+              id="account-tab-details"
+              aria-selected={accountTab === "details"}
+              aria-controls="account-panel-details"
+              onClick={() => setAccountTab("details")}
+            >
+              {t("ACCOUNT.TAB_DETAILS")}
+            </TabButton>
+          </TabBar>
+
+          {accountTab === "orders" && (
+            <Card
+              role="tabpanel"
+              id="account-panel-orders"
+              aria-labelledby="account-tab-orders"
+            >
+              <SectionTitle>{t("ACCOUNT.ORDERS_TITLE")}</SectionTitle>
+              <OrderHistorySection
+                orders={orders}
+                isEmailVerified={isEmailVerified}
+              />
+            </Card>
+          )}
+
+          {accountTab === "details" && (
+          <div
+            role="tabpanel"
+            id="account-panel-details"
+            aria-labelledby="account-tab-details"
+          >
           <Card>
             <form onSubmit={handleSave}>
               <SectionTitle>{t("ACCOUNT.DETAILS_TITLE")}</SectionTitle>
@@ -435,33 +517,8 @@ const UserProfile = () => {
               <SectionTitle>{t("ACCOUNT.ADDRESSES_TITLE")}</SectionTitle>
               <UserAddressBookSection />
             </Card>
-
-            <Card>
-              <SectionTitle>{t("ACCOUNT.ORDERS_TITLE")}</SectionTitle>
-              {orders.length === 0 ? (
-                <Muted>{t("ACCOUNT.NO_ORDERS")}</Muted>
-              ) : (
-                <OrderTable>
-                  <OrderHead>
-                    <span>{t("ACCOUNT.ORDER_NUMBER")}</span>
-                    <span>{t("ACCOUNT.ORDER_DATE")}</span>
-                    <span>{t("ACCOUNT.ORDER_STATUS")}</span>
-                    <span>{t("ACCOUNT.ORDER_TOTAL")}</span>
-                  </OrderHead>
-                  {orders.slice(0, 20).map((order) => (
-                    <OrderRow key={order.id}>
-                      <span>#{order.id}</span>
-                      <span>{formatOrderDate(order.created_at)}</span>
-                      <span>{order.order_status ?? "—"}</span>
-                      <span>
-                        {order.currency_symbol ? `${order.currency_symbol} ` : ""}
-                        {formatOrderTotal(order)}
-                      </span>
-                    </OrderRow>
-                  ))}
-                </OrderTable>
-              )}
-            </Card>
+          </div>
+          )}
 
           <Actions>
             <RouterLinkButton to={shopPath}>{t("ACCOUNT.CONTINUE_SHOPPING")}</RouterLinkButton>

@@ -151,8 +151,7 @@ export const AuthUserProvider = ({ children }) => {
     if (authTokens) {
       try {
         const decoded = jwtDecode(authTokens.access);
-        console.log(decoded.is_email_verified);
-        if (!decoded.is_email_verified) {
+        if (decoded.is_email_verified === false) {
           navigate(goToVerification());
         }
       } catch (error) {
@@ -161,6 +160,28 @@ export const AuthUserProvider = ({ children }) => {
     } else {
       navigate(goToLogin());
     }
+  };
+
+  /**
+   * Potvrda koda sa mejla; zatim osvežavanje JWT-a da `is_email_verified` bude tačan.
+   */
+  const verifyEmailWithCode = async (code) => {
+    if (!authTokens?.access) throw new Error("Not authenticated");
+    if (!authTokens?.refresh) throw new Error("No refresh token");
+    await APIService.VerifyCode(String(code).trim(), authTokens.access);
+    const response = await APIService.RefreshToken(authTokens.refresh);
+    const updatedTokens = {
+      ...authTokens,
+      access: response.access,
+    };
+    setAuthTokens(updatedTokens);
+    localStorage.setItem("authTokens", JSON.stringify(updatedTokens));
+    invalidateUserProfileCache();
+    await fetchUserData(updatedTokens.access);
+  };
+
+  const resendVerificationEmail = async (email) => {
+    return APIService.ResendVerification(email);
   };
 
   async function fetchUserData(accessTokenOverride = null) {
@@ -455,6 +476,8 @@ export const AuthUserProvider = ({ children }) => {
     fetchUserData,
     updateUserInfo,
     checkLoginAndVerification,
+    verifyEmailWithCode,
+    resendVerificationEmail,
 
     changePassword,
     invalidateUserProfileCache,

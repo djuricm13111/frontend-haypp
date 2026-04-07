@@ -53,6 +53,12 @@ export function useNavigation() {
     return "/forgot-password";
   }
 
+  /** Link iz mejla: /{lang}/reset-password/{uid}/{token}/ */
+  function goToPasswordResetConfirm(lang, uid, token) {
+    const l = normalizeLang(lang);
+    return `/${l}/reset-password/${uid}/${token}`;
+  }
+
   function goToCheckout() {
     return "/checkout";
   }
@@ -114,6 +120,7 @@ export function useNavigation() {
     goToRegister,
     goToAccount,
     goToForgotPassword,
+    goToPasswordResetConfirm,
     goToCheckout,
     goToSearch,
     goToProduct,

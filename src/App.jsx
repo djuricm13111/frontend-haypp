@@ -12,6 +12,9 @@ import Checkout from "./pages/Checkout";
 import Register from "./pages/Register";
 import FreeSample from "./pages/FreeSample";
 import UserProfile from "./pages/UserProfile";
+import VerifyEmail from "./pages/VerifyEmail";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 import BlogListing from "./pages/BlogListing";
 import BlogArticle from "./pages/BlogArticle";
 import SiteFooter from "./layouts/footer/SiteFooter";
@@ -56,6 +59,8 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/free-sample" element={<FreeSample />} />
                 <Route path="/account" element={<UserProfile />} />
+                <Route path="/verify" element={<VerifyEmail />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route
                   path="/:lang/bestsellers"
                   element={<ShopListing listing="bestsellers" />}
@@ -72,6 +77,10 @@ function App() {
                 <Route path="/:lang/search" element={<SearchResults />} />
                 <Route path="/:lang/blog" element={<BlogListing />} />
                 <Route path="/:lang/blog/:slug" element={<BlogArticle />} />
+                <Route
+                  path="/:lang/reset-password/:uid/:token"
+                  element={<ResetPassword />}
+                />
                 <Route
                   path="/:lang/snus-verkauf/flavours"
                   element={<Shop />}

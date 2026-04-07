@@ -588,7 +588,14 @@ const CartMenu = ({ isScrolled }) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [shouldBeVisible, setShouldBeVisible] = useState(false);
-  const { currencyTag } = useContext(ProductContext);
+  const { currencyTag, isCartOpen, setIsCartOpen } = useContext(ProductContext);
+
+  /** Otvaranje korpe sa drugih stranica (npr. „Ponovo naruči“) — lokalni `isOpen` je izvor istine za UI. */
+  useEffect(() => {
+    if (!isCartOpen) return;
+    setIsOpen(true);
+    setIsCartOpen(false);
+  }, [isCartOpen, setIsCartOpen]);
   const navigate = useNavigate();
   const { goToCheckout } = useNavigation();
   const [bounce, setBounce] = useState(false);
