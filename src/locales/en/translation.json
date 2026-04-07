@@ -20,6 +20,7 @@
     "SIGN_UP": "Sign up",
     "SEARCH_FOR": "Search for",
     "VIEW_ALL_RESULTS": "View all search results ({{count}})",
+    "FREE_DELIVERY_OVER_MIN": "Free delivery on orders over €{{min}}",
     "LOGO_HOME": "SnusCo — home",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "New Year New Me",
@@ -190,7 +191,7 @@
       "FOOTNOTE": "Promotions, samples, and special offers may vary by product and period. While stocks last."
     },
     "HOME_PICK_GRID": {
-      "SECTION_HEADING": "Best sellers and new arrivals",
+      "SECTION_HEADING": "Best sellers and nicotine pouches",
       "TABLIST_LABEL": "Choose product list",
       "LOADING": "Loading products…",
       "EMPTY": "No products to show right now."
@@ -431,7 +432,10 @@
     "VAT": "VAT",
     "INCLUDED": "Included",
     "CHECKOUT": "Checkout",
-    "NOTICE": "For products that are currently out of stock, the expected delivery time is up to 30 days."
+    "NOTICE": "For products that are currently out of stock, the expected delivery time is up to 30 days.",
+    "FREE_SHIPPING_PROGRESS": "{{percent}}%",
+    "FREE_SHIPPING_AWAY": "{{amount}} {{currency}} left for free delivery",
+    "FREE_SHIPPING_UNLOCKED": "You have achieved free delivery!"
   },
 
   "CHECKOUT": {

@@ -17,7 +17,7 @@ import { AuthUserContext } from "../context/AuthUserContext";
 import { ProductContext } from "../context/ProductContext";
 import { useNavigation } from "../utils/navigation";
 import { cartActions } from "../store/cart-slice";
-import { calculatePrice } from "../utils/discount";
+import { getCartMerchandiseSubtotal } from "../utils/global_const";
 
 const TRANSPORT_OPTIONS = [
   { value: "Post - AT", i18n: "CHECKOUT.TRANSPORT_POST" },
@@ -443,7 +443,6 @@ const Checkout = () => {
   const { createOrder } = useContext(ProductContext);
 
   const cartItems = useSelector((state) => state.cart.itemsList);
-  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -663,12 +662,10 @@ const Checkout = () => {
     return addresses.find((a) => String(a.id) === String(savedAddressId)) || null;
   }, [savedAddressId, addresses]);
 
-  const subtotal = useMemo(() => {
-    return cartItems.reduce((sum, { product, quantity }) => {
-      const unit = calculatePrice(product.price, totalQuantity);
-      return sum + unit * quantity;
-    }, 0);
-  }, [cartItems, totalQuantity]);
+  const subtotal = useMemo(
+    () => getCartMerchandiseSubtotal(cartItems),
+    [cartItems]
+  );
 
   const orderItemsPayload = useMemo(
     () =>
@@ -1140,9 +1137,7 @@ const Checkout = () => {
                           </ItemTitle>
                           <ItemMeta>
                             ×{quantity} ·{" "}
-                            {Number(
-                              calculatePrice(product.price, totalQuantity)
-                            ).toFixed(2)}
+                            {Number(product.discount_price).toFixed(2)}
                           </ItemMeta>
                         </ItemBody>
                       </ItemRow>

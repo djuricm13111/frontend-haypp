@@ -20,6 +20,7 @@
     "SIGN_UP": "Registrieren",
     "SEARCH_FOR": "Suchen nach",
     "VIEW_ALL_RESULTS": "Alle Suchergebnisse anzeigen ({{count}})",
+    "FREE_DELIVERY_OVER_MIN": "Kostenlose Lieferung ab €{{min}} Bestellwert",
     "LOGO_HOME": "SnusCo — Startseite",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "Neues Jahr, neues Ich",
@@ -190,7 +191,7 @@
       "FOOTNOTE": "Aktionen, Gratisproben und Sonderangebote können je nach Produkt und Zeitraum variieren. Solange der Vorrat reicht."
     },
     "HOME_PICK_GRID": {
-      "SECTION_HEADING": "Bestseller und Neuheiten",
+      "SECTION_HEADING": "Bestseller und Nikotinbeutel",
       "TABLIST_LABEL": "Produktliste wählen",
       "LOADING": "Produkte werden geladen…",
       "EMPTY": "Derzeit keine Produkte verfügbar."
@@ -430,7 +431,10 @@
     "VAT": "MwSt",
     "INCLUDED": "Inklusive",
     "CHECKOUT": "Zur Kasse",
-    "NOTICE": "Für Produkte, die derzeit nicht vorrätig sind, beträgt die voraussichtliche Lieferzeit bis zu 30 Tage."
+    "NOTICE": "Für Produkte, die derzeit nicht vorrätig sind, beträgt die voraussichtliche Lieferzeit bis zu 30 Tage.",
+    "FREE_SHIPPING_PROGRESS": "{{percent}}%",
+    "FREE_SHIPPING_AWAY": "Noch {{amount}} {{currency}} bis zur Gratislieferung",
+    "FREE_SHIPPING_UNLOCKED": "Kostenlose Lieferung erreicht!"
   },
 
   "CHECKOUT": {

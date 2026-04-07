@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import styled, { css } from "styled-components";
 import { useTranslation } from "react-i18next";
 import { ProductContext } from "../../context/ProductContext";
+import APIService, { normalizeProductListResponse } from "../../services/APIService";
 import ProductCard from "../product/ProductCard";
 
 /** Koliko kartica prikazati po breakpointu. */
@@ -121,18 +122,14 @@ const StatusMessage = styled.p`
 `;
 
 /**
- * Tab prebacivanje Best sellers / New arrivals — broj kartica zavisi od širine ekrana.
+ * Tab prebacivanje Best sellers / Nicotine pouches — broj kartica zavisi od širine ekrana.
  */
 const HomeBestsellersNewArrivalsGrid = () => {
   const { t } = useTranslation();
-  const {
-    bestSellers,
-    newArrivals,
-    loadBestSellersBackend,
-    loadNewArrivalsBackend,
-  } = useContext(ProductContext);
+  const { bestSellers, loadBestSellersBackend } = useContext(ProductContext);
 
   const [tab, setTab] = useState("bestsellers");
+  const [nicotinePouches, setNicotinePouches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pickLimit, setPickLimit] = useState(resolvePickLimit);
 
@@ -143,7 +140,15 @@ const HomeBestsellersNewArrivalsGrid = () => {
       try {
         await Promise.all([
           loadBestSellersBackend(),
-          loadNewArrivalsBackend(),
+          (async () => {
+            try {
+              const raw = await APIService.GetProducts();
+              const list = normalizeProductListResponse(raw).slice(0, 30);
+              setNicotinePouches(list);
+            } catch (e) {
+              console.error(e);
+            }
+          })(),
         ]);
       } finally {
         if (!cancelled) setLoading(false);
@@ -167,12 +172,12 @@ const HomeBestsellersNewArrivalsGrid = () => {
     () => bestSellers.slice(0, pickLimit),
     [bestSellers, pickLimit]
   );
-  const newList = useMemo(
-    () => newArrivals.slice(0, pickLimit),
-    [newArrivals, pickLimit]
+  const nicotineList = useMemo(
+    () => nicotinePouches.slice(0, pickLimit),
+    [nicotinePouches, pickLimit]
   );
 
-  const activeList = tab === "bestsellers" ? bestList : newList;
+  const activeList = tab === "bestsellers" ? bestList : nicotineList;
 
   return (
     <Section aria-label={t("HOME.HOME_PICK_GRID.SECTION_HEADING")}>
@@ -192,13 +197,13 @@ const HomeBestsellersNewArrivalsGrid = () => {
           <Tab
             type="button"
             role="tab"
-            id="home-pick-tab-new"
-            aria-selected={tab === "new_arrivals"}
+            id="home-pick-tab-nicotine-pouches"
+            aria-selected={tab === "nicotine_pouches"}
             aria-controls="home-pick-grid-panel"
-            $active={tab === "new_arrivals"}
-            onClick={() => setTab("new_arrivals")}
+            $active={tab === "nicotine_pouches"}
+            onClick={() => setTab("nicotine_pouches")}
           >
-            {t("HOME.CATEGORY_NAV.NEW_ARRIVALS")}
+            {t("HOME.CATEGORY_NAV.NICOTINE_POUCHES")}
           </Tab>
         </TabBar>
       </TabBarWrap>
@@ -209,7 +214,7 @@ const HomeBestsellersNewArrivalsGrid = () => {
         aria-labelledby={
           tab === "bestsellers"
             ? "home-pick-tab-bestsellers"
-            : "home-pick-tab-new"
+            : "home-pick-tab-nicotine-pouches"
         }
       >
         {loading ? (

@@ -1,0 +1,19 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Fedrs</title>
+  <defs>
+    <clipPath id="fedrsCircleClip" clipPathUnits="userSpaceOnUse">
+      <circle cx="50" cy="50" r="50"/>
+    </clipPath>
+  </defs>
+  <circle cx="50" cy="50" r="50" fill="#002069"/>
+  <g clip-path="url(#fedrsCircleClip)">
+    <image
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAElUlEQVR4nO3b23LiMBRE0Wb+/5+ZB2YqwRjwRbJ0uvd6zIWypO0TFxUkAAAAAAAAAAAAAAAAAAAAAKjpNvoC3N3v93uP173dbpzdCjalsV4Bf0PgD2xCA6Mific57tiFtzBbyEuJYcctuIXZQ15KCjtmoS1UC3kpIWz7BbZQPeQl57D/jL6A2bnFLHmu6T/bO/Us50P/zW1aM6FXpMQs+a3V6u48y+1w93CZ1BaLaCE55t+qh80jh4jZSXzQxOwlOmhi9hMbNDF7igyamH3FBU3M71V/h0MKDBrrHGKWwoJmOq9ziVkKCpqY1znFLIUETczr3GKWQoLGK8eYpYCgmc6vXGOWAoLGM+eYJfOgmc7P3GOWzIPGj4SYJeOgmc4/UmKWjIPGQ1LMkmnQTOeHtJgl06CRGbNkGDTTOTdmyTDodMkxSwRtJT1mySzo5McNYn6wCjoVMf8g6OKI+RlBF0bMr2yCTnt+JuZ1NkEnIeb3CLoYYv6MoAsh5u8Iughi3oagCyDm7SyCdn6Hg5j3sQjaFTHvR9CTIuZjCHpCxHwcQU+GmM8h6IkQ83kEPQliboOgJ0DM7RD0YMTcFkEPRMztWQRdMYyK11yBRdDVEHM/BH0xYu6LoC90RczO/6i1hc20mP0ge8e8tv7EvwZM6AuMiPnT153ZBD3rNBoV89bvu7EJekajY977cw4IupNZYk5D0B3MGHPKDWAV9AzP0TPG3OJ3q7AKerSZY275GjOzC3rUlK4QcwK7oEeoFrPzzUHQJ1WLuffrjmYZ9FWPHVVjdmYZ9BUcYna8YWyD7hmcQ8yubIPuxS1mt5vHOujW8bnF7Mg66JacY3a6keyDbhGic8xu7IOWzgVJzLVEBH1UUswzXcsZMUHvjTMpZicxQUvbIyXmuqKClr7HmhzzzNe2VVzQnyTH7GL4JzxSVIl5hk/9nMGEvkCVmKVa17qGoDurHkg1BN0RMV+PoDsh5jEIugNiHoegGyPmsQi6IWIej6AbcYq58loIuoHKAbgh6JOIeS4EfQIxz4egDyLmORH0AcQ8L4LeiZjnRtA7EPP8CHojYq6BoDcg5joI+gtiroWgP0iNufLHsAj6jdSYqyPoFcRcF0EvEHNtBP0LMddH0P8QsweCFjE7iQ+amJ9VfstOCg+amP3EBk3MniKDJuZ11R83pMCgidlbVNDE7C8maGL+zOFxQwoJmphz2AdNzFmsgybmbVweNyTjoIk5k2XQxLyd03SWDIMm5mxWQRPzPm7TWTIKmpghmQRNzPs5TmfJIGhi3s81Zql40MSMpbJBE/MxztNZKho0MR/jHrNUMGhixielgibm4xKms1QoaGI+LiVmqVDQOCYpZomgraXFLBUKOvFwzkjdrzJBS7mHtFfyPpUKWso+rC3S96dc0BKH9g77UjRoicNbYj8eym9C+vvThPzMZjMSwybmV1YbkhI1Ib9nuTHOYRPzZ9ab4xQ2IW8TsUmVwybkfaI2q1LYhHxM5KbNHDYhnxO/eTPETcTtsJELVwROwP2wsV+cDZx4AQAAAAAAAAAAAAAAAAAAgG7+Aii5ERaYVohOAAAAAElFTkSuQmCC"
+      x="10"
+      y="10"
+      width="80"
+      height="80"
+      preserveAspectRatio="xMidYMid meet"
+    />
+  </g>
+</svg>

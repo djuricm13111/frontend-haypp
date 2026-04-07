@@ -51,7 +51,48 @@ export const transportMethods = [
   //{ name: "DHL Express Saver", price: 19.9, days: 3 },
 ];
 
-export const freeShippingThreshold = 50; // Prag za besplatnu dostavu
+/** Minimalni iznos narudžbine (subtotal proizvoda, bez poštarine) za besplatnu dostavu. Jedini izvor istine za UI i obračun. */
+export const freeShippingThreshold = 50;
+
+/**
+ * Da li narudžbina ispunjava prag za besplatnu dostavu.
+ * Mora se računati od subtotala proizvoda — ne od ukupnog iznosa sa poštarinom,
+ * jer bi inače subtotal 41 € + poštarina 20 € = 61 € pogrešno „prešao“ prag.
+ */
+export const qualifiesForFreeShipping = (orderSubtotal) =>
+  Number(orderSubtotal) >= freeShippingThreshold;
+
+/** Koliko još (u valuti korpe) do praga besplatne dostave; 0 ako je prag već dostignut. */
+export const amountUntilFreeShipping = (merchandiseSubtotal) =>
+  Math.max(0, freeShippingThreshold - Number(merchandiseSubtotal));
+
+/**
+ * Zbir za robu u korpi: ∑ (discount_price × quantity) po stavkama.
+ * Ne uključuje poštarinu, transport ni druge naknade — samo linije proizvoda.
+ * Stavke označene kao dostava (ako budu dodate u model) se preskaču.
+ */
+export function getCartMerchandiseSubtotal(itemsList) {
+  if (!Array.isArray(itemsList) || itemsList.length === 0) return 0;
+
+  let sum = 0;
+  for (const line of itemsList) {
+    const p = line?.product;
+    if (!p) continue;
+    if (
+      p.is_shipping_line === true ||
+      p.type === "shipping_fee" ||
+      p.sku === "SHIPPING"
+    ) {
+      continue;
+    }
+    const qty = Number(line.quantity);
+    const unit = Number(p.discount_price);
+    if (!Number.isFinite(qty) || !Number.isFinite(unit)) continue;
+    sum += unit * qty;
+  }
+
+  return parseFloat(sum.toFixed(2));
+}
 
 export const getTransportPrice = (method, totalQuantity) => {
   // Težina jedne jedinice: 0.033 kg

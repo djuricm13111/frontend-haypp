@@ -9,6 +9,7 @@ import CartMenu from "./components/CartMenu";
 import Language from "./components/Language";
 import Login from "./components/Login";
 import MobileNavDrawer from "./components/MobileNavDrawer";
+import { freeShippingThreshold } from "../../utils/global_const";
 /** Sadrži sve što je iznad glavnog belog headera — visina = tačan prag skrola. */
 const PreHeaderStack = styled.div`
   display: flex;
@@ -526,7 +527,9 @@ const Header = () => {
                   fill="var(--bg-100)"
                 />
               </svg>
-              Free Delivery over €4.99
+              {t("HEADER.FREE_DELIVERY_OVER_MIN", {
+                min: freeShippingThreshold,
+              })}
             </IconText>
             <IconText>
               <svg

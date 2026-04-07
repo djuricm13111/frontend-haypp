@@ -9,14 +9,17 @@ import HomePromoIntro from "../../components/home/HomePromoIntro";
 import ProductPromoSlider from "../../components/ProductPromoSlider";
 import HomeNewArrivalsSlider from "../../components/home/HomeNewArrivalsSlider";
 import bannerFumi from "../../assets/images/banner/fumi.jpg";
-import bannerNordic from "../../assets/images/banner/nordic_spirit.jpg";
+import bannerRush from "../../assets/images/banner/rush.png";
 import bannerSkruf from "../../assets/images/banner/skruf.jpg";
 import logoKilla from "../../assets/images/logo/killa.svg";
-import logoNordicSpirit from "../../assets/images/logo/nordic_spirit.svg";
 import logoPablo from "../../assets/images/logo/pablo.svg";
 import logoVelo from "../../assets/images/logo/velo.svg";
 import logoXqs from "../../assets/images/logo/xqs.svg";
 import logoZyn from "../../assets/images/logo/zyn.svg";
+import logoStng from "../../assets/images/logo/stng.svg";
+import logoClew from "../../assets/images/logo/clew.svg";
+import logoFedrs from "../../assets/images/logo/fedrs.svg";
+import logoGarant from "../../assets/images/logo/garant.svg";
 import listBestsellers from "../../assets/images/list/bestsellers.svg";
 import listBundles from "../../assets/images/list/bundles.svg";
 import listFreeSample from "../../assets/images/list/free_sample.svg";
@@ -107,12 +110,12 @@ const HomeMain = () => {
         href: shopBrandPath(lang, "xqs"),
       },
       {
-        key: "nordic",
-        imageSrc: bannerNordic,
-        imageAlt: "Nordic Spirit",
-        brand: "Nordic Spirit",
+        key: "rush",
+        imageSrc: bannerRush,
+        imageAlt: "RUSH",
+        brand: "RUSH",
         priceLabel: "From €2.29 / unit",
-        href: shopBrandPath(lang, "nordic-spirit"),
+        href: shopBrandPath(lang, "rush"),
       },
       {
         key: "fumi",
@@ -195,14 +198,12 @@ const HomeMain = () => {
       { key: "xqs", iconSrc: logoXqs, label: "XQS", href: shopBrandPath(lang, "xqs") },
       { key: "velo", iconSrc: logoVelo, label: "Velo", href: shopBrandPath(lang, "velo") },
       { key: "pablo", iconSrc: logoPablo, label: "Pablo", href: shopBrandPath(lang, "pablo") },
-      {
-        key: "nordic-spirit",
-        iconSrc: logoNordicSpirit,
-        label: "Nordic Spirit",
-        href: shopBrandPath(lang, "nordic-spirit"),
-      },
       { key: "zyn", iconSrc: logoZyn, label: "ZYN", href: shopBrandPath(lang, "zyn") },
       { key: "killa", iconSrc: logoKilla, label: "Killa", href: shopBrandPath(lang, "killa") },
+      { key: "fedrs", iconSrc: logoFedrs, label: "Fedrs", href: shopBrandPath(lang, "fedrs") },
+      { key: "garant", iconSrc: logoGarant, label: "Garant", href: shopBrandPath(lang, "garant") },
+      { key: "clew", iconSrc: logoClew, label: "CLEW", href: shopBrandPath(lang, "clew") },
+      { key: "stng", iconSrc: logoStng, label: "STNG", href: shopBrandPath(lang, "stng") },
     ],
     [lang]
   );
