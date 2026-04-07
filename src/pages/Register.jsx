@@ -20,71 +20,73 @@ const Page = styled.main`
   width: 100%;
   max-width: var(--max-width-container);
   margin: 0 auto;
-  padding: var(--spacing-sm) clamp(12px, 3vw, 24px) var(--spacing-xxl);
+  padding: var(--spacing-md) clamp(12px, 3vw, 24px) var(--spacing-xxl);
   box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    padding: var(--spacing-lg) clamp(24px, 4vw, 48px) var(--spacing-xxl);
+  }
+`;
+
+/** Naslov + uvod — centrirano; širina čitljivosti na većim ekranima */
+const RegisterIntro = styled.div`
+  width: 100%;
+  max-width: min(560px, 100%);
+  margin: 0 auto var(--spacing-lg);
+  text-align: center;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    margin-bottom: var(--spacing-xl);
+  }
 `;
 
 const Title = styled.h1`
   font-size: clamp(1.35rem, 4vw, 1.75rem);
   font-weight: 700;
   color: var(--text-100);
-  margin: var(--spacing-sm) 0 var(--spacing-md);
+  margin: 0 0 var(--spacing-sm);
   line-height: 1.25;
+
+  @media (min-width: 768px) {
+    font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+    margin-bottom: var(--spacing-md);
+  }
 `;
 
-const AccountHintBar = styled.div`
-  width: 100%;
-  margin: 0 0 var(--spacing-md);
-  padding: var(--spacing-sm) var(--spacing-md);
-  box-sizing: border-box;
-  background-color: var(--bg-300);
-  border-bottom: 1px solid #e4e4e4;
-  border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
-`;
-
-const AccountHintTitle = styled.h2`
-  margin: 0 0 var(--spacing-xs);
-  padding: 0;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-100);
-  text-align: center;
-  font-family: "Oswald-Medium", "Montserrat", sans-serif;
-  line-height: 1.25;
-`;
-
-const AccountHintText = styled.p`
-  margin: 0;
-  font-size: var(--header-font-size-small, 13px);
+const Lead = styled.p`
+  margin: 0 auto;
+  max-width: 42ch;
+  font-size: 0.9375rem;
   color: var(--text-200);
-  line-height: 1.45;
-  text-align: center;
+  line-height: 1.55;
   font-family: "Montserrat", sans-serif;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    max-width: 48ch;
+  }
 `;
 
 const Card = styled.section`
   background: var(--bg-100);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--border-radius-large);
-  padding: clamp(16px, 3vw, 24px);
+  padding: clamp(18px, 3vw, 28px);
   box-shadow: var(--shadow-small);
+  width: 100%;
   max-width: min(440px, 100%);
   margin: 0 auto;
   box-sizing: border-box;
-`;
 
-const LoginLogoMark = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: #001a57;
-  text-transform: uppercase;
-  line-height: 1;
-  font-size: clamp(1.5rem, 5vw, 1.75rem);
-  margin: 0 0 var(--spacing-lg);
+  @media (min-width: 768px) {
+    max-width: min(560px, 100%);
+    padding: clamp(28px, 3.5vw, 36px);
+  }
+
+  @media (min-width: 1024px) {
+    max-width: min(600px, 100%);
+  }
 `;
 
 const inputBase = `
@@ -343,18 +345,17 @@ function Register() {
       <Helmet>
         <title>{t("REGISTER.PAGE_TITLE")}</title>
       </Helmet>
-      <CheckoutHeader onBack={() => navigate(goToHome())} />
+      <CheckoutHeader
+        onBack={() => navigate(goToHome())}
+        mobileContextI18nKey="REGISTER.HEADER_BADGE"
+      />
       <Page>
-        <Title>{t("REGISTER.TITLE")}</Title>
+        <RegisterIntro>
+          <Title>{t("REGISTER.TITLE")}</Title>
+          <Lead>{t("REGISTER.ACCOUNT_HINT")}</Lead>
+        </RegisterIntro>
 
         <Card>
-          <AccountHintBar>
-            <AccountHintTitle>{t("REGISTER.HINT_SECTION_TITLE")}</AccountHintTitle>
-            <AccountHintText>{t("REGISTER.ACCOUNT_HINT")}</AccountHintText>
-          </AccountHintBar>
-
-          <LoginLogoMark>{t("REGISTER.LOGO_MARK")}</LoginLogoMark>
-
           <form onSubmit={handleSubmit}>
             {error ? <ErrorBox role="alert">{error}</ErrorBox> : null}
 

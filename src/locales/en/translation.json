@@ -295,6 +295,7 @@
 
   "REGISTER": {
     "PAGE_TITLE": "Create account — SnusCo",
+    "HEADER_BADGE": "Register",
     "TITLE": "Create account",
     "HINT_SECTION_TITLE": "Create account",
     "ACCOUNT_HINT": "Create an account to track orders and check out faster next time.",
@@ -484,6 +485,9 @@
     "SUMMARY": "Order summary",
     "SUBTOTAL": "Subtotal",
     "TOTAL_EST": "Subtotal (est.)",
+    "SHIPPING": "Shipping",
+    "SHIPPING_FREE": "Free",
+    "GRAND_TOTAL": "Total (incl. shipping)",
     "PLACE_ORDER": "Place order",
     "SUBMITTING": "Placing order…",
     "SUCCESS": "Thank you! Your order is confirmed. Order reference: {{id}}.",

@@ -295,6 +295,7 @@
 
   "REGISTER": {
     "PAGE_TITLE": "Konto erstellen — SnusCo",
+    "HEADER_BADGE": "Registrieren",
     "TITLE": "Konto erstellen",
     "HINT_SECTION_TITLE": "Konto erstellen",
     "ACCOUNT_HINT": "Legen Sie ein Konto an, um Bestellungen zu verfolgen und den nächsten Einkauf schneller abzuschließen.",
@@ -483,6 +484,9 @@
     "SUMMARY": "Bestellübersicht",
     "SUBTOTAL": "Zwischensumme",
     "TOTAL_EST": "Zwischensumme (ca.)",
+    "SHIPPING": "Versand",
+    "SHIPPING_FREE": "Kostenlos",
+    "GRAND_TOTAL": "Gesamt (inkl. Versand)",
     "PLACE_ORDER": "Bestellung aufgeben",
     "SUBMITTING": "Bestellung wird gesendet…",
     "SUCCESS": "Vielen Dank! Ihre Bestellung ist eingegangen. Referenz: {{id}}.",

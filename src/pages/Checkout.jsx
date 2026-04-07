@@ -17,7 +17,12 @@ import { AuthUserContext } from "../context/AuthUserContext";
 import { ProductContext } from "../context/ProductContext";
 import { useNavigation } from "../utils/navigation";
 import { cartActions } from "../store/cart-slice";
-import { getCartMerchandiseSubtotal } from "../utils/global_const";
+import {
+  DEFAULT_CURRENCY,
+  getCartMerchandiseSubtotal,
+  getShippingCostPrice,
+  qualifiesForFreeShipping,
+} from "../utils/global_const";
 
 const TRANSPORT_OPTIONS = [
   { value: "Post - AT", i18n: "CHECKOUT.TRANSPORT_POST" },
@@ -440,7 +445,7 @@ const Checkout = () => {
     updateUserInfo,
     invalidateUserProfileCache,
   } = useContext(AuthUserContext);
-  const { createOrder } = useContext(ProductContext);
+  const { createOrder, currencyTag } = useContext(ProductContext);
 
   const cartItems = useSelector((state) => state.cart.itemsList);
 
@@ -665,6 +670,19 @@ const Checkout = () => {
   const subtotal = useMemo(
     () => getCartMerchandiseSubtotal(cartItems),
     [cartItems]
+  );
+
+  const currency = localStorage.getItem("currency") || DEFAULT_CURRENCY;
+
+  const shippingCost = useMemo(() => {
+    if (!cartItems.length) return 0;
+    if (qualifiesForFreeShipping(subtotal)) return 0;
+    return getShippingCostPrice(DEFAULT_CURRENCY, currency);
+  }, [cartItems.length, subtotal, currency]);
+
+  const grandTotal = useMemo(
+    () => parseFloat((subtotal + shippingCost).toFixed(2)),
+    [subtotal, shippingCost]
   );
 
   const orderItemsPayload = useMemo(
@@ -1146,15 +1164,29 @@ const Checkout = () => {
                 </CartList>
                 <SummaryLine>
                   <span>{t("CHECKOUT.SUBTOTAL")}</span>
-                  <span>{subtotal.toFixed(2)}</span>
+                  <span>
+                    {currencyTag}
+                    {subtotal.toFixed(2)}
+                  </span>
+                </SummaryLine>
+                <SummaryLine>
+                  <span>{t("CHECKOUT.SHIPPING")}</span>
+                  <span>
+                    {qualifiesForFreeShipping(subtotal)
+                      ? t("CHECKOUT.SHIPPING_FREE")
+                      : `${currencyTag}${shippingCost.toFixed(2)}`}
+                  </span>
                 </SummaryLine>
                 <SummaryLine>
                   <span>{t("CART.VAT")}</span>
                   <span>{t("CART.INCLUDED")}</span>
                 </SummaryLine>
                 <SummaryTotal>
-                  <span>{t("CHECKOUT.TOTAL_EST")}</span>
-                  <span>{subtotal.toFixed(2)}</span>
+                  <span>{t("CHECKOUT.GRAND_TOTAL")}</span>
+                  <span>
+                    {currencyTag}
+                    {grandTotal.toFixed(2)}
+                  </span>
                 </SummaryTotal>
 
                 <SubmitButton type="submit" disabled={loading}>
