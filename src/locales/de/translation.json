@@ -434,7 +434,10 @@
     "NOTICE": "Für Produkte, die derzeit nicht vorrätig sind, beträgt die voraussichtliche Lieferzeit bis zu 30 Tage.",
     "FREE_SHIPPING_PROGRESS": "{{percent}}%",
     "FREE_SHIPPING_AWAY": "Noch {{amount}} {{currency}} bis zur Gratislieferung",
-    "FREE_SHIPPING_UNLOCKED": "Kostenlose Lieferung erreicht!"
+    "FREE_SHIPPING_UNLOCKED": "Kostenlose Lieferung erreicht!",
+    "ENTER_QUANTITY_PROMPT": "Menge (1–999)",
+    "QUANTITY_INVALID_RANGE": "Bitte eine ganze Zahl zwischen 1 und 999 eingeben.",
+    "QUANTITY_ARIA": "Menge"
   },
 
   "CHECKOUT": {

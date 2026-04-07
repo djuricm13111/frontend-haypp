@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { cartActions } from "../../../store/cart-slice";
 import { ProductContext } from "../../../context/ProductContext";
 
@@ -180,6 +181,30 @@ const QuantityInput = styled.input`
   }
 `;
 
+/** Na uskom ekranu umesto number inputa — tap otvara unos broja (prompt). */
+const QuantityTapButton = styled.button`
+  box-sizing: border-box;
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 28px;
+  padding: 0 4px;
+  margin: 0;
+  background-color: var(--bg-300);
+  text-align: center;
+  font-size: 15px;
+  border: none;
+  font-weight: 500;
+  color: var(--text-100);
+  font-family: inherit;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-100);
+    outline-offset: 1px;
+  }
+`;
+
 const DeleteButton = styled.button`
   display: flex;
   align-items: center;
@@ -203,10 +228,28 @@ const DeleteButton = styled.button`
   }
 `;
 
+const MOBILE_QTY_BREAKPOINT_PX = 768;
+
 const CartProduct = ({ item }) => {
+  const { t } = useTranslation();
   const { currencyTag } = useContext(ProductContext);
   const [inputValue, setInputValue] = useState(item.quantity);
+  const [isNarrowScreen, setIsNarrowScreen] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.innerWidth < MOBILE_QTY_BREAKPOINT_PX
+  );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const mq = window.matchMedia(
+      `(max-width: ${MOBILE_QTY_BREAKPOINT_PX - 1}px)`
+    );
+    const sync = () => setIsNarrowScreen(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   const unitPrice = item.product.discount_price;
   const lineTotal = unitPrice * item.quantity;
@@ -252,6 +295,33 @@ const CartProduct = ({ item }) => {
         quantity: value,
       })
     );
+  };
+
+  const applyQuantity = (value) => {
+    const q = Math.max(1, Math.min(999, Math.round(Number(value))));
+    setInputValue(q);
+    dispatch(
+      cartActions.updateCart({
+        product: item.product,
+        quantity: q,
+      })
+    );
+  };
+
+  const handleMobileQuantityTap = () => {
+    const raw = window.prompt(
+      t("CART.ENTER_QUANTITY_PROMPT"),
+      String(inputValue)
+    );
+    if (raw === null) return;
+    const trimmed = String(raw).trim();
+    if (trimmed === "") return;
+    const n = parseInt(trimmed, 10);
+    if (!Number.isFinite(n) || n < 1 || n > 999) {
+      window.alert(t("CART.QUANTITY_INVALID_RANGE"));
+      return;
+    }
+    applyQuantity(n);
   };
 
   const primaryImage =
@@ -317,14 +387,24 @@ const CartProduct = ({ item }) => {
                   />
                 </svg>
               </StepButton>
-                <QuantityInput
-                type="number"
-                max={999}
-                min={1}
-                value={inputValue}
-                onChange={handleChange}
-                aria-label="Quantity"
-              />
+                {isNarrowScreen ? (
+                  <QuantityTapButton
+                    type="button"
+                    onClick={handleMobileQuantityTap}
+                    aria-label={t("CART.QUANTITY_ARIA")}
+                  >
+                    {inputValue}
+                  </QuantityTapButton>
+                ) : (
+                  <QuantityInput
+                    type="number"
+                    max={999}
+                    min={1}
+                    value={inputValue}
+                    onChange={handleChange}
+                    aria-label={t("CART.QUANTITY_ARIA")}
+                  />
+                )}
                 <StepButton
                 type="button"
                 onClick={() => handleAddOne()}

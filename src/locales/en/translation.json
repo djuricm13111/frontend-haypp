@@ -435,7 +435,10 @@
     "NOTICE": "For products that are currently out of stock, the expected delivery time is up to 30 days.",
     "FREE_SHIPPING_PROGRESS": "{{percent}}%",
     "FREE_SHIPPING_AWAY": "{{amount}} {{currency}} left for free delivery",
-    "FREE_SHIPPING_UNLOCKED": "You have achieved free delivery!"
+    "FREE_SHIPPING_UNLOCKED": "You have achieved free delivery!",
+    "ENTER_QUANTITY_PROMPT": "Quantity (1–999)",
+    "QUANTITY_INVALID_RANGE": "Enter a whole number between 1 and 999.",
+    "QUANTITY_ARIA": "Quantity"
   },
 
   "CHECKOUT": {

@@ -100,6 +100,10 @@ const CardLower = styled.div`
   width: 100%;
   padding: 0;
   box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    padding-bottom: var(--spacing-sm);
+  }
 `;
 
 const TextBlock = styled.div`
