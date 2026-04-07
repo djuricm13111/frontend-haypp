@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
 import { AuthUserContext } from "../context/AuthUserContext";
@@ -61,6 +61,50 @@ const Header = styled.header`
   margin-bottom: 0.65rem;
 `;
 
+const BackNavRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+  margin-bottom: 0.55rem;
+`;
+
+const BackButton = styled.button`
+  margin: 0;
+  padding: 0.15rem 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: ${(p) => p.theme.textColor};
+  opacity: 0.92;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  &:hover {
+    color: ${(p) => p.theme.primaryColor};
+    opacity: 1;
+  }
+`;
+
+const BackSep = styled.span`
+  opacity: 0.4;
+  user-select: none;
+  font-weight: 500;
+`;
+
+const BackHomeLink = styled(Link)`
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: ${(p) => p.theme.primaryColor};
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+`;
+
 const TitleRow = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -84,12 +128,6 @@ const Sub = styled.div`
   color: color-mix(in srgb, ${(p) => p.theme.textColor} 92%, ${(p) => p.theme.backgroundColor});
   line-height: 1.45;
   font-family: inherit;
-`;
-
-const HomeLink = styled(Link)`
-  color: ${(p) => p.theme.primaryColor};
-  font-weight: 600;
-  font-size: 0.9rem;
 `;
 
 const GhostButton = styled.button`
@@ -567,6 +605,7 @@ const EmptyState = styled.div`
 `;
 
 export default function AdminOrdersInbox() {
+  const navigate = useNavigate();
   const { authTokens, userProfile } = useContext(AuthUserContext);
   const [queue, setQueue] = useState("to_send");
   const [q, setQ] = useState("");
@@ -696,13 +735,23 @@ export default function AdminOrdersInbox() {
     await onStatusChange(orderId, "Shipped");
   };
 
+  const goBack = useCallback(() => {
+    navigate(-1);
+  }, [navigate]);
+
   if (!authTokens?.access) {
     return (
       <PageWrap>
         <Inner>
+          <BackNavRow>
+            <BackButton type="button" onClick={goBack}>
+              ← Nazad
+            </BackButton>
+            <BackSep aria-hidden>·</BackSep>
+            <BackHomeLink to="/">Početna</BackHomeLink>
+          </BackNavRow>
           <Title>Porudžbine — inbox</Title>
           <Sub>Prijavite se nalogom sa is_staff.</Sub>
-          <HomeLink to="/">← Početna</HomeLink>
         </Inner>
       </PageWrap>
     );
@@ -712,9 +761,15 @@ export default function AdminOrdersInbox() {
     return (
       <PageWrap>
         <Inner>
+          <BackNavRow>
+            <BackButton type="button" onClick={goBack}>
+              ← Nazad
+            </BackButton>
+            <BackSep aria-hidden>·</BackSep>
+            <BackHomeLink to="/">Početna</BackHomeLink>
+          </BackNavRow>
           <Title>Pristup odbijen</Title>
           <Sub>Samo za administratore.</Sub>
-          <HomeLink to="/">← Početna</HomeLink>
         </Inner>
       </PageWrap>
     );
@@ -723,6 +778,13 @@ export default function AdminOrdersInbox() {
   return (
     <PageWrap>
       <Inner>
+        <BackNavRow>
+          <BackButton type="button" onClick={goBack}>
+            ← Nazad
+          </BackButton>
+          <BackSep aria-hidden>·</BackSep>
+          <BackHomeLink to="/">Početna</BackHomeLink>
+        </BackNavRow>
         <Header>
           <TitleRow>
             <div>

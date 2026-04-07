@@ -1,6 +1,6 @@
 import axios from "axios";
 import i18next from "i18next";
-import { DEFAULT_CURRENCY, DOMAIN } from "../utils/global_const";
+import { DEFAULT_CURRENCY } from "../utils/global_const";
 
 const defaultCurrency = DEFAULT_CURRENCY;
 
@@ -56,7 +56,6 @@ export default class APIService {
   //       "Accept-Language": language,
   //       Currency: currency,
   //       "Content-Type": "application/json",
-  //       "x-domain": DOMAIN,
   //     },
   //     params: {
   //       page: page, // Dodajemo parametar stranice za paginaciju
@@ -72,7 +71,6 @@ export default class APIService {
         "Accept-Language": language,
         Currency: currency,
         "Content-Type": "application/json",
-        "x-domain": DOMAIN,
       },
     });
     return response.data;
@@ -88,7 +86,6 @@ export default class APIService {
       headers: {
         "Accept-Language": language,
         "Content-Type": "application/json",
-        "x-domain": DOMAIN,
       },
     });
     return normalizeCategoriesListResponse(response.data);
@@ -106,7 +103,6 @@ export default class APIService {
           "Accept-Language": language,
           Currency: currency,
           "Content-Type": "application/json",
-          "x-domain": DOMAIN,
         },
       }
     );
@@ -126,7 +122,6 @@ export default class APIService {
           "Accept-Language": language,
           Currency: currency,
           "Content-Type": "application/json",
-          "x-domain": DOMAIN,
         },
       }
     );
@@ -136,14 +131,16 @@ export default class APIService {
     const language = i18next.language.toLowerCase(); // Pretpostavljamo da i18next upravlja trenutnim jezikom
     const currency = localStorage.getItem("currency") || defaultCurrency;
     try {
-      const response = await axios.get(`${this.URL}api/category/${slug}/`, {
+      const response = await axios.get(
+        `${this.URL}api/category/${encodeURIComponent(slug)}/`,
+        {
         headers: {
           "Accept-Language": language,
           Currency: currency,
           "Content-Type": "application/json",
-          "x-domain": DOMAIN,
         },
-      });
+      }
+      );
       return response.data; // Očekuje se da će ovaj poziv vratiti detalje o pojedinačnom proizvodu
     } catch (error) {
       throw error;
@@ -154,14 +151,16 @@ export default class APIService {
     const language = i18next.language.toLowerCase(); // Pretpostavljamo da i18next upravlja trenutnim jezikom
     const currency = localStorage.getItem("currency") || defaultCurrency;
     try {
-      const response = await axios.get(`${this.URL}api/products/${slug}/`, {
+      const response = await axios.get(
+        `${this.URL}api/products/${encodeURIComponent(slug)}/`,
+        {
         headers: {
           "Accept-Language": language,
           Currency: currency,
           "Content-Type": "application/json",
-          "x-domain": DOMAIN,
         },
-      });
+      }
+      );
       return response.data; // Očekuje se da će ovaj poziv vratiti detalje o pojedinačnom proizvodu
     } catch (error) {
       throw error;
@@ -172,13 +171,12 @@ export default class APIService {
     const currency = localStorage.getItem("currency") || defaultCurrency;
     try {
       const response = await axios.get(
-        `${this.URL}api/products/${slug}/recommended`,
+        `${this.URL}api/products/${encodeURIComponent(slug)}/recommended/`,
         {
           headers: {
             "Accept-Language": language,
             Currency: currency,
             "Content-Type": "application/json",
-            "x-domain": DOMAIN,
           },
         }
       );
@@ -202,7 +200,6 @@ export default class APIService {
           "Accept-Language": language,
           Currency: currency,
           "Content-Type": "application/json",
-          "x-domain": DOMAIN,
         },
       });
       return response.data; // Očekuje se da će ovaj poziv vratiti listu proizvoda koji odgovaraju kriterijumima pretrage
@@ -218,7 +215,6 @@ export default class APIService {
         "Content-Type": "application/json",
         "Accept-Language": language,
         Currency: currency,
-        "x-domain": DOMAIN,
       };
       if (accessToken) {
         headers.Authorization = `Bearer ${accessToken}`;
@@ -279,7 +275,6 @@ export default class APIService {
         },
         {
           headers: {
-            "x-domain": DOMAIN,
           },
         }
       );
@@ -327,7 +322,6 @@ export default class APIService {
         requestBody,
         {
           headers: {
-            "x-domain": DOMAIN,
           },
         }
       );
@@ -361,7 +355,6 @@ export default class APIService {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           Currency: currency,
-          "x-domain": DOMAIN,
         },
       });
 
@@ -510,7 +503,6 @@ export default class APIService {
           headers: {
             "Content-Type": "application/json",
             "Accept-Language": language,
-            "x-domain": DOMAIN,
           },
         }
       );
@@ -792,7 +784,6 @@ export default class APIService {
     const response = await axios.get(url, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
-        "x-domain": DOMAIN,
       },
     });
     return response.data;
@@ -802,7 +793,6 @@ export default class APIService {
     const response = await axios.get(`${this.URL}api/admin/orders/${orderId}/`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
-        "x-domain": DOMAIN,
       },
     });
     return response.data;
@@ -817,7 +807,6 @@ export default class APIService {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
-          "x-domain": DOMAIN,
         },
       }
     );
@@ -832,7 +821,6 @@ export default class APIService {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
-          "x-domain": DOMAIN,
         },
       }
     );
@@ -847,7 +835,6 @@ export default class APIService {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
-          "x-domain": DOMAIN,
         },
       }
     );
@@ -862,7 +849,6 @@ export default class APIService {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
-          "x-domain": DOMAIN,
         },
       }
     );

@@ -2,8 +2,9 @@ import { useEffect, useState, useCallback, useMemo, useContext } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useNavigation } from "../../../utils/navigation";
+import { useIsStaff } from "../../../hooks/useIsStaff";
 import Language from "./Language";
 import { navItems } from "./HeaderList";
 import { buildShopNavDropdown } from "../../../utils/shopRoutes";
@@ -286,6 +287,29 @@ const LeafLinkRow = styled.a`
   }
 `;
 
+const AdminMobileLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
+  color: #001a57;
+  font-size: var(--header-dropdown-link-size);
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  &:active {
+    background-color: #f5f5f5;
+  }
+`;
+
 /** @type {Record<number, 'first' | 'second'>} */
 const NAV_INDEX_TO_SUB = {
   0: "first",
@@ -326,6 +350,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
 
   const { authTokens } = useContext(AuthUserContext);
+  const isStaff = useIsStaff();
   const navigate = useNavigate();
   const {
     goToCategory,
@@ -511,6 +536,12 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
         </OtherAccountIconSlot>
         <OtherAccountLabel>{t("MENU.MY_ACCOUNT")}</OtherAccountLabel>
       </OtherAccountButton>
+      {isStaff ? (
+        <AdminMobileLink to="/admin/porudzbine" onClick={onClose}>
+          <span>{t("MENU.ADMIN_INBOX")}</span>
+          <RowArrow aria-hidden="true">→</RowArrow>
+        </AdminMobileLink>
+      ) : null}
       <Language embedInDrawer embedVariant="hayppRow" />
     </>
   );

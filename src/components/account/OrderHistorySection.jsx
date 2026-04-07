@@ -190,9 +190,6 @@ const ToggleBtn = styled.button`
   min-height: 44px;
   padding: 10px 14px;
   border-radius: var(--border-radius-base);
-  border: 1px solid var(--bg-300);
-  background: var(--bg-100);
-  color: var(--text-100);
   font-size: 14px;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
@@ -202,7 +199,14 @@ const ToggleBtn = styled.button`
     width: auto;
     min-width: 128px;
   }
-  &:hover {
+  /* index.css: button / button:hover — mora && da pobedi globalni ljubičasti hover */
+  && {
+    border: 1px solid var(--bg-300);
+    background-color: var(--bg-100);
+    color: var(--text-100);
+  }
+  &&:hover {
+    background-color: var(--bg-200);
     border-color: var(--primary-200);
     color: var(--primary-200);
   }
@@ -388,10 +392,24 @@ const ItemRowDesktop = styled.div`
 `;
 
 const ProductName = styled.div`
-  color: var(--text-100);
   line-height: 1.45;
-  font-weight: 500;
   font-size: 14px;
+`;
+
+/** Isti obrazac kao ProductCard: kategorija · naziv */
+const OrderLineCategory = styled.span`
+  color: var(--text-200);
+  font-weight: 400;
+`;
+
+const OrderLineSep = styled.span`
+  color: var(--text-200);
+  font-weight: 400;
+`;
+
+const OrderLineTitle = styled.span`
+  color: var(--text-100);
+  font-weight: 500;
 `;
 
 /** Mobilni: kartica po stavci — puna širina */
@@ -575,12 +593,22 @@ function orderRefLabel(order) {
   return `#${order?.id ?? "—"}`;
 }
 
-function lineProductName(item) {
+function OrderLineProductLabel({ item }) {
   const p = item?.product_details;
   if (!p) return "—";
-  const a = p.category_name ? String(p.category_name).trim() : "";
-  const b = p.name ? String(p.name).trim() : "";
-  return [a, b].filter(Boolean).join(" ") || "—";
+  const category = p.category_name ? String(p.category_name).trim() : "";
+  const name = p.name ? String(p.name).trim() : "";
+  if (!category && !name) return "—";
+  if (category && name) {
+    return (
+      <>
+        <OrderLineCategory>{category}</OrderLineCategory>
+        <OrderLineSep> · </OrderLineSep>
+        <OrderLineTitle>{name}</OrderLineTitle>
+      </>
+    );
+  }
+  return <OrderLineTitle>{name || category}</OrderLineTitle>;
 }
 
 /** Isto pravilo kao na PDP / kartici proizvoda: `out_of_stock` se ne sme dodati u korpu. */
@@ -608,7 +636,7 @@ function OrderHistorySection({ orders, isEmailVerified }) {
   const dispatch = useDispatch();
   const { setIsCartOpen } = useContext(ProductContext);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-  const [expandedId, setExpandedId] = useState(null);
+  const [expandedIds, setExpandedIds] = useState([]);
   const [reorderBusyId, setReorderBusyId] = useState(null);
   const [reorderNotice, setReorderNotice] = useState(null);
 
@@ -781,7 +809,7 @@ function OrderHistorySection({ orders, isEmailVerified }) {
       <OrdersLayout>
         {visible.map((order) => {
           const id = order.id;
-          const open = expandedId === id;
+          const open = expandedIds.includes(id);
           const sym = order.currency_symbol || "€";
 
           const subApi = parseMoneyAmount(order.subtotal);
@@ -839,7 +867,11 @@ function OrderHistorySection({ orders, isEmailVerified }) {
                       </ReorderBtn>
                       <ToggleBtn
                         type="button"
-                        onClick={() => setExpandedId(open ? null : id)}
+                        onClick={() =>
+                          setExpandedIds((prev) =>
+                            open ? prev.filter((x) => x !== id) : [...prev, id]
+                          )
+                        }
                         aria-expanded={open}
                       >
                         {open
@@ -874,13 +906,17 @@ function OrderHistorySection({ orders, isEmailVerified }) {
                       return (
                         <div key={idx}>
                           <ItemRowDesktop>
-                            <ProductName>{lineProductName(item)}</ProductName>
+                            <ProductName>
+                              <OrderLineProductLabel item={item} />
+                            </ProductName>
                             <Num>{qty}</Num>
                             <Num>{priceStr}</Num>
                             <Num>{lineStr}</Num>
                           </ItemRowDesktop>
                           <ItemMobile>
-                            <ProductName>{lineProductName(item)}</ProductName>
+                            <ProductName>
+                              <OrderLineProductLabel item={item} />
+                            </ProductName>
                             <MobileNums>
                               <MobileCell>
                                 <MobileLabel>

@@ -31,6 +31,8 @@ export const AuthUserProvider = ({ children }) => {
   const [location, setLocation] = useState({ country: "", countryCode: "" });
   const { goToHome, goToLogin, goToVerification } = useNavigation();
   const refreshTokenTimeoutRef = useRef(null);
+  /** Sprečava korišćenje starog profila kada se promeni access token. */
+  const prevAccessTokenRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -117,6 +119,7 @@ export const AuthUserProvider = ({ children }) => {
 
   let logoutUser = () => {
     invalidateUserProfileCache();
+    setUserProfile(null);
     setAuthTokens(null);
     localStorage.removeItem("authTokens");
     if (refreshTokenTimeoutRef.current) {
@@ -196,12 +199,28 @@ export const AuthUserProvider = ({ children }) => {
       console.error("Error fetching user data:", error);
       if (error.response && error.response.status === 401) {
         // Token je istekao ili je nevažeći
+        setUserProfile(null);
         setAuthTokens(null);
         localStorage.removeItem("authTokens");
         navigate(goToHome());
       }
     }
   }
+
+  /** Pri promeni access tokena: obriši stari profil i učitaj novi (izbegni mešanje korisnika / lažan staff). */
+  useEffect(() => {
+    const access = authTokens?.access ?? null;
+    if (!access) {
+      prevAccessTokenRef.current = null;
+      setUserProfile(null);
+      return;
+    }
+    if (prevAccessTokenRef.current === access) return;
+    prevAccessTokenRef.current = access;
+    setUserProfile(null);
+    fetchUserData(access);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- fetchUserData; ref prati access string
+  }, [authTokens?.access]);
   const updateUserInfo = async (userInfo, accessTokenOverride = null) => {
     try {
       const token = accessTokenOverride || authTokens?.access;

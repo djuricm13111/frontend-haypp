@@ -20,7 +20,8 @@
     "SIGN_UP": "Registrieren",
     "SEARCH_FOR": "Suchen nach",
     "VIEW_ALL_RESULTS": "Alle Suchergebnisse anzeigen ({{count}})",
-    "FREE_DELIVERY_OVER_MIN": "Kostenlose Lieferung ab €{{min}} Bestellwert",
+    "FREE_DELIVERY_OVER_MIN": "Gratis ab €{{min}}",
+    "PAY_WITH_KLARNA": "Mit Klarna bezahlen",
     "LOGO_HOME": "SnusCo — Startseite",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "Neues Jahr, neues Ich",
@@ -89,7 +90,8 @@
     "BRANDS": "Marken",
     "SIGN_UP": "Anmelden",
     "LOGIN": "Einloggen",
-    "MY_ACCOUNT": "Mein Konto"
+    "MY_ACCOUNT": "Mein Konto",
+    "ADMIN_INBOX": "Posteingang"
   },
 
   "BLOG": {

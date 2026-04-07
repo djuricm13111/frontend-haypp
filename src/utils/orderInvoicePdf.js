@@ -20,8 +20,8 @@ function productLineLabel(item) {
   if (!p) return "—";
   const a = p.category_name ? String(p.category_name).trim() : "";
   const b = p.name ? String(p.name).trim() : "";
-  const s = [a, b].filter(Boolean).join(" ");
-  return s || "—";
+  if (a && b) return `${a} · ${b}`;
+  return b || a || "—";
 }
 
 function sumLineTotals(order) {

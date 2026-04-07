@@ -10,6 +10,7 @@ import Language from "./components/Language";
 import Login from "./components/Login";
 import MobileNavDrawer from "./components/MobileNavDrawer";
 import { freeShippingThreshold } from "../../utils/global_const";
+import { useIsStaff } from "../../hooks/useIsStaff";
 /** Sadrži sve što je iznad glavnog belog headera — visina = tačan prag skrola. */
 const PreHeaderStack = styled.div`
   display: flex;
@@ -191,6 +192,12 @@ const IconText = styled.div`
     flex-shrink: 0;
     white-space: nowrap;
   }
+`;
+
+const IconTextLabel = styled.span`
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 const Container = styled.div`
   width: 100%;
@@ -396,8 +403,43 @@ const HamburgerBar = styled.span`
   border-radius: 1px;
 `;
 
+/** Desktop: samo ikona — štedi širinu; aria-label / title = „Inbox“. */
+const AdminTopLink = styled(Link)`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: var(--bg-100);
+  text-decoration: none;
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  @media (min-width: 1024px) {
+    display: inline-flex;
+  }
+
+  & > svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--bg-100);
+    outline-offset: 2px;
+  }
+`;
+
 const Header = () => {
   const { t } = useTranslation();
+  const isStaff = useIsStaff();
   const loginRef = useRef(null);
   const preHeaderRef = useRef(null);
   /** ≥1024px: vrh DesktopNavSection (HeaderList). ≤1023px: kompakt red (MobileHeaderTools). */
@@ -519,6 +561,7 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"
@@ -527,9 +570,11 @@ const Header = () => {
                   fill="var(--bg-100)"
                 />
               </svg>
-              {t("HEADER.FREE_DELIVERY_OVER_MIN", {
-                min: freeShippingThreshold,
-              })}
+              <IconTextLabel>
+                {t("HEADER.FREE_DELIVERY_OVER_MIN", {
+                  min: freeShippingThreshold,
+                })}
+              </IconTextLabel>
             </IconText>
             <IconText>
               <svg
@@ -537,6 +582,7 @@ const Header = () => {
                 height="24px"
                 viewBox="-2.98 0 20.004 20.004"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g id="thunder" transform="translate(-4.967 -1.996)">
                   <path
@@ -555,7 +601,7 @@ const Header = () => {
                   />
                 </g>
               </svg>
-              Pay with Klarna
+              <IconTextLabel>{t("HEADER.PAY_WITH_KLARNA")}</IconTextLabel>
             </IconText>
           </TopBarDesktopLeft>
 
@@ -584,6 +630,29 @@ const Header = () => {
           </MobileTrustPilotBar>
 
           <TopBarDesktopRight>
+            {isStaff ? (
+              <AdminTopLink
+                to="/admin/porudzbine"
+                aria-label={t("MENU.ADMIN_INBOX")}
+                title={t("MENU.ADMIN_INBOX")}
+              >
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M4 10h16l-1.8-5.4a1 1 0 00-.95-.6H6.75a1 1 0 00-.95.6L4 10z"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M4 10v7.5a2 2 0 002 2h12a2 2 0 002-2V10M9 14.5h6"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </AdminTopLink>
+            ) : null}
             <TopBarLanguageSlot>
               <Language />
             </TopBarLanguageSlot>
