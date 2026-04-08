@@ -47,22 +47,7 @@ const BACKEND_API_ENDPOINT =
 
 export default class APIService {
   static URL = BACKEND_API_ENDPOINT;
-  // static async GetProducts(page = 1) {
-  //   // Dodajemo podrazumevanu vrednost za broj stranice
-  //   const language = i18next.language.toLowerCase();
-  //   const currency = localStorage.getItem("currency") || defaultCurrency;
-  //   const response = await axios.get(APIService.URL + `api/products/`, {
-  //     headers: {
-  //       "Accept-Language": language,
-  //       Currency: currency,
-  //       "Content-Type": "application/json",
-  //     },
-  //     params: {
-  //       page: page, // Dodajemo parametar stranice za paginaciju
-  //     },
-  //   });
-  //   return response.data;
-  // }
+  
   static async GetProducts() {
     const language = i18next.language.toLowerCase(); // Pretpostavljamo da i18next upravlja trenutnim jezikom
     const currency = localStorage.getItem("currency") || defaultCurrency;
