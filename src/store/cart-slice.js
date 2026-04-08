@@ -6,13 +6,50 @@ import TagManager from "react-gtm-module";
 
 const CART_KEY = "cart";
 
+/** Dozvoljeni intervali pretplate (usklađeno sa backend ALLOWED_INTERVAL_DAYS). */
+export const SUBSCRIPTION_INTERVAL_DAYS = [14, 31, 62];
+
+export function normalizeSubscriptionIntervalDays(v) {
+  if (v === undefined || v === null || v === "") return null;
+  const n = Number(v);
+  return SUBSCRIPTION_INTERVAL_DAYS.includes(n) ? n : null;
+}
+
+function newLineId() {
+  if (typeof crypto !== "undefined" && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  return `line-${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
+}
+
+/** Isti režim pretplate (oba null = jednokratno). */
+function sameSubscriptionMode(a, b) {
+  return normalizeSubscriptionIntervalDays(a) === normalizeSubscriptionIntervalDays(b);
+}
+
+function migrateCartItems(itemsList) {
+  if (!Array.isArray(itemsList)) return [];
+  return itemsList.map((item) => ({
+    ...item,
+    lineId: item.lineId || newLineId(),
+    subscriptionIntervalDays: normalizeSubscriptionIntervalDays(
+      item.subscriptionIntervalDays
+    ),
+  }));
+}
+
 const getCartFromStorage = () => {
   const cart = window.localStorage.getItem(CART_KEY);
   if (cart) {
     try {
       const bytes = CryptoJS.AES.decrypt(cart, "my-new-secret-key");
       const decryptedCart = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-      return decryptedCart;
+      const itemsList = migrateCartItems(decryptedCart.itemsList);
+      const totalQuantity = itemsList.reduce((s, i) => s + (i.quantity || 0), 0);
+      return {
+        itemsList,
+        totalQuantity,
+      };
     } catch (e) {
       console.error("Error decrypting cart:", e);
       return {
@@ -59,7 +96,7 @@ function gtmEvent(event, product, quantity) {
     item_name: product.category_name + " " + product.name,
     item_brand: product.manufacturer,
     item_category: product.category_name,
-    item_variant: product.nicotine + " MG", // Append "MG" to the nicotine value
+    item_variant: product.nicotine + " MG",
     price: Number(product.price),
     quantity: quantity,
   };
@@ -67,7 +104,7 @@ function gtmEvent(event, product, quantity) {
   TagManager.dataLayer({
     dataLayer: {
       event: event,
-      currency: currency, // Assume USD or dynamic retrieval
+      currency: currency,
       value: (Number(product.price) * quantity).toFixed(2),
       items: [itemData],
     },
@@ -79,21 +116,44 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      const { product, quantity } = action.payload;
+      const { product, quantity, subscriptionIntervalDays: rawSub } =
+        action.payload;
       if (quantity <= 0) return;
 
-      const existingItem = state.itemsList.find(
-        (item) => item.product.id === product.id
-      );
+      const incomingDefined = rawSub !== undefined;
+      const incomingNorm = incomingDefined
+        ? normalizeSubscriptionIntervalDays(rawSub)
+        : null;
+
+      let existingItem = null;
+      if (incomingDefined) {
+        existingItem = state.itemsList.find(
+          (item) =>
+            item.product.id === product.id &&
+            sameSubscriptionMode(item.subscriptionIntervalDays, incomingNorm)
+        );
+      } else {
+        existingItem = state.itemsList.find(
+          (item) =>
+            item.product.id === product.id &&
+            (item.subscriptionIntervalDays == null ||
+              item.subscriptionIntervalDays === "")
+        );
+      }
+
       if (existingItem) {
         existingItem.quantity += quantity;
       } else {
-        const newItem = { ...product, discount_price: 0 }; // Temporarily set discount_price to 0
-        state.itemsList.push({ product: newItem, quantity });
+        const newItem = { ...product, discount_price: 0 };
+        state.itemsList.push({
+          lineId: newLineId(),
+          product: newItem,
+          quantity,
+          subscriptionIntervalDays: incomingDefined ? incomingNorm : null,
+        });
       }
       state.totalQuantity += quantity;
 
-      // Update discount prices for all items
       state.itemsList = updateDiscountPrices(
         state.itemsList,
         state.totalQuantity
@@ -102,18 +162,17 @@ const cartSlice = createSlice({
       gtmEvent("add_to_cart", product, quantity);
     },
     removeFromCart(state, action) {
-      const id = action.payload;
+      const lineId = action.payload;
       const itemToRemove = state.itemsList.find(
-        (item) => item.product.id === id
+        (item) => item.lineId === lineId
       );
       if (!itemToRemove) return;
 
       state.itemsList = state.itemsList.filter(
-        (item) => item.product.id !== id
+        (item) => item.lineId !== lineId
       );
       state.totalQuantity -= itemToRemove.quantity;
 
-      // Update discount prices for all items
       state.itemsList = updateDiscountPrices(
         state.itemsList,
         state.totalQuantity
@@ -122,9 +181,9 @@ const cartSlice = createSlice({
       gtmEvent("remove_from_cart", itemToRemove.product, itemToRemove.quantity);
     },
     updateCart(state, action) {
-      const { product, quantity } = action.payload;
+      const { lineId, product, quantity } = action.payload;
       const existingItem = state.itemsList.find(
-        (item) => item.product.id === product.id
+        (item) => item.lineId === lineId && item.product.id === product.id
       );
       if (!existingItem) return;
 
@@ -134,7 +193,6 @@ const cartSlice = createSlice({
         0
       );
 
-      // Update discount prices for all items
       state.itemsList = updateDiscountPrices(
         state.itemsList,
         state.totalQuantity
@@ -147,7 +205,6 @@ const cartSlice = createSlice({
       saveCartToStorage(state);
     },
     updateCurrency(state, action) {
-      // Funkcija za ažuriranje cena sada koristi trenutne stavke korpe iz stanja
       const { fromCurrency, toCurrency } = action.payload;
       console.log("from", fromCurrency, "to", toCurrency);
       state.itemsList = state.itemsList.map((item) => ({
@@ -163,7 +220,7 @@ const cartSlice = createSlice({
         },
       }));
 
-      saveCartToStorage(state); // Sačuvaj ažurirano stanje u lokalnom skladištu
+      saveCartToStorage(state);
     },
   },
 });

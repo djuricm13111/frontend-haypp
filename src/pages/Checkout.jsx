@@ -23,6 +23,10 @@ import {
   getShippingCostPrice,
   qualifiesForFreeShipping,
 } from "../utils/global_const";
+import {
+  getSubscriptionLineFreqLabelKey,
+  getSubscriptionSectionSubtitle,
+} from "../utils/subscriptionLabels";
 
 const TRANSPORT_OPTIONS = [
   { value: "Post - AT", i18n: "CHECKOUT.TRANSPORT_POST" },
@@ -266,6 +270,9 @@ const ItemRow = styled.div`
   gap: 12px;
   margin-bottom: 14px;
   min-width: 0;
+  padding-bottom: ${(p) => (p.$subscription ? "8px" : "0")};
+  border-bottom: ${(p) =>
+    p.$subscription ? "1px solid var(--bg-300)" : "none"};
 `;
 
 const ItemBody = styled.div`
@@ -371,6 +378,54 @@ const CartList = styled.div`
   margin-bottom: var(--spacing-md);
   padding-right: 2px;
   -webkit-overflow-scrolling: touch;
+`;
+
+const CheckoutSectionDivider = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 4px;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+const CheckoutSectionLine = styled.span`
+  flex: 1;
+  min-width: 12px;
+  height: 1px;
+  background: var(--bg-300);
+`;
+
+const CheckoutSectionCenter = styled.div`
+  text-align: center;
+  flex-shrink: 0;
+  max-width: 72%;
+`;
+
+const CheckoutSectionTitle = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-100);
+  line-height: 1.25;
+`;
+
+const CheckoutSectionSubtitle = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-200);
+  margin-top: 1px;
+  line-height: 1.25;
+`;
+
+const SummaryFreqBadge = styled.div`
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-200);
+  margin-top: 4px;
 `;
 
 function formatErr(payload) {
@@ -694,6 +749,47 @@ const Checkout = () => {
     [cartItems]
   );
 
+  const subscriptionsPayload = useMemo(() => {
+    const rows = [];
+    for (const line of cartItems) {
+      const d = line.subscriptionIntervalDays;
+      if (d == null || d === "") continue;
+      const n = Number(d);
+      if (![14, 31, 62].includes(n)) continue;
+      rows.push({
+        product: line.product.id,
+        interval_days: n,
+        quantity: line.quantity,
+      });
+    }
+    return rows;
+  }, [cartItems]);
+
+  const oneTimeCartItems = useMemo(
+    () =>
+      cartItems.filter(
+        (item) =>
+          item.subscriptionIntervalDays == null ||
+          item.subscriptionIntervalDays === ""
+      ),
+    [cartItems]
+  );
+
+  const subscriptionCartItems = useMemo(
+    () =>
+      cartItems.filter(
+        (item) =>
+          item.subscriptionIntervalDays != null &&
+          item.subscriptionIntervalDays !== ""
+      ),
+    [cartItems]
+  );
+
+  const subscriptionSectionSubtitle = useMemo(
+    () => getSubscriptionSectionSubtitle(subscriptionCartItems, t),
+    [subscriptionCartItems, t]
+  );
+
   const handleHeaderBack = useCallback(() => {
     if (success) {
       navigate(goToShop());
@@ -799,6 +895,9 @@ const Checkout = () => {
             use_points: false,
             note: note.trim() || undefined,
             confirmation_email: accountEmail.trim(),
+            ...(subscriptionsPayload.length
+              ? { subscriptions: subscriptionsPayload }
+              : {}),
           },
           accessTokenForApi
         );
@@ -823,6 +922,9 @@ const Checkout = () => {
             phone_number: phoneNumber.trim() || undefined,
             type: "Home",
           },
+          ...(subscriptionsPayload.length
+            ? { subscriptions: subscriptionsPayload }
+            : {}),
         });
       }
 
@@ -1135,12 +1237,13 @@ const Checkout = () => {
               <StickySummary>
                 <SectionTitle>{t("CHECKOUT.SUMMARY")}</SectionTitle>
                 <CartList>
-                  {cartItems.map(({ product, quantity }) => {
+                  {oneTimeCartItems.map((line) => {
+                    const { product, quantity } = line;
                     const primaryImage =
                       product.images?.find((img) => img.is_primary) ||
                       product.images?.[0];
                     return (
-                      <ItemRow key={product.id}>
+                      <ItemRow key={line.lineId || `o-${product.id}-${quantity}`}>
                         {primaryImage?.thumbnail ? (
                           <Thumb
                             src={primaryImage.thumbnail}
@@ -1161,6 +1264,59 @@ const Checkout = () => {
                       </ItemRow>
                     );
                   })}
+                  {subscriptionCartItems.length > 0 && (
+                    <>
+                      <CheckoutSectionDivider>
+                        <CheckoutSectionLine aria-hidden />
+                        <CheckoutSectionCenter>
+                          <CheckoutSectionTitle>
+                            {t("CART.SUBSCRIPTION_SECTION_TITLE")}
+                          </CheckoutSectionTitle>
+                          {subscriptionSectionSubtitle ? (
+                            <CheckoutSectionSubtitle>
+                              {subscriptionSectionSubtitle}
+                            </CheckoutSectionSubtitle>
+                          ) : null}
+                        </CheckoutSectionCenter>
+                        <CheckoutSectionLine aria-hidden />
+                      </CheckoutSectionDivider>
+                      {subscriptionCartItems.map((line) => {
+                        const { product, quantity } = line;
+                        const subDays = line.subscriptionIntervalDays;
+                        const freqKey = getSubscriptionLineFreqLabelKey(subDays);
+                        const primaryImage =
+                          product.images?.find((img) => img.is_primary) ||
+                          product.images?.[0];
+                        return (
+                          <ItemRow
+                            key={line.lineId || `s-${product.id}-${quantity}`}
+                            $subscription
+                          >
+                            {primaryImage?.thumbnail ? (
+                              <Thumb
+                                src={primaryImage.thumbnail}
+                                alt=""
+                                width={48}
+                                height={48}
+                              />
+                            ) : null}
+                            <ItemBody>
+                              <ItemTitle>
+                                {product.category_name} {product.name}
+                              </ItemTitle>
+                              {freqKey ? (
+                                <SummaryFreqBadge>{t(freqKey)}</SummaryFreqBadge>
+                              ) : null}
+                              <ItemMeta>
+                                ×{quantity} ·{" "}
+                                {Number(product.discount_price).toFixed(2)}
+                              </ItemMeta>
+                            </ItemBody>
+                          </ItemRow>
+                        );
+                      })}
+                    </>
+                  )}
                 </CartList>
                 <SummaryLine>
                   <span>{t("CHECKOUT.SUBTOTAL")}</span>

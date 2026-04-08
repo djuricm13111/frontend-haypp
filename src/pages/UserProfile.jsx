@@ -10,6 +10,7 @@ import { useNavigation } from "../utils/navigation";
 import { shopBasePath, normalizeShopLang } from "../utils/shopRoutes";
 import UserAddressBookSection from "../components/account/UserAddressBookSection";
 import OrderHistorySection from "../components/account/OrderHistorySection";
+import SubscriptionsSection from "../components/account/SubscriptionsSection";
 import { isAccountEmailVerified } from "../utils/emailVerification";
 
 const PageRoot = styled.div`
@@ -425,6 +426,16 @@ const UserProfile = () => {
             >
               {t("ACCOUNT.TAB_DETAILS")}
             </TabButton>
+            <TabButton
+              type="button"
+              role="tab"
+              id="account-tab-subscriptions"
+              aria-selected={accountTab === "subscriptions"}
+              aria-controls="account-panel-subscriptions"
+              onClick={() => setAccountTab("subscriptions")}
+            >
+              {t("ACCOUNT.TAB_SUBSCRIPTIONS")}
+            </TabButton>
           </TabBar>
 
           {accountTab === "orders" && (
@@ -438,6 +449,20 @@ const UserProfile = () => {
                 orders={orders}
                 isEmailVerified={isEmailVerified}
               />
+            </Card>
+          )}
+
+          {accountTab === "subscriptions" && (
+            <Card
+              role="tabpanel"
+              id="account-panel-subscriptions"
+              aria-labelledby="account-tab-subscriptions"
+            >
+              <SectionTitle>{t("ACCOUNT.SUBSCRIPTIONS_TITLE")}</SectionTitle>
+              <Muted style={{ marginBottom: "var(--spacing-md)" }}>
+                {t("ACCOUNT.SUBSCRIPTIONS_INTRO")}
+              </Muted>
+              <SubscriptionsSection accessToken={accessToken} />
             </Card>
           )}
 

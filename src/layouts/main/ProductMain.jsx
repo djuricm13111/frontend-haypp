@@ -12,6 +12,7 @@ import Breadcrumbs from "../../components/section/BreadCrumbs";
 import ProductDetails from "../../components/section/ProductDetails";
 import ProductCardSlider from "../../components/product/ProductCardSlider";
 import ProductFlavourDrawer from "../../components/product/ProductFlavourDrawer";
+import ProductSubscribeDrawer from "../../components/product/ProductSubscribeDrawer";
 import descriptions from "../../descriptions.json";
 import { shopBasePath } from "../../utils/shopRoutes";
 
@@ -478,8 +479,12 @@ const BtnSubscribe = styled.button`
   border-radius: var(--border-radius-base);
   cursor: pointer;
   transition: background-color 0.2s ease, opacity 0.2s ease;
-  &:hover {
+  &:hover:not(:disabled) {
     background: rgba(0, 26, 87, 0.06);
+  }
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
   }
   @media (max-width: 767px) {
     gap: 6px;
@@ -990,6 +995,7 @@ const ProductMain = () => {
   /** Slika u kartici puni visinu samo na širokom desktopu — na tabletu prirodna visina */
   const [fillImageSliderHeight, setFillImageSliderHeight] = useState(false);
   const [flavourDrawerOpen, setFlavourDrawerOpen] = useState(false);
+  const [subscribeOpen, setSubscribeOpen] = useState(false);
 
   useEffect(() => {
     setFlavourDrawerOpen(false);
@@ -1230,7 +1236,11 @@ const ProductMain = () => {
             </MediaColumn>
 
             <CtaRow>
-              <BtnSubscribe type="button">
+              <BtnSubscribe
+                type="button"
+                onClick={() => setSubscribeOpen(true)}
+                disabled={product.is_in_stock === "out_of_stock"}
+              >
                 <svg
                   width="22"
                   height="22"
@@ -1538,6 +1548,18 @@ const ProductMain = () => {
               currentProduct={product}
             />
           )}
+
+          <ProductSubscribeDrawer
+            open={subscribeOpen}
+            onClose={() => setSubscribeOpen(false)}
+            product={product}
+            initialPackQuantity={selectedQuantity}
+            currencyTag={currencyTag}
+            onAdded={() => {
+              setIsCartOpen(true);
+              setIsAnimating(true);
+            }}
+          />
         </>
       )}
     </Container>

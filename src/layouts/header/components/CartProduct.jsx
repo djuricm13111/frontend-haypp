@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { cartActions } from "../../../store/cart-slice";
 import { ProductContext } from "../../../context/ProductContext";
+import { getSubscriptionLineFreqLabelKey } from "../../../utils/subscriptionLabels";
 
 const THUMB_W = "76px";
 
@@ -31,7 +32,8 @@ const Container = styled.article`
   margin: 0 0 var(--spacing-sm);
   padding: var(--spacing-sm) 0;
   background-color: var(--bg-100);
-  border-bottom: 2px solid var(--bg-300);
+  border-bottom: ${(p) =>
+    p.$subscription ? "1px" : "2px"} solid var(--bg-300);
   display: grid;
   grid-template-columns: ${THUMB_W} minmax(0, 1fr);
   gap: var(--spacing-sm);
@@ -64,7 +66,8 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: var(--spacing-xs);
+  gap: ${(p) =>
+    p.$subscriptionLine ? "3px" : "var(--spacing-xs)"};
   min-height: 100%;
 `;
 
@@ -205,6 +208,17 @@ const QuantityTapButton = styled.button`
   }
 `;
 
+const SubscriptionBadge = styled.p`
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-200);
+  line-height: 1.2;
+`;
+
 const DeleteButton = styled.button`
   display: flex;
   align-items: center;
@@ -230,7 +244,7 @@ const DeleteButton = styled.button`
 
 const MOBILE_QTY_BREAKPOINT_PX = 768;
 
-const CartProduct = ({ item }) => {
+const CartProduct = ({ item, variant = "default" }) => {
   const { t } = useTranslation();
   const { currencyTag } = useContext(ProductContext);
   const [inputValue, setInputValue] = useState(item.quantity);
@@ -254,14 +268,15 @@ const CartProduct = ({ item }) => {
   const unitPrice = item.product.discount_price;
   const lineTotal = unitPrice * item.quantity;
 
-  const deleteCartItem = (id) => {
-    dispatch(cartActions.removeFromCart(id));
+  const deleteCartItem = (lineId) => {
+    dispatch(cartActions.removeFromCart(lineId));
   };
 
   const handleAddOne = () => {
     const newQuantity = inputValue + 1;
     dispatch(
       cartActions.updateCart({
+        lineId: item.lineId,
         product: item.product,
         quantity: newQuantity,
       })
@@ -271,11 +286,12 @@ const CartProduct = ({ item }) => {
   const handleRemoveOne = () => {
     const newQuantity = inputValue - 1;
     if (newQuantity === 0) {
-      deleteCartItem(item.product.id);
+      deleteCartItem(item.lineId);
       return;
     }
     dispatch(
       cartActions.updateCart({
+        lineId: item.lineId,
         product: item.product,
         quantity: newQuantity,
       })
@@ -291,6 +307,7 @@ const CartProduct = ({ item }) => {
     setInputValue(value);
     dispatch(
       cartActions.updateCart({
+        lineId: item.lineId,
         product: item.product,
         quantity: value,
       })
@@ -302,6 +319,7 @@ const CartProduct = ({ item }) => {
     setInputValue(q);
     dispatch(
       cartActions.updateCart({
+        lineId: item.lineId,
         product: item.product,
         quantity: q,
       })
@@ -328,8 +346,13 @@ const CartProduct = ({ item }) => {
     item.product.images?.find((img) => img.is_primary) ||
     item.product.images?.[0];
 
+  const subDays = item.subscriptionIntervalDays;
+  const freqKey = getSubscriptionLineFreqLabelKey(subDays);
+  const hasSub = freqKey != null && subDays != null && subDays !== "";
+  const isSubscriptionRow = variant === "subscription";
+
   return (
-    <Container>
+    <Container $subscription={isSubscriptionRow}>
       <Thumb>
         {primaryImage ? (
           <Image
@@ -345,7 +368,7 @@ const CartProduct = ({ item }) => {
           />
         ) : null}
       </Thumb>
-      <Body>
+      <Body $subscriptionLine={hasSub}>
         <Title>
           {formatCartProductTitle(
             item.product.category_name,
@@ -353,6 +376,9 @@ const CartProduct = ({ item }) => {
             item.product.nicotine
           )}
         </Title>
+        {hasSub ? (
+          <SubscriptionBadge>{t(freqKey)}</SubscriptionBadge>
+        ) : null}
         <BottomRow>
           <LineTotal>
             {currencyTag}
@@ -431,7 +457,7 @@ const CartProduct = ({ item }) => {
               </QtyControls>
               <DeleteButton
                 type="button"
-                onClick={() => deleteCartItem(item.product.id)}
+                onClick={() => deleteCartItem(item.lineId)}
                 aria-label="Remove from cart"
               >
               <svg

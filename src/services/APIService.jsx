@@ -38,7 +38,7 @@ export function normalizeProductListResponse(payload) {
 
 const DEFAULT_ENDPOINT =
   window.location.protocol === "https:"
-    ? "https://api.snusco.com/"
+    ? "https://api.maskkingsrbija.com/"
     : "http://127.0.0.1:8000/";
 
 // 2) Učitaj iz .env (CRA zahteva REACT_APP_ prefiks)
@@ -229,6 +229,88 @@ export default class APIService {
       throw error;
     }
   }
+
+  static async listSubscriptions(accessToken) {
+    const language = i18next.language.toLowerCase();
+    const currency = localStorage.getItem("currency") || defaultCurrency;
+    const response = await axios.get(`${this.URL}api/subscriptions/`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Accept-Language": language,
+        Currency: currency,
+        "Content-Type": "application/json",
+      },
+    });
+    return response.data;
+  }
+
+  static async createSubscription(payload, accessToken) {
+    const language = i18next.language.toLowerCase();
+    const currency = localStorage.getItem("currency") || defaultCurrency;
+    const response = await axios.post(`${this.URL}api/subscriptions/`, payload, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Accept-Language": language,
+        Currency: currency,
+        "Content-Type": "application/json",
+      },
+    });
+    return response.data;
+  }
+
+  static async cancelSubscription(subscriptionId, accessToken) {
+    const language = i18next.language.toLowerCase();
+    const currency = localStorage.getItem("currency") || defaultCurrency;
+    const response = await axios.post(
+      `${this.URL}api/subscriptions/${subscriptionId}/cancel/`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Accept-Language": language,
+          Currency: currency,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return response.data;
+  }
+
+  static async addSubscriptionItem(subscriptionId, body, accessToken) {
+    const language = i18next.language.toLowerCase();
+    const currency = localStorage.getItem("currency") || defaultCurrency;
+    const response = await axios.post(
+      `${this.URL}api/subscriptions/${subscriptionId}/items/`,
+      body,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Accept-Language": language,
+          Currency: currency,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return response.data;
+  }
+
+  static async deleteSubscriptionItem(subscriptionId, itemId, accessToken) {
+    const language = i18next.language.toLowerCase();
+    const currency = localStorage.getItem("currency") || defaultCurrency;
+    const response = await axios.delete(
+      `${this.URL}api/subscriptions/${subscriptionId}/items/${itemId}/`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Accept-Language": language,
+          Currency: currency,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return response.data;
+  }
+
   //USER
   static async VerifyCode(code, accessToken) {
     try {

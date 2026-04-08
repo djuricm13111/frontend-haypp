@@ -14,6 +14,7 @@ import { ProductContext } from "../../../context/ProductContext";
 import { useNavigate } from "react-router-dom";
 import { useNavigation } from "../../../utils/navigation";
 import { useTranslation } from "react-i18next";
+import { getSubscriptionSectionSubtitle } from "../../../utils/subscriptionLabels";
 
 const slideIn = keyframes`
   from {
@@ -548,18 +549,50 @@ const Button = styled.button`
     color: var(--bg-100);
   }
 `;
-const Notice = styled.p`
-  margin: 16px 0;
-  font-style: italic;
-  text-align: center;
-  font-size: var(--header-dropdown-link-size);
-`;
-
 const CartPanelHeading = styled.h3`
   font-family: "Montserrat", sans-serif;
   font-size: var(--header-dropdown-heading-size);
   font-weight: 600;
   margin: 0;
+`;
+
+const CartSectionDivider = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 4px;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+const CartSectionLine = styled.span`
+  flex: 1;
+  min-width: 12px;
+  height: 1px;
+  background: var(--bg-300);
+`;
+
+const CartSectionCenter = styled.div`
+  text-align: center;
+  flex-shrink: 0;
+  max-width: 72%;
+`;
+
+const CartSectionTitle = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-100);
+  line-height: 1.25;
+`;
+
+const CartSectionSubtitle = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-200);
+  margin-top: 3px;
+  line-height: 1.3;
 `;
 
 const CartTotalAmount = styled.h2`
@@ -658,11 +691,19 @@ const CartMenu = ({ isScrolled }) => {
   const cartBadgeLabel =
     totalQuantity > 99 ? "99+" : String(totalQuantity);
 
-  const inStockItems = cartItems.filter(
-    (item) => item.product.is_in_stock === "in_stock"
+  const subscriptionCartItems = cartItems.filter(
+    (item) =>
+      item.subscriptionIntervalDays != null &&
+      item.subscriptionIntervalDays !== ""
   );
-  const otherItems = cartItems.filter(
-    (item) => item.product.is_in_stock !== "in_stock"
+  const oneTimeCartItems = cartItems.filter(
+    (item) =>
+      item.subscriptionIntervalDays == null ||
+      item.subscriptionIntervalDays === ""
+  );
+  const subscriptionSectionSubtitle = getSubscriptionSectionSubtitle(
+    subscriptionCartItems,
+    t
   );
 
   useEffect(() => {
@@ -869,15 +910,33 @@ const CartMenu = ({ isScrolled }) => {
           </BottomWrapper>
         </Bottom>
         <MiddleDiv>
-          <CartPanelHeading>Your products</CartPanelHeading>
-          {inStockItems.map((item, index) => (
-            <CartProduct item={item} key={index} />
-          ))}
-          {otherItems.length > 0 && (
+          <CartPanelHeading>{t("CART.PANEL_YOUR_PRODUCTS")}</CartPanelHeading>
+          {oneTimeCartItems.length > 0 &&
+            oneTimeCartItems.map((item) => (
+              <CartProduct item={item} key={item.lineId} variant="default" />
+            ))}
+          {subscriptionCartItems.length > 0 && (
             <>
-              <Notice>{t("CART.NOTICE")}</Notice>
-              {otherItems.map((item, idx) => (
-                <CartProduct item={item} key={`out-${idx}`} />
+              <CartSectionDivider>
+                <CartSectionLine aria-hidden />
+                <CartSectionCenter>
+                  <CartSectionTitle>
+                    {t("CART.SUBSCRIPTION_SECTION_TITLE")}
+                  </CartSectionTitle>
+                  {subscriptionSectionSubtitle ? (
+                    <CartSectionSubtitle>
+                      {subscriptionSectionSubtitle}
+                    </CartSectionSubtitle>
+                  ) : null}
+                </CartSectionCenter>
+                <CartSectionLine aria-hidden />
+              </CartSectionDivider>
+              {subscriptionCartItems.map((item) => (
+                <CartProduct
+                  item={item}
+                  key={item.lineId}
+                  variant="subscription"
+                />
               ))}
             </>
           )}
