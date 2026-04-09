@@ -378,6 +378,11 @@ const CartList = styled.div`
   margin-bottom: var(--spacing-md);
   padding-right: 2px;
   -webkit-overflow-scrolling: touch;
+
+  /* Uži „kadar“ liste na širokom ekranu — kraći blok proizvoda, više mesta za total + dugme */
+  @media (min-width: 960px) {
+    max-height: min(32vh, 260px);
+  }
 `;
 
 const CheckoutSectionDivider = styled.div`
