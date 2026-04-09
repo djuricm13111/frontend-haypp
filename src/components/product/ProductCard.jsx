@@ -383,7 +383,7 @@ const PickerPanel = styled.div`
   z-index: 10;
   display: flex;
   flex-direction: column;
-  max-height: min(320px, 55vh);
+  max-height: min(420px, 70vh);
   overflow-x: hidden;
   overflow-y: auto;
   border: 1px solid #e0e0e0;
@@ -407,8 +407,8 @@ const MinimizeBar = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 4px var(--spacing-md);
+  gap: 8px;
+  padding: 12px var(--spacing-md);
   flex-shrink: 0;
   border: none;
   border-bottom: 1px solid #e0e0e0;
@@ -434,7 +434,7 @@ const PickerRow = styled.button`
   flex-direction: row;
   align-items: center;
   width: 100%;
-  padding: 5px var(--spacing-md);
+  padding: 15px var(--spacing-md);
   border: none;
   border-top: 1px solid #ebebeb;
   background: ${(p) => (p.$selected ? "var(--bg-200)" : "var(--bg-100)")};
@@ -443,7 +443,7 @@ const PickerRow = styled.button`
   text-align: left;
   transition: background var(--transition-fast);
   flex-shrink: 0;
-  gap: 6px;
+  gap: 8px;
 
   ${MinimizeBar} + & {
     border-top: none;
@@ -737,9 +737,9 @@ const MobileQtyList = styled.div`
 const MobileQtyRow = styled.button`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
-  padding: 11px var(--spacing-md);
+  padding: 17px var(--spacing-md);
   border: none;
   border-top: 1px solid #f0f0f0;
   background: ${(p) => (p.$selected ? "var(--bg-200)" : "var(--bg-300)")};
