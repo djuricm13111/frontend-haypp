@@ -365,10 +365,11 @@ const PackRow = styled.button`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr auto;
   align-items: center;
-  column-gap: 10px;
-  row-gap: 4px;
+  column-gap: 12px;
+  row-gap: 6px;
   width: 100%;
-  padding: 9px 12px;
+  min-height: 52px;
+  padding: 14px 16px;
   margin: 0;
   border: none;
   border-radius: 0;
@@ -408,25 +409,27 @@ const PackColUnit = styled.div`
 const PackLabelText = styled.span`
   font-weight: ${({ $active }) => ($active ? 700 : 500)};
     color: var(--text-100);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-base);
+  line-height: 1.25;
 `;
 
 const PackTotal = styled.span`
   font-weight: 700;
-  font-size: var(--font-size-base);
+  font-size: 1.125rem;
+  line-height: 1.2;
   color: var(--text-100);
 `;
 
 const PackUnit = styled.span`
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   color: var(--text-200);
   white-space: nowrap;
 `;
 
 const PackIndicator = styled.span`
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -436,8 +439,8 @@ const PackIndicator = styled.span`
   color: var(--bg-100);
 
   svg {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
   }
 `;
 
