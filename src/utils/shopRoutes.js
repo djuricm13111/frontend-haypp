@@ -73,13 +73,15 @@ export function shopSearchPath(lang, query) {
 /**
  * Dropdown „Nicotine Pouches“ (desktop header + mobilni side menu) — isti sadržaj.
  * @param {string} lang — npr. i18n.language
+ * @param {(key: string) => string} t — react-i18next `t`
  */
-export function buildShopNavDropdown(lang) {
+export function buildShopNavDropdown(lang, t) {
   const base = shopBasePath(lang);
+  const T = (key) => t(`HEADER.SHOP_NAV.${key}`);
   return {
     first: [
       {
-        title: "Popular Brands",
+        title: T("POPULAR_BRANDS"),
         href: base,
         items: [
           { label: "ZYN", href: shopBrandPath(lang, "zyn") },
@@ -92,45 +94,45 @@ export function buildShopNavDropdown(lang) {
         ],
       },
       {
-        title: "Shop by Flavour",
+        title: T("SHOP_BY_FLAVOUR"),
         href: shopFlavoursHubPath(lang),
         items: [
-          { label: "Fruit Pouches", href: shopFlavourPath(lang, "fruit") },
-          { label: "Coffee Pouches", href: shopFlavourPath(lang, "coffee") },
-          { label: "Mint Pouches", href: shopFlavourPath(lang, "mint") },
+          { label: T("FRUIT_POUCHES"), href: shopFlavourPath(lang, "fruit") },
+          { label: T("COFFEE_POUCHES"), href: shopFlavourPath(lang, "coffee") },
+          { label: T("MINT_POUCHES"), href: shopFlavourPath(lang, "mint") },
         ],
       },
       {
-        title: "Shop by Strength",
+        title: T("SHOP_BY_STRENGTH"),
         href: shopStrengthHubPath(lang),
         items: [
-          { label: "Low", href: shopStrengthPath(lang, "low") },
-          { label: "Normal", href: shopStrengthPath(lang, "normal") },
-          { label: "Strong", href: shopStrengthPath(lang, "strong") },
-          { label: "Extra Strong", href: shopStrengthPath(lang, "extra-strong") },
-          { label: "Ultra Strong", href: shopStrengthPath(lang, "ultra-strong") },
+          { label: T("STRENGTH_LOW"), href: shopStrengthPath(lang, "low") },
+          { label: T("STRENGTH_NORMAL"), href: shopStrengthPath(lang, "normal") },
+          { label: T("STRENGTH_STRONG"), href: shopStrengthPath(lang, "strong") },
+          { label: T("STRENGTH_EXTRA_STRONG"), href: shopStrengthPath(lang, "extra-strong") },
+          { label: T("STRENGTH_ULTRA_STRONG"), href: shopStrengthPath(lang, "ultra-strong") },
         ],
       },
       {
-        title: "Snus Pouches",
+        title: T("SNUS_POUCHES"),
         href: "/snus",
       },
       {
-        title: "Subscriptions",
+        title: T("SUBSCRIPTIONS"),
         href: "/subscriptions",
       },
       {
-        title: "Free Sample",
+        title: T("FREE_SAMPLE"),
         href: "/free-sample",
       },
       {
-        title: "Can of the Month",
+        title: T("CAN_OF_THE_MONTH"),
         href: "/can-of-the-month",
       },
     ],
     second: [
-      { title: "Free Sample", href: "/free-sample" },
-      { title: "Mixpacks & Bundles", href: "/mixpacks-bundles" },
+      { title: T("FREE_SAMPLE"), href: "/free-sample" },
+      { title: T("MIXPACKS_BUNDLES"), href: "/mixpacks-bundles" },
     ],
   };
 }

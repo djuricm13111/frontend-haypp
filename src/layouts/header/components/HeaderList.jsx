@@ -236,22 +236,23 @@ const Spacer = styled.div`
   height: 8px;
 `;
 
-export const navItems = [
-  "Nicotine Pouches",
-  "Nicotine Free Pouches",
-  "Mint Pouches",
-  "99p Pouches",
-  "New",
-  "Bestsellers",
-  "Offers & Deals",
-  "All Brands",
-  "Blog",
+/** Ključevi za `t()` — isti redosled kao ranije `navItems` (indeks za navigaciju / dropdown). */
+export const NAV_ITEM_T_KEYS = [
+  "HEADER.NICOTINE_POUCHES",
+  "HEADER.NAV_ITEMS.NICOTINE_FREE",
+  "HEADER.NAV_ITEMS.MINT_POUCHES",
+  "HEADER.NAV_ITEMS.POUCHES_99P",
+  "HEADER.NAV_ITEMS.NEW",
+  "HEADER.NAV_ITEMS.BESTSELLERS",
+  "HEADER.NAV_ITEMS.OFFERS_DEALS",
+  "HEADER.NAV_ITEMS.ALL_BRANDS",
+  "HEADER.NAV_ITEMS.BLOG",
 ];
 
 const HOVER_CLOSE_DELAY = 250;
 
 const HeaderList = ({ isScrolled }) => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     goToNewInStore,
     goToBestsellers,
@@ -261,7 +262,10 @@ const HeaderList = ({ isScrolled }) => {
   } = useNavigation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
-  const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
+  const dropdownData = useMemo(
+    () => buildShopNavDropdown(lang, t),
+    [lang, t]
+  );
 
   const [sliderOffset, setSliderOffset] = useState(0);
   const [maxOffset, setMaxOffset] = useState(0);
@@ -352,7 +356,7 @@ const HeaderList = ({ isScrolled }) => {
     setSliderOffset((prev) => Math.max(prev - step, 0));
   };
 
-  const renderNavItem = (item, index) => {
+  const renderNavItem = (itemKey, index) => {
     const hasFirstDropdown = index === 0;
     const hasSecondDropdown = index === 6;
     const navListLinkTo =
@@ -370,7 +374,7 @@ const HeaderList = ({ isScrolled }) => {
 
     return (
       <FlexItem
-        key={`${item}-${index}`}
+        key={`${itemKey}-${index}`}
         onMouseEnter={(e) => {
           if (hasFirstDropdown) openDropdown("first", e.currentTarget);
           if (hasSecondDropdown) openDropdown("second", e.currentTarget);
@@ -383,10 +387,10 @@ const HeaderList = ({ isScrolled }) => {
       >
         {navListLinkTo ? (
           <Text as={Link} to={navListLinkTo}>
-            {item}
+            {t(itemKey)}
           </Text>
         ) : (
-          <Text>{item}</Text>
+          <Text>{t(itemKey)}</Text>
         )}
 
         {(hasFirstDropdown || hasSecondDropdown) && (
@@ -416,9 +420,9 @@ const HeaderList = ({ isScrolled }) => {
         {activeDropdown === "first" && (
           <SubHeader>
             <SubHeaderItem>
-              <SubHeaderHeading>Nicotine Pouches</SubHeaderHeading>
+              <SubHeaderHeading>{t("HEADER.NICOTINE_POUCHES")}</SubHeaderHeading>
               <SubHeaderTitleText>
-                Here you will find all our Nicotine Pouches
+                {t("HEADER.DROPDOWN_NICOTINE_INTRO")}
               </SubHeaderTitleText>
 
               <SubHeaderGrid>
@@ -447,9 +451,11 @@ const HeaderList = ({ isScrolled }) => {
         {activeDropdown === "second" && (
           <SubHeader>
             <SubHeaderItem>
-              <SubHeaderHeading>Offers & Deals</SubHeaderHeading>
+              <SubHeaderHeading>
+                {t("HEADER.NAV_ITEMS.OFFERS_DEALS")}
+              </SubHeaderHeading>
               <SubHeaderTitleText>
-                Here you will find all our Offers & Deals
+                {t("HEADER.DROPDOWN_OFFERS_INTRO")}
               </SubHeaderTitleText>
               <SubHeaderGrid>
                 {dropdownData.second.map((row) => (
@@ -468,7 +474,7 @@ const HeaderList = ({ isScrolled }) => {
   if (!isScrolled) {
     return (
       <StaticFlexDiv ref={wrapperRef}>
-        {navItems.map(renderNavItem)}
+        {NAV_ITEM_T_KEYS.map(renderNavItem)}
         {renderDropdown()}
       </StaticFlexDiv>
     );
@@ -484,7 +490,7 @@ const HeaderList = ({ isScrolled }) => {
         $showRightFade={canSlideRight}
       >
         <SliderTrack ref={trackRef} $offset={sliderOffset}>
-          {navItems.map(renderNavItem)}
+          {NAV_ITEM_T_KEYS.map(renderNavItem)}
         </SliderTrack>
       </SliderViewport>
 

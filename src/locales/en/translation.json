@@ -30,7 +30,37 @@
       "NEW_ARRIVALS": "New Arrivals",
       "BLOG": "The SnusCo Blog",
       "TOP_BRANDS": "Top Brands"
-    }
+    },
+    "NAV_ITEMS": {
+      "NICOTINE_FREE": "Nicotine Free Pouches",
+      "MINT_POUCHES": "Mint Pouches",
+      "POUCHES_99P": "99p Pouches",
+      "NEW": "New",
+      "BESTSELLERS": "Bestsellers",
+      "OFFERS_DEALS": "Offers & Deals",
+      "ALL_BRANDS": "All Brands",
+      "BLOG": "Blog"
+    },
+    "SHOP_NAV": {
+      "POPULAR_BRANDS": "Popular Brands",
+      "SHOP_BY_FLAVOUR": "Shop by Flavour",
+      "FRUIT_POUCHES": "Fruit Pouches",
+      "COFFEE_POUCHES": "Coffee Pouches",
+      "MINT_POUCHES": "Mint Pouches",
+      "SHOP_BY_STRENGTH": "Shop by Strength",
+      "STRENGTH_LOW": "Low",
+      "STRENGTH_NORMAL": "Normal",
+      "STRENGTH_STRONG": "Strong",
+      "STRENGTH_EXTRA_STRONG": "Extra Strong",
+      "STRENGTH_ULTRA_STRONG": "Ultra Strong",
+      "SNUS_POUCHES": "Snus Pouches",
+      "SUBSCRIPTIONS": "Subscriptions",
+      "FREE_SAMPLE": "Free Sample",
+      "CAN_OF_THE_MONTH": "Can of the Month",
+      "MIXPACKS_BUNDLES": "Mixpacks & Bundles"
+    },
+    "DROPDOWN_NICOTINE_INTRO": "Here you will find all our Nicotine Pouches",
+    "DROPDOWN_OFFERS_INTRO": "Here you will find all our Offers & Deals"
   },
 
   "HEADER_SLIDER": {

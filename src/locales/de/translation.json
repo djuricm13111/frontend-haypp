@@ -30,7 +30,37 @@
       "NEW_ARRIVALS": "Neuankömmlinge",
       "BLOG": "Der SnusCo-Blog",
       "TOP_BRANDS": "Top-Marken"
-    }
+    },
+    "NAV_ITEMS": {
+      "NICOTINE_FREE": "Nikotinfreie Beutel",
+      "MINT_POUCHES": "Minz-Beutel",
+      "POUCHES_99P": "99p-Beutel",
+      "NEW": "Neu",
+      "BESTSELLERS": "Bestseller",
+      "OFFERS_DEALS": "Angebote & Deals",
+      "ALL_BRANDS": "Alle Marken",
+      "BLOG": "Blog"
+    },
+    "SHOP_NAV": {
+      "POPULAR_BRANDS": "Beliebte Marken",
+      "SHOP_BY_FLAVOUR": "Nach Geschmack",
+      "FRUIT_POUCHES": "Frucht-Beutel",
+      "COFFEE_POUCHES": "Kaffee-Beutel",
+      "MINT_POUCHES": "Minz-Beutel",
+      "SHOP_BY_STRENGTH": "Nach Stärke",
+      "STRENGTH_LOW": "Niedrig",
+      "STRENGTH_NORMAL": "Normal",
+      "STRENGTH_STRONG": "Stark",
+      "STRENGTH_EXTRA_STRONG": "Extra stark",
+      "STRENGTH_ULTRA_STRONG": "Ultra stark",
+      "SNUS_POUCHES": "Snus-Beutel",
+      "SUBSCRIPTIONS": "Abonnements",
+      "FREE_SAMPLE": "Gratisprobe",
+      "CAN_OF_THE_MONTH": "Dose des Monats",
+      "MIXPACKS_BUNDLES": "Mixpacks & Bundles"
+    },
+    "DROPDOWN_NICOTINE_INTRO": "Hier findest du alle unsere Nikotinbeutel",
+    "DROPDOWN_OFFERS_INTRO": "Hier findest du alle Angebote & Deals"
   },
 
   "HEADER_SLIDER": {

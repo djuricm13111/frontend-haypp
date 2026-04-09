@@ -6,7 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useNavigation } from "../../../utils/navigation";
 import { useIsStaff } from "../../../hooks/useIsStaff";
 import Language from "./Language";
-import { navItems } from "./HeaderList";
+import { NAV_ITEM_T_KEYS } from "./HeaderList";
 import { buildShopNavDropdown } from "../../../utils/shopRoutes";
 import { AuthUserContext } from "../../../context/AuthUserContext";
 
@@ -347,7 +347,10 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   const { t, i18n } = useTranslation();
   const lang =
     i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
-  const dropdownData = useMemo(() => buildShopNavDropdown(lang), [lang]);
+  const dropdownData = useMemo(
+    () => buildShopNavDropdown(lang, t),
+    [lang, t]
+  );
 
   const { authTokens } = useContext(AuthUserContext);
   const isStaff = useIsStaff();
@@ -424,34 +427,43 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
     return () => window.removeEventListener("keydown", onKey);
   }, [mounted, navState, onClose, goBackNav]);
 
-  const handleNav = (label) => {
-    if (label === "Mint Pouches") {
+  /** Indeks reda u glavnoj listi — putanje moraju ostati engleski slugovi za `goToCategory`. */
+  const handleNav = (index) => {
+    if (index === 2) {
       navigate(goToFlavour("mint"));
       onClose();
       return;
     }
-    if (label === "Bestsellers") {
-      navigate(goToBestsellers());
-      onClose();
-      return;
-    }
-    if (label === "New") {
+    if (index === 4) {
       navigate(goToNewInStore());
       onClose();
       return;
     }
-    if (label === "All Brands") {
+    if (index === 5) {
+      navigate(goToBestsellers());
+      onClose();
+      return;
+    }
+    if (index === 7) {
       navigate(goToAllBrands());
       onClose();
       return;
     }
-    if (label === "Blog") {
+    if (index === 8) {
       navigate(goToBlog());
       onClose();
       return;
     }
-    navigate(goToCategory(label));
-    onClose();
+    if (index === 1) {
+      navigate(goToCategory("Nicotine Free Pouches"));
+      onClose();
+      return;
+    }
+    if (index === 3) {
+      navigate(goToCategory("99p Pouches"));
+      onClose();
+      return;
+    }
   };
 
   const handleLoginClick = () => {
@@ -488,34 +500,34 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
     navState?.view === "firstDrill" && dropdownData.first[navState.sectionIndex]
       ? dropdownData.first[navState.sectionIndex].title
       : navState?.view === "first"
-        ? navItems[0]
+        ? t(NAV_ITEM_T_KEYS[0])
         : navState?.view === "second"
-          ? navItems[6]
+          ? t(NAV_ITEM_T_KEYS[6])
           : "";
 
   const renderCategoryList = () => (
     <>
-      {navItems.map((item, index) => {
+      {NAV_ITEM_T_KEYS.map((itemKey, index) => {
         const subKey = NAV_INDEX_TO_SUB[index];
         if (subKey) {
           return (
             <NavRow
-              key={item}
+              key={itemKey}
               type="button"
               onClick={() => openSub(subKey)}
             >
-              <span>{item}</span>
+              <span>{t(itemKey)}</span>
               <RowArrow aria-hidden="true">→</RowArrow>
             </NavRow>
           );
         }
         return (
           <NavRow
-            key={item}
+            key={itemKey}
             type="button"
-            onClick={() => handleNav(item)}
+            onClick={() => handleNav(index)}
           >
-            <span>{item}</span>
+            <span>{t(itemKey)}</span>
           </NavRow>
         );
       })}
@@ -598,7 +610,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   const renderFirstDrill = (sectionIndex) => {
     const section = dropdownData.first[sectionIndex];
     if (!section?.items?.length) return null;
-    const parentTitle = navItems[0];
+    const parentTitle = t(NAV_ITEM_T_KEYS[0]);
     return (
       <>
         <BreadcrumbBar>
@@ -632,7 +644,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
 
   const renderSecondList = () => (
     <>
-      <BreadcrumbBar>{navItems[6]}</BreadcrumbBar>
+      <BreadcrumbBar>{t(NAV_ITEM_T_KEYS[6])}</BreadcrumbBar>
       {secondRows.map((row, i) => (
         <SubNavRow
           key={`${row.kind}-${row.label}-${i}`}
