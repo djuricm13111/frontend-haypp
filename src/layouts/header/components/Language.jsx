@@ -165,7 +165,7 @@ const DrawerTriggerInner = styled.span`
   min-width: 0;
 `;
 
-const HayppDrawerTrigger = styled.button`
+const SnusCoDrawerTrigger = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -199,13 +199,13 @@ const FlagCircleWrap = styled.span`
   background: #f0f0f0;
 `;
 
-const HayppFlagImg = styled(Image)`
+const SnusCoFlagImg = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: cover;
 `;
 
-const HayppTriggerLead = styled.span`
+const SnusCoTriggerLead = styled.span`
   display: flex;
   align-items: center;
   min-width: 0;
@@ -213,7 +213,7 @@ const HayppTriggerLead = styled.span`
   gap: 12px;
 `;
 
-const HayppRowArrow = styled.span`
+const SnusCoRowArrow = styled.span`
   color: #001a57;
   font-size: 20px;
   line-height: 1;
@@ -261,7 +261,7 @@ const DrawerLangButton = styled.button`
 /**
  * @param {object} props
  * @param {boolean} [props.embedInDrawer]
- * @param {'default' | 'hayppRow'} [props.embedVariant] — hayppRow: region label, round flag, → (mobile drawer footer)
+ * @param {'default' | 'snuscoRow'} [props.embedVariant] — snuscoRow: region label, round flag, → (mobile drawer footer)
  */
 const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
   const { i18n, t } = useTranslation();
@@ -410,10 +410,10 @@ const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
         ? currentLang.regionLabel
         : currentLang.label;
 
-    if (embedVariant === "hayppRow") {
+    if (embedVariant === "snuscoRow") {
       return (
         <DrawerRoot>
-          <HayppDrawerTrigger
+          <SnusCoDrawerTrigger
             ref={triggerRef}
             type="button"
             onClick={toggleMenu}
@@ -421,9 +421,9 @@ const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
             aria-haspopup="listbox"
             aria-label={t("HEADER.LANGUAGE")}
           >
-            <HayppTriggerLead>
+            <SnusCoTriggerLead>
               <FlagCircleWrap>
-                <HayppFlagImg
+                <SnusCoFlagImg
                   src={currentLang.flag}
                   alt=""
                   loading="lazy"
@@ -432,11 +432,11 @@ const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
                 />
               </FlagCircleWrap>
               <span>{regionLabel}</span>
-            </HayppTriggerLead>
-            <HayppRowArrow aria-hidden="true" $open={showMenu}>
+            </SnusCoTriggerLead>
+            <SnusCoRowArrow aria-hidden="true" $open={showMenu}>
               →
-            </HayppRowArrow>
-          </HayppDrawerTrigger>
+            </SnusCoRowArrow>
+          </SnusCoDrawerTrigger>
           {showMenu && (
             <DrawerOptions
               $onWhite
@@ -463,7 +463,7 @@ const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
                   >
                     <FlagTitleRadio>
                       <FlagCircleWrap>
-                        <HayppFlagImg
+                        <SnusCoFlagImg
                           src={lang.flag}
                           alt={`${lang.code} flag`}
                           width={26}

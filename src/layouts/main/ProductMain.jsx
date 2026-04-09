@@ -16,7 +16,7 @@ import ProductSubscribeDrawer from "../../components/product/ProductSubscribeDra
 import descriptions from "../../descriptions.json";
 import { shopBasePath } from "../../utils/shopRoutes";
 
-/** Haypp PDP referenca — plava i selekcije */
+/** SnusCo PDP referenca — plava i selekcije */
 const PDP_BLUE = "#001a57";
 const PDP_ROW_SELECTED = "#f2f2f2";
 const PDP_LINE = "#e8e8e8";

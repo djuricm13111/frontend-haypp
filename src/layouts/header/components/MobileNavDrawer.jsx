@@ -554,7 +554,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
           <RowArrow aria-hidden="true">→</RowArrow>
         </AdminMobileLink>
       ) : null}
-      <Language embedInDrawer embedVariant="hayppRow" />
+      <Language embedInDrawer embedVariant="snuscoRow" />
     </>
   );
 

@@ -53,7 +53,7 @@ const BrandRegion = styled.p`
   font-family: "Montserrat", var(--font-family, sans-serif);
 `;
 
-/** Plava traka — bedževi kao na Haypp referenci (beli / outline) */
+/** Plava traka — bedževi kao na SnusCo referenci (beli / outline) */
 const NavyLogosRow = styled.div`
   max-width: var(--max-width-container);
   margin: 0 auto;
