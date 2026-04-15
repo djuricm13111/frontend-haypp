@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import { useDispatch } from "react-redux";
 
-import { calculatePrice } from "../../../utils/discount";
+import { volumeAdjustedUnitPrice } from "../../../utils/discount";
 import AddToCartAnim from "../../../components/animations/AddToCartAnim";
 import { cartActions } from "../../../store/cart-slice";
 import { ReactComponent as CartBasketAddMobileIcon } from "../../../assets/icons/cart-basket-add-mobile.svg";
@@ -23,6 +23,15 @@ const SearchProduct = ({
 
   const primaryImage = item?.images?.find((img) => img.is_primary);
   const isOutOfStock = item.is_in_stock === "out_of_stock";
+  const isMixPack = Boolean(item?.is_mix_pack);
+  const cartQuantity = isMixPack ? 1 : selectedQuantity;
+
+  useEffect(() => {
+    if (isMixPack) {
+      setSelectedQuantity(1);
+      setOpenDropdownId(null);
+    }
+  }, [isMixPack, item?.id]);
 
   const handleToggleDropdown = (e) => {
     e.stopPropagation();
@@ -41,7 +50,7 @@ const SearchProduct = ({
     dispatch(
       cartActions.addToCart({
         product: item,
-        quantity: selectedQuantity,
+        quantity: cartQuantity,
       })
     );
 
@@ -59,7 +68,7 @@ const SearchProduct = ({
   };
 
   const totalPrice =
-    calculatePrice(item.price, selectedQuantity) * selectedQuantity;
+    volumeAdjustedUnitPrice(item, cartQuantity) * cartQuantity;
 
   return (
     <ProductResult
@@ -119,35 +128,40 @@ const SearchProduct = ({
         ) : (
           <ProductRightGroup onClick={(e) => e.stopPropagation()}>
             <ProductPriceButton
-              onClick={handleToggleDropdown}
-              $isOpen={openDropdownId === item.id}
+              as={isMixPack ? "div" : "button"}
+              {...(!isMixPack ? { type: "button" } : {})}
+              onClick={isMixPack ? undefined : handleToggleDropdown}
+              $isOpen={!isMixPack && openDropdownId === item.id}
+              $readOnly={isMixPack}
             >
-              <PriceLeft>{selectedQuantity}-pack</PriceLeft>
+              <PriceLeft>{isMixPack ? "1-pack" : `${selectedQuantity}-pack`}</PriceLeft>
 
               <PriceRight>
                 {currencyTag}
                 {totalPrice}
               </PriceRight>
 
-              <ArrowIcon $isOpen={openDropdownId === item.id}>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6 9L12 15L18 9"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </ArrowIcon>
+              {!isMixPack ? (
+                <ArrowIcon $isOpen={openDropdownId === item.id}>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </ArrowIcon>
+              ) : null}
 
-              {openDropdownId === item.id && (
+              {!isMixPack && openDropdownId === item.id && (
                 <ProductPriceDropdown>
                   {QUANTITY_OPTIONS.map((qty, index) => {
                     const isSelected = selectedQuantity === qty;
@@ -162,7 +176,7 @@ const SearchProduct = ({
 
                         <OptionPrice>
                           {currencyTag}
-                          {calculatePrice(item.price, qty) * qty}
+                          {volumeAdjustedUnitPrice(item, qty) * qty}
                         </OptionPrice>
 
                         <CheckCircle $selected={isSelected}>
@@ -493,19 +507,30 @@ const ProductPriceButton = styled.button`
   height: 42px;
   border: none;
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: ${({ $readOnly }) =>
+    $readOnly ? "1fr auto" : "1fr auto auto"};
   align-items: center;
   gap: 10px;
   padding: 0 10px 0 12px;
-  cursor: pointer;
-  background-color: ${({ $isOpen }) =>
-    $isOpen ? "var(--primary-100)" : "var(--bg-100)"};
-  color: ${({ $isOpen }) => ($isOpen ? "var(--bg-100)" : "var(--text-100)")};
+  cursor: ${({ $readOnly }) => ($readOnly ? "default" : "pointer")};
+  background-color: ${({ $isOpen, $readOnly }) =>
+    $readOnly ? "var(--bg-100)" : $isOpen ? "var(--primary-100)" : "var(--bg-100)"};
+  color: ${({ $isOpen, $readOnly }) =>
+    $readOnly ? "var(--text-100)" : $isOpen ? "var(--bg-100)" : "var(--text-100)"};
 
   &:hover {
-    background-color: ${({ $isOpen }) =>
-      $isOpen ? "var(--primary-100)" : "var(--bg-100)"};
-    color: ${({ $isOpen }) => ($isOpen ? "var(--bg-100)" : "var(--text-100)")};
+    background-color: ${({ $isOpen, $readOnly }) =>
+      $readOnly
+        ? "var(--bg-100)"
+        : $isOpen
+          ? "var(--primary-100)"
+          : "var(--bg-100)"};
+    color: ${({ $isOpen, $readOnly }) =>
+      $readOnly
+        ? "var(--text-100)"
+        : $isOpen
+          ? "var(--bg-100)"
+          : "var(--text-100)"};
   }
 
   @media (max-width: 767px) {

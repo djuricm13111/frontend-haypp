@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import APIService from "../../services/APIService";
 import { useNavigation } from "../../utils/navigation";
+import { getFlavorGroupId } from "../../utils/flavorGroups";
 
 const slideIn = keyframes`
   from {
@@ -368,7 +369,18 @@ function ProductFlavourDrawer({
     try {
       const data = await APIService.GetProductsByCategory(categorySlug);
       const list = Array.isArray(data?.products) ? data.products : [];
-      setItems(list);
+      const currentMix = Boolean(currentProduct?.is_mix_pack);
+      const flavorGroupId = currentMix
+        ? null
+        : getFlavorGroupId(currentProduct?.flavor);
+      const filtered = list.filter((p) => {
+        if (Boolean(p.is_mix_pack) !== currentMix) return false;
+        if (!currentMix && flavorGroupId) {
+          return getFlavorGroupId(p.flavor) === flavorGroupId;
+        }
+        return true;
+      });
+      setItems(filtered);
     } catch (e) {
       console.error(e);
       setError(true);
@@ -376,7 +388,7 @@ function ProductFlavourDrawer({
     } finally {
       setLoading(false);
     }
-  }, [categorySlug]);
+  }, [categorySlug, currentProduct?.is_mix_pack, currentProduct?.flavor]);
 
   useEffect(() => {
     if (!open || !categorySlug) return;

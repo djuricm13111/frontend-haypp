@@ -13,10 +13,17 @@ import { ProductContext } from "../../context/ProductContext";
 import AddToCartAnim from "../animations/AddToCartAnim";
 import { useNavigation } from "../../utils/navigation";
 import { useNavigate } from "react-router-dom";
-import { calculatePrice } from "../../utils/discount";
+import { volumeAdjustedUnitPrice } from "../../utils/discount";
 import { useTranslation } from "react-i18next";
 
 const PACK_TIERS_DEFAULT = [1, 5, 10, 20];
+
+/**
+ * Ista min. visina reda sa qty/cenom: padding 6+6 kao na QtyTrigger + dve linije cene
+ * (ukupno + po jedinici) da mix pack kartica vizuelno odgovara običnoj.
+ */
+const CARD_QTY_PRICE_ROW_MIN_HEIGHT =
+  "calc(12px + (1rem * 1.15) + (0.5625rem * 1.2))";
 
 /** Panel ide naviše od Add to cart — reveal od donje ivice (suprotno od Search dropdowna). */
 const fadeInBottom = keyframes`
@@ -296,7 +303,7 @@ const QtyTrigger = styled.button`
   justify-content: space-between;
   gap: 8px;
   padding: 6px var(--spacing-md);
-  min-height: 0;
+  min-height: ${CARD_QTY_PRICE_ROW_MIN_HEIGHT};
   border: none;
   border-top: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
@@ -370,6 +377,24 @@ const QtyTotalPrice = styled.span`
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
   text-align: right;
+`;
+
+/** Mix pack: samo cena (centrirano), isti okvir kao QtyTrigger — linija iznad/dole. */
+const MixPackCardPriceRow = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px var(--spacing-md);
+  min-height: ${CARD_QTY_PRICE_ROW_MIN_HEIGHT};
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  background: var(--bg-100);
+
+  ${QtyTotalPrice} {
+    text-align: center;
+  }
 `;
 
 /** Donja ivica panela = vrh Add to cart; ide naviše preko količine, naslova i slike. */
@@ -855,6 +880,12 @@ function useMatchMobileQty(maxPx = MOBILE_QTY_MAX_PX) {
 }
 
 function buildPackOptions(product) {
+  if (product?.is_mix_pack) {
+    const qty = 1;
+    const perUnit = volumeAdjustedUnitPrice(product, qty);
+    const total = perUnit * qty;
+    return [{ quantity: qty, label: `${qty}-pack`, perUnit, total }];
+  }
   if (Array.isArray(product.pack_options) && product.pack_options.length > 0) {
     return product.pack_options.map((po) => {
       const qty = Number(po.quantity);
@@ -862,7 +893,7 @@ function buildPackOptions(product) {
       const perUnit =
         po.unit_price != null
           ? Number(po.unit_price)
-          : calculatePrice(Number(product.price), qty);
+          : volumeAdjustedUnitPrice(product, qty);
       const total =
         po.total_price != null
           ? Number(po.total_price)
@@ -872,7 +903,7 @@ function buildPackOptions(product) {
   }
 
   return PACK_TIERS_DEFAULT.map((qty) => {
-    const perUnit = calculatePrice(Number(product.price), qty);
+    const perUnit = volumeAdjustedUnitPrice(product, qty);
     const total = perUnit * qty;
     return {
       quantity: qty,
@@ -900,6 +931,21 @@ const ProductCard = ({ product }) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   const selected = packOptions.find((o) => o.quantity === selectedQty) ?? packOptions[0];
+  const showQtyPicker = !product.is_mix_pack;
+
+  useEffect(() => {
+    if (!product) return;
+    if (product.is_mix_pack) {
+      setSelectedQty(1);
+      setPickerOpen(false);
+      return;
+    }
+    const preferred =
+      packOptions.find((o) => o.quantity === 10)?.quantity ??
+      packOptions[0]?.quantity ??
+      1;
+    setSelectedQty(preferred);
+  }, [product.id, product.is_mix_pack, packOptions]);
 
   const cardBadge = useMemo(() => {
     const b = product.card_badge;
@@ -996,6 +1042,7 @@ const ProductCard = ({ product }) => {
   };
 
   const mobileQtyMaskPortal =
+    showQtyPicker &&
     pickerOpen &&
     isMobileQty &&
     typeof document !== "undefined" &&
@@ -1009,6 +1056,7 @@ const ProductCard = ({ product }) => {
     );
 
   const mobileQtyPortal =
+    showQtyPicker &&
     panelInDOM &&
     isMobileQty &&
     typeof document !== "undefined" &&
@@ -1103,12 +1151,12 @@ const ProductCard = ({ product }) => {
     );
 
   return (
-    <Card $pickerLift={panelInDOM && !isMobileQty}>
+    <Card $pickerLift={showQtyPicker && panelInDOM && !isMobileQty}>
       {mobileQtyMaskPortal}
       {mobileQtyPortal}
       <TopBlock>
         <ImageSection>
-          {pickerOpen && !isMobileQty && (
+          {showQtyPicker && pickerOpen && !isMobileQty && (
             <ImageHitLayer
               type="button"
               aria-label={t("PRODUCT_CARD.MINIMIZE")}
@@ -1161,7 +1209,17 @@ const ProductCard = ({ product }) => {
       </TopBlock>
 
       <Body>
-        {selected && (
+        {product.is_mix_pack && selected ? (
+          <QuantityWrap>
+            <MixPackCardPriceRow>
+              <QtyTotalPrice>
+                {currencyTag}
+                {selected.total.toFixed(2)}
+              </QtyTotalPrice>
+            </MixPackCardPriceRow>
+          </QuantityWrap>
+        ) : null}
+        {showQtyPicker && selected ? (
           <QuantityWrap>
             <QtyTrigger
               type="button"
@@ -1194,10 +1252,10 @@ const ProductCard = ({ product }) => {
               </QtyTriggerPrices>
             </QtyTrigger>
           </QuantityWrap>
-        )}
+        ) : null}
 
         <AddToCartAnchor>
-          {panelInDOM && !isMobileQty && (
+          {showQtyPicker && panelInDOM && !isMobileQty && (
             <PickerPanel
               $isOpen={pickerOpen}
               role="listbox"

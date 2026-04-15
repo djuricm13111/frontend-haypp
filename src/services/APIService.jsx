@@ -11,6 +11,7 @@ const defaultCurrency = DEFAULT_CURRENCY;
 export const API_PRODUCT_LISTINGS = {
   BEST_SELLERS: "api/products/best-sellers/",
   NEW_ARRIVALS: "api/products/new-arrivals/",
+  MIX_PACKS: "api/products/mix-packs/",
 };
 
 /** Kategorije / brendovi u ponudi — `GET api/categories/` */
@@ -112,6 +113,23 @@ export default class APIService {
     );
     return normalizeProductListResponse(response.data);
   }
+
+  /**
+   * @param {string} [locale] — npr. `"de"` | `"en"`
+   */
+  static async GetMixPacks(locale) {
+    const language = String(locale ?? i18next.language ?? "en").toLowerCase();
+    const currency = localStorage.getItem("currency") || defaultCurrency;
+    const response = await axios.get(APIService.URL + API_PRODUCT_LISTINGS.MIX_PACKS, {
+      headers: {
+        "Accept-Language": language,
+        Currency: currency,
+        "Content-Type": "application/json",
+      },
+    });
+    return normalizeProductListResponse(response.data);
+  }
+
   static async GetProductsByCategory(slug) {
     const language = i18next.language.toLowerCase(); // Pretpostavljamo da i18next upravlja trenutnim jezikom
     const currency = localStorage.getItem("currency") || defaultCurrency;

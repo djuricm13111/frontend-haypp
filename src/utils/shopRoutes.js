@@ -55,6 +55,11 @@ export function shopNewInStorePath(lang) {
   return `/${normalizeShopLang(lang)}/new-in-store`;
 }
 
+/** Mix packovi i bundle listing — `APIService.API_PRODUCT_LISTINGS.MIX_PACKS`. */
+export function shopMixpacksBundlesPath(lang) {
+  return `/${normalizeShopLang(lang)}/mixpacks-bundles`;
+}
+
 /** Pregled svih brendova — podaci: `APIService.GetCategories()`. */
 export function shopAllBrandsPath(lang) {
   return `/${normalizeShopLang(lang)}/all-brands`;
@@ -132,7 +137,7 @@ export function buildShopNavDropdown(lang, t) {
     ],
     second: [
       { title: T("FREE_SAMPLE"), href: "/free-sample" },
-      { title: T("MIXPACKS_BUNDLES"), href: "/mixpacks-bundles" },
+      { title: T("MIXPACKS_BUNDLES"), href: shopMixpacksBundlesPath(lang) },
     ],
   };
 }

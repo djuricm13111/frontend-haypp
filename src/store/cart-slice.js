@@ -1,5 +1,5 @@
 import { DEFAULT_CURRENCY, convertCurrency } from "../utils/global_const";
-import { calculatePrice } from "../utils/discount";
+import { volumeAdjustedUnitPrice } from "../utils/discount";
 import { createSlice } from "@reduxjs/toolkit";
 import CryptoJS from "crypto-js";
 import TagManager from "react-gtm-module";
@@ -84,7 +84,7 @@ const updateDiscountPrices = (itemsList, totalQuantity) => {
     ...item,
     product: {
       ...item.product,
-      discount_price: calculatePrice(item.product.price, totalQuantity),
+      discount_price: volumeAdjustedUnitPrice(item.product, totalQuantity),
     },
   }));
 };

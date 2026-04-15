@@ -26,7 +26,7 @@ const Inner = styled.div`
 
 const Title = styled.h1`
   font-family: var(--font-family);
-  font-size: clamp(1.45rem, 3.4vw, 2.05rem);
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
   font-weight: 400;
   color: var(--text-100);
   line-height: 1.25;
@@ -35,15 +35,19 @@ const Title = styled.h1`
   max-width: 100%;
   overflow-wrap: break-word;
 
+  @media (max-width: 767px) {
+    font-size: clamp(1.95rem, 6vw, 2.85rem);
+  }
+
   @media ${DESKTOP} {
-    font-size: clamp(1.2rem, 1.75vw, 1.5rem);
+    font-size: clamp(1.5rem, 2.2vw, 1.9rem);
     margin-bottom: var(--spacing-md);
   }
 `;
 
 const Subtitle = styled.p`
   font-family: var(--font-family);
-  font-size: clamp(0.875rem, 1.65vw, 1rem);
+  font-size: clamp(1rem, 2vw, 1.1875rem);
   font-weight: 700;
   color: var(--text-100);
   line-height: 1.45;
@@ -51,8 +55,12 @@ const Subtitle = styled.p`
   width: 100%;
   box-sizing: border-box;
 
+  @media (max-width: 767px) {
+    font-size: clamp(1.125rem, 3.2vw, 1.375rem);
+  }
+
   @media ${DESKTOP} {
-    font-size: clamp(0.8rem, 1.1vw, 0.875rem);
+    font-size: clamp(0.95rem, 1.35vw, 1.0625rem);
   }
 `;
 

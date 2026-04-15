@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { ProductContext } from "../../context/ProductContext";
 import { cartActions } from "../../store/cart-slice";
-import { calculatePrice } from "../../utils/discount";
+import { volumeAdjustedUnitPrice } from "../../utils/discount";
 import ImageSlider from "../../components/product/ImageSlider";
 import AddToCartAnim from "../../components/animations/AddToCartAnim";
 import { useTranslation } from "react-i18next";
@@ -1031,12 +1031,16 @@ const ProductMain = () => {
     fetchProduct();
     loadRecommededProductsBySlug(slug);
   }, [slug, i18n.language]);
+
+  useEffect(() => {
+    if (!product) return;
+    setSelectedQuantity(product.is_mix_pack ? 1 : 10);
+  }, [product?.id, product?.is_mix_pack]);
+
   useEffect(() => {
     if (product) {
-      const newDiscountedPrice = calculatePrice(
-        product.price,
-        selectedQuantity
-      );
+      const qty = product.is_mix_pack ? 1 : selectedQuantity;
+      const newDiscountedPrice = volumeAdjustedUnitPrice(product, qty);
       setDiscountedPrice(newDiscountedPrice);
 
       const newSavingsPercentage = Math.round(
@@ -1057,11 +1061,12 @@ const ProductMain = () => {
     }
   }, [product, selectedQuantity, langParam, category, slug, i18n.language]);
 
-  const addToCart = (selectedQuantity) => {
+  const addToCart = (qty) => {
+    const quantity = product?.is_mix_pack ? 1 : qty;
     dispatch(
       cartActions.addToCart({
         product: product,
-        quantity: selectedQuantity,
+        quantity,
       })
     );
     setIsCartOpen(true);
@@ -1072,7 +1077,7 @@ const ProductMain = () => {
     setIsAnimating(false);
   };
   const getDiscountData = (quantity) => {
-    const discountedPrice = calculatePrice(product.price, quantity);
+    const discountedPrice = volumeAdjustedUnitPrice(product, quantity);
     const savings = Math.round(
       ((product.price - discountedPrice) / product.price) * 100
     );
@@ -1125,15 +1130,24 @@ const ProductMain = () => {
     });
   };
 
+  const effectivePackQuantity = product
+    ? product.is_mix_pack
+      ? 1
+      : selectedQuantity
+    : selectedQuantity;
+
   const stickyLineTotal = product
-    ? (calculatePrice(product.price, selectedQuantity) * selectedQuantity).toFixed(2)
+    ? (
+        volumeAdjustedUnitPrice(product, effectivePackQuantity) *
+        effectivePackQuantity
+      ).toFixed(2)
     : "0";
   const stickyPackLabel = product
-    ? selectedQuantity === 1
+    ? effectivePackQuantity === 1
       ? t("PRODUCT.DOSE", { defaultValue: "1-pack" })
       : t("PRODUCT.PACK", {
-          quantity: selectedQuantity,
-          defaultValue: `${selectedQuantity}-pack`,
+          quantity: effectivePackQuantity,
+          defaultValue: `${effectivePackQuantity}-pack`,
         })
     : "";
 
@@ -1260,7 +1274,7 @@ const ProductMain = () => {
                 <ButtonWrapper>
                 <BtnAddCart
                   type="button"
-                    onClick={() => addToCart(selectedQuantity)}
+                    onClick={() => addToCart(effectivePackQuantity)}
                     disabled={product.is_in_stock === "out_of_stock"}
                   >
                   <svg
@@ -1316,59 +1330,61 @@ const ProductMain = () => {
                 </FlavourCardButton>
               </FlavourBlock>
 
-              <PackList>
-                {PACK_QUANTITIES.map((quantity) => {
-                  const { discountedPrice } = getDiscountData(quantity);
-                  const lineTotal = (
-                    calculatePrice(product.price, quantity) * quantity
-                  ).toFixed(2);
-                  const isActive = selectedQuantity === quantity;
-                  return (
-                    <PackRow
-                      key={quantity}
-                      type="button"
-                      $active={isActive}
-                      onClick={() => setSelectedQuantity(quantity)}
-                    >
-                      <PackColPack>
-                        <PackLabelText $active={isActive}>
-                          {quantity === 1
-                            ? t("PRODUCT.DOSE", { defaultValue: "1-pack" })
-                            : t("PRODUCT.PACK", {
-                                quantity,
-                                defaultValue: `${quantity}-pack`,
-                              })}
-                        </PackLabelText>
-                      </PackColPack>
-                      <PackColTotal>
-                        <PackTotal>
-                          {currencyTag}
-                          {lineTotal}
-                        </PackTotal>
-                      </PackColTotal>
-                      <PackColUnit>
-                        {quantity !== 1 && (
-                          <PackUnit>
+              {!product.is_mix_pack && (
+                <PackList>
+                  {PACK_QUANTITIES.map((quantity) => {
+                    const { discountedPrice } = getDiscountData(quantity);
+                    const lineTotal = (
+                      volumeAdjustedUnitPrice(product, quantity) * quantity
+                    ).toFixed(2);
+                    const isActive = selectedQuantity === quantity;
+                    return (
+                      <PackRow
+                        key={quantity}
+                        type="button"
+                        $active={isActive}
+                        onClick={() => setSelectedQuantity(quantity)}
+                      >
+                        <PackColPack>
+                          <PackLabelText $active={isActive}>
+                            {quantity === 1
+                              ? t("PRODUCT.DOSE", { defaultValue: "1-pack" })
+                              : t("PRODUCT.PACK", {
+                                  quantity,
+                                  defaultValue: `${quantity}-pack`,
+                                })}
+                          </PackLabelText>
+                        </PackColPack>
+                        <PackColTotal>
+                          <PackTotal>
                             {currencyTag}
-                            {discountedPrice.toFixed(2)}
-                            {t("PRODUCT_CARD.PER_UNIT")}
-                          </PackUnit>
-                        )}
-                      </PackColUnit>
-                      <PackIndicator $active={isActive}>
-                        {isActive && (
-                          <svg viewBox="0 0 24 24" aria-hidden>
-                    <path
-                              fill="currentColor"
-                              d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-                            />
-                          </svg>
-                        )}
-                      </PackIndicator>
-                    </PackRow>
-                  );
-                })}
-              </PackList>
+                            {lineTotal}
+                          </PackTotal>
+                        </PackColTotal>
+                        <PackColUnit>
+                          {quantity !== 1 && (
+                            <PackUnit>
+                              {currencyTag}
+                              {discountedPrice.toFixed(2)}
+                              {t("PRODUCT_CARD.PER_UNIT")}
+                            </PackUnit>
+                          )}
+                        </PackColUnit>
+                        <PackIndicator $active={isActive}>
+                          {isActive && (
+                            <svg viewBox="0 0 24 24" aria-hidden>
+                      <path
+                                fill="currentColor"
+                                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                              />
+                            </svg>
+                          )}
+                        </PackIndicator>
+                      </PackRow>
+                    );
+                  })}
+                </PackList>
+              )}
             </PurchaseMidBlock>
 
             <PurchaseColumnSpacer aria-hidden />
@@ -1391,7 +1407,7 @@ const ProductMain = () => {
             <StickyCartButtonWrap>
               <BtnAddCartSticky
                 type="button"
-                onClick={() => addToCart(selectedQuantity)}
+                onClick={() => addToCart(effectivePackQuantity)}
                 disabled={product.is_in_stock === "out_of_stock"}
               >
                 <svg
@@ -1556,7 +1572,7 @@ const ProductMain = () => {
             open={subscribeOpen}
             onClose={() => setSubscribeOpen(false)}
             product={product}
-            initialPackQuantity={selectedQuantity}
+            initialPackQuantity={effectivePackQuantity}
             currencyTag={currencyTag}
             onAdded={() => {
               setIsCartOpen(true);

@@ -764,6 +764,12 @@
       "TITLE": "New in store",
       "DESCRIPTION": "The latest arrivals — new products and fresh lines as soon as they land in our warehouse.",
       "META_DESCRIPTION": "Discover new nicotine pouch arrivals at SnusCo. Fresh products and limited drops, fast delivery in Europe."
+    },
+    "MIXPACKS": {
+      "PAGE_TITLE": "Mixpacks & bundles",
+      "TITLE": "Mixpacks & bundles",
+      "DESCRIPTION": "Multi-can packs and bundles — try more flavours or stock up with curated sets from our catalogue.",
+      "META_DESCRIPTION": "Shop mixpacks and bundle deals on nicotine pouches at SnusCo. Multi-can sets and value packs, shipped from Austria across Europe."
     }
   },
 

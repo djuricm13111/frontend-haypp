@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { cartActions } from "../../store/cart-slice";
-import { calculatePrice } from "../../utils/discount";
+import { volumeAdjustedUnitPrice } from "../../utils/discount";
 
 const PDP_BLUE = "#001a57";
 const SUBSCRIBE_CTA_GREEN = "#1b5e20";
@@ -423,9 +423,13 @@ export default function ProductSubscribeDrawer({
 
   useEffect(() => {
     if (!open || !product) return;
-    setPackQty(initialPackQuantity ?? 10);
+    if (product.is_mix_pack) {
+      setPackQty(1);
+    } else {
+      setPackQty(initialPackQuantity ?? 10);
+    }
     setIntervalDays(31);
-  }, [open, product?.id, initialPackQuantity]);
+  }, [open, product?.id, product?.is_mix_pack, initialPackQuantity]);
 
   useEffect(() => {
     if (!open) return;
@@ -447,7 +451,7 @@ export default function ProductSubscribeDrawer({
     if (!product) return {};
     const out = {};
     for (const q of PACK_QUANTITIES) {
-      const unit = calculatePrice(product.price, q);
+      const unit = volumeAdjustedUnitPrice(product, q);
       out[q] = {
         unit,
         line: unit * q,
@@ -544,38 +548,42 @@ export default function ProductSubscribeDrawer({
           </TopPanel>
 
           <ScrollContentPad>
-            <SectionTitle>{t("PRODUCT.SUBSCRIBE_PACK_TITLE")}</SectionTitle>
-            {PACK_QUANTITIES.map((q) => {
-              const lt = lineTotals[q];
-              const selected = packQty === q;
-              return (
-                <PackRow
-                  key={q}
-                  type="button"
-                  $selected={selected}
-                  onClick={() => setPackQty(q)}
-                >
-                  <PackLabel>
-                    {q === 1
-                      ? t("PRODUCT.DOSE", { defaultValue: "1-pack" })
-                      : t("PRODUCT.PACK", {
-                          quantity: q,
-                          defaultValue: `${q}-pack`,
-                        })}
-                  </PackLabel>
-                  <PackTotal>
-                    {currencyTag}
-                    {lt.line.toFixed(2)}
-                  </PackTotal>
-                  <PackUnit>
-                    {currencyTag}
-                    {lt.unit.toFixed(2)}
-                    {t("PRODUCT_CARD.PER_UNIT")}
-                  </PackUnit>
-                  <CheckMark $on={selected}>{selected ? "✓" : ""}</CheckMark>
-                </PackRow>
-              );
-            })}
+            {!product.is_mix_pack && (
+              <>
+                <SectionTitle>{t("PRODUCT.SUBSCRIBE_PACK_TITLE")}</SectionTitle>
+                {PACK_QUANTITIES.map((q) => {
+                  const lt = lineTotals[q];
+                  const selected = packQty === q;
+                  return (
+                    <PackRow
+                      key={q}
+                      type="button"
+                      $selected={selected}
+                      onClick={() => setPackQty(q)}
+                    >
+                      <PackLabel>
+                        {q === 1
+                          ? t("PRODUCT.DOSE", { defaultValue: "1-pack" })
+                          : t("PRODUCT.PACK", {
+                              quantity: q,
+                              defaultValue: `${q}-pack`,
+                            })}
+                      </PackLabel>
+                      <PackTotal>
+                        {currencyTag}
+                        {lt.line.toFixed(2)}
+                      </PackTotal>
+                      <PackUnit>
+                        {currencyTag}
+                        {lt.unit.toFixed(2)}
+                        {t("PRODUCT_CARD.PER_UNIT")}
+                      </PackUnit>
+                      <CheckMark $on={selected}>{selected ? "✓" : ""}</CheckMark>
+                    </PackRow>
+                  );
+                })}
+              </>
+            )}
 
             <FreqSection>
               <SectionTitle>

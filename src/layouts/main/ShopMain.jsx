@@ -291,8 +291,8 @@ const EmptySearchNote = styled.p`
 `;
 
 /**
- * @param {{ listingPage?: 'bestsellers' | 'newInStore' | null, searchQuery?: string | null }} props
- * listingPage — stranice /:lang/bestsellers i /:lang/new-in-store (podaci iz API listinga).
+ * @param {{ listingPage?: 'bestsellers' | 'newInStore' | 'mixpacks' | null, searchQuery?: string | null }} props
+ * listingPage — /:lang/bestsellers, /:lang/new-in-store, /:lang/mixpacks-bundles (podaci iz API listinga).
  * searchQuery — kada je prosleđen (stranica pretrage), naslov i breadcrumb koriste upit.
  */
 const ShopMain = ({ listingPage = null, searchQuery = null }) => {
@@ -344,6 +344,16 @@ const ShopMain = ({ listingPage = null, searchQuery = null }) => {
         shopCrumb,
         {
           name: t("SHOP_LISTING.NEW_IN_STORE.TITLE"),
+          url: shopListUrl,
+        },
+      ];
+    }
+    if (listingPage === "mixpacks") {
+      return [
+        home,
+        shopCrumb,
+        {
+          name: t("SHOP_LISTING.MIXPACKS.TITLE"),
           url: shopListUrl,
         },
       ];
@@ -504,6 +514,8 @@ const ShopMain = ({ listingPage = null, searchQuery = null }) => {
       ? t("SHOP_LISTING.BESTSELLERS.TITLE")
       : listingPage === "newInStore"
       ? t("SHOP_LISTING.NEW_IN_STORE.TITLE")
+      : listingPage === "mixpacks"
+      ? t("SHOP_LISTING.MIXPACKS.TITLE")
       : shopFilterOnlyMode === "flavor"
       ? t("SHOP.FLAVOUR_HUB.TITLE")
       : shopFilterOnlyMode === "strength"
@@ -524,6 +536,8 @@ const ShopMain = ({ listingPage = null, searchQuery = null }) => {
       ? t("SHOP_LISTING.BESTSELLERS.DESCRIPTION")
       : listingPage === "newInStore"
       ? t("SHOP_LISTING.NEW_IN_STORE.DESCRIPTION")
+      : listingPage === "mixpacks"
+      ? t("SHOP_LISTING.MIXPACKS.DESCRIPTION")
       : shopFilterOnlyMode === "flavor"
       ? t("SHOP.FLAVOUR_HUB.DESCRIPTION")
       : shopFilterOnlyMode === "strength"

@@ -72,6 +72,10 @@ function App() {
                   path="/:lang/new-in-store"
                   element={<ShopListing listing="newInStore" />}
                 />
+                <Route
+                  path="/:lang/mixpacks-bundles"
+                  element={<ShopListing listing="mixpacks" />}
+                />
                 <Route path="/:lang/all-brands" element={<AllBrands />} />
                 <Route
                   path="/:lang/search/:legacyQuery"

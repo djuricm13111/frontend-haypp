@@ -9,13 +9,14 @@ import APIService from "../services/APIService";
 import {
   shopBestsellersPath,
   shopNewInStorePath,
+  shopMixpacksBundlesPath,
   normalizeShopLang,
 } from "../utils/shopRoutes";
 
 /**
  * Puna širina shop layout-a — proizvodi isključivo sa backend GET ruta
- * (`APIService.API_PRODUCT_LISTINGS`: best-sellers / new-arrivals).
- * Frontend rute: /:lang/bestsellers, /:lang/new-in-store
+ * (`APIService.API_PRODUCT_LISTINGS`: best-sellers / new-arrivals / mix-packs).
+ * Frontend rute: /:lang/bestsellers, /:lang/new-in-store, /:lang/mixpacks-bundles
  */
 const ShopListing = ({ listing }) => {
   const { i18n, t } = useTranslation();
@@ -31,7 +32,12 @@ const ShopListing = ({ listing }) => {
   } = useContext(ProductContext);
 
   const isBestsellers = listing === "bestsellers";
-  const listingPageProp = isBestsellers ? "bestsellers" : "newInStore";
+  const isMixpacks = listing === "mixpacks";
+  const listingPageProp = isBestsellers
+    ? "bestsellers"
+    : isMixpacks
+      ? "mixpacks"
+      : "newInStore";
 
   useEffect(() => {
     const lang =
@@ -43,13 +49,19 @@ const ShopListing = ({ listing }) => {
 
     const title = isBestsellers
       ? t("SHOP_LISTING.BESTSELLERS.PAGE_TITLE")
-      : t("SHOP_LISTING.NEW_IN_STORE.PAGE_TITLE");
+      : isMixpacks
+        ? t("SHOP_LISTING.MIXPACKS.PAGE_TITLE")
+        : t("SHOP_LISTING.NEW_IN_STORE.PAGE_TITLE");
     const description = isBestsellers
       ? t("SHOP_LISTING.BESTSELLERS.META_DESCRIPTION")
-      : t("SHOP_LISTING.NEW_IN_STORE.META_DESCRIPTION");
+      : isMixpacks
+        ? t("SHOP_LISTING.MIXPACKS.META_DESCRIPTION")
+        : t("SHOP_LISTING.NEW_IN_STORE.META_DESCRIPTION");
     const canonicalPath = isBestsellers
       ? shopBestsellersPath(lang)
-      : shopNewInStorePath(lang);
+      : isMixpacks
+        ? shopMixpacksBundlesPath(lang)
+        : shopNewInStorePath(lang);
 
     setSeo({
       title: `${title} | SnusCo`,
@@ -58,7 +70,7 @@ const ShopListing = ({ listing }) => {
       url: `https://www.snusco.at${canonicalPath}`,
       images: ["https://www.snusco.at/assets/snuspouch-category-image.jpg"],
     });
-  }, [listing, langParam, i18n.language, t, isBestsellers]);
+  }, [listing, langParam, i18n.language, t, isBestsellers, isMixpacks]);
 
   useEffect(() => {
     setLockedFlavorGroupId(null);
@@ -74,7 +86,9 @@ const ShopListing = ({ listing }) => {
       try {
         const list = isBestsellers
           ? await APIService.GetBestSellers(apiLang)
-          : await APIService.GetNewArrivals(apiLang);
+          : isMixpacks
+            ? await APIService.GetMixPacks(apiLang)
+            : await APIService.GetNewArrivals(apiLang);
         if (cancelled) return;
         setProducts(list);
         setFilteredProducts(list);
@@ -91,7 +105,7 @@ const ShopListing = ({ listing }) => {
     return () => {
       cancelled = true;
     };
-  }, [listing, isBestsellers, langParam, i18n.language]);
+  }, [listing, isBestsellers, isMixpacks, langParam, i18n.language]);
 
   const defaultSeo = {
     title: "SnusCo",
