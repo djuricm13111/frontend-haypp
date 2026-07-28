@@ -46,9 +46,8 @@ export const paymentMethods = [
 ];
 
 export const transportMethods = [
-  //{ name: "DHL Standard", price: 8.9, days: 5 },
-  { name: "Post - AT", price: 8.9, days: 3 },
-  //{ name: "DHL Express Saver", price: 19.9, days: 3 },
+  { name: "Post - AT", code: "post_at", price: 20, days: 3 },
+  { name: "DHL Express Saver", code: "dhl_express_saver", price: 24.90, days: 1 },
 ];
 
 /** Minimalni iznos narudžbine (subtotal proizvoda, bez poštarine) za besplatnu dostavu. Jedini izvor istine za UI i obračun. */

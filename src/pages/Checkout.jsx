@@ -22,6 +22,7 @@ import {
   getCartMerchandiseSubtotal,
   getShippingCostPrice,
   qualifiesForFreeShipping,
+  convertCurrency,
 } from "../utils/global_const";
 import {
   getSubscriptionLineFreqLabelKey,
@@ -29,15 +30,13 @@ import {
 } from "../utils/subscriptionLabels";
 
 const TRANSPORT_OPTIONS = [
-  { value: "Post - AT", i18n: "CHECKOUT.TRANSPORT_POST" },
-  { value: "DHL Standard", i18n: "CHECKOUT.TRANSPORT_DHL" },
-  { value: "DHL Express Saver", i18n: "CHECKOUT.TRANSPORT_DHL_EXP" },
+  { value: "Post - AT", i18n: "CHECKOUT.TRANSPORT_POST", price: 20 },
+  { value: "DHL Express Saver", i18n: "CHECKOUT.TRANSPORT_DHL_EXP", price: 24.90 },
 ];
 
 const PAYMENT_OPTIONS = [
   { value: "cod", i18n: "CHECKOUT.PAY_COD" },
   { value: "card", i18n: "CHECKOUT.PAY_CARD" },
-  { value: "paypal", i18n: "CHECKOUT.PAY_PAYPAL" },
 ];
 
 /** Sprečava horizontalni scroll od duge sadržaja unutar layout-a. */
@@ -737,8 +736,10 @@ const Checkout = () => {
   const shippingCost = useMemo(() => {
     if (!cartItems.length) return 0;
     if (qualifiesForFreeShipping(subtotal)) return 0;
-    return getShippingCostPrice(DEFAULT_CURRENCY, currency);
-  }, [cartItems.length, subtotal, currency]);
+    const method = TRANSPORT_OPTIONS.find((t) => t.value === transportMethod);
+    const basePrice = method?.price ?? 20;
+    return convertCurrency(basePrice, DEFAULT_CURRENCY, currency);
+  }, [cartItems.length, subtotal, currency, transportMethod]);
 
   const grandTotal = useMemo(
     () => parseFloat((subtotal + shippingCost).toFixed(2)),
