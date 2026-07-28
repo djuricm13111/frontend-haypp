@@ -411,8 +411,13 @@ function ShieldVerifyNavy() {
 }
 
 const SECTIONS = [
-  { id: "cs", menuKey: "ACC_MENU_CS", descKey: "ACC_CS_DESC", linkKeys: ["LINK_HELP", "LINK_CONTACT"] },
-  { id: "legal", menuKey: "ACC_MENU_LEGAL", descKey: "ACC_LEGAL_DESC", linkKeys: ["LINK_PRIVACY", "LINK_TERMS", "LINK_RETURNS"] },
+  { id: "cs", menuKey: "ACC_MENU_CS", descKey: "ACC_CS_DESC", linkKeys: ["LINK_CONTACT"] },
+  {
+    id: "legal",
+    menuKey: "ACC_MENU_LEGAL",
+    descKey: "ACC_LEGAL_DESC",
+    linkKeys: ["LINK_PRIVACY", "LINK_TERMS", "LINK_ACCESSIBILITY"],
+  },
   { id: "company", menuKey: "ACC_MENU_COMPANY", descKey: "ACC_COMPANY_DESC", linkKeys: ["LINK_ABOUT", "LINK_BLOG"] },
 ];
 
@@ -427,6 +432,9 @@ function normalizeFooterLang(lng) {
 
 function footerLinkTo(linkKey, lang) {
   if (linkKey === "LINK_BLOG") return `/${lang}/blog`;
+  if (linkKey === "LINK_TERMS") return `/${lang}/terms`;
+  if (linkKey === "LINK_PRIVACY") return `/${lang}/privacy`;
+  if (linkKey === "LINK_ACCESSIBILITY") return `/${lang}/accessibility`;
   return "/";
 }
 

@@ -343,7 +343,7 @@ const SectionContainer = styled.div`
 `;
 const Title = styled.h3`
   margin: var(--spacing-md) 0 var(--spacing-xs);
-  font-size: var(--font-size-base);
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-100);
   line-height: 1.35;
@@ -354,6 +354,23 @@ const Title = styled.h3`
 
 const Paragraph = styled.p`
   margin-bottom: 12px;
+  font-size: 1.05rem;
+`;
+
+const BulletList = styled.ul`
+  margin: 0 0 12px 0;
+  padding: 0;
+  list-style: none;
+`;
+
+const BulletItem = styled.li`
+  padding: 4px 0;
+  font-size: inherit;
+  &::before {
+    content: "•";
+    margin-right: 8px;
+    color: var(--text-200);
+  }
 `;
 
 const ProductDetails = ({ product }) => {
@@ -438,23 +455,47 @@ const ProductDetails = ({ product }) => {
   // 3. Funkcija za čišćenje stringa
   const clean = (str = "") =>
     str
-      .replace(/[\r\n]+/g, " ") // zamenjuje newline-ove jednim razmakom
-      .replace(/""/g, "") // uklanja duple navodnike
+      .replace(/[\r\n]+/g, " ")
+      .replace(/""/g, "")
       .trim();
+
+  const isBulletBlock = (str = "") =>
+    /^-\s+\S+/.test(str.trimStart());
+
+  const parseBulletBlock = (str = "") =>
+    str
+      .split(/\r?\n/)
+      .map((line) => line.replace(/^-\s*/, "").trim())
+      .filter(Boolean)
+      .map((line) => {
+        const colonIdx = line.indexOf(":");
+        if (colonIdx === -1) return { label: null, value: line };
+        return {
+          label: line.slice(0, colonIdx).trim(),
+          value: line.slice(colonIdx + 1).trim(),
+        };
+      });
 
   // 4. Grupisanje u sekcije
   const sections = [];
   let current = null;
 
   paras.forEach((raw) => {
+    if (!raw || !raw.trim()) return;
+
+    if (isBulletBlock(raw)) {
+      if (current) current.contents.push({ type: "bullets", items: parseBulletBlock(raw) });
+      return;
+    }
+
     const text = clean(raw);
-    if (!text) return; // preskači prazne stringove
+    if (!text) return;
 
     if (isTitle(text)) {
       current = { title: text, contents: [] };
       sections.push(current);
     } else if (current) {
-      current.contents.push(text);
+      current.contents.push({ type: "text", html: text });
     }
   });
   return (
@@ -517,12 +558,26 @@ const ProductDetails = ({ product }) => {
                     {sections.map(({ title, contents }, idx) => (
                       <Fragment key={idx}>
                         <Title>{title}</Title>
-                        {contents.map((html, i) => (
-                          <Paragraph
-                            key={i}
-                            dangerouslySetInnerHTML={{ __html: html }}
-                          />
-                        ))}
+                        {contents.map((block, i) =>
+                          block.type === "bullets" ? (
+                            <BulletList key={i}>
+                              {block.items.map((item, j) => (
+                                <BulletItem key={j}>
+                                  {item.label ? (
+                                    <><strong>{item.label}:</strong> {item.value}</>
+                                  ) : (
+                                    item.value
+                                  )}
+                                </BulletItem>
+                              ))}
+                            </BulletList>
+                          ) : (
+                            <Paragraph
+                              key={i}
+                              dangerouslySetInnerHTML={{ __html: block.html }}
+                            />
+                          )
+                        )}
                       </Fragment>
                     ))}
                   </DescriptionTextBlock>

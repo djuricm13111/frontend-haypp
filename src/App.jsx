@@ -17,6 +17,9 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import BlogListing from "./pages/BlogListing";
 import BlogArticle from "./pages/BlogArticle";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import AccessibilityStatement from "./pages/AccessibilityStatement";
 import AdminOrdersInbox from "./pages/AdminOrdersInbox";
 import SiteFooter from "./layouts/footer/SiteFooter";
 import { shopSearchPath, normalizeShopLang } from "./utils/shopRoutes";
@@ -84,6 +87,12 @@ function App() {
                 <Route path="/:lang/search" element={<SearchResults />} />
                 <Route path="/:lang/blog" element={<BlogListing />} />
                 <Route path="/:lang/blog/:slug" element={<BlogArticle />} />
+                <Route path="/:lang/terms" element={<TermsAndConditions />} />
+                <Route path="/:lang/privacy" element={<PrivacyPolicy />} />
+                <Route
+                  path="/:lang/accessibility"
+                  element={<AccessibilityStatement />}
+                />
                 <Route
                   path="/:lang/reset-password/:uid/:token"
                   element={<ResetPassword />}

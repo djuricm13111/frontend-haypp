@@ -80,7 +80,8 @@ export function useNavigation() {
   }
 
   function goToCategory(name) {
-    return `/category/${slugPart(name)}`;
+    const lang = normalizeLang(i18n.language);
+    return `/${lang}/snus-verkauf/${slugPart(name)}`;
   }
 
   /** Shop lista — vidi `shopRoutes.js`. */

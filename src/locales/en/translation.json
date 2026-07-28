@@ -76,7 +76,6 @@
     "SUPPORT": "Support",
     "FAQS": "FAQs",
     "PRIVACY_POLICY": "Privacy Policy",
-    "RETURN_POLICY": "Return & Refund Policy",
     "TERMS_CONDITIONS": "Terms & Conditions",
     "CATEGORIES": "Categories",
     "CONTACT": "Contact us",
@@ -93,14 +92,13 @@
     "ACC_MENU_CS": "Customer service",
     "ACC_MENU_LEGAL": "Legal",
     "ACC_MENU_COMPANY": "SnusCo",
-    "ACC_CS_DESC": "Help with orders, delivery and returns.",
-    "ACC_LEGAL_DESC": "Privacy policy, terms and legal information.",
+    "ACC_CS_DESC": "Orders, shipping and how to reach us.",
+    "ACC_LEGAL_DESC": "Privacy, terms, accessibility and legal information.",
     "ACC_COMPANY_DESC": "About us and news from SnusCo.",
-    "LINK_HELP": "Help & FAQs",
     "LINK_CONTACT": "Contact",
     "LINK_PRIVACY": "Privacy Policy",
     "LINK_TERMS": "Terms & Conditions",
-    "LINK_RETURNS": "Returns & refunds",
+    "LINK_ACCESSIBILITY": "Accessibility",
     "LINK_ABOUT": "About SnusCo",
     "LINK_BLOG": "Blog",
     "CONTACT_BLOCK_TITLE": "Customer service",
@@ -134,6 +132,30 @@
     "CRUMB_BLOG": "Blog",
     "RELATED_HEADING": "Related articles",
     "PUBLISHED": "Published {{date}}"
+  },
+
+  "TERMS": {
+    "PAGE_TITLE": "Terms & Conditions | SnusCo",
+    "PAGE_DESCRIPTION": "General terms and conditions for orders at SnusCo — Austria, consumers, delivery, payment, withdrawal, and subscriptions.",
+    "HEADING": "Terms & Conditions",
+    "SUBLINE": "SnusCo GmbH · Austria · Last updated {{date}} · Draft for legal review",
+    "BREADCRUMB_ARIA": "Breadcrumb"
+  },
+
+  "PRIVACY": {
+    "PAGE_TITLE": "Privacy Policy | SnusCo",
+    "PAGE_DESCRIPTION": "How SnusCo collects, uses, and protects your personal data when you use www.snusco.at — GDPR, Austria, your rights, cookies, and retention.",
+    "HEADING": "Privacy Policy",
+    "SUBLINE": "SnusCo GmbH · Austria · Last updated {{date}} · Draft for DPO / legal review",
+    "BREADCRUMB_ARIA": "Breadcrumb"
+  },
+
+  "ACCESSIBILITY": {
+    "PAGE_TITLE": "Accessibility | SnusCo",
+    "PAGE_DESCRIPTION": "SnusCo’s approach to digital accessibility for www.snusco.at — WCAG 2.2 AA, known limitations, and how to send feedback.",
+    "HEADING": "Accessibility",
+    "SUBLINE": "SnusCo · Austria · Last updated {{date}} · Statement draft",
+    "BREADCRUMB_ARIA": "Breadcrumb"
   },
 
   "HOME": {

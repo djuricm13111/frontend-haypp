@@ -76,7 +76,6 @@
     "SUPPORT": "Support",
     "FAQS": "FAQs",
     "PRIVACY_POLICY": "Datenschutzerklärung",
-    "RETURN_POLICY": "Rückgabe & Erstattungsrichtlinie",
     "TERMS_CONDITIONS": "Allgemeine Geschäftsbedingungen",
     "CATEGORIES": "Kategorien",
     "CONTACT": "Kontaktieren Sie uns",
@@ -93,14 +92,13 @@
     "ACC_MENU_CS": "Kundenservice",
     "ACC_MENU_LEGAL": "Rechtliches",
     "ACC_MENU_COMPANY": "SnusCo",
-    "ACC_CS_DESC": "Hilfe zu Bestellungen, Lieferung und Rücksendung.",
-    "ACC_LEGAL_DESC": "Datenschutz, AGB und rechtliche Hinweise.",
+    "ACC_CS_DESC": "Bestellungen, Versand und Kontakt.",
+    "ACC_LEGAL_DESC": "Datenschutz, AGB, Barrierefreiheit und rechtliche Hinweise.",
     "ACC_COMPANY_DESC": "Über uns und Neuigkeiten von SnusCo.",
-    "LINK_HELP": "Hilfe & FAQs",
     "LINK_CONTACT": "Kontakt",
     "LINK_PRIVACY": "Datenschutz",
     "LINK_TERMS": "AGB",
-    "LINK_RETURNS": "Rückgabe & Erstattung",
+    "LINK_ACCESSIBILITY": "Barrierefreiheit",
     "LINK_ABOUT": "Über SnusCo",
     "LINK_BLOG": "Blog",
     "CONTACT_BLOCK_TITLE": "Kundenservice",
@@ -134,6 +132,30 @@
     "CRUMB_BLOG": "Blog",
     "RELATED_HEADING": "Verwandte Artikel",
     "PUBLISHED": "Veröffentlicht {{date}}"
+  },
+
+  "TERMS": {
+    "PAGE_TITLE": "AGB | SnusCo",
+    "PAGE_DESCRIPTION": "Allgemeine Geschäftsbedingungen für Bestellungen bei SnusCo — Österreich, Verbraucher, Lieferung, Zahlung, Widerruf und Abonnements.",
+    "HEADING": "Allgemeine Geschäftsbedingungen",
+    "SUBLINE": "SnusCo GmbH · Österreich · Stand {{date}} · Entwurf zur Rechtsprüfung",
+    "BREADCRUMB_ARIA": "Brotkrumennavigation"
+  },
+
+  "PRIVACY": {
+    "PAGE_TITLE": "Datenschutz | SnusCo",
+    "PAGE_DESCRIPTION": "Wie SnusCo personenbezogene Daten bei der Nutzung von www.snusco.at erhebt und schützt — DSGVO, Österreich, Ihre Rechte, Cookies und Speicherfristen.",
+    "HEADING": "Datenschutzerklärung",
+    "SUBLINE": "SnusCo GmbH · Österreich · Stand {{date}} · Entwurf zur Prüfung durch DSB / Recht",
+    "BREADCRUMB_ARIA": "Brotkrumennavigation"
+  },
+
+  "ACCESSIBILITY": {
+    "PAGE_TITLE": "Barrierefreiheit | SnusCo",
+    "PAGE_DESCRIPTION": "Wie SnusCo digitale Barrierefreiheit für www.snusco.at umsetzt — WCAG 2.2 AA, bekannte Lücken und Feedback.",
+    "HEADING": "Barrierefreiheit",
+    "SUBLINE": "SnusCo · Österreich · Stand {{date}} · Erklärung (Entwurf)",
+    "BREADCRUMB_ARIA": "Brotkrumennavigation"
   },
 
   "HOME": {
