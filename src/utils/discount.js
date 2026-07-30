@@ -18,10 +18,11 @@ export function calculatePrice(price, quantity) {
  * Mix pack / bundle (`is_mix_pack`) — bez volumenskog popusta (ostaje lista cena).
  */
 export function volumeAdjustedUnitPrice(product, totalQuantityForDiscount) {
-  const p = Number(product?.price);
-  if (!Number.isFinite(p)) return 0;
-  if (product?.is_mix_pack) {
-    return parseFloat(p.toFixed(2));
-  }
-  return calculatePrice(p, totalQuantityForDiscount);
+  const base =
+    product?.discounted_price != null && Number(product.discounted_price) > 0
+      ? Number(product.discounted_price)
+      : Number(product?.price);
+  if (!Number.isFinite(base)) return 0;
+  if (product?.is_mix_pack) return parseFloat(base.toFixed(2));
+  return calculatePrice(base, totalQuantityForDiscount);
 }

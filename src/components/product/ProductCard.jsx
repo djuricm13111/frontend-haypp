@@ -379,6 +379,16 @@ const QtyTotalPrice = styled.span`
   text-align: right;
 `;
 
+const QtyOriginalPrice = styled.span`
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--text-200);
+  text-decoration: line-through;
+  line-height: 1.2;
+  text-align: right;
+  white-space: nowrap;
+`;
+
 /** Mix pack: samo cena (centrirano), isti okvir kao QtyTrigger — linija iznad/dole. */
 const MixPackCardPriceRow = styled.div`
   box-sizing: border-box;
@@ -967,8 +977,15 @@ const ProductCard = ({ product }) => {
         color: undefined,
       };
     }
+    if (product.badge_text) {
+      return {
+        label: product.badge_text,
+        background: "var(--success-color)",
+        color: undefined,
+      };
+    }
     return null;
-  }, [product.card_badge, product.show_offer, t]);
+  }, [product.card_badge, product.show_offer, product.badge_text, t]);
 
   useEffect(() => {
     if (!pickerOpen) return;
@@ -1240,6 +1257,12 @@ const ProductCard = ({ product }) => {
                 <ChevronDown $open={pickerOpen} />
               </QtyTriggerLeft>
               <QtyTriggerPrices>
+                {product.discounted_price != null && (
+                  <QtyOriginalPrice>
+                    {currencyTag}
+                    {(Number(product.price) * selectedQty).toFixed(2)}
+                  </QtyOriginalPrice>
+                )}
                 <QtyTotalPrice>
                   {currencyTag}
                   {selected.total.toFixed(2)}

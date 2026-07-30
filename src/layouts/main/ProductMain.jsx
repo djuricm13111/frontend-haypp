@@ -224,6 +224,19 @@ const OfferBadge = styled.span`
   border-radius: 999px;
 `;
 
+const CustomBadge = styled.span`
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  padding: 6px 14px;
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--bg-100);
+  background-color: var(--success-color);
+  border-radius: 999px;
+`;
+
 const pdpHeadingFont = `"Montserrat", var(--font-family)`;
 const pdpBodyFont = `"Montserrat", var(--font-family)`;
 
@@ -434,6 +447,37 @@ const PackLabelText = styled.span`
     color: var(--text-100);
   font-size: var(--font-size-base);
   line-height: 1.25;
+`;
+
+const PackOriginalTotal = styled.span`
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-200);
+  text-decoration: line-through;
+  line-height: 1.2;
+  display: block;
+`;
+
+const MixPackPriceBlock = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border: 1px solid ${PDP_CARD_BORDER};
+    border-radius: var(--border-radius-base);
+    background: var(--bg-100);
+  }
+`;
+
+const MixPackPrice = styled.span`
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-100);
+  line-height: 1.2;
 `;
 
 const PackTotal = styled.span`
@@ -1208,6 +1252,9 @@ const ProductMain = () => {
                 {savingsPercentage > 0 && (
                   <OfferBadge>{t("PRODUCT_CARD.OFFER")}</OfferBadge>
                 )}
+                {product.badge_text && (
+                  <CustomBadge>{product.badge_text}</CustomBadge>
+                )}
                 <SliderGrow>
                   <ImageSlider
                     images={product.images}
@@ -1353,6 +1400,21 @@ const ProductMain = () => {
                 </FlavourCardButton>
               </FlavourBlock>
 
+              {product.is_mix_pack && (
+                <MixPackPriceBlock>
+                  {product.discounted_price != null && (
+                    <PackOriginalTotal>
+                      {currencyTag}
+                      {Number(product.price).toFixed(2)}
+                    </PackOriginalTotal>
+                  )}
+                  <MixPackPrice>
+                    {currencyTag}
+                    {volumeAdjustedUnitPrice(product, 1).toFixed(2)}
+                  </MixPackPrice>
+                </MixPackPriceBlock>
+              )}
+
               {!product.is_mix_pack && (
                 <PackList>
                   {PACK_QUANTITIES.map((quantity) => {
@@ -1379,6 +1441,12 @@ const ProductMain = () => {
                           </PackLabelText>
                         </PackColPack>
                         <PackColTotal>
+                          {product.discounted_price != null && (
+                            <PackOriginalTotal>
+                              {currencyTag}
+                              {(Number(product.price) * quantity).toFixed(2)}
+                            </PackOriginalTotal>
+                          )}
                           <PackTotal>
                             {currencyTag}
                             {lineTotal}
