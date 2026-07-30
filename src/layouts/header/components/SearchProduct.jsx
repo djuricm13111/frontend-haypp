@@ -138,7 +138,7 @@ const SearchProduct = ({
 
               <PriceRight>
                 {currencyTag}
-                {totalPrice}
+                {totalPrice.toFixed(2)}
               </PriceRight>
 
               {!isMixPack ? (
@@ -176,7 +176,7 @@ const SearchProduct = ({
 
                         <OptionPrice>
                           {currencyTag}
-                          {volumeAdjustedUnitPrice(item, qty) * qty}
+                          {(volumeAdjustedUnitPrice(item, qty) * qty).toFixed(2)}
                         </OptionPrice>
 
                         <CheckCircle $selected={isSelected}>
@@ -538,6 +538,7 @@ const ProductPriceButton = styled.button`
     grid-row: 2;
     align-self: start;
     min-width: 0;
+    box-sizing: border-box;
     width: 100%;
     height: 48px;
     min-height: 48px;
