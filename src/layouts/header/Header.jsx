@@ -205,13 +205,12 @@ const Container = styled.div`
   box-sizing: border-box;
   box-shadow: ${(props) =>
     props.$isScrolled ? "0 4px 12px rgba(0,0,0,0.12)" : "none"};
-  transition: all 0.2s ease;
+  transition: box-shadow 0.2s ease, min-height 0.2s ease;
   background-color: var(--bg-100);
 
   z-index: 9;
 
-  //position: sticky;
-  position: ${(props) => (props.$isScrolled ? "sticky" : "static")};
+  position: sticky;
   top: 0;
 
   display: flex;
@@ -251,6 +250,7 @@ const MainHeaderWrapper = styled.div`
       props.$isScrolled ? "row-reverse" : "column"};
 
     min-height: ${(props) => (props.$isScrolled ? "62px" : "86px")};
+    transition: min-height 0.2s ease;
   }
 `;
 
@@ -290,6 +290,7 @@ const DesktopNavSection = styled.div`
   @media (min-width: 1024px) {
     display: flex;
     margin-top: ${(props) => (props.$isScrolled ? "0" : "10px")};
+    transition: margin-top 0.2s ease;
     justify-content: center;
     align-items: center;
     min-width: 0;
@@ -474,29 +475,8 @@ const Header = () => {
 
   const measureScrollThreshold = () => {
     if (typeof window === "undefined") return;
-
-    const mobile = window.matchMedia("(max-width: 1023px)").matches;
-    if (mobile) {
-      const h = preHeaderRef.current?.offsetHeight ?? 0;
-      scrollThresholdPxRef.current = h;
-      syncScrolledFromScrollY();
-      return;
-    }
-
-    if (isScrolledRef.current) {
-      syncScrolledFromScrollY();
-      return;
-    }
-
-    const wide = window.matchMedia("(min-width: 1024px)").matches;
-    const anchor = wide ? desktopNavListRef.current : mainHeaderToolsRef.current;
-    if (anchor) {
-      scrollThresholdPxRef.current =
-        anchor.getBoundingClientRect().top + window.scrollY;
-    } else {
-      scrollThresholdPxRef.current =
-        preHeaderRef.current?.offsetHeight ?? Number.POSITIVE_INFINITY;
-    }
+    const h = preHeaderRef.current?.offsetHeight ?? 0;
+    scrollThresholdPxRef.current = Math.max(0, h * 0.45);
     syncScrolledFromScrollY();
   };
 
