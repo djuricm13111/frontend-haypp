@@ -55,6 +55,7 @@ const BreadcrumbStrip = styled.div`
 
   @media (min-width: 768px) {
     min-height: 60px;
+    margin-bottom: 24px;
   }
 `;
 
@@ -66,9 +67,9 @@ const BreadcrumbStripInner = styled.div`
   justify-content: center;
 `;
 
-/* ~96% preostalog viewporta; oduzima približno breadcrumb traku + margin */
+/* ~70% preostalog viewporta; oduzima aproximno breadcrumb traku + margin */
 const productRowMinHeightDesktop = `calc(
-  (100vh - var(--navbar-height-desktop) - var(--navbar-mini) - 84px) * 0.96
+  (100vh - var(--navbar-height-desktop) - var(--navbar-mini) - 84px) * 0.7
 )`;
 
 /**
@@ -81,6 +82,11 @@ const ProductLayout = styled.div`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
+
+  @media (min-width: 768px) {
+    padding-bottom: var(--spacing-xl);
+    gap: var(--spacing-sm);
+  }
 
   @media (max-width: 767px) {
     width: 100%;
@@ -159,7 +165,7 @@ const MediaColumn = styled.div`
   @media (min-width: 768px) {
     grid-column: 2;
     grid-row: 1 / -1;
-    align-self: stretch;
+    align-self: start;
     min-height: 0;
     max-width: 560px;
   }
@@ -177,7 +183,7 @@ const ProductImageCard = styled.div`
   flex: 1;
   min-height: 0;
   min-width: 0;
-  height: 100%;
+  height: auto;
 
   @media (max-width: 767px) {
     max-width: 100%;
@@ -255,7 +261,11 @@ const IntroBlock = styled.div`
   margin-bottom: 40px;
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  @media (min-width: 1025px) {
+    margin-bottom: 20px;
   }
 `;
 
@@ -274,7 +284,11 @@ const FlavourBlock = styled.div`
   margin-bottom: 48px;
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  @media (min-width: 1025px) {
+    margin-bottom: 16px;
   }
 `;
 
@@ -355,6 +369,10 @@ const PackList = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
   border: 1px solid ${PDP_CARD_BORDER};
   border-radius: var(--border-radius-base);
   overflow: hidden;
@@ -370,6 +388,11 @@ const PackRow = styled.button`
   width: 100%;
   min-height: 52px;
   padding: 14px 16px;
+
+  @media (min-width: 768px) {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
   margin: 0;
   border: none;
   border-radius: 0;
