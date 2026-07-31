@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { useNavigation } from "../../../utils/navigation";
 import { useTranslation } from "react-i18next";
 import { getSubscriptionSectionSubtitle } from "../../../utils/subscriptionLabels";
+import ComingSoonModal from "../../../components/ComingSoonModal";
 
 const slideIn = keyframes`
   from {
@@ -631,6 +632,7 @@ const CartMenu = ({ isScrolled }) => {
   }, [isCartOpen, setIsCartOpen]);
   const navigate = useNavigate();
   const { goToCheckout } = useNavigation();
+  const [showComingSoon, setShowComingSoon] = useState(false);
   const [bounce, setBounce] = useState(false);
   const prevQuantityRef = useRef(0);
 
@@ -721,6 +723,7 @@ const CartMenu = ({ isScrolled }) => {
   }, [totalQuantity]);
 
   return (
+    <>
     <ContainerX>
       {!isScrolled ? (
         <CartContainer $bounce={bounce} onClick={toggleMenu}>
@@ -902,7 +905,7 @@ const CartMenu = ({ isScrolled }) => {
               <p style={{ padding: "0", margin: "0" }}>{t("CART.INCLUDED")}</p> 
             </FlexDiv> */}
             <Button
-              onClick={() => navigate(goToCheckout())}
+              onClick={() => setShowComingSoon(true)}
               disabled={totalQuantity == 0}
             >
               {t("CART.CHECKOUT")}
@@ -944,6 +947,10 @@ const CartMenu = ({ isScrolled }) => {
       </Wrapper>
       <MaskContainer $isOpen={isOpen} onClick={toggleMenu} />
     </ContainerX>
+    {showComingSoon && (
+      <ComingSoonModal onClose={() => setShowComingSoon(false)} />
+    )}
+    </>
   );
 };
 
