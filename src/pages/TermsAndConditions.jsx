@@ -91,7 +91,7 @@ function TermsAndConditions() {
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const html = lang === "de" ? TERMS_BODY_DE : TERMS_BODY_EN;
-  const canonical = `https://www.snusco.at/${lang}/terms`;
+  const canonical = `https://www.snusco.eu/${lang}/terms`;
 
   return (
     <>

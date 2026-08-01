@@ -9,7 +9,7 @@ const TABLE_WRAP_START = '<div class="lg-table-wrap"><table>';
 const TABLE_WRAP_END = "</table></div>";
 
 export const PRIVACY_BODY_EN = `
-<p>This privacy notice describes how <strong>SnusCo GmbH</strong> (“we”, “us”) collects, uses, and shares personal data when you use <a href="https://www.snusco.at">www.snusco.at</a>, create an account, place orders, contact customer service, or subscribe to our newsletter.</p>
+<p>This privacy notice describes how <strong>SnusCo GmbH</strong> (“we”, “us”) collects, uses, and shares personal data when you use <a href="https://www.snusco.eu">www.snusco.at</a>, create an account, place orders, contact customer service, or subscribe to our newsletter.</p>
 <p><strong>Personal data</strong> means any information relating to an identified or identifiable person (for example your name, e-mail address, or online identifiers).</p>
 <p>We take appropriate technical and organisational measures to protect personal data and to process it in line with the EU General Data Protection Regulation (<abbr>GDPR</abbr>) and the Austrian Data Protection Act (<abbr title="Datenschutzgesetz">DSG</abbr>). This notice is a summary; please also review our <a href="/en/terms">Terms &amp; Conditions</a> where relevant.</p>
 <h2 id="toc">Contents</h2>
@@ -30,12 +30,12 @@ export const PRIVACY_BODY_EN = `
 </ul>
 
 <h2 id="who">1. Who is responsible for your personal data?</h2>
-<p>The controller responsible for the processing described in this notice is <strong>SnusCo GmbH</strong>, Austria (“we”, “us”), operating <a href="https://www.snusco.at">www.snusco.at</a>. We decide why and how your personal data is processed when you use our website, create an account, place orders, or contact customer service.</p>
+<p>The controller responsible for the processing described in this notice is <strong>SnusCo GmbH</strong>, Austria (“we”, “us”), operating <a href="https://www.snusco.eu">www.snusco.at</a>. We decide why and how your personal data is processed when you use our website, create an account, place orders, or contact customer service.</p>
 <p>We do not sell your personal data. Processors (e.g. hosting, e-mail, payments, carriers) process data on our instructions and under contract.</p>
 ${TABLE_WRAP_START}
 <thead><tr><th>Controller</th><th>Website</th><th>Delivery</th></tr></thead>
 <tbody>
-<tr><td>SnusCo GmbH, Austria</td><td><a href="https://www.snusco.at">www.snusco.at</a></td><td>Primarily Austria (as offered at checkout)</td></tr>
+<tr><td>SnusCo GmbH, Austria</td><td><a href="https://www.snusco.eu">www.snusco.at</a></td><td>Primarily Austria (as offered at checkout)</td></tr>
 </tbody>
 ${TABLE_WRAP_END}
 
@@ -107,7 +107,7 @@ ${TABLE_WRAP_START}
 ${TABLE_WRAP_END}
 
 <h2 id="details-use">12. Details: purposes, categories, legal basis, storage</h2>
-<p>The table below summarises typical processing on <a href="https://www.snusco.at">www.snusco.at</a>. Not every row may apply to you.</p>
+<p>The table below summarises typical processing on <a href="https://www.snusco.eu">www.snusco.at</a>. Not every row may apply to you.</p>
 ${TABLE_WRAP_START}
 <thead><tr><th>Purpose</th><th>Categories (examples)</th><th>Legal basis</th><th>Storage (indicative)</th></tr></thead>
 <tbody>
@@ -135,7 +135,7 @@ ${TABLE_WRAP_END}
 `;
 
 export const PRIVACY_BODY_DE = `
-<p>Diese Datenschutzinformation beschreibt, wie die <strong>SnusCo GmbH</strong> („wir“) personenbezogene Daten verarbeitet, wenn Sie <a href="https://www.snusco.at">www.snusco.at</a> nutzen, ein Konto anlegen, bestellen, den Kundendienst kontaktieren oder unseren Newsletter abonnieren.</p>
+<p>Diese Datenschutzinformation beschreibt, wie die <strong>SnusCo GmbH</strong> („wir“) personenbezogene Daten verarbeitet, wenn Sie <a href="https://www.snusco.eu">www.snusco.at</a> nutzen, ein Konto anlegen, bestellen, den Kundendienst kontaktieren oder unseren Newsletter abonnieren.</p>
 <p><strong>Personenbezogene Daten</strong> sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen (z. B. Name, E-Mail-Adresse oder Online-Kennungen).</p>
 <p>Wir treffen angemessene technische und organisatorische Maßnahmen zum Schutz der Daten und verarbeiten sie im Einklang mit der <abbr title="Datenschutz-Grundverordnung">DSGVO</abbr> und dem österreichischen <abbr title="Datenschutzgesetz">DSG</abbr>. Ergänzend gelten unsere <a href="/de/terms">AGB</a>, soweit einschlägig.</p>
 <h2 id="toc">Inhalt</h2>
@@ -156,12 +156,12 @@ export const PRIVACY_BODY_DE = `
 </ul>
 
 <h2 id="who">1. Wer ist für Ihre Daten verantwortlich?</h2>
-<p>Verantwortlicher im Sinne der <abbr title="Datenschutz-Grundverordnung">DSGVO</abbr> ist die <strong>SnusCo GmbH</strong>, Österreich („wir“), Betreiberin von <a href="https://www.snusco.at">www.snusco.at</a>. Wir entscheiden über Zweck und Mittel der Verarbeitung, wenn Sie unsere Website nutzen, ein Konto anlegen, bestellen oder den Kundendienst kontaktieren.</p>
+<p>Verantwortlicher im Sinne der <abbr title="Datenschutz-Grundverordnung">DSGVO</abbr> ist die <strong>SnusCo GmbH</strong>, Österreich („wir“), Betreiberin von <a href="https://www.snusco.eu">www.snusco.at</a>. Wir entscheiden über Zweck und Mittel der Verarbeitung, wenn Sie unsere Website nutzen, ein Konto anlegen, bestellen oder den Kundendienst kontaktieren.</p>
 <p>Wir verkaufen keine personenbezogenen Daten. Auftragsverarbeiter (z. B. Hosting, E-Mail, Zahlung, Versand) verarbeiten Daten nur nach Weisung und vertraglich gebunden.</p>
 ${TABLE_WRAP_START}
 <thead><tr><th>Verantwortliche</th><th>Website</th><th>Lieferung</th></tr></thead>
 <tbody>
-<tr><td>SnusCo GmbH, Österreich</td><td><a href="https://www.snusco.at">www.snusco.at</a></td><td>vorwiegend Österreich (wie im Checkout angeboten)</td></tr>
+<tr><td>SnusCo GmbH, Österreich</td><td><a href="https://www.snusco.eu">www.snusco.at</a></td><td>vorwiegend Österreich (wie im Checkout angeboten)</td></tr>
 </tbody>
 ${TABLE_WRAP_END}
 

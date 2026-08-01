@@ -80,12 +80,12 @@
     "CATEGORIES": "Kategorien",
     "CONTACT": "Kontaktieren Sie uns",
     "BRAND_ARIA": "SnusCo",
-    "BRAND_REGION": "SnusCo · Österreich",
+    "BRAND_REGION": "SnusCo · Europa",
     "PAYMENT_ARIA": "Zahlungsarten",
     "PAYMENT_KLARNA": "Klarna",
     "PAYMENT_VISA": "VISA",
     "PAYMENT_MC": "Mastercard",
-    "SHIPPING_AUSTRIA": "Lieferung in ganz Österreich",
+    "SHIPPING_AUSTRIA": "Lieferung in ganz Europa",
     "SHIPPING_CENTER_EXTRA": "Express · Standard",
     "VERIFY_18": "18+ Verifizierung",
     "VERIFY_SUB": "VERIFY",
@@ -102,11 +102,11 @@
     "LINK_ABOUT": "Über SnusCo",
     "LINK_BLOG": "Blog",
     "CONTACT_BLOCK_TITLE": "Kundenservice",
-    "EMAIL": "support@snusco.at",
+    "EMAIL": "support@snusco.eu",
     "PHONE": "+43 1 234 5678",
     "PHONE_RAW": "+4312345678",
     "HOURS": "Mo–Fr 9:00–17:00 (MEZ), an Feiertagen geschlossen.",
-    "NAVY_COMPANY_LINE": "SnusCo GmbH · Österreich"
+    "NAVY_COMPANY_LINE": "SnusCo GmbH · Europa"
   },
 
   "MENU": {
@@ -136,25 +136,25 @@
 
   "TERMS": {
     "PAGE_TITLE": "AGB | SnusCo",
-    "PAGE_DESCRIPTION": "Allgemeine Geschäftsbedingungen für Bestellungen bei SnusCo — Österreich, Verbraucher, Lieferung, Zahlung, Widerruf und Abonnements.",
+    "PAGE_DESCRIPTION": "Allgemeine Geschäftsbedingungen für Bestellungen bei SnusCo — Europa, Verbraucher, Lieferung, Zahlung, Widerruf und Abonnements.",
     "HEADING": "Allgemeine Geschäftsbedingungen",
-    "SUBLINE": "SnusCo GmbH · Österreich · Stand {{date}} · Entwurf zur Rechtsprüfung",
+    "SUBLINE": "SnusCo GmbH · Europa · Stand {{date}} · Entwurf zur Rechtsprüfung",
     "BREADCRUMB_ARIA": "Brotkrumennavigation"
   },
 
   "PRIVACY": {
     "PAGE_TITLE": "Datenschutz | SnusCo",
-    "PAGE_DESCRIPTION": "Wie SnusCo personenbezogene Daten bei der Nutzung von www.snusco.at erhebt und schützt — DSGVO, Österreich, Ihre Rechte, Cookies und Speicherfristen.",
+    "PAGE_DESCRIPTION": "Wie SnusCo personenbezogene Daten bei der Nutzung von www.snusco.eu erhebt und schützt — DSGVO, Europa, Ihre Rechte, Cookies und Speicherfristen.",
     "HEADING": "Datenschutzerklärung",
-    "SUBLINE": "SnusCo GmbH · Österreich · Stand {{date}} · Entwurf zur Prüfung durch DSB / Recht",
+    "SUBLINE": "SnusCo GmbH · Europa · Stand {{date}} · Entwurf zur Prüfung durch DSB / Recht",
     "BREADCRUMB_ARIA": "Brotkrumennavigation"
   },
 
   "ACCESSIBILITY": {
     "PAGE_TITLE": "Barrierefreiheit | SnusCo",
-    "PAGE_DESCRIPTION": "Wie SnusCo digitale Barrierefreiheit für www.snusco.at umsetzt — WCAG 2.2 AA, bekannte Lücken und Feedback.",
+    "PAGE_DESCRIPTION": "Wie SnusCo digitale Barrierefreiheit für www.snusco.eu umsetzt — WCAG 2.2 AA, bekannte Lücken und Feedback.",
     "HEADING": "Barrierefreiheit",
-    "SUBLINE": "SnusCo · Österreich · Stand {{date}} · Erklärung (Entwurf)",
+    "SUBLINE": "SnusCo · Europa · Stand {{date}} · Erklärung (Entwurf)",
     "BREADCRUMB_ARIA": "Brotkrumennavigation"
   },
 
@@ -219,7 +219,7 @@
       "ABOUT_P2": "Wir nehmen <strong>Altersprüfung und verantwortungsvollen Einzelhandel</strong> ernst — jede Bestellung wird geprüft, damit Nikotin bei den richtigen Menschen bleibt.",
       "ABOUT_P3": "Unser Team hilft bei Format, Geschmack oder Stärke — ob erster Kauf oder gewohnte Lieblingslinie.",
       "WHY_H2": "Warum bei SnusCo kaufen?",
-      "WHY_INTRO": "Von Bestsellern bis Neuheiten bündelt SnusCo <strong>Nikotinbeutel vertrauter Marken</strong> an einem Ort — sorgfältig verpackt und mit Blick auf Kundinnen und Kunden in Österreich.",
+      "WHY_INTRO": "Von Bestsellern bis Neuheiten bündelt SnusCo <strong>Nikotinbeutel vertrauter Marken</strong> an einem Ort — sorgfältig verpackt und mit Blick auf Kundinnen und Kunden in ganz Europa.",
       "WHY_POINTS": [
         {
           "title": "Marken an einem Ort:",
@@ -534,6 +534,7 @@
     "FLAVOUR_DRAWER_STOCK_OOS": "Nicht vorrätig",
 
     "STRENGTH_LABEL": "Stärke",
+    "NICOTINE_PER_POUCH": "Pro Beutel",
     "STRENGTH": {
       "MILD": "Sanft",
       "REGULAR": "Regulär",
@@ -556,15 +557,15 @@
     "AGE_WARNING_BODY": "Dieses Produkt ist nicht risikofrei. Es enthält Nikotin, einen süchtig machenden Stoff.",
 
     "TAXES": "Steuern",
-    "TAXES_TITLE": "Steuern auf SnusCo-Bestellungen in Österreich",
-    "TAXES_DESCRIPTION": "Bei SnusCo halten wir uns strikt an die österreichischen Steuergesetze. Für alle Online-Bestellungen werden die anfallenden Steuern, einschließlich Nikotinsteuern und Mehrwertsteuer (Umsatzsteuer), berechnet und beim Checkout in den Bestellbetrag einbezogen. Versandkosten können je nach Region und geltenden Gesetzen ebenfalls der Mehrwertsteuer unterliegen.",
+    "TAXES_TITLE": "Steuern auf SnusCo-Bestellungen in Europa",
+    "TAXES_DESCRIPTION": "Bei SnusCo halten wir uns strikt an die geltenden Steuergesetze. Für alle Online-Bestellungen werden die anfallenden Steuern, einschließlich Nikotinsteuern und Mehrwertsteuer (Umsatzsteuer), berechnet und beim Checkout in den Bestellbetrag einbezogen. Versandkosten können je nach Region und geltenden Gesetzen ebenfalls der Mehrwertsteuer unterliegen.",
     "TAXES_CALCULATION_TITLE": "Wie wird die Steuer auf Nikotinprodukte berechnet?",
-    "TAXES_CALCULATION_DESCRIPTION": "Die Nikotinverbrauchsteuer (TNET), oft als 'Nikotinsteuer' bezeichnet, wird gemäß den österreichischen Bundesvorschriften erhoben. Die Berechnungsmethode hängt von der Art des Produkts (Tabak oder tabakfrei) und der jeweiligen Kategorie ab. Die Steuern werden auf folgende Weise berechnet:",
+    "TAXES_CALCULATION_DESCRIPTION": "Die Nikotinverbrauchsteuer (TNET), oft als 'Nikotinsteuer' bezeichnet, wird gemäß den geltenden Vorschriften erhoben. Die Berechnungsmethode hängt von der Art des Produkts (Tabak oder tabakfrei) und der jeweiligen Kategorie ab. Die Steuern werden auf folgende Weise berechnet:",
     "TAXES_CALCULATION_METHOD_1": "Basierend auf einem Prozentsatz des Großhandelspreises: Berechnet als Prozentsatz der Kosten des Produkts für SnusCo.",
     "TAXES_CALCULATION_METHOD_2": "Basierend auf dem Verkaufspreis von SnusCo an den Kunden: Berechnet als Prozentsatz des Einzelhandelspreises.",
     "TAXES_CALCULATION_METHOD_3": "Basierend auf Gewicht: Berechnet pro Gramm oder pro Einheit des Produkts.",
     "VAT_CALCULATION_TITLE": "Wie berechnet SnusCo die Mehrwertsteuer auf Bestellungen?",
-    "VAT_CALCULATION_DESCRIPTION": "Die Mehrwertsteuer wird gemäß den österreichischen Steuervorschriften berechnet und sowohl auf den Produktpreis als auch in den meisten Fällen auf die Versandkosten angewendet. Der aktuelle österreichische Mehrwertsteuersatz für Nikotinprodukte beträgt 20%. Dies gewährleistet die vollständige Einhaltung der lokalen Steueranforderungen.",
+    "VAT_CALCULATION_DESCRIPTION": "Die Mehrwertsteuer wird gemäß den geltenden Steuervorschriften berechnet und sowohl auf den Produktpreis als auch in den meisten Fällen auf die Versandkosten angewendet. Der Mehrwertsteuersatz für Nikotinprodukte variiert je nach Land. Dies gewährleistet die vollständige Einhaltung der lokalen Steueranforderungen.",
     "EXAMPLE_TITLE": "Beispiel für Steuer- und Mehrwertsteuerberechnung:",
     "EXAMPLE_SUBTITLE": "Beispiel:",
     "EXAMPLE_TNET_RATE": "TNET-Satz ",
@@ -711,7 +712,7 @@
 
   "SHOP": {
     "TITLE": "Nikotinbeutel Shop",
-    "DESCRIPTION": "<p>Entdecken Sie unser gesamtes Sortiment an Nikotinbeuteln beliebter Marken. Filtern Sie nach Marke, Format und Stärke oder sortieren Sie nach Preis, Datum oder Name. Versand aus Österreich mit schneller Lieferung in ganz Europa.</p>",
+    "DESCRIPTION": "<p>Entdecken Sie unser gesamtes Sortiment an Nikotinbeuteln beliebter Marken. Filtern Sie nach Marke, Format und Stärke oder sortieren Sie nach Preis, Datum oder Name. Schnelle Lieferung in ganz Europa.</p>",
     "SEE_MORE": "Mehr anzeigen",
     "SEE_LESS": "Weniger anzeigen",
     "FLAVOUR_HUB": {
@@ -778,7 +779,7 @@
       "PAGE_TITLE": "Bestseller",
       "TITLE": "Bestseller",
       "DESCRIPTION": "Unsere beliebtesten Nikotinbeutel — Top-Seller aus dem Shop, basierend auf Verkaufsdaten.",
-      "META_DESCRIPTION": "Bestseller-Nikotinbeutel bei SnusCo kaufen. Beliebte Marken und Geschmacksrichtungen, Versand aus Österreich in ganz Europa."
+      "META_DESCRIPTION": "Bestseller-Nikotinbeutel bei SnusCo kaufen. Beliebte Marken und Geschmacksrichtungen, Lieferung in ganz Europa."
     },
     "NEW_IN_STORE": {
       "PAGE_TITLE": "Neu im Sortiment",
@@ -790,7 +791,7 @@
       "PAGE_TITLE": "Mixpacks & Bundles",
       "TITLE": "Mixpacks & Bundles",
       "DESCRIPTION": "Mehr-Dosen-Pakete und Bundles — mehr Geschmacksrichtungen probieren oder mit zusammengestellten Sets sparen.",
-      "META_DESCRIPTION": "Mixpacks und Bundle-Angebote für Nikotinbeutel bei SnusCo. Mehr-Dosen-Sets und Sparpakete, Versand aus Österreich in ganz Europa."
+      "META_DESCRIPTION": "Mixpacks und Bundle-Angebote für Nikotinbeutel bei SnusCo. Mehr-Dosen-Sets und Sparpakete, Lieferung in ganz Europa."
     }
   },
 

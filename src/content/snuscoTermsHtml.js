@@ -29,7 +29,7 @@ export const TERMS_BODY_EN = `
 </ul>
 
 <h2 id="general">General</h2>
-<p>SnusCo GmbH, Austria (“SnusCo”, “we”, “us”) operates the website <a href="https://www.snusco.at">www.snusco.at</a> (the “Website”). These terms and conditions (the “Conditions”) apply to every product order a consumer places on the Website.</p>
+<p>SnusCo GmbH, Austria (“SnusCo”, “we”, “us”) operates the website <a href="https://www.snusco.eu">www.snusco.at</a> (the “Website”). These terms and conditions (the “Conditions”) apply to every product order a consumer places on the Website.</p>
 <p>By placing an order, you confirm that you have read, understood, and accepted these Conditions. You also acknowledge the information on personal data processing and agree that we may process your data as described in our privacy policy.</p>
 <p>We may amend these Conditions at any time. The version published on the Website applies. For each new order, the version you accept when completing checkout applies.</p>
 <p>Mandatory consumer protection law, in particular the Austrian Consumer Protection Act (<abbr title="Konsumentenschutzgesetz">KSchG</abbr>) and the Austrian Act on Distance and Off-Premises Contracts (<abbr title="Fern- und Auswärtsgeschäfte-Gesetz">FAGG</abbr>) where applicable, as well as the EU General Data Protection Regulation (<abbr>GDPR</abbr>) and the Austrian Data Protection Act (<abbr title="Datenschutzgesetz">DSG</abbr>), remains unaffected.</p>
@@ -133,7 +133,7 @@ export const TERMS_BODY_DE = `
 </ul>
 
 <h2 id="general">Allgemeines</h2>
-<p>Die SnusCo GmbH, Österreich („SnusCo“, „wir“) betreibt die Website <a href="https://www.snusco.at">www.snusco.at</a> (die „Website“). Diese Allgemeinen Geschäftsbedingungen (die „AGB“) gelten für jeden Warenkauf, den ein Verbraucher über die Website abschließt.</p>
+<p>Die SnusCo GmbH, Österreich („SnusCo“, „wir“) betreibt die Website <a href="https://www.snusco.eu">www.snusco.at</a> (die „Website“). Diese Allgemeinen Geschäftsbedingungen (die „AGB“) gelten für jeden Warenkauf, den ein Verbraucher über die Website abschließt.</p>
 <p>Mit der Abgabe Ihrer Bestellung bestätigen Sie, dass Sie diese AGB gelesen, verstanden und akzeptiert haben. Sie bestätigen ferner, dass Sie die Hinweise zur Verarbeitung personenbezogener Daten zur Kenntnis genommen haben und mit der Verarbeitung im Rahmen unserer Datenschutzerklärung einverstanden sind.</p>
 <p>Wir können diese AGB jederzeit ändern. Maßgeblich ist die auf der Website veröffentlichte Fassung. Für jede neue Bestellung gilt die Fassung, die Sie beim Bestellabschluss anerkennen.</p>
 <p>Zwingendes Verbraucherschutzrecht, insbesondere das österreichische Konsumentenschutzgesetz (KSchG) und das Fern- und Auswärtsgeschäfte-Gesetz (FAGG), soweit anwendbar, sowie die Datenschutz-Grundverordnung (DSGVO) und das österreichische Datenschutzgesetz (DSG), bleiben unberührt.</p>

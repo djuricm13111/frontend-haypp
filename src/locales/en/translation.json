@@ -71,7 +71,7 @@
 
   "FOOTER": {
     "WARNING": "Warning: Our products contain nicotine, which is a highly addictive substance.",
-    "COPYRIGHT": "© 2024 Snus Austria. All rights reserved.",
+    "COPYRIGHT": "© 2025 SnusCo. All rights reserved.",
     "FOLLOW_US": "Follow us",
     "SUPPORT": "Support",
     "FAQS": "FAQs",
@@ -80,12 +80,12 @@
     "CATEGORIES": "Categories",
     "CONTACT": "Contact us",
     "BRAND_ARIA": "SnusCo",
-    "BRAND_REGION": "SnusCo · Austria",
+    "BRAND_REGION": "SnusCo · Europe",
     "PAYMENT_ARIA": "Payment methods",
     "PAYMENT_KLARNA": "Klarna",
     "PAYMENT_VISA": "VISA",
     "PAYMENT_MC": "Mastercard",
-    "SHIPPING_AUSTRIA": "Delivery across Austria",
+    "SHIPPING_AUSTRIA": "Delivery across Europe",
     "SHIPPING_CENTER_EXTRA": "Express · Standard",
     "VERIFY_18": "18+ verify",
     "VERIFY_SUB": "VERIFY",
@@ -102,11 +102,11 @@
     "LINK_ABOUT": "About SnusCo",
     "LINK_BLOG": "Blog",
     "CONTACT_BLOCK_TITLE": "Customer service",
-    "EMAIL": "support@snusco.at",
+    "EMAIL": "support@snusco.eu",
     "PHONE": "+43 1 234 5678",
     "PHONE_RAW": "+4312345678",
     "HOURS": "Mon–Fri 9:00–17:00 (CET), closed on public holidays.",
-    "NAVY_COMPANY_LINE": "SnusCo GmbH · Austria"
+    "NAVY_COMPANY_LINE": "SnusCo GmbH · Europe"
   },
 
   "MENU": {
@@ -136,25 +136,25 @@
 
   "TERMS": {
     "PAGE_TITLE": "Terms & Conditions | SnusCo",
-    "PAGE_DESCRIPTION": "General terms and conditions for orders at SnusCo — Austria, consumers, delivery, payment, withdrawal, and subscriptions.",
+    "PAGE_DESCRIPTION": "General terms and conditions for orders at SnusCo — Europe, consumers, delivery, payment, withdrawal, and subscriptions.",
     "HEADING": "Terms & Conditions",
-    "SUBLINE": "SnusCo GmbH · Austria · Last updated {{date}} · Draft for legal review",
+    "SUBLINE": "SnusCo GmbH · Europe · Last updated {{date}} · Draft for legal review",
     "BREADCRUMB_ARIA": "Breadcrumb"
   },
 
   "PRIVACY": {
     "PAGE_TITLE": "Privacy Policy | SnusCo",
-    "PAGE_DESCRIPTION": "How SnusCo collects, uses, and protects your personal data when you use www.snusco.at — GDPR, Austria, your rights, cookies, and retention.",
+    "PAGE_DESCRIPTION": "How SnusCo collects, uses, and protects your personal data when you use www.snusco.eu — GDPR, Europe, your rights, cookies, and retention.",
     "HEADING": "Privacy Policy",
-    "SUBLINE": "SnusCo GmbH · Austria · Last updated {{date}} · Draft for DPO / legal review",
+    "SUBLINE": "SnusCo GmbH · Europe · Last updated {{date}} · Draft for DPO / legal review",
     "BREADCRUMB_ARIA": "Breadcrumb"
   },
 
   "ACCESSIBILITY": {
     "PAGE_TITLE": "Accessibility | SnusCo",
-    "PAGE_DESCRIPTION": "SnusCo’s approach to digital accessibility for www.snusco.at — WCAG 2.2 AA, known limitations, and how to send feedback.",
+    "PAGE_DESCRIPTION": "SnusCo’s approach to digital accessibility for www.snusco.eu — WCAG 2.2 AA, known limitations, and how to send feedback.",
     "HEADING": "Accessibility",
-    "SUBLINE": "SnusCo · Austria · Last updated {{date}} · Statement draft",
+    "SUBLINE": "SnusCo GmbH · Europe · Last updated {{date}} · Statement draft",
     "BREADCRUMB_ARIA": "Breadcrumb"
   },
 
@@ -219,7 +219,7 @@
       "ABOUT_P2": "We take <strong>age verification and responsible retail</strong> seriously — every order is checked so nicotine stays in the right hands.",
       "ABOUT_P3": "Our team is here when you need help picking a format, flavour, or strength — whether you are trying pouches for the first time or refreshing your rotation.",
       "WHY_H2": "Why shop with SnusCo?",
-      "WHY_INTRO": "From bestsellers to new arrivals, SnusCo brings <strong>nicotine pouches from brands you know</strong> together in one place — packed and shipped with care for customers in Austria.",
+      "WHY_INTRO": "From bestsellers to new arrivals, SnusCo brings <strong>nicotine pouches from brands you know</strong> together in one place — packed and shipped with care for customers across Europe.",
       "WHY_POINTS": [
         {
           "title": "Brands in one place:",
@@ -535,6 +535,7 @@
     "FLAVOUR_DRAWER_STOCK_OOS": "Out of stock",
 
     "STRENGTH_LABEL": "Strength",
+    "NICOTINE_PER_POUCH": "Per Pouch",
     "STRENGTH": {
       "MILD": "Mild",
       "REGULAR": "Regular",
@@ -557,15 +558,15 @@
     "AGE_WARNING_BODY": "This product is not risk-free. It contains nicotine, an addictive substance.",
 
     "TAXES": "Taxes",
-    "TAXES_TITLE": "Taxes on SnusCo Orders in Austria",
-    "TAXES_DESCRIPTION": "At SnusCo, we are committed to complying with Austrian tax laws. For all online orders, applicable taxes, including nicotine taxes and VAT (sales tax), are calculated and included in the order total during checkout. Shipping charges may also be subject to VAT in Austria, depending on the region and applicable laws.",
+    "TAXES_TITLE": "Taxes on SnusCo Orders in Europe",
+    "TAXES_DESCRIPTION": "At SnusCo, we are committed to complying with European tax laws. For all online orders, applicable taxes, including nicotine taxes and VAT (sales tax), are calculated and included in the order total during checkout. Shipping charges may also be subject to VAT in Europe, depending on the region and applicable laws.",
     "TAXES_CALCULATION_TITLE": "How is the Tax on Nicotine Products Calculated?",
-    "TAXES_CALCULATION_DESCRIPTION": "Nicotine Excise Tax (TNET), often referred to as 'nicotine tax,' is applied in accordance with Austrian federal regulations. The method of calculation depends on the type of product (Tobacco or Tobacco-Free) and the category it falls into. Taxes are calculated in one of the following ways:",
+    "TAXES_CALCULATION_DESCRIPTION": "Nicotine Excise Tax (TNET), often referred to as 'nicotine tax,' is applied in accordance with applicable regulations. The method of calculation depends on the type of product (Tobacco or Tobacco-Free) and the category it falls into. Taxes are calculated in one of the following ways:",
     "TAXES_CALCULATION_METHOD_1": "Based on a percentage of the wholesale price: Calculated as a percentage of the product's cost to SnusCo.",
     "TAXES_CALCULATION_METHOD_2": "Based on SnusCo’s selling price to the customer: Calculated as a percentage of the retail price.",
     "TAXES_CALCULATION_METHOD_3": "Based on weight: Calculated per gram or per unit of the product.",
     "VAT_CALCULATION_TITLE": "How Does SnusCo Calculate VAT on Orders?",
-    "VAT_CALCULATION_DESCRIPTION": "VAT is calculated in accordance with Austrian tax regulations and is applied to both the product price and, in most cases, the shipping cost. The current Austrian VAT rate for nicotine products is 20%. This ensures full compliance with local tax requirements.",
+    "VAT_CALCULATION_DESCRIPTION": "VAT is calculated in accordance with applicable tax regulations and is applied to both the product price and, in most cases, the shipping cost. The applicable VAT rate for nicotine products varies by country. This ensures full compliance with local tax requirements.",
     "EXAMPLE_TITLE": "Example of Tax and VAT Calculation:",
     "EXAMPLE_SUBTITLE": "Example:",
     "EXAMPLE_TNET_RATE": "TNET rate ",
@@ -712,7 +713,7 @@
 
   "SHOP": {
     "TITLE": "Shop Nicotine Pouches",
-    "DESCRIPTION": "<p>Browse our full selection of nicotine pouches from popular brands. Use filters for brand, format, and strength, or sort by price, date, or name. Shipped from Austria with fast delivery across Europe.</p>",
+    "DESCRIPTION": "<p>Browse our full selection of nicotine pouches from popular brands. Use filters for brand, format, and strength, or sort by price, date, or name. Fast delivery across Europe.</p>",
     "SEE_MORE": "Show more",
     "SEE_LESS": "Show less",
     "FLAVOUR_HUB": {
@@ -779,7 +780,7 @@
       "PAGE_TITLE": "Bestsellers",
       "TITLE": "Bestsellers",
       "DESCRIPTION": "Our most popular nicotine pouches — top sellers from the shop, updated from sales data.",
-      "META_DESCRIPTION": "Shop bestseller nicotine pouches at SnusCo. Popular brands and flavours, shipped from Austria across Europe."
+      "META_DESCRIPTION": "Shop bestseller nicotine pouches at SnusCo. Popular brands and flavours, shipped across Europe."
     },
     "NEW_IN_STORE": {
       "PAGE_TITLE": "New in store",
@@ -791,7 +792,7 @@
       "PAGE_TITLE": "Mixpacks & bundles",
       "TITLE": "Mixpacks & bundles",
       "DESCRIPTION": "Multi-can packs and bundles — try more flavours or stock up with curated sets from our catalogue.",
-      "META_DESCRIPTION": "Shop mixpacks and bundle deals on nicotine pouches at SnusCo. Multi-can sets and value packs, shipped from Austria across Europe."
+      "META_DESCRIPTION": "Shop mixpacks and bundle deals on nicotine pouches at SnusCo. Multi-can sets and value packs, shipped across Europe."
     }
   },
 

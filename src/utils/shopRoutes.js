@@ -15,12 +15,12 @@ export function shopBasePath(lang) {
   return `/${normalizeShopLang(lang)}/${SHOP_PATH_SEGMENT}`;
 }
 
-/** Brend ili kategorija po slug-u: /en/snus-verkauf/zyn */
+/** Brend ili kategorija po slug-u: /en/zyn */
 export function shopBrandPath(lang, categorySlug) {
   const s = String(categorySlug ?? "")
     .trim()
     .replace(/^\/+|\/+$/g, "");
-  return s ? `${shopBasePath(lang)}/${s}` : shopBasePath(lang);
+  return s ? `/${normalizeShopLang(lang)}/${s}` : shopBasePath(lang);
 }
 
 /** Samo filter po ukusu — bez fiksnog slug-a. */
@@ -90,12 +90,12 @@ export function buildShopNavDropdown(lang, t) {
         href: base,
         items: [
           { label: "ZYN", href: shopBrandPath(lang, "zyn") },
-          { label: "Nordic Spirit", href: shopBrandPath(lang, "nordic-spirit") },
           { label: "VELO", href: shopBrandPath(lang, "velo") },
-          { label: "FUMi", href: shopBrandPath(lang, "fumi") },
           { label: "XQS", href: shopBrandPath(lang, "xqs") },
-          { label: "KILLA", href: shopBrandPath(lang, "killa") },
-          { label: "PABLO", href: shopBrandPath(lang, "pablo") },
+          { label: "Loop", href: shopBrandPath(lang, "loop") },
+          { label: "Skruf", href: shopBrandPath(lang, "skruf") },
+          { label: "FUMi", href: shopBrandPath(lang, "fumi") },
+          { label: "RUSH", href: shopBrandPath(lang, "rush") },
         ],
       },
       {

@@ -35,6 +35,12 @@ function SearchLegacyRedirect() {
   );
 }
 
+/** Stari URL /:lang/snus-verkauf/:slug → /:lang/:slug */
+function BrandRedirect() {
+  const { lang, slug } = useParams();
+  return <Navigate to={`/${normalizeShopLang(lang)}/${slug}`} replace />;
+}
+
 const AppShell = styled.div`
   min-height: 100vh;
   display: flex;
@@ -114,7 +120,11 @@ function App() {
                   element={<Shop />}
                 />
                 <Route path="/:lang/snus-verkauf" element={<Shop />} />
-                <Route path="/:lang/snus-verkauf/:slug" element={<Shop />} />
+                <Route
+                  path="/:lang/snus-verkauf/:slug"
+                  element={<BrandRedirect />}
+                />
+                <Route path="/:lang/:slug" element={<Shop />} />
                 <Route path="/:lang/:category/:slug" element={<Product />} />
               </Routes>
             </Main>

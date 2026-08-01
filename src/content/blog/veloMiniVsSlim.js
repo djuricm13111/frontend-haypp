@@ -199,13 +199,13 @@ export const veloMiniVsSlim = {
       paragraphs: {
         en: [
           "In the VELO slim vs mini comparison, size is one of the most noticeable differences.",
-          'When you <a href="/{{LANG}}/snus-verkauf/velo">buy VELO mini snus</a>, the pouches are shorter, with a compact size that is designed to sit discreetly under the lip.',
+          'When you <a href="/{{LANG}}/velo">buy VELO mini snus</a>, the pouches are shorter, with a compact size that is designed to sit discreetly under the lip.',
           "VELO slim pouches are longer and flatter. While still discreet, they are slightly more noticeable compared to VELO mini.",
           'Some people search for <strong>VELO mini vs normal,</strong> but VELO does not offer nicotine pouches in a “normal” format—only slim and mini.',
         ],
         de: [
           "Im Vergleich VELO Slim vs. Mini ist die Größe einer der auffälligsten Unterschiede.",
-          'Wenn Sie <a href="/{{LANG}}/snus-verkauf/velo">VELO Mini Snus kaufen</a>, sind die Beutel kürzer und kompakt – sie sollen diskret unter der Lippe liegen.',
+          'Wenn Sie <a href="/{{LANG}}/velo">VELO Mini Snus kaufen</a>, sind die Beutel kürzer und kompakt – sie sollen diskret unter der Lippe liegen.',
           "VELO-Slim-Beutel sind länger und flacher. Sie bleiben diskret, wirken aber im Vergleich zu Mini etwas präsenter.",
           'Manche suchen nach <strong>„VELO Mini vs. Normal“</strong> – VELO bietet jedoch kein „Normal“-Format, sondern nur Slim und Mini.',
         ],

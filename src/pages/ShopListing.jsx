@@ -67,8 +67,8 @@ const ShopListing = ({ listing }) => {
       title: `${title} | SnusCo`,
       description,
       keywords: `${title}, ${baseKeywords}`,
-      url: `https://www.snusco.at${canonicalPath}`,
-      images: ["https://www.snusco.at/assets/snuspouch-category-image.jpg"],
+      url: `https://www.snusco.eu${canonicalPath}`,
+      images: ["https://www.snusco.eu/assets/snuspouch-category-image.jpg"],
     });
   }, [listing, langParam, i18n.language, t, isBestsellers, isMixpacks]);
 
@@ -111,7 +111,7 @@ const ShopListing = ({ listing }) => {
     title: "SnusCo",
     description: "",
     keywords: "",
-    url: "https://www.snusco.at/",
+    url: "https://www.snusco.eu/",
     images: [],
   };
 

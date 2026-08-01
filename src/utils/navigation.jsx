@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import {
   shopBasePath,
+  shopBrandPath,
   shopBestsellersPath,
   shopNewInStorePath,
   shopAllBrandsPath,
@@ -13,7 +14,9 @@ function slugPart(value) {
   return String(value || "")
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, "-");
+    .replace(/[()]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-{2,}/g, "-");
 }
 
 function normalizeLang(lng) {
@@ -81,7 +84,7 @@ export function useNavigation() {
 
   function goToCategory(name) {
     const lang = normalizeLang(i18n.language);
-    return `/${lang}/snus-verkauf/${slugPart(name)}`;
+    return shopBrandPath(lang, slugPart(name));
   }
 
   /** Shop lista — vidi `shopRoutes.js`. */

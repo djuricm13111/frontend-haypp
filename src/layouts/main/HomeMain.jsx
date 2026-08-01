@@ -197,13 +197,10 @@ const HomeMain = () => {
     () => [
       { key: "xqs", iconSrc: logoXqs, label: "XQS", href: shopBrandPath(lang, "xqs") },
       { key: "velo", iconSrc: logoVelo, label: "Velo", href: shopBrandPath(lang, "velo") },
-      { key: "pablo", iconSrc: logoPablo, label: "Pablo", href: shopBrandPath(lang, "pablo") },
       { key: "zyn", iconSrc: logoZyn, label: "ZYN", href: shopBrandPath(lang, "zyn") },
-      { key: "killa", iconSrc: logoKilla, label: "Killa", href: shopBrandPath(lang, "killa") },
-      { key: "fedrs", iconSrc: logoFedrs, label: "Fedrs", href: shopBrandPath(lang, "fedrs") },
-      { key: "garant", iconSrc: logoGarant, label: "Garant", href: shopBrandPath(lang, "garant") },
       { key: "clew", iconSrc: logoClew, label: "CLEW", href: shopBrandPath(lang, "clew") },
       { key: "stng", iconSrc: logoStng, label: "STNG", href: shopBrandPath(lang, "stng") },
+      { key: "garant", iconSrc: logoGarant, label: "Garant", href: shopBrandPath(lang, "garant") },
     ],
     [lang]
   );

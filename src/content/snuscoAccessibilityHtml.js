@@ -3,7 +3,7 @@
 export const ACCESSIBILITY_LAST_UPDATED = "2026-04-24";
 
 export const ACCESSIBILITY_BODY_EN = `
-<p>This statement describes how <strong>SnusCo</strong> approaches digital accessibility for <a href="https://www.snusco.at">www.snusco.at</a>. We aim to align with the <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 Level AA where reasonably achievable for our customers in Austria and beyond.</p>
+<p>This statement describes how <strong>SnusCo</strong> approaches digital accessibility for <a href="https://www.snusco.eu">www.snusco.at</a>. We aim to align with the <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 Level AA where reasonably achievable for our customers in Austria and beyond.</p>
 <h2 id="toc">On this page</h2>
 <ul>
 <li><a href="#commitment">Our commitment</a></li>
@@ -36,7 +36,7 @@ export const ACCESSIBILITY_BODY_EN = `
 `;
 
 export const ACCESSIBILITY_BODY_DE = `
-<p>Diese Erklärung beschreibt, wie <strong>SnusCo</strong> digitale Barrierefreiheit für <a href="https://www.snusco.at">www.snusco.at</a> angeht. Wir orientieren uns an den <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 Konformitätsstufe AA, soweit für unseren Shop wirtschaftlich und technisch zumutbar.</p>
+<p>Diese Erklärung beschreibt, wie <strong>SnusCo</strong> digitale Barrierefreiheit für <a href="https://www.snusco.eu">www.snusco.at</a> angeht. Wir orientieren uns an den <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 Konformitätsstufe AA, soweit für unseren Shop wirtschaftlich und technisch zumutbar.</p>
 <h2 id="toc">Inhalt</h2>
 <ul>
 <li><a href="#commitment">Unser Bekenntnis</a></li>

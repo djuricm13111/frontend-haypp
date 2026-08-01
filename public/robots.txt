@@ -1,3 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /account/
+Sitemap: https://www.snusco.eu/sitemap.xml
+Sitemap: https://www.snusco.eu/products.xml
