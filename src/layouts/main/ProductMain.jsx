@@ -1297,7 +1297,9 @@ const ProductMain = () => {
                     </SpecIconWrap>
                     <SpecTextCol>
                       <SpecLabel>{t("PRODUCT.STRENGTH_LABEL")}</SpecLabel>
-                      <SpecValue>{strengthLabel(product.nicotine, t)}</SpecValue>
+                      <SpecValue>
+                        {Number(product.nicotine) ? `${product.nicotine} mg` : "—"}
+                      </SpecValue>
                     </SpecTextCol>
                   </PdpSpecItem>
                   <PdpSpecItem>
@@ -1318,27 +1320,6 @@ const ProductMain = () => {
                       <SpecValue>{product.flavor}</SpecValue>
                     </SpecTextCol>
                   </PdpSpecItem>
-                  {product.nicotine_per_pouch != null && (
-                    <PdpSpecItem>
-                      <SpecIconWrap aria-hidden>
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <circle cx="12" cy="12" r="10" />
-                          <path d="M12 8v4M12 16h.01" />
-                        </svg>
-                      </SpecIconWrap>
-                      <SpecTextCol>
-                        <SpecLabel>{t("PRODUCT.NICOTINE_PER_POUCH")}</SpecLabel>
-                        <SpecValue>{product.nicotine_per_pouch} mg</SpecValue>
-                      </SpecTextCol>
-                    </PdpSpecItem>
-                  )}
                 </SpecsRow>
               </ProductImageCard>
             </MediaColumn>
