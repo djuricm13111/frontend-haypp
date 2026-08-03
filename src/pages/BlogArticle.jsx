@@ -760,7 +760,7 @@ function BlogArticle() {
   useEffect(() => {
     if (
       langParam &&
-      (langParam === "de" || langParam === "en") &&
+      (langParam === "de" || langParam === "en" || langParam === "hu") &&
       i18n.language?.split("-")[0] !== langParam
     ) {
       i18n.changeLanguage(langParam);
@@ -793,7 +793,7 @@ function BlogArticle() {
   }, [slug]);
 
   const lang = normalizeShopLang(langParam || i18n.language);
-  const l = lang === "de" ? "de" : "en";
+  const l = lang;
   const post = getPostBySlug(slug);
 
   if (!post) {

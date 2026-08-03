@@ -427,7 +427,9 @@ const PHONE_ICON_PATH =
 
 function normalizeFooterLang(lng) {
   const l = String(lng || "en").split("-")[0].toLowerCase();
-  return l === "de" ? "de" : "en";
+  if (l === "de") return "de";
+  if (l === "hu") return "hu";
+  return "en";
 }
 
 function footerLinkTo(linkKey, lang) {

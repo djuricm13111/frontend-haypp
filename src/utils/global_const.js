@@ -137,6 +137,12 @@ export const languages = [
     regionLabel: "United Kingdom",
     flag: require("../assets/icons/united-kingdom.svg").default,
   },
+  {
+    code: "hu",
+    label: "Magyar",
+    regionLabel: "Magyarország",
+    flag: require("../assets/icons/hungary.svg").default,
+  },
 ];
 
 export const featured_categories = [

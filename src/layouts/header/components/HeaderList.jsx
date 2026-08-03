@@ -8,7 +8,7 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { buildShopNavDropdown } from "../../../utils/shopRoutes";
+import { buildShopNavDropdown, normalizeShopLang } from "../../../utils/shopRoutes";
 import { useNavigation } from "../../../utils/navigation";
 
 const StaticFlexDiv = styled.div`
@@ -261,8 +261,7 @@ const HeaderList = ({ isScrolled }) => {
     goToFlavour,
     goToBlog,
   } = useNavigation();
-  const lang =
-    i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+  const lang = normalizeShopLang(i18n.language);
   const dropdownData = useMemo(
     () => buildShopNavDropdown(lang, t),
     [lang, t]

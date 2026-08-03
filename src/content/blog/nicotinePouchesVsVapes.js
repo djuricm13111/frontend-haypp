@@ -6,7 +6,7 @@ import relatedImgPablo from "../../assets/images/blog/pablo-snus-review-article.
 import relatedImgBeginner from "../../assets/images/blog/beginners-nicotine-pouches.webp";
 
 /**
- * Nicotine pouches vs vaping (en / de).
+ * Nicotine pouches vs vaping (en / de / hu).
  */
 export const nicotinePouchesVsVapes = {
   slug: "nicotine-pouches-vs-vapes",
@@ -15,32 +15,39 @@ export const nicotinePouchesVsVapes = {
   category: {
     en: "Guides",
     de: "Ratgeber",
+    hu: "Útmutatók",
   },
   published: "2026-04-07",
   author: {
     en: "SnusCo Editorial",
     de: "SnusCo Editorial",
+    hu: "SnusCo Szerkesztőség",
   },
   meta: {
     title: {
       en: "Are Nicotine Pouches Better than Vaping?",
       de: "Sind Nikotinbeutel besser als Dampfen?",
+      hu: "Jobbak a nikotintasakok a vapelésnél?",
     },
     description: {
       en:
         "Nicotine pouches vs vaping: differences in use, nicotine delivery, flavours, strength, social acceptability, price, and how to choose—plus FAQs.",
       de:
         "Nikotinbeutel vs. E-Zigarette: Nutzung, Nikotinabgabe, Geschmäcker, Stärke, Alltag, Preise und Entscheidungshilfe—inkl. FAQ.",
+      hu:
+        "Nikotintasakok vs. vapelés: különbségek a használatban, nikotinfelszívódásban, ízekben, erősségben, társadalmi elfogadottságban, árban és hogyan válassz – GYIK-kel.",
     },
   },
   intro: {
     en:
       "If you're comparing nicotine pouches vs vaping and wondering whether nicotine pouches are better than vaping, the answer depends on your preferences and desired product. Nicotine pouches offer discreet, smoke-free use, while vapes provide faster nicotine delivery and a wider variety of flavours.",
     de:
-      "Wenn Sie Nikotinbeutel und Dampfen vergleichen und sich fragen, ob Beutel „besser“ sind: Es kommt auf Ihre Vorlieben und das gewünschte Produkt an. Beutel sind diskret und ohne Rauch; E-Zigaretten liefern Nikotin oft schneller und bieten mehr Geschmacksvarianten.",
+      "Wenn Sie Nikotinbeutel und Dampfen vergleichen und sich fragen, ob Beutel „besser\" sind: Es kommt auf Ihre Vorlieben und das gewünschte Produkt an. Beutel sind diskret und ohne Rauch; E-Zigaretten liefern Nikotin oft schneller und bieten mehr Geschmacksvarianten.",
+    hu:
+      "Ha nikotintasakokat és vapelést hasonlítasz össze, és azon töprengsz, hogy jobbak-e a nikotintasakok a vapelésnél, a válasz a preferenciáidtól és a kívánt termékektől függ. A nikotintasakok diszkrét, füstmentes használatot kínálnak, míg a vapek gyorsabb nikotinszállítást és szélesebb ízválasztékot biztosítanak.",
   },
   keyTakeaways: {
-    title: { en: "Key takeaways", de: "Wichtigste Punkte" },
+    title: { en: "Key takeaways", de: "Wichtigste Punkte", hu: "Legfontosabb tudnivalók" },
     items: {
       en: [
         "Nicotine pouches fit under the lip and are smoke- and vapour-free.",
@@ -56,16 +63,24 @@ export const nicotinePouchesVsVapes = {
         "Beutel kosten häufig etwa 3–5 € pro Dose; Vapes von etwa 3 € bis 50+ € je nach Gerät.",
         "Beide gibt es in verschiedenen Stärken, typischerweise etwa 0–20 mg Nikotin (je nach Markt).",
       ],
+      hu: [
+        "A nikotintasakokat az ajak alá helyezik, és füst- és páramentesek.",
+        "A vapek gyorsabban szállítják a nikotint, de töltést és karbantartást igényelnek.",
+        "Mindkettő széles ízválasztékot kínál, de a vapek általában nagyobb változatosságot nyújtanak.",
+        "A tasakok ára jellemzően 3–5 € dobozanként; a vapek ára kb. 3 €-tól 50+ €-ig terjedhet az eszköztől függően.",
+        "Mindkettő elérhető különböző erősségekben, jellemzően 0–20 mg nikotinnal (ahol forgalmazzák).",
+      ],
     },
   },
   toc: {
-    title: { en: "Table of contents", de: "Inhaltsverzeichnis" },
+    title: { en: "Table of contents", de: "Inhaltsverzeichnis", hu: "Tartalomjegyzék" },
     items: [
       {
         id: "glance",
         label: {
           en: "Nicotine pouches vs vaping: what's the difference?",
           de: "Nikotinbeutel vs. Dampfen: Was ist der Unterschied?",
+          hu: "Nikotintasakok vs. vapelés: mi a különbség?",
         },
       },
       {
@@ -73,6 +88,7 @@ export const nicotinePouchesVsVapes = {
         label: {
           en: "Is snus better than vaping?",
           de: "Ist Snus besser als Dampfen?",
+          hu: "Jobb a snus a vapelésnél?",
         },
       },
       {
@@ -80,6 +96,7 @@ export const nicotinePouchesVsVapes = {
         label: {
           en: "Nicotine delivery",
           de: "Nikotinabgabe",
+          hu: "Nikotinfelszívódás",
         },
       },
       {
@@ -87,6 +104,7 @@ export const nicotinePouchesVsVapes = {
         label: {
           en: "Flavour options",
           de: "Geschmacksoptionen",
+          hu: "Ízválasztékok",
         },
       },
       {
@@ -94,6 +112,7 @@ export const nicotinePouchesVsVapes = {
         label: {
           en: "Nicotine strength comparison",
           de: "Vergleich der Nikotinstärken",
+          hu: "Nikotinerősség összehasonlítása",
         },
       },
       {
@@ -101,6 +120,7 @@ export const nicotinePouchesVsVapes = {
         label: {
           en: "Social acceptability",
           de: "Soziale Akzeptanz",
+          hu: "Társadalmi elfogadottság",
         },
       },
       {
@@ -108,6 +128,7 @@ export const nicotinePouchesVsVapes = {
         label: {
           en: "Price comparison",
           de: "Preisvergleich",
+          hu: "Árösszehasonlítás",
         },
       },
       {
@@ -115,9 +136,10 @@ export const nicotinePouchesVsVapes = {
         label: {
           en: "Conclusion: choosing the right option",
           de: "Fazit: die passende Option wählen",
+          hu: "Összefoglalás: a megfelelő lehetőség kiválasztása",
         },
       },
-      { id: "faqs", label: { en: "FAQs", de: "Häufige Fragen" } },
+      { id: "faqs", label: { en: "FAQs", de: "Häufige Fragen", hu: "GYIK" } },
     ],
   },
   glanceIntro: {
@@ -125,121 +147,144 @@ export const nicotinePouchesVsVapes = {
       "When comparing vaping vs nicotine pouches, both are tobacco-free alternatives, but they differ in how they are used and experienced.",
     de:
       "Beim Vergleich Nikotinbeutel und E-Zigarette sind beide meist tabakfrei, unterscheiden sich aber in Nutzung und Erlebnis.",
+    hu:
+      "A vapelés és a nikotintasakok összehasonlításakor mindkettő általában dohánymentes alternatíva, de különböznek a használatban és az élményben.",
   },
   comparisonTable: {
     headers: {
-      feature: { en: "Factor", de: "Faktor" },
-      mini: { en: "Nicotine pouches", de: "Nikotinbeutel" },
-      slim: { en: "Vapes", de: "E-Zigaretten (Vapes)" },
+      feature: { en: "Factor", de: "Faktor", hu: "Jellemző" },
+      mini: { en: "Nicotine pouches", de: "Nikotinbeutel", hu: "Nikotintasakok" },
+      slim: { en: "Vapes", de: "E-Zigaretten (Vapes)", hu: "Vapek (e-cigaretták)" },
     },
     rows: [
       {
-        feature: { en: "Use", de: "Nutzung" },
+        feature: { en: "Use", de: "Nutzung", hu: "Használat" },
         mini: {
           en: "Place under the lip, hands-free",
           de: "Unter die Lippe, freihändig",
+          hu: "Az ajak alá helyezik, kézszabad",
         },
         slim: {
           en: "Inhale vapour from a device",
           de: "Dampf aus einem Gerät einatmen",
+          hu: "Gőzt szívunk be egy eszközből",
         },
       },
       {
         feature: {
           en: "Expected nicotine delivery",
           de: "Erwartete Nikotinabgabe",
+          hu: "Várható nikotinszállítás",
         },
         mini: {
           en: "Slower, more sustained release",
           de: "Langsamer, gleichmäßiger über die Zeit",
+          hu: "Lassabb, tartósabb felszabadulás",
         },
         slim: {
           en: "Faster nicotine release",
           de: "Schnellere Nikotinabgabe",
+          hu: "Gyorsabb nikotinfelszabadulás",
         },
       },
       {
-        feature: { en: "Flavours", de: "Geschmäcker" },
+        feature: { en: "Flavours", de: "Geschmäcker", hu: "Ízek" },
         mini: {
           en: "Primarily mint, with popular options like fruit, berry, and coffee",
           de:
             "Oft Minze, dazu beliebt: Frucht, Beeren, Kaffee u. a.",
+          hu: "Főként mentol, népszerű opciók: gyümölcs, bogyós gyümölcs és kávé",
         },
         slim: {
           en: "Wider variety of flavours beyond just mint and fruit",
           de: "Oft noch breiter: über Minze und Frucht hinaus",
+          hu: "Szélesebb ízválaszték, nem csak mentol és gyümölcs",
         },
       },
       {
-        feature: { en: "Nicotine strengths*", de: "Nikotinstärken*" },
+        feature: { en: "Nicotine strengths*", de: "Nikotinstärken*", hu: "Nikotinerősségek*" },
         mini: {
           en: "0–20 mg+ per pouch (where sold)",
           de: "0–20 mg+ pro Beutel (je nach Markt)",
+          hu: "0–20 mg+ tasakonként (ahol forgalmazzák)",
         },
         slim: {
           en: "0–20 mg+ (depending on device and liquid)",
           de: "0–20 mg+ (je nach Gerät und Liquid)",
+          hu: "0–20 mg+ (az eszköztől és a folyadéktól függően)",
         },
       },
       {
         feature: {
           en: "Social acceptability",
           de: "Soziale Akzeptanz",
+          hu: "Társadalmi elfogadottság",
         },
         mini: {
           en: "High, due to discreet nature",
           de: "Hoch, sehr diskret",
+          hu: "Magas, diszkrét jellege miatt",
         },
         slim: {
           en: "Lower, due to vapour clouds",
           de: "Geringer wegen sichtbarem Dampf",
+          hu: "Alacsonyabb, a párafelhők miatt",
         },
       },
       {
-        feature: { en: "Ease of use", de: "Bedienung" },
+        feature: { en: "Ease of use", de: "Bedienung", hu: "Könnyű kezelhetőség" },
         mini: {
           en: "Easy—no extra equipment or setup",
           de: "Einfach—ohne Zubehör oder Setup",
+          hu: "Egyszerű – nincs szükség extra eszközre vagy beállításra",
         },
         slim: {
           en: "Requires charging, refilling, or device care",
           de: "Laden, Nachfüllen oder Gerätewartung",
+          hu: "Töltést, utántöltést vagy karbantartást igényel",
         },
       },
       {
-        feature: { en: "Convenience", de: "Komfort" },
+        feature: { en: "Convenience", de: "Komfort", hu: "Kényelem" },
         mini: {
           en: "Highly portable and straightforward",
           de: "Sehr mobil und unkompliziert",
+          hu: "Jól hordható és egyszerű",
         },
         slim: {
           en: "Moderate—some devices need prep or parts",
           de: "Mittel—manche Geräte brauchen Vorbereitung",
+          hu: "Közepes – néhány eszköz előkészítést igényel",
         },
       },
       {
         feature: {
           en: "Session duration",
           de: "Nutzungsdauer",
+          hu: "Felhasználási időtartam",
         },
         mini: {
           en: "Around 30 minutes per pouch",
           de: "Etwa 30 Minuten pro Beutel",
+          hu: "Tasakonként kb. 30 perc",
         },
         slim: {
           en: "About 8–10 minutes per session (average)",
           de: "Etwa 8–10 Minuten pro Session (Ø)",
+          hu: "Kb. 8–10 perc alkalmanként (átlag)",
         },
       },
       {
-        feature: { en: "Price", de: "Preis" },
+        feature: { en: "Price", de: "Preis", hu: "Ár" },
         mini: {
           en: "Typically €3–€5 per can",
           de: "Typisch ca. 3–5 € pro Dose",
+          hu: "Jellemzően 3–5 € dobozanként",
         },
         slim: {
           en: "€3–€50+ (depending on device)",
           de: "3–50+ € (je nach Gerät)",
+          hu: "3–50+ € (az eszköztől függően)",
         },
       },
     ],
@@ -249,6 +294,8 @@ export const nicotinePouchesVsVapes = {
       "*Some brands offer nicotine pouches above 20 mg per pouch; availability varies by market. Our shop focuses on strengths up to 20 mg where regulations and assortment allow—see our strength filters when browsing.",
     de:
       "*Manche Marken bieten über 20 mg pro Beutel; Verfügbarkeit hängt vom Markt ab. Unser Sortiment orientiert sich an geltenden Regeln—nutzen Sie die Stärkefilter im Shop.",
+    hu:
+      "*Egyes márkák 20 mg-nál nagyobb nikotintartalmú tasakokat is kínálnak; az elérhetőség piaconként változik. Boltunkban a szabályozástól és a választéktól függően legfeljebb 20 mg erősségű termékek szerepelnek – böngészéskor használd az erősség szűrőit.",
   },
   sections: [
     {
@@ -256,6 +303,7 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "Tobacco-free options compared",
         de: "Tabakfreie Optionen im Vergleich",
+        hu: "Dohánymentes alternatívák összehasonlítva",
       },
       paragraphs: {
         en: [
@@ -274,6 +322,14 @@ export const nicotinePouchesVsVapes = {
           "Beide enthalten Nikotin (suchterzeugend). Nikotin allein verursacht nach gängiger Einordnung nicht dieselben Krankheitsbilder wie Rauch—Sucht und Gesundheit bleiben aber relevant.",
           "Entscheidend sind Vorlieben, Alltag und Gewohnheiten.",
         ],
+        hu: [
+          "Sokan hasonlítják össze a snust/nikotintasakokat a vapeléssel, és azt kérdezik, jobb-e a snus a vapelésnél. Bár mindkettő dohánymentes alternatíva lehet, a tasakok és a vapek eltérően szállítják a nikotint, ami befolyásolja a használat élményét.",
+          "A dohánymentes nikotintasakok és vapek hosszú távú hatásait még kutatják – mindig kövesd a helyi irányelveket és a termék tájékoztatóját.",
+          "<strong>Nikotintasakok</strong> jellemzői: nincs füst vagy égés; nem kell belélegezni; nincs párával vagy passzív gőzzel kapcsolatos kibocsátás, mint a vapelésnél. Egyes felhasználóknál ínyirritáció léphet fel – használd az útmutatás szerint, és ha kényelmetlenséget érezel, hagyd abba.",
+          "<strong>Vapek</strong> e-folyadékot melegítenek, amelyet belélegzünk. Az NHS (UK) és más közegészségügyi forrásokhoz hasonlóan megjegyezzük, hogy a vapelés kevesebb káros anyagnak teszi ki a felhasználókat, mint a dohányzás – de a gőz belélegzése nem kockázatmentes, és a tüdőre gyakorolt hatás szempont marad.",
+          "A nikotintasakok és a vapek egyaránt tartalmaznak nikotint, amely függőséget okozó anyag. Az NHS szerint maga a nikotin nem okoz rákot, tüdőbetegséget, szívbetegséget vagy agyvérzést úgy, mint a dohányzás – de a függőség és az egyéni egészségi tényezők még mindig számítanak.",
+          "A preferenciák, az életmód és a használati szokások mind szerepet játszanak abban, mi felel meg egy felnőtt nikotinfelhasználónak.",
+        ],
       },
     },
     {
@@ -281,6 +337,7 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "Nicotine delivery",
         de: "Nikotinabgabe",
+        hu: "Nikotinfelszívódás",
       },
       paragraphs: {
         en: [
@@ -291,11 +348,16 @@ export const nicotinePouchesVsVapes = {
           "Ein zentraler Unterschied: Beutel geben Nikotin über die Mundschleimhaut ab, Vapes über die Lunge.",
           "Dadurch wirkt es oft: Beutel gleichmäßiger und länger anhaltend; Vapes schneller und unmittelbarer.",
         ],
+        hu: [
+          "A nikotintasakok és a vapelés közötti egyik fő különbség, hogyan szívódik fel a nikotin. A tasakoknál a nikotin a szájnyálkahártyán keresztül szívódik fel. A vapeknél a tüdőn keresztül.",
+          "Ez megváltoztatja az érzést: a tasakok hatása általában fokozatosabb és tartósabb; a vapeké általában gyorsabb és azonnalibb.",
+        ],
       },
       bullets: {
         titleMini: {
           en: "Nicotine pouches",
           de: "Nikotinbeutel",
+          hu: "Nikotintasakok",
         },
         mini: {
           en: [
@@ -304,10 +366,14 @@ export const nicotinePouchesVsVapes = {
           de: [
             "Die Abgabe wirkt meist gleichmäßiger und länger anhaltend.",
           ],
+          hu: [
+            "A nikotinszállítás általában fokozatosabbnak és időben tartósabbnak érződik.",
+          ],
         },
         titleSlim: {
           en: "Vapes",
           de: "E-Zigaretten",
+          hu: "Vapek",
         },
         slim: {
           en: [
@@ -315,6 +381,9 @@ export const nicotinePouchesVsVapes = {
           ],
           de: [
             "Die Abgabe wirkt oft schneller und direkter.",
+          ],
+          hu: [
+            "A nikotinszállítás általában gyorsabbnak és azonnalibbnak érződik.",
           ],
         },
       },
@@ -324,6 +393,7 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "Flavour options",
         de: "Geschmacksoptionen",
+        hu: "Ízválasztékok",
       },
       paragraphs: {
         en: [
@@ -332,11 +402,15 @@ export const nicotinePouchesVsVapes = {
         de: [
           "Beide Welten bieten viele Geschmäcker—Verfügbarkeit und Stil unterscheiden sich.",
         ],
+        hu: [
+          "A vapek és a nikotintasakok egyaránt széles ízválasztékot kínálnak, de az elérhetőség és a stílus különbözik.",
+        ],
       },
       bullets: {
         titleMini: {
           en: "Nicotine pouch flavours",
           de: "Nikotinbeutel-Geschmäcker",
+          hu: "Nikotintasak ízek",
         },
         mini: {
           en: [
@@ -349,10 +423,16 @@ export const nicotinePouchesVsVapes = {
             "Frucht: Beeren, Zitrus, tropische Noten.",
             "Speziell: Kaffee, Zimt, auch unaromatisiert—je nach Marke.",
           ],
+          hu: [
+            "Mentol jellegű ízek: a borsmenta és a spearmint továbbra is népszerű.",
+            "Gyümölcsös tasakok: bogyós keverékek, citrusos és trópusi gyümölcsök a leggyakoribbak.",
+            "Egyedi lehetőségek: kávé, fahéj és ízesítés nélküli változatok több márkánál.",
+          ],
         },
         titleSlim: {
           en: "Vape flavours",
           de: "Vape-Geschmäcker",
+          hu: "Vape ízek",
         },
         slim: {
           en: [
@@ -360,6 +440,9 @@ export const nicotinePouchesVsVapes = {
           ],
           de: [
             "Von Menthol und Frucht bis Drink-Profile—oft noch breiter als bei Beuteln.",
+          ],
+          hu: [
+            "A mentoltól és a gyümölcstől az ital-ihlette ízprofilokig – a vapek általában szélesebb ízválasztékot kínálnak, mint a tasakok.",
           ],
         },
       },
@@ -369,6 +452,7 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "Nicotine strength comparison",
         de: "Vergleich der Nikotinstärken",
+        hu: "Nikotinerősség összehasonlítása",
       },
       paragraphs: {
         en: [
@@ -377,11 +461,15 @@ export const nicotinePouchesVsVapes = {
         de: [
           "Beide Kategorien bieten Stärken—Wirkung und Steuerung unterscheiden sich.",
         ],
+        hu: [
+          "Mindkét kategória számos erősséget kínál, de az erősség szállítása és érzékelése különbözik.",
+        ],
       },
       bullets: {
         titleMini: {
           en: "Nicotine pouch strength options",
           de: "Nikotinbeutel-Stärken",
+          hu: "Nikotintasak erősségi lehetőségek",
         },
         mini: {
           en: [
@@ -390,12 +478,17 @@ export const nicotinePouchesVsVapes = {
           ],
           de: [
             "Häufig etwa 0–20 mg pro Beutel; eher gleichmäßige Abgabe.",
-            "Passend, wenn Sie wenig am Gerät „drehen“ möchten.",
+            "Passend, wenn Sie wenig am Gerät „drehen\" möchten.",
+          ],
+          hu: [
+            "Ahol forgalmazzák, általában 0–20 mg tasakonként; a fokozatos felszabadulás egyenletesnek érezhető.",
+            "Megfelelő, ha kiszámítható erősséget szeretnél az eszköz beállítása nélkül.",
           ],
         },
         titleSlim: {
           en: "Vape strength options",
           de: "Vape-Stärken",
+          hu: "Vape erősségi lehetőségek",
         },
         slim: {
           en: [
@@ -406,6 +499,10 @@ export const nicotinePouchesVsVapes = {
             "0 mg bis 20 mg+ je nach Liquid und Gerät.",
             "Regelbare Geräte verändern die empfundene Intensität.",
           ],
+          hu: [
+            "0 mg-tól 20 mg+-ig, a folyadéktól és az eszköztől függően.",
+            "A szabályozható eszközök megváltoztathatják a nikotin érzett intenzitását.",
+          ],
         },
       },
     },
@@ -414,6 +511,7 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "Social acceptability",
         de: "Soziale Akzeptanz",
+        hu: "Társadalmi elfogadottság",
       },
       paragraphs: {
         en: [
@@ -421,8 +519,12 @@ export const nicotinePouchesVsVapes = {
           "Vapes produce visible vapour and may be restricted in offices, public transport, and flights.",
         ],
         de: [
-          "Beutel gelten oft als diskreter: wenig bis kein sichtbarer „Nebel“—trotzdem Hausregeln und Gesetze beachten.",
+          "Beutel gelten oft als diskreter: wenig bis kein sichtbarer „Nebel\"—trotzdem Hausregeln und Gesetze beachten.",
           "Vapes erzeugen sichtbaren Dampf; Verbote oder Regeln sind häufiger.",
+        ],
+        hu: [
+          "Az iparági és fogyasztói jelentések gyakran kiemelik, hogy a nikotintasakok diszkrétebbnek érezhetők: nincs páraszál, minimális láthatóság és több helyszínen is használhatók – mindig kövesd a helyi szabályokat és a helyszíni előírásokat.",
+          "A vapek látható párát termelnek, és irodákban, tömegközlekedési eszközökön és repülőgépeken korlátozások vonatkozhatnak rájuk.",
         ],
       },
     },
@@ -431,6 +533,7 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "Price comparison",
         de: "Preisvergleich",
+        hu: "Árösszehasonlítás",
       },
       paragraphs: {
         en: [
@@ -441,11 +544,16 @@ export const nicotinePouchesVsVapes = {
           "Beutel liegen oft bei wenigen Euro pro Dose—Aktionen je nach Shop.",
           "Vapes: von günstigen Einweg- oder Pod-Systemen bis zu teuren Mods. Gesetze ändern sich (z. B. Einweg-Regeln)—lokale Vorschriften prüfen.",
         ],
+        hu: [
+          "A nikotintasakokat általában dobozokban árulják, jellemzően 3–5 € áron (az akciók változnak).",
+          "A vapek ára széles tartományban mozog: az egyszerű eldobható eszközök vagy podok a skála alacsonyabb végén vannak, a fejlett készletek sokkal magasabb áron. A szabályozások változnak – ellenőrizd a hatályos jogszabályokat a régiódban.",
+        ],
       },
       infographic: priceComparisonInfographic,
       infographicAlt: {
         en: "Price comparison — nicotine pouches vs vapes",
         de: "Preisvergleich — Nikotinbeutel vs. E-Zigaretten",
+        hu: "Árösszehasonlítás – nikotintasakok vs. vapek",
       },
     },
     {
@@ -453,6 +561,7 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "Conclusion: choosing the right option",
         de: "Fazit: die passende Option wählen",
+        hu: "Összefoglalás: a megfelelő lehetőség kiválasztása",
       },
       paragraphs: {
         en: [
@@ -461,9 +570,14 @@ export const nicotinePouchesVsVapes = {
           "<strong>Choose vapes if you want:</strong> faster nicotine delivery; very wide flavour choice; adjustable devices.",
         ],
         de: [
-          "Sind Nikotinbeutel „besser“? Kommt auf Ihre Prioritäten an.",
+          "Sind Nikotinbeutel „besser\"? Kommt auf Ihre Prioritäten an.",
           "<strong>Nikotinbeutel, wenn Sie möchten:</strong> diskret, ohne Dampf; ohne Laden; eher gleichmäßige Abgabe; einfach unterwegs.",
           "<strong>Vapes, wenn Sie möchten:</strong> schnellere Abgabe; sehr große Geschmacksauswahl; einstellbare Geräte.",
+        ],
+        hu: [
+          "Szóval jobbak-e a nikotintasakok a vapelésnél? A prioritásaidtól függ.",
+          "<strong>Válassz nikotintasakot, ha előnyben részesíted:</strong> diszkrét, páramentesebb megoldást; nincs töltés; egyenletesebb felszabadulás; egyszerű, útközben is kényelmes használat.",
+          "<strong>Válassz vapet, ha szeretnéd:</strong> gyorsabb nikotinszállítást; nagyon széles ízválasztékot; szabályozható eszközöket.",
         ],
       },
     },
@@ -472,54 +586,67 @@ export const nicotinePouchesVsVapes = {
     title: {
       en: "FAQs: nicotine pouches vs vapes",
       de: "FAQ: Nikotinbeutel vs. Vapes",
+      hu: "GYIK: nikotintasakok vs. vapek",
     },
     items: [
       {
         q: {
           en: "Is snus better than vaping?",
           de: "Ist Snus besser als Dampfen?",
+          hu: "Jobb a snus a vapelésnél?",
         },
         a: {
           en:
             "There is no single answer for everyone. Pouches are discreet and vapour-free; vapes can deliver nicotine faster. Choose based on comfort, setting, and how you want to use nicotine.",
           de:
             "Keine pauschale Antwort. Beutel sind diskret und ohne Dampf; Vapes können schneller wirken. Entscheiden Sie nach Komfort, Kontext und gewohnter Nutzung.",
+          hu:
+            "Mindenkire nincs egységes válasz. A tasakok diszkrétek és páramentesek; a vapek gyorsabban hathatnak. Válassz a kényelem, a környezet és a kívánt nikotinhasználat alapján.",
         },
       },
       {
         q: {
           en: "What is worse: snus or vaping?",
           de: "Was ist schlimmer: Snus oder Dampfen?",
+          hu: "Mi rosszabb: a snus vagy a vapelés?",
         },
         a: {
           en:
             "Risks depend on product type, use pattern, and individual health. Smoking is widely considered higher risk than either tobacco-free pouches or vaping; comparing pouches and vapes depends on inhalation vs oral use and local evidence.",
           de:
             "Risiken hängen von Produkt, Nutzung und Gesundheit ab. Rauchen steht meist schlechter da als tabakfreie Beutel oder Dampfen; Beutel vs. Vape ist nicht pauschal—oral vs. inhaliert und lokale Evidenz beachten.",
+          hu:
+            "A kockázatok a termék típusától, a használat módjától és az egyéni egészségtől függenek. A dohányzás általánosan magasabb kockázatúnak számít, mint a dohánymentes tasakok vagy a vapelés; a tasakok és a vapek összehasonlítása az orális és az inhalált használattól, valamint a helyi bizonyítékoktól függ.",
         },
       },
       {
         q: {
           en: "Is snus good for quitting vaping?",
           de: "Eignet sich Snus zum Aufhören mit dem Dampfen?",
+          hu: "Alkalmas-e a snus a vapelés abbahagyására?",
         },
         a: {
           en:
             "Some adults switch between formats. If you want to stop vaping, consider professional cessation support. Nicotine remains addictive in any format.",
           de:
             "Manche wechseln zwischen Formaten. Zum Aufhören mit dem Dampfen hilft professionelle Unterstützung. Nikotin bleibt suchterzeugend.",
+          hu:
+            "Néhány felnőtt vált formátumot. Ha abba szeretnéd hagyni a vapelést, fontold meg a szakszerű segítséget. A nikotin bármilyen formában függőséget okoz.",
         },
       },
       {
         q: {
           en: "Can I use nicotine pouches and vapes anywhere?",
           de: "Kann ich Beutel und Vapes überall nutzen?",
+          hu: "Használhatok nikotintasakokat és vapeket bárhol?",
         },
         a: {
           en:
             "No. Follow local laws, airline rules, and venue policies. Pouches are often more discreet, but restrictions still apply—especially on aircraft and in workplaces.",
           de:
             "Nein. Gesetze, Fluglinien und Hausregeln beachten. Beutel wirken oft diskreter—Verbote gelten trotzdem, z. B. in Flugzeugen und Büros.",
+          hu:
+            "Nem. Tartsd be a helyi törvényeket, a légitársaságok szabályait és a helyszíni előírásokat. A tasakok általában diszkrétebbek, de a tilalmak még mindig érvényesek – különösen repülőgépeken és munkahelyeken.",
         },
       },
     ],
@@ -529,12 +656,15 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "VELO Mini vs Slim: what's the difference?",
         de: "VELO Mini vs. Slim: Was ist der Unterschied?",
+        hu: "VELO Mini vs Slim: mi a különbség?",
       },
       excerpt: {
         en:
           "Compare VELO mini and slim formats: size, strength, and flavour duration.",
         de:
           "VELO Mini und Slim: Größe, Stärke und Geschmacksdauer im Vergleich.",
+        hu:
+          "A VELO mini és slim formátumok összehasonlítása: méret, erősség és ízhatás időtartama.",
       },
       to: { type: "blog", slug: "velo-mini-vs-slim" },
       image: relatedImgVelo,
@@ -543,12 +673,15 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "Pablo nicotine pouches review",
         de: "Pablo Nikotinbeutel – Review",
+        hu: "Pablo nikotintasakok értékelése",
       },
       excerpt: {
         en:
           "Gold range testing, panel scores, pros and cons—full Pablo review.",
         de:
           "Gold-Range-Test, Panel, Vor- und Nachteile—das Pablo-Review.",
+        hu:
+          "Gold kínálat tesztelés, panelpontszámok, előnyök és hátrányok – teljes Pablo értékelés.",
       },
       to: { type: "blog", slug: "pablo-nicotine-pouches-review" },
       image: relatedImgPablo,
@@ -557,12 +690,15 @@ export const nicotinePouchesVsVapes = {
       title: {
         en: "A beginner's guide to nicotine pouches",
         de: "Einsteiger-Guide: Nikotinbeutel",
+        hu: "Kezdők útmutatója a nikotintasakokhoz",
       },
       excerpt: {
         en:
           "Choosing strength, format, and flavour when you are new to pouches.",
         de:
           "Stärke, Format und Geschmack für Einsteiger mit Beuteln.",
+        hu:
+          "Erősség, formátum és íz kiválasztása, ha most ismerkednek a tasakokkal.",
       },
       to: { type: "blog", slug: "beginners-guide-nicotine-pouches" },
       image: relatedImgBeginner,

@@ -1,0 +1,1111 @@
+{
+  "HEADER": {
+    "PRODUCT_CATEGORIES": "Termékkategóriák",
+    "LANGUAGE": "Nyelv",
+    "CLOSE_MENU": "Menü bezárása",
+    "NAV_OPEN_MENU": "Menü megnyitása",
+    "GO_BACK": "Vissza",
+    "MOBILE_NAV_SUBPATH": "{{parent}} > {{child}}",
+    "MOBILE_SHOW_ALL_IN": "Összes megjelenítése: {{name}}",
+    "MOBILE_NAV_OTHER": "Egyéb",
+    "TRUSTPILOT_EXCELLENT": "Kiváló",
+    "TRUSTPILOT_BRAND": "Trustpilot",
+    "TOP_SELLER": "Legnépszerűbb",
+    "NICOTINE_POUCHES": "Nikotinzacskók",
+    "BRANDS": "Márkák",
+    "PRODUCTS": "Termékek",
+    "SIGN_IN": "Bejelentkezés",
+    "CREATE_ACCOUNT": "Fiók létrehozása",
+    "PROFILE": "Profil",
+    "SIGN_UP": "Regisztráció",
+    "SEARCH_FOR": "Keresés",
+    "VIEW_ALL_RESULTS": "Összes találat megtekintése ({{count}})",
+    "FREE_DELIVERY_OVER_MIN": "Ingyenes {{min}} € felett",
+    "PAY_WITH_KLARNA": "Fizetés Klarnával",
+    "LOGO_HOME": "SnusCo — főoldal",
+    "LINKS": {
+      "NEW_YEAR_NEW_ME": "Új év, új én",
+      "NICOTINE_POUCHES": "Nikotinzacskók",
+      "BEST_SELLERS": "Legjobban fogyó termékek",
+      "NEW_ARRIVALS": "Újdonságok",
+      "BLOG": "A SnusCo blog",
+      "TOP_BRANDS": "Legjobb márkák"
+    },
+    "NAV_ITEMS": {
+      "NICOTINE_FREE": "Nikotin nélküli zacskók",
+      "MINT_POUCHES": "Mentol zacskók",
+      "OFFERS": "Ajánlatok",
+      "NEW": "Újdonságok",
+      "BESTSELLERS": "Bestseller",
+      "OFFERS_DEALS": "Ajánlatok és akciók",
+      "ALL_BRANDS": "Összes márka",
+      "BLOG": "Blog"
+    },
+    "SHOP_NAV": {
+      "POPULAR_BRANDS": "Népszerű márkák",
+      "SHOP_BY_FLAVOUR": "Ízesítés szerint",
+      "FRUIT_POUCHES": "Gyümölcsös zacskók",
+      "COFFEE_POUCHES": "Kávés zacskók",
+      "MINT_POUCHES": "Mentol zacskók",
+      "SHOP_BY_STRENGTH": "Erősség szerint",
+      "STRENGTH_LOW": "Gyenge",
+      "STRENGTH_NORMAL": "Normál",
+      "STRENGTH_STRONG": "Erős",
+      "STRENGTH_EXTRA_STRONG": "Extra erős",
+      "STRENGTH_ULTRA_STRONG": "Ultra erős",
+      "SNUS_POUCHES": "Snus zacskók",
+      "SUBSCRIPTIONS": "Előfizetések",
+      "FREE_SAMPLE": "Ingyenes minta",
+      "CAN_OF_THE_MONTH": "A hónap doboza",
+      "MIXPACKS_BUNDLES": "Mixcsomagok és bundle-ök",
+      "OFFERS": "Ajánlatok"
+    },
+    "DROPDOWN_NICOTINE_INTRO": "Itt megtalálja az összes nikotinzacskónkat",
+    "DROPDOWN_OFFERS_INTRO": "Itt megtalálja az összes ajánlatunkat és akcióinkat"
+  },
+
+  "HEADER_SLIDER": {
+    "DELIVERY_TO_AUSTRIA": "Kiszállítás",
+    "BIG_SELECTION": "Nagy választék",
+    "BEST_CUSTOMER_SERVICE": "Legjobb ügyfélszolgálat"
+  },
+
+  "FOOTER": {
+    "WARNING": "Figyelmeztetés: Termékeink nikotint tartalmaznak, amely erősen függőséget okozó anyag.",
+    "COPYRIGHT": "© 2025 SnusCo. Minden jog fenntartva.",
+    "FOLLOW_US": "Kövessen minket",
+    "SUPPORT": "Támogatás",
+    "FAQS": "GYIK",
+    "PRIVACY_POLICY": "Adatvédelmi irányelvek",
+    "TERMS_CONDITIONS": "Általános szerződési feltételek",
+    "CATEGORIES": "Kategóriák",
+    "CONTACT": "Kapcsolat",
+    "BRAND_ARIA": "SnusCo",
+    "BRAND_REGION": "SnusCo · Európa",
+    "PAYMENT_ARIA": "Fizetési módok",
+    "PAYMENT_KLARNA": "Klarna",
+    "PAYMENT_VISA": "VISA",
+    "PAYMENT_MC": "Mastercard",
+    "SHIPPING_AUSTRIA": "Kiszállítás egész Európában",
+    "SHIPPING_CENTER_EXTRA": "Expressz · Normál",
+    "VERIFY_18": "18+ ellenőrzés",
+    "VERIFY_SUB": "ELLENŐRZÉS",
+    "ACC_MENU_CS": "Ügyfélszolgálat",
+    "ACC_MENU_LEGAL": "Jogi információk",
+    "ACC_MENU_COMPANY": "SnusCo",
+    "ACC_CS_DESC": "Rendelések, szállítás és elérhetőségeink.",
+    "ACC_LEGAL_DESC": "Adatvédelem, feltételek, akadálymentesség és jogi információk.",
+    "ACC_COMPANY_DESC": "Rólunk és SnusCo hírek.",
+    "LINK_CONTACT": "Kapcsolat",
+    "LINK_PRIVACY": "Adatvédelmi irányelvek",
+    "LINK_TERMS": "Általános szerződési feltételek",
+    "LINK_ACCESSIBILITY": "Akadálymentesség",
+    "LINK_ABOUT": "A SnusCo-ról",
+    "LINK_BLOG": "Blog",
+    "CONTACT_BLOCK_TITLE": "Ügyfélszolgálat",
+    "EMAIL": "support@snusco.eu",
+    "PHONE": "+43 1 234 5678",
+    "PHONE_RAW": "+4312345678",
+    "HOURS": "Hétfő–Péntek 9:00–17:00 (CET), ünnepnapokon zárva.",
+    "NAVY_COMPANY_LINE": "SnusCo GmbH · Európa"
+  },
+
+  "MENU": {
+    "PROFILE": "Profil",
+    "ACCOUNT": "Fiók",
+    "ADDRESSES": "Címek",
+    "NICOTINE_POUCHES": "Nikotinzacskók",
+    "BEST_SELLERS": "Legjobban fogyó termékek",
+    "BRANDS": "Márkák",
+    "SIGN_UP": "Regisztráció",
+    "LOGIN": "Bejelentkezés",
+    "MY_ACCOUNT": "Fiókom",
+    "ADMIN_INBOX": "Beérkező"
+  },
+
+  "BLOG": {
+    "PAGE_TITLE": "Blog | SnusCo",
+    "PAGE_DESCRIPTION": "Útmutatók és cikkek a nikotinzacskókról, formátumokról és márkákról.",
+    "LIST_HEADING": "SnusCo blog",
+    "LIST_LEAD": "Részletes cikkek a nikotinzacskókról — formátumok, erősségek és hogyan válassza ki a megfelelőt.",
+    "BY_AUTHOR": "Szerző: {{name}}",
+    "CRUMB_HOME": "Főoldal",
+    "CRUMB_BLOG": "Blog",
+    "RELATED_HEADING": "Kapcsolódó cikkek",
+    "PUBLISHED": "Megjelent: {{date}}"
+  },
+
+  "TERMS": {
+    "PAGE_TITLE": "Általános szerződési feltételek | SnusCo",
+    "PAGE_DESCRIPTION": "Általános szerződési feltételek a SnusCo-nál leadott rendelésekhez — Európa, fogyasztók, szállítás, fizetés, elállás és előfizetések.",
+    "HEADING": "Általános szerződési feltételek",
+    "SUBLINE": "SnusCo GmbH · Európa · Utoljára frissítve: {{date}} · Jogi felülvizsgálatra váró tervezet",
+    "BREADCRUMB_ARIA": "Navigációs útvonal"
+  },
+
+  "PRIVACY": {
+    "PAGE_TITLE": "Adatvédelmi irányelvek | SnusCo",
+    "PAGE_DESCRIPTION": "Hogyan gyűjti, használja és védi a SnusCo személyes adatait — GDPR, Európa, az Ön jogai, sütik és megőrzés.",
+    "HEADING": "Adatvédelmi irányelvek",
+    "SUBLINE": "SnusCo GmbH · Európa · Utoljára frissítve: {{date}} · Tervezet adatvédelmi tisztviselői felülvizsgálatra",
+    "BREADCRUMB_ARIA": "Navigációs útvonal"
+  },
+
+  "ACCESSIBILITY": {
+    "PAGE_TITLE": "Akadálymentesség | SnusCo",
+    "PAGE_DESCRIPTION": "A SnusCo digitális akadálymentességi megközelítése — WCAG 2.2 AA, ismert korlátok és visszajelzési lehetőségek.",
+    "HEADING": "Akadálymentesség",
+    "SUBLINE": "SnusCo GmbH · Európa · Utoljára frissítve: {{date}} · Nyilatkozat tervezet",
+    "BREADCRUMB_ARIA": "Navigációs útvonal"
+  },
+
+  "HOME": {
+    "HERO_TITLE": "SnusCo: Online nikotinzacskó áruház",
+    "HERO_SUBTITLE": "Másnapi kiszállítás* 4,99 € feletti rendelésekhez — plusz egy ingyenes doboz minden vásárláshoz!*",
+    "ABOUT_TITLE": "A SnusCo-ról",
+    "ABOUT_SNUSCO": "Üdvözöljük a SnusCo-nál, az Ön megbízható célpontjánál a prémium, dohánymentes nikotintermékek terén. Megalakulásunk óta elköteleztek vagyunk a legjobb minőségű nikotinzacskók biztosítása iránt azok számára, akik az értékelik a biztonságot, az átláthatóságot és a kivételes ízélményt.",
+    "FEATURED_BRANDS": "A SnusCo-nál büszkén kínáljuk a legnépszerűbb márkák válogatott kínálatát, beleértve.",
+    "FEATURED_BRANDS_2": " Minden termék szigorú tesztelésen esik át a legmagasabb minőségi szabványok teljesítése érdekében, hogy csak a legjobbat kapja. Akár új a nikotinzacskók világában, akár tapasztalt felhasználó, útmutatókat és ajánlásokat kínálunk a tökéletes választáshoz.",
+    "SHOPPING_EXPERIENCE": "Weboldalunk zökkenőmentes vásárlási élményt nyújt, gyors és megbízható kiszállítással. Az ügyfélbiztonságot megbízható korhatár-ellenőrzési folyamatokkal biztosítjuk, elősegítve egy biztonságos és felelős közösséget.",
+    "TOBACCO_FREE_LIFESTYLE": "Fedezze fel a dohánymentes életmód szabadságát a SnusCo-val. Szakértői tanácsokkal, oktatási forrásokkal és minőség iránti elkötelezettséggel támogatjuk Önt, hogy megalapozott döntéseket hozhasson. Válassza a SnusCo-t — ahol a kiválóság és a gondoskodás találkozik.",
+    "PROMO_TITLES": {
+      "FEATURED": "Kiemelt nikotinzacskók",
+      "HOT_DEALS": "Forró ajánlatok",
+      "BRANDS": "Márkáink"
+    },
+    "LINKS": {
+      "SEE_HOT_DEALS": "Forró ajánlatok megtekintése - Akció"
+    },
+    "BUY_HERE": "Vásároljon itt",
+    "PROMO_CARDS_LABEL": "Promóciós ajánlatok",
+    "PROMO_INTRO": "Fedezze fel a <nicotine>dohánymentes nikotinzacskók</nicotine> és a <free>nikotin nélküli zacskók</free> legjobb választékát a SnusCo-nál. Legyen szó legjobban fogyó termékekről, újdonságokról vagy a legújabb márkákról, nálunk mindent megtalál.",
+    "SHOP_BY_BRAND": "Vásároljon márka szerint",
+    "FEATURED_PRODUCTS_TITLE": "Kiemelt termékek",
+    "SHOP_BY_CATEGORY": "Vásároljon kategória szerint",
+    "SHOP_BY_FLAVOR": "Vásároljon ízesítés szerint",
+    "FLAVOR_NAV": {
+      "MINT": "Mentol",
+      "BERRY": "Bogyós gyümölcs",
+      "CITRUS": "Citrus",
+      "FRUIT": "Gyümölcs",
+      "COFFEE": "Kávé",
+      "LIQUORICE": "Édesgyökér"
+    },
+    "CATEGORY_NAV": {
+      "NICOTINE_POUCHES": "Nikotinzacskók",
+      "NICOTINE_FREE_POUCHES": "Nikotin nélküli zacskók",
+      "NEW_ARRIVALS": "Újdonságok",
+      "BESTSELLERS": "Bestseller",
+      "OFFERS": "Ajánlatok",
+      "BUNDLES": "Csomagok",
+      "PICK_AND_MIX": "Pick & Mix",
+      "FREE_SAMPLE": "Ingyenes minta"
+    },
+    "NEW_ARRIVALS_SLIDER": {
+      "DESC_BEFORE": "Legyen az első, aki kipróbálja a legújabb nikotinzacskókat. Újdonságaink rendszeresen frissülnek ",
+      "TOP_BRANDS": "legjobb márkák",
+      "DESC_AFTER": " friss termékeivel."
+    },
+    "BLOG_SLIDER": {
+      "TITLE": "A blogból",
+      "VIEW_ALL": "Összes cikk megtekintése",
+      "ARIA_REGION": "Blog cikkek",
+      "ARIA_PREV": "Előző cikkek",
+      "ARIA_NEXT": "Következő cikkek",
+      "ARIA_SLIDE": "{{current}}. dia / {{total}}"
+    },
+    "TRUST": {
+      "ABOUT_H2": "A SnusCo-ról",
+      "ABOUT_P1": "A SnusCo olyan felnőttek számára készült, akik <strong>dohánymentes nikotinzacskókat</strong> keresnek felesleges bonyodalmak nélkül: valódi márkák, egyértelmű erősségek és leírások, amelyek segítenek magabiztosan választani.",
+      "ABOUT_P2": "<strong>A korhatár-ellenőrzést és a felelős kiskereskedelmet</strong> komolyan vesszük — minden rendelést ellenőrzünk, hogy a nikotin a megfelelő kezekbe kerüljön.",
+      "ABOUT_P3": "Csapatunk segítséget nyújt a formátum, az ízesítés vagy az erősség kiválasztásában — akár most próbálja először a zacskókat, akár megújítja a készletét.",
+      "WHY_H2": "Miért vásároljon a SnusCo-nál?",
+      "WHY_INTRO": "A bestsellerektől az újdonságokig a SnusCo <strong>ismert márkák nikotinzacskóit</strong> gyűjti össze egy helyen — gondosan csomagolva és kiszállítva Európa-szerte.",
+      "WHY_POINTS": [
+        {
+          "title": "Márkák egy helyen:",
+          "text": "Böngésszen ismert nevek között és fedezzen fel újakat — mentol, bogyós gyümölcs, citrus és még sok más — anélkül, hogy több weboldalt kellene felkeresnie."
+        },
+        {
+          "title": "Egyértelmű információk:",
+          "text": "A nikotinerősség, a formátum és az ízesítés egyértelműen fel van tüntetve, így kevesebb időt tölt találgatással és többet az élvezettel."
+        },
+        {
+          "title": "Megbízható kiszállítás:",
+          "text": "A kiszámítható teljesítésre és a gondos csomagolásra összpontosítunk, hogy rendelése nyitásra kész állapotban érkezzen meg."
+        },
+        {
+          "title": "Felelős tervezéssel:",
+          "text": "A korhatár-ellenőrzés és az egyértelmű kommunikáció részét képezi annak, ahogyan a kategóriát tiszteletteljes és jogszerű módon tartjuk."
+        },
+        {
+          "title": "Támogatás, amikor szükség van rá:",
+          "text": "Kérdése van egy rendeléssel vagy termékkel kapcsolatban? Keressen minket — a fizetés előtt és után is az Ön oldalán állunk."
+        }
+      ],
+      "FOOTNOTE": "A promóciók, minták és különleges ajánlatok termékenként és időszakonként változhatnak. A készlet erejéig érvényes."
+    },
+    "HOME_PICK_GRID": {
+      "SECTION_HEADING": "Bestseller nikotinzacskók",
+      "TABLIST_LABEL": "Terméklista kiválasztása",
+      "LOADING": "Termékek betöltése…",
+      "EMPTY": "Jelenleg nincsenek megjeleníthető termékek."
+    }
+  },
+
+  "ACCOUNT": {
+    "PAGE_TITLE": "Fiókom | SnusCo",
+    "META_DESCRIPTION": "Az Ön SnusCo fiókja: adatok, jutalmak, mentett címek és rendeléstörténet.",
+    "HEADING": "Fiókom",
+    "LOADING": "Profil betöltése…",
+    "DETAILS_TITLE": "Adatai",
+    "EMAIL": "E-mail",
+    "FIRST_NAME": "Keresztnév",
+    "LAST_NAME": "Vezetéknév",
+    "PHONE": "Telefon",
+    "SAVE": "Változtatások mentése",
+    "SAVED": "Profil frissítve.",
+    "SAVE_ERROR": "Mentés sikertelen. Kérjük, próbálja újra.",
+    "POINTS_TITLE": "Jutalmak",
+    "POINTS": "Pontok",
+    "LEVEL": "Szint",
+    "VIP": "VIP",
+    "REFERRAL": "Referálási kód",
+    "ADDRESSES_TITLE": "Mentett címek",
+    "PRIMARY": "Elsődleges",
+    "NO_ADDRESSES": "Még nincsenek mentett címek.",
+    "ADDRESS_ADD": "Cím hozzáadása",
+    "ADDRESS_NEW_TITLE": "Új cím",
+    "ADDRESS_EDIT": "Szerkesztés",
+    "ADDRESS_SAVE_NEW": "Cím mentése",
+    "ADDRESS_SAVE_EDIT": "Változtatások mentése",
+    "ADDRESS_CANCEL": "Mégse",
+    "ADDRESS_SET_PRIMARY": "Beállítás alapértelmezettként",
+    "ADDRESS_DELETE": "Törlés",
+    "ADDRESS_DELETE_CONFIRM": "Törölje ezt a címet ({{label}})?",
+    "ADDRESS_DELETE_ERROR": "A cím törlése nem sikerült.",
+    "ADDRESS_SAVE_ERROR": "A cím mentése nem sikerült.",
+    "ADDRESS_LIMIT": "Legfeljebb {{max}} címet menthet.",
+    "ADDRESS_HINT_SINGLE": "Az alapértelmezett cím nem törölhető. Adjon hozzá egy másik címet, állítsa be alapértelmezettként, majd törölheti ezt.",
+    "ADDRESS_HINT_PRIMARY": "Ez az alapértelmezett cím. Először állítson be egy másik alapértelmezett címet, majd törölheti ezt.",
+    "ADDRESS_COUNTRY": "Ország",
+    "ADDRESS_CITY": "Város",
+    "ADDRESS_POSTAL": "Irányítószám",
+    "ADDRESS_STREET": "Utca",
+    "ADDRESS_STREET_NUMBER": "Házszám",
+    "ADDRESS_SECONDARY": "Kiegészítő cím sor",
+    "ADDRESS_BUILDING": "Épület",
+    "ADDRESS_PHONE": "Telefon",
+    "ADDRESS_TYPE_LABEL": "Cím típusa",
+    "ADDRESS_TYPE_HOME": "Otthon",
+    "ADDRESS_TYPE_WORK": "Munka",
+    "ADDRESS_TYPE_OTHER": "Egyéb",
+    "ORDERS_TITLE": "Rendeléstörténet",
+    "NO_ORDERS": "Még nincsenek rendelései.",
+    "ORDER_NUMBER": "Rendelés",
+    "ORDER_DATE": "Dátum",
+    "ORDER_STATUS": "Állapot",
+    "ORDER_TOTAL": "Összesen",
+    "LOGOUT": "Kijelentkezés",
+    "CONTINUE_SHOPPING": "Vásárlás folytatása",
+    "GO_CHECKOUT": "Kosár / fizetés",
+    "VERIFY_BANNER_TITLE": "Erősítse meg e-mail-címét",
+    "VERIFY_BANNER_BODY": "Erősítse meg e-mail-címét a teljes fiókhoz való hozzáféréshez — beleértve a rendeléstörténetet.",
+    "ORDERS_NEED_VERIFICATION": "A rendeléstörténet az e-mail megerősítése után érhető el. Használja az elküldött linket, vagy kérjen új kódot.",
+    "VERIFY_EMAIL_CTA": "E-mail megerősítése",
+    "TABLIST_LABEL": "Fiók szakaszok",
+    "TAB_DETAILS": "Adatok",
+    "TAB_ORDERS": "Rendelések",
+    "TAB_SUBSCRIPTIONS": "Előfizetések",
+    "SUBSCRIPTIONS_TITLE": "Előfizetések",
+    "SUBSCRIPTIONS_INTRO": "Automatikus újrarendelések az Ön ütemezése szerint. Az első szállítmányt azonnal feladjuk; a következő rendelések az Ön lemondásáig futnak.",
+    "SUBSCRIPTIONS_EMPTY": "Még nincsenek előfizetései. Nyissa meg egy termék oldalát, és használja a Feliratkozás funkciót az előfizetés beállításához.",
+    "SUBSCRIPTIONS_LOADING": "Előfizetések betöltése…",
+    "SUBSCRIPTION_STATUS_ACTIVE": "Aktív",
+    "SUBSCRIPTION_ITEMS_TITLE": "Az előfizetés termékei",
+    "SUBSCRIPTION_ADD_PANEL_TITLE": "Termék hozzáadása",
+    "SUBSCRIPTION_SEARCHING": "Keresés…",
+    "SUBSCRIPTION_REMOVE_ARIA": "{{name}} eltávolítása az előfizetésből",
+    "SUBSCRIPTION_CANCEL_MODAL_TITLE": "Lemondja az előfizetést?",
+    "SUBSCRIPTION_CANCEL_MODAL_BODY": "Az ehhez a tervhez tartozó jövőbeli automatikus rendelések leállnak. A következő ciklus díját nem számítjuk fel.",
+    "SUBSCRIPTION_CANCEL_MODAL_NOTE": "Bármikor beállíthat új előfizetést egy termékoldaltól.",
+    "SUBSCRIPTION_CANCEL_MODAL_BACK": "Előfizetés megtartása",
+    "SUBSCRIPTION_CANCEL_MODAL_CONFIRM": "Igen, lemondás",
+    "SUBSCRIPTION_CANCEL_MODAL_SUBMITTING": "Lemondás…",
+    "SUBSCRIPTION_EVERY": "Minden {{days}} napban",
+    "SUBSCRIPTION_NEXT": "Következő automatikus rendelés: {{date}}",
+    "SUBSCRIPTION_ENDED": "Lemondva: {{date}}",
+    "SUBSCRIPTION_STATUS_CANCELLED": "Lemondott",
+    "SUBSCRIPTION_CANCEL": "Előfizetés lemondása",
+    "SUBSCRIPTION_ADD_PRODUCT": "Másik termék hozzáadása",
+    "SUBSCRIPTION_SEARCH": "Termék keresése",
+    "SUBSCRIPTION_SEARCH_PH": "Írjon be legalább 2 karaktert…",
+    "SUBSCRIPTION_SELECTED": "Kiválasztva: {{name}}",
+    "SUBSCRIPTION_QTY": "Mennyiség",
+    "SUBSCRIPTION_ADD_BTN": "Hozzáadás az előfizetéshez",
+    "SUBSCRIPTION_REMOVE_ITEM": "Eltávolítás",
+    "SUBSCRIPTIONS_PICK_PRODUCT": "Válasszon terméket a keresési eredmények közül.",
+    "ORDERS_SHOW_MORE": "Több rendelés megjelenítése",
+    "ORDER_DOWNLOAD_PDF": "PDF számla",
+    "ORDER_REORDER": "Újrarendelés",
+    "REORDERING": "Hozzáadás…",
+    "REORDER_ALL_FAILED": "Ezeket a termékeket nem sikerült hozzáadni a kosarához. Előfordulhat, hogy már nem elérhetők.",
+    "REORDER_PARTIAL": "{{count}} termék(et) nem sikerült hozzáadni (nem elérhető vagy elfogyott). A többi hozzá lett adva a kosarához.",
+    "REORDER_NOTICE_PARTIAL_OOS": "{{count}} termék ebből a rendelésből elfogyott és nem lett hozzáadva. A többi elem a kosarában van.",
+    "REORDER_NOTICE_ALL_OOS": "A rendelés összes terméke jelenleg elfogyott, ezért semmi sem lett hozzáadva a kosarához.",
+    "REORDER_NOTICE_MIXED_PARTIAL": "{{stockCount}} termék elfogyott; {{otherCount}} termék nem adható hozzá (nem elérhető). A többi a kosarában van.",
+    "REORDER_NOTICE_MIXED_ALL_FAILED": "A rendelés ismétlése nem sikerült: {{stockCount}} termék elfogyott, {{otherCount}} nem elérhető.",
+    "REORDER_TOAST_DISMISS": "Bezárás",
+    "ORDER_ITEMS_PRODUCT": "Termék",
+    "ORDER_ITEMS_QTY": "Db",
+    "ORDER_ITEMS_PRICE": "Ár",
+    "ORDER_COL_AMOUNT": "Összeg",
+    "ORDER_COL_PRICE": "Ár",
+    "ORDER_COL_LINE_TOTAL": "Végösszeg",
+    "ORDER_SHOW_DETAILS": "Részletek",
+    "ORDER_HIDE_DETAILS": "Elrejtés",
+    "INVOICE_TOTAL_SIMPLE": "Összesen",
+    "INVOICE_PDF_TITLE": "Rendelési számla",
+    "INVOICE_ORDER_REF": "Rendelés",
+    "INVOICE_DATE": "Dátum",
+    "INVOICE_SHIP_TO": "Szállítási cím",
+    "INVOICE_SHIPPING": "Szállítás",
+    "INVOICE_FILE_PREFIX": "szamla"
+  },
+
+  "CHECKOUT": {
+    "PAGE_TITLE": "Fizetés | SnusCo",
+    "TITLE": "Fizetés",
+    "SIGNED_IN_NOTICE": "Bejelentkezett — a fiókja e-mail-címét és mentett szállítási címeit használjuk az alábbiakban.",
+    "BACK": "Vissza",
+    "BACK_SHOP": "Vásárlás folytatása",
+    "EMPTY_CART": "A kosara üres.",
+    "CONTACT_GUEST": "Kapcsolat és kiszállítás",
+    "CONTACT_SIGNED_IN": "Fiókja adatai",
+    "ACCOUNT_EMAIL": "Fiók e-mail",
+    "ACCOUNT_EMAIL_HINT": "Fiókja e-mail-címe a rendelés visszaigazolása után frissítésre kerül a rendszerünkben. Olyan címet adjon meg, amelyhez hozzáfér a rendelési értesítésekhez.",
+    "EMAIL": "E-mail",
+    "FIRST_NAME": "Keresztnév",
+    "LAST_NAME": "Vezetéknév",
+    "SAVED_ADDRESSES": "Mentett címek",
+    "DELIVERY_SAVED_TITLE": "Szállítási cím",
+    "DELIVERY_SAVED_INTRO": "Válasszon egy mentett címet, vagy adjon hozzá újat. A kiválasztott cím teljes adatai lent láthatók.",
+    "PRIMARY_BADGE": "Elsődleges",
+    "NEW_ADDRESS": "Másik cím használata (hozzáadás vagy szerkesztés lent)",
+    "SHIPPING_TITLE": "Szállítási cím",
+    "SHIPPING_EDIT_INTRO": "A mezők a kiválasztott cím alapján vannak kitöltve — módosítsa, amire szüksége van, vagy adjon meg egy új címet. Az új cím mentésre kerül a fiókjába.",
+    "COUNTRY": "Ország",
+    "CITY": "Város",
+    "POSTAL": "Irányítószám",
+    "PHONE": "Telefon",
+    "STREET": "Utca",
+    "STREET_NUMBER": "Házszám",
+    "BUILDING": "Épület / lakás",
+    "SECONDARY": "2. cím sor (opcionális)",
+    "DELIVERY_PAYMENT": "Kiszállítás és fizetés",
+    "TRANSPORT": "Szállítási mód",
+    "TRANSPORT_POST": "Post AT",
+    "TRANSPORT_DHL": "DHL Standard",
+    "TRANSPORT_DHL_EXP": "DHL Express Saver",
+    "PAYMENT": "Fizetési mód",
+    "PAY_COD": "Utánvét",
+    "PAY_CARD": "Bankkártya",
+    "PAY_PAYPAL": "PayPal",
+    "NOTE": "Rendelési megjegyzés (opcionális)",
+    "NOTE_PLACEHOLDER": "Kiszállítási utasítások, stb.",
+    "SUMMARY": "Rendelés összefoglalója",
+    "SUBTOTAL": "Részösszeg",
+    "TOTAL_EST": "Részösszeg (becsült)",
+    "SHIPPING": "Szállítás",
+    "SHIPPING_FREE": "Ingyenes",
+    "GRAND_TOTAL": "Összesen (szállítással együtt)",
+    "PLACE_ORDER": "Rendelés leadása",
+    "SUBMITTING": "Rendelés leadása…",
+    "SUCCESS": "Köszönjük! Rendelése visszaigazolásra került. Rendelési hivatkozás: {{id}}.",
+    "ERROR_GENERIC": "Valami hiba történt. Kérjük, próbálja újra.",
+    "SELECT_ADDRESS": "Kérjük, válasszon szállítási címet.",
+    "SUBSCRIPTION_LABEL": "Automatikus újrarendelés ehhez a termékhez",
+    "SUBSCRIPTION_NONE": "Nem — csak egyszeri",
+    "SUBSCRIPTION_14": "Igen — 14 naponta",
+    "SUBSCRIPTION_31": "Igen — 31 naponta",
+    "SUBSCRIPTION_62": "Igen — 62 naponta",
+    "SUBSCRIPTION_HINT": "Opcionális. Most leadjuk a rendelést; a jövőbeli szállítások az Ön által választott ütemezés szerint ismétlődnek. Bármikor lemondhatja a fiókomban.",
+    "SUBSCRIPTION_LINE_NOTE": "Automatikus újrarendelés {{days}} naponta (ezzel a rendeléssel együtt)",
+    "DELIVER_TO": "Szállítás ide:",
+    "DELIVERY_OPTIONS": "Szállítási lehetőségek",
+    "ESTIMATED_DELIVERY": "Becsült szállítási idő",
+    "PLACE_ORDER_BEFORE": "Adja le rendelését",
+    "SAME_DAY_SHIPPING": "előtt, és ugyanazon a napon feladjuk (hétfőtől péntekig)",
+    "CARD_SECURITY_MESSAGE": "Bankkártya adatait PCI DSS v3.2 biztonsági szabványok szerint védjük.",
+    "CREDIT_CARDS_HEADER": "Bankkártyák",
+    "FREE": "Ingyenes"
+  },
+
+  "PAYMENT_METHOD": {
+    "COD": "Utánvét",
+    "CARD": "Bankkártya",
+    "PAYPAL": "PayPal",
+    "UNAVAILABLE": "(jelenleg nem elérhető)",
+    "SELECT": "Fizetési mód kiválasztása"
+  },
+
+  "LOGIN": {
+    "SIGN_IN": "Bejelentkezés",
+    "TITLE": "Bejelentkezés",
+    "HINT_SECTION_TITLE": "Bejelentkezés",
+    "ACCOUNT_HINT": "Lépjen be fiókjába a rendelések megtekintéséhez",
+    "LOGO_MARK": "SNUSCO",
+    "SUBTITLE": "Hozzáférés a fiókjához",
+    "FORGOT_PASSWORD": "Elfelejtette jelszavát?",
+    "DONT_HAVE_ACCOUNT": "Még nincs fiókja?",
+    "SIGN_UP": "Regisztráció",
+    "FORGOT_PASSWORD_TITLE": "Elfelejtette jelszavát?",
+    "FORGOT_PASSWORD_SUBTITLE": "Adja meg e-mail-címét a jelszó visszaállításához.",
+    "REORDER_NUDGE_TITLE": "Újrarendelés — egyszerűbb, mint valaha!",
+    "REORDER_NUDGE_BODY": "Szia! Tudta, hogy könnyen újra leadhat egy korábbi rendelést a Fiókomban? Egyszerűen kattintson az újrarendelés gombra, és kedvencei ismét kiszállításra kerülnek.",
+    "REORDER_NUDGE_CLOSE": "Bezárás"
+  },
+
+  "REGISTER": {
+    "PAGE_TITLE": "Fiók létrehozása — SnusCo",
+    "HEADER_BADGE": "Regisztráció",
+    "TITLE": "Fiók létrehozása",
+    "HINT_SECTION_TITLE": "Fiók létrehozása",
+    "ACCOUNT_HINT": "Hozzon létre fiókot a rendelések nyomon követéséhez és a gyorsabb következő fizetéshez.",
+    "LOGO_MARK": "SNUSCO",
+    "ADDRESS_SECTION_TITLE": "Szállítási cím",
+    "ADDRESS_HINT": "Most megadhatja az első rendelés felgyorsításához, vagy kihagyhatja és később megadhatja a fizetésnél.",
+    "ADDRESS_OPTIONAL": "Opcionális — meggyorsítja a fizetést",
+    "REFERRAL": "Referálási kód",
+    "REFERRAL_PLACEHOLDER": "Ha van ilyen",
+    "CONFIRM_PASSWORD": "Jelszó megerősítése",
+    "SUBMIT": "Fiók létrehozása",
+    "SUBMITTING": "Fiók létrehozása…",
+    "SUCCESS_REDIRECT": "Üdvözöljük! Átirányítás az áruházba…",
+    "ALREADY_HAVE_ACCOUNT": "Már van fiókja?",
+    "SIGN_IN": "Bejelentkezés",
+    "ERROR_GENERIC": "Valami hiba történt. Kérjük, próbálja újra.",
+    "PASSWORD_MISMATCH": "A jelszavak nem egyeznek."
+  },
+
+  "PASSWORD_RESET": {
+    "FORGOT_PAGE_TITLE": "Elfelejtett jelszó | SnusCo",
+    "FORGOT_HEADER_BADGE": "Elfelejtett jelszó",
+    "FORGOT_TITLE": "Jelszó visszaállítása",
+    "FORGOT_LEAD": "Adja meg fiókjához tartozó e-mail-címét. Küldünk egy linket az új jelszó beállításához.",
+    "REQUEST_SUBMIT": "Visszaállítási link küldése",
+    "REQUEST_SUBMITTING": "Küldés…",
+    "REQUEST_SUCCESS_TITLE": "Ellenőrizze e-mail fiókját.",
+    "REQUEST_SUCCESS_DETAIL": "Ha az adott e-mail-címhez tartozik fiók, hamarosan megkapja az utasításokat.",
+    "BACK_HOME": "Vissza a főoldalra",
+    "ERROR_GENERIC": "Valami hiba történt. Kérjük, próbálja újra.",
+    "ERROR_EMAIL_REQUIRED": "Kérjük, adja meg e-mail-címét.",
+    "ERROR_USER_NOT_FOUND": "Nem található fiók ezzel az e-mail-címmel.",
+    "CONFIRM_PAGE_TITLE": "Új jelszó beállítása | SnusCo",
+    "CONFIRM_HEADER_BADGE": "Új jelszó",
+    "CONFIRM_TITLE": "Új jelszó megadása",
+    "CONFIRM_LEAD": "Adja meg és erősítse meg az új jelszavát lent.",
+    "SET_PASSWORD_SUBMIT": "Új jelszó mentése",
+    "SET_PASSWORD_SUBMITTING": "Mentés…",
+    "SUCCESS_REDIRECT": "Jelszó frissítve. Átirányítás…",
+    "ERROR_PASSWORD_REQUIRED": "Kérjük, adjon meg egy új jelszót.",
+    "ERROR_TOKEN": "Ez a link érvénytelen vagy lejárt. Kérjen új visszaállítást a bejelentkezési képernyőről.",
+    "A11Y_SHOW_PASSWORD": "Jelszó megjelenítése",
+    "A11Y_HIDE_PASSWORD": "Jelszó elrejtése"
+  },
+
+  "VERIFICATION": {
+    "PAGE_TITLE": "E-mail megerősítése | SnusCo",
+    "HEADER_BADGE": "E-mail megerősítése",
+    "TITLE": "Erősítse meg e-mail-címét",
+    "SUBTITLE": "Kódot küldtünk a következő e-mail-címre: {{email}}. Adja meg alább a cím megerősítéséhez.",
+    "CODE_LABEL": "Ellenőrző kód",
+    "CODE_PLACEHOLDER": "Adja meg a kódot",
+    "CODE_REQUIRED": "Kérjük, adja meg az e-mailben kapott kódot.",
+    "SUBMIT": "Megerősítés",
+    "SUBMITTING": "Ellenőrzés…",
+    "SUCCESS": "E-mail megerősítve. Átirányítás…",
+    "ERROR_GENERIC": "Érvénytelen vagy lejárt kód. Próbálja újra, vagy kérjen új kódot.",
+    "RESEND_ERROR": "A kód újraküldése nem sikerült. Próbálja meg később.",
+    "RESEND_INFO": "Nem érkezett e-mail?",
+    "RESEND_LINK": "Kód újraküldése",
+    "TIMER_INFO": "Próbálja újra {{timer}} másodperc múlva"
+  },
+
+  "PRODUCT": {
+    "SPECIFICATION": "SPECIFIKÁCIÓ",
+    "BRAND": "Márka",
+    "FLAVOR": "Ízesítés",
+    "FORMAT": "Formátum",
+    "POUCHES_PER_CAN": "Zacskók dobozonként",
+    "NET_WEIGHT": "Nettó tömeg",
+    "NICOTINE": "Nikotin",
+    "MANUFACTURER": "Gyártó",
+    "STOCK": "Készlet",
+    "TYPE": "Típus",
+    "QUANTITY": "Mennyiség",
+    "TOTAL_PRICE": "VÉGÖSSZEG ÁFÁ-VAL",
+    "FAST_DELIVERY": "Gyors kiszállítás",
+    "EXPRESS_DELIVERY": "Expressz kiszállítás",
+    "DESCRIPTION": "Leírás",
+    "MORE_INFORMATION_TITLE": "Több információ: {{name}}",
+    "MORE_INFORMATION_SUBTITLE": "Tudjon meg többet a termékről",
+    "PRODUCT_INFORMATION_TITLE": "Termékinformáció",
+    "ARTICLE_NUMBER": "Cikkszám",
+    "RATINGS": "Értékelések",
+    "NO_INFO": "Nincs megjelenítendő információ.",
+    "RECOMMENDED_PRODUCTS": "Ajánlott termékek",
+    "RECOMMENDED_SLIDER_TITLE": "Ezek is tetszhetnek",
+    "STICKY_PRICE_TAP": "Válasszon csomagméretet és árat",
+    "READ_MORE": "Tudjon meg többet: {{name}}",
+    "SUBSCRIBE_TITLE": "Iratkozzon fel és takarítson meg",
+    "SUBSCRIBE_LEAD": "{{qty}} × {{name}} — adja kosárhoz automatikus ismételt kiszállítással.",
+    "SUBSCRIBE_CART_HINT": "Válassza meg, milyen gyakran kéri a kiszállítást. Hozzáadjuk a kosarához; egyszer fizet a fizetésnél. A jövőbeli rendelések ezen az ütemezésen futnak, amíg le nem mondja a Fiókomban.",
+    "SUBSCRIBE_ADD_TO_CART": "Kosárhoz adás előfizetéssel",
+    "SUBSCRIBE_SPEC_FORMAT": "Formátum",
+    "SUBSCRIBE_SPEC_STRENGTH": "Erősség",
+    "SUBSCRIBE_SPEC_FLAVOR": "Ízesítés",
+    "SUBSCRIBE_PACK_TITLE": "Csomagméret",
+    "SUBSCRIBE_FREQUENCY_TITLE": "Gyakoriság",
+    "SUBSCRIBE_FREQUENCY_HINT": "A módosítás erre az előfizetési sorra vonatkozik a kosarában.",
+    "SUBSCRIBE_FREQUENCY_CHANGE": "Módosítás →",
+    "SUBSCRIBE_FREQ_LABEL_14d": "14 naponta",
+    "SUBSCRIBE_FREQ_LABEL_31d": "Havonta",
+    "SUBSCRIBE_FREQ_LABEL_62d": "2 havonta",
+    "SUBSCRIBE_CTA": "Feliratkozás",
+    "SUBSCRIBE_LOGIN": "Jelentkezzen be a fejlécben lévő fiók ikonnal, majd nyissa meg újra ezt az oldalt az előfizetéshez.",
+    "SUBSCRIBE_ADDRESS": "Szállítási cím",
+    "SUBSCRIBE_INTERVAL": "Ismétlés minden",
+    "SUBSCRIBE_INTERVAL_OPTION": "{{days}} napban",
+    "SUBSCRIBE_SUBMIT": "Előfizetés indítása",
+    "SUBSCRIBE_NEED_ADDRESS": "Először adjon meg egy mentett szállítási címet a fiókja adatainál.",
+    "SUBSCRIBE_SUCCESS": "Kész. Az első rendelést leadtuk; a következő automatikusan kiszállításra kerül, hacsak le nem mondja.",
+    "SUBSCRIBE_ERROR": "Az előfizetés létrehozása nem sikerült. Kérjük, próbálja újra.",
+    "SUBSCRIBE_CLOSE": "Bezárás",
+    "FLAVOUR_DRAWER_TITLE": "Válasszon ízesítést",
+    "PRODUCT_SERIES": "Terméksorozat",
+    "SERIES_COUNT": "Terméksorozat ({{count}})",
+    "FLAVOUR_DRAWER_LOADING": "Betöltés…",
+    "FLAVOUR_DRAWER_EMPTY": "Nem találhatók termékek ebben a sorozatban.",
+    "FLAVOUR_DRAWER_ERROR": "A termékek betöltése nem sikerült. Kérjük, próbálja újra.",
+    "FLAVOUR_DRAWER_STOCK_OOS": "Elfogyott",
+    "STRENGTH_LABEL": "Erősség",
+    "NICOTINE_PER_POUCH": "Zacskónként",
+    "STRENGTH": {
+      "MILD": "Enyhe",
+      "REGULAR": "Normál",
+      "STRONG": "Erős"
+    },
+    "SECURE_PAYMENTS": "Biztonságos fizetés",
+    "LOWEST_PRICE": "Legalacsonyabb ár és legnagyobb online választék",
+    "SATISFACTION_GUARANTEED": "Elégedettség garantált — ingyenes visszaküldés vagy pénzvisszafizetési garancia",
+    "TRUST_LOW_PRICE_LABEL": "ALACSONY ÁR",
+    "TRUST_LOW_PRICE_VALUE": "Alacsony ár garancia",
+    "TRUST_SHIPPING_LABEL": "INGYENES SZÁLLÍTÁS",
+    "TRUST_SHIPPING_VALUE": "4,99 € feletti rendelésekhez",
+    "TRUST_KLARNA_LABEL": "KLARNA",
+    "TRUST_KLARNA_VALUE": "Fizetés Klarnával",
+    "AGE_WARNING_TITLE": "Korhatár-figyelmeztetés",
+    "AGE_WARNING_VERIFY": "ELLENŐRZÉS",
+    "AGE_WARNING_BODY": "Ez a termék nem kockázatmentes. Nikotint tartalmaz, amely függőséget okozó anyag.",
+    "TAXES": "Adók",
+    "TAXES_TITLE": "Adók a SnusCo európai rendelésein",
+    "TAXES_DESCRIPTION": "A SnusCo elkötelezett az európai adójogszabályok betartása mellett. Minden online rendelésnél az alkalmazandó adókat, beleértve a nikotinadókat és az áfát, a rendelés végösszegébe számítjuk bele a fizetéskor. A szállítási díjakra is vonatkozhat áfa Európában, a régiótól és az alkalmazandó jogszabályoktól függően.",
+    "TAXES_CALCULATION_TITLE": "Hogyan számítják ki a nikotintermékek adóját?",
+    "TAXES_CALCULATION_DESCRIPTION": "A nikotinfogyasztási adót (TNET) az alkalmazandó előírásoknak megfelelően alkalmazzák. A számítási módszer a termék típusától (dohányos vagy dohánymentes) és kategóriájától függ. Az adókat az alábbi módszerek egyikével számítják ki:",
+    "TAXES_CALCULATION_METHOD_1": "A nagykereskedelmi ár százalékában: A termék SnusCo-nál érvényes árának százalékában számítva.",
+    "TAXES_CALCULATION_METHOD_2": "Az ügyfélnek felszámított SnusCo eladási ár alapján: A kiskereskedelmi ár százalékában számítva.",
+    "TAXES_CALCULATION_METHOD_3": "Tömeg alapján: Grammonként vagy termékenként számítva.",
+    "VAT_CALCULATION_TITLE": "Hogyan számítja ki a SnusCo az áfát a rendelésekre?",
+    "VAT_CALCULATION_DESCRIPTION": "Az áfát az alkalmazandó adórendeleteknek megfelelően számítják ki, és mind a termék árára, mind a legtöbb esetben a szállítási költségre alkalmazzák. A nikotintermékekre vonatkozó áfakulcs országonként eltér. Ez biztosítja a helyi adókövetelményeknek való teljes megfelelést.",
+    "EXAMPLE_TITLE": "Példa adó- és áfaszámításra:",
+    "EXAMPLE_SUBTITLE": "Példa:",
+    "EXAMPLE_TNET_RATE": "TNET kulcs ",
+    "EXAMPLE_VAT_RATE": "Áfakulcs ",
+    "EXAMPLE_WHOLESALE_COST": "Nagykereskedelmi ár dobozonként ",
+    "EXAMPLE_SELLING_PRICE": "Eladási ár az ügyfélnek ",
+    "EXAMPLE_TNET_PER_CAN": "TNET dobozonként ",
+    "EXAMPLE_VAT_PER_CAN": "Áfa dobozonként ",
+    "EXAMPLE_FINAL_PRICE": "Végső ár az ügyfélnek (dobozonként): "
+  },
+
+  "THANK_YOU": {
+    "TITLE": "Köszönjük rendelését!",
+    "SUBTITLE": "Rendelése sikeresen leadásra került.",
+    "ORDER_DETAILS": "Rendelési adatok",
+    "PAYMENT_METHOD": "Fizetési mód:",
+    "TRANSPORT_METHOD": "Szállítási mód:",
+    "BUTTON": "Főoldal"
+  },
+
+  "PRODUCT_CARD": {
+    "CLOSE_QUANTITY_SHEET": "Bezárás",
+    "CHOOSE_QUANTITY": "Mennyiség kiválasztása",
+    "PIECE": "darab",
+    "SAVINGS": "Megtakarítás",
+    "POUCHES_PER_CAN": "Zacskók dobozonként",
+    "MINIMIZE": "Minimalizálás",
+    "OFFER": "Ajánlat",
+    "PER_UNIT": "/egység"
+  },
+
+  "CART": {
+    "TITLE": "Kosár",
+    "ITEMS": "Tételek",
+    "SHOPPING_BASKET": "Vásárló kosár",
+    "VAT": "ÁFA",
+    "INCLUDED": "Beleszámítva",
+    "CHECKOUT": "Fizetés",
+    "NOTICE": "A jelenleg elfogyott termékek várható szállítási ideje legfeljebb 30 nap.",
+    "FREE_SHIPPING_PROGRESS": "{{percent}}%",
+    "FREE_SHIPPING_AWAY": "{{amount}} {{currency}} hiányzik az ingyenes szállításhoz",
+    "FREE_SHIPPING_UNLOCKED": "Elérte az ingyenes szállítást!",
+    "ENTER_QUANTITY_PROMPT": "Mennyiség (1–999)",
+    "QUANTITY_INVALID_RANGE": "Adjon meg 1 és 999 közötti egész számot.",
+    "QUANTITY_ARIA": "Mennyiség",
+    "PANEL_YOUR_PRODUCTS": "Az Ön termékei",
+    "SUBSCRIPTION_GROUP": "Automatikus újrarendelés",
+    "SUBSCRIPTION_SECTION_TITLE": "Előfizetés",
+    "SUBSCRIPTION_SECTION_MIXED_FREQ": "Eltérő kiszállítási ütemezések",
+    "ONETIME_GROUP": "Egyszeri vásárlás"
+  },
+
+  "CHECKOUT_HEADER": {
+    "TITLE": "Fizetés",
+    "SUBTITLE": "Vásárló kosár",
+    "BACK_LINK": "Vissza a vásárláshoz",
+    "BACK_ARIA": "Vissza a vásárláshoz",
+    "AGE_ARIA": "18+ — csak felnőtteknek. Nikotintermékek.",
+    "AGE_TOOLTIP": "Csak felnőtteknek (18+). A nikotin függőséget okoz."
+  },
+
+  "SEARCH": {
+    "PAGE_TITLE": "Keresés: {{query}}",
+    "META_DESCRIPTION": "Keresési eredmények: \"{{query}}\" — nikotinzacskók a SnusCo-nál.",
+    "META_EMPTY": "Keressen nikotinzacskókat és márkákat áruházunkban.",
+    "NO_QUERY_TITLE": "Keresés",
+    "SUBTITLE": "{{count}} termék",
+    "EMPTY": "Nincs termék, amely megfelel a keresésnek vagy a kiválasztott szűrőknek.",
+    "LOAD_ERROR": "A keresés nem töltődött be. Kérjük, próbálja újra."
+  },
+
+  "SHOP_SORT": {
+    "SORT": "Rendezés",
+    "SORT_BY": "Rendezés",
+    "CHOOSE_SORT": "Rendezés kiválasztása",
+    "DATE": "Dátum (legújabb először)",
+    "STRENGTH": "Erősség",
+    "STRENGTH_DESC": "Erősség (csökkenő)",
+    "PRICE_ASC": "Ár (növekvő)",
+    "PRICE_DESC": "Ár (csökkenő)",
+    "NAME": "Név",
+    "BEST_SELLERS": "Bestseller"
+  },
+
+  "SHOP": {
+    "TITLE": "Nikotinzacskók vásárlása",
+    "DESCRIPTION": "<p>Böngésszen a nikotinzacskók teljes kínálatában a legnépszerűbb márkáktól. Szűrőkkel szűkíthet márka, formátum és erősség szerint, vagy rendezhet ár, dátum vagy név alapján. Gyors kiszállítás egész Európában.</p>",
+    "SEE_MORE": "Több megjelenítése",
+    "SEE_LESS": "Kevesebb megjelenítése",
+    "FLAVOUR_HUB": {
+      "TITLE": "Vásároljon ízesítés szerint",
+      "DESCRIPTION": "Böngésszen a teljes kínálatban és szűkítse az eredményeket az ízesítési szűrővel — mentol, gyümölcs, citrus és még több."
+    },
+    "STRENGTH_HUB": {
+      "TITLE": "Vásároljon erősség szerint",
+      "DESCRIPTION": "Böngésszen a teljes kínálatban és szűkítse az eredményeket az erősségi szűrővel — gyengétől az ultra erősig."
+    },
+    "FLAVOR_PAGE": {
+      "mint": {
+        "TITLE": "Mentol és friss nikotinzacskók",
+        "DESCRIPTION": "Hűsítő mentol, borsmenta és mentolos ízek — friss érzés bármikor, diszkréten."
+      },
+      "fruit_berry": {
+        "TITLE": "Gyümölcsös és bogyós nikotinzacskók",
+        "DESCRIPTION": "Eper, bogyós gyümölcs és lédús gyümölcskeverékek — édes ízprofilok kedvenc márkáitól."
+      },
+      "citrus": {
+        "TITLE": "Citrusos nikotinzacskók",
+        "DESCRIPTION": "Citrom, lime, narancs és grapefruit jegyek — élénk, frissítő ízek tiszta befejezéssel."
+      },
+      "coffee_sweet": {
+        "TITLE": "Kávés, csokoládés és édes zacskók",
+        "DESCRIPTION": "Kávé, kakaó, karamell és desszert ízek — gazdag és krémes, ha valami édesebbre vágyik."
+      },
+      "liquorice": {
+        "TITLE": "Édesgyökér és ánizs nikotinzacskók",
+        "DESCRIPTION": "Klasszikus sós-édes édesgyökér és enyhe ánizs — merész, skandináv stílusú ízprofilok."
+      },
+      "other": {
+        "TITLE": "Egyéb ízesítések",
+        "DESCRIPTION": "Fedezzen fel zacskókat, amelyek nem illenek egy kategóriába — egyedi keverékek és korlátozott ízek egy helyen."
+      }
+    },
+    "STRENGTH_PAGE": {
+      "low": {
+        "TITLE": "Gyenge nikotinzacskók (0–5 mg)",
+        "DESCRIPTION": "Enyhe nikotinszintek a könnyebb élményért — ideális, ha kevesebb intenzitást és könnyű egész napos használatot keres."
+      },
+      "normal": {
+        "TITLE": "Normál erősségű nikotinzacskók (5–9 mg)",
+        "DESCRIPTION": "Kiegyensúlyozott, mindennapi zacskók a közepes tartományban — ismerős erősség vezető márkáktól."
+      },
+      "strong": {
+        "TITLE": "Erős nikotinzacskók (9–15 mg)",
+        "DESCRIPTION": "Nagyobb hatás tapasztalt felhasználók számára — közepes-erőstől az erős zacskóprofilokig."
+      },
+      "extra_strong": {
+        "TITLE": "Extra erős nikotinzacskók (15–17 mg)",
+        "DESCRIPTION": "Nagyon erős zacskók azok számára, akik erős nikotinhatást preferálnak."
+      },
+      "ultra_strong": {
+        "TITLE": "Ultra erős nikotinzacskók (17+ mg)",
+        "DESCRIPTION": "Maximum erősségi tartomány — azok számára, akik a legerősebb zacskó opciókat keresik."
+      }
+    }
+  },
+
+  "SHOP_LISTING": {
+    "LOAD_ERROR": "A termékek betöltése nem sikerült. Kérjük, próbálja újra később.",
+    "BESTSELLERS": {
+      "PAGE_TITLE": "Bestseller",
+      "TITLE": "Bestseller",
+      "DESCRIPTION": "Legnépszerűbb nikotinzacskóink — a legjobban fogyó termékek az áruházból, értékesítési adatok alapján frissítve.",
+      "META_DESCRIPTION": "Vásároljon bestseller nikotinzacskókat a SnusCo-nál. Népszerű márkák és ízek, kiszállítás egész Európában."
+    },
+    "NEW_IN_STORE": {
+      "PAGE_TITLE": "Újdonságok",
+      "TITLE": "Újdonságok",
+      "DESCRIPTION": "A legújabb érkezők — új termékek és friss sorozatok, amint megérkeznek a raktárunkba.",
+      "META_DESCRIPTION": "Fedezze fel a nikotinzacskók újdonságait a SnusCo-nál. Friss termékek és korlátozott kiadások, gyors kiszállítás Európában."
+    },
+    "MIXPACKS": {
+      "PAGE_TITLE": "Mixcsomagok és bundle-ök",
+      "TITLE": "Mixcsomagok és bundle-ök",
+      "DESCRIPTION": "Több dobozos csomagok és bundle-ök — próbáljon ki több ízesítést, vagy töltse fel készletét összeválogatott szettekkel kínálatunkból.",
+      "META_DESCRIPTION": "Vásároljon mixcsomagokat és bundle ajánlatokat nikotinzacskókra a SnusCo-nál. Több dobozos szettek és értékcsomagok, kiszállítás egész Európában."
+    },
+    "OFFERS": {
+      "PAGE_TITLE": "Ajánlatok és akciók",
+      "TITLE": "Ajánlatok és akciók",
+      "DESCRIPTION": "Akciós nikotinzacskók — jelenleg leárazott termékek a SnusCo-nál.",
+      "META_DESCRIPTION": "Vásároljon akciós nikotinzacskókat a SnusCo-nál. Aktuális ajánlatok és akciók, kiszállítás egész Európában."
+    }
+  },
+
+  "ALL_BRANDS": {
+    "PAGE_TITLE": "Márkák",
+    "META_DESCRIPTION": "Böngésszen a SnusCo összes elérhető nikotinzacskó márkája között — A–Z rendben, az áruház minden márkájára mutató linkekkel.",
+    "INTRO": "Jelenleg raktáron lévő összes márka ábécé sorrendben.",
+    "LOAD_ERROR": "A márkák betöltése nem sikerült. Kérjük, próbálja újra később.",
+    "LETTER_OTHER": "0–9 és szimbólumok",
+    "EMPTY": "Jelenleg nincsenek megjeleníthető márkák."
+  },
+
+  "FILTER": {
+    "TITLE": "Szűrő",
+    "TRIGGER_SUBTITLE": "Márka, formátum, ízesítés és egyéb",
+    "SELECTED_FILTERS": "Kiválasztott szűrők",
+    "CLEAR_FILTER": "Szűrők törlése",
+    "APPLY_FILTER": "Szűrők alkalmazása",
+    "BRAND": "Márka",
+    "CATEGORY": "Kategória",
+    "NICOTINE": "Nikotin",
+    "FLAVOUR": "Ízesítés",
+    "FLAVOR_GROUP_MINT": "Mentol és friss",
+    "FLAVOR_GROUP_FRUIT_BERRY": "Gyümölcs és bogyós",
+    "FLAVOR_GROUP_CITRUS": "Citrus",
+    "FLAVOR_GROUP_COFFEE_SWEET": "Kávé, csokoládé és édes",
+    "FLAVOR_GROUP_LIQUORICE": "Édesgyökér és ánizs",
+    "FLAVOR_GROUP_OTHER": "Egyéb",
+    "FORMAT": "Formátum",
+    "STRENGTH": "Erősség",
+    "HIDE_OUT_OF_STOCK": "Elfogyott termékek elrejtése",
+    "VIEW_ALL_PRODUCTS": "Összes {{filteredProducts}} termék megtekintése",
+    "PRODUCTS_COUNT": "{{count}} termék",
+    "REMOVE": "Eltávolítás"
+  },
+
+  "PROFILE": {
+    "ACCOUNT_SETTINGS": "Fiókbeállítások",
+    "ACCOUNT_OVERVIEW": "Fiók áttekintése",
+    "PROFILE_INFO": "Profilinformáció",
+    "MANAGE_ADDRESSES": "Címek kezelése",
+    "ORDERS": "Rendelések",
+    "PAYMENTS": "Fizetések",
+    "SAVED_CARDS": "Mentett kártyák",
+    "REFERRALS": "Ajánlások",
+    "LOGOUT": "Kijelentkezés",
+    "CONFIRM_LOGOUT": "Biztosan ki szeretne jelentkezni?",
+    "PERSONAL_INFORMATION": "Személyes adatok",
+    "TITLE": "Fiókom"
+  },
+
+  "ADDRESS_BOOK": {
+    "TITLE": "Címjegyzék",
+    "ADD_NEW_ADDRESS": "Új cím hozzáadása",
+    "NO_ADDRESSES": "Még nem adott meg szállítási címet.",
+    "SHIPPING_ADDRESS": "Szállítási cím",
+    "CONFIRM_DELETE": "Cím törlése",
+    "EDIT_ADDRESS": "Cím szerkesztése",
+    "USE_MY_CURRENT_LOCATION": "Jelenlegi helyzet használata",
+    "TYPE": "Cím típusa",
+    "HOME": "Otthon",
+    "WORK": "Munka",
+    "OTHER": "Egyéb"
+  },
+
+  "CHECKOUT_ADDRESSES": {
+    "TITLE": "Biztos ebben a címben?",
+    "SUBTITLE": "Válassza ki a helyes címet a pontos és időbeni kiszállítás biztosítása érdekében. Az alábbiakban láthatók a javasolt javítások.",
+    "ORIGINAL_ADDRESS": "Eredeti cím",
+    "SUGGESTED_ADDRESS": "Javasolt cím"
+  },
+
+  "SUBSCRIPTION": {
+    "TITLE_POPUP": "Iratkozzon fel hírlevelünkre",
+    "DESCRIPTION_POPUP": "Maradjon naprakész a legfrissebb hírekről és ajánlatokról.",
+    "TITLE": "Legyen az első, aki értesül",
+    "DESCRIPTION": "Kapjon kizárólagos hozzáférést kuponjainkhoz, és soha ne maradjon le a legjobb ajánlatokról és újdonságokról."
+  },
+
+  "ORDER_HISTORY": {
+    "TITLE": "Rendeléstörténet",
+    "SOON": "Hamarosan..."
+  },
+
+  "STRIPE": {
+    "CARD_NUMBER": "Kártyaszám",
+    "EXPIRES": "Lejárat",
+    "REMOVE_CARD": "Eltávolítás",
+    "CARD_NUMBER_LABEL": "Kártyaszám",
+    "CARD_EXPIRY_LABEL": "Lejárat",
+    "CARD_CVC_LABEL": "CVC",
+    "SECURE_PAYMENT_HEADER": "Biztonságos fizetés",
+    "NEW_CARD_BUTTON": "Új kártya",
+    "CARDS_BUTTON": "Kártyák",
+    "NO_CARDS": "Nincsenek mentett kártyák.",
+    "PRIMARY_CARD": "Elsődleges"
+  },
+
+  "TRANSPORT": {
+    "TITLE": "Szállítási lehetőségek"
+  },
+
+  "PAYMENT": {
+    "TITLE": "Fizetési lehetőségek"
+  },
+
+  "INVOICE": {
+    "SUMMARY": "Összefoglalás",
+    "SUBTOTAL": "Részösszeg",
+    "TAX": "ebből adó",
+    "TOTAL_AMOUNT": "Végösszeg áfával",
+    "AGREE_TERMS": "A négyzet bejelölésével és a rendelés leadásával megerősítem, hogy elolvastam, megértettem és elfogadtam a vásárlási feltételeket *",
+    "DELIVER": "Kiszállítás",
+    "PAY": "Fizetés",
+    "SHIPPING": "Szállítás",
+    "SHIPPING_TBD": "Kalkulálás folyamatban"
+  },
+
+  "PERSONAL_INFO_CARD": {
+    "TITLE": "Fiók adatai",
+    "CONTACT_INFO": "Kapcsolattartási adatok"
+  },
+
+  "DESCRIPTION": {
+    "BEST_SELLERS": {
+      "TITLE": "Bestseller nikotinzacskók",
+      "TEXT": "Fedezze fel bestseller nikotinzacskóinkat, amelyeket gondosan válogattunk össze, hogy tökéletes minőséget, ízesítést és elégedettséget nyújtsanak. Akár valami újat szeretne kipróbálni, akár kedvenceit szeretné feltölteni, nagyszerű ajánlatokat és széles választékot talál. Tapasztalja meg ma a kényelem és az érték legjobbját!"
+    },
+    "NEW_ARRIVALS": {
+      "TITLE": "Újdonságok: Friss nikotinzacskók",
+      "TEXT": "Legyen mindig a trendek élén legújabb nikotinzacskó kollekcióinkkal! Fedezze fel az új ízesítéseket, innovatív dizájnokat és friss lehetőségeket, amelyek emeli az élményét. Akár merész érzeteket, akár finom élvezetet keres, újdonságaink mindenkinek kínálnak valamit. Ne hagyja ki ezeket az izgalmas új termékeket!"
+    },
+    "SHOP": {
+      "TITLE": "Nikotinzacskók vásárlása",
+      "TEXT": "Itt széles választékban találhat mixcsomagokat nagyszerű árakon népszerű márkáktól, mint a ZYN, Skruf, Thunder és még sok más! Próbáljon ki valami újat és takarítson meg!"
+    }
+  },
+
+  "BANNER": {
+    "VELO": {
+      "SUBTITLE": "Sima és ízletes",
+      "TITLE": "Fedezze fel a Velo-t",
+      "TEXT": "Tapasztalja meg az ízesítés és az elégedettség tökéletes egyensúlyát a Velo nikotinzacskókkal. Válassza ki kedvencét még ma!"
+    },
+    "ZYN": {
+      "SUBTITLE": "Kifinomult és megbízható",
+      "TITLE": "Fedezze fel a ZYN-t",
+      "TEXT": "A ZYN tiszta, friss nikotinélményt nyújt. Tökéletes minden pillanathoz — próbálja ki a ZYN-t most!"
+    },
+    "THUNDER": {
+      "SUBTITLE": "Merész és intenzív",
+      "TITLE": "Thunder zacskók",
+      "TEXT": "Érezze a Thunder erejét — robusztus ízek és erős nikotinhatás tapasztalt felhasználók számára."
+    },
+    "VOLT": {
+      "SUBTITLE": "Dinamikus és friss",
+      "TITLE": "Szabadítsa fel a Volt-ot",
+      "TEXT": "A Volt merész innovációt és frissítő ízesítéseket kínál. Energizálja napját a Volt-tal!"
+    },
+    "FEATURED": {
+      "SUBTITLE": "Fedezze fel a legjobbat",
+      "TITLE": "Kiemelt nikotinzacskók",
+      "TEXT": "Fedezze fel legjobb értékelésű nikotinzacskóinkat, amelyeket kivételes minőségük és ízesítésük miatt válogattunk össze. Találja meg kedvencét még ma!"
+    },
+    "HOT_DEALS": {
+      "SUBTITLE": "Ne hagyja ki",
+      "TITLE": "Forró ajánlatok",
+      "TEXT": "Szerezzen csodálatos kedvezményeket prémium nikotinzacskókra. Időkorláthoz kötött ajánlatok kedvenc márkáihoz!"
+    }
+  },
+
+  "BUTTONS": {
+    "VIEW_ALL": "Összes megtekintése",
+    "BUY_NOW": "Vásároljon most",
+    "SHOP_NOW": "Vásároljon most",
+    "ADD_TO_CART": "Kosárhoz adás",
+    "ADD": "Kosár",
+    "SUBMIT": "Küldés",
+    "LOAD_MORE": "Több betöltése",
+    "RECOVER_PASSWORD": "Jelszó visszaállítása",
+    "CONTINUE": "Folytatás",
+    "PROCEED_TO_BUY": "Folytatás a fizetéshez",
+    "SAVE_FOR_LATER": "Mentés később",
+    "REMOVE": "Eltávolítás",
+    "MOVE_TO_CART": "Áthelyezés a kosárba",
+    "CHANGE": "Módosítás",
+    "EDIT": "Szerkesztés",
+    "SAVE_AND_DELIVER_HERE": "Mentés és kiszállítás ide",
+    "CANCEL": "Mégse",
+    "UPDATE": "Frissítés",
+    "SAVE": "Mentés",
+    "DELETE": "Törlés",
+    "SEND_INVITATION": "Meghívó küldése",
+    "LOGOUT": "Kijelentkezés",
+    "EXPLORE": "Felfedezés",
+    "OUT_OF_STOCK": "Elfogyott",
+    "AVAILABLE_SOON": "Hamarosan elérhető",
+    "CHANGE_PASSWORD": "Jelszó módosítása",
+    "PAY_NOW": "Fizetés most",
+    "SUBSCRIBE": "Feliratkozás"
+  },
+
+  "LABELS": {
+    "EMAIL": "E-mail",
+    "PASSWORD": "Jelszó",
+    "NAME": "Keresztnév",
+    "SURNAME": "Vezetéknév",
+    "CONFIRM_PASSWORD": "Jelszó megerősítése",
+    "PHONE_NUMBER": "Telefonszám",
+    "COUNTRY": "Ország",
+    "POSTAL_CODE": "Irányítószám",
+    "CITY": "Város",
+    "STREET": "Utca",
+    "STREET_NUMBER": "Házszám",
+    "SECONDARY_STREET": "Kiegészítő utca",
+    "OPTIONAL": " (opcionális)",
+    "BUILDING_NUMBER": "Épületszám",
+    "NEW_PASSWORD": "Új jelszó"
+  },
+
+  "PLACEHOLDERS": {
+    "EMAIL": "E-mail",
+    "PASSWORD": "Adja meg jelszavát",
+    "NAME": "Adja meg keresztnevét",
+    "SURNAME": "Adja meg vezetéknevét",
+    "CONFIRM_PASSWORD": "Írja be újra jelszavát",
+    "PHONE_NUMBER": "Adja meg telefonszámát",
+    "COUNTRY": "Adja meg országát",
+    "POSTAL_CODE": "Adja meg irányítószámát",
+    "CITY": "Adja meg városát",
+    "STREET": "Adja meg utcáját",
+    "STREET_NUMBER": "Adja meg házszámát",
+    "SECONDARY_STREET": "Adja meg a kiegészítő utcát",
+    "BUILDING_NUMBER": "Adja meg az épületszámot",
+    "NOTE": "Kiegészítő megjegyzés a kiszállításhoz...",
+    "SEARCH_PRODUCTS": "Termékek, márkák keresése...",
+    "NEW_PASSWORD": "Adja meg az új jelszót"
+  },
+
+  "NOTIFICATIONS": {
+    "SUCCESS": "Siker",
+    "EMAIL_ALREADY_SUBSCRIBED": "Ez az e-mail-cím már feliratkozott.",
+    "LOGIN_ERROR_401": "Helytelen jelszó vagy e-mail-cím, próbálja meg később.",
+    "REGISTRATION_ERROR_401": "Hiba történt a regisztráció során. Kérjük, próbálja meg később.",
+    "ERROR": "Hiba, kérjük, próbálja meg később."
+  },
+
+  "COUNTRIES": {
+    "AT": "Ausztria",
+    "DE": "Németország",
+    "CH": "Svájc",
+    "FR": "Franciaország",
+    "IT": "Olaszország",
+    "ES": "Spanyolország",
+    "NL": "Hollandia",
+    "BE": "Belgium",
+    "SE": "Svédország",
+    "NO": "Norvégia",
+    "DK": "Dánia",
+    "FI": "Finnország",
+    "PL": "Lengyelország",
+    "CZ": "Csehország",
+    "SK": "Szlovákia",
+    "HU": "Magyarország",
+    "RO": "Románia",
+    "BG": "Bulgária",
+    "HR": "Horvátország",
+    "SI": "Szlovénia",
+    "RS": "Szerbia"
+  },
+
+  "FREE_SAMPLE": {
+    "PAGE_TITLE": "Ingyenes nikotinzacskó minta minden rendeléshez | SnusCo",
+    "META_DESCRIPTION": "Ingyenes nikotinzacskó minta minden rendeléshez. Clew, STNG és kiemelt márkák, európai kiszállítás, GYIK.",
+    "PROMO_TITLE": "Ingyenes nikotinzacskó minta minden rendeléshez",
+    "PROMO_BODY": "Fedezzen fel valami újat minden rendeléssel! Kapjon ingyenes nikotinzacskó mintát a hónap kiemelt márkájától, és próbáljon ki új ízesítéseket, márkákat és erősségeket. Élvezze a legjobb márkákat és a gyors európai kiszállítást, plusz exkluzív kedvezményt következő rendeléséhez.",
+    "SLIDER_HEADING": "Kiemelt termékek — Clew és STNG",
+    "SLIDER_EMPTY": "A Clew és STNG termékek itt jelennek meg, ha elérhetők.",
+    "HERO_TITLE": "Hogyan igényelheti ingyenes nikotinzacskó mintáját",
+    "CLAIM_INTRO": "Könnyen megkaphatja ingyenes nikotinzacskó mintáját:",
+    "STEP_1": "Adja le rendelését szokás szerint.",
+    "STEP_2": "Kapja meg ingyenes mintáját az aktuális kiemelt márkától.",
+    "STEP_3": "Élvezze az új élményt egy másik ízesítéssel vagy erősséggel.",
+    "BRANDS_TEXT": "Vezető márkákkal, például <ZynLink>ZYN</ZynLink>, <VeloLink>Velo</VeloLink>, <NordicLink>Nordic Spirit</NordicLink> és <XqsLink>XQS</XqsLink> dolgozunk együtt, hogy minden minta kiváló minőségű legyen.",
+    "RANDOM_TEXT": "Az ingyenes nikotinzacskó minta ízesítése és erőssége véletlenszerűen kerül kiválasztásra, így minden kiszállítás meglepetés. A mintájával együtt exkluzív kedvezmény kódot is kap a következő vásárlásához.",
+    "RANGE_BEFORE": "Tekintse meg",
+    "RANGE_LINK": "teljes kínálatunkat",
+    "RANGE_AFTER": ", ha különböző nikotinzacskó erősségeket szeretne felfedezni, vagy zacskó ízesítések között szeretne böngészni.",
+    "DISCLAIMER": "Jogi nyilatkozat: Promóció a készlet erejéig érvényes.",
+    "WHY_TITLE": "Miért adunk ingyenes mintákat",
+    "WHY_P1": "Szeretnénk, ha minden rendelés kicsit különleges lenne. Lehetőség a felfedezésre.",
+    "WHY_P2": "Dohánymentes nikotinzacskó ingyenes minta programunk új zacskó márkákat, ízesítéseket és erősségeket hoz Önnek, amelyeket esetleg nem választott volna magától. A legegyszerűbb módja az új kedvencek felfedezésének.",
+    "WHY_P3": "Még több ajánlatot szeretne? Fedezze fel <PickMixLink>Pick and Mix</PickMixLink> és <OffersLink>nikotinzacskó ajánlatok</OffersLink> oldalainkat — minden hónapban új és izgalmas kedvezményekkel frissülnek.",
+    "DELIVERY_TITLE": "Gyors kiszállítás, diszkrét csomagolás",
+    "DELIVERY_INTRO": "A SnusCo gyors kiszállítást kínál egész Európában az ingyenes nikotinzacskó mintához, beleértve a másnapi lehetőségeket is. Emellett diszkrét csomagolást használunk az adatvédelem érdekében.",
+    "DELIVERY_OPTIONS_TITLE": "Kiszállítási lehetőségek:",
+    "DELIVERY_OPT_1": "InPost csomagautomaták",
+    "DELIVERY_OPT_2": "Normál postai kiszállítás",
+    "DELIVERY_OPT_3": "DPD másnapi kiszállítás",
+    "DELIVERY_OPT_4": "DPD szombati kiszállítás",
+    "DELIVERY_OPT_5": "Expressz másnapi/aznapi kiszállítás (csak Bécs belvárosában)",
+    "DELIVERY_NOTE": "Ingyenes szállítás 4,99 € feletti rendelésekhez és aznapi feladás a munkanapokon 16:00 előtt leadott rendelésekhez.",
+    "FAQ_TITLE": "Ingyenes nikotinzacskó minta GYIK",
+    "FAQ_Q1": "Hozzá kell adnom az ingyenes nikotinzacskó mintát a kosaramba?",
+    "FAQ_A1": "Nem, az ingyenes nikotinzacskó minta automatikusan szerepelni fog a rendelésével, amikor a promóció aktív.",
+    "FAQ_Q2": "Megválaszthatom az ingyenes nikotinzacskó mintám ízesítését vagy erősségét?",
+    "FAQ_A2": "Nem, a mintákat véletlenszerűen választják ki a hónap kiemelt márkájából.",
+    "FAQ_Q3": "Minden rendelésnél kapok mintát?",
+    "FAQ_A3": "A minták a készlet erejéig elérhetők, és nem biztos, hogy minden rendelésnél szerepelnek.",
+    "FAQ_Q4": "Kínálnak Nordic Spirit ingyenes mintát?",
+    "FAQ_A4": "Időnként a Nordic Spirit lehet az ingyenes minta promóció kiemelt márkája.",
+    "FAQ_Q5": "Kínálnak VELO ingyenes mintát?",
+    "FAQ_A5": "Időnként a VELO lehet az ingyenes minta promóció kiemelt márkája.",
+    "FAQ_Q6": "Kínálnak ZYN ingyenes mintát?",
+    "FAQ_A6": "Időnként a ZYN lehet az ingyenes minta promóció kiemelt márkája.",
+    "FAQ_Q7": "Kínálnak Clew vagy STNG ingyenes mintát?",
+    "FAQ_A7": "Időnként a Clew vagy STNG lehet az ingyenes minta promóció kiemelt márkája."
+  }
+}

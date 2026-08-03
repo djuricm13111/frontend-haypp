@@ -79,7 +79,7 @@ function AccessibilityStatement() {
   useEffect(() => {
     if (
       langParam &&
-      (langParam === "de" || langParam === "en") &&
+      (langParam === "de" || langParam === "en" || langParam === "hu") &&
       i18n.language?.split("-")[0] !== langParam
     ) {
       i18n.changeLanguage(langParam);

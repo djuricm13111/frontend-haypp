@@ -4,8 +4,8 @@ import relatedImgPablo from "../../assets/images/blog/pablo-snus-review-article.
 import relatedImgVsVape from "../../assets/images/blog/nicotine-pouches-vs-vapes.webp";
 
 /**
- * Beginner’s guide to nicotine pouches (en / de).
- * `blogLayout: "guide"` — bez tabele poređenja; ProductCard u sekciji „best for beginners“.
+ * Beginner's guide to nicotine pouches (en / de / hu).
+ * `blogLayout: "guide"` — bez tabele poređenja; ProductCard u sekciji „best for beginners".
  */
 export const beginnersGuideNicotinePouches = {
   slug: "beginners-guide-nicotine-pouches",
@@ -15,22 +15,27 @@ export const beginnersGuideNicotinePouches = {
   category: {
     en: "Guides",
     de: "Ratgeber",
+    hu: "Útmutatók",
   },
   published: "2026-04-08",
   author: {
     en: "Ruby Forbes",
     de: "Ruby Forbes",
+    hu: "Ruby Forbes",
   },
   meta: {
     title: {
       en: "A Beginner's Guide to Nicotine Pouches",
       de: "Einsteiger-Guide: Nikotinbeutel",
+      hu: "Kezdők útmutatója a nikotintasakokhoz",
     },
     description: {
       en:
         "How to choose low-strength mini or slim pouches, mild flavours, session length, and what to expect in week one—plus common mistakes and FAQs. For existing nicotine users only.",
       de:
         "Mini- oder Slim-Beutel, milde Sorten, Sitzungsdauer und erste Woche—häufige Fehler und FAQ. Nur für bestehende Nikotinnutzer.",
+      hu:
+        "Hogyan válassz alacsony erősségű mini vagy slim tasakokat, enyhe ízeket, felhasználási időtartamot és mire számíts az első héten – plus tipikus hibák és GYIK. Csak meglévő nikotinfelhasználóknak.",
     },
   },
   intro: {
@@ -38,9 +43,11 @@ export const beginnersGuideNicotinePouches = {
       "The best nicotine pouches for beginners are low-strength pouches in mini or slim format, in less intense flavours. This guide explains how to choose strength, flavour, and format, and what to expect in the first week. For existing nicotine users only.",
     de:
         "Für Einsteiger eignen sich eher schwächere Beutel im Mini- oder Slim-Format und mildere Geschmäcker. Der Guide hilft bei Stärke, Sorte und Format und der ersten Woche. Nur für bestehende Nikotinnutzer.",
+    hu:
+      "A kezdőknek szánt legjobb nikotintasakok alacsony erősségű tasakok mini vagy slim formátumban, kevésbé intenzív ízekkel. Ez az útmutató elmagyarázza, hogyan válassz erősséget, ízt és formátumot, és mire számíthatsz az első héten. Csak meglévő nikotinfelhasználóknak.",
   },
   keyTakeaways: {
-    title: { en: "Key takeaways", de: "Wichtigste Punkte" },
+    title: { en: "Key takeaways", de: "Wichtigste Punkte", hu: "Legfontosabb tudnivalók" },
     items: {
       en: [
         "Start with lower-strength nicotine pouches (about 1.5–6 mg).",
@@ -56,16 +63,24 @@ export const beginnersGuideNicotinePouches = {
         "Kürzere Sessions (etwa 10–30 Minuten) zu Beginn.",
         "Die erste Woche ist eine Umstellung—das ist normal.",
       ],
+      hu: [
+        "Kezdj alacsonyabb erősségű nikotintasakokkal (kb. 1,5–6 mg).",
+        "A mini vagy slim tasakok az előnyben részesített formátum.",
+        "Válassz kevésbé intenzív ízeket, amíg hozzászoktál a tasak érzetéhez.",
+        "Használj rövidebb felhasználási időt (kb. 10–30 perc) kezdetben.",
+        "Az első hét egy alkalmazkodási időszak – ez normális.",
+      ],
     },
   },
   toc: {
-    title: { en: "Table of contents", de: "Inhaltsverzeichnis" },
+    title: { en: "Table of contents", de: "Inhaltsverzeichnis", hu: "Tartalomjegyzék" },
     items: [
       {
         id: "glance",
         label: {
           en: "Nicotine pouches for beginners",
           de: "Nikotinbeutel für Einsteiger",
+          hu: "Nikotintasakok kezdőknek",
         },
       },
       {
@@ -73,6 +88,7 @@ export const beginnersGuideNicotinePouches = {
         label: {
           en: "Nicotine strength",
           de: "Nikotinstärke",
+          hu: "Nikotinerősség",
         },
       },
       {
@@ -80,6 +96,7 @@ export const beginnersGuideNicotinePouches = {
         label: {
           en: "Pouch format",
           de: "Beutelformat",
+          hu: "Tasak formátum",
         },
       },
       {
@@ -87,6 +104,7 @@ export const beginnersGuideNicotinePouches = {
         label: {
           en: "Snus flavours",
           de: "Geschmacksrichtungen",
+          hu: "Snus ízek",
         },
       },
       {
@@ -94,6 +112,7 @@ export const beginnersGuideNicotinePouches = {
         label: {
           en: "Snus for beginners: common mistakes to avoid",
           de: "Typische Anfängerfehler vermeiden",
+          hu: "Tipikus kezdői hibák, amelyeket el kell kerülni",
         },
       },
       {
@@ -101,6 +120,7 @@ export const beginnersGuideNicotinePouches = {
         label: {
           en: "What to expect: nicotine pouches in the first week",
           de: "Die erste Woche mit Nikotinbeuteln",
+          hu: "Mire számíts: nikotintasakok az első héten",
         },
       },
       {
@@ -108,6 +128,7 @@ export const beginnersGuideNicotinePouches = {
         label: {
           en: "The best nicotine pouches for beginners",
           de: "Empfehlungen für Einsteiger",
+          hu: "A legjobb nikotintasakok kezdőknek",
         },
       },
       {
@@ -115,16 +136,17 @@ export const beginnersGuideNicotinePouches = {
         label: {
           en: "Navigating snus for beginners",
           de: "Orientierung für Einsteiger",
+          hu: "Útmutató a snushoz kezdőknek",
         },
       },
-      { id: "faqs", label: { en: "FAQs", de: "Häufige Fragen" } },
+      { id: "faqs", label: { en: "FAQs", de: "Häufige Fragen", hu: "GYIK" } },
     ],
   },
   openingParagraphs: {
     en: [
-      "This beginner’s guide to nicotine pouches gives a clear overview of how to start using pouches responsibly.",
+      "This beginner's guide to nicotine pouches gives a clear overview of how to start using pouches responsibly.",
       'You will learn how to choose strength, pouch size, and flavour, plus what to expect in the first seven days. <a href="/{{LANG}}/snus-verkauf">Buy nicotine pouches online</a> at SnusCo—our assortment spans many formats; filter by strength and brand to narrow options.',
-      "Note: nicotine pouches are sometimes called ‘snus’ in everyday language, but unlike traditional snus they are tobacco-leaf-free.",
+      "Note: nicotine pouches are sometimes called 'snus' in everyday language, but unlike traditional snus they are tobacco-leaf-free.",
       "<strong>This guide is for existing nicotine users only.</strong> SnusCo does not encourage non-users to start using nicotine—nicotine is addictive.",
     ],
     de: [
@@ -133,6 +155,12 @@ export const beginnersGuideNicotinePouches = {
       "Im Alltag werden Nikotinbeutel manchmal „Snus“ genannt—im Gegensatz zu klassischem Snus sind sie ohne Tabakblatt.",
       "<strong>Nur für bestehende Nikotinnutzer.</strong> SnusCo ermutigt Nicht-Nutzer nicht zum Einstieg—Nikotin macht süchtig.",
     ],
+    hu: [
+      "Ez a kezdők útmutatója a nikotintasakokhoz egyértelmű áttekintést nyújt arról, hogyan kezdj el felelősségteljesen tasakokat használni.",
+      'Megtanulod, hogyan válassz erősséget, tasak méretet és ízt, plusz mire számíthatsz az első hét napban. <a href="/{{LANG}}/snus-verkauf">Vásárolj nikotintasakokat online</a> a SnusCo-nál – választékunk számos formátumot ölel fel; szűrj erősség és márka szerint a lehetőségek szűkítéséhez.',
+      "Megjegyzés: a nikotintasakokat a mindennapi nyelvben néha „snusnak\" hívják, de a hagyományos snussal ellentétben dohánylevél-mentesek.",
+      "<strong>Ez az útmutató csak meglévő nikotinfelhasználóknak szól.</strong> A SnusCo nem bátorítja a nem-felhasználókat a nikotin elkezdésére – a nikotin függőséget okoz.",
+    ],
   },
   sections: [
     {
@@ -140,6 +168,7 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "Nicotine strength",
         de: "Nikotinstärke",
+        hu: "Nikotinerősség",
       },
       paragraphs: {
         en: [
@@ -152,6 +181,11 @@ export const beginnersGuideNicotinePouches = {
           '<strong>Niedrig starten:</strong> etwa 1,5–6 mg pro Beutel, soweit erhältlich. Im Shop: <a href="/{{LANG}}/snus-verkauf/strength/low">schwach dosierte Nikotinbeutel</a>. Höhere Stärken wirken intensiver.',
           '<strong>Kurz starten:</strong> zunächst etwa 10–30 Minuten, dann schrittweise verlängern. Später eignen sich oft <a href="/{{LANG}}/snus-verkauf/strength/normal">Nikotinbeutel mit normaler Stärke</a>.',
         ],
+        hu: [
+          '<a href="/{{LANG}}/snus-verkauf/strength">A nikotintasak erőssége</a> a legfontosabb tényező kezdőknek (néha orális nikotintermékeknek is nevezik).',
+          '<strong>Kezdj alacsonnyal:</strong> célozz meg kb. 1,5–6 mg tasakonként, ahol elérhető. Fedezd fel az <a href="/{{LANG}}/snus-verkauf/strength/low">alacsony erősségű nikotintasakokat</a> az üzletben. A magasabb erősségek intenzívebbnek érezhetők, ha még nem szoktál hozzá a tasakokhoz.',
+          '<strong>Kezdj rövidebb felhasználással:</strong> tartsd a tasakot kb. 10–30 percig először, majd fokozatosan növeld, ha kényelmes. Ha készen állsz a fejlődésre, a <a href="/{{LANG}}/snus-verkauf/strength/normal">normál erősségű nikotintasakok</a> a következő szint.',
+        ],
       },
     },
     {
@@ -159,6 +193,7 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "Pouch format",
         de: "Beutelformat",
+        hu: "Tasak formátum",
       },
       paragraphs: {
         en: [
@@ -173,6 +208,12 @@ export const beginnersGuideNicotinePouches = {
           "<strong>Slim:</strong> ausgewogen; mehr Stärkevarianten; logischer Schritt nach Mini.",
           "<strong>Größere Formate:</strong> spürbarer; meist eher für erfahrenere Nutzer.",
         ],
+        hu: [
+          "A tasak mérete megváltoztatja a termék érzését az ajak alatt.",
+          "<strong>Mini tasakok:</strong> a legtöbb diszkrétabb; általában alacsonyabb erősségekben kapható; jó választás sok első alkalommal használónak.",
+          "<strong>Slim tasakok:</strong> kiegyensúlyozott elhelyezkedés; szélesebb erősségi tartományok; természetes lépés, ha a miniről váltasz.",
+          "<strong>Normál / nagy tasakok:</strong> nagyobb és jobban észrevehető; általában jobban megfelel, ha már megszoktad a tasakokat.",
+        ],
       },
     },
     {
@@ -180,6 +221,7 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "Snus flavours",
         de: "Geschmacksrichtungen",
+        hu: "Snus ízek",
       },
       paragraphs: {
         en: [
@@ -192,6 +234,11 @@ export const beginnersGuideNicotinePouches = {
           '<strong>Milder Einstieg:</strong> Fruchtmischungen, Vanille, leichte Minze—<a href="/{{LANG}}/snus-verkauf/flavours/mint">Minze-Nikotinbeutel</a> sind oft ein guter Einstieg.',
           "<strong>Später probieren:</strong> sehr starke Minze oder intensive Zitrusnoten.",
         ],
+        hu: [
+          'Az íz nem változtatja meg a feltüntetett nikotint mg értéken, de befolyásolhatja, milyen intenzívnek érezhető az érzet. Böngéssz a <a href="/{{LANG}}/snus-verkauf/flavours">snus ízek</a> között profil szerint az opciók összehasonlításához.',
+          '<strong>Kezdőbarát ízek:</strong> gyümölcsos keverékek, vanília, enyhe mentol – a <a href="/{{LANG}}/snus-verkauf/flavours/mint">mentol nikotintasakok</a> népszerű kiindulópont (borsmenta vagy enyhe mentol).',
+          "<strong>Fontold meg ezeket később:</strong> nagyon erős mentol vagy intenzív citrusos ízek – néhányan kezdetben élesnek találják ezeket.",
+        ],
       },
     },
     {
@@ -199,6 +246,7 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "Snus for beginners: common mistakes to avoid",
         de: "Typische Anfängerfehler vermeiden",
+        hu: "Tipikus kezdői hibák, amelyeket el kell kerülni",
       },
       paragraphs: {
         en: [
@@ -209,6 +257,10 @@ export const beginnersGuideNicotinePouches = {
           "Häufige Fehler beim Einstieg—und warum sie relevant sind.",
           '<table style="width:100%;border-collapse:collapse;margin:0.75rem 0;font-size:0.9375rem"><thead><tr><th style="text-align:left;border:1px solid rgba(0,0,0,0.12);padding:8px">Fehler</th><th style="text-align:left;border:1px solid rgba(0,0,0,0.12);padding:8px">Warum vermeiden</th></tr></thead><tbody><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Zu hohe Stärke am Anfang</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Wirkt oft zu intensiv.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Beutel ohne Pause hintereinander</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Pausen helfen, die eigene Toleranz zu erkennen.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Sehr starke Minze zuerst</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Kann am Anfang zu scharf wirken.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Zu lange drin lassen</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Kürzere Sessions sind leichter zu gewöhnen.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Sorge bei leichtem Kribbeln</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Leichtes Kribbeln ist üblich—bei stärkerem Unbehagen Beutel entfernen.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Alle Marken gleich annehmen</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Feuchtigkeit, Aroma und Material unterscheiden sich.</td></tr></tbody></table>',
         ],
+        hu: [
+          "Ezek a dohánymentes tasakokkal kapcsolatos tipikus kezdői hibák – és miért fontosak.",
+          '<table style="width:100%;border-collapse:collapse;margin:0.75rem 0;font-size:0.9375rem"><thead><tr><th style="text-align:left;border:1px solid rgba(0,0,0,0.12);padding:8px">Hiba</th><th style="text-align:left;border:1px solid rgba(0,0,0,0.12);padding:8px">Miért kerüld el</th></tr></thead><tbody><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Magas erősséggel kezdeni</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Túl intenzívnek érezhető vagy erős nikotinhatást okozhat.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Tasakok egymás utáni használata szünet nélkül</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">A szünetek segítenek megtanulni a saját toleranciádat.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Nagyon erős mentollal kezdeni</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">A mentol népszerű, de az erős változatok kezdetben élesnek érezhetők.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Tasakot túl sokáig bent hagyni</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Rövidebb felhasználás könnyebb megszokni kezdetben.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Aggódni az enyhe bizsergés miatt</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Enyhe bizsergés normális; erősebb kényelmetlenség esetén vedd ki a tasakot.</td></tr><tr><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">Feltételezni, hogy minden márka ugyanolyan</td><td style="border:1px solid rgba(0,0,0,0.12);padding:8px">A nedvesség, az íz és az anyag márkánként változik.</td></tr></tbody></table>',
+        ],
       },
     },
     {
@@ -216,6 +268,7 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "What to expect: nicotine pouches in the first week",
         de: "Die erste Woche mit Nikotinbeuteln",
+        hu: "Mire számíts: nikotintasakok az első héten",
       },
       paragraphs: {
         en: [
@@ -228,6 +281,11 @@ export const beginnersGuideNicotinePouches = {
           "<strong>Tag 3–4:</strong> Sie merken, welche Stärken und Sorten passen; bei zu viel Intensität Stärke oder Geschmack wechseln.",
           "<strong>Tag 5–7:</strong> das Gefühl wirkt vertrauter; langsam andere Formate oder Sorten ausprobieren.",
         ],
+        hu: [
+          "<strong>1–2. nap:</strong> enyhe bizsergést vagy meleget érezhetsz; ez gyakran enyhül, ahogy az ajkad alkalmazkodik.",
+          "<strong>3–4. nap:</strong> észreveheted, melyik erősségek és ízek felelnek meg; ha túl erősnek érzed, próbálj alacsonyabb erősséget vagy enyhébb ízt.",
+          "<strong>5–7. nap:</strong> az érzet ismerősebbé válhat; fokozatosan más formátumokat vagy ízeket is kipróbálhatsz.",
+        ],
       },
     },
     {
@@ -235,6 +293,7 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "The best nicotine pouches for beginners",
         de: "Empfehlungen für Einsteiger",
+        hu: "A legjobb nikotintasakok kezdőknek",
       },
       paragraphs: {
         en: [
@@ -245,12 +304,17 @@ export const beginnersGuideNicotinePouches = {
           "Drei Beispiele mit eher <strong>niedriger Stärke</strong>, die für viele Einsteiger passen—Verfügbarkeit je nach Markt. Preise sind Richtwerte (€); aktuelle Angebote auf der Produktseite.",
           "In der Beerenspalte führt die Produktkarte zu <strong>Après Blueberry Mini</strong> im Shop—ähnliche Stärke und Mini-Format, wenn <strong>On! Berry Mini</strong> nicht gelistet ist.",
         ],
+        hu: [
+          "Kíváncsi vagy, hogyan néz ki a legjobb snus kezdőknek a gyakorlatban? Az alábbiakban három <strong>alacsony erősségű</strong> példa szerepel, amely sok felnőtt felhasználónak megfelel, akik most ismerkednek a tasakokkal – az elérhetőség piaconként változik. A feltüntetett árak tájékoztató jellegűek (€); az aktuális ajánlatokért nézd meg a termékoldalát.",
+          "A bogyós sorban a termékdoboz az <strong>Après Blueberry Mini</strong>-re mutat az üzletben – közel azonos erősség és mini formátum, ha az <strong>On! Berry Mini</strong> nincs listázva.",
+        ],
       },
       productRows: [
         {
           heading: {
             en: "ZYN Apple Mint Mini S2",
             de: "ZYN Apple Mint Mini S2",
+            hu: "ZYN Apple Mint Mini S2",
           },
           bullets: {
             en: [
@@ -263,6 +327,11 @@ export const beginnersGuideNicotinePouches = {
               "Mini-Format für extra Komfort",
               "Frischer Apfel und kühlendes Minzaroma",
             ],
+            hu: [
+              "Alacsony erősség (7,5 mg)",
+              "Mini formátum extra kényelemért",
+              "Friss alma és hűsítő mentol íz",
+            ],
           },
           productSlug: "zyn-apple-mint-mini-s2",
         },
@@ -270,6 +339,7 @@ export const beginnersGuideNicotinePouches = {
           heading: {
             en: "ZYN Spearmint Mini S1",
             de: "ZYN Spearmint Mini S1",
+            hu: "ZYN Spearmint Mini S1",
           },
           bullets: {
             en: [
@@ -282,6 +352,11 @@ export const beginnersGuideNicotinePouches = {
               "Mini-Format",
               "Mildes und erfrischendes Pfefferminzaroma",
             ],
+            hu: [
+              "Legalacsonyabb erősség (4 mg)",
+              "Mini formátum",
+              "Enyhe és frissítő spearmint íz",
+            ],
           },
           productSlug: "zyn-spearmint-mini-s1",
         },
@@ -289,6 +364,7 @@ export const beginnersGuideNicotinePouches = {
           heading: {
             en: "Skruf Purple Cassice S2",
             de: "Skruf Purple Cassice S2",
+            hu: "Skruf Purple Cassice S2",
           },
           bullets: {
             en: [
@@ -301,6 +377,11 @@ export const beginnersGuideNicotinePouches = {
               "Slim-Format",
               "Süßes Schwarze-Johannisbeere-Aroma",
             ],
+            hu: [
+              "Közepes erősség (8 mg)",
+              "Slim formátum",
+              "Édes feketeribizli íz",
+            ],
           },
           productSlug: "skruf-purple-cassice-s2",
         },
@@ -312,6 +393,9 @@ export const beginnersGuideNicotinePouches = {
         de: [
           "Mit den Filtern im Shop finden Sie bei Bedarf Alternativen mit gleicher Stärke und Format.",
         ],
+        hu: [
+          "Használd az üzlet szűrőit az erősség, formátum és íz szerinti választékhoz, ha azonos tartományban szeretnél alternatívákat.",
+        ],
       },
     },
     {
@@ -319,6 +403,7 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "Navigating snus for beginners",
         de: "Orientierung für Einsteiger",
+        hu: "Útmutató a snushoz kezdőknek",
       },
       paragraphs: {
         en: [
@@ -329,6 +414,10 @@ export const beginnersGuideNicotinePouches = {
           "Langsam starten, niedrige Stärken und mildere Geschmäcker zu wählen, ist ein guter Anfang.",
           'In der ersten Woche beobachten Sie Ihre Reaktion und passen Sie sich an. <a href="/{{LANG}}/snus-verkauf">Nikotinbeutel online kaufen</a> bei SnusCo—u. a. Nordic Spirit, ZYN und VELO, je nach Verfügbarkeit.',
         ],
+        hu: [
+          "A lassú kezdés, az alacsony erősségek választása és az enyhébb ízekkel való kísérletezés praktikus módok a nikotintasakokkal való kezdéshez.",
+          'Az első héten figyelj, hogyan reagálsz, és lassan alkalmazkodj. <a href="/{{LANG}}/snus-verkauf">Vásárolj nikotintasakokat online</a> a SnusCo-nál kezdőbarát opciókhoz olyan márkáktól, mint a Nordic Spirit, ZYN és VELO – készlettől függően.',
+        ],
       },
     },
   ],
@@ -336,54 +425,67 @@ export const beginnersGuideNicotinePouches = {
     title: {
       en: "FAQs: a beginner's guide to nicotine pouches",
       de: "FAQ: Nikotinbeutel für Einsteiger",
+      hu: "GYIK: kezdők útmutatója a nikotintasakokhoz",
     },
     items: [
       {
         q: {
           en: "Are nicotine pouches suitable for new nicotine users?",
           de: "Sind Nikotinbeutel für neue Nikotinnutzer geeignet?",
+          hu: "Alkalmasak-e a nikotintasakok új nikotinfelhasználóknak?",
         },
         a: {
           en:
             "This article is aimed at people who already use nicotine. If you do not currently use nicotine, we do not recommend starting.",
           de:
             "Dieser Text richtet sich an Menschen, die bereits Nikotin nutzen. Wir empfehlen Nicht-Nutzern keinen Einstieg.",
+          hu:
+            "Ez a cikk azoknak szól, akik már nikotint használnak. Ha jelenleg nem használsz nikotint, nem javasoljuk elkezdeni.",
         },
       },
       {
         q: {
           en: "How long should beginners keep a pouch in?",
           de: "Wie lange sollte man den Beutel anfangs drin lassen?",
+          hu: "Meddig kell a tasakot bentartani kezdőknek?",
         },
         a: {
           en:
             "Many people begin with about 10–30 minutes and adjust over time based on comfort and product instructions.",
           de:
             "Oft startet man mit etwa 10–30 Minuten und passt sich an—Packungsangaben beachten.",
+          hu:
+            "Sokan kb. 10–30 perccel kezdik, és az idők során a kényelem és a termék útmutatója alapján alkalmazkodnak.",
         },
       },
       {
         q: {
           en: "What is the best snus for beginners?",
           de: "Was ist der beste Snus für Einsteiger?",
+          hu: "Mi a legjobb snus kezdőknek?",
         },
         a: {
           en:
             "There is no single best product—lower strengths, mini or slim formats, and milder flavours work well for many new pouch users.",
           de:
             "Es gibt kein einziges Produkt—niedrige Stärken, Mini/Slim und mildere Sorten passen oft gut.",
+          hu:
+            "Nincs egyetlen legjobb termék – az alacsonyabb erősségek, mini vagy slim formátumok és enyhébb ízek sok új tasak felhasználónak jól működnek.",
         },
       },
       {
         q: {
           en: "Do all nicotine pouches feel the same?",
           de: "Fühlen sich alle Nikotinbeutel gleich an?",
+          hu: "Ugyanolyan érzésűek az összes nikotintasakok?",
         },
         a: {
           en:
             "No—moisture, flavour, pouch material, and brand differ, which changes mouthfeel and release.",
           de:
             "Nein—Feuchtigkeit, Aroma, Material und Marke unterscheiden sich und verändern das Gefühl.",
+          hu:
+            "Nem – a nedvesség, az íz, a tasak anyaga és a márka különbözik, ami megváltoztatja a szájérzést és a felszabadulást.",
         },
       },
     ],
@@ -393,12 +495,15 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "Are nicotine pouches better than vaping?",
         de: "Sind Nikotinbeutel besser als Dampfen?",
+        hu: "Jobbak-e a nikotintasakok a vapelésnél?",
       },
       excerpt: {
         en:
           "Pouches vs vapes: delivery, flavours, price, social use.",
         de:
           "Beutel vs. Vape: Abgabe, Geschmack, Preis, Alltag.",
+        hu:
+          "Tasakok vs. vapek: szállítás, ízek, ár, társadalmi használat.",
       },
       to: { type: "blog", slug: "nicotine-pouches-vs-vapes" },
       image: relatedImgVsVape,
@@ -407,12 +512,15 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "VELO Mini vs Slim: what's the difference?",
         de: "VELO Mini vs. Slim: Was ist der Unterschied?",
+        hu: "VELO Mini vs Slim: mi a különbség?",
       },
       excerpt: {
         en:
           "Formats, strengths, and which VELO size fits your routine.",
         de:
           "Formate, Stärken und welches VELO-Format passt.",
+        hu:
+          "Formátumok, erősségek és melyik VELO méret felel meg az életmódodnak.",
       },
       to: { type: "blog", slug: "velo-mini-vs-slim" },
       image: relatedImgVelo,
@@ -421,12 +529,15 @@ export const beginnersGuideNicotinePouches = {
       title: {
         en: "Pablo nicotine pouches review",
         de: "Pablo Nikotinbeutel – Review",
+        hu: "Pablo nikotintasakok értékelése",
       },
       excerpt: {
         en:
           "Gold range, panel scores, pros and cons.",
         de:
           "Gold-Range, Panel, Vor- und Nachteile.",
+        hu:
+          "Gold kínálat, panelpontszámok, előnyök és hátrányok.",
       },
       to: { type: "blog", slug: "pablo-nicotine-pouches-review" },
       image: relatedImgPablo,

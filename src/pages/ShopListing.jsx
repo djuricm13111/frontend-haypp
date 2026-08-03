@@ -45,7 +45,7 @@ const ShopListing = ({ listing }) => {
 
   useEffect(() => {
     const lang =
-      langParam === "de" || i18n.language?.startsWith("de") ? "de" : "en";
+      normalizeShopLang(langParam || i18n.language);
     const baseKeywords =
       lang === "de"
         ? "Nikotinbeutel, Snus, Bestseller, SnusCo"

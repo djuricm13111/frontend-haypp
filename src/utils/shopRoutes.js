@@ -7,7 +7,9 @@ export const SHOP_PATH_SEGMENT = "snus-verkauf";
 
 export function normalizeShopLang(lng) {
   const l = String(lng || "en").split("-")[0].toLowerCase();
-  return l === "de" ? "de" : "en";
+  if (l === "de") return "de";
+  if (l === "hu") return "hu";
+  return "en";
 }
 
 /** Puna prodavnica: /de/snus-verkauf */

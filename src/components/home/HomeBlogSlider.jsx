@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { listPostsSummaries } from "../../content/blog";
 import { blogArticlePath, blogListingPath } from "../../utils/blogRoutes";
+import { normalizeShopLang } from "../../utils/shopRoutes";
 
 const MOBILE = "(max-width: 768px)";
 const TABLET = "(min-width: 769px) and (max-width: 1024px)";
@@ -346,7 +347,7 @@ function HomeBlogSlider() {
   const itemsPerView = useItemsPerView();
 
   const lang =
-    i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+    normalizeShopLang(i18n.language);
 
   const posts = useMemo(() => listPostsSummaries(lang), [lang]);
   const list = posts ?? [];

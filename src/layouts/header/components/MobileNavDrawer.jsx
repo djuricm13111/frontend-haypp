@@ -7,7 +7,7 @@ import { useNavigation } from "../../../utils/navigation";
 import { useIsStaff } from "../../../hooks/useIsStaff";
 import Language from "./Language";
 import { NAV_ITEM_T_KEYS } from "./HeaderList";
-import { buildShopNavDropdown } from "../../../utils/shopRoutes";
+import { buildShopNavDropdown, normalizeShopLang } from "../../../utils/shopRoutes";
 import { AuthUserContext } from "../../../context/AuthUserContext";
 
 const PANEL_TRANSITION = "transform 0.28s ease";
@@ -346,7 +346,7 @@ function UserOutlineIcon() {
 const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
   const { t, i18n } = useTranslation();
   const lang =
-    i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+    normalizeShopLang(i18n.language);
   const dropdownData = useMemo(
     () => buildShopNavDropdown(lang, t),
     [lang, t]

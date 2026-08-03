@@ -10,7 +10,7 @@ import {
   getBrandEntryShortDescription,
   getCategoryShortDescription,
 } from "../utils/shopCategoryCopy";
-import { shopBrandPath } from "../utils/shopRoutes";
+import { shopBrandPath, normalizeShopLang } from "../utils/shopRoutes";
 import { flavorUrlSlugToGroupId } from "../utils/flavorGroups";
 import {
   strengthUrlSlugToRangeLabels,
@@ -65,7 +65,7 @@ const Shop = () => {
 
   /** Učitavanje proizvoda + osnovni SEO; za kategoriju sa API-ja detalji u sledećem useEffect-u. */
   useEffect(() => {
-    const lang = i18n.language === "de" ? "de" : "en";
+    const lang = normalizeShopLang(i18n.language);
     const defaultSEO = SEOConfig[lang] || SEOConfig[DEFAULT_LANGUAGE];
     const entry = slug ? brandDescriptions.find((item) => item.slug === slug) : null;
     const flavorGroupId = flavorSlug ? flavorUrlSlugToGroupId(flavorSlug) : null;
@@ -225,7 +225,7 @@ const Shop = () => {
 
   /** Kada backend vrati kategoriju (slug nije u brand JSON), SEO koristi short_description / seo_data. */
   useEffect(() => {
-    const lang = i18n.language === "de" ? "de" : "en";
+    const lang = normalizeShopLang(i18n.language);
     const defaultSEO = SEOConfig[lang] || SEOConfig[DEFAULT_LANGUAGE];
     const entry = slug ? brandDescriptions.find((item) => item.slug === slug) : null;
 

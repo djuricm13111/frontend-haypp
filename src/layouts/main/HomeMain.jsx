@@ -50,6 +50,7 @@ import {
   shopNewInStorePath,
   shopAllBrandsPath,
   shopOffersPath,
+  normalizeShopLang,
 } from "../../utils/shopRoutes";
 
 const SliderSection = styled.section`
@@ -63,7 +64,7 @@ const SliderSection = styled.section`
 const HomeMain = () => {
   const { i18n } = useTranslation();
   const lang =
-    i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+    normalizeShopLang(i18n.language);
 
   /** Slajder — slike iz `src/assets/images/slider/`; linkovi u prodavnicu (`shopRoutes`). */
   const promoSlides = useMemo(

@@ -18,6 +18,7 @@ import {
   shopBasePath,
   shopFlavoursHubPath,
   shopStrengthHubPath,
+  normalizeShopLang,
 } from "../../utils/shopRoutes";
 
 const Container = styled.article`
@@ -310,7 +311,7 @@ const ShopMain = ({ listingPage = null, searchQuery = null }) => {
     : null;
 
   const lang =
-    i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+    normalizeShopLang(i18n.language);
   const shopListUrl = shopBasePath(lang);
 
   const breadcrumbItems = useMemo(() => {

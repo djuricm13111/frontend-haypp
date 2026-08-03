@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { shopBasePath } from "../../utils/shopRoutes";
+import { shopBasePath, normalizeShopLang } from "../../utils/shopRoutes";
 
 const Intro = styled.p`
   margin: 0 0 var(--spacing-lg);
@@ -37,7 +37,7 @@ const HomePromoIntro = () => {
   const { i18n } = useTranslation();
   const shopMain = useMemo(() => {
     const lang =
-      i18n.language?.split("-")[0]?.toLowerCase() === "de" ? "de" : "en";
+      normalizeShopLang(i18n.language);
     return shopBasePath(lang);
   }, [i18n.language]);
 

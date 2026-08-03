@@ -1,13 +1,15 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import translationDE from "./locales/de/translation.json"; // Nemački prevod
-import translationEN from "./locales/en/translation.json"; // Nemački prevod
+import translationDE from "./locales/de/translation.json";
+import translationEN from "./locales/en/translation.json";
+import translationHU from "./locales/hu/translation.json";
 import { DEFAULT_LANGUAGE } from "./utils/global_const";
 
 const resources = {
-  de: { translation: translationDE }, // Samo nemački jezik
+  de: { translation: translationDE },
   en: { translation: translationEN },
+  hu: { translation: translationHU },
 };
 
 i18n
@@ -24,10 +26,10 @@ i18n
         caches: [],
       },
       initImmediate: false, // Osigurava da `onInitialized` radi pravilno
-      whitelist: ["de", "en"], // Lista podržanih jezika
+      whitelist: ["de", "en", "hu"],
     },
     (err, t) => {
-      if (i18n.language !== "de" && !["en", "de"].includes(i18n.language)) {
+      if (!["en", "de", "hu"].includes(i18n.language)) {
         i18n.changeLanguage(DEFAULT_LANGUAGE); // Postavlja podrazumevani jezik na nemački
       }
     }
