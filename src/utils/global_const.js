@@ -47,7 +47,12 @@ export const paymentMethods = [
 
 export const transportMethods = [
   { name: "Post - AT", code: "post_at", price: 20, days: 3 },
-  { name: "DHL Express Saver", code: "dhl_express_saver", price: 24.90, days: 1 },
+  {
+    name: "DHL Express Saver",
+    code: "dhl_express_saver",
+    price: 24.9,
+    days: 1,
+  },
 ];
 
 /** Minimalni iznos narudžbine (subtotal proizvoda, bez poštarine) za besplatnu dostavu. Jedini izvor istine za UI i obračun. */
@@ -141,7 +146,7 @@ export const languages = [
     code: "hu",
     label: "Magyar",
     regionLabel: "Magyarország",
-    flag: require("../assets/icons/hungary.svg").default,
+    flag: require("../assets/icons/magyar.svg").default,
   },
 ];
 
