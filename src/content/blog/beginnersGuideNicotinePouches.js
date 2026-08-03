@@ -2,11 +2,6 @@ import heroImage from "../../assets/images/blog/beginners-nicotine-pouches.webp"
 import relatedImgVelo from "../../assets/images/blog/velo-mini-vs-slim-hero.jpeg";
 import relatedImgPablo from "../../assets/images/blog/pablo-snus-review-article.jpg";
 import relatedImgVsVape from "../../assets/images/blog/nicotine-pouches-vs-vapes.webp";
-import {
-  blogBeginnerAprèsBlueberryMini,
-  blogBeginnerZynAppleMintMini,
-  blogBeginnerZynSpearmintMini,
-} from "../../data/manualProductMocks";
 
 /**
  * Beginner’s guide to nicotine pouches (en / de).
@@ -254,60 +249,60 @@ export const beginnersGuideNicotinePouches = {
       productRows: [
         {
           heading: {
-            en: "ZYN Apple Mint Mini",
-            de: "ZYN Apple Mint Mini",
+            en: "ZYN Apple Mint Mini S2",
+            de: "ZYN Apple Mint Mini S2",
           },
           bullets: {
             en: [
-              "Low strength (3 mg)",
+              "Low strength (7.5 mg)",
               "Mini format for extra comfort",
-              "Fresh apple and cooling flavour",
+              "Fresh apple and cooling mint flavour",
             ],
             de: [
-              "Niedrige Stärke (3 mg)",
+              "Niedrige Stärke (7,5 mg)",
               "Mini-Format für extra Komfort",
-              "Frischer Apfel und kühlendes Aroma",
+              "Frischer Apfel und kühlendes Minzaroma",
             ],
           },
-          product: blogBeginnerZynAppleMintMini,
+          productSlug: "zyn-apple-mint-mini-s2",
         },
         {
           heading: {
-            en: "ZYN Spearmint Mini",
-            de: "ZYN Spearmint Mini",
+            en: "ZYN Spearmint Mini S1",
+            de: "ZYN Spearmint Mini S1",
           },
           bullets: {
             en: [
-              "Lowest strength (1.5 mg)",
+              "Lowest strength (4 mg)",
               "Mini format",
-              "Less intense mint flavour",
+              "Mild and refreshing spearmint flavour",
             ],
             de: [
-              "Niedrigste Stärke (1,5 mg)",
+              "Niedrigste Stärke (4 mg)",
               "Mini-Format",
-              "Weniger intensive Minze",
+              "Mildes und erfrischendes Pfefferminzaroma",
             ],
           },
-          product: blogBeginnerZynSpearmintMini,
+          productSlug: "zyn-spearmint-mini-s1",
         },
         {
           heading: {
-            en: "On! Berry Mini",
-            de: "On! Berry Mini",
+            en: "Skruf Purple Cassice S2",
+            de: "Skruf Purple Cassice S2",
           },
           bullets: {
             en: [
-              "Low strength (3 mg)",
-              "Mini format",
-              "Fruity red berries flavour",
+              "Medium strength (8 mg)",
+              "Slim format",
+              "Sweet blackcurrant flavour",
             ],
             de: [
-              "Niedrige Stärke (3 mg)",
-              "Mini-Format",
-              "Fruchtiges Aroma roter Beeren",
+              "Mittlere Stärke (8 mg)",
+              "Slim-Format",
+              "Süßes Schwarze-Johannisbeere-Aroma",
             ],
           },
-          product: blogBeginnerAprèsBlueberryMini,
+          productSlug: "skruf-purple-cassice-s2",
         },
       ],
       paragraphsAfter: {

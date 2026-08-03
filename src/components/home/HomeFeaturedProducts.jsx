@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import ProductCard from "../product/ProductCard";
-import { homeFeaturedProductsMock } from "../../data/manualProductMocks";
+import APIService from "../../services/APIService";
 
 const Section = styled.section`
   box-sizing: border-box;
@@ -56,13 +56,18 @@ const Cell = styled.div`
   overflow: visible;
 `;
 
-/**
- * Istaknuti proizvodi na početnoj — koristi postojeći ProductCard.
- * @param {{ products?: typeof homeFeaturedProductsMock }} props
- */
-const HomeFeaturedProducts = ({ products = homeFeaturedProductsMock }) => {
-  const { t } = useTranslation();
-  const list = products?.length ? products : homeFeaturedProductsMock;
+const HomeFeaturedProducts = ({ slugs }) => {
+  const { t, i18n } = useTranslation();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    if (!slugs?.length) return;
+    let cancelled = false;
+    Promise.all(slugs.map((slug) => APIService.GetProductBySlug(slug)))
+      .then((results) => { if (!cancelled) setProducts(results); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [slugs, i18n.language]);
 
   return (
     <Section aria-labelledby="home-featured-products-heading">
@@ -70,7 +75,7 @@ const HomeFeaturedProducts = ({ products = homeFeaturedProductsMock }) => {
         {t("HOME.FEATURED_PRODUCTS_TITLE")}
       </Heading>
       <Grid>
-        {list.map((product) => (
+        {products.map((product) => (
           <Cell key={product.id}>
             <ProductCard product={product} />
           </Cell>

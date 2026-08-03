@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import APIService from "../services/APIService";
 import { Link, Navigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
@@ -770,6 +771,27 @@ function BlogArticle() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [slug]);
 
+  const [fetchedProducts, setFetchedProducts] = useState({});
+
+  useEffect(() => {
+    const post = getPostBySlug(slug);
+    if (!post?.sections) return;
+    const slugs = post.sections.flatMap((s) =>
+      (s.productRows ?? []).map((r) => r.productSlug).filter(Boolean)
+    );
+    if (!slugs.length) return;
+    let cancelled = false;
+    Promise.all(slugs.map((s) => APIService.GetProductBySlug(s)))
+      .then((results) => {
+        if (cancelled) return;
+        const map = {};
+        results.forEach((p, i) => { map[slugs[i]] = p; });
+        setFetchedProducts(map);
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [slug]);
+
   const lang = normalizeShopLang(langParam || i18n.language);
   const l = lang === "de" ? "de" : "en";
   const post = getPostBySlug(slug);
@@ -958,7 +980,9 @@ function BlogArticle() {
                             </BodyBulletList>
                           </BlogProductRowText>
                           <BlogProductRowCard>
-                            <ProductCard product={row.product} />
+                            {(row.productSlug ? fetchedProducts[row.productSlug] : row.product) && (
+                              <ProductCard product={row.productSlug ? fetchedProducts[row.productSlug] : row.product} />
+                            )}
                           </BlogProductRowCard>
                         </BlogProductRow>
                       ))

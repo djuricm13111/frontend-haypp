@@ -20,16 +20,11 @@ const STNG_COLA_CHERRY_MAX_2 =
 const SKRUF_FROZEN_MINT =
   `${S3}/skruf/skruf-frozen-mint-superslim-s4_1_nKxH1Oxt6RWgCUJ1693373947.png`;
 
-const LOOP_CAPPUCCINO =
-  `${S3}/loop/loop-creamy-cappuccino-strong_1_xYcmSgLyl5dmsyKd8L6RrCcMv3KdliJp147nGNEG.webp`;
+const VELO_CRISPY_PEPPERMINT =
+  `${S3}/velo/velo-crispy-peppermint_1_ZnosO40gTR3Cz2QjdPfPntYRZyzKi1h1k2Pq5veB.webp`;
+const VELO_CRISPY_PEPPERMINT_2 =
+  `${S3}/velo/velo-crispy-peppermint_2_ZnosO40gTR3Cz2QjdPfPntYRZyzKi1h1k2Pq5veB.webp`;
 
-// Blog slike
-const ZYN_APPLE_MINT_MINI_S2 =
-  `${S3}/zyn/zyn-apple-mint-mini-s2_1_iDwPURzezFvifWIfDMKhqtxIkXRCAfLPvlzjvWDL.webp`;
-const ZYN_SPEARMINT_MINI_S2 =
-  `${S3}/zyn/zyn-spearmint-mini-s2_1_916Cr6L3WwcOf1aCCxfsrS2QgCzJcAhzk9dQBUB8.webp`;
-const APRES_BLUEBERRY_MINI =
-  `${S3}/apres/apres-blueberry-mini_1_lGxTK7aJS52zgzVCVsMzpLDy3H0T2LhKOYb0wCLb.webp`;
 
 function imgPair(src, src2) {
   return [
@@ -86,66 +81,20 @@ export const homeFeaturedProductsMock = [
     images: imgPair(SKRUF_FROZEN_MINT),
   },
   {
-    id: 348,
-    slug: "loop-creamy-cappuccino-strong",
-    name: "Creamy Cappuccino Strong",
-    category_name: "Loop",
-    manufacturer: "Loop",
-    nicotine: 15,
-    price: 4.78,
+    id: 1,
+    slug: "velo-crispy-peppermint",
+    name: "Crispy Peppermint",
+    category_name: "Velo",
+    manufacturer: "Velo",
+    nicotine: 14,
+    price: 4.79,
     is_in_stock: "in_stock",
     card_badge: {
       label: "Top",
-      backgroundColor: "#4e342e",
+      backgroundColor: "#002069",
       color: "#ffffff",
     },
-    images: imgPair(LOOP_CAPPUCCINO),
+    images: imgPair(VELO_CRISPY_PEPPERMINT, VELO_CRISPY_PEPPERMINT_2),
   },
 ];
 
-// --- Blog: beginner guide (ProductCard u članku) --------------------------
-
-export const blogBeginnerZynAppleMintMini = {
-  id: 227,
-  slug: "zyn-apple-mint-mini-s2",
-  name: "Apple Mint Mini S2",
-  category_name: "ZYN",
-  manufacturer: "ZYN",
-  nicotine: 7.5,
-  price: 4.99,
-  is_in_stock: "in_stock",
-  show_offer: true,
-  images: imgPair(ZYN_APPLE_MINT_MINI_S2),
-};
-
-export const blogBeginnerZynSpearmintMini = {
-  id: 228,
-  slug: "zyn-spearmint-mini-s2",
-  name: "Spearmint Mini S2",
-  category_name: "ZYN",
-  manufacturer: "ZYN",
-  nicotine: 7.5,
-  price: 4.99,
-  is_in_stock: "in_stock",
-  show_offer: true,
-  images: imgPair(ZYN_SPEARMINT_MINI_S2),
-};
-
-export const blogBeginnerAprèsBlueberryMini = {
-  id: 177,
-  slug: "apres-blueberry-mini",
-  name: "Blueberry Mini",
-  category_name: "apres",
-  manufacturer: "Après",
-  nicotine: 8,
-  price: 4.78,
-  is_in_stock: "in_stock",
-  show_offer: true,
-  images: imgPair(APRES_BLUEBERRY_MINI),
-};
-
-export const blogBeginnerGuideProductMocks = [
-  blogBeginnerZynAppleMintMini,
-  blogBeginnerZynSpearmintMini,
-  blogBeginnerAprèsBlueberryMini,
-];

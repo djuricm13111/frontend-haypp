@@ -8,7 +8,7 @@ import HomePromoCardGrid from "../../components/home/HomePromoCardGrid";
 import HomePromoIntro from "../../components/home/HomePromoIntro";
 import ProductPromoSlider from "../../components/ProductPromoSlider";
 import HomeNewArrivalsSlider from "../../components/home/HomeNewArrivalsSlider";
-import bannerFumi from "../../assets/images/banner/fumi.jpg";
+import bannerVelo from "../../assets/images/banner/velo.jpg";
 import bannerRush from "../../assets/images/banner/rush.png";
 import bannerSkruf from "../../assets/images/banner/skruf.jpg";
 import logoKilla from "../../assets/images/logo/killa.svg";
@@ -19,7 +19,8 @@ import logoZyn from "../../assets/images/logo/zyn.svg";
 import logoStng from "../../assets/images/logo/stng.svg";
 import logoClew from "../../assets/images/logo/clew.svg";
 import logoFedrs from "../../assets/images/logo/fedrs.svg";
-import logoGarant from "../../assets/images/logo/garant.svg";
+import logoUbbs from "../../assets/images/logo/ubbs.svg";
+import logoWhiteFox from "../../assets/images/logo/white_fox.svg";
 import listBestsellers from "../../assets/images/list/bestsellers.svg";
 import listBundles from "../../assets/images/list/bundles.svg";
 import listFreeSample from "../../assets/images/list/free_sample.svg";
@@ -30,7 +31,7 @@ import listOffers from "../../assets/images/list/offers.svg";
 import listPickAndMix from "../../assets/images/list/pick_and_mix.svg";
 import bannerXqs from "../../assets/images/banner/xqs.jpg";
 import sliderVelo from "../../assets/images/slider/velo.jpg";
-import sliderZone from "../../assets/images/slider/zone.jpg";
+import sliderSkruf from "../../assets/images/slider/skruf.jpg";
 import sliderZyn from "../../assets/images/slider/zyn.png";
 import flavorCitrus from "../../assets/images/flavors/citrus.svg";
 import flavorCoffe from "../../assets/images/flavors/coffe.svg";
@@ -76,14 +77,13 @@ const HomeMain = () => {
         ctaHref: shopBrandPath(lang, "velo"),
       },
       {
-        key: "zone",
-        imageSrc: sliderZone,
-        imageAlt: "Zone",
-        priceLabel: "From €3.10 / pack",
-        title: "Zone",
+        key: "skruf",
+        imageSrc: sliderSkruf,
+        imageAlt: "Skruf",
+        priceLabel: "From €4.69 / pack",
+        title: "Skruf Fresh Mint — A Fresh Deal",
         ctaLabel: "Buy here",
-        /** Nema odgovarajućeg brend slug-a u `brand_descriptions` — vodi na punu prodavnicu. */
-        ctaHref: shopBasePath(lang),
+        ctaHref: shopBrandPath(lang, "skruf"),
       },
       {
         key: "zyn",
@@ -106,7 +106,7 @@ const HomeMain = () => {
         imageSrc: bannerXqs,
         imageAlt: "XQS",
         brand: "XQS",
-        priceLabel: "From $2.49 / unit",
+        priceLabel: "From €4.79 / pack",
         href: shopBrandPath(lang, "xqs"),
       },
       {
@@ -114,23 +114,23 @@ const HomeMain = () => {
         imageSrc: bannerRush,
         imageAlt: "RUSH",
         brand: "RUSH",
-        priceLabel: "From €2.29 / unit",
+        priceLabel: "From €4.78 / pack",
         href: shopBrandPath(lang, "rush"),
       },
       {
-        key: "fumi",
-        imageSrc: bannerFumi,
-        imageAlt: "Fumi",
-        brand: "Fumi",
-        priceLabel: "From $2.69 / unit",
-        href: shopBrandPath(lang, "fumi"),
+        key: "velo",
+        imageSrc: bannerVelo,
+        imageAlt: "Velo",
+        brand: "Velo",
+        priceLabel: "From €4.79 / pack",
+        href: shopBrandPath(lang, "velo"),
       },
       {
         key: "skruf",
         imageSrc: bannerSkruf,
         imageAlt: "Skruf",
-        brand: "Skruf Aloe Fresh",
-        priceLabel: "From $3.22 / unit",
+        brand: "Skruf",
+        priceLabel: "From €4.69 / pack",
         href: shopBrandPath(lang, "skruf"),
       },
     ],
@@ -200,7 +200,8 @@ const HomeMain = () => {
       { key: "zyn", iconSrc: logoZyn, label: "ZYN", href: shopBrandPath(lang, "zyn") },
       { key: "clew", iconSrc: logoClew, label: "CLEW", href: shopBrandPath(lang, "clew") },
       { key: "stng", iconSrc: logoStng, label: "STNG", href: shopBrandPath(lang, "stng") },
-      { key: "garant", iconSrc: logoGarant, label: "Garant", href: shopBrandPath(lang, "garant") },
+      { key: "ubbs", iconSrc: logoUbbs, label: "UBBS", href: shopBrandPath(lang, "ubbs") },
+      { key: "white-fox", iconSrc: logoWhiteFox, label: "White Fox", href: shopBrandPath(lang, "white-fox") },
     ],
     [lang]
   );
@@ -255,7 +256,12 @@ const HomeMain = () => {
         <HomePromoIntro />
       </HomePromoCardGrid>
       <HomeBrandLogoStrip items={homeBrandLogoItems} />
-      <HomeFeaturedProducts />
+      <HomeFeaturedProducts slugs={[
+        "clew-spearmint-10mg",
+        "stng-cola-cherry-max-en",
+        "skruf-frozen-mint-superslim-s4",
+        "velo-crispy-peppermint",
+      ]} />
       <HomeBrandLogoStrip
         items={homeShopByCategoryItems}
         titleI18nKey="HOME.SHOP_BY_CATEGORY"
