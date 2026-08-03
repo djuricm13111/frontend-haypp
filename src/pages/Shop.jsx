@@ -26,8 +26,8 @@ const SEOConfig = {
       "Shop the widest selection of nicotine pouches in Europe at SnusCo. Top brands, all flavors and strengths, delivered across Europe. Fast shipping & secure checkout.",
     keywords:
       "nicotine pouches, buy nicotine pouches Europe, snus online, nicotine pouches shop, SnusCo, tobacco-free pouches, best nicotine pouches Europe",
-    url: "https://www.snusco.eu/en/snus-verkauf",
-    images: ["https://www.snusco.eu/assets/snuspouch-category-image.jpg"],
+    url: "https://snusco.eu/en/snus-verkauf",
+    images: ["https://snusco.eu/assets/snuspouch-category-image.jpg"],
   },
   de: {
     title: "Nikotinbeutel online kaufen | SnusCo Europa",
@@ -35,8 +35,8 @@ const SEOConfig = {
       "Entdecken Sie bei SnusCo die größte Auswahl an Nikotinbeuteln in Europa. Top-Marken, alle Geschmacksrichtungen und Stärken, europaweit geliefert. Schneller Versand & sichere Zahlung.",
     keywords:
       "Nikotinbeutel kaufen, Nikotinbeutel online, Snus Europa, SnusCo Shop, Nikotin Pouches Europa, tabakfreie Beutel, bester Snus Europa",
-    url: "https://www.snusco.eu/de/snus-verkauf",
-    images: ["https://www.snusco.eu/assets/snuspouch-category-image.jpg"],
+    url: "https://snusco.eu/de/snus-verkauf",
+    images: ["https://snusco.eu/assets/snuspouch-category-image.jpg"],
   },
 };
 
@@ -89,7 +89,7 @@ const Shop = () => {
           title: `${title} | SnusCo`,
           description,
           keywords: `${title}, ${defaultSEO.keywords}`,
-          url: `https://www.snusco.eu/${lang}/snus-verkauf/flavours/${flavorSlug}`,
+          url: `https://snusco.eu/${lang}/snus-verkauf/flavours/${flavorSlug}`,
           images: defaultSEO.images,
         });
       } else {
@@ -121,7 +121,7 @@ const Shop = () => {
           title: `${title} | SnusCo`,
           description,
           keywords: `${title}, ${defaultSEO.keywords}`,
-          url: `https://www.snusco.eu/${lang}/snus-verkauf/strength/${strengthSlug}`,
+          url: `https://snusco.eu/${lang}/snus-verkauf/strength/${strengthSlug}`,
           images: defaultSEO.images,
         });
       } else {
@@ -148,7 +148,7 @@ const Shop = () => {
         title: `${title} | SnusCo`,
         description,
         keywords: `${title}, ${defaultSEO.keywords}`,
-        url: `https://www.snusco.eu/${lang}/snus-verkauf/flavours`,
+        url: `https://snusco.eu/${lang}/snus-verkauf/flavours`,
         images: defaultSEO.images,
       });
       return;
@@ -166,7 +166,7 @@ const Shop = () => {
         title: `${title} | SnusCo`,
         description,
         keywords: `${title}, ${defaultSEO.keywords}`,
-        url: `https://www.snusco.eu/${lang}/snus-verkauf/strength`,
+        url: `https://snusco.eu/${lang}/snus-verkauf/strength`,
         images: defaultSEO.images,
       });
       return;
@@ -196,7 +196,7 @@ const Shop = () => {
         title: `${entry.brand_name} | SnusCo Europe`,
         description: seoDescription,
         keywords: `${entry.brand_name}, ${defaultSEO.keywords}`,
-        url: `https://www.snusco.eu${shopBrandPath(lang, slug)}`,
+        url: `https://snusco.eu${shopBrandPath(lang, slug)}`,
         images: defaultSEO.images,
       });
       loadProductsByCategorySlug(slug);
@@ -207,7 +207,7 @@ const Shop = () => {
       title: defaultSEO.title,
       description: defaultSEO.description,
       keywords: defaultSEO.keywords,
-      url: `https://www.snusco.eu/${lang}/snus-verkauf/${slug}`,
+      url: `https://snusco.eu/${lang}/snus-verkauf/${slug}`,
       images: defaultSEO.images,
     });
     loadProductsByCategorySlug(slug);
@@ -237,7 +237,7 @@ const Shop = () => {
       title: `${category.name} | SnusCo Europe`,
       description: desc,
       keywords: `${category.name}, ${defaultSEO.keywords}`,
-      url: `https://www.snusco.eu/${lang}/snus-verkauf/${slug}`,
+      url: `https://snusco.eu/${lang}/snus-verkauf/${slug}`,
       images: defaultSEO.images,
     });
   }, [category, slug, flavorSlug, strengthSlug, i18n.language]);

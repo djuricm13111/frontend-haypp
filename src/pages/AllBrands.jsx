@@ -156,8 +156,8 @@ const AllBrands = () => {
       title: `${title} | SnusCo`,
       description,
       keywords: `${title}, ${baseKeywords}`,
-      url: `https://www.snusco.eu${canonicalPath}`,
-      images: ["https://www.snusco.eu/assets/snuspouch-category-image.jpg"],
+      url: `https://snusco.eu${canonicalPath}`,
+      images: ["https://snusco.eu/assets/snuspouch-category-image.jpg"],
     });
   }, [apiLang, t]);
 
@@ -189,7 +189,7 @@ const AllBrands = () => {
     title: "SnusCo",
     description: "",
     keywords: "",
-    url: "https://www.snusco.eu/",
+    url: "https://snusco.eu/",
     images: [],
   };
   const activeSeo = seo || defaultSeo;

@@ -49,6 +49,7 @@ import {
   shopBestsellersPath,
   shopNewInStorePath,
   shopAllBrandsPath,
+  shopOffersPath,
 } from "../../utils/shopRoutes";
 
 const SliderSection = styled.section`
@@ -168,7 +169,7 @@ const HomeMain = () => {
         key: "offers",
         iconSrc: listOffers,
         labelKey: "HOME.CATEGORY_NAV.OFFERS",
-        href: shopBestsellersPath(lang),
+        href: shopOffersPath(lang),
       },
       {
         key: "bundles",

@@ -39,8 +39,8 @@ const Product = () => {
 
   // Generiši canonical URL na snusco.eu
   const productUrl = product
-    ? `https://www.snusco.eu/${langParam || i18n.language}/${category}/${slug}`
-    : "https://www.snusco.eu";
+    ? `https://snusco.eu/${langParam || i18n.language}/${category}/${slug}`
+    : "https://snusco.eu";
 
   // Odredi jezik za i18n
   const lang = i18n.language.startsWith("sr")

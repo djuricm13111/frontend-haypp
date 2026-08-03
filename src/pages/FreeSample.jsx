@@ -334,7 +334,7 @@ const FreeSample = () => {
     };
   }, [i18n.language]);
 
-  const canonical = `https://www.snusco.eu/free-sample`;
+  const canonical = `https://snusco.eu/free-sample`;
 
   return (
     <div>

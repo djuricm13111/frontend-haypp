@@ -10,6 +10,7 @@ import {
   shopBestsellersPath,
   shopNewInStorePath,
   shopMixpacksBundlesPath,
+  shopOffersPath,
   normalizeShopLang,
 } from "../utils/shopRoutes";
 
@@ -33,11 +34,14 @@ const ShopListing = ({ listing }) => {
 
   const isBestsellers = listing === "bestsellers";
   const isMixpacks = listing === "mixpacks";
+  const isOffers = listing === "offers";
   const listingPageProp = isBestsellers
     ? "bestsellers"
     : isMixpacks
       ? "mixpacks"
-      : "newInStore";
+      : isOffers
+        ? "offers"
+        : "newInStore";
 
   useEffect(() => {
     const lang =
@@ -51,26 +55,32 @@ const ShopListing = ({ listing }) => {
       ? t("SHOP_LISTING.BESTSELLERS.PAGE_TITLE")
       : isMixpacks
         ? t("SHOP_LISTING.MIXPACKS.PAGE_TITLE")
-        : t("SHOP_LISTING.NEW_IN_STORE.PAGE_TITLE");
+        : isOffers
+          ? t("SHOP_LISTING.OFFERS.PAGE_TITLE")
+          : t("SHOP_LISTING.NEW_IN_STORE.PAGE_TITLE");
     const description = isBestsellers
       ? t("SHOP_LISTING.BESTSELLERS.META_DESCRIPTION")
       : isMixpacks
         ? t("SHOP_LISTING.MIXPACKS.META_DESCRIPTION")
-        : t("SHOP_LISTING.NEW_IN_STORE.META_DESCRIPTION");
+        : isOffers
+          ? t("SHOP_LISTING.OFFERS.META_DESCRIPTION")
+          : t("SHOP_LISTING.NEW_IN_STORE.META_DESCRIPTION");
     const canonicalPath = isBestsellers
       ? shopBestsellersPath(lang)
       : isMixpacks
         ? shopMixpacksBundlesPath(lang)
-        : shopNewInStorePath(lang);
+        : isOffers
+          ? shopOffersPath(lang)
+          : shopNewInStorePath(lang);
 
     setSeo({
       title: `${title} | SnusCo`,
       description,
       keywords: `${title}, ${baseKeywords}`,
-      url: `https://www.snusco.eu${canonicalPath}`,
-      images: ["https://www.snusco.eu/assets/snuspouch-category-image.jpg"],
+      url: `https://snusco.eu${canonicalPath}`,
+      images: ["https://snusco.eu/assets/snuspouch-category-image.jpg"],
     });
-  }, [listing, langParam, i18n.language, t, isBestsellers, isMixpacks]);
+  }, [listing, langParam, i18n.language, t, isBestsellers, isMixpacks, isOffers]);
 
   useEffect(() => {
     setLockedFlavorGroupId(null);
@@ -88,7 +98,9 @@ const ShopListing = ({ listing }) => {
           ? await APIService.GetBestSellers(apiLang)
           : isMixpacks
             ? await APIService.GetMixPacks(apiLang)
-            : await APIService.GetNewArrivals(apiLang);
+            : isOffers
+              ? await APIService.GetOffers(apiLang)
+              : await APIService.GetNewArrivals(apiLang);
         if (cancelled) return;
         setProducts(list);
         setFilteredProducts(list);
@@ -105,13 +117,13 @@ const ShopListing = ({ listing }) => {
     return () => {
       cancelled = true;
     };
-  }, [listing, isBestsellers, isMixpacks, langParam, i18n.language]);
+  }, [listing, isBestsellers, isMixpacks, isOffers, langParam, i18n.language]);
 
   const defaultSeo = {
     title: "SnusCo",
     description: "",
     keywords: "",
-    url: "https://www.snusco.eu/",
+    url: "https://snusco.eu/",
     images: [],
   };
 

@@ -34,7 +34,7 @@
     "NAV_ITEMS": {
       "NICOTINE_FREE": "Nicotine Free Pouches",
       "MINT_POUCHES": "Mint Pouches",
-      "POUCHES_99P": "99p Pouches",
+      "OFFERS": "Offers",
       "NEW": "New",
       "BESTSELLERS": "Bestsellers",
       "OFFERS_DEALS": "Offers & Deals",
@@ -793,6 +793,12 @@
       "TITLE": "Mixpacks & bundles",
       "DESCRIPTION": "Multi-can packs and bundles — try more flavours or stock up with curated sets from our catalogue.",
       "META_DESCRIPTION": "Shop mixpacks and bundle deals on nicotine pouches at SnusCo. Multi-can sets and value packs, shipped across Europe."
+    },
+    "OFFERS": {
+      "PAGE_TITLE": "Offers & Deals",
+      "TITLE": "Offers & Deals",
+      "DESCRIPTION": "Discounted nicotine pouches — products on sale right now at SnusCo.",
+      "META_DESCRIPTION": "Shop discounted nicotine pouches at SnusCo. Current offers and deals, shipped across Europe."
     }
   },
 

@@ -7,6 +7,7 @@ import {
   shopAllBrandsPath,
   shopSearchPath,
   shopFlavourPath,
+  shopOffersPath,
 } from "./shopRoutes";
 import { blogListingPath, blogArticlePath } from "./blogRoutes";
 
@@ -104,6 +105,10 @@ export function useNavigation() {
     return shopAllBrandsPath(i18n.language);
   }
 
+  function goToOffers() {
+    return shopOffersPath(i18n.language);
+  }
+
   /** Ukus u prodavnici: /{lang}/snus-verkauf/flavours/{slug} npr. mint, fruit, coffee */
   function goToFlavour(flavourUrlSlug) {
     return shopFlavourPath(i18n.language, flavourUrlSlug);
@@ -133,6 +138,7 @@ export function useNavigation() {
     goToBestsellers,
     goToNewInStore,
     goToAllBrands,
+    goToOffers,
     goToFlavour,
     goToBlog,
     goToBlogArticle,

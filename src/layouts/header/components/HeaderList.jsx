@@ -241,7 +241,7 @@ export const NAV_ITEM_T_KEYS = [
   "HEADER.NICOTINE_POUCHES",
   "HEADER.NAV_ITEMS.NICOTINE_FREE",
   "HEADER.NAV_ITEMS.MINT_POUCHES",
-  "HEADER.NAV_ITEMS.POUCHES_99P",
+  "HEADER.NAV_ITEMS.OFFERS",
   "HEADER.NAV_ITEMS.NEW",
   "HEADER.NAV_ITEMS.BESTSELLERS",
   "HEADER.NAV_ITEMS.OFFERS_DEALS",
@@ -257,6 +257,7 @@ const HeaderList = ({ isScrolled }) => {
     goToNewInStore,
     goToBestsellers,
     goToAllBrands,
+    goToOffers,
     goToFlavour,
     goToBlog,
   } = useNavigation();
@@ -362,15 +363,17 @@ const HeaderList = ({ isScrolled }) => {
     const navListLinkTo =
       index === 2
         ? goToFlavour("mint")
-        : index === 4
-          ? goToNewInStore()
-          : index === 5
-            ? goToBestsellers()
-            : index === 7
-              ? goToAllBrands()
-              : index === 8
-                ? goToBlog()
-                : null;
+        : index === 3
+          ? goToOffers()
+          : index === 4
+            ? goToNewInStore()
+            : index === 5
+              ? goToBestsellers()
+              : index === 7
+                ? goToAllBrands()
+                : index === 8
+                  ? goToBlog()
+                  : null;
 
     return (
       <FlexItem

@@ -361,6 +361,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
     goToBestsellers,
     goToNewInStore,
     goToAllBrands,
+    goToOffers,
     goToFlavour,
     goToBlog,
     goToAccount,
@@ -460,7 +461,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
       return;
     }
     if (index === 3) {
-      navigate(goToCategory("99p Pouches"));
+      navigate(goToOffers());
       onClose();
       return;
     }

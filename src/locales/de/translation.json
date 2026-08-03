@@ -34,7 +34,7 @@
     "NAV_ITEMS": {
       "NICOTINE_FREE": "Nikotinfreie Beutel",
       "MINT_POUCHES": "Minz-Beutel",
-      "POUCHES_99P": "99p-Beutel",
+      "OFFERS": "Angebote",
       "NEW": "Neu",
       "BESTSELLERS": "Bestseller",
       "OFFERS_DEALS": "Angebote & Deals",
@@ -792,6 +792,12 @@
       "TITLE": "Mixpacks & Bundles",
       "DESCRIPTION": "Mehr-Dosen-Pakete und Bundles — mehr Geschmacksrichtungen probieren oder mit zusammengestellten Sets sparen.",
       "META_DESCRIPTION": "Mixpacks und Bundle-Angebote für Nikotinbeutel bei SnusCo. Mehr-Dosen-Sets und Sparpakete, Lieferung in ganz Europa."
+    },
+    "OFFERS": {
+      "PAGE_TITLE": "Angebote & Deals",
+      "TITLE": "Angebote & Deals",
+      "DESCRIPTION": "Reduzierte Nikotinbeutel — Produkte, die gerade im Angebot sind.",
+      "META_DESCRIPTION": "Reduzierte Nikotinbeutel bei SnusCo. Aktuelle Angebote und Deals, Lieferung in ganz Europa."
     }
   },
 

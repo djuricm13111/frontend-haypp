@@ -92,7 +92,7 @@ function AccessibilityStatement() {
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const html = lang === "de" ? ACCESSIBILITY_BODY_DE : ACCESSIBILITY_BODY_EN;
-  const canonical = `https://www.snusco.eu/${lang}/accessibility`;
+  const canonical = `https://snusco.eu/${lang}/accessibility`;
 
   return (
     <>

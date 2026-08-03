@@ -92,7 +92,7 @@ function PrivacyPolicy() {
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const html = lang === "de" ? PRIVACY_BODY_DE : PRIVACY_BODY_EN;
-  const canonical = `https://www.snusco.eu/${lang}/privacy`;
+  const canonical = `https://snusco.eu/${lang}/privacy`;
 
   return (
     <>

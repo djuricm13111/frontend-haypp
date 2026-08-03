@@ -60,6 +60,11 @@ export function shopMixpacksBundlesPath(lang) {
   return `/${normalizeShopLang(lang)}/mixpacks-bundles`;
 }
 
+/** Ponude / popusti — `APIService.API_PRODUCT_LISTINGS.OFFERS`. */
+export function shopOffersPath(lang) {
+  return `/${normalizeShopLang(lang)}/offers`;
+}
+
 /** Pregled svih brendova — podaci: `APIService.GetCategories()`. */
 export function shopAllBrandsPath(lang) {
   return `/${normalizeShopLang(lang)}/all-brands`;
@@ -136,6 +141,7 @@ export function buildShopNavDropdown(lang, t) {
       },
     ],
     second: [
+      { title: T("OFFERS"), href: shopOffersPath(lang) },
       { title: T("FREE_SAMPLE"), href: "/free-sample" },
       { title: T("MIXPACKS_BUNDLES"), href: shopMixpacksBundlesPath(lang) },
     ],
