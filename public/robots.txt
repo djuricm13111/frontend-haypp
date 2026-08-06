@@ -2,5 +2,5 @@ User-agent: *
 Disallow: /admin/
 Disallow: /checkout/
 Disallow: /account/
-Sitemap: https://www.snusco.eu/sitemap.xml
-Sitemap: https://www.snusco.eu/products.xml
+Sitemap: https://www.snuswe.com/sitemap.xml
+Sitemap: https://www.snuswe.com/products.xml

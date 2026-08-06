@@ -8,7 +8,7 @@
   <xsl:template match="/">
     <html>
       <head>
-        <title>Sitemap — snusco.eu</title>
+        <title>Sitemap — snuswe.com</title>
         <style>
           body { font-family: sans-serif; font-size: 14px; color: #222; margin: 0; padding: 24px; background: #f9f9f9; }
           h1 { font-size: 20px; margin-bottom: 4px; }
@@ -24,7 +24,7 @@
         </style>
       </head>
       <body>
-        <h1>snusco.eu — Sitemap</h1>
+        <h1>snuswe.com — Sitemap</h1>
         <p class="sub"><xsl:value-of select="count(sm:urlset/sm:url)"/> URLs</p>
         <table>
           <tr>
