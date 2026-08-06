@@ -17,7 +17,7 @@ import {
   ACCESSIBILITY_BODY_DE,
   ACCESSIBILITY_BODY_EN,
   ACCESSIBILITY_LAST_UPDATED,
-} from "../content/snuscoAccessibilityHtml";
+} from "../content/snusweAccessibilityHtml";
 import { LegalDocumentProse } from "../components/LegalDocumentProse";
 
 const Shell = styled.div`
@@ -92,7 +92,7 @@ function AccessibilityStatement() {
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const html = lang === "de" ? ACCESSIBILITY_BODY_DE : ACCESSIBILITY_BODY_EN;
-  const canonical = `https://snusco.eu/${lang}/accessibility`;
+  const canonical = `https://snuswe.com/${lang}/accessibility`;
 
   return (
     <>

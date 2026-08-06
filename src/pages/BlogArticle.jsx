@@ -813,7 +813,7 @@ function BlogArticle() {
     <>
       <Helmet>
         <html lang={lang} />
-        <title>{title} | SnusCo</title>
+        <title>{title} | SnusWe</title>
         <meta name="description" content={desc} />
       </Helmet>
       {/**

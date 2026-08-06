@@ -21,22 +21,22 @@ import brandDescriptions from "../brand_descriptions.json";
 
 const SEOConfig = {
   en: {
-    title: "Buy Nicotine Pouches Online | SnusCo Europe",
+    title: "Buy Nicotine Pouches Online | SnusWe Europe",
     description:
-      "Shop the widest selection of nicotine pouches in Europe at SnusCo. Top brands, all flavors and strengths, delivered across Europe. Fast shipping & secure checkout.",
+      "Shop the widest selection of nicotine pouches in Europe at SnusWe. Top brands, all flavors and strengths, delivered across Europe. Fast shipping & secure checkout.",
     keywords:
-      "nicotine pouches, buy nicotine pouches Europe, snus online, nicotine pouches shop, SnusCo, tobacco-free pouches, best nicotine pouches Europe",
-    url: "https://snusco.eu/en/snus-verkauf",
-    images: ["https://snusco.eu/assets/snuspouch-category-image.jpg"],
+      "nicotine pouches, buy nicotine pouches Europe, snus online, nicotine pouches shop, SnusWe, tobacco-free pouches, best nicotine pouches Europe",
+    url: "https://snuswe.com/en/snus-verkauf",
+    images: ["https://snuswe.com/assets/snuspouch-category-image.jpg"],
   },
   de: {
-    title: "Nikotinbeutel online kaufen | SnusCo Europa",
+    title: "Nikotinbeutel online kaufen | SnusWe Europa",
     description:
-      "Entdecken Sie bei SnusCo die größte Auswahl an Nikotinbeuteln in Europa. Top-Marken, alle Geschmacksrichtungen und Stärken, europaweit geliefert. Schneller Versand & sichere Zahlung.",
+      "Entdecken Sie bei SnusWe die größte Auswahl an Nikotinbeuteln in Europa. Top-Marken, alle Geschmacksrichtungen und Stärken, europaweit geliefert. Schneller Versand & sichere Zahlung.",
     keywords:
-      "Nikotinbeutel kaufen, Nikotinbeutel online, Snus Europa, SnusCo Shop, Nikotin Pouches Europa, tabakfreie Beutel, bester Snus Europa",
-    url: "https://snusco.eu/de/snus-verkauf",
-    images: ["https://snusco.eu/assets/snuspouch-category-image.jpg"],
+      "Nikotinbeutel kaufen, Nikotinbeutel online, Snus Europa, SnusWe Shop, Nikotin Pouches Europa, tabakfreie Beutel, bester Snus Europa",
+    url: "https://snuswe.com/de/snus-verkauf",
+    images: ["https://snuswe.com/assets/snuspouch-category-image.jpg"],
   },
 };
 
@@ -86,10 +86,10 @@ const Shop = () => {
         const title = t(`SHOP.FLAVOR_PAGE.${flavorGroupId}.TITLE`);
         const description = t(`SHOP.FLAVOR_PAGE.${flavorGroupId}.DESCRIPTION`);
         setSeo({
-          title: `${title} | SnusCo`,
+          title: `${title} | SnusWe`,
           description,
           keywords: `${title}, ${defaultSEO.keywords}`,
-          url: `https://snusco.eu/${lang}/snus-verkauf/flavours/${flavorSlug}`,
+          url: `https://snuswe.com/${lang}/snus-verkauf/flavours/${flavorSlug}`,
           images: defaultSEO.images,
         });
       } else {
@@ -118,10 +118,10 @@ const Shop = () => {
           `SHOP.STRENGTH_PAGE.${strengthI18nKey}.DESCRIPTION`
         );
         setSeo({
-          title: `${title} | SnusCo`,
+          title: `${title} | SnusWe`,
           description,
           keywords: `${title}, ${defaultSEO.keywords}`,
-          url: `https://snusco.eu/${lang}/snus-verkauf/strength/${strengthSlug}`,
+          url: `https://snuswe.com/${lang}/snus-verkauf/strength/${strengthSlug}`,
           images: defaultSEO.images,
         });
       } else {
@@ -145,10 +145,10 @@ const Shop = () => {
       const title = t("SHOP.FLAVOUR_HUB.TITLE");
       const description = t("SHOP.FLAVOUR_HUB.DESCRIPTION");
       setSeo({
-        title: `${title} | SnusCo`,
+        title: `${title} | SnusWe`,
         description,
         keywords: `${title}, ${defaultSEO.keywords}`,
-        url: `https://snusco.eu/${lang}/snus-verkauf/flavours`,
+        url: `https://snuswe.com/${lang}/snus-verkauf/flavours`,
         images: defaultSEO.images,
       });
       return;
@@ -163,10 +163,10 @@ const Shop = () => {
       const title = t("SHOP.STRENGTH_HUB.TITLE");
       const description = t("SHOP.STRENGTH_HUB.DESCRIPTION");
       setSeo({
-        title: `${title} | SnusCo`,
+        title: `${title} | SnusWe`,
         description,
         keywords: `${title}, ${defaultSEO.keywords}`,
-        url: `https://snusco.eu/${lang}/snus-verkauf/strength`,
+        url: `https://snuswe.com/${lang}/snus-verkauf/strength`,
         images: defaultSEO.images,
       });
       return;
@@ -193,10 +193,10 @@ const Shop = () => {
       const seoDescription =
         getBrandEntryShortDescription(entry, lang) || defaultSEO.description;
       setSeo({
-        title: `${entry.brand_name} | SnusCo Europe`,
+        title: `${entry.brand_name} | SnusWe Europe`,
         description: seoDescription,
         keywords: `${entry.brand_name}, ${defaultSEO.keywords}`,
-        url: `https://snusco.eu${shopBrandPath(lang, slug)}`,
+        url: `https://snuswe.com${shopBrandPath(lang, slug)}`,
         images: defaultSEO.images,
       });
       loadProductsByCategorySlug(slug);
@@ -207,7 +207,7 @@ const Shop = () => {
       title: defaultSEO.title,
       description: defaultSEO.description,
       keywords: defaultSEO.keywords,
-      url: `https://snusco.eu/${lang}/snus-verkauf/${slug}`,
+      url: `https://snuswe.com/${lang}/snus-verkauf/${slug}`,
       images: defaultSEO.images,
     });
     loadProductsByCategorySlug(slug);
@@ -234,10 +234,10 @@ const Shop = () => {
     const desc =
       getCategoryShortDescription(category, lang) || defaultSEO.description;
     setSeo({
-      title: `${category.name} | SnusCo Europe`,
+      title: `${category.name} | SnusWe Europe`,
       description: desc,
       keywords: `${category.name}, ${defaultSEO.keywords}`,
-      url: `https://snusco.eu/${lang}/snus-verkauf/${slug}`,
+      url: `https://snuswe.com/${lang}/snus-verkauf/${slug}`,
       images: defaultSEO.images,
     });
   }, [category, slug, flavorSlug, strengthSlug, i18n.language]);
@@ -262,7 +262,7 @@ const Shop = () => {
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="SnusCo" />
+        <meta name="author" content="SnusWe" />
         <link rel="canonical" href={seo.url} />
       </Helmet>
       <Header />

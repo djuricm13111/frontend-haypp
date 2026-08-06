@@ -145,21 +145,21 @@ export const beginnersGuideNicotinePouches = {
   openingParagraphs: {
     en: [
       "This beginner's guide to nicotine pouches gives a clear overview of how to start using pouches responsibly.",
-      'You will learn how to choose strength, pouch size, and flavour, plus what to expect in the first seven days. <a href="/{{LANG}}/snus-verkauf">Buy nicotine pouches online</a> at SnusCo—our assortment spans many formats; filter by strength and brand to narrow options.',
+      'You will learn how to choose strength, pouch size, and flavour, plus what to expect in the first seven days. <a href="/{{LANG}}/snus-verkauf">Buy nicotine pouches online</a> at SnusWe—our assortment spans many formats; filter by strength and brand to narrow options.',
       "Note: nicotine pouches are sometimes called 'snus' in everyday language, but unlike traditional snus they are tobacco-leaf-free.",
-      "<strong>This guide is for existing nicotine users only.</strong> SnusCo does not encourage non-users to start using nicotine—nicotine is addictive.",
+      "<strong>This guide is for existing nicotine users only.</strong> SnusWe does not encourage non-users to start using nicotine—nicotine is addictive.",
     ],
     de: [
       "Dieser Einsteiger-Guide erklärt den verantwortungsvollen Einstieg mit Nikotinbeuteln.",
-      'Sie lernen, Stärke, Format und Geschmack zu wählen und was die ersten sieben Tage typischerweise bringt. <a href="/{{LANG}}/snus-verkauf">Nikotinbeutel online kaufen</a> bei SnusCo—vielfältige Formate; nach Stärke und Marke filtern.',
+      'Sie lernen, Stärke, Format und Geschmack zu wählen und was die ersten sieben Tage typischerweise bringt. <a href="/{{LANG}}/snus-verkauf">Nikotinbeutel online kaufen</a> bei SnusWe—vielfältige Formate; nach Stärke und Marke filtern.',
       "Im Alltag werden Nikotinbeutel manchmal „Snus“ genannt—im Gegensatz zu klassischem Snus sind sie ohne Tabakblatt.",
-      "<strong>Nur für bestehende Nikotinnutzer.</strong> SnusCo ermutigt Nicht-Nutzer nicht zum Einstieg—Nikotin macht süchtig.",
+      "<strong>Nur für bestehende Nikotinnutzer.</strong> SnusWe ermutigt Nicht-Nutzer nicht zum Einstieg—Nikotin macht süchtig.",
     ],
     hu: [
       "Ez a kezdők útmutatója a nikotintasakokhoz egyértelmű áttekintést nyújt arról, hogyan kezdj el felelősségteljesen tasakokat használni.",
-      'Megtanulod, hogyan válassz erősséget, tasak méretet és ízt, plusz mire számíthatsz az első hét napban. <a href="/{{LANG}}/snus-verkauf">Vásárolj nikotintasakokat online</a> a SnusCo-nál – választékunk számos formátumot ölel fel; szűrj erősség és márka szerint a lehetőségek szűkítéséhez.',
+      'Megtanulod, hogyan válassz erősséget, tasak méretet és ízt, plusz mire számíthatsz az első hét napban. <a href="/{{LANG}}/snus-verkauf">Vásárolj nikotintasakokat online</a> a SnusWe-nál – választékunk számos formátumot ölel fel; szűrj erősség és márka szerint a lehetőségek szűkítéséhez.',
       "Megjegyzés: a nikotintasakokat a mindennapi nyelvben néha „snusnak\" hívják, de a hagyományos snussal ellentétben dohánylevél-mentesek.",
-      "<strong>Ez az útmutató csak meglévő nikotinfelhasználóknak szól.</strong> A SnusCo nem bátorítja a nem-felhasználókat a nikotin elkezdésére – a nikotin függőséget okoz.",
+      "<strong>Ez az útmutató csak meglévő nikotinfelhasználóknak szól.</strong> A SnusWe nem bátorítja a nem-felhasználókat a nikotin elkezdésére – a nikotin függőséget okoz.",
     ],
   },
   sections: [
@@ -408,15 +408,15 @@ export const beginnersGuideNicotinePouches = {
       paragraphs: {
         en: [
           "Starting slow, choosing low strengths, and experimenting with milder flavours are practical ways to begin with nicotine pouches.",
-          'Use the first week to notice how you respond and adjust slowly. <a href="/{{LANG}}/snus-verkauf">Buy nicotine pouches online</a> at SnusCo for beginner-friendly options from brands such as Nordic Spirit, ZYN, and VELO—subject to stock.',
+          'Use the first week to notice how you respond and adjust slowly. <a href="/{{LANG}}/snus-verkauf">Buy nicotine pouches online</a> at SnusWe for beginner-friendly options from brands such as Nordic Spirit, ZYN, and VELO—subject to stock.',
         ],
         de: [
           "Langsam starten, niedrige Stärken und mildere Geschmäcker zu wählen, ist ein guter Anfang.",
-          'In der ersten Woche beobachten Sie Ihre Reaktion und passen Sie sich an. <a href="/{{LANG}}/snus-verkauf">Nikotinbeutel online kaufen</a> bei SnusCo—u. a. Nordic Spirit, ZYN und VELO, je nach Verfügbarkeit.',
+          'In der ersten Woche beobachten Sie Ihre Reaktion und passen Sie sich an. <a href="/{{LANG}}/snus-verkauf">Nikotinbeutel online kaufen</a> bei SnusWe—u. a. Nordic Spirit, ZYN und VELO, je nach Verfügbarkeit.',
         ],
         hu: [
           "A lassú kezdés, az alacsony erősségek választása és az enyhébb ízekkel való kísérletezés praktikus módok a nikotintasakokkal való kezdéshez.",
-          'Az első héten figyelj, hogyan reagálsz, és lassan alkalmazkodj. <a href="/{{LANG}}/snus-verkauf">Vásárolj nikotintasakokat online</a> a SnusCo-nál kezdőbarát opciókhoz olyan márkáktól, mint a Nordic Spirit, ZYN és VELO – készlettől függően.',
+          'Az első héten figyelj, hogyan reagálsz, és lassan alkalmazkodj. <a href="/{{LANG}}/snus-verkauf">Vásárolj nikotintasakokat online</a> a SnusWe-nál kezdőbarát opciókhoz olyan márkáktól, mint a Nordic Spirit, ZYN és VELO – készlettől függően.',
         ],
       },
     },

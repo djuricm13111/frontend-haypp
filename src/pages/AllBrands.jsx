@@ -146,18 +146,18 @@ const AllBrands = () => {
     const lang = apiLang;
     const baseKeywords =
       lang === "de"
-        ? "Nikotinbeutel, Marken, Snus, SnusCo"
-        : "nicotine pouches, brands, snus, SnusCo";
+        ? "Nikotinbeutel, Marken, Snus, SnusWe"
+        : "nicotine pouches, brands, snus, SnusWe";
     const title = t("ALL_BRANDS.PAGE_TITLE");
     const description = t("ALL_BRANDS.META_DESCRIPTION");
     const canonicalPath = shopAllBrandsPath(lang);
 
     setSeo({
-      title: `${title} | SnusCo`,
+      title: `${title} | SnusWe`,
       description,
       keywords: `${title}, ${baseKeywords}`,
-      url: `https://snusco.eu${canonicalPath}`,
-      images: ["https://snusco.eu/assets/snuspouch-category-image.jpg"],
+      url: `https://snuswe.com${canonicalPath}`,
+      images: ["https://snuswe.com/assets/snuspouch-category-image.jpg"],
     });
   }, [apiLang, t]);
 
@@ -186,10 +186,10 @@ const AllBrands = () => {
   }, [apiLang]);
 
   const defaultSeo = {
-    title: "SnusCo",
+    title: "SnusWe",
     description: "",
     keywords: "",
-    url: "https://snusco.eu/",
+    url: "https://snuswe.com/",
     images: [],
   };
   const activeSeo = seo || defaultSeo;
@@ -211,7 +211,7 @@ const AllBrands = () => {
         ))}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="SnusCo" />
+        <meta name="author" content="SnusWe" />
         <link rel="canonical" href={activeSeo.url} />
       </Helmet>
       <Header />

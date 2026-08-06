@@ -22,13 +22,13 @@
     "VIEW_ALL_RESULTS": "View all search results ({{count}})",
     "FREE_DELIVERY_OVER_MIN": "Free over €{{min}}",
     "PAY_WITH_KLARNA": "Pay with Klarna",
-    "LOGO_HOME": "SnusCo — home",
+    "LOGO_HOME": "SnusWe — home",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "New Year New Me",
       "NICOTINE_POUCHES": "Nicotine Pouches",
       "BEST_SELLERS": "Best Sellers",
       "NEW_ARRIVALS": "New Arrivals",
-      "BLOG": "The SnusCo Blog",
+      "BLOG": "The SnusWe Blog",
       "TOP_BRANDS": "Top Brands"
     },
     "NAV_ITEMS": {
@@ -71,7 +71,7 @@
 
   "FOOTER": {
     "WARNING": "Warning: Our products contain nicotine, which is a highly addictive substance.",
-    "COPYRIGHT": "© 2025 SnusCo. All rights reserved.",
+    "COPYRIGHT": "© 2025 SnusWe. All rights reserved.",
     "FOLLOW_US": "Follow us",
     "SUPPORT": "Support",
     "FAQS": "FAQs",
@@ -79,8 +79,8 @@
     "TERMS_CONDITIONS": "Terms & Conditions",
     "CATEGORIES": "Categories",
     "CONTACT": "Contact us",
-    "BRAND_ARIA": "SnusCo",
-    "BRAND_REGION": "SnusCo · Europe",
+    "BRAND_ARIA": "SnusWe",
+    "BRAND_REGION": "SnusWe · Europe",
     "PAYMENT_ARIA": "Payment methods",
     "PAYMENT_KLARNA": "Klarna",
     "PAYMENT_VISA": "VISA",
@@ -91,22 +91,22 @@
     "VERIFY_SUB": "VERIFY",
     "ACC_MENU_CS": "Customer service",
     "ACC_MENU_LEGAL": "Legal",
-    "ACC_MENU_COMPANY": "SnusCo",
+    "ACC_MENU_COMPANY": "SnusWe",
     "ACC_CS_DESC": "Orders, shipping and how to reach us.",
     "ACC_LEGAL_DESC": "Privacy, terms, accessibility and legal information.",
-    "ACC_COMPANY_DESC": "About us and news from SnusCo.",
+    "ACC_COMPANY_DESC": "About us and news from SnusWe.",
     "LINK_CONTACT": "Contact",
     "LINK_PRIVACY": "Privacy Policy",
     "LINK_TERMS": "Terms & Conditions",
     "LINK_ACCESSIBILITY": "Accessibility",
-    "LINK_ABOUT": "About SnusCo",
+    "LINK_ABOUT": "About SnusWe",
     "LINK_BLOG": "Blog",
     "CONTACT_BLOCK_TITLE": "Customer service",
-    "EMAIL": "support@snusco.eu",
+    "EMAIL": "support@snuswe.com",
     "PHONE": "+43 1 234 5678",
     "PHONE_RAW": "+4312345678",
     "HOURS": "Mon–Fri 9:00–17:00 (CET), closed on public holidays.",
-    "NAVY_COMPANY_LINE": "SnusCo GmbH · Europe"
+    "NAVY_COMPANY_LINE": "SnusWe GmbH · Europe"
   },
 
   "MENU": {
@@ -123,9 +123,9 @@
   },
 
   "BLOG": {
-    "PAGE_TITLE": "Blog | SnusCo",
+    "PAGE_TITLE": "Blog | SnusWe",
     "PAGE_DESCRIPTION": "Guides and articles on nicotine pouches, formats, and brands.",
-    "LIST_HEADING": "SnusCo blog",
+    "LIST_HEADING": "SnusWe blog",
     "LIST_LEAD": "In-depth articles on nicotine pouches — formats, strengths, and how to choose what suits you.",
     "BY_AUTHOR": "By {{name}}",
     "CRUMB_HOME": "Home",
@@ -135,38 +135,38 @@
   },
 
   "TERMS": {
-    "PAGE_TITLE": "Terms & Conditions | SnusCo",
-    "PAGE_DESCRIPTION": "General terms and conditions for orders at SnusCo — Europe, consumers, delivery, payment, withdrawal, and subscriptions.",
+    "PAGE_TITLE": "Terms & Conditions | SnusWe",
+    "PAGE_DESCRIPTION": "General terms and conditions for orders at SnusWe — Europe, consumers, delivery, payment, withdrawal, and subscriptions.",
     "HEADING": "Terms & Conditions",
-    "SUBLINE": "SnusCo GmbH · Europe · Last updated {{date}} · Draft for legal review",
+    "SUBLINE": "SnusWe GmbH · Europe · Last updated {{date}} · Draft for legal review",
     "BREADCRUMB_ARIA": "Breadcrumb"
   },
 
   "PRIVACY": {
-    "PAGE_TITLE": "Privacy Policy | SnusCo",
-    "PAGE_DESCRIPTION": "How SnusCo collects, uses, and protects your personal data when you use www.snusco.eu — GDPR, Europe, your rights, cookies, and retention.",
+    "PAGE_TITLE": "Privacy Policy | SnusWe",
+    "PAGE_DESCRIPTION": "How SnusWe collects, uses, and protects your personal data when you use www.snuswe.com — GDPR, Europe, your rights, cookies, and retention.",
     "HEADING": "Privacy Policy",
-    "SUBLINE": "SnusCo GmbH · Europe · Last updated {{date}} · Draft for DPO / legal review",
+    "SUBLINE": "SnusWe GmbH · Europe · Last updated {{date}} · Draft for DPO / legal review",
     "BREADCRUMB_ARIA": "Breadcrumb"
   },
 
   "ACCESSIBILITY": {
-    "PAGE_TITLE": "Accessibility | SnusCo",
-    "PAGE_DESCRIPTION": "SnusCo’s approach to digital accessibility for www.snusco.eu — WCAG 2.2 AA, known limitations, and how to send feedback.",
+    "PAGE_TITLE": "Accessibility | SnusWe",
+    "PAGE_DESCRIPTION": "SnusWe’s approach to digital accessibility for www.snuswe.com — WCAG 2.2 AA, known limitations, and how to send feedback.",
     "HEADING": "Accessibility",
-    "SUBLINE": "SnusCo GmbH · Europe · Last updated {{date}} · Statement draft",
+    "SUBLINE": "SnusWe GmbH · Europe · Last updated {{date}} · Statement draft",
     "BREADCRUMB_ARIA": "Breadcrumb"
   },
 
   "HOME": {
-    "HERO_TITLE": "SnusCo: Nicotine Pouch Store Online",
+    "HERO_TITLE": "SnusWe: Nicotine Pouch Store Online",
     "HERO_SUBTITLE": "Get next-day delivery* on orders over €4.99 — plus a free can with every purchase!*",
-    "ABOUT_TITLE": "About SnusCo",
-    "ABOUT_SNUSCO": "Welcome to SnusCo, your trusted destination for premium, tobacco-free nicotine products. Since our inception, we've been committed to delivering top-quality nicotine pouches to customers who value safety, transparency, and exceptional taste.",
-    "FEATURED_BRANDS": "At SnusCo, we proudly feature a curated selection of the most popular brands, including.",
+    "ABOUT_TITLE": "About SnusWe",
+    "ABOUT_SNUSWE": "Welcome to SnusWe, your trusted destination for premium, tobacco-free nicotine products. Since our inception, we've been committed to delivering top-quality nicotine pouches to customers who value safety, transparency, and exceptional taste.",
+    "FEATURED_BRANDS": "At SnusWe, we proudly feature a curated selection of the most popular brands, including.",
     "FEATURED_BRANDS_2": " Each product is rigorously tested to meet the highest standards, ensuring you receive nothing but the best. Whether you're new to nicotine pouches or a seasoned user, we offer insights and recommendations to help you find the perfect fit.",
     "SHOPPING_EXPERIENCE": "Our website is designed to provide a seamless shopping experience, complete with fast, reliable shipping. We prioritize customer safety through robust age verification processes, fostering a secure and responsible community.",
-    "TOBACCO_FREE_LIFESTYLE": "Discover the freedom of a tobacco-free lifestyle with SnusCo. We're here to support you with expert advice, educational resources, and a commitment to quality that empowers you to make informed choices. Choose SnusCo – where excellence and care come together.",
+    "TOBACCO_FREE_LIFESTYLE": "Discover the freedom of a tobacco-free lifestyle with SnusWe. We're here to support you with expert advice, educational resources, and a commitment to quality that empowers you to make informed choices. Choose SnusWe – where excellence and care come together.",
     "PROMO_TITLES": {
       "FEATURED": "Featured Nicotine Pouches",
       "HOT_DEALS": "Hot Deals",
@@ -177,7 +177,7 @@
     },
     "BUY_HERE": "Buy here",
     "PROMO_CARDS_LABEL": "Promotional offers",
-    "PROMO_INTRO": "Discover the best selection of <nicotine>tobacco-free nicotine pouches</nicotine>, and <free>nicotine free pouches</free> at SnusCo. Whether you're looking for top-selling products, new arrivals, or the latest brands, we've got you covered.",
+    "PROMO_INTRO": "Discover the best selection of <nicotine>tobacco-free nicotine pouches</nicotine>, and <free>nicotine free pouches</free> at SnusWe. Whether you're looking for top-selling products, new arrivals, or the latest brands, we've got you covered.",
     "SHOP_BY_BRAND": "Shop by Brand",
     "FEATURED_PRODUCTS_TITLE": "Featured products",
     "SHOP_BY_CATEGORY": "Shop by Category",
@@ -214,12 +214,12 @@
       "ARIA_SLIDE": "Slide {{current}} of {{total}}"
     },
     "TRUST": {
-      "ABOUT_H2": "About SnusCo",
-      "ABOUT_P1": "SnusCo is built for adults who want <strong>tobacco-free nicotine pouches</strong> without the noise: real brands, clear strengths, and descriptions you can use to choose with confidence.",
+      "ABOUT_H2": "About SnusWe",
+      "ABOUT_P1": "SnusWe is built for adults who want <strong>tobacco-free nicotine pouches</strong> without the noise: real brands, clear strengths, and descriptions you can use to choose with confidence.",
       "ABOUT_P2": "We take <strong>age verification and responsible retail</strong> seriously — every order is checked so nicotine stays in the right hands.",
       "ABOUT_P3": "Our team is here when you need help picking a format, flavour, or strength — whether you are trying pouches for the first time or refreshing your rotation.",
-      "WHY_H2": "Why shop with SnusCo?",
-      "WHY_INTRO": "From bestsellers to new arrivals, SnusCo brings <strong>nicotine pouches from brands you know</strong> together in one place — packed and shipped with care for customers across Europe.",
+      "WHY_H2": "Why shop with SnusWe?",
+      "WHY_INTRO": "From bestsellers to new arrivals, SnusWe brings <strong>nicotine pouches from brands you know</strong> together in one place — packed and shipped with care for customers across Europe.",
       "WHY_POINTS": [
         {
           "title": "Brands in one place:",
@@ -253,8 +253,8 @@
   },
 
   "ACCOUNT": {
-    "PAGE_TITLE": "My account | SnusCo",
-    "META_DESCRIPTION": "Your SnusCo account: details, rewards, saved addresses and order history.",
+    "PAGE_TITLE": "My account | SnusWe",
+    "META_DESCRIPTION": "Your SnusWe account: details, rewards, saved addresses and order history.",
     "HEADING": "My account",
     "LOADING": "Loading your profile…",
     "DETAILS_TITLE": "Your details",
@@ -397,7 +397,7 @@
     "TITLE": "Sign In",
     "HINT_SECTION_TITLE": "Sign In",
     "ACCOUNT_HINT": "Access your account to see orders",
-    "LOGO_MARK": "SNUSCO",
+    "LOGO_MARK": "SNUSWE",
     "SUBTITLE": "Access your account",
     "FORGOT_PASSWORD": "Forgot your password?",
     "DONT_HAVE_ACCOUNT": "Don't have an account?",
@@ -410,12 +410,12 @@
   },
 
   "REGISTER": {
-    "PAGE_TITLE": "Create account — SnusCo",
+    "PAGE_TITLE": "Create account — SnusWe",
     "HEADER_BADGE": "Register",
     "TITLE": "Create account",
     "HINT_SECTION_TITLE": "Create account",
     "ACCOUNT_HINT": "Create an account to track orders and check out faster next time.",
-    "LOGO_MARK": "SNUSCO",
+    "LOGO_MARK": "SNUSWE",
     "ADDRESS_SECTION_TITLE": "Delivery address",
     "ADDRESS_HINT": "You can add this now to speed up your first order, or skip and add it later at checkout.",
     "ADDRESS_OPTIONAL": "Optional — saves time at checkout",
@@ -432,7 +432,7 @@
   },
 
   "PASSWORD_RESET": {
-    "FORGOT_PAGE_TITLE": "Forgot password | SnusCo",
+    "FORGOT_PAGE_TITLE": "Forgot password | SnusWe",
     "FORGOT_HEADER_BADGE": "Forgot password",
     "FORGOT_TITLE": "Reset your password",
     "FORGOT_LEAD": "Enter the email for your account. We will send you a link to choose a new password.",
@@ -444,7 +444,7 @@
     "ERROR_GENERIC": "Something went wrong. Please try again.",
     "ERROR_EMAIL_REQUIRED": "Please enter your email address.",
     "ERROR_USER_NOT_FOUND": "No account found with this email.",
-    "CONFIRM_PAGE_TITLE": "Set new password | SnusCo",
+    "CONFIRM_PAGE_TITLE": "Set new password | SnusWe",
     "CONFIRM_HEADER_BADGE": "New password",
     "CONFIRM_TITLE": "Choose a new password",
     "CONFIRM_LEAD": "Enter and confirm your new password below.",
@@ -458,7 +458,7 @@
   },
 
   "VERIFICATION": {
-    "PAGE_TITLE": "Verify email | SnusCo",
+    "PAGE_TITLE": "Verify email | SnusWe",
     "HEADER_BADGE": "Verify email",
     "TITLE": "Verify your email",
     "SUBTITLE": "We sent a code to {{email}}. Enter it below to confirm your address.",
@@ -558,14 +558,14 @@
     "AGE_WARNING_BODY": "This product is not risk-free. It contains nicotine, an addictive substance.",
 
     "TAXES": "Taxes",
-    "TAXES_TITLE": "Taxes on SnusCo Orders in Europe",
-    "TAXES_DESCRIPTION": "At SnusCo, we are committed to complying with European tax laws. For all online orders, applicable taxes, including nicotine taxes and VAT (sales tax), are calculated and included in the order total during checkout. Shipping charges may also be subject to VAT in Europe, depending on the region and applicable laws.",
+    "TAXES_TITLE": "Taxes on SnusWe Orders in Europe",
+    "TAXES_DESCRIPTION": "At SnusWe, we are committed to complying with European tax laws. For all online orders, applicable taxes, including nicotine taxes and VAT (sales tax), are calculated and included in the order total during checkout. Shipping charges may also be subject to VAT in Europe, depending on the region and applicable laws.",
     "TAXES_CALCULATION_TITLE": "How is the Tax on Nicotine Products Calculated?",
     "TAXES_CALCULATION_DESCRIPTION": "Nicotine Excise Tax (TNET), often referred to as 'nicotine tax,' is applied in accordance with applicable regulations. The method of calculation depends on the type of product (Tobacco or Tobacco-Free) and the category it falls into. Taxes are calculated in one of the following ways:",
-    "TAXES_CALCULATION_METHOD_1": "Based on a percentage of the wholesale price: Calculated as a percentage of the product's cost to SnusCo.",
-    "TAXES_CALCULATION_METHOD_2": "Based on SnusCo’s selling price to the customer: Calculated as a percentage of the retail price.",
+    "TAXES_CALCULATION_METHOD_1": "Based on a percentage of the wholesale price: Calculated as a percentage of the product's cost to SnusWe.",
+    "TAXES_CALCULATION_METHOD_2": "Based on SnusWe’s selling price to the customer: Calculated as a percentage of the retail price.",
     "TAXES_CALCULATION_METHOD_3": "Based on weight: Calculated per gram or per unit of the product.",
-    "VAT_CALCULATION_TITLE": "How Does SnusCo Calculate VAT on Orders?",
+    "VAT_CALCULATION_TITLE": "How Does SnusWe Calculate VAT on Orders?",
     "VAT_CALCULATION_DESCRIPTION": "VAT is calculated in accordance with applicable tax regulations and is applied to both the product price and, in most cases, the shipping cost. The applicable VAT rate for nicotine products varies by country. This ensures full compliance with local tax requirements.",
     "EXAMPLE_TITLE": "Example of Tax and VAT Calculation:",
     "EXAMPLE_SUBTITLE": "Example:",
@@ -620,7 +620,7 @@
   },
 
   "CHECKOUT": {
-    "PAGE_TITLE": "Checkout | SnusCo",
+    "PAGE_TITLE": "Checkout | SnusWe",
     "TITLE": "Checkout",
     "SIGNED_IN_NOTICE": "You're signed in — your account email and saved delivery addresses are used below.",
     "BACK": "Back",
@@ -690,7 +690,7 @@
 
   "SEARCH": {
     "PAGE_TITLE": "Search: {{query}}",
-    "META_DESCRIPTION": "Search results for \"{{query}}\" — nicotine pouches at SnusCo.",
+    "META_DESCRIPTION": "Search results for \"{{query}}\" — nicotine pouches at SnusWe.",
     "META_EMPTY": "Search our shop for nicotine pouches and brands.",
     "NO_QUERY_TITLE": "Search",
     "SUBTITLE": "{{count}} products",
@@ -780,31 +780,31 @@
       "PAGE_TITLE": "Bestsellers",
       "TITLE": "Bestsellers",
       "DESCRIPTION": "Our most popular nicotine pouches — top sellers from the shop, updated from sales data.",
-      "META_DESCRIPTION": "Shop bestseller nicotine pouches at SnusCo. Popular brands and flavours, shipped across Europe."
+      "META_DESCRIPTION": "Shop bestseller nicotine pouches at SnusWe. Popular brands and flavours, shipped across Europe."
     },
     "NEW_IN_STORE": {
       "PAGE_TITLE": "New in store",
       "TITLE": "New in store",
       "DESCRIPTION": "The latest arrivals — new products and fresh lines as soon as they land in our warehouse.",
-      "META_DESCRIPTION": "Discover new nicotine pouch arrivals at SnusCo. Fresh products and limited drops, fast delivery in Europe."
+      "META_DESCRIPTION": "Discover new nicotine pouch arrivals at SnusWe. Fresh products and limited drops, fast delivery in Europe."
     },
     "MIXPACKS": {
       "PAGE_TITLE": "Mixpacks & bundles",
       "TITLE": "Mixpacks & bundles",
       "DESCRIPTION": "Multi-can packs and bundles — try more flavours or stock up with curated sets from our catalogue.",
-      "META_DESCRIPTION": "Shop mixpacks and bundle deals on nicotine pouches at SnusCo. Multi-can sets and value packs, shipped across Europe."
+      "META_DESCRIPTION": "Shop mixpacks and bundle deals on nicotine pouches at SnusWe. Multi-can sets and value packs, shipped across Europe."
     },
     "OFFERS": {
       "PAGE_TITLE": "Offers & Deals",
       "TITLE": "Offers & Deals",
-      "DESCRIPTION": "Discounted nicotine pouches — products on sale right now at SnusCo.",
-      "META_DESCRIPTION": "Shop discounted nicotine pouches at SnusCo. Current offers and deals, shipped across Europe."
+      "DESCRIPTION": "Discounted nicotine pouches — products on sale right now at SnusWe.",
+      "META_DESCRIPTION": "Shop discounted nicotine pouches at SnusWe. Current offers and deals, shipped across Europe."
     }
   },
 
   "ALL_BRANDS": {
     "PAGE_TITLE": "Brands",
-    "META_DESCRIPTION": "Browse every nicotine pouch brand available at SnusCo — sorted A–Z with links to each brand in the shop.",
+    "META_DESCRIPTION": "Browse every nicotine pouch brand available at SnusWe — sorted A–Z with links to each brand in the shop.",
     "INTRO": "Every brand we currently stock, listed alphabetically.",
     "LOAD_ERROR": "We couldn’t load brands. Please try again later.",
     "LETTER_OTHER": "0–9 & symbols",
@@ -1066,7 +1066,7 @@
     "RS": "Serbia"
   },
   "FREE_SAMPLE": {
-    "PAGE_TITLE": "Free Nicotine Pouch Sample with Every Order | SnusCo",
+    "PAGE_TITLE": "Free Nicotine Pouch Sample with Every Order | SnusWe",
     "META_DESCRIPTION": "Free nicotine pouch sample with every order. Clew, STNG and featured brands, UK delivery, FAQs.",
     "PROMO_TITLE": "Free Nicotine Pouch Sample with Every Order",
     "PROMO_BODY": "Discover something new with every order! Get a free nicotine pouch sample from our featured brand of the month and try new flavours, brands, and strengths. Enjoy top brands and fast UK delivery, plus an exclusive discount on your next order.",
@@ -1088,7 +1088,7 @@
     "WHY_P2": "Our tobacco-free nicotine pouches free sample programme brings you new pouch brands, flavours, and strengths that you might not have picked yourself. The easiest way to discover new favourites.",
     "WHY_P3": "Want even more deals? Explore our <PickMixLink>Pick and Mix</PickMixLink> and <OffersLink>nicotine pouches offers</OffersLink> page—they're updated each month with new and exciting discounts.",
     "DELIVERY_TITLE": "Fast Delivery, Discreet Packaging",
-    "DELIVERY_INTRO": "SnusCo offers speedy delivery across the UK for your nicotine pouches free sample, including next-day options. Plus, we use discreet packaging for privacy.",
+    "DELIVERY_INTRO": "SnusWe offers speedy delivery across the UK for your nicotine pouches free sample, including next-day options. Plus, we use discreet packaging for privacy.",
     "DELIVERY_OPTIONS_TITLE": "Delivery options include:",
     "DELIVERY_OPT_1": "InPost Lockers",
     "DELIVERY_OPT_2": "Royal Mail 24",

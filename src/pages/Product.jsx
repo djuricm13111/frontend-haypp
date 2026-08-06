@@ -37,10 +37,10 @@ const Product = () => {
     localStorage.getItem("currency") || DEFAULT_CURRENCY
   );
 
-  // Generiši canonical URL na snusco.eu
+  // Generiši canonical URL na snuswe.com
   const productUrl = product
-    ? `https://snusco.eu/${langParam || i18n.language}/${category}/${slug}`
-    : "https://snusco.eu";
+    ? `https://snuswe.com/${langParam || i18n.language}/${category}/${slug}`
+    : "https://snuswe.com";
 
   // Odredi jezik za i18n
   const lang = i18n.language.startsWith("sr")
@@ -76,8 +76,8 @@ const Product = () => {
         {/* Title */}
         <title>
           {product?.name
-            ? `${product.name} | Nicotine Pouches SnusCo`
-            : "Nicotine Pouches SnusCo"}
+            ? `${product.name} | Nicotine Pouches SnusWe`
+            : "Nicotine Pouches SnusWe"}
         </title>
 
         {/* Meta Description & Keywords */}

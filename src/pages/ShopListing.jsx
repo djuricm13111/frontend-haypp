@@ -48,8 +48,8 @@ const ShopListing = ({ listing }) => {
       normalizeShopLang(langParam || i18n.language);
     const baseKeywords =
       lang === "de"
-        ? "Nikotinbeutel, Snus, Bestseller, SnusCo"
-        : "nicotine pouches, snus, bestsellers, SnusCo";
+        ? "Nikotinbeutel, Snus, Bestseller, SnusWe"
+        : "nicotine pouches, snus, bestsellers, SnusWe";
 
     const title = isBestsellers
       ? t("SHOP_LISTING.BESTSELLERS.PAGE_TITLE")
@@ -74,11 +74,11 @@ const ShopListing = ({ listing }) => {
           : shopNewInStorePath(lang);
 
     setSeo({
-      title: `${title} | SnusCo`,
+      title: `${title} | SnusWe`,
       description,
       keywords: `${title}, ${baseKeywords}`,
-      url: `https://snusco.eu${canonicalPath}`,
-      images: ["https://snusco.eu/assets/snuspouch-category-image.jpg"],
+      url: `https://snuswe.com${canonicalPath}`,
+      images: ["https://snuswe.com/assets/snuspouch-category-image.jpg"],
     });
   }, [listing, langParam, i18n.language, t, isBestsellers, isMixpacks, isOffers]);
 
@@ -120,10 +120,10 @@ const ShopListing = ({ listing }) => {
   }, [listing, isBestsellers, isMixpacks, isOffers, langParam, i18n.language]);
 
   const defaultSeo = {
-    title: "SnusCo",
+    title: "SnusWe",
     description: "",
     keywords: "",
-    url: "https://snusco.eu/",
+    url: "https://snuswe.com/",
     images: [],
   };
 
@@ -146,7 +146,7 @@ const ShopListing = ({ listing }) => {
         ))}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="SnusCo" />
+        <meta name="author" content="SnusWe" />
         <link rel="canonical" href={activeSeo.url} />
       </Helmet>
       <Header />

@@ -52,17 +52,17 @@ const SearchResults = () => {
     const lang = apiLang;
     const baseKeywords =
       lang === "de"
-        ? "Nikotinbeutel, Suche, SnusCo"
-        : "nicotine pouches, search, SnusCo";
+        ? "Nikotinbeutel, Suche, SnusWe"
+        : "nicotine pouches, search, SnusWe";
     const display = qTrim || t("SEARCH.NO_QUERY_TITLE");
     setSeo({
-      title: `${t("SEARCH.PAGE_TITLE", { query: display })} | SnusCo`,
+      title: `${t("SEARCH.PAGE_TITLE", { query: display })} | SnusWe`,
       description: qTrim
         ? t("SEARCH.META_DESCRIPTION", { query: qTrim })
         : t("SEARCH.META_EMPTY"),
       keywords: `${display}, ${baseKeywords}`,
-      url: `https://snusco.eu${shopSearchPath(lang, qTrim)}`,
-      images: ["https://snusco.eu/assets/snuspouch-category-image.jpg"],
+      url: `https://snuswe.com${shopSearchPath(lang, qTrim)}`,
+      images: ["https://snuswe.com/assets/snuspouch-category-image.jpg"],
     });
   }, [apiLang, qTrim, t]);
 
@@ -113,10 +113,10 @@ const SearchResults = () => {
   }, [qTrim, apiLang]);
 
   const defaultSeo = {
-    title: "SnusCo",
+    title: "SnusWe",
     description: "",
     keywords: "",
-    url: "https://snusco.eu/",
+    url: "https://snuswe.com/",
     images: [],
   };
 
@@ -139,7 +139,7 @@ const SearchResults = () => {
         ))}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="SnusCo" />
+        <meta name="author" content="SnusWe" />
         <link rel="canonical" href={activeSeo.url} />
       </Helmet>
       <Header />

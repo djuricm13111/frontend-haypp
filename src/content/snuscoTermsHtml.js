@@ -1,5 +1,5 @@
 /**
- * SnusCo — Terms & Conditions (draft for legal review).
+ * SnusWe — Terms & Conditions (draft for legal review).
  * Have a qualified lawyer adapt UID/Firmenbuch, mandatory consumer texts, and payment partners.
  */
 
@@ -29,7 +29,7 @@ export const TERMS_BODY_EN = `
 </ul>
 
 <h2 id="general">General</h2>
-<p>SnusCo GmbH, Austria (“SnusCo”, “we”, “us”) operates the website <a href="https://snusco.eu">www.snusco.at</a> (the “Website”). These terms and conditions (the “Conditions”) apply to every product order a consumer places on the Website.</p>
+<p>SnusWe GmbH, Austria (“SnusWe”, “we”, “us”) operates the website <a href="https://snuswe.com">www.snuswe.at</a> (the “Website”). These terms and conditions (the “Conditions”) apply to every product order a consumer places on the Website.</p>
 <p>By placing an order, you confirm that you have read, understood, and accepted these Conditions. You also acknowledge the information on personal data processing and agree that we may process your data as described in our privacy policy.</p>
 <p>We may amend these Conditions at any time. The version published on the Website applies. For each new order, the version you accept when completing checkout applies.</p>
 <p>Mandatory consumer protection law, in particular the Austrian Consumer Protection Act (<abbr title="Konsumentenschutzgesetz">KSchG</abbr>) and the Austrian Act on Distance and Off-Premises Contracts (<abbr title="Fern- und Auswärtsgeschäfte-Gesetz">FAGG</abbr>) where applicable, as well as the EU General Data Protection Regulation (<abbr>GDPR</abbr>) and the Austrian Data Protection Act (<abbr title="Datenschutzgesetz">DSG</abbr>), remains unaffected.</p>
@@ -56,7 +56,7 @@ export const TERMS_BODY_EN = `
 <h2 id="subscriptions">Subscriptions</h2>
 <p>Where we offer subscriptions for selected products on the Website, you can choose the delivery interval offered in the product or checkout flow (for example every two weeks, monthly, or every two months, if available).</p>
 <p>Subscription prices may be adjusted from time to time. We may reduce prices without notice. Increases are generally communicated at least 30 days before they take effect, except where a shorter period is permitted by law or your specific subscription terms state otherwise.</p>
-<p>You can manage upcoming deliveries (including pausing or changing the date where the account tools allow) in your customer account. To cancel a subscription, use the account settings or contact customer service at <a href="mailto:support@snusco.at">support@snusco.at</a> or <a href="tel:+4312345678">+43 1 234 5678</a> before the cut-off we publish for the next shipment (typically before dispatch on the previous business day). If you cancel too late for a shipment already prepared, your statutory <a href="#withdrawal">right of withdrawal</a> may still apply to that delivery where the law allows.</p>
+<p>You can manage upcoming deliveries (including pausing or changing the date where the account tools allow) in your customer account. To cancel a subscription, use the account settings or contact customer service at <a href="mailto:support@snuswe.at">support@snuswe.at</a> or <a href="tel:+4312345678">+43 1 234 5678</a> before the cut-off we publish for the next shipment (typically before dispatch on the previous business day). If you cancel too late for a shipment already prepared, your statutory <a href="#withdrawal">right of withdrawal</a> may still apply to that delivery where the law allows.</p>
 <p>Each subscription delivery is charged using the payment method you selected when starting or updating the subscription. If payment fails, we may suspend or cancel further deliveries after notifying you where required.</p>
 <p>Subscriptions are subject to successful age verification where required. Deliveries use the shipping method you selected, subject to availability.</p>
 
@@ -101,7 +101,7 @@ export const TERMS_BODY_EN = `
 <p>By submitting a product review, you grant us a non-exclusive licence to publish it on the Website and in our marketing channels. We may refuse, shorten, or remove reviews that are unlawful, misleading, offensive, or clearly irrelevant.</p>
 
 <h2 id="other">Other</h2>
-<p>For questions about these Conditions, returns, or complaints, contact customer service at <a href="mailto:support@snusco.at">support@snusco.at</a> or <a href="tel:+4312345678">+43 1 234 5678</a> (Mon–Fri 9:00–17:00 CET, except public holidays). Please include your order number from the order confirmation.</p>
+<p>For questions about these Conditions, returns, or complaints, contact customer service at <a href="mailto:support@snuswe.at">support@snuswe.at</a> or <a href="tel:+4312345678">+43 1 234 5678</a> (Mon–Fri 9:00–17:00 CET, except public holidays). Please include your order number from the order confirmation.</p>
 <p>The contract is governed by Austrian law, excluding private international law rules that would refer to another law, and excluding the UN Convention on Contracts for the International Sale of Goods (CISG) insofar as its exclusion is permitted. Mandatory consumer-law provisions of your country of residence remain applicable where required by EU law.</p>
 <p>If you are a consumer with habitual residence in Austria, the courts in Austria have jurisdiction for disputes arising from these Conditions and your orders, where statutory jurisdiction rules so provide. If you are a consumer in another EU member state, you may also have rights to sue us in your country of residence under applicable jurisdiction rules.</p>
 <p>The languages available on the Website for concluding the contract include German and English.</p>
@@ -133,7 +133,7 @@ export const TERMS_BODY_DE = `
 </ul>
 
 <h2 id="general">Allgemeines</h2>
-<p>Die SnusCo GmbH, Österreich („SnusCo“, „wir“) betreibt die Website <a href="https://snusco.eu">www.snusco.at</a> (die „Website“). Diese Allgemeinen Geschäftsbedingungen (die „AGB“) gelten für jeden Warenkauf, den ein Verbraucher über die Website abschließt.</p>
+<p>Die SnusWe GmbH, Österreich („SnusWe“, „wir“) betreibt die Website <a href="https://snuswe.com">www.snuswe.at</a> (die „Website“). Diese Allgemeinen Geschäftsbedingungen (die „AGB“) gelten für jeden Warenkauf, den ein Verbraucher über die Website abschließt.</p>
 <p>Mit der Abgabe Ihrer Bestellung bestätigen Sie, dass Sie diese AGB gelesen, verstanden und akzeptiert haben. Sie bestätigen ferner, dass Sie die Hinweise zur Verarbeitung personenbezogener Daten zur Kenntnis genommen haben und mit der Verarbeitung im Rahmen unserer Datenschutzerklärung einverstanden sind.</p>
 <p>Wir können diese AGB jederzeit ändern. Maßgeblich ist die auf der Website veröffentlichte Fassung. Für jede neue Bestellung gilt die Fassung, die Sie beim Bestellabschluss anerkennen.</p>
 <p>Zwingendes Verbraucherschutzrecht, insbesondere das österreichische Konsumentenschutzgesetz (KSchG) und das Fern- und Auswärtsgeschäfte-Gesetz (FAGG), soweit anwendbar, sowie die Datenschutz-Grundverordnung (DSGVO) und das österreichische Datenschutzgesetz (DSG), bleiben unberührt.</p>
@@ -160,7 +160,7 @@ export const TERMS_BODY_DE = `
 <h2 id="subscriptions">Abonnements</h2>
 <p>Soweit wir für ausgewählte Produkte Abonnements anbieten, können Sie im Produkt- oder Checkout-Flow das dort angebotene Lieferintervall wählen (z. B. zwei wöchentlich, monatlich oder alle zwei Monate, falls verfügbar).</p>
 <p>Abonnementpreise können sich ändern. Preissenkungen können ohne gesonderte Mitteilung erfolgen. Erhöhungen teilen wir grundsätzlich mindestens 30 Tage vor Wirksamwerden mit, soweit gesetzlich nichts anderes zulässig ist oder abweichende Abonnementbedingungen gelten.</p>
-<p>Geplante Lieferungen können Sie im Kundenkonto verwalten (einschließlich Pausierung oder Datumsänderung, soweit die Funktionen dies zulassen). Zur Kündigung des Abonnements nutzen Sie die Kontoeinstellungen oder kontaktieren Sie den Kundendienst unter <a href="mailto:support@snusco.at">support@snusco.at</a> oder <a href="tel:+4312345678">+43 1 234 5678</a> vor der von uns mitgeteilten Frist für die nächste Auslieferung (in der Regel vor Versand am vorherigen Werktag). Kündigen Sie zu spät, kann auf die betroffene Lieferung weiterhin ein gesetzliches <a href="#withdrawal">Widerrufsrecht</a> anwendbar sein, soweit die Voraussetzungen vorliegen.</p>
+<p>Geplante Lieferungen können Sie im Kundenkonto verwalten (einschließlich Pausierung oder Datumsänderung, soweit die Funktionen dies zulassen). Zur Kündigung des Abonnements nutzen Sie die Kontoeinstellungen oder kontaktieren Sie den Kundendienst unter <a href="mailto:support@snuswe.at">support@snuswe.at</a> oder <a href="tel:+4312345678">+43 1 234 5678</a> vor der von uns mitgeteilten Frist für die nächste Auslieferung (in der Regel vor Versand am vorherigen Werktag). Kündigen Sie zu spät, kann auf die betroffene Lieferung weiterhin ein gesetzliches <a href="#withdrawal">Widerrufsrecht</a> anwendbar sein, soweit die Voraussetzungen vorliegen.</p>
 <p>Jede Abonnementsendung wird mit der von Ihnen gewählten oder aktualisierten Zahlungsart belastet. Bei Zahlungsausfall können wir nach Mitteilung, soweit erforderlich, weitere Lieferungen aussetzen oder kündigen.</p>
 <p>Abonnements unterliegen – soweit erforderlich – einer erfolgreichen Altersprüfung. Lieferungen erfolgen mit der von Ihnen gewählten Versandart, vorbehaltlich der Verfügbarkeit.</p>
 
@@ -205,7 +205,7 @@ export const TERMS_BODY_DE = `
 <p>Mit dem Absenden einer Produktbewertung räumen Sie uns ein einfaches, nicht ausschließliches Nutzungsrecht an Veröffentlichung auf der Website und in Marketingkanälen ein. Wir können Bewertungen ablehnen, kürzen oder entfernen, wenn sie rechtswidrig, irreführend, beleidigend oder offensichtlich sachfremd sind.</p>
 
 <h2 id="other">Schlussbestimmungen</h2>
-<p>Fragen zu diesen AGB, Rücksendungen oder Reklamationen: <a href="mailto:support@snusco.at">support@snusco.at</a> oder <a href="tel:+4312345678">+43 1 234 5678</a> (Mo–Fr 9:00–17:00 MEZ, außer an Feiertagen). Bitte geben Sie Ihre Bestellnummer aus der Bestellbestätigung an.</p>
+<p>Fragen zu diesen AGB, Rücksendungen oder Reklamationen: <a href="mailto:support@snuswe.at">support@snuswe.at</a> oder <a href="tel:+4312345678">+43 1 234 5678</a> (Mo–Fr 9:00–17:00 MEZ, außer an Feiertagen). Bitte geben Sie Ihre Bestellnummer aus der Bestellbestätigung an.</p>
 <p>Es gilt österreichisches Recht unter Ausschluss des Kollisionsrechts, das auf ein anderes Recht verweist, und unter Ausschluss des UN-Kaufrechts (CISG), soweit zulässig. Zwingende Verbraucherschutzvorschriften des Staates Ihres gewöhnlichen Aufenthaltsorts in der EU bleiben anwendbar, soweit dies unionsrechtlich vorgeschrieben ist.</p>
 <p>Für Verbraucher mit gewöhnlichem Aufenthalt in Österreich sind für Streitigkeiten aus diesen AGB und Ihren Bestellungen die österreichischen Gerichte zuständig, soweit gesetzliche Zuständigkeitsregeln dies vorsehen. Verbraucher mit gewöhnlichem Aufenthalt in einem anderen EU-Mitgliedstaat können unter Umständen auch vor den Gerichten ihres Aufenthaltsorts klagen.</p>
 <p>Vertragssprachen sind die auf der Website angebotenen Sprachen, insbesondere Deutsch und Englisch.</p>

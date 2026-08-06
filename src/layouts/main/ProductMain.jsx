@@ -16,7 +16,7 @@ import ProductSubscribeDrawer from "../../components/product/ProductSubscribeDra
 import descriptions from "../../descriptions.json";
 import { shopBasePath } from "../../utils/shopRoutes";
 
-/** SnusCo PDP referenca — plava i selekcije */
+/** SnusWe PDP referenca — plava i selekcije */
 const PDP_BLUE = "#001a57";
 const PDP_ROW_SELECTED = "#f2f2f2";
 const PDP_LINE = "#e8e8e8";
@@ -1115,7 +1115,7 @@ const ProductMain = () => {
       );
       setSavingsPercentage(newSavingsPercentage);
       setBreadcrumbItems([
-        { name: "SnusCo", url: "/" },
+        { name: "SnusWe", url: "/" },
         {
           name: "Nicotine Pouches",
           url: shopBasePath(langParam || i18n.language),

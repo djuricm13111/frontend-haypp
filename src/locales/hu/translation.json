@@ -22,13 +22,13 @@
     "VIEW_ALL_RESULTS": "Összes találat megtekintése ({{count}})",
     "FREE_DELIVERY_OVER_MIN": "Ingyenes {{min}} € felett",
     "PAY_WITH_KLARNA": "Fizetés Klarnával",
-    "LOGO_HOME": "SnusCo — főoldal",
+    "LOGO_HOME": "SnusWe — főoldal",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "Új év, új én",
       "NICOTINE_POUCHES": "Nikotinzacskók",
       "BEST_SELLERS": "Legjobban fogyó termékek",
       "NEW_ARRIVALS": "Újdonságok",
-      "BLOG": "A SnusCo blog",
+      "BLOG": "A SnusWe blog",
       "TOP_BRANDS": "Legjobb márkák"
     },
     "NAV_ITEMS": {
@@ -72,7 +72,7 @@
 
   "FOOTER": {
     "WARNING": "Figyelmeztetés: Termékeink nikotint tartalmaznak, amely erősen függőséget okozó anyag.",
-    "COPYRIGHT": "© 2025 SnusCo. Minden jog fenntartva.",
+    "COPYRIGHT": "© 2025 SnusWe. Minden jog fenntartva.",
     "FOLLOW_US": "Kövessen minket",
     "SUPPORT": "Támogatás",
     "FAQS": "GYIK",
@@ -80,8 +80,8 @@
     "TERMS_CONDITIONS": "Általános szerződési feltételek",
     "CATEGORIES": "Kategóriák",
     "CONTACT": "Kapcsolat",
-    "BRAND_ARIA": "SnusCo",
-    "BRAND_REGION": "SnusCo · Európa",
+    "BRAND_ARIA": "SnusWe",
+    "BRAND_REGION": "SnusWe · Európa",
     "PAYMENT_ARIA": "Fizetési módok",
     "PAYMENT_KLARNA": "Klarna",
     "PAYMENT_VISA": "VISA",
@@ -92,22 +92,22 @@
     "VERIFY_SUB": "ELLENŐRZÉS",
     "ACC_MENU_CS": "Ügyfélszolgálat",
     "ACC_MENU_LEGAL": "Jogi információk",
-    "ACC_MENU_COMPANY": "SnusCo",
+    "ACC_MENU_COMPANY": "SnusWe",
     "ACC_CS_DESC": "Rendelések, szállítás és elérhetőségeink.",
     "ACC_LEGAL_DESC": "Adatvédelem, feltételek, akadálymentesség és jogi információk.",
-    "ACC_COMPANY_DESC": "Rólunk és SnusCo hírek.",
+    "ACC_COMPANY_DESC": "Rólunk és SnusWe hírek.",
     "LINK_CONTACT": "Kapcsolat",
     "LINK_PRIVACY": "Adatvédelmi irányelvek",
     "LINK_TERMS": "Általános szerződési feltételek",
     "LINK_ACCESSIBILITY": "Akadálymentesség",
-    "LINK_ABOUT": "A SnusCo-ról",
+    "LINK_ABOUT": "A SnusWe-ról",
     "LINK_BLOG": "Blog",
     "CONTACT_BLOCK_TITLE": "Ügyfélszolgálat",
-    "EMAIL": "support@snusco.eu",
+    "EMAIL": "support@snuswe.com",
     "PHONE": "+43 1 234 5678",
     "PHONE_RAW": "+4312345678",
     "HOURS": "Hétfő–Péntek 9:00–17:00 (CET), ünnepnapokon zárva.",
-    "NAVY_COMPANY_LINE": "SnusCo GmbH · Európa"
+    "NAVY_COMPANY_LINE": "SnusWe GmbH · Európa"
   },
 
   "MENU": {
@@ -124,9 +124,9 @@
   },
 
   "BLOG": {
-    "PAGE_TITLE": "Blog | SnusCo",
+    "PAGE_TITLE": "Blog | SnusWe",
     "PAGE_DESCRIPTION": "Útmutatók és cikkek a nikotinzacskókról, formátumokról és márkákról.",
-    "LIST_HEADING": "SnusCo blog",
+    "LIST_HEADING": "SnusWe blog",
     "LIST_LEAD": "Részletes cikkek a nikotinzacskókról — formátumok, erősségek és hogyan válassza ki a megfelelőt.",
     "BY_AUTHOR": "Szerző: {{name}}",
     "CRUMB_HOME": "Főoldal",
@@ -136,38 +136,38 @@
   },
 
   "TERMS": {
-    "PAGE_TITLE": "Általános szerződési feltételek | SnusCo",
-    "PAGE_DESCRIPTION": "Általános szerződési feltételek a SnusCo-nál leadott rendelésekhez — Európa, fogyasztók, szállítás, fizetés, elállás és előfizetések.",
+    "PAGE_TITLE": "Általános szerződési feltételek | SnusWe",
+    "PAGE_DESCRIPTION": "Általános szerződési feltételek a SnusWe-nál leadott rendelésekhez — Európa, fogyasztók, szállítás, fizetés, elállás és előfizetések.",
     "HEADING": "Általános szerződési feltételek",
-    "SUBLINE": "SnusCo GmbH · Európa · Utoljára frissítve: {{date}} · Jogi felülvizsgálatra váró tervezet",
+    "SUBLINE": "SnusWe GmbH · Európa · Utoljára frissítve: {{date}} · Jogi felülvizsgálatra váró tervezet",
     "BREADCRUMB_ARIA": "Navigációs útvonal"
   },
 
   "PRIVACY": {
-    "PAGE_TITLE": "Adatvédelmi irányelvek | SnusCo",
-    "PAGE_DESCRIPTION": "Hogyan gyűjti, használja és védi a SnusCo személyes adatait — GDPR, Európa, az Ön jogai, sütik és megőrzés.",
+    "PAGE_TITLE": "Adatvédelmi irányelvek | SnusWe",
+    "PAGE_DESCRIPTION": "Hogyan gyűjti, használja és védi a SnusWe személyes adatait — GDPR, Európa, az Ön jogai, sütik és megőrzés.",
     "HEADING": "Adatvédelmi irányelvek",
-    "SUBLINE": "SnusCo GmbH · Európa · Utoljára frissítve: {{date}} · Tervezet adatvédelmi tisztviselői felülvizsgálatra",
+    "SUBLINE": "SnusWe GmbH · Európa · Utoljára frissítve: {{date}} · Tervezet adatvédelmi tisztviselői felülvizsgálatra",
     "BREADCRUMB_ARIA": "Navigációs útvonal"
   },
 
   "ACCESSIBILITY": {
-    "PAGE_TITLE": "Akadálymentesség | SnusCo",
-    "PAGE_DESCRIPTION": "A SnusCo digitális akadálymentességi megközelítése — WCAG 2.2 AA, ismert korlátok és visszajelzési lehetőségek.",
+    "PAGE_TITLE": "Akadálymentesség | SnusWe",
+    "PAGE_DESCRIPTION": "A SnusWe digitális akadálymentességi megközelítése — WCAG 2.2 AA, ismert korlátok és visszajelzési lehetőségek.",
     "HEADING": "Akadálymentesség",
-    "SUBLINE": "SnusCo GmbH · Európa · Utoljára frissítve: {{date}} · Nyilatkozat tervezet",
+    "SUBLINE": "SnusWe GmbH · Európa · Utoljára frissítve: {{date}} · Nyilatkozat tervezet",
     "BREADCRUMB_ARIA": "Navigációs útvonal"
   },
 
   "HOME": {
-    "HERO_TITLE": "SnusCo: Online nikotinzacskó áruház",
+    "HERO_TITLE": "SnusWe: Online nikotinzacskó áruház",
     "HERO_SUBTITLE": "Másnapi kiszállítás* 4,99 € feletti rendelésekhez — plusz egy ingyenes doboz minden vásárláshoz!*",
-    "ABOUT_TITLE": "A SnusCo-ról",
-    "ABOUT_SNUSCO": "Üdvözöljük a SnusCo-nál, az Ön megbízható célpontjánál a prémium, dohánymentes nikotintermékek terén. Megalakulásunk óta elköteleztek vagyunk a legjobb minőségű nikotinzacskók biztosítása iránt azok számára, akik az értékelik a biztonságot, az átláthatóságot és a kivételes ízélményt.",
-    "FEATURED_BRANDS": "A SnusCo-nál büszkén kínáljuk a legnépszerűbb márkák válogatott kínálatát, beleértve.",
+    "ABOUT_TITLE": "A SnusWe-ról",
+    "ABOUT_SNUSWE": "Üdvözöljük a SnusWe-nál, az Ön megbízható célpontjánál a prémium, dohánymentes nikotintermékek terén. Megalakulásunk óta elköteleztek vagyunk a legjobb minőségű nikotinzacskók biztosítása iránt azok számára, akik az értékelik a biztonságot, az átláthatóságot és a kivételes ízélményt.",
+    "FEATURED_BRANDS": "A SnusWe-nál büszkén kínáljuk a legnépszerűbb márkák válogatott kínálatát, beleértve.",
     "FEATURED_BRANDS_2": " Minden termék szigorú tesztelésen esik át a legmagasabb minőségi szabványok teljesítése érdekében, hogy csak a legjobbat kapja. Akár új a nikotinzacskók világában, akár tapasztalt felhasználó, útmutatókat és ajánlásokat kínálunk a tökéletes választáshoz.",
     "SHOPPING_EXPERIENCE": "Weboldalunk zökkenőmentes vásárlási élményt nyújt, gyors és megbízható kiszállítással. Az ügyfélbiztonságot megbízható korhatár-ellenőrzési folyamatokkal biztosítjuk, elősegítve egy biztonságos és felelős közösséget.",
-    "TOBACCO_FREE_LIFESTYLE": "Fedezze fel a dohánymentes életmód szabadságát a SnusCo-val. Szakértői tanácsokkal, oktatási forrásokkal és minőség iránti elkötelezettséggel támogatjuk Önt, hogy megalapozott döntéseket hozhasson. Válassza a SnusCo-t — ahol a kiválóság és a gondoskodás találkozik.",
+    "TOBACCO_FREE_LIFESTYLE": "Fedezze fel a dohánymentes életmód szabadságát a SnusWe-val. Szakértői tanácsokkal, oktatási forrásokkal és minőség iránti elkötelezettséggel támogatjuk Önt, hogy megalapozott döntéseket hozhasson. Válassza a SnusWe-t — ahol a kiválóság és a gondoskodás találkozik.",
     "PROMO_TITLES": {
       "FEATURED": "Kiemelt nikotinzacskók",
       "HOT_DEALS": "Forró ajánlatok",
@@ -178,7 +178,7 @@
     },
     "BUY_HERE": "Vásároljon itt",
     "PROMO_CARDS_LABEL": "Promóciós ajánlatok",
-    "PROMO_INTRO": "Fedezze fel a <nicotine>dohánymentes nikotinzacskók</nicotine> és a <free>nikotin nélküli zacskók</free> legjobb választékát a SnusCo-nál. Legyen szó legjobban fogyó termékekről, újdonságokról vagy a legújabb márkákról, nálunk mindent megtalál.",
+    "PROMO_INTRO": "Fedezze fel a <nicotine>dohánymentes nikotinzacskók</nicotine> és a <free>nikotin nélküli zacskók</free> legjobb választékát a SnusWe-nál. Legyen szó legjobban fogyó termékekről, újdonságokról vagy a legújabb márkákról, nálunk mindent megtalál.",
     "SHOP_BY_BRAND": "Vásároljon márka szerint",
     "FEATURED_PRODUCTS_TITLE": "Kiemelt termékek",
     "SHOP_BY_CATEGORY": "Vásároljon kategória szerint",
@@ -215,12 +215,12 @@
       "ARIA_SLIDE": "{{current}}. dia / {{total}}"
     },
     "TRUST": {
-      "ABOUT_H2": "A SnusCo-ról",
-      "ABOUT_P1": "A SnusCo olyan felnőttek számára készült, akik <strong>dohánymentes nikotinzacskókat</strong> keresnek felesleges bonyodalmak nélkül: valódi márkák, egyértelmű erősségek és leírások, amelyek segítenek magabiztosan választani.",
+      "ABOUT_H2": "A SnusWe-ról",
+      "ABOUT_P1": "A SnusWe olyan felnőttek számára készült, akik <strong>dohánymentes nikotinzacskókat</strong> keresnek felesleges bonyodalmak nélkül: valódi márkák, egyértelmű erősségek és leírások, amelyek segítenek magabiztosan választani.",
       "ABOUT_P2": "<strong>A korhatár-ellenőrzést és a felelős kiskereskedelmet</strong> komolyan vesszük — minden rendelést ellenőrzünk, hogy a nikotin a megfelelő kezekbe kerüljön.",
       "ABOUT_P3": "Csapatunk segítséget nyújt a formátum, az ízesítés vagy az erősség kiválasztásában — akár most próbálja először a zacskókat, akár megújítja a készletét.",
-      "WHY_H2": "Miért vásároljon a SnusCo-nál?",
-      "WHY_INTRO": "A bestsellerektől az újdonságokig a SnusCo <strong>ismert márkák nikotinzacskóit</strong> gyűjti össze egy helyen — gondosan csomagolva és kiszállítva Európa-szerte.",
+      "WHY_H2": "Miért vásároljon a SnusWe-nál?",
+      "WHY_INTRO": "A bestsellerektől az újdonságokig a SnusWe <strong>ismert márkák nikotinzacskóit</strong> gyűjti össze egy helyen — gondosan csomagolva és kiszállítva Európa-szerte.",
       "WHY_POINTS": [
         {
           "title": "Márkák egy helyen:",
@@ -254,8 +254,8 @@
   },
 
   "ACCOUNT": {
-    "PAGE_TITLE": "Fiókom | SnusCo",
-    "META_DESCRIPTION": "Az Ön SnusCo fiókja: adatok, jutalmak, mentett címek és rendeléstörténet.",
+    "PAGE_TITLE": "Fiókom | SnusWe",
+    "META_DESCRIPTION": "Az Ön SnusWe fiókja: adatok, jutalmak, mentett címek és rendeléstörténet.",
     "HEADING": "Fiókom",
     "LOADING": "Profil betöltése…",
     "DETAILS_TITLE": "Adatai",
@@ -374,7 +374,7 @@
   },
 
   "CHECKOUT": {
-    "PAGE_TITLE": "Fizetés | SnusCo",
+    "PAGE_TITLE": "Fizetés | SnusWe",
     "TITLE": "Fizetés",
     "SIGNED_IN_NOTICE": "Bejelentkezett — a fiókja e-mail-címét és mentett szállítási címeit használjuk az alábbiakban.",
     "BACK": "Vissza",
@@ -454,7 +454,7 @@
     "TITLE": "Bejelentkezés",
     "HINT_SECTION_TITLE": "Bejelentkezés",
     "ACCOUNT_HINT": "Lépjen be fiókjába a rendelések megtekintéséhez",
-    "LOGO_MARK": "SNUSCO",
+    "LOGO_MARK": "SNUSWE",
     "SUBTITLE": "Hozzáférés a fiókjához",
     "FORGOT_PASSWORD": "Elfelejtette jelszavát?",
     "DONT_HAVE_ACCOUNT": "Még nincs fiókja?",
@@ -467,12 +467,12 @@
   },
 
   "REGISTER": {
-    "PAGE_TITLE": "Fiók létrehozása — SnusCo",
+    "PAGE_TITLE": "Fiók létrehozása — SnusWe",
     "HEADER_BADGE": "Regisztráció",
     "TITLE": "Fiók létrehozása",
     "HINT_SECTION_TITLE": "Fiók létrehozása",
     "ACCOUNT_HINT": "Hozzon létre fiókot a rendelések nyomon követéséhez és a gyorsabb következő fizetéshez.",
-    "LOGO_MARK": "SNUSCO",
+    "LOGO_MARK": "SNUSWE",
     "ADDRESS_SECTION_TITLE": "Szállítási cím",
     "ADDRESS_HINT": "Most megadhatja az első rendelés felgyorsításához, vagy kihagyhatja és később megadhatja a fizetésnél.",
     "ADDRESS_OPTIONAL": "Opcionális — meggyorsítja a fizetést",
@@ -489,7 +489,7 @@
   },
 
   "PASSWORD_RESET": {
-    "FORGOT_PAGE_TITLE": "Elfelejtett jelszó | SnusCo",
+    "FORGOT_PAGE_TITLE": "Elfelejtett jelszó | SnusWe",
     "FORGOT_HEADER_BADGE": "Elfelejtett jelszó",
     "FORGOT_TITLE": "Jelszó visszaállítása",
     "FORGOT_LEAD": "Adja meg fiókjához tartozó e-mail-címét. Küldünk egy linket az új jelszó beállításához.",
@@ -501,7 +501,7 @@
     "ERROR_GENERIC": "Valami hiba történt. Kérjük, próbálja újra.",
     "ERROR_EMAIL_REQUIRED": "Kérjük, adja meg e-mail-címét.",
     "ERROR_USER_NOT_FOUND": "Nem található fiók ezzel az e-mail-címmel.",
-    "CONFIRM_PAGE_TITLE": "Új jelszó beállítása | SnusCo",
+    "CONFIRM_PAGE_TITLE": "Új jelszó beállítása | SnusWe",
     "CONFIRM_HEADER_BADGE": "Új jelszó",
     "CONFIRM_TITLE": "Új jelszó megadása",
     "CONFIRM_LEAD": "Adja meg és erősítse meg az új jelszavát lent.",
@@ -515,7 +515,7 @@
   },
 
   "VERIFICATION": {
-    "PAGE_TITLE": "E-mail megerősítése | SnusCo",
+    "PAGE_TITLE": "E-mail megerősítése | SnusWe",
     "HEADER_BADGE": "E-mail megerősítése",
     "TITLE": "Erősítse meg e-mail-címét",
     "SUBTITLE": "Kódot küldtünk a következő e-mail-címre: {{email}}. Adja meg alább a cím megerősítéséhez.",
@@ -609,14 +609,14 @@
     "AGE_WARNING_VERIFY": "ELLENŐRZÉS",
     "AGE_WARNING_BODY": "Ez a termék nem kockázatmentes. Nikotint tartalmaz, amely függőséget okozó anyag.",
     "TAXES": "Adók",
-    "TAXES_TITLE": "Adók a SnusCo európai rendelésein",
-    "TAXES_DESCRIPTION": "A SnusCo elkötelezett az európai adójogszabályok betartása mellett. Minden online rendelésnél az alkalmazandó adókat, beleértve a nikotinadókat és az áfát, a rendelés végösszegébe számítjuk bele a fizetéskor. A szállítási díjakra is vonatkozhat áfa Európában, a régiótól és az alkalmazandó jogszabályoktól függően.",
+    "TAXES_TITLE": "Adók a SnusWe európai rendelésein",
+    "TAXES_DESCRIPTION": "A SnusWe elkötelezett az európai adójogszabályok betartása mellett. Minden online rendelésnél az alkalmazandó adókat, beleértve a nikotinadókat és az áfát, a rendelés végösszegébe számítjuk bele a fizetéskor. A szállítási díjakra is vonatkozhat áfa Európában, a régiótól és az alkalmazandó jogszabályoktól függően.",
     "TAXES_CALCULATION_TITLE": "Hogyan számítják ki a nikotintermékek adóját?",
     "TAXES_CALCULATION_DESCRIPTION": "A nikotinfogyasztási adót (TNET) az alkalmazandó előírásoknak megfelelően alkalmazzák. A számítási módszer a termék típusától (dohányos vagy dohánymentes) és kategóriájától függ. Az adókat az alábbi módszerek egyikével számítják ki:",
-    "TAXES_CALCULATION_METHOD_1": "A nagykereskedelmi ár százalékában: A termék SnusCo-nál érvényes árának százalékában számítva.",
-    "TAXES_CALCULATION_METHOD_2": "Az ügyfélnek felszámított SnusCo eladási ár alapján: A kiskereskedelmi ár százalékában számítva.",
+    "TAXES_CALCULATION_METHOD_1": "A nagykereskedelmi ár százalékában: A termék SnusWe-nál érvényes árának százalékában számítva.",
+    "TAXES_CALCULATION_METHOD_2": "Az ügyfélnek felszámított SnusWe eladási ár alapján: A kiskereskedelmi ár százalékában számítva.",
     "TAXES_CALCULATION_METHOD_3": "Tömeg alapján: Grammonként vagy termékenként számítva.",
-    "VAT_CALCULATION_TITLE": "Hogyan számítja ki a SnusCo az áfát a rendelésekre?",
+    "VAT_CALCULATION_TITLE": "Hogyan számítja ki a SnusWe az áfát a rendelésekre?",
     "VAT_CALCULATION_DESCRIPTION": "Az áfát az alkalmazandó adórendeleteknek megfelelően számítják ki, és mind a termék árára, mind a legtöbb esetben a szállítási költségre alkalmazzák. A nikotintermékekre vonatkozó áfakulcs országonként eltér. Ez biztosítja a helyi adókövetelményeknek való teljes megfelelést.",
     "EXAMPLE_TITLE": "Példa adó- és áfaszámításra:",
     "EXAMPLE_SUBTITLE": "Példa:",
@@ -681,7 +681,7 @@
 
   "SEARCH": {
     "PAGE_TITLE": "Keresés: {{query}}",
-    "META_DESCRIPTION": "Keresési eredmények: \"{{query}}\" — nikotinzacskók a SnusCo-nál.",
+    "META_DESCRIPTION": "Keresési eredmények: \"{{query}}\" — nikotinzacskók a SnusWe-nál.",
     "META_EMPTY": "Keressen nikotinzacskókat és márkákat áruházunkban.",
     "NO_QUERY_TITLE": "Keresés",
     "SUBTITLE": "{{count}} termék",
@@ -771,31 +771,31 @@
       "PAGE_TITLE": "Bestseller",
       "TITLE": "Bestseller",
       "DESCRIPTION": "Legnépszerűbb nikotinzacskóink — a legjobban fogyó termékek az áruházból, értékesítési adatok alapján frissítve.",
-      "META_DESCRIPTION": "Vásároljon bestseller nikotinzacskókat a SnusCo-nál. Népszerű márkák és ízek, kiszállítás egész Európában."
+      "META_DESCRIPTION": "Vásároljon bestseller nikotinzacskókat a SnusWe-nál. Népszerű márkák és ízek, kiszállítás egész Európában."
     },
     "NEW_IN_STORE": {
       "PAGE_TITLE": "Újdonságok",
       "TITLE": "Újdonságok",
       "DESCRIPTION": "A legújabb érkezők — új termékek és friss sorozatok, amint megérkeznek a raktárunkba.",
-      "META_DESCRIPTION": "Fedezze fel a nikotinzacskók újdonságait a SnusCo-nál. Friss termékek és korlátozott kiadások, gyors kiszállítás Európában."
+      "META_DESCRIPTION": "Fedezze fel a nikotinzacskók újdonságait a SnusWe-nál. Friss termékek és korlátozott kiadások, gyors kiszállítás Európában."
     },
     "MIXPACKS": {
       "PAGE_TITLE": "Mixcsomagok és bundle-ök",
       "TITLE": "Mixcsomagok és bundle-ök",
       "DESCRIPTION": "Több dobozos csomagok és bundle-ök — próbáljon ki több ízesítést, vagy töltse fel készletét összeválogatott szettekkel kínálatunkból.",
-      "META_DESCRIPTION": "Vásároljon mixcsomagokat és bundle ajánlatokat nikotinzacskókra a SnusCo-nál. Több dobozos szettek és értékcsomagok, kiszállítás egész Európában."
+      "META_DESCRIPTION": "Vásároljon mixcsomagokat és bundle ajánlatokat nikotinzacskókra a SnusWe-nál. Több dobozos szettek és értékcsomagok, kiszállítás egész Európában."
     },
     "OFFERS": {
       "PAGE_TITLE": "Ajánlatok és akciók",
       "TITLE": "Ajánlatok és akciók",
-      "DESCRIPTION": "Akciós nikotinzacskók — jelenleg leárazott termékek a SnusCo-nál.",
-      "META_DESCRIPTION": "Vásároljon akciós nikotinzacskókat a SnusCo-nál. Aktuális ajánlatok és akciók, kiszállítás egész Európában."
+      "DESCRIPTION": "Akciós nikotinzacskók — jelenleg leárazott termékek a SnusWe-nál.",
+      "META_DESCRIPTION": "Vásároljon akciós nikotinzacskókat a SnusWe-nál. Aktuális ajánlatok és akciók, kiszállítás egész Európában."
     }
   },
 
   "ALL_BRANDS": {
     "PAGE_TITLE": "Márkák",
-    "META_DESCRIPTION": "Böngésszen a SnusCo összes elérhető nikotinzacskó márkája között — A–Z rendben, az áruház minden márkájára mutató linkekkel.",
+    "META_DESCRIPTION": "Böngésszen a SnusWe összes elérhető nikotinzacskó márkája között — A–Z rendben, az áruház minden márkájára mutató linkekkel.",
     "INTRO": "Jelenleg raktáron lévő összes márka ábécé sorrendben.",
     "LOAD_ERROR": "A márkák betöltése nem sikerült. Kérjük, próbálja újra később.",
     "LETTER_OTHER": "0–9 és szimbólumok",
@@ -1062,7 +1062,7 @@
   },
 
   "FREE_SAMPLE": {
-    "PAGE_TITLE": "Ingyenes nikotinzacskó minta minden rendeléshez | SnusCo",
+    "PAGE_TITLE": "Ingyenes nikotinzacskó minta minden rendeléshez | SnusWe",
     "META_DESCRIPTION": "Ingyenes nikotinzacskó minta minden rendeléshez. Clew, STNG és kiemelt márkák, európai kiszállítás, GYIK.",
     "PROMO_TITLE": "Ingyenes nikotinzacskó minta minden rendeléshez",
     "PROMO_BODY": "Fedezzen fel valami újat minden rendeléssel! Kapjon ingyenes nikotinzacskó mintát a hónap kiemelt márkájától, és próbáljon ki új ízesítéseket, márkákat és erősségeket. Élvezze a legjobb márkákat és a gyors európai kiszállítást, plusz exkluzív kedvezményt következő rendeléséhez.",
@@ -1084,7 +1084,7 @@
     "WHY_P2": "Dohánymentes nikotinzacskó ingyenes minta programunk új zacskó márkákat, ízesítéseket és erősségeket hoz Önnek, amelyeket esetleg nem választott volna magától. A legegyszerűbb módja az új kedvencek felfedezésének.",
     "WHY_P3": "Még több ajánlatot szeretne? Fedezze fel <PickMixLink>Pick and Mix</PickMixLink> és <OffersLink>nikotinzacskó ajánlatok</OffersLink> oldalainkat — minden hónapban új és izgalmas kedvezményekkel frissülnek.",
     "DELIVERY_TITLE": "Gyors kiszállítás, diszkrét csomagolás",
-    "DELIVERY_INTRO": "A SnusCo gyors kiszállítást kínál egész Európában az ingyenes nikotinzacskó mintához, beleértve a másnapi lehetőségeket is. Emellett diszkrét csomagolást használunk az adatvédelem érdekében.",
+    "DELIVERY_INTRO": "A SnusWe gyors kiszállítást kínál egész Európában az ingyenes nikotinzacskó mintához, beleértve a másnapi lehetőségeket is. Emellett diszkrét csomagolást használunk az adatvédelem érdekében.",
     "DELIVERY_OPTIONS_TITLE": "Kiszállítási lehetőségek:",
     "DELIVERY_OPT_1": "InPost csomagautomaták",
     "DELIVERY_OPT_2": "Normál postai kiszállítás",

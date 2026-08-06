@@ -17,7 +17,7 @@ import {
   PRIVACY_BODY_DE,
   PRIVACY_BODY_EN,
   PRIVACY_LAST_UPDATED,
-} from "../content/snuscoPrivacyHtml";
+} from "../content/snuswePrivacyHtml";
 import { LegalDocumentProse } from "../components/LegalDocumentProse";
 
 const Shell = styled.div`
@@ -92,7 +92,7 @@ function PrivacyPolicy() {
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const html = lang === "de" ? PRIVACY_BODY_DE : PRIVACY_BODY_EN;
-  const canonical = `https://snusco.eu/${lang}/privacy`;
+  const canonical = `https://snuswe.com/${lang}/privacy`;
 
   return (
     <>

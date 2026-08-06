@@ -53,7 +53,7 @@ const BrandRegion = styled.p`
   font-family: "Montserrat", var(--font-family, sans-serif);
 `;
 
-/** Plava traka — bedževi kao na SnusCo referenci (beli / outline) */
+/** Plava traka — bedževi kao na SnusWe referenci (beli / outline) */
 const NavyLogosRow = styled.div`
   max-width: var(--max-width-container);
   margin: 0 auto;
@@ -466,8 +466,8 @@ function SiteFooter() {
     <Shell>
       <Inner>
         <BrandBlock>
-          <BrandWordmark aria-label={t("FOOTER.BRAND_ARIA", { defaultValue: "SnusCo" })}>
-            SNUSCO
+          <BrandWordmark aria-label={t("FOOTER.BRAND_ARIA", { defaultValue: "SnusWe" })}>
+            SNUSWE
           </BrandWordmark>
           <BrandRegion>{t("FOOTER.BRAND_REGION")}</BrandRegion>
         </BrandBlock>

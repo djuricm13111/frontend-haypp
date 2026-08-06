@@ -1,9 +1,9 @@
-/** SnusCo — Accessibility statement (draft). */
+/** SnusWe — Accessibility statement (draft). */
 
 export const ACCESSIBILITY_LAST_UPDATED = "2026-04-24";
 
 export const ACCESSIBILITY_BODY_EN = `
-<p>This statement describes how <strong>SnusCo</strong> approaches digital accessibility for <a href="https://snusco.eu">www.snusco.at</a>. We aim to align with the <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 Level AA where reasonably achievable for our customers in Austria and beyond.</p>
+<p>This statement describes how <strong>SnusWe</strong> approaches digital accessibility for <a href="https://snuswe.com">www.snuswe.at</a>. We aim to align with the <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 Level AA where reasonably achievable for our customers in Austria and beyond.</p>
 <h2 id="toc">On this page</h2>
 <ul>
 <li><a href="#commitment">Our commitment</a></li>
@@ -13,10 +13,10 @@ export const ACCESSIBILITY_BODY_EN = `
 </ul>
 
 <h2 id="commitment">Our commitment to accessibility</h2>
-<p>At SnusCo, we want shopping for nicotine pouches and related products to be as inclusive and usable as possible. Accessibility is part of how we think about product pages, checkout, and customer journeys—not an afterthought. Our goal is that people using assistive technologies, keyboard-only navigation, or different sensory needs can use our services in a straightforward way.</p>
+<p>At SnusWe, we want shopping for nicotine pouches and related products to be as inclusive and usable as possible. Accessibility is part of how we think about product pages, checkout, and customer journeys—not an afterthought. Our goal is that people using assistive technologies, keyboard-only navigation, or different sensory needs can use our services in a straightforward way.</p>
 
 <h2 id="work">Our accessibility work</h2>
-<p>We work continuously to improve the experience for everyone who visits SnusCo. Accessibility is considered during design and development, and we combine automated checks with manual testing of critical flows (browse, product details, cart, and account where available).</p>
+<p>We work continuously to improve the experience for everyone who visits SnusWe. Accessibility is considered during design and development, and we combine automated checks with manual testing of critical flows (browse, product details, cart, and account where available).</p>
 <p>We benchmark against WCAG 2.2 Level AA. We may also engage external specialists for audits or reviews when we ship larger changes. Meeting every success criterion on every legacy screen can take time; where gaps exist, we document them and prioritise fixes that affect real users most.</p>
 
 <h2 id="improvements">Areas for improvement</h2>
@@ -30,13 +30,13 @@ export const ACCESSIBILITY_BODY_EN = `
 </ul>
 
 <h2 id="feedback">Feedback</h2>
-<p>Your experience matters. If you run into an accessibility barrier on SnusCo, or have suggestions, please contact us—we read every message and use them to plan fixes.</p>
-<p><strong>Customer service:</strong> <a href="mailto:support@snusco.at">support@snusco.at</a> · <a href="tel:+4312345678">+43 1 234 5678</a> (Mon–Fri 9:00–17:00 CET)</p>
+<p>Your experience matters. If you run into an accessibility barrier on SnusWe, or have suggestions, please contact us—we read every message and use them to plan fixes.</p>
+<p><strong>Customer service:</strong> <a href="mailto:support@snuswe.at">support@snuswe.at</a> · <a href="tel:+4312345678">+43 1 234 5678</a> (Mon–Fri 9:00–17:00 CET)</p>
 <p><strong>Last updated:</strong> ${ACCESSIBILITY_LAST_UPDATED}.</p>
 `;
 
 export const ACCESSIBILITY_BODY_DE = `
-<p>Diese Erklärung beschreibt, wie <strong>SnusCo</strong> digitale Barrierefreiheit für <a href="https://snusco.eu">www.snusco.at</a> angeht. Wir orientieren uns an den <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 Konformitätsstufe AA, soweit für unseren Shop wirtschaftlich und technisch zumutbar.</p>
+<p>Diese Erklärung beschreibt, wie <strong>SnusWe</strong> digitale Barrierefreiheit für <a href="https://snuswe.com">www.snuswe.at</a> angeht. Wir orientieren uns an den <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 Konformitätsstufe AA, soweit für unseren Shop wirtschaftlich und technisch zumutbar.</p>
 <h2 id="toc">Inhalt</h2>
 <ul>
 <li><a href="#commitment">Unser Bekenntnis</a></li>
@@ -46,7 +46,7 @@ export const ACCESSIBILITY_BODY_DE = `
 </ul>
 
 <h2 id="commitment">Unser Bekenntnis zur Barrierefreiheit</h2>
-<p>Bei SnusCo möchten wir den Einkauf von Nikotinbeuteln und verwandten Produkten möglichst inklusiv und bedienbar gestalten. Barrierefreiheit fließt in Produktseiten, Checkout und Kundenwege ein. Unser Ziel ist, dass Menschen mit assistiven Technologien, rein per Tastatur oder mit unterschiedlichen sensorischen Anforderungen unsere Angebote möglichst reibungslos nutzen können.</p>
+<p>Bei SnusWe möchten wir den Einkauf von Nikotinbeuteln und verwandten Produkten möglichst inklusiv und bedienbar gestalten. Barrierefreiheit fließt in Produktseiten, Checkout und Kundenwege ein. Unser Ziel ist, dass Menschen mit assistiven Technologien, rein per Tastatur oder mit unterschiedlichen sensorischen Anforderungen unsere Angebote möglichst reibungslos nutzen können.</p>
 
 <h2 id="work">Unsere Arbeit an Barrierefreiheit</h2>
 <p>Wir verbessern die Nutzungserfahrung fortlaufend. Barrierefreiheit wird in Konzeption und Entwicklung berücksichtigt; wir kombinieren automatisierte Prüfungen mit manuellen Tests zentraler Abläufe (Stöbern, Produktdetail, Warenkorb, Konto soweit vorhanden).</p>
@@ -63,7 +63,7 @@ export const ACCESSIBILITY_BODY_DE = `
 </ul>
 
 <h2 id="feedback">Rückmeldung</h2>
-<p>Wenn Sie auf SnusCo auf Barrieren stoßen oder Vorschläge haben, schreiben Sie uns—wir nutzen Ihr Feedback für die Planung von Verbesserungen.</p>
-<p><strong>Kundenservice:</strong> <a href="mailto:support@snusco.at">support@snusco.at</a> · <a href="tel:+4312345678">+43 1 234 5678</a> (Mo–Fr 9:00–17:00 MEZ)</p>
+<p>Wenn Sie auf SnusWe auf Barrieren stoßen oder Vorschläge haben, schreiben Sie uns—wir nutzen Ihr Feedback für die Planung von Verbesserungen.</p>
+<p><strong>Kundenservice:</strong> <a href="mailto:support@snuswe.at">support@snuswe.at</a> · <a href="tel:+4312345678">+43 1 234 5678</a> (Mo–Fr 9:00–17:00 MEZ)</p>
 <p><strong>Stand:</strong> ${ACCESSIBILITY_LAST_UPDATED}.</p>
 `;

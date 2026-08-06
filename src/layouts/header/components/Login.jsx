@@ -504,7 +504,7 @@ const GOOGLE_CLIENT_ID =
   "1073769483725-9r694i6s793d9ccmtfc2nh4tq4379s5a.apps.googleusercontent.com";
 
 /** Jednom po tab sesiji — ne prikazuj ponovo obaveštenje posle zatvaranja / Sign in. */
-const SESSION_NUDGE_KEY = "snusco_login_reorder_nudge_dismissed";
+const SESSION_NUDGE_KEY = "snuswe_login_reorder_nudge_dismissed";
 
 /** Omotač oko user ikone — badge kao na korpi (CartMenu SumQuantity). */
 const UserIconBadgeWrap = styled.span`

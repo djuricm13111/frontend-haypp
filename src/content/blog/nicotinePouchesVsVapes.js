@@ -19,9 +19,9 @@ export const nicotinePouchesVsVapes = {
   },
   published: "2026-04-07",
   author: {
-    en: "SnusCo Editorial",
-    de: "SnusCo Editorial",
-    hu: "SnusCo Szerkesztőség",
+    en: "SnusWe Editorial",
+    de: "SnusWe Editorial",
+    hu: "SnusWe Szerkesztőség",
   },
   meta: {
     title: {

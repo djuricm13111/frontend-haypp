@@ -167,7 +167,7 @@ function CheckIcon() {
 }
 
 /**
- * Donji blok početne: o SnusCo + zašto kupovati (liste, brend, dostava).
+ * Donji blok početne: o SnusWe + zašto kupovati (liste, brend, dostava).
  */
 const HomeAboutTrust = () => {
   const { t } = useTranslation();
@@ -175,10 +175,10 @@ const HomeAboutTrust = () => {
   const points = Array.isArray(rawPoints) ? rawPoints : [];
 
   return (
-    <Wrap aria-labelledby="home-about-snusco-heading">
+    <Wrap aria-labelledby="home-about-snuswe-heading">
       <Inner>
         <AboutBlock>
-          <H2 id="home-about-snusco-heading">{t("HOME.TRUST.ABOUT_H2")}</H2>
+          <H2 id="home-about-snuswe-heading">{t("HOME.TRUST.ABOUT_H2")}</H2>
           <Prose>
             <p>
               <Trans
@@ -196,8 +196,8 @@ const HomeAboutTrust = () => {
           </Prose>
         </AboutBlock>
 
-        <WhyBlock aria-labelledby="home-why-snusco-heading">
-          <H2 id="home-why-snusco-heading">{t("HOME.TRUST.WHY_H2")}</H2>
+        <WhyBlock aria-labelledby="home-why-snuswe-heading">
+          <H2 id="home-why-snuswe-heading">{t("HOME.TRUST.WHY_H2")}</H2>
           <WhyIntro>
             <Trans
               i18nKey="HOME.TRUST.WHY_INTRO"

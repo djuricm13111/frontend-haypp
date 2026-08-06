@@ -5,692 +5,692 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://snusco.eu/</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/"/>
+    <loc>https://www.snuswe.com/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Shop -->
   <url>
-    <loc>https://snusco.eu/en/snus-verkauf</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf"/>
+    <loc>https://www.snuswe.com/en/snus-verkauf</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf"/>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/snus-verkauf</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf"/>
+    <loc>https://www.snuswe.com/de/snus-verkauf</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf"/>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/snus-verkauf</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf"/>
+    <loc>https://www.snuswe.com/hu/snus-verkauf</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf"/>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- All Brands -->
   <url>
-    <loc>https://snusco.eu/en/all-brands</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/all-brands"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/all-brands"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/all-brands"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/all-brands"/>
+    <loc>https://www.snuswe.com/en/all-brands</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/all-brands"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/all-brands"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/all-brands"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/all-brands"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/all-brands</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/all-brands"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/all-brands"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/all-brands"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/all-brands"/>
+    <loc>https://www.snuswe.com/de/all-brands</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/all-brands"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/all-brands"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/all-brands"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/all-brands"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/all-brands</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/all-brands"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/all-brands"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/all-brands"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/all-brands"/>
+    <loc>https://www.snuswe.com/hu/all-brands</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/all-brands"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/all-brands"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/all-brands"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/all-brands"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Bestsellers -->
   <url>
-    <loc>https://snusco.eu/en/bestsellers</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/bestsellers"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/bestsellers"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/bestsellers"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/bestsellers"/>
+    <loc>https://www.snuswe.com/en/bestsellers</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/bestsellers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/bestsellers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/bestsellers"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/bestsellers"/>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/bestsellers</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/bestsellers"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/bestsellers"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/bestsellers"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/bestsellers"/>
+    <loc>https://www.snuswe.com/de/bestsellers</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/bestsellers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/bestsellers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/bestsellers"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/bestsellers"/>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/bestsellers</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/bestsellers"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/bestsellers"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/bestsellers"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/bestsellers"/>
+    <loc>https://www.snuswe.com/hu/bestsellers</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/bestsellers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/bestsellers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/bestsellers"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/bestsellers"/>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- New In Store -->
   <url>
-    <loc>https://snusco.eu/en/new-in-store</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/new-in-store"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/new-in-store"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/new-in-store"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/new-in-store"/>
+    <loc>https://www.snuswe.com/en/new-in-store</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/new-in-store"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/new-in-store"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/new-in-store"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/new-in-store"/>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/new-in-store</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/new-in-store"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/new-in-store"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/new-in-store"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/new-in-store"/>
+    <loc>https://www.snuswe.com/de/new-in-store</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/new-in-store"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/new-in-store"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/new-in-store"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/new-in-store"/>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/new-in-store</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/new-in-store"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/new-in-store"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/new-in-store"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/new-in-store"/>
+    <loc>https://www.snuswe.com/hu/new-in-store</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/new-in-store"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/new-in-store"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/new-in-store"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/new-in-store"/>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Mixpacks / Bundles -->
   <url>
-    <loc>https://snusco.eu/en/mixpacks-bundles</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/mixpacks-bundles"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/mixpacks-bundles"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/mixpacks-bundles"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/mixpacks-bundles"/>
+    <loc>https://www.snuswe.com/en/mixpacks-bundles</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/mixpacks-bundles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/mixpacks-bundles"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/mixpacks-bundles"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/mixpacks-bundles"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/mixpacks-bundles</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/mixpacks-bundles"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/mixpacks-bundles"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/mixpacks-bundles"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/mixpacks-bundles"/>
+    <loc>https://www.snuswe.com/de/mixpacks-bundles</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/mixpacks-bundles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/mixpacks-bundles"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/mixpacks-bundles"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/mixpacks-bundles"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/mixpacks-bundles</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/mixpacks-bundles"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/mixpacks-bundles"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/mixpacks-bundles"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/mixpacks-bundles"/>
+    <loc>https://www.snuswe.com/hu/mixpacks-bundles</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/mixpacks-bundles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/mixpacks-bundles"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/mixpacks-bundles"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/mixpacks-bundles"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Flavour hub -->
   <url>
-    <loc>https://snusco.eu/en/snus-verkauf/flavours</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours"/>
+    <loc>https://www.snuswe.com/en/snus-verkauf/flavours</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/snus-verkauf/flavours</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours"/>
+    <loc>https://www.snuswe.com/de/snus-verkauf/flavours</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/flavours</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours"/>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/flavours</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://snusco.eu/en/snus-verkauf/flavours/mint</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/mint"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/mint"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/mint"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/mint"/>
+    <loc>https://www.snuswe.com/en/snus-verkauf/flavours/mint</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/mint"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/mint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/mint"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/mint"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/snus-verkauf/flavours/mint</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/mint"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/mint"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/mint"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/mint"/>
+    <loc>https://www.snuswe.com/de/snus-verkauf/flavours/mint</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/mint"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/mint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/mint"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/mint"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/flavours/mint</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/mint"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/mint"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/mint"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/mint"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://snusco.eu/en/snus-verkauf/flavours/fruit</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/fruit"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/fruit"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/fruit"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/fruit"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/de/snus-verkauf/flavours/fruit</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/fruit"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/fruit"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/fruit"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/fruit"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/flavours/fruit</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/fruit"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/fruit"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/fruit"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/fruit"/>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/flavours/mint</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/mint"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/mint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/mint"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/mint"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://snusco.eu/en/snus-verkauf/flavours/citrus</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/citrus"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/citrus"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/citrus"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/citrus"/>
+    <loc>https://www.snuswe.com/en/snus-verkauf/flavours/fruit</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/fruit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/fruit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/fruit"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/fruit"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/snus-verkauf/flavours/citrus</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/citrus"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/citrus"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/citrus"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/citrus"/>
+    <loc>https://www.snuswe.com/de/snus-verkauf/flavours/fruit</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/fruit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/fruit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/fruit"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/fruit"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/flavours/citrus</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/citrus"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/citrus"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/citrus"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/citrus"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://snusco.eu/en/snus-verkauf/flavours/coffee</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/coffee"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/coffee"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/coffee"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/coffee"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/de/snus-verkauf/flavours/coffee</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/coffee"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/coffee"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/coffee"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/coffee"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/flavours/coffee</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/coffee"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/coffee"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/coffee"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/coffee"/>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/flavours/fruit</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/fruit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/fruit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/fruit"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/fruit"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://snusco.eu/en/snus-verkauf/flavours/liquorice</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/liquorice"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/liquorice"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/liquorice"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/liquorice"/>
+    <loc>https://www.snuswe.com/en/snus-verkauf/flavours/citrus</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/citrus"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/citrus"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/citrus"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/citrus"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/snus-verkauf/flavours/liquorice</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/liquorice"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/liquorice"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/liquorice"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/liquorice"/>
+    <loc>https://www.snuswe.com/de/snus-verkauf/flavours/citrus</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/citrus"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/citrus"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/citrus"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/citrus"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/flavours/liquorice</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/flavours/liquorice"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/flavours/liquorice"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/flavours/liquorice"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/flavours/liquorice"/>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/flavours/citrus</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/citrus"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/citrus"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/citrus"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/citrus"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.snuswe.com/en/snus-verkauf/flavours/coffee</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/coffee"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/coffee"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/coffee"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/coffee"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/de/snus-verkauf/flavours/coffee</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/coffee"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/coffee"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/coffee"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/coffee"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/flavours/coffee</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/coffee"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/coffee"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/coffee"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/coffee"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.snuswe.com/en/snus-verkauf/flavours/liquorice</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/liquorice"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/liquorice"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/liquorice"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/liquorice"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/de/snus-verkauf/flavours/liquorice</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/liquorice"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/liquorice"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/liquorice"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/liquorice"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/flavours/liquorice</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/flavours/liquorice"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/flavours/liquorice"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/flavours/liquorice"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/flavours/liquorice"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Strength hub -->
   <url>
-    <loc>https://snusco.eu/en/snus-verkauf/strength</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength"/>
+    <loc>https://www.snuswe.com/en/snus-verkauf/strength</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/snus-verkauf/strength</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength"/>
+    <loc>https://www.snuswe.com/de/snus-verkauf/strength</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/strength</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength"/>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/strength</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://snusco.eu/en/snus-verkauf/strength/low</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/low"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/low"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/low"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/low"/>
+    <loc>https://www.snuswe.com/en/snus-verkauf/strength/low</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/low"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/low"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/low"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/low"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/snus-verkauf/strength/low</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/low"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/low"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/low"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/low"/>
+    <loc>https://www.snuswe.com/de/snus-verkauf/strength/low</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/low"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/low"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/low"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/low"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/strength/low</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/low"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/low"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/low"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/low"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://snusco.eu/en/snus-verkauf/strength/normal</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/normal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/normal"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/normal"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/normal"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/de/snus-verkauf/strength/normal</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/normal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/normal"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/normal"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/normal"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/strength/normal</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/normal"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/normal"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/normal"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/normal"/>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/strength/low</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/low"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/low"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/low"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/low"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://snusco.eu/en/snus-verkauf/strength/strong</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/strong"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/strong"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/strong"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/strong"/>
+    <loc>https://www.snuswe.com/en/snus-verkauf/strength/normal</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/normal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/normal"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/normal"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/normal"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/snus-verkauf/strength/strong</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/strong"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/strong"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/strong"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/strong"/>
+    <loc>https://www.snuswe.com/de/snus-verkauf/strength/normal</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/normal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/normal"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/normal"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/normal"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/strength/strong</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/strong"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/strong"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/strong"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/strong"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://snusco.eu/en/snus-verkauf/strength/extra-strong</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/extra-strong"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/extra-strong"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/extra-strong"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/extra-strong"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/de/snus-verkauf/strength/extra-strong</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/extra-strong"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/extra-strong"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/extra-strong"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/extra-strong"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/strength/extra-strong</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/extra-strong"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/extra-strong"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/extra-strong"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/extra-strong"/>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/strength/normal</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/normal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/normal"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/normal"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/normal"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://snusco.eu/en/snus-verkauf/strength/ultra-strong</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/ultra-strong"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/ultra-strong"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/ultra-strong"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/ultra-strong"/>
+    <loc>https://www.snuswe.com/en/snus-verkauf/strength/strong</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/strong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/strong"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/strong"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/strong"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/snus-verkauf/strength/ultra-strong</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/ultra-strong"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/ultra-strong"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/ultra-strong"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/ultra-strong"/>
+    <loc>https://www.snuswe.com/de/snus-verkauf/strength/strong</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/strong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/strong"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/strong"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/strong"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/snus-verkauf/strength/ultra-strong</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/snus-verkauf/strength/ultra-strong"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/snus-verkauf/strength/ultra-strong"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/snus-verkauf/strength/ultra-strong"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/snus-verkauf/strength/ultra-strong"/>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/strength/strong</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/strong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/strong"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/strong"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/strong"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.snuswe.com/en/snus-verkauf/strength/extra-strong</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/extra-strong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/extra-strong"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/extra-strong"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/extra-strong"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/de/snus-verkauf/strength/extra-strong</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/extra-strong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/extra-strong"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/extra-strong"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/extra-strong"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/strength/extra-strong</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/extra-strong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/extra-strong"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/extra-strong"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/extra-strong"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.snuswe.com/en/snus-verkauf/strength/ultra-strong</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/ultra-strong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/ultra-strong"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/ultra-strong"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/ultra-strong"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/de/snus-verkauf/strength/ultra-strong</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/ultra-strong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/ultra-strong"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/ultra-strong"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/ultra-strong"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/hu/snus-verkauf/strength/ultra-strong</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/snus-verkauf/strength/ultra-strong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/snus-verkauf/strength/ultra-strong"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/snus-verkauf/strength/ultra-strong"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/snus-verkauf/strength/ultra-strong"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Blog listing -->
   <url>
-    <loc>https://snusco.eu/en/blog</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog"/>
+    <loc>https://www.snuswe.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/blog</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog"/>
+    <loc>https://www.snuswe.com/de/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/blog</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog"/>
+    <loc>https://www.snuswe.com/hu/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Blog articles -->
   <url>
-    <loc>https://snusco.eu/en/blog/nicotine-pouches-vs-vapes</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/nicotine-pouches-vs-vapes"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/nicotine-pouches-vs-vapes"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/nicotine-pouches-vs-vapes"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/nicotine-pouches-vs-vapes"/>
+    <loc>https://www.snuswe.com/en/blog/nicotine-pouches-vs-vapes</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/nicotine-pouches-vs-vapes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/nicotine-pouches-vs-vapes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/nicotine-pouches-vs-vapes"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/nicotine-pouches-vs-vapes"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/blog/nicotine-pouches-vs-vapes</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/nicotine-pouches-vs-vapes"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/nicotine-pouches-vs-vapes"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/nicotine-pouches-vs-vapes"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/nicotine-pouches-vs-vapes"/>
+    <loc>https://www.snuswe.com/de/blog/nicotine-pouches-vs-vapes</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/nicotine-pouches-vs-vapes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/nicotine-pouches-vs-vapes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/nicotine-pouches-vs-vapes"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/nicotine-pouches-vs-vapes"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/blog/nicotine-pouches-vs-vapes</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/nicotine-pouches-vs-vapes"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/nicotine-pouches-vs-vapes"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/nicotine-pouches-vs-vapes"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/nicotine-pouches-vs-vapes"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://snusco.eu/en/blog/velo-mini-vs-slim</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/velo-mini-vs-slim"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/velo-mini-vs-slim"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/velo-mini-vs-slim"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/velo-mini-vs-slim"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/de/blog/velo-mini-vs-slim</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/velo-mini-vs-slim"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/velo-mini-vs-slim"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/velo-mini-vs-slim"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/velo-mini-vs-slim"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://snusco.eu/hu/blog/velo-mini-vs-slim</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/velo-mini-vs-slim"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/velo-mini-vs-slim"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/velo-mini-vs-slim"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/velo-mini-vs-slim"/>
+    <loc>https://www.snuswe.com/hu/blog/nicotine-pouches-vs-vapes</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/nicotine-pouches-vs-vapes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/nicotine-pouches-vs-vapes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/nicotine-pouches-vs-vapes"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/nicotine-pouches-vs-vapes"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://snusco.eu/en/blog/beginners-guide-nicotine-pouches</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/beginners-guide-nicotine-pouches"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/beginners-guide-nicotine-pouches"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/beginners-guide-nicotine-pouches"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/beginners-guide-nicotine-pouches"/>
+    <loc>https://www.snuswe.com/en/blog/velo-mini-vs-slim</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/velo-mini-vs-slim"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/velo-mini-vs-slim"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/velo-mini-vs-slim"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/velo-mini-vs-slim"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/blog/beginners-guide-nicotine-pouches</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/beginners-guide-nicotine-pouches"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/beginners-guide-nicotine-pouches"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/beginners-guide-nicotine-pouches"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/beginners-guide-nicotine-pouches"/>
+    <loc>https://www.snuswe.com/de/blog/velo-mini-vs-slim</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/velo-mini-vs-slim"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/velo-mini-vs-slim"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/velo-mini-vs-slim"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/velo-mini-vs-slim"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/blog/beginners-guide-nicotine-pouches</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/beginners-guide-nicotine-pouches"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/beginners-guide-nicotine-pouches"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/beginners-guide-nicotine-pouches"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/beginners-guide-nicotine-pouches"/>
+    <loc>https://www.snuswe.com/hu/blog/velo-mini-vs-slim</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/velo-mini-vs-slim"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/velo-mini-vs-slim"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/velo-mini-vs-slim"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/velo-mini-vs-slim"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://snusco.eu/en/blog/pablo-nicotine-pouches-review</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/pablo-nicotine-pouches-review"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/pablo-nicotine-pouches-review"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/pablo-nicotine-pouches-review"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/pablo-nicotine-pouches-review"/>
+    <loc>https://www.snuswe.com/en/blog/beginners-guide-nicotine-pouches</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/beginners-guide-nicotine-pouches"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/beginners-guide-nicotine-pouches"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/beginners-guide-nicotine-pouches"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/beginners-guide-nicotine-pouches"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/blog/pablo-nicotine-pouches-review</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/pablo-nicotine-pouches-review"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/pablo-nicotine-pouches-review"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/pablo-nicotine-pouches-review"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/pablo-nicotine-pouches-review"/>
+    <loc>https://www.snuswe.com/de/blog/beginners-guide-nicotine-pouches</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/beginners-guide-nicotine-pouches"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/beginners-guide-nicotine-pouches"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/beginners-guide-nicotine-pouches"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/beginners-guide-nicotine-pouches"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/blog/pablo-nicotine-pouches-review</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/blog/pablo-nicotine-pouches-review"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/blog/pablo-nicotine-pouches-review"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/blog/pablo-nicotine-pouches-review"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/blog/pablo-nicotine-pouches-review"/>
+    <loc>https://www.snuswe.com/hu/blog/beginners-guide-nicotine-pouches</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/beginners-guide-nicotine-pouches"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/beginners-guide-nicotine-pouches"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/beginners-guide-nicotine-pouches"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/beginners-guide-nicotine-pouches"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.snuswe.com/en/blog/pablo-nicotine-pouches-review</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/pablo-nicotine-pouches-review"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/pablo-nicotine-pouches-review"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/pablo-nicotine-pouches-review"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/pablo-nicotine-pouches-review"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/de/blog/pablo-nicotine-pouches-review</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/pablo-nicotine-pouches-review"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/pablo-nicotine-pouches-review"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/pablo-nicotine-pouches-review"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/pablo-nicotine-pouches-review"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.snuswe.com/hu/blog/pablo-nicotine-pouches-review</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/blog/pablo-nicotine-pouches-review"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/blog/pablo-nicotine-pouches-review"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/blog/pablo-nicotine-pouches-review"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/blog/pablo-nicotine-pouches-review"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Legal -->
   <url>
-    <loc>https://snusco.eu/en/terms</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/terms"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/terms"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/terms"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/terms"/>
+    <loc>https://www.snuswe.com/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/terms"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/terms</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/terms"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/terms"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/terms"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/terms"/>
+    <loc>https://www.snuswe.com/de/terms</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/terms"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/terms</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/terms"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/terms"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/terms"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/terms"/>
+    <loc>https://www.snuswe.com/hu/terms</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/terms"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://snusco.eu/en/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/privacy"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/privacy"/>
+    <loc>https://www.snuswe.com/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/privacy"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/de/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/privacy"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/privacy"/>
+    <loc>https://www.snuswe.com/de/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/privacy"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://snusco.eu/hu/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://snusco.eu/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://snusco.eu/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://snusco.eu/de/privacy"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://snusco.eu/hu/privacy"/>
+    <loc>https://www.snuswe.com/hu/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.snuswe.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snuswe.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.snuswe.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://www.snuswe.com/hu/privacy"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

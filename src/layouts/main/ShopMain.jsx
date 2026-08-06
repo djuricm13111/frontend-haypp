@@ -315,7 +315,7 @@ const ShopMain = ({ listingPage = null, searchQuery = null }) => {
   const shopListUrl = shopBasePath(lang);
 
   const breadcrumbItems = useMemo(() => {
-    const home = { name: "SnusCo", url: "/" };
+    const home = { name: "SnusWe", url: "/" };
     /** Uvek vodi na punu prodavnicu — klik iz kategorije ili ukus-stranice. */
     const shopCrumb = {
       name: t("HEADER.NICOTINE_POUCHES"),
@@ -387,7 +387,7 @@ const ShopMain = ({ listingPage = null, searchQuery = null }) => {
       return [home, shopCrumb];
     }
 
-    // /snus-verkauf/flavours/… — SnusCo > prodavnica (link) > ukus (trenutno)
+    // /snus-verkauf/flavours/… — SnusWe > prodavnica (link) > ukus (trenutno)
     if (flavorSlug && lockedFlavorGroupId) {
       return [
         home,

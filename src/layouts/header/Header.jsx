@@ -651,7 +651,7 @@ const Header = () => {
             aria-hidden={isScrolled}
             {...(!isScrolled && { "aria-label": t("HEADER.LOGO_HOME") })}
           >
-            SNUSCO
+            SNUSWE
           </Logo>
 
           <MobileHeaderTools

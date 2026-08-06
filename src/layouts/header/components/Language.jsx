@@ -165,7 +165,7 @@ const DrawerTriggerInner = styled.span`
   min-width: 0;
 `;
 
-const SnusCoDrawerTrigger = styled.button`
+const SnusWeDrawerTrigger = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -199,13 +199,13 @@ const FlagCircleWrap = styled.span`
   background: #f0f0f0;
 `;
 
-const SnusCoFlagImg = styled(Image)`
+const SnusWeFlagImg = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: cover;
 `;
 
-const SnusCoTriggerLead = styled.span`
+const SnusWeTriggerLead = styled.span`
   display: flex;
   align-items: center;
   min-width: 0;
@@ -213,7 +213,7 @@ const SnusCoTriggerLead = styled.span`
   gap: 12px;
 `;
 
-const SnusCoRowArrow = styled.span`
+const SnusWeRowArrow = styled.span`
   color: #001a57;
   font-size: 20px;
   line-height: 1;
@@ -261,7 +261,7 @@ const DrawerLangButton = styled.button`
 /**
  * @param {object} props
  * @param {boolean} [props.embedInDrawer]
- * @param {'default' | 'snuscoRow'} [props.embedVariant] — snuscoRow: region label, round flag, → (mobile drawer footer)
+ * @param {'default' | 'snusweRow'} [props.embedVariant] — snusweRow: region label, round flag, → (mobile drawer footer)
  */
 const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
   const { i18n, t } = useTranslation();
@@ -410,10 +410,10 @@ const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
         ? currentLang.regionLabel
         : currentLang.label;
 
-    if (embedVariant === "snuscoRow") {
+    if (embedVariant === "snusweRow") {
       return (
         <DrawerRoot>
-          <SnusCoDrawerTrigger
+          <SnusWeDrawerTrigger
             ref={triggerRef}
             type="button"
             onClick={toggleMenu}
@@ -421,9 +421,9 @@ const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
             aria-haspopup="listbox"
             aria-label={t("HEADER.LANGUAGE")}
           >
-            <SnusCoTriggerLead>
+            <SnusWeTriggerLead>
               <FlagCircleWrap>
-                <SnusCoFlagImg
+                <SnusWeFlagImg
                   src={currentLang.flag}
                   alt=""
                   loading="lazy"
@@ -432,11 +432,11 @@ const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
                 />
               </FlagCircleWrap>
               <span>{regionLabel}</span>
-            </SnusCoTriggerLead>
-            <SnusCoRowArrow aria-hidden="true" $open={showMenu}>
+            </SnusWeTriggerLead>
+            <SnusWeRowArrow aria-hidden="true" $open={showMenu}>
               →
-            </SnusCoRowArrow>
-          </SnusCoDrawerTrigger>
+            </SnusWeRowArrow>
+          </SnusWeDrawerTrigger>
           {showMenu && (
             <DrawerOptions
               $onWhite
@@ -463,7 +463,7 @@ const Language = ({ embedInDrawer = false, embedVariant = "default" }) => {
                   >
                     <FlagTitleRadio>
                       <FlagCircleWrap>
-                        <SnusCoFlagImg
+                        <SnusWeFlagImg
                           src={lang.flag}
                           alt={`${lang.code} flag`}
                           width={26}

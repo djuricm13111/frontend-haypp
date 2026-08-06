@@ -555,7 +555,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
           <RowArrow aria-hidden="true">→</RowArrow>
         </AdminMobileLink>
       ) : null}
-      <Language embedInDrawer embedVariant="snuscoRow" />
+      <Language embedInDrawer embedVariant="snusweRow" />
     </>
   );
 
@@ -776,7 +776,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
         </ScrollBody>
         {showMainList && (
           <DrawerLogoDock>
-            <FooterLogo>SNUSCO</FooterLogo>
+            <FooterLogo>SNUSWE</FooterLogo>
           </DrawerLogoDock>
         )}
       </Panel>

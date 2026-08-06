@@ -272,7 +272,7 @@ const AgeIconNumber = styled.span`
 `;
 
 /**
- * Checkout header: Back | SNUSCO (kao glavni Header) | štit 18+ kao ProductMain
+ * Checkout header: Back | SNUSWE (kao glavni Header) | štit 18+ kao ProductMain
  * @param {{ onBack: () => void, mobileContextI18nKey?: string }} props
  */
 function CheckoutHeader({
@@ -298,7 +298,7 @@ function CheckoutHeader({
         <CenterStack>
           <CheckoutTitle>{t(mobileContextI18nKey)}</CheckoutTitle>
           <LogoLink to="/" aria-label={t("HEADER.LOGO_HOME")}>
-            SNUSCO
+            SNUSWE
           </LogoLink>
         </CenterStack>
 

@@ -17,7 +17,7 @@ import {
   TERMS_BODY_DE,
   TERMS_BODY_EN,
   TERMS_LAST_UPDATED,
-} from "../content/snuscoTermsHtml";
+} from "../content/snusweTermsHtml";
 import { LegalDocumentProse } from "../components/LegalDocumentProse";
 
 const Shell = styled.div`
@@ -91,7 +91,7 @@ function TermsAndConditions() {
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const html = lang === "de" ? TERMS_BODY_DE : TERMS_BODY_EN;
-  const canonical = `https://snusco.eu/${lang}/terms`;
+  const canonical = `https://snuswe.com/${lang}/terms`;
 
   return (
     <>

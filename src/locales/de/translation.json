@@ -22,13 +22,13 @@
     "VIEW_ALL_RESULTS": "Alle Suchergebnisse anzeigen ({{count}})",
     "FREE_DELIVERY_OVER_MIN": "Gratis ab €{{min}}",
     "PAY_WITH_KLARNA": "Mit Klarna bezahlen",
-    "LOGO_HOME": "SnusCo — Startseite",
+    "LOGO_HOME": "SnusWe — Startseite",
     "LINKS": {
       "NEW_YEAR_NEW_ME": "Neues Jahr, neues Ich",
       "NICOTINE_POUCHES": "Nikotinbeutel",
       "BEST_SELLERS": "Bestseller",
       "NEW_ARRIVALS": "Neuankömmlinge",
-      "BLOG": "Der SnusCo-Blog",
+      "BLOG": "Der SnusWe-Blog",
       "TOP_BRANDS": "Top-Marken"
     },
     "NAV_ITEMS": {
@@ -71,7 +71,7 @@
 
   "FOOTER": {
     "WARNING": "Warnung: Unsere Produkte enthalten Nikotin, eine stark süchtig machende Substanz.",
-    "COPYRIGHT": "© 2024 SnusCo. Alle Rechte vorbehalten.",
+    "COPYRIGHT": "© 2024 SnusWe. Alle Rechte vorbehalten.",
     "FOLLOW_US": "Folgen Sie uns",
     "SUPPORT": "Support",
     "FAQS": "FAQs",
@@ -79,8 +79,8 @@
     "TERMS_CONDITIONS": "Allgemeine Geschäftsbedingungen",
     "CATEGORIES": "Kategorien",
     "CONTACT": "Kontaktieren Sie uns",
-    "BRAND_ARIA": "SnusCo",
-    "BRAND_REGION": "SnusCo · Europa",
+    "BRAND_ARIA": "SnusWe",
+    "BRAND_REGION": "SnusWe · Europa",
     "PAYMENT_ARIA": "Zahlungsarten",
     "PAYMENT_KLARNA": "Klarna",
     "PAYMENT_VISA": "VISA",
@@ -91,22 +91,22 @@
     "VERIFY_SUB": "VERIFY",
     "ACC_MENU_CS": "Kundenservice",
     "ACC_MENU_LEGAL": "Rechtliches",
-    "ACC_MENU_COMPANY": "SnusCo",
+    "ACC_MENU_COMPANY": "SnusWe",
     "ACC_CS_DESC": "Bestellungen, Versand und Kontakt.",
     "ACC_LEGAL_DESC": "Datenschutz, AGB, Barrierefreiheit und rechtliche Hinweise.",
-    "ACC_COMPANY_DESC": "Über uns und Neuigkeiten von SnusCo.",
+    "ACC_COMPANY_DESC": "Über uns und Neuigkeiten von SnusWe.",
     "LINK_CONTACT": "Kontakt",
     "LINK_PRIVACY": "Datenschutz",
     "LINK_TERMS": "AGB",
     "LINK_ACCESSIBILITY": "Barrierefreiheit",
-    "LINK_ABOUT": "Über SnusCo",
+    "LINK_ABOUT": "Über SnusWe",
     "LINK_BLOG": "Blog",
     "CONTACT_BLOCK_TITLE": "Kundenservice",
-    "EMAIL": "support@snusco.eu",
+    "EMAIL": "support@snuswe.com",
     "PHONE": "+43 1 234 5678",
     "PHONE_RAW": "+4312345678",
     "HOURS": "Mo–Fr 9:00–17:00 (MEZ), an Feiertagen geschlossen.",
-    "NAVY_COMPANY_LINE": "SnusCo GmbH · Europa"
+    "NAVY_COMPANY_LINE": "SnusWe GmbH · Europa"
   },
 
   "MENU": {
@@ -123,9 +123,9 @@
   },
 
   "BLOG": {
-    "PAGE_TITLE": "Blog | SnusCo",
+    "PAGE_TITLE": "Blog | SnusWe",
     "PAGE_DESCRIPTION": "Ratgeber und Artikel zu Nikotinbeuteln, Formaten und Marken.",
-    "LIST_HEADING": "SnusCo-Blog",
+    "LIST_HEADING": "SnusWe-Blog",
     "LIST_LEAD": "Ausführliche Artikel zu Nikotinbeuteln — Formate, Stärken und die passende Wahl.",
     "BY_AUTHOR": "Von {{name}}",
     "CRUMB_HOME": "Startseite",
@@ -135,38 +135,38 @@
   },
 
   "TERMS": {
-    "PAGE_TITLE": "AGB | SnusCo",
-    "PAGE_DESCRIPTION": "Allgemeine Geschäftsbedingungen für Bestellungen bei SnusCo — Europa, Verbraucher, Lieferung, Zahlung, Widerruf und Abonnements.",
+    "PAGE_TITLE": "AGB | SnusWe",
+    "PAGE_DESCRIPTION": "Allgemeine Geschäftsbedingungen für Bestellungen bei SnusWe — Europa, Verbraucher, Lieferung, Zahlung, Widerruf und Abonnements.",
     "HEADING": "Allgemeine Geschäftsbedingungen",
-    "SUBLINE": "SnusCo GmbH · Europa · Stand {{date}} · Entwurf zur Rechtsprüfung",
+    "SUBLINE": "SnusWe GmbH · Europa · Stand {{date}} · Entwurf zur Rechtsprüfung",
     "BREADCRUMB_ARIA": "Brotkrumennavigation"
   },
 
   "PRIVACY": {
-    "PAGE_TITLE": "Datenschutz | SnusCo",
-    "PAGE_DESCRIPTION": "Wie SnusCo personenbezogene Daten bei der Nutzung von www.snusco.eu erhebt und schützt — DSGVO, Europa, Ihre Rechte, Cookies und Speicherfristen.",
+    "PAGE_TITLE": "Datenschutz | SnusWe",
+    "PAGE_DESCRIPTION": "Wie SnusWe personenbezogene Daten bei der Nutzung von www.snuswe.com erhebt und schützt — DSGVO, Europa, Ihre Rechte, Cookies und Speicherfristen.",
     "HEADING": "Datenschutzerklärung",
-    "SUBLINE": "SnusCo GmbH · Europa · Stand {{date}} · Entwurf zur Prüfung durch DSB / Recht",
+    "SUBLINE": "SnusWe GmbH · Europa · Stand {{date}} · Entwurf zur Prüfung durch DSB / Recht",
     "BREADCRUMB_ARIA": "Brotkrumennavigation"
   },
 
   "ACCESSIBILITY": {
-    "PAGE_TITLE": "Barrierefreiheit | SnusCo",
-    "PAGE_DESCRIPTION": "Wie SnusCo digitale Barrierefreiheit für www.snusco.eu umsetzt — WCAG 2.2 AA, bekannte Lücken und Feedback.",
+    "PAGE_TITLE": "Barrierefreiheit | SnusWe",
+    "PAGE_DESCRIPTION": "Wie SnusWe digitale Barrierefreiheit für www.snuswe.com umsetzt — WCAG 2.2 AA, bekannte Lücken und Feedback.",
     "HEADING": "Barrierefreiheit",
-    "SUBLINE": "SnusCo · Europa · Stand {{date}} · Erklärung (Entwurf)",
+    "SUBLINE": "SnusWe · Europa · Stand {{date}} · Erklärung (Entwurf)",
     "BREADCRUMB_ARIA": "Brotkrumennavigation"
   },
 
   "HOME": {
-    "HERO_TITLE": "SnusCo: Nikotinbeutel Online-Shop",
+    "HERO_TITLE": "SnusWe: Nikotinbeutel Online-Shop",
     "HERO_SUBTITLE": "Lieferung am nächsten Tag* bei Bestellungen über 4,99 € — plus eine gratis Dose bei jedem Einkauf!*",
-    "ABOUT_TITLE": "Über SnusCo",
-    "ABOUT_SNUSCO": "Willkommen bei SnusCo, Ihrem vertrauenswürdigen Anbieter für hochwertige, tabakfreie Nikotinprodukte. Seit unserer Gründung haben wir uns der Lieferung von Nikotinbeuteln höchster Qualität verschrieben, die Sicherheit, Transparenz und außergewöhnlichen Geschmack schätzen.",
-    "FEATURED_BRANDS": "Bei SnusCo präsentieren wir stolz eine kuratierte Auswahl der beliebtesten Marken, darunter ",
+    "ABOUT_TITLE": "Über SnusWe",
+    "ABOUT_SNUSWE": "Willkommen bei SnusWe, Ihrem vertrauenswürdigen Anbieter für hochwertige, tabakfreie Nikotinprodukte. Seit unserer Gründung haben wir uns der Lieferung von Nikotinbeuteln höchster Qualität verschrieben, die Sicherheit, Transparenz und außergewöhnlichen Geschmack schätzen.",
+    "FEATURED_BRANDS": "Bei SnusWe präsentieren wir stolz eine kuratierte Auswahl der beliebtesten Marken, darunter ",
     "FEATURED_BRANDS_2": " Jedes Produkt wird rigoros getestet, um die höchsten Standards zu erfüllen und sicherzustellen, dass Sie nur das Beste erhalten. Egal, ob Sie neu bei Nikotinbeuteln sind oder ein erfahrener Benutzer, wir bieten Einblicke und Empfehlungen, um Ihnen zu helfen, die perfekte Wahl zu treffen.",
     "SHOPPING_EXPERIENCE": "Unsere Website ist so gestaltet, dass sie ein nahtloses Einkaufserlebnis bietet, einschließlich schneller und zuverlässiger Lieferung. Wir legen großen Wert auf Kundensicherheit durch robuste Altersverifizierungsprozesse und fördern eine sichere und verantwortungsvolle Community.",
-    "TOBACCO_FREE_LIFESTYLE": "Entdecken Sie die Freiheit eines tabakfreien Lebensstils mit SnusCo. Wir sind hier, um Sie mit Expertenrat, Bildungsressourcen und einem Qualitätsversprechen zu unterstützen, das Sie in die Lage versetzt, fundierte Entscheidungen zu treffen. Wählen Sie SnusCo – wo Exzellenz und Fürsorge zusammenkommen.",
+    "TOBACCO_FREE_LIFESTYLE": "Entdecken Sie die Freiheit eines tabakfreien Lebensstils mit SnusWe. Wir sind hier, um Sie mit Expertenrat, Bildungsressourcen und einem Qualitätsversprechen zu unterstützen, das Sie in die Lage versetzt, fundierte Entscheidungen zu treffen. Wählen Sie SnusWe – wo Exzellenz und Fürsorge zusammenkommen.",
     "PROMO_TITLES": {
       "FEATURED": "Empfohlene Nikotinbeutel",
       "HOT_DEALS": "Heiße Angebote",
@@ -177,7 +177,7 @@
     },
     "BUY_HERE": "Hier kaufen",
     "PROMO_CARDS_LABEL": "Aktionsangebote",
-    "PROMO_INTRO": "Entdecken Sie die beste Auswahl an <nicotine>tabakfreien Nikotinbeuteln</nicotine> und <free>nikotinfreien Beuteln</free> bei SnusCo. Ob Sie nach Bestsellern, Neuheiten oder den neuesten Marken suchen – wir sind für Sie da.",
+    "PROMO_INTRO": "Entdecken Sie die beste Auswahl an <nicotine>tabakfreien Nikotinbeuteln</nicotine> und <free>nikotinfreien Beuteln</free> bei SnusWe. Ob Sie nach Bestsellern, Neuheiten oder den neuesten Marken suchen – wir sind für Sie da.",
     "SHOP_BY_BRAND": "Nach Marke einkaufen",
     "FEATURED_PRODUCTS_TITLE": "Empfohlene Produkte",
     "SHOP_BY_CATEGORY": "Nach Kategorie einkaufen",
@@ -214,12 +214,12 @@
       "ARIA_SLIDE": "Folie {{current}} von {{total}}"
     },
     "TRUST": {
-      "ABOUT_H2": "Über SnusCo",
-      "ABOUT_P1": "SnusCo richtet sich an Erwachsene, die <strong>tabakfreie Nikotinbeutel</strong> ohne Umwege möchten: echte Marken, klare Stärken und Beschreibungen, die beim Auswählen helfen.",
+      "ABOUT_H2": "Über SnusWe",
+      "ABOUT_P1": "SnusWe richtet sich an Erwachsene, die <strong>tabakfreie Nikotinbeutel</strong> ohne Umwege möchten: echte Marken, klare Stärken und Beschreibungen, die beim Auswählen helfen.",
       "ABOUT_P2": "Wir nehmen <strong>Altersprüfung und verantwortungsvollen Einzelhandel</strong> ernst — jede Bestellung wird geprüft, damit Nikotin bei den richtigen Menschen bleibt.",
       "ABOUT_P3": "Unser Team hilft bei Format, Geschmack oder Stärke — ob erster Kauf oder gewohnte Lieblingslinie.",
-      "WHY_H2": "Warum bei SnusCo kaufen?",
-      "WHY_INTRO": "Von Bestsellern bis Neuheiten bündelt SnusCo <strong>Nikotinbeutel vertrauter Marken</strong> an einem Ort — sorgfältig verpackt und mit Blick auf Kundinnen und Kunden in ganz Europa.",
+      "WHY_H2": "Warum bei SnusWe kaufen?",
+      "WHY_INTRO": "Von Bestsellern bis Neuheiten bündelt SnusWe <strong>Nikotinbeutel vertrauter Marken</strong> an einem Ort — sorgfältig verpackt und mit Blick auf Kundinnen und Kunden in ganz Europa.",
       "WHY_POINTS": [
         {
           "title": "Marken an einem Ort:",
@@ -253,8 +253,8 @@
   },
 
   "ACCOUNT": {
-    "PAGE_TITLE": "Mein Konto | SnusCo",
-    "META_DESCRIPTION": "Ihr SnusCo-Konto: Daten, Punkte, gespeicherte Adressen und Bestellhistorie.",
+    "PAGE_TITLE": "Mein Konto | SnusWe",
+    "META_DESCRIPTION": "Ihr SnusWe-Konto: Daten, Punkte, gespeicherte Adressen und Bestellhistorie.",
     "HEADING": "Mein Konto",
     "LOADING": "Profil wird geladen…",
     "DETAILS_TITLE": "Ihre Daten",
@@ -397,7 +397,7 @@
     "TITLE": "Anmelden",
     "HINT_SECTION_TITLE": "Anmelden",
     "ACCOUNT_HINT": "Greifen Sie auf Ihr Konto zu, um Bestellungen zu sehen",
-    "LOGO_MARK": "SNUSCO",
+    "LOGO_MARK": "SNUSWE",
     "SUBTITLE": "Greifen Sie auf Ihr Konto zu",
     "FORGOT_PASSWORD": "Passwort vergessen?",
     "DONT_HAVE_ACCOUNT": "Noch kein Konto?",
@@ -410,12 +410,12 @@
   },
 
   "REGISTER": {
-    "PAGE_TITLE": "Konto erstellen — SnusCo",
+    "PAGE_TITLE": "Konto erstellen — SnusWe",
     "HEADER_BADGE": "Registrieren",
     "TITLE": "Konto erstellen",
     "HINT_SECTION_TITLE": "Konto erstellen",
     "ACCOUNT_HINT": "Legen Sie ein Konto an, um Bestellungen zu verfolgen und den nächsten Einkauf schneller abzuschließen.",
-    "LOGO_MARK": "SNUSCO",
+    "LOGO_MARK": "SNUSWE",
     "ADDRESS_SECTION_TITLE": "Lieferadresse",
     "ADDRESS_HINT": "Sie können sie jetzt schon hinzufügen, um die erste Bestellung zu beschleunigen — oder später an der Kasse eingeben.",
     "ADDRESS_OPTIONAL": "Optional — spart Zeit an der Kasse",
@@ -432,7 +432,7 @@
   },
 
   "PASSWORD_RESET": {
-    "FORGOT_PAGE_TITLE": "Passwort vergessen | SnusCo",
+    "FORGOT_PAGE_TITLE": "Passwort vergessen | SnusWe",
     "FORGOT_HEADER_BADGE": "Passwort vergessen",
     "FORGOT_TITLE": "Passwort zurücksetzen",
     "FORGOT_LEAD": "Geben Sie die E-Mail Ihres Kontos ein. Wir senden Ihnen einen Link, um ein neues Passwort zu wählen.",
@@ -444,7 +444,7 @@
     "ERROR_GENERIC": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
     "ERROR_EMAIL_REQUIRED": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
     "ERROR_USER_NOT_FOUND": "Kein Konto mit dieser E-Mail gefunden.",
-    "CONFIRM_PAGE_TITLE": "Neues Passwort | SnusCo",
+    "CONFIRM_PAGE_TITLE": "Neues Passwort | SnusWe",
     "CONFIRM_HEADER_BADGE": "Neues Passwort",
     "CONFIRM_TITLE": "Neues Passwort wählen",
     "CONFIRM_LEAD": "Geben Sie Ihr neues Passwort unten ein und bestätigen Sie es.",
@@ -458,7 +458,7 @@
   },
 
   "VERIFICATION": {
-    "PAGE_TITLE": "E-Mail bestätigen | SnusCo",
+    "PAGE_TITLE": "E-Mail bestätigen | SnusWe",
     "HEADER_BADGE": "E-Mail bestätigen",
     "TITLE": "E-Mail bestätigen",
     "SUBTITLE": "Wir haben einen Code an {{email}} gesendet. Geben Sie ihn unten ein, um Ihre Adresse zu bestätigen.",
@@ -557,14 +557,14 @@
     "AGE_WARNING_BODY": "Dieses Produkt ist nicht risikofrei. Es enthält Nikotin, einen süchtig machenden Stoff.",
 
     "TAXES": "Steuern",
-    "TAXES_TITLE": "Steuern auf SnusCo-Bestellungen in Europa",
-    "TAXES_DESCRIPTION": "Bei SnusCo halten wir uns strikt an die geltenden Steuergesetze. Für alle Online-Bestellungen werden die anfallenden Steuern, einschließlich Nikotinsteuern und Mehrwertsteuer (Umsatzsteuer), berechnet und beim Checkout in den Bestellbetrag einbezogen. Versandkosten können je nach Region und geltenden Gesetzen ebenfalls der Mehrwertsteuer unterliegen.",
+    "TAXES_TITLE": "Steuern auf SnusWe-Bestellungen in Europa",
+    "TAXES_DESCRIPTION": "Bei SnusWe halten wir uns strikt an die geltenden Steuergesetze. Für alle Online-Bestellungen werden die anfallenden Steuern, einschließlich Nikotinsteuern und Mehrwertsteuer (Umsatzsteuer), berechnet und beim Checkout in den Bestellbetrag einbezogen. Versandkosten können je nach Region und geltenden Gesetzen ebenfalls der Mehrwertsteuer unterliegen.",
     "TAXES_CALCULATION_TITLE": "Wie wird die Steuer auf Nikotinprodukte berechnet?",
     "TAXES_CALCULATION_DESCRIPTION": "Die Nikotinverbrauchsteuer (TNET), oft als 'Nikotinsteuer' bezeichnet, wird gemäß den geltenden Vorschriften erhoben. Die Berechnungsmethode hängt von der Art des Produkts (Tabak oder tabakfrei) und der jeweiligen Kategorie ab. Die Steuern werden auf folgende Weise berechnet:",
-    "TAXES_CALCULATION_METHOD_1": "Basierend auf einem Prozentsatz des Großhandelspreises: Berechnet als Prozentsatz der Kosten des Produkts für SnusCo.",
-    "TAXES_CALCULATION_METHOD_2": "Basierend auf dem Verkaufspreis von SnusCo an den Kunden: Berechnet als Prozentsatz des Einzelhandelspreises.",
+    "TAXES_CALCULATION_METHOD_1": "Basierend auf einem Prozentsatz des Großhandelspreises: Berechnet als Prozentsatz der Kosten des Produkts für SnusWe.",
+    "TAXES_CALCULATION_METHOD_2": "Basierend auf dem Verkaufspreis von SnusWe an den Kunden: Berechnet als Prozentsatz des Einzelhandelspreises.",
     "TAXES_CALCULATION_METHOD_3": "Basierend auf Gewicht: Berechnet pro Gramm oder pro Einheit des Produkts.",
-    "VAT_CALCULATION_TITLE": "Wie berechnet SnusCo die Mehrwertsteuer auf Bestellungen?",
+    "VAT_CALCULATION_TITLE": "Wie berechnet SnusWe die Mehrwertsteuer auf Bestellungen?",
     "VAT_CALCULATION_DESCRIPTION": "Die Mehrwertsteuer wird gemäß den geltenden Steuervorschriften berechnet und sowohl auf den Produktpreis als auch in den meisten Fällen auf die Versandkosten angewendet. Der Mehrwertsteuersatz für Nikotinprodukte variiert je nach Land. Dies gewährleistet die vollständige Einhaltung der lokalen Steueranforderungen.",
     "EXAMPLE_TITLE": "Beispiel für Steuer- und Mehrwertsteuerberechnung:",
     "EXAMPLE_SUBTITLE": "Beispiel:",
@@ -619,7 +619,7 @@
   },
 
   "CHECKOUT": {
-    "PAGE_TITLE": "Kasse | SnusCo",
+    "PAGE_TITLE": "Kasse | SnusWe",
     "TITLE": "Kasse",
     "SIGNED_IN_NOTICE": "Sie sind angemeldet — E-Mail und gespeicherte Lieferadressen werden unten verwendet.",
     "BACK": "Zurück",
@@ -689,7 +689,7 @@
 
   "SEARCH": {
     "PAGE_TITLE": "Suche: {{query}}",
-    "META_DESCRIPTION": "Suchergebnisse für „{{query}}“ — Nikotinbeutel bei SnusCo.",
+    "META_DESCRIPTION": "Suchergebnisse für „{{query}}“ — Nikotinbeutel bei SnusWe.",
     "META_EMPTY": "Durchsuchen Sie unseren Shop nach Nikotinbeuteln und Marken.",
     "NO_QUERY_TITLE": "Suche",
     "SUBTITLE": "{{count}} Produkte",
@@ -779,31 +779,31 @@
       "PAGE_TITLE": "Bestseller",
       "TITLE": "Bestseller",
       "DESCRIPTION": "Unsere beliebtesten Nikotinbeutel — Top-Seller aus dem Shop, basierend auf Verkaufsdaten.",
-      "META_DESCRIPTION": "Bestseller-Nikotinbeutel bei SnusCo kaufen. Beliebte Marken und Geschmacksrichtungen, Lieferung in ganz Europa."
+      "META_DESCRIPTION": "Bestseller-Nikotinbeutel bei SnusWe kaufen. Beliebte Marken und Geschmacksrichtungen, Lieferung in ganz Europa."
     },
     "NEW_IN_STORE": {
       "PAGE_TITLE": "Neu im Sortiment",
       "TITLE": "Neu im Sortiment",
       "DESCRIPTION": "Die neuesten Artikel — neue Produkte und frische Serien, sobald sie bei uns eintreffen.",
-      "META_DESCRIPTION": "Neue Nikotinbeutel bei SnusCo entdecken. Frische Produkte und neue Sorten, schnelle Lieferung in Europa."
+      "META_DESCRIPTION": "Neue Nikotinbeutel bei SnusWe entdecken. Frische Produkte und neue Sorten, schnelle Lieferung in Europa."
     },
     "MIXPACKS": {
       "PAGE_TITLE": "Mixpacks & Bundles",
       "TITLE": "Mixpacks & Bundles",
       "DESCRIPTION": "Mehr-Dosen-Pakete und Bundles — mehr Geschmacksrichtungen probieren oder mit zusammengestellten Sets sparen.",
-      "META_DESCRIPTION": "Mixpacks und Bundle-Angebote für Nikotinbeutel bei SnusCo. Mehr-Dosen-Sets und Sparpakete, Lieferung in ganz Europa."
+      "META_DESCRIPTION": "Mixpacks und Bundle-Angebote für Nikotinbeutel bei SnusWe. Mehr-Dosen-Sets und Sparpakete, Lieferung in ganz Europa."
     },
     "OFFERS": {
       "PAGE_TITLE": "Angebote & Deals",
       "TITLE": "Angebote & Deals",
       "DESCRIPTION": "Reduzierte Nikotinbeutel — Produkte, die gerade im Angebot sind.",
-      "META_DESCRIPTION": "Reduzierte Nikotinbeutel bei SnusCo. Aktuelle Angebote und Deals, Lieferung in ganz Europa."
+      "META_DESCRIPTION": "Reduzierte Nikotinbeutel bei SnusWe. Aktuelle Angebote und Deals, Lieferung in ganz Europa."
     }
   },
 
   "ALL_BRANDS": {
     "PAGE_TITLE": "Marken",
-    "META_DESCRIPTION": "Alle Nikotinbeutel-Marken bei SnusCo — alphabetisch sortiert mit Links zu jeder Marke im Shop.",
+    "META_DESCRIPTION": "Alle Nikotinbeutel-Marken bei SnusWe — alphabetisch sortiert mit Links zu jeder Marke im Shop.",
     "INTRO": "Alle Marken, die wir aktuell führen — alphabetisch geordnet.",
     "LOAD_ERROR": "Marken konnten nicht geladen werden. Bitte versuchen Sie es später erneut.",
     "LETTER_OTHER": "0–9 & Sonderzeichen",
@@ -1066,7 +1066,7 @@
     "RS": "Serbien"
   },
   "FREE_SAMPLE": {
-    "PAGE_TITLE": "Kostenlose Nikotinbeutel-Probe zu jeder Bestellung | SnusCo",
+    "PAGE_TITLE": "Kostenlose Nikotinbeutel-Probe zu jeder Bestellung | SnusWe",
     "META_DESCRIPTION": "Gratisprobe zu jeder Bestellung: Clew, STNG und Featured Brands, Lieferung und FAQs.",
     "PROMO_TITLE": "Kostenlose Nikotinbeutel-Probe zu jeder Bestellung",
     "PROMO_BODY": "Entdecken Sie bei jeder Bestellung etwas Neues! Erhalten Sie eine kostenlose Nikotinbeutel-Probe unserer Featured Brand des Monats und probieren Sie neue Geschmäcker, Marken und Stärken. Top-Marken, schnelle UK-Lieferung und exklusiver Rabatt auf Ihre nächste Bestellung.",
@@ -1088,7 +1088,7 @@
     "WHY_P2": "Unser tabakfreies Gratisproben-Programm bringt Ihnen neue Marken, Geschmäcker und Stärken, die Sie vielleicht selbst nicht gewählt hätten. So finden Sie neue Favoriten.",
     "WHY_P3": "Noch mehr Angebote? Entdecken Sie <PickMixLink>Pick and Mix</PickMixLink> und <OffersLink>unsere Nikotinbeutel-Angebote</OffersLink> – monatlich mit neuen Rabatten.",
     "DELIVERY_TITLE": "Schnelle Lieferung, diskreter Versand",
-    "DELIVERY_INTRO": "SnusCo liefert Ihre kostenlose Nikotinbeutel-Probe zügig in die UK, u. a. mit Next-Day-Optionen. Der Versand erfolgt in neutraler Verpackung.",
+    "DELIVERY_INTRO": "SnusWe liefert Ihre kostenlose Nikotinbeutel-Probe zügig in die UK, u. a. mit Next-Day-Optionen. Der Versand erfolgt in neutraler Verpackung.",
     "DELIVERY_OPTIONS_TITLE": "Lieferoptionen u. a.:",
     "DELIVERY_OPT_1": "InPost Lockers",
     "DELIVERY_OPT_2": "Royal Mail 24",
