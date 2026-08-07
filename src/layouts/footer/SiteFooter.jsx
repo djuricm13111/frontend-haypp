@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import truckIcon from "../../assets/icons/truck.svg";
+import snusweLogoStandalone from "../../assets/images/snuswe-logo-standalone.svg";
 
 const FOOTER_BG = "#f6f6f6";
 const FOOTER_NAVY = "#001a57";
@@ -467,7 +468,7 @@ function SiteFooter() {
       <Inner>
         <BrandBlock>
           <BrandWordmark aria-label={t("FOOTER.BRAND_ARIA", { defaultValue: "SnusWe" })}>
-            SNUSWE
+            <img src={snusweLogoStandalone} alt="SnusWe" height="48" style={{ display: "block" }} />
           </BrandWordmark>
           <BrandRegion>{t("FOOTER.BRAND_REGION")}</BrandRegion>
         </BrandBlock>
