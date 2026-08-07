@@ -9,6 +9,7 @@ import Language from "./Language";
 import { NAV_ITEM_T_KEYS } from "./HeaderList";
 import { buildShopNavDropdown, normalizeShopLang } from "../../../utils/shopRoutes";
 import { AuthUserContext } from "../../../context/AuthUserContext";
+import snusweLogoHorizontal from "../../../assets/images/snuswe-logo-horizontal.svg";
 
 const PANEL_TRANSITION = "transform 0.28s ease";
 const BACKDROP_TRANSITION = "opacity 0.28s ease";
@@ -776,7 +777,7 @@ const MobileNavDrawer = ({ isOpen, onClose, loginRef }) => {
         </ScrollBody>
         {showMainList && (
           <DrawerLogoDock>
-            <FooterLogo>SNUSWE</FooterLogo>
+            <FooterLogo><img src={snusweLogoHorizontal} alt="SnusWe" height="24" style={{ display: "block" }} /></FooterLogo>
           </DrawerLogoDock>
         )}
       </Panel>

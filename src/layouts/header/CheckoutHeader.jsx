@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import snusweLogoHorizontal from "../../assets/images/snuswe-logo-horizontal.svg";
 
 /** Isti font stack kao ProductMain (PDP age blok). */
 const checkoutBodyFont = `"Montserrat", var(--font-family)`;
@@ -298,7 +299,7 @@ function CheckoutHeader({
         <CenterStack>
           <CheckoutTitle>{t(mobileContextI18nKey)}</CheckoutTitle>
           <LogoLink to="/" aria-label={t("HEADER.LOGO_HOME")}>
-            SNUSWE
+            <img src={snusweLogoHorizontal} alt="SnusWe" height="28" style={{ display: "block" }} />
           </LogoLink>
         </CenterStack>
 

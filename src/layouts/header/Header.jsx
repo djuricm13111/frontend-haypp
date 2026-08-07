@@ -11,6 +11,7 @@ import Login from "./components/Login";
 import MobileNavDrawer from "./components/MobileNavDrawer";
 import { freeShippingThreshold } from "../../utils/global_const";
 import { useIsStaff } from "../../hooks/useIsStaff";
+import snusweLogoHorizontal from "../../assets/images/snuswe-logo-horizontal.svg";
 /** Sadrži sve što je iznad glavnog belog headera — visina = tačan prag skrola. */
 const PreHeaderStack = styled.div`
   display: flex;
@@ -651,7 +652,7 @@ const Header = () => {
             aria-hidden={isScrolled}
             {...(!isScrolled && { "aria-label": t("HEADER.LOGO_HOME") })}
           >
-            SNUSWE
+            <img src={snusweLogoHorizontal} alt="SnusWe" height="28" style={{ display: "block" }} />
           </Logo>
 
           <MobileHeaderTools
