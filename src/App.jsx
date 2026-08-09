@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import Home from "./pages/Home";
 import darkTheme from "./utils/theme";
@@ -23,6 +23,19 @@ import AccessibilityStatement from "./pages/AccessibilityStatement";
 import AdminOrdersInbox from "./pages/AdminOrdersInbox";
 import SiteFooter from "./layouts/footer/SiteFooter";
 import { shopSearchPath, normalizeShopLang } from "./utils/shopRoutes";
+
+const VALID_LANGS = ["en", "de", "hu"];
+
+/** Redirect nepoznatih jezika na /en/... */
+function LangGuard({ children }) {
+  const { lang } = useParams();
+  const { pathname, search } = useLocation();
+  if (!VALID_LANGS.includes(lang)) {
+    const newPath = pathname.replace(`/${lang}/`, "/en/");
+    return <Navigate to={`${newPath}${search}`} replace />;
+  }
+  return children;
+}
 
 /** Stari URL /:lang/search/:query → /:lang/search?q=... */
 function SearchLegacyRedirect() {
@@ -73,63 +86,27 @@ function App() {
                 <Route path="/admin/porudzbine/inbox" element={<Navigate to="/admin/porudzbine" replace />} />
                 <Route path="/verify" element={<VerifyEmail />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route
-                  path="/:lang/bestsellers"
-                  element={<ShopListing listing="bestsellers" />}
-                />
-                <Route
-                  path="/:lang/new-in-store"
-                  element={<ShopListing listing="newInStore" />}
-                />
-                <Route
-                  path="/:lang/mixpacks-bundles"
-                  element={<ShopListing listing="mixpacks" />}
-                />
-                <Route
-                  path="/:lang/offers"
-                  element={<ShopListing listing="offers" />}
-                />
-                <Route path="/:lang/all-brands" element={<AllBrands />} />
-                <Route
-                  path="/:lang/search/:legacyQuery"
-                  element={<SearchLegacyRedirect />}
-                />
-                <Route path="/:lang/search" element={<SearchResults />} />
-                <Route path="/:lang/blog" element={<BlogListing />} />
-                <Route path="/:lang/blog/:slug" element={<BlogArticle />} />
-                <Route path="/:lang/terms" element={<TermsAndConditions />} />
-                <Route path="/:lang/privacy" element={<PrivacyPolicy />} />
-                <Route
-                  path="/:lang/accessibility"
-                  element={<AccessibilityStatement />}
-                />
-                <Route
-                  path="/:lang/reset-password/:uid/:token"
-                  element={<ResetPassword />}
-                />
-                <Route
-                  path="/:lang/snus-verkauf/flavours"
-                  element={<Shop />}
-                />
-                <Route
-                  path="/:lang/snus-verkauf/flavours/:flavorSlug"
-                  element={<Shop />}
-                />
-                <Route
-                  path="/:lang/snus-verkauf/strength"
-                  element={<Shop />}
-                />
-                <Route
-                  path="/:lang/snus-verkauf/strength/:strengthSlug"
-                  element={<Shop />}
-                />
-                <Route path="/:lang/snus-verkauf" element={<Shop />} />
-                <Route
-                  path="/:lang/snus-verkauf/:slug"
-                  element={<BrandRedirect />}
-                />
-                <Route path="/:lang/:slug" element={<Shop />} />
-                <Route path="/:lang/:category/:slug" element={<Product />} />
+                <Route path="/:lang/bestsellers" element={<LangGuard><ShopListing listing="bestsellers" /></LangGuard>} />
+                <Route path="/:lang/new-in-store" element={<LangGuard><ShopListing listing="newInStore" /></LangGuard>} />
+                <Route path="/:lang/mixpacks-bundles" element={<LangGuard><ShopListing listing="mixpacks" /></LangGuard>} />
+                <Route path="/:lang/offers" element={<LangGuard><ShopListing listing="offers" /></LangGuard>} />
+                <Route path="/:lang/all-brands" element={<LangGuard><AllBrands /></LangGuard>} />
+                <Route path="/:lang/search/:legacyQuery" element={<LangGuard><SearchLegacyRedirect /></LangGuard>} />
+                <Route path="/:lang/search" element={<LangGuard><SearchResults /></LangGuard>} />
+                <Route path="/:lang/blog" element={<LangGuard><BlogListing /></LangGuard>} />
+                <Route path="/:lang/blog/:slug" element={<LangGuard><BlogArticle /></LangGuard>} />
+                <Route path="/:lang/terms" element={<LangGuard><TermsAndConditions /></LangGuard>} />
+                <Route path="/:lang/privacy" element={<LangGuard><PrivacyPolicy /></LangGuard>} />
+                <Route path="/:lang/accessibility" element={<LangGuard><AccessibilityStatement /></LangGuard>} />
+                <Route path="/:lang/reset-password/:uid/:token" element={<LangGuard><ResetPassword /></LangGuard>} />
+                <Route path="/:lang/snus-verkauf/flavours" element={<LangGuard><Shop /></LangGuard>} />
+                <Route path="/:lang/snus-verkauf/flavours/:flavorSlug" element={<LangGuard><Shop /></LangGuard>} />
+                <Route path="/:lang/snus-verkauf/strength" element={<LangGuard><Shop /></LangGuard>} />
+                <Route path="/:lang/snus-verkauf/strength/:strengthSlug" element={<LangGuard><Shop /></LangGuard>} />
+                <Route path="/:lang/snus-verkauf" element={<LangGuard><Shop /></LangGuard>} />
+                <Route path="/:lang/snus-verkauf/:slug" element={<LangGuard><BrandRedirect /></LangGuard>} />
+                <Route path="/:lang/:slug" element={<LangGuard><Shop /></LangGuard>} />
+                <Route path="/:lang/:category/:slug" element={<LangGuard><Product /></LangGuard>} />
               </Routes>
             </Main>
             <SiteFooter />

@@ -1,0 +1,30 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "redirects": [
+    { "source": "/sr/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/it/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/fr/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/es/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/pl/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/nl/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/cs/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/sk/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/ro/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/hr/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/bs/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/sl/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/bg/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/ru/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/tr/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/pt/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/sv/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/fi/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/da/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/no/:path*",  "destination": "/en/:path*", "permanent": true },
+    { "source": "/uk/:path*",  "destination": "/en/:path*", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
