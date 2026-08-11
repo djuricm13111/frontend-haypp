@@ -905,7 +905,7 @@ const CartMenu = ({ isScrolled }) => {
               <p style={{ padding: "0", margin: "0" }}>{t("CART.INCLUDED")}</p> 
             </FlexDiv> */}
             <Button
-              onClick={() => setShowComingSoon(true)}
+              onClick={() => { navigate("/checkout"); toggleMenu(); }}
               disabled={totalQuantity == 0}
             >
               {t("CART.CHECKOUT")}
