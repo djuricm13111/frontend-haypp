@@ -94,7 +94,7 @@ function gtmEvent(event, product, quantity) {
   const itemData = {
     item_id: product.id,
     item_name: product.category_name + " " + product.name,
-    item_brand: product.manufacturer,
+    item_brand: product.manufacturer || product.category_name,
     item_category: product.category_name,
     item_variant: product.nicotine + " MG",
     price: Number(product.price),

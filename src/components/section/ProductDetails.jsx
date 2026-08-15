@@ -678,12 +678,14 @@ const ProductDetails = ({ product }) => {
                       <SpecLabelCell>{t("PRODUCT.NICOTINE")}</SpecLabelCell>
                       <SpecValueCell>{product.nicotine}MG</SpecValueCell>
                     </SpecTableRow>
-                    <SpecTableRow>
-                      <SpecLabelCell>
-                        {t("PRODUCT.MANUFACTURER")}
-                      </SpecLabelCell>
-                      <SpecValueCell>{product.manufacturer}</SpecValueCell>
-                    </SpecTableRow>
+                    {product.manufacturer ? (
+                      <SpecTableRow>
+                        <SpecLabelCell>
+                          {t("PRODUCT.MANUFACTURER")}
+                        </SpecLabelCell>
+                        <SpecValueCell>{product.manufacturer}</SpecValueCell>
+                      </SpecTableRow>
+                    ) : null}
                     <SpecTableRow>
                       <SpecLabelCell>{t("PRODUCT.STOCK")}</SpecLabelCell>
                       <SpecValueCell>{product.state_display}</SpecValueCell>

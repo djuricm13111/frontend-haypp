@@ -48,7 +48,6 @@ const TopHeaderSection = styled.div`
   justify-content: center;
   overflow: visible;
   position: relative;
-  z-index: var(--zindex-dropdown);
 
   @media (min-width: 1024px) {
     /* Login / korpa trigger 40px — ista visina reda */
@@ -531,7 +530,7 @@ const Header = () => {
   return (
     <>
       <PreHeaderStack ref={preHeaderRef} $mobileNavOpen={mobileNavOpen}>
-        <TopBlock>VELO from €2.49 + 17% off with code: LUCKY17 ☘️</TopBlock>
+        {/* <TopBlock>VELO from €2.49 + 17% off with code: LUCKY17 ☘️</TopBlock> */}
         <TopHeaderSection>
         <TopHeaderWrapper>
           <TopBarDesktopLeft>
