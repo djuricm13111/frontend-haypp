@@ -445,12 +445,16 @@ const ProductDetails = ({ product }) => {
     : i18n.language.startsWith("de")
     ? "de"
     : "en";
-  const longKey = `long_${lang}`;
-  const paras = descData[longKey] || [];
+  const paras =
+    descData[`long_${lang}_html`] || descData[`long_${lang}`] || [];
 
-  // 2. Heuristika za naslov
-  const isTitle = (str) =>
-    str.length < 60 && (str.match(/\./g) || []).length < 2;
+  // 2. Heuristika za naslov (dužina/broj tačaka se računa na tekstu bez HTML tagova,
+  // jer naslov može sadržati link, npr. "About <a href=...>Ace</a> X ...")
+  const stripTags = (str = "") => str.replace(/<[^>]*>/g, "");
+  const isTitle = (str) => {
+    const plain = stripTags(str);
+    return plain.length < 60 && (plain.match(/\./g) || []).length < 2;
+  };
 
   // 3. Funkcija za čišćenje stringa
   const clean = (str = "") =>
@@ -557,17 +561,20 @@ const ProductDetails = ({ product }) => {
                   <DescriptionTextBlock>
                     {sections.map(({ title, contents }, idx) => (
                       <Fragment key={idx}>
-                        <Title>{title}</Title>
+                        <Title dangerouslySetInnerHTML={{ __html: title }} />
                         {contents.map((block, i) =>
                           block.type === "bullets" ? (
                             <BulletList key={i}>
                               {block.items.map((item, j) => (
                                 <BulletItem key={j}>
-                                  {item.label ? (
-                                    <><strong>{item.label}:</strong> {item.value}</>
-                                  ) : (
-                                    item.value
+                                  {item.label && (
+                                    <strong>{item.label}: </strong>
                                   )}
+                                  <span
+                                    dangerouslySetInnerHTML={{
+                                      __html: item.value,
+                                    }}
+                                  />
                                 </BulletItem>
                               ))}
                             </BulletList>

@@ -13,11 +13,14 @@ import { blogListingPath, blogArticlePath } from "./blogRoutes";
 
 function slugPart(value) {
   return String(value || "")
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "")
     .toLowerCase()
     .trim()
-    .replace(/[()]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
-    .replace(/-{2,}/g, "-");
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 function normalizeLang(lng) {
