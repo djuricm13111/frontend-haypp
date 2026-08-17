@@ -39,8 +39,8 @@ const Product = () => {
 
   // Generiši canonical URL na snuswe.com
   const productUrl = product
-    ? `https://snuswe.com/${langParam || i18n.language}/${category}/${slug}`
-    : "https://snuswe.com";
+    ? `https://www.snuswe.com/${langParam || i18n.language}/${category}/${slug}`
+    : "https://www.snuswe.com";
 
   // Odredi jezik za i18n
   const lang = i18n.language.startsWith("sr")
@@ -66,8 +66,10 @@ const Product = () => {
     .join(", ");
 
   // OG/Twitter slika
-  const ogImage =
+  const ogImageObj =
     product?.images.find((img) => img.is_primary) || product?.images[0] || null;
+  const ogImage =
+    ogImageObj?.large || ogImageObj?.original || ogImageObj?.thumbnail || null;
 
   return (
     <Container>
@@ -86,7 +88,7 @@ const Product = () => {
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph */}
-        <meta property="og:title" content={product?.title} />
+        <meta property="og:title" content={product?.name} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="product" />
         <meta property="og:image" content={ogImage} />
@@ -134,7 +136,7 @@ const Product = () => {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={product?.title} />
+        <meta name="twitter:title" content={product?.name} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImage} />
       </Helmet>

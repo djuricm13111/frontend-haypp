@@ -91,7 +91,7 @@ function TermsAndConditions() {
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const html = lang === "de" ? TERMS_BODY_DE : TERMS_BODY_EN;
-  const canonical = `https://snuswe.com/${lang}/terms`;
+  const canonical = `https://www.snuswe.com/${lang}/terms`;
 
   return (
     <>

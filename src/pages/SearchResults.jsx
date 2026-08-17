@@ -61,8 +61,8 @@ const SearchResults = () => {
         ? t("SEARCH.META_DESCRIPTION", { query: qTrim })
         : t("SEARCH.META_EMPTY"),
       keywords: `${display}, ${baseKeywords}`,
-      url: `https://snuswe.com${shopSearchPath(lang, qTrim)}`,
-      images: ["https://snuswe.com/assets/snuspouch-category-image.jpg"],
+      url: `https://www.snuswe.com${shopSearchPath(lang, qTrim)}`,
+      images: ["https://www.snuswe.com/assets/snuspouch-category-image.jpg"],
     });
   }, [apiLang, qTrim, t]);
 
@@ -116,7 +116,7 @@ const SearchResults = () => {
     title: "SnusWe",
     description: "",
     keywords: "",
-    url: "https://snuswe.com/",
+    url: "https://www.snuswe.com/",
     images: [],
   };
 

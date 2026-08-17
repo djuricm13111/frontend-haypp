@@ -92,7 +92,7 @@ function PrivacyPolicy() {
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const html = lang === "de" ? PRIVACY_BODY_DE : PRIVACY_BODY_EN;
-  const canonical = `https://snuswe.com/${lang}/privacy`;
+  const canonical = `https://www.snuswe.com/${lang}/privacy`;
 
   return (
     <>

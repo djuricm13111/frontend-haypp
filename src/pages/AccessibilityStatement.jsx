@@ -92,7 +92,7 @@ function AccessibilityStatement() {
 
   const lang = normalizeShopLang(langParam || i18n.language);
   const html = lang === "de" ? ACCESSIBILITY_BODY_DE : ACCESSIBILITY_BODY_EN;
-  const canonical = `https://snuswe.com/${lang}/accessibility`;
+  const canonical = `https://www.snuswe.com/${lang}/accessibility`;
 
   return (
     <>

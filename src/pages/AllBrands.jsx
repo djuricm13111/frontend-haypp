@@ -156,8 +156,8 @@ const AllBrands = () => {
       title: `${title} | SnusWe`,
       description,
       keywords: `${title}, ${baseKeywords}`,
-      url: `https://snuswe.com${canonicalPath}`,
-      images: ["https://snuswe.com/assets/snuspouch-category-image.jpg"],
+      url: `https://www.snuswe.com${canonicalPath}`,
+      images: ["https://www.snuswe.com/assets/snuspouch-category-image.jpg"],
     });
   }, [apiLang, t]);
 
@@ -189,7 +189,7 @@ const AllBrands = () => {
     title: "SnusWe",
     description: "",
     keywords: "",
-    url: "https://snuswe.com/",
+    url: "https://www.snuswe.com/",
     images: [],
   };
   const activeSeo = seo || defaultSeo;

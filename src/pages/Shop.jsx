@@ -26,8 +26,8 @@ const SEOConfig = {
       "Shop the widest selection of nicotine pouches in Europe at SnusWe. Top brands, all flavors and strengths, delivered across Europe. Fast shipping & secure checkout.",
     keywords:
       "nicotine pouches, buy nicotine pouches Europe, snus online, nicotine pouches shop, SnusWe, tobacco-free pouches, best nicotine pouches Europe",
-    url: "https://snuswe.com/en/snus-verkauf",
-    images: ["https://snuswe.com/assets/snuspouch-category-image.jpg"],
+    url: "https://www.snuswe.com/en/snus-verkauf",
+    images: ["https://www.snuswe.com/assets/snuspouch-category-image.jpg"],
   },
   de: {
     title: "Nikotinbeutel online kaufen | SnusWe Europa",
@@ -35,8 +35,8 @@ const SEOConfig = {
       "Entdecken Sie bei SnusWe die größte Auswahl an Nikotinbeuteln in Europa. Top-Marken, alle Geschmacksrichtungen und Stärken, europaweit geliefert. Schneller Versand & sichere Zahlung.",
     keywords:
       "Nikotinbeutel kaufen, Nikotinbeutel online, Snus Europa, SnusWe Shop, Nikotin Pouches Europa, tabakfreie Beutel, bester Snus Europa",
-    url: "https://snuswe.com/de/snus-verkauf",
-    images: ["https://snuswe.com/assets/snuspouch-category-image.jpg"],
+    url: "https://www.snuswe.com/de/snus-verkauf",
+    images: ["https://www.snuswe.com/assets/snuspouch-category-image.jpg"],
   },
 };
 
@@ -89,7 +89,7 @@ const Shop = () => {
           title: `${title} | SnusWe`,
           description,
           keywords: `${title}, ${defaultSEO.keywords}`,
-          url: `https://snuswe.com/${lang}/snus-verkauf/flavours/${flavorSlug}`,
+          url: `https://www.snuswe.com/${lang}/snus-verkauf/flavours/${flavorSlug}`,
           images: defaultSEO.images,
         });
       } else {
@@ -121,7 +121,7 @@ const Shop = () => {
           title: `${title} | SnusWe`,
           description,
           keywords: `${title}, ${defaultSEO.keywords}`,
-          url: `https://snuswe.com/${lang}/snus-verkauf/strength/${strengthSlug}`,
+          url: `https://www.snuswe.com/${lang}/snus-verkauf/strength/${strengthSlug}`,
           images: defaultSEO.images,
         });
       } else {
@@ -148,7 +148,7 @@ const Shop = () => {
         title: `${title} | SnusWe`,
         description,
         keywords: `${title}, ${defaultSEO.keywords}`,
-        url: `https://snuswe.com/${lang}/snus-verkauf/flavours`,
+        url: `https://www.snuswe.com/${lang}/snus-verkauf/flavours`,
         images: defaultSEO.images,
       });
       return;
@@ -166,7 +166,7 @@ const Shop = () => {
         title: `${title} | SnusWe`,
         description,
         keywords: `${title}, ${defaultSEO.keywords}`,
-        url: `https://snuswe.com/${lang}/snus-verkauf/strength`,
+        url: `https://www.snuswe.com/${lang}/snus-verkauf/strength`,
         images: defaultSEO.images,
       });
       return;
@@ -196,7 +196,7 @@ const Shop = () => {
         title: `${entry.brand_name} | SnusWe Europe`,
         description: seoDescription,
         keywords: `${entry.brand_name}, ${defaultSEO.keywords}`,
-        url: `https://snuswe.com${shopBrandPath(lang, slug)}`,
+        url: `https://www.snuswe.com${shopBrandPath(lang, slug)}`,
         images: defaultSEO.images,
       });
       loadProductsByCategorySlug(slug);
@@ -207,7 +207,7 @@ const Shop = () => {
       title: defaultSEO.title,
       description: defaultSEO.description,
       keywords: defaultSEO.keywords,
-      url: `https://snuswe.com/${lang}/snus-verkauf/${slug}`,
+      url: `https://www.snuswe.com/${lang}/snus-verkauf/${slug}`,
       images: defaultSEO.images,
     });
     loadProductsByCategorySlug(slug);
@@ -237,7 +237,7 @@ const Shop = () => {
       title: `${category.name} | SnusWe Europe`,
       description: desc,
       keywords: `${category.name}, ${defaultSEO.keywords}`,
-      url: `https://snuswe.com/${lang}/snus-verkauf/${slug}`,
+      url: `https://www.snuswe.com/${lang}/snus-verkauf/${slug}`,
       images: defaultSEO.images,
     });
   }, [category, slug, flavorSlug, strengthSlug, i18n.language]);
