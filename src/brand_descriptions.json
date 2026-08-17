@@ -1,394 +1,450 @@
 [
   {
-    "slug": "velo",
-    "brand_name": "Velo",
-    "short_desc_en": "Velo delivers a fresh, contemporary experience in the world of nicotine pouches, crafted for those seeking a tobacco-free alternative without sacrificing the ritual of enjoying a pouch. The brand is known for its vibrant flavours and smooth texture, ensuring that every pouch offers a satisfying experience that keeps users coming back for more. Ideal for both newcomers transitioning from tobacco and seasoned enthusiasts in search of exciting new sensations, Velo stands out as a go-to choice in the nicotine pouch market.",
-    "short_desc_de": "Velo bietet eine moderne, frische Perspektive auf Nikotinpouches, ideal für alle, die ein tabakfreies Erlebnis suchen, ohne auf das gewohnte Ritual der Pouches verzichten zu müssen. Die Auswahl konzentriert sich auf ausgewogene und aufregende Geschmacksrichtungen, die stets zum Ausprobieren einladen. Perfekt geeignet für Umsteiger von Tabak oder erfahrene Nutzer, die Vielfalt schätzen und neue Erlebnisse suchen.",
-    "short_desc_hu": "A Velo egy friss és modern megközelítést kínál a nikotinos pouches világában, amelyet azok számára terveztek, akik el akarják hagyni a dohányt anélkül, hogy lemondanának a pouches használatának megszokott rituáléjáról. A termékcsalád gazdag és kiegyensúlyozott ízekre fókuszál, így mindig van egy új kombináció, amit érdemes kipróbálni. Ideális választás, akár most váltasz a dohányzásról, akár tapasztalt felhasználó vagy, aki a változatosságot keresi."
-  },
-  {
-    "slug": "xo",
-    "brand_name": "XO",
-    "short_desc_en": "\"XO delivers a sleek and contemporary approach to nicotine pouches, crafted for those who seek a tobacco-free lifestyle while enjoying the ritual of a pouch. With a focus on rich, layered flavours, XO invites users to explore a spectrum of tastes that keep the experience fresh and exciting. Ideal for newcomers transitioning from tobacco or seasoned users in search of something distinctive, XO embodies quality and versatility.\"",
-    "short_desc_de": "XO bietet eine frische und moderne Perspektive auf Nikotinpouches, ideal für alle, die den Tabak hinter sich lassen und dennoch das gewohnte Ritual genießen möchten. Die Pouches zeichnen sich durch hochwertige Materialien und ein ausgewogenes Geschmacksprofil aus, das abwechslungsreiche Erlebnisse ermöglicht. Perfekt für Neueinsteiger und erfahrene Nutzer, die auf der Suche nach neuen, aufregenden Optionen sind.",
-    "short_desc_hu": "Az XO egy modern és stílusos nikotinpárna márka, amely a dohánymentes élvezetet keresi azok számára, akik értékelik a letisztult ízeket és a magas minőséget. Párnáink jól kiegyensúlyozott ízekkel rendelkeznek, amelyeket kifejezetten úgy alakítottunk ki, hogy folyamatos felfedezést kínáljanak minden használó számára. Ideális választás lehet kezdőknek, akik áttérnek a dohányról, és tapasztaltabb felhasználóknak, akik új élményekre vágynak."
-  },
-  {
-    "slug": "xqs",
-    "brand_name": "XQS",
-    "short_desc_en": "XQS redefines the nicotine pouch experience with a sleek, contemporary design that resonates with both newcomers and seasoned users alike. Each pouch delivers a premium feel, combining quality ingredients with an array of enticing flavors to satisfy diverse preferences. Ideal for those transitioning from tobacco or looking to explore exciting new options, XQS makes nicotine enjoyment accessible and enjoyable.",
-    "short_desc_de": "XQS bietet eine frische, moderne Interpretation von Nikotinpouches, ideal für alle, die ein tabakfreies Erlebnis suchen, ohne auf das gewohnte Ritual verzichten zu müssen. Die Pouches sind hochwertig verarbeitet und zeichnen sich durch vielfältige, ausgewogene Geschmäcker aus, die es jedem ermöglichen, seine Favoriten zu entdecken. Ob Neulinge, die von Tabak wechseln oder erfahrene Nutzer, die Abwechslung suchen, XQS hat für jeden etwas zu bieten.",
-    "short_desc_hu": "Az XQS egy modern és letisztult megközelítést kínál a nikotinos pouches világában, olyanoknak, akik a hagyományos dohányzásról szeretnének áttérni, vagy csak új élményekre vágynak. A pouches gazdag ízvilága és prémium minősége garantálja, hogy minden használat különleges élmény legyen. Ideális választás tapasztalt felhasználóknak és újdonsült felfedezőknek egyaránt, akik a különféle ízekkel és textúrákkal szeretnék gazdagítani a mindennapjaikat."
-  },
-  {
-    "slug": "après",
-    "brand_name": "Après",
-    "short_desc_en": "\"Après offers a sophisticated, refined approach to nicotine pouches, designed for those who appreciate a seamless blend of tradition and modernity. With a focus on rich, nuanced flavours and an exceptional quality that elevates the experience, these pouches cater to both newcomers embracing the tobacco-free lifestyle and seasoned users seeking fresh sensations. Embrace the moment with Après, where every pouch is a step towards a more enjoyable, tobacco-free journey.\"",
-    "short_desc_de": "Après bietet eine frische und stilvolle Alternative zu herkömmlichen Tabakprodukten, ideal für alle, die das Beste aus der Erfahrung herausholen möchten. Die Pouches zeichnen sich durch eine hohe Qualität und ausgewogene Aromen aus, die sowohl Einsteiger als auch erfahrene Nutzer ansprechen. Egal ob du auf der Suche nach einem geschmackvollen Übergang bist oder neue Facetten entdecken möchtest, Après hat für jeden etwas zu bieten.",
-    "short_desc_hu": "Az Après egy friss és modern megközelítést kínál a nikotinos pouches világában, mely a dohányzásról való átállást és a tapasztalt felhasználók igényeit egyaránt szolgálja. A pouches kiváló minőségűek és ízletesek, finom egyensúlyt teremtve a különböző ízek között, így mindig van új felfedezésre váró kombináció. Ideális választás azoknak, akik a dohánymentes élvezetet keresik a hagyományos rítusok mellett."
-  },
-  {
-    "slug": "zyn",
-    "brand_name": "zyn",
-    "short_desc_en": "Zyn offers a sleek and contemporary experience for those seeking a tobacco-free alternative that fits seamlessly into their lifestyle. With a focus on diverse and sophisticated flavors, each pouch delivers a smooth and satisfying sensation that caters to both newcomers and seasoned users alike. Perfect for anyone looking to explore a world of nicotine without the traditional drawbacks, Zyn is your go-to choice for quality and enjoyment.",
-    "short_desc_de": "Zyn bietet ein modernes und elegantes Konzept für Nikotinbeutel, ideal für alle, die eine tabakfreie Alternative suchen, ohne auf das gewohnte Ritual zu verzichten. Die Pouches zeichnen sich durch ausgewogene Geschmacksrichtungen und eine angenehme Textur aus, die das Erlebnis von Nikotinkonsum neu definiert. Ob du neu im Bereich der Nikotinbeutel bist oder ein erfahrener Nutzer, der nach Vielfalt sucht, Zyn hat für jeden etwas zu bieten.",
-    "short_desc_hu": "A Zyn egy modern és innovatív megoldást kínál a nikotinpárnák világában, amely lehetővé teszi, hogy a felhasználók élvezhessék a nikotin élményét, anélkül hogy a dohányzással járó hátrányokkal kellene szembenézniük. Párnái különleges ízekkel és kifinomult érzéssel büszkélkednek, így minden egyes használat során új felfedezéseket kínálnak. Ideális választás azok számára, akik a dohányról való áttérés mellett döntöttek, vagy tapasztalt felhasználók, akik változatosságra vágynak."
-  },
-  {
-    "slug": "loop",
-    "brand_name": "Loop",
-    "short_desc_en": "Loop offers a fresh and dynamic approach to nicotine pouches, designed for those seeking a tobacco-free alternative without sacrificing the ritual of a pouch. With a focus on innovative flavors and a smooth, enjoyable experience, each pouch is crafted to satisfy both newcomers and seasoned users alike. Perfect for anyone looking to explore new sensations while maintaining their nicotine routine, Loop stands out in the market with its quality and character.",
-    "short_desc_de": "Loop bietet einen frischen und modernen Ansatz für Nikotinbeutel, ideal für alle, die eine tabakfreie Option suchen, ohne auf das gewohnte Ritual des Beutels unter der Lippe zu verzichten. Die Pouches zeichnen sich durch ausgewogene Aromen aus, die ein einzigartiges Geschmackserlebnis bieten und dazu einladen, ständig neue Kombinationen zu entdecken. Perfekt für Neueinsteiger, die von Tabak umsteigen, sowie für erfahrene Nutzer, die Abwechslung suchen.",
-    "short_desc_hu": "A Loop egy friss és innovatív megközelítést kínál a nikotinos pouches világában, amely ideális azok számára, akik szeretnék elhagyni a dohányt, de megőrizzék a megszokott élményt. A pouches sima textúrája és ízesítései gondosan lettek megalkotva, hogy kielégítsék a különböző ízlésű felhasználók igényeit. Akár új vagy a nikotinos pouches világában, akár tapasztalt felhasználó vagy, a Loop mindig izgalmas lehetőségeket kínál."
-  },
-  {
-    "slug": "kelly-white",
-    "brand_name": "Kelly White",
-    "short_desc_en": "Kelly White offers a sleek and sophisticated choice for nicotine pouch enthusiasts seeking a smooth and satisfying experience without the hassle of tobacco. With a focus on premium quality and thoughtfully crafted flavors, these pouches cater to both newcomers transitioning from traditional products and seasoned users looking for refreshing variety. Embrace a modern lifestyle with Kelly White, where every pouch delivers a moment of pleasure and relaxation.",
-    "short_desc_de": "Kelly White bietet eine frische und zeitgemäße Auswahl an Nikotinpouches, die für alle gedacht sind, die den Umstieg von Tabak suchen oder einfach neue Geschmackserlebnisse entdecken möchten. Die Pouches zeichnen sich durch ihre hohe Qualität und ein angenehmes Mundgefühl aus, was sie zu einer idealen Wahl für jede Gelegenheit macht. Egal, ob du neu in der Welt der Nikotinpouches bist oder ein erfahrener Nutzer, Kelly White bringt Vielfalt und Genuss in deine tägliche Routine.",
-    "short_desc_hu": "A Kelly White egy friss és modern megközelítést kínál a nikotinos pouches világában, ideális választás azok számára, akik szeretnének elbúcsúzni a dohánytól, de megőrizzék a pouches használatának élményét. Termékeink prémium minőséggel és kiegyensúlyozott ízekkel rendelkeznek, amelyek új élményeket kínálnak a tapasztalt felhasználók számára is. Fedezd fel a Kelly White világát, ahol mindenki megtalálja a kedvére való variációt."
-  },
-  {
-    "slug": "vid",
-    "brand_name": "VID",
-    "short_desc_en": "VID offers a fresh, innovative approach to nicotine pouches, designed for those who appreciate a modern and tobacco-free experience. With a focus on smooth textures and diverse flavour profiles, each pouch delivers a satisfying experience that keeps users coming back for more. Ideal for newcomers transitioning from traditional tobacco or seasoned enthusiasts seeking exciting new options, VID is your go-to brand for quality and variety.",
-    "short_desc_de": "VID bietet eine frische, moderne Herangehensweise an Nikotinpouches, ideal für alle, die ein tabakfreies Erlebnis suchen und dabei nicht auf den gewohnten Genuss verzichten wollen. Die Pouches zeichnen sich durch ihren hochwertigen Komfort und ausgewogene Aromen aus, die ständig neue Geschmackserlebnisse bieten. Egal ob Neueinsteiger auf der Suche nach einer Alternative sind oder erfahrene Nutzer Vielfalt möchten, VID hat für jeden etwas zu bieten.",
-    "short_desc_hu": "A VID tiszta és modern élményt nyújt a nikotinpárnák világában, ideális választás mindazok számára, akik el szeretnék hagyni a dohányt, mégis meg akarják tartani a pouches használatának szertartását. A márka hangsúlyt fektet a gazdag, jól kiegyensúlyozott ízekre, így mindig van lehetőség új kombinációk felfedezésére. Legyen szó újoncokról vagy tapasztalt felhasználókról, akik változatosságra vágynak, a VID mindenki számára izgalmas lehetőségeket kínál."
-  },
-  {
-    "slug": "avant",
-    "brand_name": "AVANT",
-    "short_desc_en": "AVANT embodies a fresh perspective on nicotine pouches, designed for individuals seeking a seamless transition from traditional tobacco without sacrificing enjoyment. With a focus on quality and diverse flavor experiences, each pouch delivers a refined sensation that caters to both newcomers and seasoned users alike. Embrace the modern way to indulge, as AVANT invites you to explore a world of flavor and satisfaction.",
-    "short_desc_de": "AVANT bietet eine frische, innovative Interpretation von Nikotinpouchs für alle, die den gewohnten Genuss ohne Tabak suchen. Die Pouches zeichnen sich durch qualitativ hochwertige Materialien und geschmacklich ausgewogene Kompositionen aus, die sowohl Neulingen als auch erfahrenen Nutzern neue Genussmomente bescheren. Mit AVANT entdeckst du ein Sortiment, das die Grenzen des Gewohnten sprengt und stets bereit ist, deine Erwartungen zu übertreffen.",
-    "short_desc_hu": "Az AVANT egy korszerű, friss megközelítést kínál a nikotinos pouches világában, célja, hogy a felhasználók élvezzék a dohánymentes élményt anélkül, hogy lemondanának a megszokott rituáléról. A pouches minősége és ízvilága gazdag és változatos, így mindenki megtalálhatja a kedvére valót, legyen szó új belépőről vagy tapasztalt felhasználóról, aki új ízeket keres. Az AVANT a modern életstílushoz igazodik, és ideális választás mindazoknak, akik a frissességre és az innovációra vágynak."
-  },
-  {
-    "slug": "stng",
-    "brand_name": "STNG",
-    "short_desc_en": "STNG redefines the nicotine pouch experience with a fresh, contemporary approach that caters to both newcomers and seasoned users alike. Each pouch delivers a smooth and satisfying experience, celebrating bold flavours while maintaining a high standard of quality and comfort. Ideal for those seeking a tobacco-free alternative, STNG invites you to explore a world of possibilities without compromise.",
-    "short_desc_de": "STNG bietet eine innovative, moderne Alternative zu herkömmlichen Tabakprodukten, ideal für alle, die den Genuss von Nikotin ohne Tabak erleben möchten. Die Pouches zeichnen sich durch ihre hohe Qualität und angenehme Textur aus, die ein reibungsloses Erlebnis ermöglichen. Perfekt geeignet für Neueinsteiger, die auf der Suche nach einem frischen Start sind, sowie für erfahrene Nutzer, die Vielfalt und Spannung schätzen.",
-    "short_desc_hu": "A STNG modern és friss megközelítést kínál a nikotinos pouches világában, lehetővé téve, hogy a felhasználók élvezzék a dohány nélküli élvezetet a megszokott rituálé mellett. Páratlan ízélményei és prémium minőségű pouches-ei a változatosságra és az új felfedezésekre ösztönöznek, így mindenki találhat magának megfelelőt. Ideális választás mindazok számára, akik most váltanak a dohányról, és az érzelmi élmény mellett keresnek új ízvilágokat."
-  },
-  {
-    "slug": "zeus",
-    "brand_name": "Zeus",
-    "short_desc_en": "Zeus delivers a powerful, engaging experience for those seeking a tobacco-free alternative while still enjoying the ritual of a pouch. With a focus on rich flavours and smooth textures, these pouches cater to both newcomers transitioning from tobacco and seasoned users craving something fresh. Embrace your journey with Zeus, where quality and variety come together for a satisfying nicotine experience.",
-    "short_desc_de": "Zeus bringt eine kraftvolle und moderne Perspektive auf Nikotinpouches, ideal für alle, die das Rauchen hinter sich lassen möchten, ohne auf den gewohnten Genuss zu verzichten. Die Pouches zeichnen sich durch ihr erstklassiges Gefühl und ausgewogene Aromen aus, die sowohl Neulinge als auch erfahrene Nutzer ansprechen. Perfekt für alle, die auf der Suche nach Abwechslung sind und neue Geschmackserlebnisse entdecken möchten.",
-    "short_desc_hu": "A Zeus pouches egy friss, modern megközelítést kínál a nikotinos élményhez, amely tökéletes választás a dohányról átváltó újoncok számára és a tapasztalt felhasználók számára egyaránt. A pouches kiemelkednek a gazdag ízek és a prémium minőség összhangjával, így minden alkalommal új élményeket kínálnak. Fedezd fel a Zeus világát, ahol a nikotin élvezete és a korszerű dizájn találkozik."
-  },
-  {
-    "slug": "maggie",
-    "brand_name": "MAGGIE",
-    "short_desc_en": "MAGGIE redefines the nicotine pouch experience with a contemporary flair, catering to those who crave a tobacco-free alternative without sacrificing satisfaction. Each pouch is crafted for a smooth, enjoyable delivery, featuring distinct flavours that invite exploration and enjoyment. Ideal for newcomers transitioning from tobacco or seasoned users seeking fresh options, MAGGIE embodies a spirit of discovery in every pouch.",
-    "short_desc_de": "MAGGIE bietet eine frische, moderne Perspektive auf Nikotintaschen und richtet sich an alle, die ein tabakfreies Erlebnis suchen, ohne auf den gewohnten Genuss zu verzichten. Die Pouches zeichnen sich durch hochwertige, ausgewogene Aromen aus, die für Abwechslung und Freude sorgen. Perfekt für Neulinge, die von Tabak wechseln möchten, und erfahrene Nutzer, die auf der Suche nach neuen Geschmackserlebnissen sind.",
-    "short_desc_hu": "A MAGGIE egy friss, modern megközelítést kínál a nikotinos perek világában, azok számára, akik tudatosan keresnek alternatívát a hagyományos dohánytermékek helyett. A perek érzékletes ízvilága és kiegyensúlyozott tapasztalata biztosítja, hogy mindig új élményeket fedezzenek fel a felhasználók. Ideális választás kezdőknek, akik váltani szeretnének, és tapasztalt használóknak, akik változatos ízekre vágynak."
-  },
-  {
-    "slug": "skruf",
-    "brand_name": "Skruf",
-    "short_desc_en": "Skruf offers a sophisticated and contemporary approach to nicotine pouches, designed for those seeking a refined experience without the tobacco. With an emphasis on premium quality and distinctive flavors, each pouch delivers a smooth and enjoyable sensation, making it perfect for both newcomers and seasoned users. Embrace the freedom to explore a new ritual that seamlessly fits into your lifestyle.",
-    "short_desc_de": "Skruf bietet eine stilvolle, moderne Alternative zu traditionellen Tabakwaren und richtet sich an alle, die eine tabakfreie Erfahrung suchen. Die Pouches überzeugen durch ihre hohe Qualität und ein angenehmes Mundgefühl, das sowohl Neulinge als auch erfahrene Nutzer anspricht. Mit einer Vielfalt an aufregenden Geschmäckern ist Skruf die ideale Wahl für diejenigen, die das Beste aus ihrem Genuss herausholen möchten.",
-    "short_desc_hu": "A Skruf modern és ízletes alternatívát kínál a dohánymentes élvezetekre vágyóknak, akik értékelik a prémium minőséget. A pouches textúrája és ízei harmóniában állnak, így minden egyes élmény frissítő és kielégítő. Ideális választás kezdők számára, akik a dohányról váltanak, valamint tapasztalt felhasználóknak, akik új ízeket keresnek."
-  },
-  {
-    "slug": "77",
-    "brand_name": "77",
-    "short_desc_en": "77 delivers a premium nicotine pouch experience that combines sophistication with simplicity, perfect for those who appreciate quality and style. With a diverse selection of rich flavours and a smooth feel, each pouch offers a satisfying experience that keeps you coming back for more. Ideal for newcomers transitioning from tobacco as well as seasoned users seeking exciting alternatives, 77 is your go-to brand for a modern nicotine experience.",
-    "short_desc_de": "77 bietet eine moderne und elegante Interpretation von Nikotinbeuteln, die für alle gedacht sind, die eine tabakfreie Alternative suchen, ohne auf den gewohnten Genuss verzichten zu müssen. Die Pouches zeichnen sich durch eine harmonische Balance an Geschmäckern aus, die sowohl Einsteiger als auch erfahrene Nutzer anspricht und immer wieder eine neue Geschmackserfahrung bietet. Egal ob du gerade von Tabak umsteigst oder auf der Suche nach aufregenden Variationen bist, 77 hat für jeden das passende Erlebnis.",
-    "short_desc_hu": "A '77' a modern nikotinos pouches világában egy friss, izgalmas alternatívát kínál azok számára, akik a dohányzásról szeretnének áttérni a tiszta, nikotinos élményre. Páratlan ízélményei és prémium minősége révén a pouches mindenki számára vonzóak, legyen szó kezdőkről vagy tapasztalt felhasználókról, akik új kombinációkra vágynak. Fedezd fel a '77' egyedi karakterét, és élvezd a nikotint a hagyományos szokások nélkül."
-  },
-  {
-    "slug": "neafs",
-    "brand_name": "NEAFS",
-    "short_desc_en": "\"NEAFS redefines the nicotine pouch experience with a focus on smoothness and quality, catering to those who appreciate a refined taste without the tobacco. Each pouch delivers a satisfying and enjoyable burst of flavor, making it ideal for newcomers transitioning from traditional tobacco or seasoned users seeking something fresh. With NEAFS, you can indulge in a modern, tobacco-free ritual that fits effortlessly into your lifestyle.\"",
-    "short_desc_de": "NEAFS bietet eine frische, moderne Interpretation von Nikotinpouches, ideal für alle, die auf der Suche nach einer tabakfreien Alternative sind, ohne auf das vertraute Gefühl eines Pouches verzichten zu müssen. Die Pouches zeichnen sich durch ausgewogene und vielseitige Geschmacksrichtungen aus, die genussvolle Abwechslung bringen und immer wieder zum Ausprobieren einladen. Ob du neu im Nikotinspiel bist oder als erfahrener Nutzer nach neuen Erlebnissen suchst, NEAFS bietet dir die perfekte Lösung.",
-    "short_desc_hu": "A NEAFS egy friss, modern megközelítést kínál a nikotinos pouches világában, amely tökéletes választás a dohányról áttérőknek és a tapasztalt felhasználóknak is, akik új ízekre vágynak. Páratlan minőség és ízélmény jellemzi a pouches-t, melyek élénk és jól kiegyensúlyozott ízeket kínálnak, hogy felfedezd a kedvencedet. Tapasztald meg a tiszta, dohánymentes élvezetet és a mindennapi rituálék új dimenzióját a NEAFS-szel."
-  },
-  {
-    "slug": "helwit",
-    "brand_name": "HELWIT",
-    "short_desc_en": "HELWIT offers a fresh and innovative approach to nicotine pouches, designed for those who appreciate quality and style in their nicotine experience. With a focus on distinct flavors and a smooth texture, HELWIT pouches deliver satisfaction without the tobacco, appealing to both newcomers and seasoned users seeking variety. This brand embodies a modern lifestyle, making it the perfect choice for anyone looking to elevate their nicotine routine.",
-    "short_desc_de": "HELWIT bietet eine frische, moderne Perspektive auf Nikotinpouches, die für alle gedacht sind, die auf eine tabakfreie Alternative umsteigen möchten, ohne auf das gewohnte Ritual zu verzichten. Die Pouches sind von hoher Qualität und zeichnen sich durch ausgewogene, spannende Geschmacksrichtungen aus, die ständig neue Genussmomente bieten. Egal ob Neuling oder erfahrener Nutzer, HELWIT ist die ideale Wahl für alle, die Vielfalt und Genuss suchen.",
-    "short_desc_hu": "A HELWIT modern és letisztult megközelítést kínál a nikotinos pouches világában, ideális választás azoknak, akik szeretnék elhagyni a dohányzást, de megőrizni a megszokott élményt. A pouches gazdag ízvilága és kifinomult minősége garantálja a felfrissülést, miközben a folyamatos újdonságok felfedezésére is lehetőséget ad. Legyen szó kezdőkről vagy tapasztalt felhasználókról, a HELWIT tökéletes választás a változatosság kedvelőinek."
-  },
-  {
-    "slug": "lundgrens",
-    "brand_name": "Lundgrens",
-    "short_desc_en": "Lundgrens offers a refined experience for those seeking a tobacco-free alternative that maintains the essence of traditional pouches. With a focus on natural ingredients and vibrant flavours, each pouch delivers a satisfying balance that appeals to both newcomers and seasoned users alike. Perfect for anyone looking to elevate their nicotine experience, Lundgrens stands out as a brand that respects quality and innovation.",
-    "short_desc_de": "Lundgrens bietet eine frische, moderne Interpretation von Nikotinpouches, die für Menschen entwickelt wurden, die eine tabakfreie Alternative suchen, ohne auf das gewohnte Gefühl verzichten zu müssen. Die Pouches zeichnen sich durch ihren hochwertigen, ausgewogenen Geschmack aus, der ein aufregendes Erlebnis für alle bietet. Egal ob Neueinsteiger oder erfahrene Nutzer, Lundgrens bringt Vielfalt und Genuss in deinen Alltag.",
-    "short_desc_hu": "A Lundgrens a modern nikotinpárnák világában egy friss, természetes megközelítést képvisel, amely a dohánymentes élményekre vágyó felhasználóknak készült. A párnák kiváló minőségű összetevőkből készülnek, így minden használat során egyedi és ízletes élményt nyújtanak. Ideális választás mindazok számára, akik most váltanak a dohányról, és szeretnék felfedezni a változatos ízek világát."
-  },
-  {
-    "slug": "snowman",
-    "brand_name": "Snowman",
-    "short_desc_en": "Snowman offers a refreshing and vibrant approach to nicotine pouches, designed for those who crave a cool and crisp experience without the tobacco. Each pouch is crafted for a smooth, satisfying feel, making it perfect for newcomers transitioning from traditional products or seasoned users seeking exciting new flavors. With Snowman, you can enjoy a delightful escape that fits seamlessly into your lifestyle.",
-    "short_desc_de": "Snowman bietet ein frisches, modernes Erlebnis mit Nikotinpouches, die ideal für alle sind, die den Umstieg von Tabak suchen oder einfach nur neue Geschmäcker ausprobieren möchten. Die Pouches zeichnen sich durch ihre hohe Qualität und ein angenehmes Mundgefühl aus, die ein genussvolles und befriedigendes Erlebnis garantieren. Perfekt für Neueinsteiger und erfahrene Nutzer, die Vielfalt und Geschmack schätzen.",
-    "short_desc_hu": "A Snowman friss és izgalmas élményt kínál a nikotinos pouches világában, amely a dohányzásról való áttérők és a tapasztalt felhasználók igényeit egyaránt kielégíti. A pouches lágy textúrája és egyedi ízvilága garantálja a minőséget, miközben a modern dizájn vonzza a fiatalabb közönséget is. Fedezd fel a változatosságot és élvezd a nikotint anélkül, hogy kompromisszumot kötnél a megszokott élményben."
-  },
-  {
-    "slug": "rush",
-    "brand_name": "RUSH",
-    "short_desc_en": "RUSH delivers a fresh and invigorating experience for those seeking a tobacco-free alternative without compromising on satisfaction. With pouches designed for smoothness and rich flavour, each one offers a unique journey that excites the senses. Ideal for newcomers looking to transition from traditional tobacco or seasoned users in search of something new, RUSH keeps your routine vibrant and enjoyable.",
-    "short_desc_de": "RUSH bietet eine frische, dynamische Erfahrung mit Nikotinbeuteln, die für alle gedacht ist, die den Genuss ohne Tabak suchen. Die Pouches zeichnen sich durch hochwertige Zutaten und ein ausgewogenes Geschmacksprofil aus, das sowohl Neulinge als auch erfahrene Nutzer anspricht. Entdecke die aufregende Vielfalt und finde deinen persönlichen Lieblingsgeschmack für jedes Abenteuer.",
-    "short_desc_hu": "A RUSH a modern nikotinpárna élményt kínál, amely a füstmentes alternatívák iránti vágyra épít. Párnái gazdag ízekkel és sima textúrával rendelkeznek, így minden használó felfedezheti a neki legjobban tetsző kombinációt. Ideális választás azoknak, akik a dohányzásról való áttérésre vágynak, valamint a tapasztalt felhasználóknak, akik új élményekre keresnek lehetőséget."
+    "slug": "77-pouches",
+    "brand_name": "77 Pouches",
+    "short_de": "77 Pouches steht für einen klaren, frischen Ansatz und verbindet skandinavische Schlichtheit mit intensivem Geschmackserlebnis. Perfekt für alle, die Wert auf dezente Stärke und einen modernen Stil legen, sei es beim Einstieg oder als erfahrener Genießer.",
+    "short_en": "77 Pouches stands out with a fresh, energetic spirit and a knack for crafting bold, satisfying pouches that do not hold back on flavour. It is a top pick for those who crave something vibrant and distinctive, whether you are new to nicotine pouches or looking to shake up your usual routine.",
+    "short_hu": "A 77 Pouches karakteres, letisztult stílust visz a nikotinpárnák világába, kompromisszumok nélkül, minden részletben érezhető minőséggel. Azoknak szól, akik szeretik, ha egyensúly és egyediség találkozik a mindennapokban, akár most ismerkednek a párnákkal, akár régóta hűségesek hozzájuk."
   },
   {
     "slug": "ace",
     "brand_name": "ACE",
-    "short_desc_en": "ACE delivers a fresh, contemporary approach to nicotine pouches, designed for those seeking a tobacco-free experience without compromising on satisfaction. With an emphasis on rich flavours and smooth textures, each pouch is crafted for enjoyment and versatility, making it perfect for newcomers transitioning from traditional tobacco or seasoned users wanting to explore new options. Embrace the ACE lifestyle and elevate your routine with a blend of quality and innovation.",
-    "short_desc_de": "ACE bietet eine frische und moderne Perspektive auf Nikotinpouches, ideal für alle, die ein tabakfreies Erlebnis suchen, ohne auf das gewohnte Ritual verzichten zu müssen. Die Pouches zeichnen sich durch eine ausgewogene und intensive Geschmackserfahrung aus, die neue Genussmomente schafft und das Experimentieren anregt. Egal, ob Sie neu im Nichtrauchen sind oder als erfahrener Nutzer Vielfalt suchen, ACE ist die perfekte Wahl für jeden Geschmack.",
-    "short_desc_hu": "Az ACE a modern nicotine pouch élmény megtestesítője, amely a dohánymentes alternatívák iránt érdeklődők számára készült. Páratlan minőségű pouches-t kínál, amelyek gazdag, kiegyensúlyozott ízekkel rendelkeznek, így mindig felfedezhetsz valami újat. Ideális választás kezdőknek, akik szeretnék elhagyni a dohányt, és tapasztalt felhasználóknak, akik változatosságra vágynak."
-  },
-  {
-    "slug": "clew",
-    "brand_name": "CLEW",
-    "short_desc_en": "CLEW offers a fresh and contemporary approach to nicotine pouches, designed for those who seek a tobacco-free alternative with a satisfying experience. Each pouch delivers a well-crafted blend of flavors that cater to both newcomers and seasoned users alike, encouraging exploration and enjoyment. With a commitment to quality and innovation, CLEW is the perfect choice for anyone wanting to elevate their nicotine experience while enjoying the freedom of choice.",
-    "short_desc_de": "CLEW bietet eine frische, moderne Interpretation von Nikotinbeuteln, ideal für alle, die auf der Suche nach einer tabakfreien Alternative sind, ohne auf das gewohnte Ritual zu verzichten. Die Pouches zeichnen sich durch ausgewogene und harmonische Geschmacksrichtungen aus, die sowohl Neulinge als auch erfahrene Nutzer ansprechen und zum Experimentieren einladen. Egal, ob Sie von Tabak umsteigen oder einfach nur Abwechslung suchen, CLEW hat das passende Erlebnis für Sie.",
-    "short_desc_hu": "A CLEW egy modern és letisztult megközelítést kínál a nikotinos pouches világában, ideális választás azok számára, akik el akarják hagyni a dohányt anélkül, hogy feladnák a megszokott élményt. A pouches gazdag ízvilága és minőségi kivitelezése miatt minden egyes használat különleges pillanatot teremt, így felfedezheted az új ízek varázsát. Tökéletes választás akár kezdőknek, akik a dohányzásról váltanak, akár tapasztalt felhasználóknak, akik változatosságra vágynak."
-  },
-  {
-    "slug": "rabbit",
-    "brand_name": "rabbit",
-    "short_desc_en": "Rabbit offers a fresh and vibrant approach to nicotine pouches, designed for those seeking an enjoyable and tobacco-free experience. Each pouch is crafted with a focus on quality and flavor, providing a smooth and satisfying alternative that excites the senses. Perfect for newcomers transitioning from tobacco or seasoned users craving something new, Rabbit is all about embracing variety and elevating your routine.",
-    "short_desc_de": "Rabbit bietet eine frische und aufregende Perspektive auf Nikotinpouches, ideal für alle, die den Genuss ohne Tabak erleben möchten. Die Pouches zeichnen sich durch ihre hochwertige Verarbeitung und innovative Geschmackskompositionen aus, die sowohl Neulingen als auch erfahrenen Nutzern Freude bereiten. Perfekt für jeden, der Abwechslung sucht oder einfach eine neue Art des Nikotinkonsums entdecken möchte.",
-    "short_desc_hu": "A Rabbit egy friss és modern megközelítést kínál a nikotinos pouches világában, ideális választás azoknak, akik szeretnék elkerülni a dohányt, miközben megőrzik a pouches használatának ritualitását. A pouches textúrája és ízvilága jól kiegyensúlyozott, így mindig új felfedezések várnak rád. Legyen szó kezdőkről vagy tapasztalt felhasználókról, a Rabbit tökéletes választás a változatosságot keresők számára."
-  },
-  {
-    "slug": "nois",
-    "brand_name": "NOiS",
-    "short_desc_en": "NOiS redefines the nicotine pouch experience with a contemporary approach that caters to those seeking a tobacco-free lifestyle while enjoying a satisfying ritual. Each pouch is crafted for a smooth and enjoyable sensation, delivering rich flavours that suit both newcomers and seasoned users alike. Whether you are making the switch or exploring new options, NOiS offers a fresh perspective on your nicotine journey.",
-    "short_desc_de": "NOiS bietet eine frische, moderne Perspektive auf Nikotin-Pouches für alle, die ein tabakfreies Erlebnis suchen, ohne auf das gewohnte Ritual zu verzichten. Die Pouches zeichnen sich durch ihre ausgewogene Qualität und spannende Geschmacksrichtungen aus, die sowohl Neulinge als auch erfahrene Nutzer ansprechen. Egal ob du von Tabak umsteigst oder einfach nur neue Varianten ausprobieren möchtest, NOiS ist die perfekte Wahl für jeden Geschmack.",
-    "short_desc_hu": "A NOiS egy friss és modern megközelítést kínál a nikotinos pouches világában, ideális választás azoknak, akik szeretnék elkerülni a dohányt, miközben élvezik a pouches adta élményt. Az ízek gazdagsága és a prémium minőség együttese új dimenziókat nyit meg, így mindig felfedezhetsz valami újat. Akár most váltasz a dohányról, akár tapasztalt felhasználó vagy, a NOiS pouches tökéletes társad lesz az izgalmas kalandban."
-  },
-  {
-    "slug": "chainpop",
-    "brand_name": "Chainpop",
-    "short_desc_en": "Chainpop redefines the nicotine pouch experience with its vibrant character and commitment to quality, delivering a range that excites both newcomers and seasoned users alike. Each pouch is crafted for a smooth, satisfying experience, balancing flavor and performance to keep you coming back for more. Perfect for those making the switch from tobacco or for anyone seeking a fresh twist in their routine, Chainpop is all about enjoying the moment without compromise.",
-    "short_desc_de": "Chainpop bietet eine frische, moderne Interpretation von Nikotinpouches, die sich an alle richten, die eine tabakfreie Alternative suchen ohne auf das gewohnte Erlebnis verzichten zu müssen. Die Pouches zeichnen sich durch ausgewogene Geschmacksrichtungen aus, die sowohl Neulingen als auch erfahrenen Nutzern eine spannende Vielfalt bieten. Egal ob Sie von Tabak wechseln oder einfach neue Kreationen entdecken möchten, Chainpop ist die perfekte Wahl für jeden Geschmack.",
-    "short_desc_hu": "A Chainpop friss és modern élményt kínál a nikotinos pouches világában, azok számára, akik a dohánytól való eltávolodás mellett keresnek egy új rituálét. A pouches gazdag ízprofilja és egyedi textúrája új dimenziót ad a használat élményének, így minden alkalommal meglepetést nyújt. Ideális választás kezdőknek, akik szeretnék felfedezni a nikotin pouches lehetőségeit, és tapasztalt felhasználóknak, akik változatos ízeket keresnek."
-  },
-  {
-    "slug": "siberia",
-    "brand_name": "Siberia",
-    "short_desc_en": "Siberia delivers an intense and invigorating experience, perfect for those who crave a bold nicotine rush without the tobacco. Each pouch is crafted for maximum quality and comfort, offering a satisfying alternative for seasoned users and newcomers alike. With its unique character, Siberia invites you to explore a world of potent flavors and elevate your pouch game.",
-    "short_desc_de": "Siberia bietet ein intensives und authentisches Erlebnis für alle, die eine nikotinfreie Alternative suchen, ohne auf den gewohnten Genuss zu verzichten. Die Pouches zeichnen sich durch ihre hohe Qualität und kraftvollen Geschmäcker aus, die sowohl Neulinge als auch erfahrene Nutzer ansprechen. Perfect für alle, die auf der Suche nach einer aufregenden Abwechslung sind oder den Umstieg von Tabak wagen möchten.",
-    "short_desc_hu": "A Siberia pouches egy egyedi és friss megközelítést kínál a nikotinpárnák világában, amely a füstmentes élet örömét ünnepli. A pouches lenyűgöző minősége és intenzív ízei tökéletesen kielégítik a tapasztalt felhasználók igényeit, miközben vonzó alternatívát nyújtanak a dohányzásról áttérők számára is. Fedezd fel a Siberia karakterét és élvezd a változatos ízélményeket, amelyekkel a nikotin új dimenzióját tapasztalhatod meg."
-  },
-  {
-    "slug": "fix",
-    "brand_name": "fix",
-    "short_desc_en": "\"Fix redefines the nicotine pouch experience with a sleek, contemporary design that caters to those seeking a tobacco-free alternative without sacrificing satisfaction. Each pouch delivers a smooth, premium feel with an array of flavors designed to elevate your moments, making them perfect for both newcomers to nicotine and seasoned users alike. Embrace the versatility and quality of Fix, where every pouch is crafted for those who appreciate a refined touch in their routine.\"",
-    "short_desc_de": "Fix bietet eine frische und zeitgemäße Herangehensweise an Nikotinpouches, die für Menschen entwickelt wurden, die das rauchfreie Erlebnis schätzen. Die Pouches zeichnen sich durch eine hohe Qualität und harmonische Geschmacksrichtungen aus, die ein intensives und zugleich sanftes Erlebnis bieten. Egal ob Neulinge auf der Suche nach einer Alternative zu Tabak sind oder erfahrene Nutzer, die Abwechslung lieben, Fix ist die perfekte Wahl für jeden.",
-    "short_desc_hu": "A fix egy friss és modern megközelítést kínál a nikotinpárnák világában, ideális választás azok számára, akik szeretnék elkerülni a dohányt, de nem akarnak lemondani a hagyományos élményről. Párnáik kiváló minőségűek, gazdag ízvilággal rendelkeznek, amelyek felfrissítik a mindennapokat és új dimenziókat adnak a nikotinélményhez. Legyen szó kezdőkről, akik a dohányról váltanak, vagy tapasztalt felhasználókról, akik új ízeket keresnek, a fix tökéletes választás."
-  },
-  {
-    "slug": "klint",
-    "brand_name": "Klint",
-    "short_desc_en": "\"Klint offers a fresh and innovative approach to nicotine pouches for those embracing a tobacco-free lifestyle. Known for their premium quality and authentic taste, Klint pouches deliver a satisfying experience that appeals to both newcomers and seasoned users alike. With a diverse selection of flavours and strengths, Klint ensures there's something enjoyable for everyone seeking a modern alternative.\"",
-    "short_desc_de": "Klint bietet eine moderne und stilvolle Alternative zu herkömmlichem Tabak, perfekt für alle, die den Genuss von Nikotin ohne Tabak erleben möchten. Die Pouches zeichnen sich durch ihre hohe Qualität und eine Vielfalt an ausgewogenen Geschmacksrichtungen aus, die sowohl Neulinge als auch erfahrene Nutzer ansprechen. Ob du gerade von Tabak umsteigst oder nach neuen Geschmackserlebnissen suchst, Klint hat für jeden etwas zu bieten.",
-    "short_desc_hu": "A Klint modern és letisztult élményt kínál a nikotinpárnák világában, ideális választás a dohányzásról áttérőknek és a tapasztalt felhasználóknak egyaránt. Az ízek gazdag skálája és a prémium minőség minden alkalommal új élményeket nyújt, így mindig van valami izgalmas felfedezni. Fedezd fel a Klint világát, ahol a hagyományos rituálé találkozik a frissességgel és a sokszínűséggel."
-  },
-  {
-    "slug": "white-fox",
-    "brand_name": "white-fox",
-    "short_desc_en": "White Fox embodies a fresh and stylish approach to nicotine pouches, appealing to those seeking a tobacco-free experience without sacrificing satisfaction. With a focus on high-quality ingredients and innovative flavors, these pouches deliver a smooth and enjoyable sensation that keeps users coming back for more. Perfect for newcomers transitioning from traditional tobacco or seasoned pouch enthusiasts exploring new options, White Fox offers a contemporary choice for every occasion.",
-    "short_desc_de": "White Fox bietet ein frisches und modernes Erlebnis mit Nikotinpäckchen, ideal für alle, die tabakfrei bleiben möchten und dennoch das gewohnte Ritual genießen wollen. Die Pouches zeichnen sich durch ihre Qualität und innovative Geschmäcker aus, die sowohl Neulinge als auch erfahrene Nutzer ansprechen und zum Ausprobieren einladen. Perfekt für diejenigen, die Vielfalt suchen und das Beste aus ihrer Nikotinerfahrung herausholen möchten.",
-    "short_desc_hu": "A White Fox egy modern, friss megközelítést kínál a nikotinos pouches világában, ideális választás mindazok számára, akik szeretnék elhagyni a dohányt, de megőrizni a megszokott élményt. A pouches karakteresen ízletesek és kiváló minőségűek, így minden használat során élvezetes pillanatokat nyújtanak. Tökéletes választás új belépőknek és tapasztalt felhasználóknak egyaránt, akik új ízekre és élményekre vágynak."
-  },
-  {
-    "slug": "iceberg",
-    "brand_name": "ICEBERG",
-    "short_desc_en": "ICEBERG delivers a refreshing twist on nicotine pouches, designed for those seeking a crisp and invigorating experience that stands apart from traditional options. The pouches are crafted for a smooth, satisfying use, making them ideal for newcomers transitioning from tobacco and seasoned users alike. With a focus on quality and innovation, ICEBERG invites you to explore new sensations while embracing a tobacco-free lifestyle.",
-    "short_desc_de": "ICEBERG bietet ein frisches, modernes Erlebnis mit seinen Nikotinpouches, die für alle gedacht sind, die den Genuss ohne Tabak suchen. Die Pouches zeichnen sich durch ihre hochwertige Verarbeitung und ein Geschmackserlebnis aus, das sowohl Einsteiger als auch erfahrene Nutzer anzieht. Ideal für alle, die Abwechslung und neue Geschmäcker entdecken möchten, ohne Kompromisse bei der Qualität einzugehen.",
-    "short_desc_hu": "Az ICEBERG friss, innovatív élményt kínál a nikotinos pouches világában, azoknak, akik szeretnék élvezni a hagyományos dohányzás nélküli élvezetet. A prémium minőségű pouches tökéletesen kiegyensúlyozott ízekkel rendelkeznek, ami mindig új kalandokat kínál a felhasználóknak. Ideális választás, ha éppen most váltasz a dohányról vagy ha tapasztalt felhasználó vagy, aki változatosságra vágyik."
-  },
-  {
-    "slug": "greatest",
-    "brand_name": "Greatest",
-    "short_desc_en": "Greatest delivers a fresh and innovative approach to nicotine pouches, designed for those seeking a tobacco-free experience that doesn't compromise on satisfaction. With a focus on smooth textures and vibrant flavours, each pouch offers a premium feel that appeals to both newcomers and seasoned users alike. Whether you’re transitioning from traditional tobacco or exploring new options, Greatest is here to elevate your nicotine experience.",
-    "short_desc_de": "Greatest bietet eine frische, moderne Perspektive auf Nikotinpouches, ideal für alle, die den Genuss ohne Tabak suchen. Die Pouches zeichnen sich durch ihre hochwertige Verarbeitung und ausgewogene Aromen aus, die für ein unvergessliches Erlebnis sorgen. Sie sind perfekt für Neulinge im Umstieg von Tabak oder erfahrene Nutzer, die auf der Suche nach neuen Geschmäckern sind.",
-    "short_desc_hu": "A Greatest a modern nikotinpárna élmény új szintjét képviseli, amely a dohányzásról áttérő új felhasználóknak és a tapasztaltabbaknak egyaránt megfelelő választás. A pórusok prémium minősége és kifinomult ízvilága garantálja a frissességet és az élvezetet minden használat során. Fedezd fel a változatosságot és a minőséget, amit az új generációs nikotinpárnák kínálnak."
-  },
-  {
-    "slug": "garant",
-    "brand_name": "Garant",
-    "short_desc_en": "Garant embodies a fresh approach to nicotine pouches, designed for those seeking a satisfying experience without the tobacco. With a focus on high-quality ingredients and a range of unique flavors, every pouch delivers a smooth and enjoyable sensation that keeps you coming back for more. Ideal for newcomers transitioning from traditional tobacco or seasoned users craving something different, Garant offers a versatile option for everyone.",
-    "short_desc_de": "Garant bietet eine frische, zeitgemäße Perspektive auf Nikotinbeutel, ideal für alle, die eine tabakfreie Alternative suchen, ohne auf das gewohnte Ritual des Beutels verzichten zu müssen. Die Pouches bestechen durch ihre hochwertige Verarbeitung und ein ausgewogenes Geschmacksprofil, das für jeden Nutzer ansprechend ist. Egal, ob Sie von Tabak umsteigen oder einfach nach neuen Geschmackserlebnissen suchen, Garant hat für jeden etwas zu bieten.",
-    "short_desc_hu": "A Garant friss és dinamikus megközelítést kínál a nikotinpárnák világában, amely lehetővé teszi, hogy a felhasználók élvezzék a nikotin ízét anélkül, hogy a dohányzás hagyományos formáira támaszkodnának. A prémium minőségű párnák gazdag ízvilággal rendelkeznek, amelyek tökéletesen illeszkednek a modern életstílushoz és különböző igényekhez. Ideális választás kezdőknek, akik a dohányzásról való átálláson gondolkodnak, vagy tapasztalt felhasználóknak, akik új élményekre vágynak."
-  },
-  {
-    "slug": "cuba",
-    "brand_name": "CUBA",
-    "short_desc_en": "CUBA offers a sophisticated and vibrant experience for those seeking a tobacco-free alternative that doesn’t compromise on quality. Designed with a smooth texture and rich flavor profiles, these pouches cater to both newcomers and seasoned users in search of an exciting twist. Whether you're making the switch from traditional tobacco or exploring new sensations, CUBA delivers a refreshing journey every time you reach for a pouch.",
-    "short_desc_de": "CUBA bietet ein modernes, elegantes Erlebnis mit Nikotinpouches, die perfekt für alle sind, die den Genuss ohne Tabak suchen. Die Pouches zeichnen sich durch ihre hochwertige Verarbeitung und ausgeglichene Aromen aus, die sowohl Neulinge als auch erfahrene Nutzer begeistern. Egal ob du von Tabak umsteigst oder einfach nach neuen Geschmacksrichtungen suchst, CUBA hat die ideale Lösung für dich.",
-    "short_desc_hu": "A CUBA modern és ízletes megoldást kínál a nikotinpárnák világában, tökéletes választás mindazoknak, akik el szeretnék hagyni a dohányt, de megőriznék a megszokott élményeket. A pouches kiváló minőségűek, gazdag ízvilágukkal és egyedi karakterükkel emelkednek ki a piacon. Ideális választás tapasztalt felhasználóknak, akik új élményekre vágynak, valamint a kezdőknek, akik felfedezésre készen állnak."
-  },
-  {
-    "slug": "baron",
-    "brand_name": "BARON",
-    "short_desc_en": "BARON embodies a refined approach to nicotine pouches, designed for those who appreciate sophistication without the tobacco. With a focus on rich flavors and a smooth experience, these pouches offer a premium feel that appeals to both newcomers making the switch and seasoned users seeking something fresh. Whether you crave a moment of calm or a burst of flavor, BARON provides an elegant solution that elevates your routine.",
-    "short_desc_de": "BARON bietet eine elegante und moderne Auswahl an Nikotinpouches, die für alle geeignet sind, die den gewohnten Genuss ohne Tabak erleben möchten. Die Pouches zeichnen sich durch ihre hochwertige Verarbeitung und vielschichtigen Aromen aus, die stets zum Entdecken einladen. Ob Neuling auf der Suche nach einer alternativen Genussform oder erfahrener Nutzer, der neue Geschmäcker erkunden möchte, BARON erfüllt alle Erwartungen.",
-    "short_desc_hu": "A BARON a modern nikotinos pouches világában egyedi karaktert képvisel, amely a füstmentes élményre vágyóknak kínál prémium alternatívát. Páratlan minősége és ízletes választékai révén a pouches ideálisak új felhasználók számára, akik a dohányzásról való áttérésre törekednek, valamint a tapasztaltabb felhasználóknak is, akik új élményekre vágynak. A BARON hangulata és innovációja minden pillanatot különlegessé tesz."
-  },
-  {
-    "slug": "fumi",
-    "brand_name": "FUMI",
-    "short_desc_en": "FUMI offers a fresh and vibrant approach to nicotine pouches, catering to those who seek a tobacco-free lifestyle without sacrificing satisfaction. With a focus on high-quality ingredients and innovative flavour profiles, FUMI ensures each pouch delivers a rich experience that keeps users engaged and excited. Ideal for newcomers transitioning from traditional tobacco or seasoned users looking to explore new options, FUMI makes every moment enjoyable and refreshing.",
-    "short_desc_de": "FUMI bietet eine frische, moderne Interpretation von Nikotin-Pouches, perfekt für alle, die den Genuss ohne Tabak suchen. Die Pouches zeichnen sich durch erstklassige Qualität und vielfältige Geschmackserlebnisse aus, die sowohl Neulingen als auch erfahrenen Nutzern gerecht werden. Mit FUMI entdeckst du immer wieder neue Kombinationen, die dein Erlebnis bereichern und die traditionellen Gewohnheiten neu definieren.",
-    "short_desc_hu": "A FUMI friss és modern élményt kínál a nikotinpárnák világában, idealizálva a dohánymentes alternatívát, amely megőrzi a megszokott rituálékat. A pouches gazdag ízekkel és kiegyensúlyozott karakterrel bírnak, így mindig felfedezhetsz valami újat. Kiváló választás azoknak, akik most váltanak a dohányzásról, vagy tapasztalt felhasználóknak, akik változatosságra vágynak."
-  },
-  {
-    "slug": "rave",
-    "brand_name": "RAVE",
-    "short_desc_en": "RAVE offers a vibrant and modern approach to nicotine pouches, designed for those who seek a tobacco-free experience without sacrificing satisfaction. With a focus on dynamic flavours and a smooth feel, each pouch delivers a refreshing twist that keeps your routine exciting. Ideal for newcomers making the switch or seasoned users craving something new, RAVE is all about elevating your nicotine experience.",
-    "short_desc_de": "RAVE bietet eine frische und aufregende Perspektive auf Nikotinpouches, ideal für alle, die eine tabakfreie Alternative suchen. Mit ihrem einzigartigen Gefühl und der hochwertigen Verarbeitung setzen die Pouches neue Maßstäbe für Genuss und Vielfalt. Ob Sie neu im Pouch-Erlebnis sind oder ein erfahrener Nutzer, RAVE bringt frischen Wind in Ihre Routine.",
-    "short_desc_hu": "A RAVE egy friss és dinamikus választás a nikotinpárnák világában, amely az ízek és az élmények új dimenzióját kínálja. A párnák prémium minősége és sokszínűsége tökéletesen illeszkedik a tapasztalt felhasználók igényeihez, akik új kalandokra vágynak, és azokhoz is, akik a dohányzásról való átállás során keresik a megfelelő alternatívát. Fedezd fel a RAVE világát, ahol a hagyományos rituálék találkoznak a modern ízélményekkel."
-  },
-  {
-    "slug": "denssi",
-    "brand_name": "DENSSI",
-    "short_desc_en": "DENSSI offers a fresh, vibrant approach to nicotine pouches, designed for those seeking a smooth and satisfying alternative to traditional tobacco. With a focus on quality and innovative flavor profiles, each pouch delivers a unique experience that keeps users coming back for more. Perfect for newcomers transitioning from tobacco or seasoned enthusiasts craving a refreshing twist, DENSSI elevates your nicotine journey.",
-    "short_desc_de": "DENSSI bietet eine frische, moderne Interpretation von Nikotinpäckchen, die für alle geeignet sind, die eine tabakfreie Alternative suchen und das gewohnte Ritual des Päckchens unter der Lippe genießen möchten. Die Pouches zeichnen sich durch hochwertige Zutaten und ausgewogene Aromen aus, die regelmäßig zum Ausprobieren einladen und neue Geschmackserlebnisse schaffen. Ob du neu im Nichtrauchen bist oder ein erfahrener Nutzer auf der Suche nach Abwechslung, DENSSI liefert das perfekte Erlebnis für jeden.",
-    "short_desc_hu": "A DENSSI modern, ízléses megközelítést kínál a nikotinos pouches világában, ideális választás mindazoknak, akik a dohányzásról való áttérés mellett döntenek, vagy egyszerűen új élményekre vágynak. Tökéletesen kiegyensúlyozott ízek és prémium minőség jellemzi a pouches-eket, amelyek mindig friss érzést nyújtanak. Akár kezdő, akár tapasztalt felhasználó vagy, a DENSSI mindig új lehetőségeket kínál a nikotinnal való kapcsolatodhoz."
-  },
-  {
-    "slug": "fold",
-    "brand_name": "FOLD",
-    "short_desc_en": "FOLD embraces a sleek and contemporary approach to nicotine pouches, designed for those who crave a satisfying experience without the tobacco hassle. The pouches offer a refined quality and an array of intriguing flavors, ensuring that every user finds their perfect fit. Ideal for newcomers transitioning from traditional tobacco or seasoned enthusiasts seeking fresh alternatives, FOLD stands out in the modern nicotine market.",
-    "short_desc_de": "FOLD bietet eine frische, moderne Interpretation von Nikotin-Pouches, die für alle geeignet sind, die tabakfrei bleiben möchten, ohne auf das gewohnte Ritual zu verzichten. Die Pouches zeichnen sich durch ein hochwertiges Gefühl und ausgewogene Geschmäcker aus, die immer wieder neue Überraschungen bieten. Egal, ob du neu im Bereich der Nikotin-Pouches bist oder ein erfahrener Nutzer auf der Suche nach Abwechslung, FOLD hat für jeden etwas im Angebot.",
-    "short_desc_hu": "A FOLD egy modern és innovatív választás a nikotinpogácsák világában, amely úgy lett megalkotva, hogy a felhasználók élvezhessék a dohánymentes élményt. Az ízek és textúrák harmóniája garantálja a magas minőséget, miközben minden alkalomra friss és izgalmas élményt kínál. Ideális választás mindazoknak, akik éppen most váltanak a dohányról, valamint a tapasztalt felhasználóknak is, akik új ízekre vágynak."
-  },
-  {
-    "slug": "glick",
-    "brand_name": "GLICK",
-    "short_desc_en": "GLICK delivers a fresh and vibrant approach to nicotine pouches, designed for those seeking a tobacco-free experience that doesn’t compromise on satisfaction. Each pouch combines quality materials with an array of enticing flavors, offering a smooth and enjoyable alternative for both newcomers and seasoned users. Perfect for anyone looking to elevate their routine, GLICK stands out as a brand that encourages exploration and indulgence.",
-    "short_desc_de": "GLICK bietet eine frische, moderne Interpretation von Nikotinpouches, ideal für alle, die eine tabakfreie Alternative suchen, ohne auf das gewohnte Gefühl verzichten zu müssen. Die Pouches bestechen durch ihre hochwertige Verarbeitung und ausgewogene Geschmäcker, die für jeden Geschmack etwas bereithalten und immer wieder neue Erlebnisse ermöglichen. Perfekt für Neulinge, die von Tabak umsteigen möchten, sowie für erfahrene Nutzer, die nach Vielfalt und Charakter suchen.",
-    "short_desc_hu": "A GLICK modern és letisztult élményt kínál a nikotinpárnák világában, azok számára, akik szeretnék elkerülni a dohányt, de megőrizni a megszokott rituálékat. Párnáink prémium minősége és sokszínű ízvilága garantálja, hogy mindig felfedezhet valami újat, legyen szó újoncokról vagy tapasztalt felhasználókról. A GLICK ideális választás, ha változatos és egyedi élményre vágyik."
-  },
-  {
-    "slug": "klar",
-    "brand_name": "KLAR",
-    "short_desc_en": "KLAR offers a fresh, contemporary approach to nicotine pouches, designed for those seeking a smooth and enjoyable alternative to traditional tobacco products. With a focus on high-quality ingredients and thoughtfully crafted flavours, each pouch delivers a satisfying experience without the fuss. Perfect for newcomers making the switch or seasoned users exploring exciting new options, KLAR is your go-to choice for a sophisticated nicotine experience.",
-    "short_desc_de": "KLAR bietet eine frische, moderne Perspektive auf Nikotinbeutel und richtet sich an alle, die nach einer tabakfreien Alternative suchen, ohne auf das gewohnte Ritual verzichten zu müssen. Die Beutel zeichnen sich durch eine ausgewogene Qualität und geschmackliche Vielfalt aus, die sowohl Neulinge als auch erfahrene Nutzer anspricht. Egal ob du gerade von Tabak umsteigst oder auf der Suche nach neuen Geschmacksrichtungen bist, KLAR hat für jeden etwas zu bieten.",
-    "short_desc_hu": "A KLAR modern és letisztult megközelítést kínál a nicotine pouch használatában, amely lehetővé teszi, hogy élvezd a nikotint anélkül, hogy tobakkal kellene terhelned magad. Páratlan ízek és kiváló minőség jellemzi a pouches-t, így mindig találsz valami újat, ami izgalmas lehet a számodra. Ideális választás azoknak, akik a dohányzásról váltanak, és tapasztalt felhasználóknak egyaránt, akik változatos élményekre vágynak."
-  },
-  {
-    "slug": "leo",
-    "brand_name": "LEO",
-    "short_desc_en": "LEO redefines the nicotine pouch experience with a fresh, contemporary approach that caters to both newcomers and seasoned users alike. Each pouch is crafted to deliver a smooth and satisfying sensation, inviting users to explore a diverse range of flavors that keep their routine exciting. Whether you are transitioning from tobacco or seeking to elevate your existing pouch game, LEO is your go-to choice for quality and style.",
-    "short_desc_de": "LEO bietet eine moderne und frische Interpretation von Nikotinpouches, ideal für alle, die eine tabakfreie Alternative suchen, ohne auf das gewohnte Gefühl verzichten zu müssen. Die Qualität der Pouches überzeugt durch harmonische Aromen und eine angenehme Textur, die das Nutzererlebnis aufwerten. Ob Einsteiger auf der Suche nach einer Umstellung oder erfahrene Nutzer, die Abwechslung suchen, LEO hat für jeden etwas zu bieten.",
-    "short_desc_hu": "A LEO modern és friss szemlélettel közelíti meg a nikotinos pulton való élvezetet, a dohányzásról átálló újoncok és a tapasztalt felhasználók számára egyaránt ideális választás. Pouches-aink prémium minőséget és gazdag ízélményeket kínálnak, amelyek a felfedezés és a kényelem érzését keltik. Mindenki számára van valami különleges, aki a hagyományos dohány helyett egy új, innovatív alternatívát keres."
-  },
-  {
-    "slug": "lumi",
-    "brand_name": "LUMI",
-    "short_desc_en": "LUMI offers a refreshing approach to nicotine pouches, designed for those seeking a smooth and satisfying experience without the tobacco. With a focus on vibrant flavors and exceptional quality, each pouch delivers a satisfying burst that keeps users engaged and coming back for more. Perfect for newcomers transitioning from traditional tobacco or seasoned enthusiasts exploring new tastes, LUMI stands out for its commitment to elevating the enjoyment of nicotine.",
-    "short_desc_de": "LUMI bietet eine frische, moderne Interpretation von Nikotinpouches, die für alle geeignet sind, die auf der Suche nach einer tabakfreien Alternative sind, ohne auf das gewohnte Ritual verzichten zu müssen. Die Pouches zeichnen sich durch ausgeglichene und spannende Geschmacksrichtungen aus, die jeden Nutzer überraschen und begeistern. Ideal für Neueinsteiger, die den Umstieg wagen wollen, sowie für erfahrene Nutzer, die Abwechslung im Alltag suchen.",
-    "short_desc_hu": "A LUMI egy friss és modern megközelítést kínál a nikotinos pouches világában, azok számára, akik el akarják hagyni a dohányt, de megőriznék a hagyományos használati élményt. Pouch-aink prémium minőségűek, ízletes és változatos ízekkel, amelyek garantálják az élvezetes használatot minden alkalommal. Legyen szó újdonsült felhasználókról vagy tapasztalt kedvelőkről, LUMI mindig új izgalmakat tartogat."
-  },
-  {
-    "slug": "relx",
-    "brand_name": "RELX",
-    "short_desc_en": "RELX offers a fresh, innovative approach to nicotine pouches designed for those who seek a tobacco-free experience without losing the satisfaction of a pouch. With a focus on smooth textures and enticing flavours, each pouch delivers a premium feel that elevates your routine. Ideal for newcomers transitioning from tobacco or seasoned users exploring new sensations, RELX is your reliable choice for quality and variety.",
-    "short_desc_de": "RELX bietet eine frische, moderne Perspektive auf Nikotinpouches, die für alle geeignet sind, die eine tabakfreie Alternative suchen, ohne auf das gewohnte Gefühl verzichten zu müssen. Die Pouches zeichnen sich durch ihre sorgfältige Auswahl an hochwertigen Zutaten aus, die ein angenehmes und ausgewogenes Erlebnis garantieren. Egal, ob Sie gerade von Tabak wechseln oder nach neuen Geschmacksrichtungen suchen, RELX hat für jeden etwas zu bieten.",
-    "short_desc_hu": "A RELX friss, innovatív megközelítést kínál a nikotinos pouches világában, amely lehetővé teszi, hogy a felhasználók élvezhessék a nikotint anélkül, hogy a dohányzás hagyományos szokásait kellene követniük. A pouches sima textúrája és ízvilága garantálja a tartós élvezetet, így mindenki megtalálhatja a számára tökéletes választást. Ideális választás újonnan érkezőknél, akik a dohányzásról való áttérésen gondolkodnak, vagy tapasztalt felhasználóknál, akik új ízeket keresnek."
-  },
-  {
-    "slug": "smögen",
-    "brand_name": "Smögen",
-    "short_desc_en": "Smögen offers a fresh and contemporary approach to nicotine pouches, designed for those who crave a tobacco-free experience while enjoying their favorite ritual. With a focus on smooth textures and engaging flavors, these pouches provide a satisfying choice that caters to both newcomers and seasoned users alike. Perfect for anyone seeking a stylish and enjoyable alternative, Smögen delivers quality and variety in every pouch.",
-    "short_desc_de": "Smögen bietet eine frische, moderne Perspektive auf Nikotinpouches, ideal für alle, die den Schritt zu einem tabakfreien Erlebnis wagen möchten. Die Pouches zeichnen sich durch ihre hochwertige Verarbeitung und abwechslungsreiche Geschmäcker aus, die sowohl Neulingen als auch erfahrenen Nutzern Freude bereiten. Mit Smögen entdeckst du die Freiheit, den Genuss von Nikotin auf eine stilvolle und geschmackvolle Weise zu erleben.",
-    "short_desc_hu": "A Smögen friss és modern megközelítést kínál a nikotinos pouches világában, ideális választás azoknak, akik a füstmentes élvezetet keresik a hagyományos dohányzás helyett. A pouches sima textúrája és ízletes kombinációi garantálják a kiegyensúlyozott élményt, amely mindig tartogat valami újat felfedezésre. Legyen szó kezdőkről vagy tapasztalt felhasználókról, a Smögen tökéletes társ a nikotin felfedezésében."
-  },
-  {
-    "slug": "snoberg",
-    "brand_name": "SNOBERG",
-    "short_desc_en": "SNOBERG redefines the world of nicotine pouches with a sleek and sophisticated approach that appeals to discerning users. The pouches are crafted for comfort and deliver a refined experience, making them perfect for both newcomers making the switch from tobacco and seasoned users seeking exciting new flavors. Embrace a lifestyle that values quality and variety without compromise.",
-    "short_desc_de": "SNOBERG bietet eine frische, moderne Interpretation von Nikotinpouches, ideal für alle, die eine rauchfreie Alternative suchen, ohne auf den vertrauten Genuss eines Pouches verzichten zu müssen. Die Pouches zeichnen sich durch ihre hochwertige Verarbeitung und ausgewogene Aromenvielfalt aus, die sowohl für Umsteiger als auch für erfahrene Nutzer spannend ist. Mit SNOBERG entdeckst du immer wieder neue Geschmackserlebnisse, die deine Sinne ansprechen und die tägliche Routine bereichern.",
-    "short_desc_hu": "A SNOBERG modern és ízletes megoldás a nikotinpárnák világában, amely lehetővé teszi a dohányzásról való átállást anélkül, hogy lemondanánk a megszokott élvezetekről. Párnáink prémium minőséget és egyedi ízélményt kínálnak, így mindazok számára ideális választás, akik új felfedezésekre vágynak. Legyen szó tapasztalt felhasználókról vagy újoncokról, a SNOBERG mindig friss és izgalmas alternatívát nyújt."
-  },
-  {
-    "slug": "tectonic",
-    "brand_name": "TECTONIC",
-    "short_desc_en": "TECTONIC offers a refreshing approach to nicotine pouches, designed for those who crave a clean and sophisticated alternative to traditional tobacco. With a focus on smooth textures and well-rounded flavors, each pouch delivers a satisfying experience that keeps users coming back for more. Perfect for newcomers transitioning from tobacco or seasoned pouch enthusiasts seeking exciting new options, TECTONIC is your go-to brand for an elevated nicotine experience.",
-    "short_desc_de": "TECTONIC bietet ein modernes und elegantes Erlebnis für alle, die die Freiheit von Tabak genießen möchten, ohne dabei auf den gewohnten Genuss zu verzichten. Die Pouches zeichnen sich durch eine harmonische Balance von Geschmack und Qualität aus, die sowohl Neulinge auf der Suche nach einer Alternative als auch erfahrene Nutzer anspricht, die etwas Neues probieren möchten. Mit TECTONIC erlebst du eine frische Perspektive auf Nikotingenuss, egal wo du auf deiner Reise stehst.",
-    "short_desc_hu": "A TECTONIC egy modern és friss megközelítést kínál a nicotine pouch világában, amely tökéletes választás azok számára, akik el szeretnék hagyni a dohányt, anélkül hogy lemondanának a megszokott élményről. Pouch-jaink prémium minőségűek és ízletesek, gazdag ízvilágukkal bármikor felfrissítik a felhasználókat. Legyen szó újonnan érkezőkről vagy tapasztalt felhasználókról, a TECTONIC mindig izgalmas alternatívákat nyújt."
-  },
-  {
-    "slug": "togo",
-    "brand_name": "TOGO",
-    "short_desc_en": "TOGO redefines the nicotine pouch experience with a focus on quality and innovation, appealing to both newcomers and seasoned users alike. Each pouch is crafted for a smooth, satisfying experience that caters to diverse preferences without the hassle of tobacco. With TOGO, you can explore a world of enjoyable flavors while embracing a modern, tobacco-free lifestyle.",
-    "short_desc_de": "TOGO bietet eine frische, moderne Herangehensweise an Nikotinpouches, die ideal für alle sind, die eine tabakfreie Alternative suchen, ohne auf das vertraute Gefühl eines Pouches verzichten zu müssen. Die Pouches zeichnen sich durch ihre ausgewogenen und spannenden Geschmäcker aus, die jedem Nutzer neue Erlebnisse bieten. Perfekt für Neulinge, die von Tabak umsteigen möchten, sowie für erfahrene Nutzer, die auf der Suche nach aufregenden Variationen sind.",
-    "short_desc_hu": "A TOGO egy friss és modern megközelítést kínál a nikotinos pouches világában, ideális választás azok számára, akik szeretnék elkerülni a dohányt, miközben megőrzik a megszokott élményt. A pouches gazdag ízekben és kiegyensúlyozott aromákban bővelkednek, így mindig találhatsz új kedvencet. Legyen szó új felhasználóról vagy tapasztaltabb dohányzásról áttérőről, a TOGO tökéletes társ a változatosságban."
-  },
-  {
-    "slug": "xpct",
-    "brand_name": "XPCT",
-    "short_desc_en": "XPCT redefines the nicotine pouch experience with a sleek, contemporary design that appeals to both newcomers and seasoned users alike. Each pouch delivers a premium feel, crafted for those who seek a satisfying alternative to traditional tobacco without compromising on enjoyment. With a diverse range of flavors that invite exploration, XPCT is perfect for anyone looking to elevate their nicotine journey.",
-    "short_desc_de": "XPCT bietet eine frische und moderne Interpretation von Nikotinbeuteln, perfekt für alle, die eine tabakfreie Alternative suchen, ohne auf das gewohnte Ritual verzichten zu müssen. Die Pouches zeichnen sich durch hochwertige Materialien und vielfältige Geschmäcker aus, die sowohl Neulingen als auch erfahrenen Nutzern spannende Kombinationen bieten. Egal ob du den Wechsel von Tabak wagst oder nach neuen Erlebnissen suchst, XPCT liefert für jeden Geschmack das passende Erlebnis.",
-    "short_desc_hu": "Az XPCT a modern nikotinos pouches világát új szintre emeli, a frissesség és minőség egyedi kombinációjával. A termékek ízletes választékot kínálnak, amelyekkel felfedezheted a nikotinélményt anélkül, hogy a dohányra támaszkodnál. Ideális választás kezdőknek, akik a dohányzásról váltanak, valamint tapasztalt felhasználóknak, akik új ízekre vágynak."
-  },
-  {
-    "slug": "tyr",
-    "brand_name": "TYR",
-    "short_desc_en": "TYR embodies a contemporary approach to nicotine pouches, designed for those who crave a refined experience without tobacco. The pouches offer a smooth, satisfying sensation that complements a diverse range of bold flavours, ensuring there's always something new to explore. Ideal for newcomers transitioning from traditional products or seasoned users seeking a quality alternative, TYR stands out for its commitment to excellence and innovation.",
-    "short_desc_de": "TYR bietet einen frischen und zeitgemäßen Ansatz für Nikotinpouches, ideal für alle, die eine tabakfreie Alternative suchen, ohne auf das gewohnte Gefühl verzichten zu müssen. Die Pouches zeichnen sich durch ausgewogene und abwechslungsreiche Geschmäcker aus, die zum Entdecken und Experimentieren einladen. Egal ob Neueinsteiger oder erfahrene Nutzer, TYR bietet für jeden das passende Erlebnis.",
-    "short_desc_hu": "A TYR modern, ízléses megoldást kínál a nikotinos pouches szerelmeseinek, akik értékelik a tiszta és füstmentes élményt. Pouchaink prémium minősége és sokféle ízvilága mindenki számára izgalmas lehetőségeket kínál, legyen szó újonnan érkezőkről vagy tapasztalt felhasználókról, akik friss ízeket keresnek. Célunk, hogy minden használat során élvezetet és egyediséget nyújtsunk."
+    "short_de": "Ace steht für einen klaren, schnörkellosen Genuss, der moderne Frische mit deutlicher Intensität verbindet und dabei komplett tabakfrei bleibt. Perfekt für alle, die beim Nikotin auf kompromisslosen Geschmack und ein energiegeladenes Erlebnis setzen.",
+    "short_en": "Ace cuts through the noise with a crisp, no-nonsense approach that puts cool confidence at the core of every pouch. Its clean and invigorating taste is perfect for those who appreciate straightforward quality and a refreshing lift, whether you are new to nicotine pouches or looking for a next-level upgrade.",
+    "short_hu": "Az ACE a frissességre és lendületre épít, letisztult dizájnja és karakteres ízei minden egyes tasakban különleges élményt adnak. Azoknak ajánljuk, akik szeretik az erőteljes, egyértelmű megoldásokat és nem érik be kevesebbel, mint a magabiztos energiával."
   },
   {
     "slug": "apres",
     "brand_name": "Apres",
-    "short_desc_en": "\"Apres redefines nicotine pouches with a fresh, innovative twist that caters to those seeking a sophisticated alternative to traditional tobacco. Each pouch is crafted for a smooth experience, blending premium quality with unique flavours that elevate your moments. Perfect for newcomers transitioning from tobacco or seasoned users looking to explore new sensations, Apres offers a journey of taste and satisfaction.\"",
-    "short_desc_de": "Apres bietet eine frische, moderne Perspektive auf Nikotinpouches, ideal für alle, die eine tabakfreie Alternative suchen und dennoch das vertraute Gefühl eines Pouches genießen möchten. Die Pouches überzeugen durch ausgewogene, raffinierte Geschmacksrichtungen, die immer wieder neue Erlebnisse bieten. Ob Neuling, der von Tabak umsteigt, oder erfahrener Nutzer auf der Suche nach Vielfalt, Apres passt perfekt zu jedem Lifestyle.",
-    "short_desc_hu": "Az Apres egy friss és modern megközelítést kínál a nikotinos pouches világában, amely lehetővé teszi a felhasználók számára, hogy élvezzék a nikotint anélkül, hogy a hagyományos dohánytermékekhez kellene folyamodniuk. A pouches prémium minőségűek, ízletes és jól megkomponált ízekkel rendelkeznek, így mindig van új felfedezni való. Ideális választás azok számára, akik a dohányról váltanak, vagy tapasztalt felhasználók, akik változatosságra vágynak."
+    "short_en": "Après sets itself apart with sleek design and a smooth, satisfying feel that makes each pouch a small moment of luxury. This brand is a perfect fit for anyone who values a refined nicotine experience and wants something a little more elevated from their everyday.",
+    "short_de": "Après steht für ein frisches und stilvolles Nikotinerlebnis, bei dem elegante Aromen und ausgewogene Kompositionen im Vordergrund stehen. Perfekt für alle, die Wert auf Design und Geschmack legen und ihre Pause gern besonders zelebrieren.",
+    "short_hu": "Az Après a prémium életérzést hozza el a nikotinpárnák világába, letisztult eleganciával és gazdag, kifinomult ízvilággal. Azoknak való, akik szeretik a stílust és az élményt, miközben valami igazán különlegeset keresnek a mindennapokban."
   },
   {
-    "slug": "77-pouches",
-    "brand_name": "77 Pouches",
-    "short_desc_en": "77 Pouches delivers a fresh, contemporary approach to nicotine enjoyment, perfect for anyone looking to ditch tobacco while still embracing the ritual of a pouch. Crafted with attention to quality and flavor, these pouches offer a range of satisfying options that cater to both newcomers and seasoned users alike. Experience the freedom of a tobacco-free lifestyle with pouches designed to keep your cravings at bay, leaving you free to enjoy life's moments.",
-    "short_desc_de": "77 Pouches bietet ein modernes und frisches Erlebnis für alle, die nach einer rauchfreien Alternative suchen und dabei nicht auf Genuss verzichten wollen. Die Pouches zeichnen sich durch ihre ausgewogene Qualität und ansprechenden Geschmäcker aus, die sowohl Neulingen als auch erfahrenen Nutzern schmeicheln. Egal ob du den Umstieg von Tabak wagst oder einfach auf der Suche nach neuen Geschmackserlebnissen bist, 77 Pouches hat für jeden etwas zu bieten.",
-    "short_desc_hu": "A 77 Pouches egy friss és modern megközelítést hoz a nikotinos pouches világába, teret adva azoknak, akik a dohánymentes alternatívák keresése közben megőriznék a megszokott élményeket. Pouchai gazdag ízvilágukkal és kényelmes használatukkal kiemelkednek, lehetővé téve a felhasználók számára, hogy új ízeket fedezzenek fel egy könnyed élmény keretein belül. Ideális választás mindazoknak, akik éppen áttérnek a dohányról, vagy tapasztalt felhasználóknak, akik változatosságra vágynak."
+    "slug": "avant",
+    "brand_name": "AVANT",
+    "short_de": "Avant steht für klare Linien und ein modernes Gefühl, gepaart mit einem angenehm kühlen Mundgefühl bei jedem Beutel. Wer Abwechslung mag und Wert auf einen frischen, unkomplizierten Genuss legt, findet hier schnell seinen Favoriten.",
+    "short_en": "Avant stands out for its ultra-smooth feel and an effortlessly cool edge that keeps things fresh and easygoing. It is a natural fit for anyone who values style with their pouch, whether you are new to nicotine or looking for your next everyday staple.",
+    "short_hu": "Az Avant a nikotinpárnák világába friss lendületet hoz, letisztult karakterrel és lendületes, mégis harmonikus ízvilággal. Azoknak készült, akik szeretik, ha egy nikotinpárna egyszerre energikus és kifinomult, kezdők és tapasztalt felhasználók számára is."
+  },
+  {
+    "slug": "baron",
+    "brand_name": "BARON",
+    "short_en": "Baron delivers a refined and satisfying pouch experience, with a focus on smooth textures and understated flavour blends that feel quietly confident. It is a strong match for those who value subtlety and sophistication in their everyday routine.",
+    "short_hu": "A Baron a klasszikus elegancia és kifinomultság érzését hozza el a nikotinpárnák világába, letisztult minőséggel és visszafogott karakterrel. Azoknak ajánljuk, akik a diszkrét, mégis magabiztos élményt keresik, akár kezdők, akár tapasztalt felhasználók.",
+    "short_de": "Baron steht für einen selbstbewussten Auftritt und genießt einen Ruf für harmonisch abgestimmte Nikotinbeutel mit besonderem Feingefühl im Geschmack. Wer Wert auf Stil und einen geschmackvollen Begleiter im Alltag legt, findet hier seine Marke."
+  },
+  {
+    "slug": "brute",
+    "brand_name": "BRUTE",
+    "short_en": "BRUTE delivers a straight-talking, no-nonsense nicotine pouch with a robust kick and authentic, unpolished character. Perfect for those who want their experience strong, simple and seriously satisfying, without the fuss.",
+    "short_de": "BRUTE steht für eine kompromisslose, direkte Art von Nikotinbeutel, die mit ihrer klaren Linie und kraftvollen Präsenz überzeugt. Wer Charakter und Intensität sucht, findet hier einen verlässlichen Begleiter für starke Genussmomente.",
+    "short_hu": "A BRUTE egy vagány, kompromisszummentes világgal hív, ahol minden tasakban érezni az erőt és a karaktert. Azoknak való, akik szeretik a markáns ízeket és nem riadnak vissza az intenzív élménytől."
+  },
+  {
+    "slug": "chainpop",
+    "brand_name": "Chainpop",
+    "short_de": "Chainpop steht für einen unkomplizierten Genuss, der mit klaren Aromen und einer angenehm frischen Note überzeugt. Diese Pouches passen zu allen, die es gerne direkt mögen und dabei auf einen modernen Twist setzen.",
+    "short_en": "Chainpop stands out with its vibrant, playful approach to nicotine pouches, adding a spark of energy to your routine without sacrificing smooth satisfaction. Perfect for those who crave a little fun in their flavour and want a lift that keeps up with their pace.",
+    "short_hu": "A Chainpop a lendületes, frissítő ízvilágot ötvözi a modern nikotinpárnák letisztult élményével, hogy minden alkalommal új szintre emelje a mindennapokat. Azoknak ajánljuk, akik szeretik a karakteres, fiatalos megoldásokat és örömmel választanak izgalmas alternatívát a megszokott dohánytermékek helyett."
+  },
+  {
+    "slug": "clew",
+    "brand_name": "CLEW",
+    "short_en": "Clew stands out with a crisp, no-nonsense approach to nicotine pouches, focused on pure satisfaction without the frills. It is a smart pick for those who want straightforward quality and a smooth experience every time.",
+    "short_de": "CLEW steht für klare Linien und einen frischen, unkomplizierten Genuss, der das Wesentliche eines modernen Nikotinprodukts in den Vordergrund stellt. Perfekt für alle, die Wert auf Stil legen und bei ihrem Erlebnis keine Kompromisse eingehen möchten.",
+    "short_hu": "A CLEW a frissesség és a könnyedség érzetét hozza el azoknak, akik szeretik a letisztult, modern élményt nikotinpárnával. Tökéletes választás azoknak, akik új ízekre vágynak, de fontos számukra a kiegyensúlyozott, magabiztos karakter."
+  },
+  {
+    "slug": "cuba",
+    "brand_name": "CUBA",
+    "short_en": "CUBA stands out with a smooth, laid-back vibe and flavours that mix sun-soaked sweetness with a hint of adventure. It is a great pick for anyone who wants their pouch experience to feel effortless, whether unwinding after a long day or chasing a little taste of summer.",
+    "short_de": "CUBA steht für ein entspanntes Lebensgefühl und bringt mit seinen Nikotinbeuteln einen Hauch von Abenteuer in den Alltag. Die Marke passt perfekt zu allen, die Lust auf Abwechslung haben und Genuss gerne neu entdecken.",
+    "short_hu": "A Cuba szájban azonnal felismerhető, karakteres élményt kínál, amelyet a gondosan kevert aromák és a markáns, de harmonikus jelenlét tesz igazán emlékezetessé. Azoknak szól, akik szeretik az intenzív, mégis stílusos alternatívákat a hagyományos dohányzás helyett."
+  },
+  {
+    "slug": "denssi",
+    "brand_name": "DENSSI",
+    "short_en": "Denssi channels Nordic cool with pouches that feel smooth and satisfyingly discreet, striking a balance between subtlety and rich flavour. It is an easy choice for those who appreciate understated style and a refined, everyday pouch experience.",
+    "short_de": "DenSSI steht für geradlinige Nikotin Pouches, die auf das Wesentliche setzen und dabei angenehm unaufgeregt bleiben. Wer klare Qualität und einen unkomplizierten Genuss sucht, fühlt sich hier mühelos gut aufgehoben.",
+    "short_hu": "A DENSSI letisztult karakterével és magabiztos jegyeivel elhozza a kortárs nikotinpárna-élményt, ahol a frissesség és a kifinomult ízvilág kéz a kézben jár. Azoknak ajánljuk, akik értékelik az elegáns egyszerűséget és a megbízható minőséget, akár újak ebben a világban, akár már régóta ismerik a nikotinpárnák világát."
   },
   {
     "slug": "edel",
     "brand_name": "Edel",
-    "short_desc_en": "Edel offers an elegant and refined approach to nicotine pouches, designed for those who appreciate quality and sophistication in their experience. With a focus on smooth textures and nuanced flavours, these pouches cater to both newcomers transitioning from tobacco and seasoned users seeking a premium alternative. Embrace the journey of nicotine enjoyment with Edel, where every pouch is crafted for a memorable and satisfying moment.",
-    "short_desc_de": "Edel bietet eine elegante und moderne Lösung für alle, die ein nikotinfreies Erlebnis ohne den Tabakgeschmack suchen. Die Pouches zeichnen sich durch ihre hohe Qualität und geschmackliche Vielfalt aus, die sowohl Neueinsteiger als auch erfahrene Nutzer anspricht, die nach neuen Erlebnissen suchen. Mit Edel erleben Sie den Genuss von Nikotin auf eine frische und stilvolle Art.",
-    "short_desc_hu": "Az Edel egy modern és elegáns megoldást kínál a nikotinpárnák világában, amely ideális választás a dohányzásról átállóknak és a tapasztalt felhasználóknak egyaránt. A pouches magas minőségű anyagokból készülnek, és gazdag ízélményekkel várják a felfedező kedvű ínyenceket. Fedezd fel az Edel karakterét, ahol a frissesség és a sokszínűség találkozik a nikotinpótlásban."
+    "short_en": "Edel sets itself apart with a mellow, smooth character and a focus on pure, satisfying taste that keeps things simple yet refined. It is a natural choice for anyone who values subtlety and wants an easygoing pouch experience without compromise.",
+    "short_de": "Edel steht für einen klaren, eleganten Genuss, der sich durch einen angenehm feinen Charakter auszeichnet und nie aufdringlich wirkt. Die Marke passt zu allen, die Wert auf dezente Raffinesse legen und einen stilvollen Begleiter für den Alltag suchen.",
+    "short_hu": "Az Edel a skandináv letisztultságot hozza el a nikotinpárnák világába, kifinomult eleganciával és kiegyensúlyozott ízvilággal. Azoknak szól, akik értékelik a diszkrét megjelenést és a harmonikus élményt, akár újak a nikotinpárnák között, akár már régóta hűségesek hozzájuk."
+  },
+  {
+    "slug": "fold",
+    "brand_name": "FOLD",
+    "short_de": "Fold verbindet klare Linien mit einem frischen, unkomplizierten Geschmackserlebnis und richtet sich an alle, die Wert auf Stil und einen durchdachten Alltagsmoment legen. Wer pures Design und einen entspannten Nikotingenuss sucht, fühlt sich hier schnell zu Hause.",
+    "short_hu": "A Fold a letisztult stílust és a könnyed élményt ötvözi, modern megjelenéssel és kiegyensúlyozott ízvilággal. Azoknak ajánlott, akik egyszerű, mégis karakteres alternatívát keresnek a hagyományos nikotinpárnák helyett.",
+    "short_en": "Fold stands out with a crisp, understated style that feels quietly confident, offering pouches that deliver without the fuss. It is a perfect pick for those who want something simple, reliable and just a little bit refined."
+  },
+  {
+    "slug": "fumi",
+    "brand_name": "FUMI",
+    "short_de": "FUMI steht für skandinavische Leichtigkeit, kombiniert mit einem angenehm frischen Geschmackserlebnis, das sofort Lust auf mehr macht. Ideal für alle, die Abwechslung und unkomplizierten Genuss suchen, ganz ohne Tabak.",
+    "short_en": "FUMI stands out with a fresh and playful vibe, offering pouches that balance bright, satisfying flavour with a smooth finish. If you like to keep things light and lively while enjoying a well-made nicotine pouch, FUMI was made with you in mind.",
+    "short_hu": "A FUMI azoknak szól, akik a frissesség és letisztultság élményét keresik a nikotinpárnák világában, kompromisszumok nélkül. Megbízható, kiegyensúlyozott ízei tökéletesek mindenkinek, aki szeretne stílusosan váltani vagy új kedvencet találni."
+  },
+  {
+    "slug": "garant",
+    "brand_name": "Garant",
+    "short_en": "Garant gives you a straightforward, no-nonsense nicotine pouch that feels classic and reliable every time. Perfect for those who want a smooth, fuss-free experience and appreciate a taste that does not shout for attention.",
+    "short_de": "Garant steht für ehrliche, unkomplizierte Nikotinbeutel, die sich ganz auf das Wesentliche konzentrieren und dabei ein angenehm zurückhaltendes Erlebnis bieten. Diese Marke passt perfekt zu allen, die Klarheit und Verlässlichkeit ohne Schnickschnack suchen, egal ob Einsteiger oder erfahrene Nutzer.",
+    "short_hu": "A Garant a letisztult egyszerűséget és megbízható minőséget állítja középpontba, így minden pillanatban stabil élményt nyújt. Azoknak ajánljuk, akik a sallangmentes, kiegyensúlyozott nikotinpárnákra esküsznek és értékelik az állandó komfortot."
+  },
+  {
+    "slug": "glick",
+    "brand_name": "GLICK",
+    "short_de": "Glick überzeugt mit einem klaren, unkomplizierten Stil, der sich ganz auf das Wesentliche eines hochwertigen Nikotin-Erlebnisses konzentriert. Die geradlinigen Sorten sprechen alle an, die Wert auf pure Frische und einen angenehm direkten Geschmack legen.",
+    "short_hu": "A Glick lendületes és kortárs hangulatot visz a nikotinpárnák világába, letisztult stílussal és határozott karakterrel. Azoknak ajánljuk, akik szeretik az egyszerűségben rejlő erőt és szívesen próbálnak ki valami újat, miközben biztosra mennek a minőség terén.",
+    "short_en": "GLICK stands out with its sleek, straightforward approach, focusing on pure satisfaction without the fuss. It is a strong match for those who appreciate simplicity and want a nicotine pouch that gets straight to the point."
+  },
+  {
+    "slug": "greatest",
+    "brand_name": "Greatest",
+    "short_de": "Greatest steht für kompromisslose Frische und einen klaren, zeitgemäßen Stil, der das moderne Lebensgefühl widerspiegelt. Perfekt für alle, die Wert auf ein sauberes Geschmackserlebnis legen und bei Nikotin-Pouches keine Kompromisse eingehen möchten.",
+    "short_en": "Greatest stands out with a smooth, confident profile and a focus on modern satisfaction, offering pouches that feel both easygoing and reliable. These are well-suited for anyone who wants a straightforward, anytime pouch that fits seamlessly into your day.",
+    "short_hu": "A Greatest az élénk ízek és a letisztult, feltűnő megjelenés párosával új szintre emeli a nikotinpárnák élményét. Mindenkinek ideális választás, aki szereti a karakteres, magabiztos stílust és fontos számára az intenzív élvezet."
+  },
+  {
+    "slug": "helwit",
+    "brand_name": "HELWIT",
+    "short_en": "Helwit stands out with its fresh approach, blending smooth flavour profiles and a cool Scandinavian vibe for a laid-back experience. If you appreciate subtle taste and a steady, easy-going pouch, Helwit is right in your lane.",
+    "short_de": "Helwit überzeugt mit einem frischen, skandinavischen Stil und klaren Aromen, die angenehm natürlich wirken. Diese Pouches passen zu allen, die Wert auf einen entspannten Genuss und einen modernen Look legen.",
+    "short_hu": "A Helwit friss, letisztult stílust hoz a nikotinpárnák világába, minden részletében skandináv könnyedséggel és harmóniával. Azoknak ajánljuk, akik letisztult élményre vágynak és szeretik, ha a mindennapokat egy kiegyensúlyozott, természetes hangulat színesíti."
+  },
+  {
+    "slug": "ice",
+    "brand_name": "Ice",
+    "short_de": "Ice steht für erfrischende Klarheit und einen kraftvollen Kick, der den Alltag aufmischt, ohne zu beschweren. Für alle, die lebendige Aromen lieben und ihre Pause gern mit einer Prise Abenteuer würzen.",
+    "short_en": "Ice delivers a fresh, invigorating twist on nicotine pouches, bringing a cool edge and crisp satisfaction to every experience. It is a perfect pick for those who want pure refreshment from their pouches, whether you are chasing a new sensation or looking to keep things chill.",
+    "short_hu": "Az Ice a frissességet és intenzitást helyezi előtérbe, minden egyes nikotinpárnával tiszta, jeges élményt kínál. Azoknak szól, akik szeretik az erőteljes ízeket és a markáns érzést, legyenek akár újak a nikotinpárnák világában vagy tapasztalt rajongók."
+  },
+  {
+    "slug": "iceberg",
+    "brand_name": "ICEBERG",
+    "short_en": "ICEBERG stands out with an icy-cool edge, delivering intense flavour experiences wrapped in a sleek, refreshing feel. It is a great pick for those who want their nicotine pouches bold and distinctive, whether you are exploring new tastes or looking for something that breaks the mould.",
+    "short_de": "ICEBERG steht für intensive Frische mit einem Hauch von Extravaganz und bringt aufregende Nikotinmomente in den Alltag. Perfekt für alle, die das Außergewöhnliche suchen und sich beim Genuss nicht mit dem Gewöhnlichen zufriedengeben wollen.",
+    "short_hu": "Az ICEBERG a nikotinpárnák világába frissességet és intenzív élményt hoz, amit különösen a határozott karakterű, lendületes ízvilág tesz egyedivé. Azoknak ajánlott, akik szeretik, ha a megszokott élmény egy kis extrával párosul, és bátran kipróbálnak valami újat."
+  },
+  {
+    "slug": "it-s",
+    "brand_name": "IT`S",
+    "short_en": "IT`S pouches are all about smooth, mellow satisfaction with a subtle touch that keeps things easygoing. They are an easy pick for anyone who wants a relaxed nicotine experience without the heaviness.",
+    "short_hu": "Az IT'S egy friss és laza márka, amely a letisztult élményt lendületes karakterrel ötvözi. Azoknak szól, akik szeretik, ha a mindennapjaikba egy csepp játékosság és modern stílus is belefér.",
+    "short_de": "IT`S steht für einen frischen, unkomplizierten Zugang zu Nikotin, mit Pouches, die sich leicht in deinen Alltag einfügen. Perfekt für alle, die es direkt und klar mögen, egal ob du neu dabei bist oder Wert auf Verlässlichkeit legst."
   },
   {
     "slug": "juice-head",
     "brand_name": "JUICE HEAD",
-    "short_desc_en": "JUICE HEAD offers a vibrant and flavorful experience for nicotine pouch users, combining an exciting range of tastes with a smooth, satisfying feel. Designed for those seeking a tobacco-free lifestyle, these pouches deliver a refreshing alternative that caters to both newcomers and seasoned users exploring new sensations. With JUICE HEAD, every moment is an opportunity to enjoy the richness of flavor while embracing a modern approach to nicotine enjoyment.",
-    "short_desc_de": "JUICE HEAD bietet eine frische, moderne Perspektive auf Nikotinpouches, ideal für alle, die eine tabakfreie Alternative suchen, ohne auf das gewohnte Ritual verzichten zu müssen. Die Pouches zeichnen sich durch intensive, ausgewogene Geschmäcker aus, die immer wieder neue Erlebnisse bieten. Perfekt für Einsteiger, die von Tabak wechseln wollen, sowie für erfahrene Nutzer, die auf der Suche nach neuen Geschmackserlebnissen sind.",
-    "short_desc_hu": "A JUICE HEAD egy friss, modern megközelítést kínál a nikotinos pouches világában, mely ideális választás azok számára, akik el akarják hagyni a dohányt anélkül, hogy lemondanának a pouches használatának élményéről. A márka karakterét a gazdag, harmonikus ízek és a prémium minőségű pouches adják, így mindig van lehetőség új kombinációk felfedezésére. Akár új belépő vagy tapasztalt felhasználó vagy, a JUICE HEAD tökéletes társ az ízletes élményekhez."
+    "short_en": "JUICE HEAD delivers a punch of vibrant, fruit-inspired flavour with a fresh, playful edge that stands out from the crowd. It is perfect for anyone who craves something lively and different in their nicotine routine, from curious newcomers to flavour-chasers on the hunt for their next favourite pouch.",
+    "short_hu": "A JUICE HEAD nikotinpárnák élénk, gyümölcsös aromáikkal és frissítő karakterükkel igazi lendületet visznek a mindennapokba. Azoknak ajánljuk, akik az intenzív ízeket keresik, és szívesen fedeznek fel valami újat a megszokott helyett.",
+    "short_de": "JUICE HEAD steht für fruchtige Frische und ein angenehm rundes Geschmackserlebnis, das beim ersten Probieren überrascht. Wer Abwechslung und Klarheit im Alltag sucht, findet hier eine passende Begleitung ohne Kompromisse."
+  },
+  {
+    "slug": "kelly-white",
+    "brand_name": "Kelly White",
+    "short_de": "Kelly White steht für einen frischen, stilbewussten Ansatz bei Nikotinbeuteln, mit einem klaren Fokus auf moderne Eleganz und sanfte Geschmackswelten ohne Tabak. Diese Marke passt perfekt zu allen, die Wert auf dezente Raffinesse legen und Genuss auf eine leichte Art erleben möchten.",
+    "short_en": "Kelly White stands out with a sleek, understated style and unmistakably smooth pouches that keep things feeling fresh. Perfect for those who appreciate subtle elegance and want their nicotine experience to fit seamlessly into everyday moments.",
+    "short_hu": "A Kelly White a kifinomultságot és a letisztultságot ötvözi, egyedi színeivel és stílusos megjelenésével új színt visz a nikotinpárnák világába. Azoknak ajánljuk, akik a mindennapokat elegánsan, mégis játékosan szeretnék élvezni."
+  },
+  {
+    "slug": "killa",
+    "brand_name": "Killa",
+    "short_en": "Killa steps up with a punchy attitude and intense flavour, delivering a powerful nicotine experience that stands out. Perfect for those who want their pouches strong and their kick unmistakable, whether you are a thrill-seeker or just need something that really hits.",
+    "short_de": "Killa steht für kompromisslose Intensität und einen markanten, selbstbewussten Charakter, der in jeder Portion spürbar wird. Wer kräftigen Geschmack und ein mutiges Erlebnis sucht, findet hier seinen perfekten Begleiter abseits des Gewöhnlichen.",
+    "short_hu": "A Killa merész, erőteljes karakterével és lendületes ízvilágával egyből kitűnik a nikotinpárnák világában. Azoknak szól, akik szeretik az intenzív élményt és nem riadnak vissza az erőtől, legyenek akár tapasztalt használók, akár bátrak, akik most váltanának."
+  },
+  {
+    "slug": "klar",
+    "brand_name": "KLAR",
+    "short_en": "Klar stands out with a crisp, straightforward approach, offering nicotine pouches that cut through the fuss for a refreshingly pure experience. Ideal for those who appreciate clarity and simplicity, whether you are new to pouches or seeking a cleaner everyday option.",
+    "short_de": "KLAR setzt auf pure Klarheit und einen angenehm frischen Charakter, was jede Portion zu einem unaufdringlichen Begleiter macht. Wer Wert auf dezente, klare Geschmacksprofile und einen unkomplizierten Alltag legt, findet hier schnell seinen Favoriten.",
+    "short_hu": "A KLAR azoknak szól, akik letisztult megjelenést és kiegyensúlyozott élményt keresnek a nikotinpárnák világában, miközben minden részletben érződik a skandináv frissesség. Megbízható választás mindazoknak, akik szeretik a harmonikus ízeket és a diszkrét, modern stílust."
+  },
+  {
+    "slug": "klint",
+    "brand_name": "Klint",
+    "short_de": "Klint steht für reduzierte Klarheit und skandinavische Frische, mit Pouches, die im Alltag unkompliziert und stilbewusst begleiten. Wer einen unaufdringlichen Begleiter mag und Wert auf einen modernen, leichten Genuss legt, fühlt sich hier schnell zuhause.",
+    "short_en": "Klint stands out with its crisp, minimalist approach, delivering smooth nicotine satisfaction in a refreshingly light style. It is a perfect fit for those who appreciate subtle flavours and a polished pouch experience, whether you are new to nicotine or looking for a refined daily companion.",
+    "short_hu": "A Klint a letisztult, kifinomult stílusával friss lendületet hoz a nikotinpárnák világába, kompromisszumok nélkül a minőség és az élmény terén. Azoknak szól, akik szeretik, ha modern megjelenés párosul kiegyensúlyozott ízekkel, akár most váltanának, akár régóta a párnák hívei."
+  },
+  {
+    "slug": "kuma",
+    "brand_name": "KUMA",
+    "short_en": "KUMA stands out with its bold personality and a no-nonsense approach to nicotine, offering pouches that do not hold back on character or intensity. Ideal for users who know exactly what they want and prefer a straight-up, powerful experience every time.",
+    "short_hu": "A KUMA titka a letisztult, karakteres élményben rejlik, amely minden egyes tasaknál érződik. Azoknak ajánljuk, akik a mindennapokban is szeretik a markáns ízeket és a magabiztos stílust.",
+    "short_de": "KUMA steht für unkomplizierten Genuss und einen klaren, frischen Charakter, der ohne Schnickschnack überzeugt. Diese Marke passt zu allen, die Wert auf ein modernes Erlebnis legen und sich dabei auf zuverlässige Qualität verlassen möchten."
+  },
+  {
+    "slug": "leo",
+    "brand_name": "LEO",
+    "short_en": "LEO delivers a smooth, satisfying pouch experience with a crisp edge, all wrapped in a sharp, contemporary look. Perfect for those who want a sleek and straightforward nicotine lift without any fuss.",
+    "short_hu": "A LEO a lendületes stílust és kiegyensúlyozott élményt ötvözi, minden alkalmat különlegessé téve a dohánymentes nikotinpárnákkal. Azoknak ideális, akik a frissességre és magabiztos karakterre vágynak, legyenek akár újak a műfajban vagy már tapasztalt felhasználók.",
+    "short_de": "LEO steht für einen unkomplizierten, klaren Genussmoment, der auf das Wesentliche reduziert ist und ohne Ablenkung überzeugt. Diese Pouches passen zu allen, die Wert auf pure Ausgewogenheit legen und lieber direkt zum Punkt kommen."
   },
   {
     "slug": "lewa",
     "brand_name": "LEWA",
-    "short_desc_en": "LEWA offers a fresh and contemporary approach to nicotine pouches, designed for those seeking a tobacco-free alternative that still delivers satisfaction. With a focus on high-quality ingredients and a diverse range of flavors, each pouch provides a smooth experience that keeps users engaged and coming back for more. Ideal for newcomers transitioning from traditional tobacco or seasoned users looking to explore new sensations, LEWA embodies a lifestyle of modern enjoyment.",
-    "short_desc_de": "LEWA bietet ein frisches, modernes Erlebnis mit Nikotinpouchs, die für alle gedacht sind, die den Schritt zu einer tabakfreien Alternative wagen möchten. Die Pouches überzeugen durch ihre sorgfältig abgestimmten Aromen und eine angenehme Haptik, die sowohl Neueinsteiger als auch erfahrene Nutzer anspricht. Mit LEWA entdeckst du die Freiheit, ohne Kompromisse auf Genuss zu verzichten.",
-    "short_desc_hu": "A LEWA egy friss, modern megközelítést kínál a nikotinos pouches világában, amely tökéletes választás mindazok számára, akik el akarják hagyni a dohányt, de meg akarják tartani a megszokott rituáléjukat. A pouches ízvilága gazdag és kiegyensúlyozott, így mindig van új kombináció, amit érdemes kipróbálni. Akár újonnan érkezett, akár tapasztalt felhasználó vagy, a LEWA a változatosságot és a minőséget kínálja."
+    "short_de": "Lewa steht für angenehm milde Nikotinerlebnisse und ein unkompliziertes, frisches Design, das auf das Wesentliche setzt. Wer einen klaren Kopf behalten und trotzdem nicht auf Geschmack verzichten möchte, findet hier seine neue Lieblingsmarke.",
+    "short_en": "LEWA stands out with its fresh and uplifting attitude, pairing vibrant pouch flavours with a light, easygoing touch. Perfect for those who want a brighter, more playful spin on their nicotine routine, whether you are new to pouches or just looking to shake things up.",
+    "short_hu": "A LEWA frissességet és letisztult élményt hoz a nikotinpárnák világába, kiegyensúlyozott aromáival és sima karakterével azonnal magára vonja a figyelmet. Azoknak ajánljuk, akik a mindennapok lendületéhez keresnek modern, diszkrét megoldást, legyenek akár tapasztalt használók vagy most ismerkednek a műfajjal."
+  },
+  {
+    "slug": "loop",
+    "brand_name": "Loop",
+    "short_en": "Loop stands out with a punchy attitude and sleek design, bringing energy and clarity to every nicotine pouch experience. Its playful, vibrant character makes it a top pick for those who want something fresh and lively in their routine.",
+    "short_de": "Loop steht für frische Ideen und klare Linien, mit einem Fokus auf stylischem Design und ausgewogenem Geschmackserlebnis. Wer neugierig ist auf neue Wege beim Nikotingenuss und Wert auf einen modernen Auftritt legt, trifft mit Loop die richtige Wahl.",
+    "short_hu": "A Loop friss lendületet visz a nikotinpárnák világába, letisztult dizájnja és kiegyensúlyozott ízei minden alkalomhoz illenek. Azoknak ajánljuk, akik szeretik az újításokat, de nem mondanának le a megszokott élményről."
+  },
+  {
+    "slug": "lumi",
+    "brand_name": "LUMI",
+    "short_de": "LUMI steht für eine frische, klare Ausstrahlung und bringt mit seinen Nikotin Pouches einen Hauch von Leichtigkeit in die Welt des Genusses. Wer unkomplizierte Qualität und dezente Eleganz schätzt, findet hier eine stilvolle Alternative zu herkömmlichem Tabak.",
+    "short_en": "LUMI stands out with a fresh, playful vibe and smooth nicotine delivery, bringing a little brightness to your everyday ritual. Perfect for those who want something lively and uplifting, whether you are new to pouches or simply seeking a bit more spark.",
+    "short_hu": "A Lumi a frissesség és a letisztultság érzését hozza el azoknak, akik szeretik az újszerű élményeket a klasszikus nikotinpárnák megszokott formájában. Tökéletes választás mindazoknak, akik nyitottak valami újra, ugyanakkor értékelik a stílusos, kiegyensúlyozott ízvilágot."
+  },
+  {
+    "slug": "lundgrens",
+    "brand_name": "Lundgrens",
+    "short_en": "Lundgrens stands out with its classic Swedish character, blending tradition and innovation for a naturally balanced pouch experience. It is a solid pick for those who appreciate subtlety, gentle flavours and a familiar nod to Scandinavian roots.",
+    "short_hu": "A Lundgrens a természetközeli frissesség és a skandináv tradíciók találkozása, amelyet minden részletében letisztult minőség jellemez. Azoknak ajánlott, akik értékelik a karakteres, mégis harmonikus élményt, legyenek akár újak a világában, akár tapasztaltak.",
+    "short_de": "Lundgrens steht für skandinavische Gelassenheit und natürliche Frische, mit einem angenehm authentischen Gefühl unter der Lippe. Diese Marke passt zu allen, die klare Geschmacksnoten und eine entspannte, unaufgeregte Erfahrung suchen."
+  },
+  {
+    "slug": "maggie",
+    "brand_name": "MAGGIE",
+    "short_en": "Maggie delivers a smooth and satisfying pouch experience with a focus on balanced blends that feel easygoing and straightforward. It is a great choice for anyone who wants simplicity without sacrificing quality in their nicotine routine.",
+    "short_de": "Maggie steht für einen entspannten, unkomplizierten Genussmoment, der ganz auf das Wesentliche fokussiert ist. Die Marke passt perfekt zu allen, die klare Linien mögen und Wert auf eine zuverlässige Begleitung im Alltag legen.",
+    "short_hu": "A Maggie nikotinpárnák finoman megkomponált ízvilágukkal és letisztult megjelenésükkel egy új szintet képviselnek a mindennapi élvezetben. Azoknak ideális, akik szeretik a harmonikus, mégis karakteres alternatívákat, legyenek rutinos pouch-használók vagy éppen most keresik az első kedvencüket."
   },
   {
     "slug": "mynt",
     "brand_name": "MYNT",
-    "short_desc_en": "MYNT offers a fresh and innovative approach to nicotine pouches, designed for those seeking a tobacco-free experience without sacrificing satisfaction. With a focus on quality and exceptional flavours, each pouch delivers a smooth and enjoyable sensation that appeals to both newcomers and seasoned users alike. Whether you are transitioning from traditional tobacco or exploring new options for your routine, MYNT is the perfect companion for your nicotine journey.",
-    "short_desc_de": "MYNT bietet eine frische, moderne Perspektive auf Nikotinbeutel, ideal für alle, die den gewohnten Genuss ohne Tabak erleben möchten. Die Pouches zeichnen sich durch ihre hohe Qualität und ausgewogene Aromen aus, die stets neue Geschmackserlebnisse ermöglichen. Perfekt für Einsteiger, die auf der Suche nach einer Alternative sind, sowie für erfahrene Nutzer, die Abwechslung in ihren Genuss bringen möchten.",
-    "short_desc_hu": "A MYNT egy friss és modern megközelítést képvisel a nikotinos pouches világában, amely lehetővé teszi, hogy a használók élvezzék a nikotin élményét anélkül, hogy a hagyományos dohánytermékekhez folyamodnának. A pouches minősége kiemelkedően finom, gazdag ízekkel rendelkezik, amelyek folyamatos felfedezést kínálnak. Ideális választás mindazok számára, akik új élményeket keresnek a dohányzás helyett, valamint a tapasztalt felhasználók számára is, akik a változatosságra vágynak."
+    "short_de": "MYNT steht für einen frischen, unkomplizierten Genuss, der mit klaren Aromen und angenehmem Gefühl überzeugt. Perfekt für alle, die Wert auf reine, moderne Nikotinerlebnisse legen, ohne auf einen belebenden Kick zu verzichten.",
+    "short_en": "MYNT stands out with its ultra-fresh character and crisp delivery, making every pouch feel like a breath of clarity. It is a natural fit for those who crave invigorating simplicity or want a bright kick to shake up their routine.",
+    "short_hu": "A MYNT friss, lendületes energiát csempész a nikotinpárnák világába, letisztult stílusával és üdítő ízvilágával azonnal magára vonja a figyelmet. Azoknak ajánljuk, akik a mindennapokban is keresik az újdonságot és szeretnék, ha a nikotinélmény mindig élvezetes maradna."
+  },
+  {
+    "slug": "neafs",
+    "brand_name": "NEAFS",
+    "short_hu": "A NEAFS a nikotinpárnák új generációját kínálja, frissítően letisztult élménnyel és selymes textúrával, ami azonnal magával ragad. Azoknak szól, akik kíváncsiak az alternatívákra, és szeretnék felfedezni a dohánymentes élet ízét stílusosan.",
+    "short_en": "NEAFS stands out with a smooth, discreet pouch experience, crafted for those who want satisfying nicotine without the weight of tobacco. This brand is a smart pick if you appreciate subtlety, whether you are new to pouches or simply prefer a cleaner option.",
+    "short_de": "NEAFS steht für einen sanften, klaren Genussmoment, der auf Tabak verzichtet und dabei angenehm unkompliziert bleibt. Wer einen leichten Einstieg sucht oder eine entspannte Alternative schätzt, fühlt sich hier schnell zuhause."
+  },
+  {
+    "slug": "nois",
+    "brand_name": "NOiS",
+    "short_de": "NOiS steht für einen urbanen, klaren Stil und liefert Nikotinbeutel, die sich frisch und unkompliziert anfühlen. Diese Marke passt zu allen, die Wert auf einen modernen Look legen und pures Geschmackserlebnis in jeder Situation suchen.",
+    "short_en": "NOiS stands out with a fresh, upbeat vibe and pouches that keep things smooth from start to finish. It is an easy pick for anyone after a lighthearted lift, whether you are a curious newcomer or just want to brighten up your pouch routine.",
+    "short_hu": "A NOiS a modern stílust könnyedséggel és magabiztos karakterrel ötvözi, minden részletében letisztult és naprakész. Azoknak szól, akik szeretik, ha a mindennapjaikban a frissesség és a kifinomultság találkozik."
+  },
+  {
+    "slug": "nordic-spirit",
+    "brand_name": "Nordic Spirit",
+    "short_en": "Nordic Spirit captures the crisp, fresh essence of Scandinavia, delivering a smooth nicotine pouch experience that feels both uplifting and refined. Its cool, understated character is ideal for those who value subtle taste and effortless satisfaction in their everyday routine.",
+    "short_de": "Nordic Spirit steht für nordische Klarheit und einen frischen, unkomplizierten Genuss, der sich ganz ohne Tabak anfühlt wie eine kleine Auszeit. Die geschmacklichen Nuancen sprechen alle an, die Wert auf pure Qualität legen und das Besondere im Alltag suchen.",
+    "short_hu": "A Nordic Spirit a skandináv frissességet és letisztultságot hozza el a nikotinpárnák világába, tiszta élményt kínálva minden alkalommal. Azoknak ajánljuk, akik szeretik az északi hangulatot és a kiegyensúlyozott, mégis karakteres ízélményt keresik."
   },
   {
     "slug": "nyytti",
     "brand_name": "Nyytti",
-    "short_desc_en": "Nyytti delivers a fresh and innovative approach to nicotine pouches, designed for those who cherish the convenience of a tobacco-free experience without sacrificing flavor. With a focus on high-quality ingredients and distinct taste profiles, these pouches cater to both newcomers exploring alternatives and seasoned users seeking exciting new options. Each pouch embodies a sense of modernity and sophistication, making it the perfect companion for your everyday routine.",
-    "short_desc_de": "Nyytti bietet eine frische, moderne Herangehensweise an Nikotinpouches, ideal für alle, die eine tabakfreie Option suchen und das gewohnte Ritual eines Pouches unter der Lippe genießen möchten. Die Pouches zeichnen sich durch ihre hohe Qualität und ausgewogenen Geschmacksrichtungen aus, die immer wieder zum Ausprobieren einladen. Egal ob du neu im Bereich der Nikotinpouches bist oder bereits Erfahrung hast und nach neuen Geschmackserlebnissen suchst, Nyytti hat für jeden etwas zu bieten.",
-    "short_desc_hu": "A Nyytti egy friss és modern megközelítést kínál a nikotinos pouches világában, amely lehetővé teszi a felhasználók számára, hogy a hagyományos dohányzás nélkül élvezhessék a nikotin élvezetét. Pouch-aink prémium minőségűek, változatos ízekkel és gazdag élménnyel, így mindenki megtalálhatja a kedvencét, legyen szó tapasztalt felhasználóról vagy éppen a dohányzásról áttérő újoncról. Fedezd fel a Nyyti-t, ahol a nikotin és a kényelem találkozik."
+    "short_de": "Nyytti steht für unkomplizierten Genuss und moderne Geschmacksrichtungen, die lässig und dennoch hochwertig wirken. Wer Wert auf Leichtigkeit legt und gerne Neues ausprobiert, findet hier seinen entspannten Begleiter für jeden Tag.",
+    "short_en": "Nyytti delivers nicotine pouches with a refined Nordic touch, blending crisp flavours with a quietly confident style. Ideal for those who appreciate subtle sophistication and a smooth, steady experience from their pouch.",
+    "short_hu": "A Nyytti a skandináv letisztultságot ötvözi a megbízható, selymes élménnyel, mindig kiegyensúlyozott és kellemesen diszkrét. Azoknak szól, akik a mindennapokban szeretnek stílusosan élni, és értékelik a finom, természetes hatást."
   },
   {
     "slug": "pablo",
     "brand_name": "Pablo",
-    "short_desc_en": "Pablo offers a vibrant and dynamic experience for nicotine pouch enthusiasts seeking a tobacco-free alternative. With a focus on bold flavours and a premium feel, these pouches cater to both newcomers transitioning from traditional tobacco and seasoned users looking for fresh sensations. Enjoy the versatility and quality that make Pablo a standout choice in the world of nicotine pouches.",
-    "short_desc_de": "Pablo bietet eine frische, moderne Perspektive auf Nikotinpouches, ideal für alle, die ein tabakfreies Erlebnis suchen, ohne auf das gewohnte Ritual zu verzichten. Die Pouches zeichnen sich durch ihre hohe Qualität und abwechslungsreiche Geschmacksrichtungen aus, die sowohl Neulinge als auch erfahrene Nutzer ansprechen. Mit Pablo ist für jeden etwas dabei, ob du gerade den Umstieg schaffst oder einfach neue Erfahrungen sammeln möchtest.",
-    "short_desc_hu": "A Pablo modern és letisztult megközelítést kínál a nikotinos pouches világában, ideális választás azok számára, akik a dohánymentes élvezetet keresik anélkül, hogy lemondanának a rágás rituális élményéről. Pouches-aik gazdag ízekkel és kiegyensúlyozott aromákkal rendelkeznek, így mindig van új kombináció, amit érdemes kipróbálni. Tökéletes választás újdonsült felhasználóknak, akik a dohányról váltanak, vagy tapasztalt felhasználóknak, akik változatosságra vágynak."
+    "short_de": "Pablo steht für kompromisslose Intensität und einen kühlen, urbanen Charakter, der keine halben Sachen macht. Die starke Ausstrahlung und der klare Geschmack sprechen alle an, die das Besondere suchen und keine Kompromisse eingehen wollen.",
+    "short_en": "Pablo stands out for its fierce kick and icy-cool attitude, made for those who want their nicotine experience to be anything but ordinary. It is a natural fit for adventurous souls who crave intensity from the first pouch to the last.",
+    "short_hu": "A Pablo a szilaj lendületet és a markáns karaktert ötvözi minden egyes tasakban, kompromisszumok nélkül, hogy igazán érezd a pillanat erejét. Azoknak szól, akik szeretik, ha a zsebükben lapuló energia nem ismer határokat, és nem riadnak vissza az intenzív élménytől."
+  },
+  {
+    "slug": "pura",
+    "brand_name": "Pura",
+    "short_en": "Pura stands out with its smooth, straightforward approach, blending easygoing comfort with a quietly confident style all its own. If you want a mellow, reliable pouch for any moment, Pura fits right in with your day.",
+    "short_de": "Pura steht für pure, unkomplizierte Nikotinmomente, klar im Geschmack und angenehm unaufgeregt im Auftritt. Die Pouches sind ideal für alle, die Wert auf eine dezente und frische Alternative suchen, die sich mühelos in den Alltag einfügt.",
+    "short_hu": "A Pura frissességet és letisztult élményt kínál azoknak, akik a dohánymentes nikotinpárnák új hullámára vágynak. Letisztult ízvilága és könnyed karaktere ideális mindenkinek, aki elegánsan, kompromisszumok nélkül szeretné élvezni a megszokott rituálét."
+  },
+  {
+    "slug": "rabbit",
+    "brand_name": "rabbit",
+    "short_en": "rabbit stands out with a fresh, playful energy, delivering smooth nicotine satisfaction in a pouch that feels light and effortless. It is a great fit for those who appreciate a modern vibe and want an easygoing alternative to traditional options.",
+    "short_de": "rabbit setzt auf verspielte Leichtigkeit und einen frischen Look, der sich von klassischen Nikotinbeuteln abhebt. Die unkomplizierten Sorten passen zu allen, die gerne Neues ausprobieren und Wert auf Stil legen.",
+    "short_hu": "A rabbit a frissességet és a játékosságot csempészi a nikotinpárnák világába, könnyed de mégis karakteres élményt adva minden használatkor. Azoknak való, akik nem szeretnek kompromisszumot kötni és szívesen fedeznek fel új, energikus ízvilágokat."
+  },
+  {
+    "slug": "rave",
+    "brand_name": "RAVE",
+    "short_en": "RAVE delivers an energetic spin on nicotine pouches, blending smooth satisfaction with a vibe that feels fresh and full of attitude. Its bold profile is a match for anyone ready to break routine and enjoy something that stands out from the usual crowd.",
+    "short_de": "RAVE steht für aufregende Nikotinerlebnisse, die jeden Moment mit klaren, energiegeladenen Aromen aufladen. Perfekt für alle, die Abwechslung suchen und ihren Alltag gern mit einem besonderen Kick genießen.",
+    "short_hu": "A Rave friss, lendületes érzést hoz a nikotinpárnák világába, vibráló karakterével és energikus hangulatával tűnik ki. Azoknak ajánlott, akik szeretnének kitörni a hétköznapokból, és szeretik, ha a mindennapi rutinjukba egy kis pezsgést csempészhetnek."
+  },
+  {
+    "slug": "relx",
+    "brand_name": "RELX",
+    "short_de": "RELX steht für klare Linien und ein angenehm zurückhaltendes Erlebnis, das sich ganz auf moderne Leichtigkeit konzentriert. Perfekt für alle, die Wert auf stilvolle Momente legen und einen unkomplizierten Begleiter für ihren Alltag suchen.",
+    "short_en": "RELX stands out with a sleek, forward-thinking design that turns every nicotine moment into something effortlessly smooth and refined. It is a great fit for those who appreciate modern style and want a straightforward, satisfying experience every time.",
+    "short_hu": "A RELX a letisztult design és kifinomult élmény találkozása, ahol a modern technológia új szintre emeli a nikotinpárna használatát. Azoknak szól, akik stílusos, könnyed megoldásra vágynak a mindennapokban, legyenek akár tapasztalt felhasználók, akár most keresik az alternatívát."
+  },
+  {
+    "slug": "royal-white",
+    "brand_name": "Royal White",
+    "short_en": "Royal White stands out with a crisp, refined character, offering a smooth nicotine experience that feels polished from the first pouch to the last. It is a great choice for those who enjoy a touch of sophistication in their routine, whether you are exploring nicotine pouches for the first time or looking for an elevated everyday option.",
+    "short_de": "Royal White setzt auf kompromisslose Frische und einen klaren, hochwertigen Charakter, der jeden Moment mit einem Hauch von Eleganz begleitet. Diese Marke passt zu allen, die Wert auf stilvollen Genuss legen und das Besondere im Alltag suchen.",
+    "short_hu": "A Royal White egy elegáns, letisztult élményt kínál, ahol a prémium minőség és a kifinomult ízvilág találkozik. Azoknak való, akik értékelik a diszkrét, stílusos alternatívát, és fontos számukra a kiegyensúlyozott élvezet."
+  },
+  {
+    "slug": "siberia",
+    "brand_name": "Siberia",
+    "short_en": "Siberia stands out for its intense, no-nonsense approach, delivering a sharp kick with an icy edge that experienced pouch users appreciate. This brand is a natural fit for those who crave an uncompromising rush and want every pouch to make its mark.",
+    "short_hu": "A Siberia egyedülálló intenzitást és jeges frissességet hoz a nikotinpárnák világába, minden alkalommal felrázva a megszokott élményt. Azoknak szól, akik szeretik a valóban markáns, karakteres ízeket, és nem riadnak vissza az extrém élményektől.",
+    "short_de": "Siberia steht für kompromisslose Intensität, die jeden Moment mit einem eiskalten Kick auflädt. Besonders passend für alle, die das Extreme suchen und Wert auf einen unvergesslichen Geschmack legen."
+  },
+  {
+    "slug": "skruf",
+    "brand_name": "Skruf",
+    "short_de": "Skruf hat einen angenehm klaren Charakter, der skandinavische Frische mit einer feinen, natürlichen Note verbindet. Die Auswahl passt zu allen, die Wert auf ausgewogene Intensität und authentischen Geschmack legen, ob als Neueinsteiger oder Kenner.",
+    "short_en": "Skruf stands for a fresh, Scandinavian approach to nicotine pouches with a cool edge and a focus on pure, straightforward taste. It is a smart pick for those who appreciate clean flavours and a crisp, modern experience every time.",
+    "short_hu": "A Skruf prémium minőségű nikotinpárnáival elegánsan ötvözi a frissességet és a kifinomult ízvilágot, így különleges élményt nyújt minden egyes használatkor. Azoknak ajánljuk, akik nem érik be akármi­vel, és a mindennapokban is szeretik érezni a skandináv stílusú letisztultságot."
+  },
+  {
+    "slug": "smogen",
+    "brand_name": "Smögen",
+    "short_en": "Smögen stands out with a fresh, laid-back attitude and a smooth Scandinavian touch that makes every pouch feel effortless. Its gentle character and easygoing style suit anyone after a mellow, satisfying experience without the fuss.",
+    "short_de": "Smögen steht für skandinavische Gelassenheit und klare Linien, mit einem Fokus auf authentischen Geschmack und angenehme Frische. Wer Wert auf unaufdringliche Qualität legt und eine Alternative zu klassischem Tabak sucht, findet hier seine neue Routine.",
+    "short_hu": "A Smögen a skandináv frissességet és a tengerparti életérzést csempészi a nikotinpárnák világába, letisztult ízvilággal és kiegyensúlyozott élménnyel. Azoknak szól, akik szeretik, ha a mindennapokba egy csipetnyi szabadság és természetesség is belefér."
+  },
+  {
+    "slug": "snoberg",
+    "brand_name": "SNOBERG",
+    "short_en": "Snoberg stands out with its crisp, cool character and refreshingly smooth pouches that keep things simple but never boring. It suits anyone who prefers an uncomplicated experience yet still wants a touch of sophistication in every pouch.",
+    "short_de": "Snoberg steht für einen frischen, klaren Stil, der das Gefühl von Reinheit und skandinavischer Kühle in jedes Nikotinerlebnis bringt. Perfekt für alle, die Wert auf einen modernen Look und einen eleganten Geschmack legen, egal ob sie Neuankömmlinge oder Kenner sind.",
+    "short_hu": "A Snoberg a frissességet és letisztultságot ötvözi, karakteres jegyekkel és prémium érzetű kialakítással emelve ki a nikotinpárnák világában. Azoknak szól, akik modern, gondosan kidolgozott élményt keresnek, akár most ismerkednek a párnákkal, akár már régóta használják őket."
+  },
+  {
+    "slug": "snowman",
+    "brand_name": "Snowman",
+    "short_en": "Snowman delivers a cool, crisp vibe with pouches that feel refreshing and easygoing from the first moment. This brand is a great fit for anyone who wants a lighter touch and a smooth, satisfying taste in their daily routine.",
+    "short_de": "Snowman steht für ein angenehm kühles, frisches Erlebnis und setzt auf klare, unverwechselbare Geschmacksprofile ohne Schnickschnack. Perfekt für alle, die Wert auf pure Qualität legen und bei jedem Zug das entspannte Gefühl von Winterfrische suchen.",
+    "short_hu": "A Snowman a frissesség és letisztultság rajongóinak készült, hűvös érzetével és kiegyensúlyozott karakterével élesen kitűnik a mezőnyből. Azoknak ideális választás, akik egy karakteres, kifinomult élményt keresnek, és szeretnék a mindennapjaikat egy kis újszerűséggel feldobni."
+  },
+  {
+    "slug": "stng",
+    "brand_name": "STNG",
+    "short_hu": "A STNG egyenesen a modern lendületet csempészi a nikotinpárnák világába, markáns karakterével és letisztult megjelenésével rögtön magára vonja a figyelmet. Azoknak ajánlott, akik szeretik az újszerű élményt és nem riadnak vissza a határozott ízektől.",
+    "short_de": "STNG steht für einen klaren, kompromisslosen Kick mit einem Hauch von Understatement und viel Charakter, perfekt für alle, die Intensität suchen, aber auf Stil nicht verzichten möchten. Besonders geeignet für erfahrene Nutzer, die sich einen starken Geschmack und ein markantes Erlebnis wünschen, ohne dabei auf Qualität zu verzichten.",
+    "short_en": "STNG stands out with a cool, minimalist vibe and a focus on smooth satisfaction that feels effortless every time. Its straightforward strength and crisp taste make it a great fit for those who want a fresh approach to nicotine or crave a no-nonsense pouch."
+  },
+  {
+    "slug": "tectonic",
+    "brand_name": "TECTONIC",
+    "short_en": "Tectonic delivers a smooth, confident pouch experience with an edge, made for those who prefer their nicotine with a bit more presence. Its satisfying flavour and distinct character suit anyone looking to break from the ordinary and enjoy something with real depth.",
+    "short_de": "Tectonic verleiht Nicotine Pouches eine kühle, urbane Note und überzeugt mit klaren Linien sowie einem selbstbewussten Auftritt. Perfekt für alle, die Wert auf kompromisslosen Stil und ein erfrischend direktes Erlebnis legen.",
+    "short_hu": "A Tectonic a dohánymentes nikotinpárnák világában a tiszta, sallangmentes élményt képviseli, ahol az intenzív érzet és a letisztult megjelenés találkozik. Azokhoz szól, akik szeretik a markáns karaktert és kompromisszumok nélküli frissességre vágynak a mindennapokban."
+  },
+  {
+    "slug": "togo",
+    "brand_name": "TOGO",
+    "short_en": "TOGO keeps things refreshingly simple, focusing on smooth satisfaction without any fuss or frills. It is a great match for anyone who wants a straightforward pouch experience that just works, whether you are new to nicotine or know exactly what you like.",
+    "short_de": "TOGO steht für unkomplizierten Genuss, der immer bereit ist, wenn du es bist, mit einem frischen, klaren Profil und zuverlässigem Kick. Ideal für alle, die Wert auf praktische Lösungen legen und unterwegs nicht auf Geschmack oder Qualität verzichten wollen.",
+    "short_hu": "A TOGO friss, lendületes stílust visz a nikotinpárnák világába, egyszerre könnyed és karakteres élményt kínálva. Tökéletes választás azoknak, akik nyitottak az újdonságokra és szeretnek játékosan felfedezni új ízeket."
+  },
+  {
+    "slug": "tyr",
+    "brand_name": "TYR",
+    "short_en": "TYR stands out for its subtle, earthy character and smooth, considered blends that feel instantly natural. If you appreciate a more understated pouch experience with an authentic edge, TYR is made for you.",
+    "short_de": "TYR steht für kraftvolle Intensität und einen klaren, kompromisslosen Charakter, der sich in jedem Beutel spüren lässt. Diese Marke passt zu allen, die das Ursprüngliche suchen und starke, unverfälschte Momente schätzen.",
+    "short_hu": "A TYR a skandináv életérzést hozza el a nikotinpárnák világába, letisztult megjelenéssel és magabiztos karakterrel. Azoknak ajánljuk, akik értékelik a frissességet és az erőteljes élményt, legyenek akár gyakorlott használók vagy újoncok."
+  },
+  {
+    "slug": "valkyria",
+    "brand_name": "Valkyria",
+    "short_en": "Valkyria taps into a Nordic spirit, offering nicotine pouches with a crisp character and refreshingly direct approach. It is an easy choice for those who appreciate straightforward intensity and a touch of Scandinavian edge in their everyday routine.",
+    "short_de": "Valkyria steht für skandinavische Coolness und einen klaren Fokus auf intensive Geschmackserlebnisse, die dich im Alltag begleiten. Perfekt für alle, die Wert auf Qualität, Stil und ein außergewöhnliches Nikotinerlebnis legen.",
+    "short_hu": "A Valkyria a skandináv legendák erejét idézi meg, minden tasakban markáns, karakteres élményt kínálva. Azoknak szól, akik a különleges, mély ízeket keresik, miközben egyedi stílusukkal szeretnének kitűnni."
+  },
+  {
+    "slug": "velo",
+    "brand_name": "VELO",
+    "short_en": "VELO stands out with a crisp, contemporary style and smooth nicotine delivery, making every pouch feel effortless and fresh. It is a smart pick for anyone who values convenience and clarity, whether you are curious about pouches or know exactly what you like.",
+    "short_de": "Velo steht für ein frisches, zeitgemäßes Nikotin-Erlebnis, das auf Tabak verzichtet und trotzdem das vertraute Gefühl unter der Lippe bietet. Wer klare Geschmäcker liebt und Wert auf unkomplizierten Genuss legt, findet hier schnell seinen neuen Begleiter.",
+    "short_hu": "A VELO letisztult, friss szemléletet hoz a nikotinpárnák világába, a dohányt mellőzve, mégis megtartva azt a megszokott érzést, amit egy párna ad az ajak alatt. Az egyedi, harmonikus ízek mindenkit megszólítanak, legyen szó váltásról a dohányról vagy már régóta nikotinpárnát használókról."
+  },
+  {
+    "slug": "vid",
+    "brand_name": "VID",
+    "short_en": "VID stands out with a playful energy and vibrant flavours that keep things interesting while staying refreshingly smooth. It is a great match for anyone who enjoys a lively, yet easygoing pouch experience.",
+    "short_de": "VID steht für unkomplizierten Genuss und bringt frische Energie in den Alltag, mit Aromen, die überraschen und zugleich angenehm ausgewogen wirken. Wer Lust auf lebendige Geschmacksvielfalt hat und eine harmonische Alternative sucht, wird hier schnell fündig.",
+    "short_hu": "A VID a frissesség és lendület márkája, amely minden egyes nikotinpárnában játékosságot és energiát rejt. Azoknak ajánljuk, akik élvezik a markáns ízeket és a modern, magabiztos stílust a mindennapokban."
+  },
+  {
+    "slug": "vika",
+    "brand_name": "VIKA",
+    "short_en": "Vika stands out with a crisp, understated style that puts comfort and clarity at the heart of every pouch. It is a smart pick for anyone who appreciates a gentle yet satisfying pause in their day.",
+    "short_de": "VIKA steht für klare Linien und einen geradlinigen Geschmack, ganz ohne Schnickschnack und Kompromisse bei der Qualität. Perfekt für alle, die es authentisch mögen und Wert auf ein ehrliches, unkompliziertes Nikotin-Erlebnis legen.",
+    "short_hu": "A VIKA a nikotinpárnák világába egy elegáns, skandináv ihletésű stílussal és letisztult, kiegyensúlyozott karakterrel érkezik, amely a mindennapi élményt emeli új szintre. Azoknak készült, akik értékelik a frissességet és megbízhatóságot, akár most kezdenének, akár régóta hűek a párnákhoz."
+  },
+  {
+    "slug": "vozol",
+    "brand_name": "Vozol",
+    "short_de": "Vozol steht für frische, unkomplizierte Nikotinbeutel mit einem angenehm leichten Gefühl und klaren Geschmacksrichtungen. Ideal für alle, die Wert auf ein dezentes, modernes Nikotinerlebnis legen, ganz gleich ob Einsteiger oder erfahrener Genießer.",
+    "short_en": "Vozol stands out with its sleek, contemporary vibe and a knack for delivering smooth satisfaction in every pouch. It is a smart match for anyone who wants their nicotine experience to feel fresh, simple and never stuck in the past.",
+    "short_hu": "A Vozol a frissesség és lendület márkája, amely letisztult élményt kínál minden alkalomhoz. Azoknak szól, akik szeretik az újat kipróbálni, és értékelik a könnyed, mégis karakteres ízeket."
+  },
+  {
+    "slug": "white-fox",
+    "brand_name": "white-fox",
+    "short_en": "White Fox delivers a cool, invigorating experience with pouches that feel crisp and satisfyingly strong, all wrapped in a strikingly fresh design. This brand is a natural fit for those who seek a punchy kick and enjoy a sharp, refreshing edge in their nicotine routine.",
+    "short_de": "White Fox steht für eisig-frische Nikotinerlebnisse mit einer kristallklaren Note, die sofort auffallen und lange nachklingen. Wer einen kühlen Kick sucht und Wert auf stilvolle Klarheit legt, ist hier genau richtig.",
+    "short_hu": "A White Fox prémium, hűvösen friss élményt kínál, letisztult dizájnnal és karakteres, markáns ízekkel, amelyek azonnal magukra vonják a figyelmet. Azoknak való, akik nem érik be a szokványossal és szeretik, ha a mindennapi szünetekben is felfedezhetnek valami intenzívet."
+  },
+  {
+    "slug": "xo",
+    "brand_name": "XO",
+    "short_de": "XO steht für intensiven Geschmack und ein samtiges Mundgefühl, das den Alltag unkompliziert begleitet. Eine Marke für alle, die sich unkomplizierte Momente mit Stil wünschen, egal ob beim ersten Probieren oder als routinierter Genießer.",
+    "short_en": "XO stands out with its smooth, refined blends and a focus on straightforward enjoyment, ditching the frills for pure, satisfying flavour. Ideal for those who appreciate a subtle touch and want their nicotine experience to feel effortless and genuine.",
+    "short_hu": "Az XO a prémium minőségű nikotinpárnák világába hoz egy kis eleganciát, modern ízvilággal és letisztult megjelenéssel. Azoknak ajánljuk, akik szeretik a kifinomult élményt és fontos számukra az stílusos, mégis kényelmes fogyasztás."
+  },
+  {
+    "slug": "xpct",
+    "brand_name": "XPCT",
+    "short_de": "XPCT steht für pures Selbstbewusstsein und eine kompromisslose Klarheit, die im Alltag Kraft geben. Die markanten Geschmacksprofile sprechen alle an, die Wert auf Stil legen und neue Wege beim Nikotingenuss suchen.",
+    "short_hu": "Az XPCT a nikotinpárnák világába friss lendületet hoz, minden részletében a magabiztosságot és karakteres ízvilágot képviselve. Azoknak ajánljuk, akik szeretnek kitűnni a tömegből és értékelik az egyedi élményt minden használatnál.",
+    "short_en": "XPCT stands out with a calm, no-nonsense approach that focuses on smooth satisfaction and a straightforward experience every time. It is an easy pick for those who value clarity over clutter and want a reliable pouch to fit seamlessly into their routine."
+  },
+  {
+    "slug": "xqs",
+    "brand_name": "XQS",
+    "short_en": "XQS stands out with its playful energy and vibrant flavour combinations, designed to add a spark to your nicotine pouch routine. It's a perfect fit for those who want a lively twist on tradition and enjoy a bit of fun with every pouch.",
+    "short_de": "XQS steht für lebendige Geschmacksvielfalt und einen spürbar leichten Zug, was jeder Portion einen besonderen Twist verleiht. Wer Wert auf kreative Aromen und ein geschmeidiges Mundgefühl legt, findet hier eine spannende Alternative zum Gewohnten.",
+    "short_hu": "Az XQS a skandináv frissességet ötvözi merész, karakteres ízekkel, hogy minden alkalomra izgalmas alternatívát nyújtson. Azoknak ajánljuk, akik szeretik felfedezni az újat, vagy egyszerűen valami lendületesebbre vágynak a mindennapokban."
+  },
+  {
+    "slug": "zeronito",
+    "brand_name": "Zeronito",
+    "short_en": "Zeronito steps away from convention with a fresh, nicotine-free pouch experience that keeps the ritual alive without the buzz. This is a smart choice for those who want the satisfaction of a pouch but are ready to skip nicotine altogether.",
+    "short_de": "Zeronito steht für bewussten Genuss ganz ohne Nikotin, mit einem angenehm natürlichen Gefühl und einem klaren Fokus auf entspannte Momente. Perfekt für alle, die das Ritual eines Pouches lieben und dabei auf Nikotin verzichten möchten.",
+    "short_hu": "A Zeronito friss, kompromisszummentes élményt kínál azoknak, akik nikotinmentes alternatívát keresnek, de nem szeretnének lemondani a megszokott pouches hangulatáról. Remek választás mindenkinek, aki új útra lépne vagy egyszerűen csak élvezné a szokásos élményt nikotin nélkül."
+  },
+  {
+    "slug": "zeus",
+    "brand_name": "Zeus",
+    "short_de": "Zeus steht für intensive, selbstbewusste Nicotine Pouches, die mit markantem Charakter und kraftvollem Geschmack beeindrucken. Perfekt für alle, die vollen Genuss suchen und Wert auf ein starkes Erlebnis legen, ganz ohne Tabak.",
+    "short_en": "Zeus stands out with a strong, no-nonsense approach to nicotine pouches, offering intense satisfaction wrapped in a sleek, straightforward design. This brand is a natural fit for those who want a powerful experience without distractions, whether you're just stepping into pouches or know exactly what you want.",
+    "short_hu": "A Zeus nikotinpárnák erőteljes karakterükkel és markáns ízvilágukkal igazán izgalmas élményt kínálnak, kompromisszumok nélkül. Azoknak szólnak, akik nem elégednek meg a szokványossal, hanem mindig valami ütősebbre vágynak."
+  },
+  {
+    "slug": "zyn",
+    "brand_name": "zyn",
+    "short_en": "Zyn is all about simplicity and a smooth, satisfying nicotine experience, trusted by those who appreciate clean design and a subtle touch. It's the perfect match for anyone who prefers an understated pouch that fits effortlessly into daily life.",
+    "short_de": "Zyn steht für einen klaren, unkomplizierten Genuss, bei dem dezente Frische auf einen angenehm ausgewogenen Geschmack trifft. Die Pouches passen perfekt zu allen, die Wert auf stilvolle Momente legen, ganz gleich, ob sie neu einsteigen oder schon lange dabei sind.",
+    "short_hu": "A Zyn letisztult, skandináv stílusban kínálja a nikotinpárnák élményét, ahol a frissesség és a kifinomult ízvilág találkozik. Azoknak ideális, akik szeretik az egyszerűséget, de nem akarnak kompromisszumot kötni a minőség vagy az élvezet terén."
   }
 ]
