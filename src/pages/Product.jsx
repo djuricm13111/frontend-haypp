@@ -7,6 +7,7 @@ import { ProductContext } from "../context/ProductContext";
 import Header from "../layouts/header/Header";
 import {
   DEFAULT_CURRENCY,
+  DEFAULT_LANGUAGE,
   getPriceByQuantity,
   transportMethods,
 } from "../utils/global_const";
@@ -42,11 +43,15 @@ const Product = () => {
     ? `https://www.snuswe.com/${langParam || i18n.language}/${category}/${slug}`
     : "https://www.snuswe.com";
 
+  // URL iste stranice na drugom jeziku — isti category/slug u svim jezicima (App.jsx: /:lang/:category/:slug)
+  const productUrlForLang = (langCode) =>
+    `https://www.snuswe.com/${langCode}/${category}/${slug}`;
+
   // Odredi jezik za i18n
-  const lang = i18n.language.startsWith("sr")
-    ? "sr"
-    : i18n.language.startsWith("de")
+  const lang = i18n.language.startsWith("de")
     ? "de"
+    : i18n.language.startsWith("hu")
+    ? "hu"
     : "en";
   const shortKey = `short_${lang}`;
   // Pronađi opis za trenutni proizvod
@@ -93,10 +98,25 @@ const Product = () => {
         <meta property="og:type" content="product" />
         <meta property="og:image" content={ogImage} />
 
-        {/* Canonical & Hreflang */}
+        {/* Canonical & Hreflang — pun set: svaka jezička verzija + x-default */}
         <link rel="canonical" href={productUrl} />
-        <link rel="alternate" hreflang={i18n.language} href={productUrl} />
-        <link rel="alternate" hreflang="x-default" href={productUrl} />
+        {category &&
+          slug &&
+          ["en", "de", "hu"].map((langCode) => (
+            <link
+              key={langCode}
+              rel="alternate"
+              hreflang={langCode}
+              href={productUrlForLang(langCode)}
+            />
+          ))}
+        {category && slug && (
+          <link
+            rel="alternate"
+            hreflang="x-default"
+            href={productUrlForLang(DEFAULT_LANGUAGE)}
+          />
+        )}
 
         {/* JSON-LD za Product */}
         {product && (
@@ -114,7 +134,12 @@ const Product = () => {
                 priceCurrency: currencyCode,
                 price: product.price,
                 itemCondition: "https://schema.org/NewCondition",
-                availability: "https://schema.org/InStock",
+                availability:
+                  product.is_in_stock === "in_stock"
+                    ? "https://schema.org/InStock"
+                    : product.is_in_stock === "on_request"
+                    ? "https://schema.org/BackOrder"
+                    : "https://schema.org/OutOfStock",
                 url: productUrl,
                 shippingDetails: {
                   "@type": "OfferShippingDetails",

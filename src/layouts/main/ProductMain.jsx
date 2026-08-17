@@ -1162,10 +1162,10 @@ const ProductMain = () => {
     }
 
     // Odredi jezik i ključ
-    const lang = i18n.language.startsWith("sr")
-      ? "sr"
-      : i18n.language.startsWith("de")
+    const lang = i18n.language.startsWith("de")
       ? "de"
+      : i18n.language.startsWith("hu")
+      ? "hu"
       : "en";
     const shortKey = `short_${lang}`;
 

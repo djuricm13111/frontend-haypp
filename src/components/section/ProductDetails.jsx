@@ -440,10 +440,10 @@ const ProductDetails = ({ product }) => {
   }
 
   // 1. Odabir jezika
-  const lang = i18n.language.startsWith("sr")
-    ? "sr"
-    : i18n.language.startsWith("de")
+  const lang = i18n.language.startsWith("de")
     ? "de"
+    : i18n.language.startsWith("hu")
+    ? "hu"
     : "en";
   const paras =
     descData[`long_${lang}_html`] || descData[`long_${lang}`] || [];
