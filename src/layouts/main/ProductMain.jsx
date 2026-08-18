@@ -1024,6 +1024,12 @@ const StatusDot = styled.div`
 
 const PACK_QUANTITIES = [1, 5, 10, 20];
 
+/** Slugovi koji imaju opis u descriptions.json — proizvodi bez opisa se ne preporučuju (PDP im ostaje prazan/"loading"). */
+const DESCRIBED_SLUGS = new Set(descriptions.map((d) => d.slug));
+
+/** Redosled za sortiranje preporuka po dostupnosti — na stanju prvo, pa na upit, pa ostalo. */
+const STOCK_SORT_ORDER = { in_stock: 0, on_request: 1 };
+
 function formatStockLabel(status) {
   if (status == null || status === "") return "";
   const s = String(status);
@@ -1181,8 +1187,21 @@ const ProductMain = () => {
         recommendedProducts?.results ??
         [];
     if (!Array.isArray(raw) || raw.length === 0) return [];
-    /* Backend već preferira in_stock + dopunu; prikaži sve što stigne (slider radi od 2+ kartica). */
-    return raw.filter(Boolean).slice(0, 12);
+
+    // Preskoči proizvode bez opisa (PDP im inače ostaje prazan/"loading" zauvek).
+    const withDescription = raw
+      .filter(Boolean)
+      .filter((p) => DESCRIBED_SLUGS.has(p.slug));
+
+    // Bezbednosna mreža za slučaj da backend vrati proizvode koji nisu na stanju
+    // ispred onih koji jesu — na stanju uvek prvo (stabilan sort čuva backend redosled unutar grupe).
+    const sorted = [...withDescription].sort(
+      (a, b) =>
+        (STOCK_SORT_ORDER[a.is_in_stock] ?? 2) -
+        (STOCK_SORT_ORDER[b.is_in_stock] ?? 2)
+    );
+
+    return sorted.slice(0, 12);
   }, [recommendedProducts]);
 
   const scrollToPackSelection = () => {
