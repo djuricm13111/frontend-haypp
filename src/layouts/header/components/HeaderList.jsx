@@ -8,7 +8,11 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { buildShopNavDropdown, normalizeShopLang } from "../../../utils/shopRoutes";
+import {
+  buildShopNavDropdown,
+  normalizeShopLang,
+  shopBasePath,
+} from "../../../utils/shopRoutes";
 import { useNavigation } from "../../../utils/navigation";
 
 const StaticFlexDiv = styled.div`
@@ -422,7 +426,9 @@ const HeaderList = ({ isScrolled }) => {
         {activeDropdown === "first" && (
           <SubHeader>
             <SubHeaderItem>
-              <SubHeaderHeading>{t("HEADER.NICOTINE_POUCHES")}</SubHeaderHeading>
+              <SubHeaderHeading as={Link} to={shopBasePath(lang)}>
+                {t("HEADER.NICOTINE_POUCHES")}
+              </SubHeaderHeading>
               <SubHeaderTitleText>
                 {t("HEADER.DROPDOWN_NICOTINE_INTRO")}
               </SubHeaderTitleText>

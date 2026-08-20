@@ -88,21 +88,18 @@ export function shopSearchPath(lang, query) {
  * @param {(key: string) => string} t — react-i18next `t`
  */
 export function buildShopNavDropdown(lang, t) {
-  const base = shopBasePath(lang);
   const T = (key) => t(`HEADER.SHOP_NAV.${key}`);
   return {
     first: [
       {
         title: T("POPULAR_BRANDS"),
-        href: base,
+        href: shopAllBrandsPath(lang),
         items: [
           { label: "ZYN", href: shopBrandPath(lang, "zyn") },
           { label: "VELO", href: shopBrandPath(lang, "velo") },
           { label: "XQS", href: shopBrandPath(lang, "xqs") },
-          { label: "Loop", href: shopBrandPath(lang, "loop") },
           { label: "Skruf", href: shopBrandPath(lang, "skruf") },
           { label: "FUMi", href: shopBrandPath(lang, "fumi") },
-          { label: "RUSH", href: shopBrandPath(lang, "rush") },
         ],
       },
       {
