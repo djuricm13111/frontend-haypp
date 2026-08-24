@@ -46,12 +46,12 @@ export function getCategoryShortDescription(category, lang) {
 }
 
 /**
- * Kratki opis iz brand_descriptions.json zapisa (opcioni short_desc_en / short_desc_de).
+ * Kratki opis iz brand_descriptions.json zapisa (opcioni short_en / short_de).
  */
 export function getBrandEntryShortDescription(entry, lang) {
   if (!entry || typeof entry !== "object") return null;
   const l = normalizeLang(lang);
-  const shortKey = l === "de" ? "short_desc_de" : "short_desc_en";
+  const shortKey = l === "de" ? "short_de" : "short_en";
   if (entry[shortKey]) {
     return String(entry[shortKey]).trim() || null;
   }
