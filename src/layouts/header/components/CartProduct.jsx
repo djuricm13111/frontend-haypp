@@ -93,6 +93,34 @@ const BottomRow = styled.div`
   width: 100%;
 `;
 
+const LineTotalGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  min-width: 0;
+`;
+
+const OriginalPrice = styled.span`
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-200);
+  text-decoration: line-through;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+`;
+
+const QuantityDiscountBadge = styled.p`
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--success-color, var(--primary-200));
+  line-height: 1.2;
+  text-align: right;
+`;
+
 const LineTotal = styled.div`
   margin: 0;
   font-size: 1.125rem;
@@ -101,7 +129,6 @@ const LineTotal = styled.div`
   font-variant-numeric: tabular-nums;
   line-height: 1.2;
   text-align: left;
-  align-self: flex-end;
   flex-shrink: 0;
   min-width: 0;
 `;
@@ -268,6 +295,21 @@ const CartProduct = ({ item, variant = "default" }) => {
   const unitPrice = item.product.discount_price;
   const lineTotal = unitPrice * item.quantity;
 
+  /**
+   * `discount_price` (iz volumeAdjustedUnitPrice) već meša dva moguća popusta:
+   * ručni `discounted_price` (uvek aktivan) i popust na ukupnu količinu u korpi
+   * (10+/50+ kom, videti calculatePrice u utils/discount.js). Razdvajamo ih ovde
+   * da bismo kupcu pokazali i staru cenu i jasnu naznaku da je popust na količinu
+   * primenjen (a ne samo da je proizvod na sniženju).
+   */
+  const fullUnitPrice = Number(item.product.price) || 0;
+  const saleBasePrice =
+    item.product.discounted_price != null && Number(item.product.discounted_price) > 0
+      ? Number(item.product.discounted_price)
+      : fullUnitPrice;
+  const hasAnyDiscount = fullUnitPrice > 0 && unitPrice < fullUnitPrice - 0.005;
+  const quantityDiscountActive = unitPrice < saleBasePrice - 0.005;
+
   const deleteCartItem = (lineId) => {
     dispatch(cartActions.removeFromCart(lineId));
   };
@@ -380,15 +422,34 @@ const CartProduct = ({ item, variant = "default" }) => {
           <SubscriptionBadge>{t(freqKey)}</SubscriptionBadge>
         ) : null}
         <BottomRow>
-          <LineTotal>
-            {currencyTag}
-            {lineTotal.toFixed(2)}
-          </LineTotal>
+          <LineTotalGroup>
+            {hasAnyDiscount && (
+              <OriginalPrice>
+                {currencyTag}
+                {(fullUnitPrice * item.quantity).toFixed(2)}
+              </OriginalPrice>
+            )}
+            <LineTotal>
+              {currencyTag}
+              {lineTotal.toFixed(2)}
+            </LineTotal>
+          </LineTotalGroup>
           <RightStack>
+            {hasAnyDiscount && (
+              <OriginalPrice>
+                {currencyTag}
+                {fullUnitPrice.toFixed(2)}/unit
+              </OriginalPrice>
+            )}
             <PerUnit>
               {currencyTag}
               {unitPrice.toFixed(2)}/unit
             </PerUnit>
+            {quantityDiscountActive && (
+              <QuantityDiscountBadge>
+                {t("CART.QUANTITY_DISCOUNT_APPLIED")}
+              </QuantityDiscountBadge>
+            )}
             <QtyRow>
               <QtyControls>
                 <StepButton

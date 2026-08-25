@@ -615,7 +615,8 @@
     "SUBSCRIPTION_GROUP": "Automatische Nachbestellung",
     "SUBSCRIPTION_SECTION_TITLE": "Abo",
     "SUBSCRIPTION_SECTION_MIXED_FREQ": "Verschiedene Lieferintervalle",
-    "ONETIME_GROUP": "Einmaliger Kauf"
+    "ONETIME_GROUP": "Einmaliger Kauf",
+    "QUANTITY_DISCOUNT_APPLIED": "Mengenrabatt angewendet"
   },
 
   "CHECKOUT": {

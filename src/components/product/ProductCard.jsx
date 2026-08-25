@@ -396,6 +396,7 @@ const MixPackCardPriceRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   padding: 6px var(--spacing-md);
   min-height: ${CARD_QTY_PRICE_ROW_MIN_HEIGHT};
   border-top: 1px solid #e8e8e8;
@@ -943,6 +944,19 @@ const ProductCard = ({ product }) => {
   const selected = packOptions.find((o) => o.quantity === selectedQty) ?? packOptions[0];
   const showQtyPicker = !product.is_mix_pack;
 
+  /**
+   * "Stara cena" (precrtana) treba da se vidi svaki put kad je prikazana cena niža
+   * od pune liste cene × količina — bilo zbog `discounted_price`, bilo zbog popusta
+   * na količinu (10+/50+ kom, videti calculatePrice u utils/discount.js). Ranije se
+   * oslanjalo samo na `discounted_price != null`, pa popust na količinu nije bio
+   * vizuelno naznačen kupcu.
+   */
+  const fullUnitPrice = Number(product.price) || 0;
+  const hasVisibleDiscount =
+    !!selected &&
+    fullUnitPrice > 0 &&
+    selected.total < fullUnitPrice * selectedQty - 0.005;
+
   useEffect(() => {
     if (!product) return;
     if (product.is_mix_pack) {
@@ -1229,6 +1243,12 @@ const ProductCard = ({ product }) => {
         {product.is_mix_pack && selected ? (
           <QuantityWrap>
             <MixPackCardPriceRow>
+              {hasVisibleDiscount && (
+                <QtyOriginalPrice>
+                  {currencyTag}
+                  {fullUnitPrice.toFixed(2)}
+                </QtyOriginalPrice>
+              )}
               <QtyTotalPrice>
                 {currencyTag}
                 {selected.total.toFixed(2)}
@@ -1257,10 +1277,10 @@ const ProductCard = ({ product }) => {
                 <ChevronDown $open={pickerOpen} />
               </QtyTriggerLeft>
               <QtyTriggerPrices>
-                {product.discounted_price != null && (
+                {hasVisibleDiscount && (
                   <QtyOriginalPrice>
                     {currencyTag}
-                    {(Number(product.price) * selectedQty).toFixed(2)}
+                    {(fullUnitPrice * selectedQty).toFixed(2)}
                   </QtyOriginalPrice>
                 )}
                 <QtyTotalPrice>

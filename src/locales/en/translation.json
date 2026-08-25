@@ -616,7 +616,8 @@
     "SUBSCRIPTION_GROUP": "Auto-reorder",
     "SUBSCRIPTION_SECTION_TITLE": "Subscription",
     "SUBSCRIPTION_SECTION_MIXED_FREQ": "Different delivery schedules",
-    "ONETIME_GROUP": "One-time purchase"
+    "ONETIME_GROUP": "One-time purchase",
+    "QUANTITY_DISCOUNT_APPLIED": "Quantity discount applied"
   },
 
   "CHECKOUT": {

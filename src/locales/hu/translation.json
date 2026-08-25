@@ -667,7 +667,8 @@
     "SUBSCRIPTION_GROUP": "Automatikus újrarendelés",
     "SUBSCRIPTION_SECTION_TITLE": "Előfizetés",
     "SUBSCRIPTION_SECTION_MIXED_FREQ": "Eltérő kiszállítási ütemezések",
-    "ONETIME_GROUP": "Egyszeri vásárlás"
+    "ONETIME_GROUP": "Egyszeri vásárlás",
+    "QUANTITY_DISCOUNT_APPLIED": "Mennyiségi kedvezmény érvényesítve"
   },
 
   "CHECKOUT_HEADER": {
