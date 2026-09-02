@@ -630,7 +630,6 @@
     "SECONDARY": "Adresszeile 2 (optional)",
     "DELIVERY_PAYMENT": "Lieferung & Zahlung",
     "TRANSPORT": "Versandart",
-    "TRANSPORT_POST": "Post AT",
     "TRANSPORT_DHL": "DHL Standard",
     "TRANSPORT_DHL_EXP": "DHL Express Saver",
     "PAYMENT": "Zahlungsart",

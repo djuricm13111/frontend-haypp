@@ -631,7 +631,6 @@
     "SECONDARY": "Address line 2 (optional)",
     "DELIVERY_PAYMENT": "Delivery & payment",
     "TRANSPORT": "Shipping method",
-    "TRANSPORT_POST": "Post AT",
     "TRANSPORT_DHL": "DHL Standard",
     "TRANSPORT_DHL_EXP": "DHL Express Saver",
     "PAYMENT": "Payment method",

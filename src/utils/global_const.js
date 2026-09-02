@@ -46,7 +46,7 @@ export const paymentMethods = [
 ];
 
 export const transportMethods = [
-  { name: "Post - AT", code: "post_at", price: 20, days: 3 },
+  { name: "DHL Standard", code: "dhl_standard", price: 20, days: 3 },
   {
     name: "DHL Express Saver",
     code: "dhl_express_saver",

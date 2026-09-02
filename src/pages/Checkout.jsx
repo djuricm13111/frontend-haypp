@@ -30,7 +30,7 @@ import {
 } from "../utils/subscriptionLabels";
 
 const TRANSPORT_OPTIONS = [
-  { value: "Post - AT", i18n: "CHECKOUT.TRANSPORT_POST", price: 20 },
+  { value: "DHL Standard", i18n: "CHECKOUT.TRANSPORT_DHL", price: 20 },
   { value: "DHL Express Saver", i18n: "CHECKOUT.TRANSPORT_DHL_EXP", price: 24.90 },
 ];
 
@@ -733,11 +733,19 @@ const Checkout = () => {
 
   const currency = localStorage.getItem("currency") || DEFAULT_CURRENCY;
 
+  /**
+   * DHL Express Saver se uvek naplaćuje, bez obzira na prag za besplatnu dostavu —
+   * samo DHL Standard postaje besplatan iznad praga. Usklađeno sa backend logikom
+   * u account/serializers.py (OrderSerializer.create).
+   */
   const shippingCost = useMemo(() => {
     if (!cartItems.length) return 0;
-    if (qualifiesForFreeShipping(subtotal)) return 0;
     const method = TRANSPORT_OPTIONS.find((t) => t.value === transportMethod);
     const basePrice = method?.price ?? 20;
+    if (transportMethod === "DHL Express Saver") {
+      return convertCurrency(basePrice, DEFAULT_CURRENCY, currency);
+    }
+    if (qualifiesForFreeShipping(subtotal)) return 0;
     return convertCurrency(basePrice, DEFAULT_CURRENCY, currency);
   }, [cartItems.length, subtotal, currency, transportMethod]);
 
@@ -1334,7 +1342,7 @@ const Checkout = () => {
                 <SummaryLine>
                   <span>{t("CHECKOUT.SHIPPING")}</span>
                   <span>
-                    {qualifiesForFreeShipping(subtotal)
+                    {shippingCost === 0
                       ? t("CHECKOUT.SHIPPING_FREE")
                       : `${currencyTag}${shippingCost.toFixed(2)}`}
                   </span>
